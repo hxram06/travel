@@ -83,8 +83,8 @@
     const day = state.course.days[state.dayIndex];
     const sub = state.subStep;
     if (!sub) return day;
-    if (sub.type === 'entry-airport') return day.entryAirport;
-    if (sub.type === 'transit') return day.before[sub.beforeIdx];
+    if (sub.type === 'entry-airport') return day.entryAirport || day;
+    if (sub.type === 'transit') return (day.before && day.before[sub.beforeIdx]) || day;
     if (sub.type === 'trip-base') {
       return {
         day: day.day,
@@ -409,7 +409,7 @@
       // 지도 애니메이션이 실패해도 일정 패널은 반드시 갱신한다
       console.error('일정 이동 중 지도 오류 — 패널은 계속 표시합니다.', e);
     } finally {
-      renderPanel();
+      // 패널이 사라지지 않도록 fade-out 해제와 잠금 해제를 먼저 확실히 처리한다
       panelInner.classList.remove('fade-out');
       state.transitioning = false;
 
@@ -417,7 +417,7 @@
         state.maxVisitedDay = state.dayIndex;
       }
 
-      renderPanel();
+      try { renderPanel(); } catch (e) { console.error('패널 렌더 오류', e); }
     }
   }
 
@@ -437,7 +437,7 @@
     } finally {
       btnHome.textContent = '✈️ 인천으로 귀국';
       state.transitioning = false;
-      renderPanel();
+      try { renderPanel(); } catch (e) { console.error('패널 렌더 오류', e); }
     }
   }
 
@@ -478,10 +478,9 @@
     } catch (e) {
       console.error('날짜 이동 중 지도 오류 — 패널은 계속 표시합니다.', e);
     } finally {
-      renderPanel();
       panelInner.classList.remove('fade-out');
       state.transitioning = false;
-      renderPanel();
+      try { renderPanel(); } catch (e) { console.error('패널 렌더 오류', e); }
     }
   };
 
