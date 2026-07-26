@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>여행 계획</title>
+
+  <!--
+    ⚠️ 시작 전 설정 필요:
+    1. Mapbox 토큰: https://account.mapbox.com/ 에서 무료 토큰 발급
+    2. map.js 상단의 MAPBOX_TOKEN 을 발급받은 토큰으로 교체
+    3. 로컬 서버로 실행 (VS Code Live Server 또는 python -m http.server 8000)
+    4. 브라우저에서 http://localhost:8000 접속
+
+    사진 출처: Wikimedia Commons / Wikipedia (자유 이용 라이선스).
+    저작자와 라이선스는 각 사진 팝업 하단에 표기되며 원본 파일 페이지로 연결된다.
+  -->
+
+  <link href="https://api.mapbox.com/mapbox-gl-js/v3.4.0/mapbox-gl.css" rel="stylesheet" />
+  <script src="https://api.mapbox.com/mapbox-gl-js/v3.4.0/mapbox-gl.js"></script>
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ===================== 랜딩 ===================== -->
+  <section id="landing" class="landing">
+    <header class="landing-header">
+      <h1>여행 계획</h1>
+      <p class="landing-sub">10개의 코스 · 총 138일의 여정</p>
+    </header>
+    <div id="course-grid" class="course-grid"></div>
+  </section>
+
+  <!-- ===================== 지도 뷰 ===================== -->
+  <section id="map-view" class="map-view hidden">
+    <div class="map-area">
+      <div id="map"></div>
+      <button id="btn-back" class="btn-back" title="코스 목록으로 (Esc)">← 목록으로</button>
+      <div id="transport-chip" class="transport-chip">
+        <span class="t-icon" id="transport-icon"></span>
+        <span id="transport-label"></span>
+      </div>
+      <div id="city-chip" class="city-chip"></div>
+
+      <div id="map-error" class="map-error hidden">
+        <div class="map-error-box">
+          <h2>🗺️ Mapbox 토큰이 필요합니다</h2>
+          <p>
+            지도를 표시하려면 무료 Mapbox 토큰이 필요합니다.<br />
+            <strong>1.</strong> <a href="https://account.mapbox.com/" target="_blank" rel="noopener">account.mapbox.com</a> 에서 토큰 발급<br />
+            <strong>2.</strong> <code>map.js</code> 상단의 <code>MAPBOX_TOKEN</code> 을 발급받은 토큰으로 교체<br />
+            <strong>3.</strong> 페이지 새로고침
+          </p>
+          <p class="map-error-note">지도 없이도 우측 패널에서 일정 탐색은 가능합니다.</p>
+        </div>
+      </div>
+    </div>
+
+    <aside class="panel" id="panel">
+      <div class="panel-inner" id="panel-inner">
+        <div class="panel-scroll" id="panel-scroll">
+          <div class="panel-course-name" id="panel-course-name"></div>
+
+          <div class="panel-progress">
+            <div class="panel-day-counter" id="panel-day-counter"></div>
+            <div class="progress-bar"><div class="progress-fill" id="progress-fill"></div></div>
+          </div>
+
+          <hr class="panel-divider" />
+
+          <div id="panel-badges"></div>
+          <h2 class="panel-city" id="panel-city"></h2>
+          <div class="panel-title" id="panel-title"></div>
+
+          <div class="panel-transport" id="panel-transport">
+            <span class="t-icon" id="panel-transport-icon"></span>
+            <span id="panel-transport-label"></span>
+          </div>
+
+          <div class="panel-schedule" id="panel-schedule"></div>
+          <div class="panel-tip" id="panel-tip"></div>
+          <div class="panel-return-note hidden" id="panel-return-note"></div>
+
+          <div class="panel-photo-note" id="panel-photo-note"></div>
+
+          <hr class="panel-divider" />
+          <div class="panel-visited" id="panel-visited"></div>
+        </div>
+
+        <div class="panel-nav">
+          <button id="btn-prev" class="nav-btn" title="이전 날 (←)">&lt;</button>
+          <button id="btn-home" class="btn-home hidden">✈️ 인천으로 귀국</button>
+          <div class="nav-complete hidden" id="nav-complete">여행 완료 🎉</div>
+          <button id="btn-next" class="nav-btn" title="다음 날 (→)">&gt;</button>
+        </div>
+      </div>
+    </aside>
+  </section>
+
+  <!--
+    로드 순서
+      photos-data.js — 사진 목록 (URL·저작자·라이선스)
+      data.js        — 일정 데이터 ★ 일정을 바꿀 때는 여기만 고치면 된다
+      rules.js       — 규칙 검사 (콘솔에 위반 사항을 표로 출력, RULES.md 참고)
+      map.js/app.js  — 지도와 화면
+  -->
+  <script src="photos-data.js?v=17"></script>
+  <script src="data.js?v=17"></script>
+  <script src="rules.js?v=17"></script>
+  <script src="map.js?v=17"></script>
+  <script src="app.js?v=17"></script>
+</body>
+</html>
