@@ -1,922 +1,1917 @@
 const PHOTOS = {
-  auto_1_d8_hallstatt: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Hallstatt_-_Zentrum_.JPG/500px-Hallstatt_-_Zentrum_.JPG", source: "Wikipedia" },
-  auto_3_d17_paris: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/La_Tour_Eiffel_vue_de_la_Tour_Saint-Jacques%2C_Paris_ao%C3%BBt_2014_%282%29.jpg/500px-La_Tour_Eiffel_vue_de_la_Tour_Saint-Jacques%2C_Paris_ao%C3%BBt_2014_%282%29.jpg", source: "Wikipedia" },
-  auto_4_d9_mykonos: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/2011_Dimos_Mykonou.png/500px-2011_Dimos_Mykonou.png", source: "Wikipedia" },
-  auto_5_d11_budapest: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/View_from_Gell%C3%A9rt_Hill_to_the_Danube%2C_Hungary_-_Budapest_%2828493220635%29.jpg/500px-View_from_Gell%C3%A9rt_Hill_to_the_Danube%2C_Hungary_-_Budapest_%2828493220635%29.jpg", source: "Wikipedia" },
-  auto_7_d1_paris: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/La_Tour_Eiffel_vue_de_la_Tour_Saint-Jacques%2C_Paris_ao%C3%BBt_2014_%282%29.jpg/500px-La_Tour_Eiffel_vue_de_la_Tour_Saint-Jacques%2C_Paris_ao%C3%BBt_2014_%282%29.jpg", source: "Wikipedia" },
-  auto_8_d8_vienna: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Schoenbrunn_philharmoniker_2012.jpg/500px-Schoenbrunn_philharmoniker_2012.jpg", source: "Wikipedia" },
-  auto_8_d13_venice: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Venezia_aerial_view.jpg/500px-Venezia_aerial_view.jpg", source: "Wikipedia" },
-  auto_9_d1_mainz: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Mainzer_Dom_Blaue_Stunde_%2837539430014%29.jpg/500px-Mainzer_Dom_Blaue_Stunde_%2837539430014%29.jpg", source: "Wikipedia" },
-  auto_9_d4_munich: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Stadtbild_M%C3%BCnchen.jpg/500px-Stadtbild_M%C3%BCnchen.jpg", source: "Wikipedia" },
-  auto_9_d7_innsbruck: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/B%C3%BCrgerstra%C3%9Fe_26%2B24_%28BT0A2830%29.jpg/500px-B%C3%BCrgerstra%C3%9Fe_26%2B24_%28BT0A2830%29.jpg", source: "Wikipedia" },
-  auto_9_d9_vienna: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Schoenbrunn_philharmoniker_2012.jpg/500px-Schoenbrunn_philharmoniker_2012.jpg", source: "Wikipedia" },
-  auto_9_d10_vienna: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Schoenbrunn_philharmoniker_2012.jpg/500px-Schoenbrunn_philharmoniker_2012.jpg", source: "Wikipedia" },
-  auto_9_d11_vienna: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Schoenbrunn_philharmoniker_2012.jpg/500px-Schoenbrunn_philharmoniker_2012.jpg", source: "Wikipedia" },
-  auto_9_d13_vienna: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Schoenbrunn_philharmoniker_2012.jpg/500px-Schoenbrunn_philharmoniker_2012.jpg", source: "Wikipedia" },
-  auto_10_d7_new_york_city: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/View_of_Empire_State_Building_from_Rockefeller_Center_New_York_City_dllu_%28cropped%29.jpg/500px-View_of_Empire_State_Building_from_Rockefeller_Center_New_York_City_dllu_%28cropped%29.jpg", source: "Wikipedia" },
-  auto_10_d8_new_york_city: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/View_of_Empire_State_Building_from_Rockefeller_Center_New_York_City_dllu_%28cropped%29.jpg/500px-View_of_Empire_State_Building_from_Rockefeller_Center_New_York_City_dllu_%28cropped%29.jpg", source: "Wikipedia" },
-  acropolis: { url: "./assets/photos/500px-1029_Acropolis_of_Athens_in_Greece_at_night_Photo_by_Giles_Laurent.jpg", title: "Acropolis of Athens", credit: "Giles Laurent · CC BY-SA 4.0", source: "https://commons.wikimedia.org/wiki/File:1029_Acropolis_of_Athens_in_Greece_at_night_Photo_by_Giles_Laurent.jpg" },
-  acropolis_museum: { url: "./assets/photos/500px-Interior_of_the_New_Acropolis_Museum_1.jpg", title: "Acropolis Museum", credit: "Tilemahos Efthimiadis · CC BY-SA 2.0", source: "https://commons.wikimedia.org/wiki/File:Interior_of_the_New_Acropolis_Museum_1.jpg" },
-  amalfi: { url: "./assets/photos/500px-Amalfi_sea_view_Italy.JPG", title: "Amalfi", credit: "No machine-readable author provided.  Sudodana2048  assumed (based on copyright claims). · CC BY-SA 3.0", source: "https://commons.wikimedia.org/wiki/File:Amalfi_sea_view_Italy.JPG" },
-  ancient_agora: { url: "./assets/photos/500px-Agora_-_Athènes_GRA1_-_2022-03-26_-_97.jpg", title: "Ancient Agora of Athens", credit: "Chabe01 · CC BY-SA 4.0", source: "https://commons.wikimedia.org/wiki/File:Agora_-_Athènes_(GRA1)_-_2022-03-26_-_97.jpg" },
-  barceloneta: { url: "./assets/photos/500px-Beach_Barcelona_P1170713.jpg", title: "La Barceloneta, Barcelona", credit: "Matti Blume · CC BY-SA", source: "https://commons.wikimedia.org/wiki/File:Beach,_Barcelona_(P1170713).jpg" },
-  belvedere: { url: "./assets/photos/500px-Palacio_Belvedere_Viena_Austria_2020-02-01_DD_93-95_HDR.jpg", title: "Belvedere, Vienna", credit: "Diego Delso · CC BY-SA 4.0", source: "https://commons.wikimedia.org/wiki/File:Palacio_Belvedere,_Viena,_Austria,_2020-02-01,_DD_93-95_HDR.jpg" },
-  blue_grotto: { url: "./assets/photos/500px-Grotta_azzurra.jpg", title: "Blue Grotto (Capri)", credit: "Frédéric de Goldschmidt www.frederic.net · CC BY 3.0", source: "https://commons.wikimedia.org/wiki/File:Grotta_azzurra.jpg" },
-  bmw_museum: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Mus%C3%A9e_BMW_004.jpg/500px-Mus%C3%A9e_BMW_004.jpg", title: "BMW Museum", credit: "Arnaud 25 · CC BY-SA 4.0", source: "https://commons.wikimedia.org/wiki/File:Musée_BMW_004.jpg" },
-  brandenburg_gate: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Brandenburger_Tor_abends.jpg/500px-Brandenburger_Tor_abends.jpg", title: "Brandenburg Gate", credit: "Thomas Wolf  ,   www.foto-tw.de · CC BY-SA 3.0", source: "https://commons.wikimedia.org/wiki/File:Brandenburger_Tor_abends.jpg" },
-  british_museum: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/British_Museum_%28aerial%29.jpg/500px-British_Museum_%28aerial%29.jpg", title: "British Museum", credit: "Luke Massey & the Greater London National Park City Initiative · CC BY 2.0", source: "https://commons.wikimedia.org/wiki/File:British_Museum_(aerial).jpg" },
-  bruges_canal: { url: "./assets/photos/500px-Brugge-CanalRozenhoedkaai.JPG", title: "Rozenhoedkaai, Bruges", credit: "JoJan · CC BY 2.5", source: "https://commons.wikimedia.org/wiki/File:Brugge-CanalRozenhoedkaai.JPG" },
-  bruges_markt: { url: "./assets/photos/500px-Bruges_Market_Square_and_Belfry.jpg", title: "Bruges Market Square and Belfry", credit: "Wolfgang Staudt · CC BY 2.0", source: "https://commons.wikimedia.org/wiki/File:Bruges_Market_Square_and_Belfry.jpg" },
-  burano: { url: "./assets/photos/500px-Burano_Venice_17.jpg", title: "Burano", credit: "kallerna · CC BY-SA 4.0", source: "https://commons.wikimedia.org/wiki/File:Burano_Venice_17.jpg" },
-  canal_saint_martin: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Canal_Saint-Martin_P1060441.JPG/500px-Canal_Saint-Martin_P1060441.JPG", title: "Canal Saint-Martin, Paris", credit: "Wikimedia Commons · CC BY-SA 3.0", source: "https://commons.wikimedia.org/wiki/File:Canal_Saint-Martin_P1060441.JPG" },
-  catacombes: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/A-Procession-in-the-Catacomb-of-Callistus.jpg/500px-A-Procession-in-the-Catacomb-of-Callistus.jpg", title: "Catacombes de Paris", credit: "Vlastimil Juricek · CC BY-SA 3.0", source: "https://commons.wikimedia.org/wiki/File:Catacombes_de_Paris_edit.jpg" },
-  capri: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Capri_in_Cartolina_-_Vista_da_Termini_%28Massa_Lubrense%29.jpg/500px-Capri_in_Cartolina_-_Vista_da_Termini_%28Massa_Lubrense%29.jpg", title: "Capri", credit: "Mario Apuzzo · CC BY-SA 4.0", source: "https://commons.wikimedia.org/wiki/File:Capri_in_Cartolina_-_Vista_da_Termini_(Massa_Lubrense).jpg" },
-  casa_mila: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Casa_Mil%C3%A0%2C_general_view.jpg/500px-Casa_Mil%C3%A0%2C_general_view.jpg", title: "Casa Milà", credit: "Thomas Ledl · CC BY-SA 4.0", source: "https://commons.wikimedia.org/wiki/File:Casa_Milà,_general_view.jpg" },
-  chapel_bridge: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Kapellbruecke.JPG/500px-Kapellbruecke.JPG", title: "Kapellbrücke", credit: "Simon Koopmann · CC BY-SA 2.5", source: "https://commons.wikimedia.org/wiki/File:Kapellbruecke.JPG" },
-  charles_bridge: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Prague_07-2016_view_from_Lesser_Town_Tower_of_Charles_Bridge_img3.jpg/500px-Prague_07-2016_view_from_Lesser_Town_Tower_of_Charles_Bridge_img3.jpg", title: "Charles Bridge", credit: "A.Savin · FAL", source: "https://commons.wikimedia.org/wiki/File:Prague_07-2016_view_from_Lesser_Town_Tower_of_Charles_Bridge_img3.jpg" },
-  checkpoint_charlie: { url: "./assets/photos/500px-Berlin_-_Checkpoint_Charlie_1963.jpg", title: "Checkpoint Charlie", credit: "Roger Wollstadt · CC BY-SA 2.0", source: "https://commons.wikimedia.org/wiki/File:Berlin_-_Checkpoint_Charlie_1963.jpg" },
-  cinque_terre: { url: "./assets/photos/500px-Cinque_Terre_Italy_October_2020_-_24_50543603956.jpg", title: "Cinque Terre", credit: "Bruno Rijsman · CC BY-SA 2.0", source: "https://commons.wikimedia.org/wiki/File:Cinque_Terre_(Italy,_October_2020)_-_24_(50543603956).jpg" },
-  cologne_cathedral: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/K%C3%B6lner_Dom_-_Westfassade_2022_ohne_Ger%C3%BCst-0968_b.jpg/500px-K%C3%B6lner_Dom_-_Westfassade_2022_ohne_Ger%C3%BCst-0968_b.jpg", title: "Cologne Cathedral", credit: "Raimond Spekking · CC BY-SA 4.0", source: "https://commons.wikimedia.org/wiki/File:Kölner_Dom_-_Westfassade_2022_ohne_Gerüst-0968_b.jpg" },
-  colosseum: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Colosseo_2020.jpg/500px-Colosseo_2020.jpg", title: "Colosseum", credit: "FeaturedPics · CC BY-SA 4.0", source: "https://commons.wikimedia.org/wiki/File:Colosseo_2020.jpg" },
-  covent_garden: { url: "./assets/photos/500px-Covent_Garden_Interior_May_2006_crop.jpg", title: "Covent Garden", credit: "Covent_Garden_Interior_May_2006.jpg :  Diliff  \n derivative work:  SilkTork  (  talk  ) · CC BY 2.5", source: "https://commons.wikimedia.org/wiki/File:Covent_Garden_Interior_May_2006_crop.jpg" },
-  doges_palace: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/%28Venice%29_Doge%27s_Palace_and_campanile_of_St._Mark%27s_Basilica_facing_the_sea.jpg/500px-%28Venice%29_Doge%27s_Palace_and_campanile_of_St._Mark%27s_Basilica_facing_the_sea.jpg", title: "Doge's Palace", credit: "Didier Descouens · CC BY-SA 4.0", source: "https://commons.wikimedia.org/wiki/File:(Venice)_Doge's_Palace_and_campanile_of_St._Mark's_Basilica_facing_the_sea.jpg" },
-  east_side_gallery: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Segment_with_Graffiti_of_the_Berlin_Wall_%283_of_4%29_%28cropped%29.jpg/500px-Segment_with_Graffiti_of_the_Berlin_Wall_%283_of_4%29_%28cropped%29.jpg", title: "East Side Gallery", credit: "Lklundin · CC BY-SA 3.0", source: "https://commons.wikimedia.org/wiki/File:Segment_with_Graffiti_of_the_Berlin_Wall_(3_of_4)_(cropped).jpg" },
-  eiffel_tower: { url: "https://upload.wikimedia.org/wikipedia/en/thumb/b/ba/Eiffel_Tower_logo.svg/500px-Eiffel_Tower_logo.svg.png", title: "Eiffel Tower", credit: "Benh LIEU SONG · Public domain", source: "https://commons.wikimedia.org/wiki/File:Tour_Eiffel_Wikimedia_Commons.jpg" },
-  fira: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Santorini_Fira3_tango7174.jpg/500px-Santorini_Fira3_tango7174.jpg", title: "Fira", credit: "Tango7174 · CC BY-SA 4.0", source: "https://commons.wikimedia.org/wiki/File:Santorini_Fira3_tango7174.jpg" },
-  florence_duomo: { url: "./assets/photos/500px-Cattedrale_di_Santa_Maria_del_Fiore__Il_Duomo_di_Firenze.jpg", title: "Florence Cathedral", credit: "Gary Campbell-Hall · CC BY 2.0", source: "https://commons.wikimedia.org/wiki/File:Cattedrale_di_Santa_Maria_del_Fiore_–_Il_Duomo_di_Firenze.jpg" },
-  food_afternoon_tea: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Afternoon_meal_in_Tiffin.jpg/500px-Afternoon_meal_in_Tiffin.jpg", title: "Scones Jam Cream.jpg", credit: "Alpha  from Melbourne, Australia · CC BY-SA 2.0", source: "https://commons.wikimedia.org/wiki/File:Scones_Jam_Cream.jpg" },
-  food_apfelwein: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Apfelwein_Geripptes_Bembel.jpg/500px-Apfelwein_Geripptes_Bembel.jpg", title: "Apfelwein Geripptes Bembel.jpg", credit: "Eva K. on Commons  /  Eva K. on German Wikipedia · CC BY-SA 2.5", source: "https://commons.wikimedia.org/wiki/File:Apfelwein_Geripptes_Bembel.jpg" },
-  food_becherovka: { url: "https://upload.wikimedia.org/wikipedia/en/9/9b/Becherovka_logo.png", title: "Becherovka bottle.jpg", credit: "CC BY-SA 3.0", source: "https://commons.wikimedia.org/wiki/File:Becherovka_bottle.jpg" },
-  food_cacio_pepe: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Cacio_e_pepe.jpg/500px-Cacio_e_pepe.jpg", title: "Cacio e Pepe (카치오 에 페페)", credit: "Valerio Capello · CC BY-SA 2.0", source: "https://commons.wikimedia.org/wiki/File:Cacio_e_pepe.jpg" },
-  food_champagne: { url: "./assets/photos/Champagne_toasting.png", title: "Champagne toasting.png", credit: "Candyman777 · CC BY-SA 3.0", source: "https://commons.wikimedia.org/wiki/File:Champagne_toasting.png" },
-  food_croissant: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/Croissants_au_beurre_%2818953292873%29.jpg/500px-Croissants_au_beurre_%2818953292873%29.jpg", title: "Croissants au beurre (18953292873).jpg", credit: "Herry Wibisono ( herryway ) · CC0", source: "https://commons.wikimedia.org/wiki/File:Croissants_au_beurre_(18953292873).jpg" },
-  food_currywurst: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Berlin-Mitte_Deutsches_Currywurst_Museum.jpg/500px-Berlin-Mitte_Deutsches_Currywurst_Museum.jpg", title: "Berlin-Mitte Deutsches Currywurst Museum.jpg", credit: "Assenmacher · CC BY-SA 3.0", source: "https://commons.wikimedia.org/wiki/File:Berlin-Mitte_Deutsches_Currywurst_Museum.jpg" },
-  food_espresso: { url: "./assets/photos/500px-Espresso_Coffee_01.jpg", title: "Espresso Coffee 01.jpg", credit: "Jubair1985 · CC0", source: "https://commons.wikimedia.org/wiki/File:Espresso_Coffee_01.jpg" },
-  food_fischbrotchen: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Fischbroetchen_01_%28fcm%29.jpg/500px-Fischbroetchen_01_%28fcm%29.jpg", title: "Fischbroetchen 01 (fcm).jpg", credit: "Frank C. Müller , Baden-Baden · CC BY-SA 2.0 de", source: "https://commons.wikimedia.org/wiki/File:Fischbroetchen_01_(fcm).jpg" },
-  food_fish_chips: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/Egg_and_chips_or_fish_and_chips_-_geograph.org.uk_-_4060739.jpg/500px-Egg_and_chips_or_fish_and_chips_-_geograph.org.uk_-_4060739.jpg", title: "Egg and chips or fish and chips - geograph.org.uk - 4060739.jpg", credit: "Richard Humphrey · CC BY-SA 2.0", source: "https://commons.wikimedia.org/wiki/File:Egg_and_chips_or_fish_and_chips_-_geograph.org.uk_-_4060739.jpg" },
-  food_fondue: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Full_cheese_fondue_set_-_in_Switzerland.JPG/500px-Full_cheese_fondue_set_-_in_Switzerland.JPG", title: "Full cheese fondue set - in Switzerland.JPG", credit: "EquatorialSky  at  English Wikipedia · Public domain", source: "https://commons.wikimedia.org/wiki/File:Full_cheese_fondue_set_-_in_Switzerland.JPG" },
-  food_gelato: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Gelato_under_the_Duomo_in_Milan.jpg/500px-Gelato_under_the_Duomo_in_Milan.jpg", title: "Gelato under the Duomo in Milan.jpg", credit: "MollySVH · CC BY 2.0", source: "https://commons.wikimedia.org/wiki/File:Gelato_under_the_Duomo_in_Milan.jpg" },
-  food_goulash: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/02021_1020_%282%29_Goulash_soup_of_Poland.jpg/500px-02021_1020_%282%29_Goulash_soup_of_Poland.jpg", title: "02021 1020 (2) Goulash soup of Poland.jpg", credit: "Silar · CC BY-SA 4.0", source: "https://commons.wikimedia.org/wiki/File:02021_1020_(2)_Goulash_soup_of_Poland.jpg" },
-  food_greek_salad: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Horiatiki_salad.jpg/500px-Horiatiki_salad.jpg", title: "Horiatiki salad.jpg", credit: "Scudsvlad · CC BY-SA 4.0", source: "https://commons.wikimedia.org/wiki/File:Horiatiki_salad.jpg" },
-  food_greek_seafood: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Grilled_octopus_at_Other_Mama.jpg/500px-Grilled_octopus_at_Other_Mama.jpg", title: "Grilled octopus at Other Mama.jpg", credit: "T.Tseng · CC BY 2.0", source: "https://commons.wikimedia.org/wiki/File:Grilled_octopus_at_Other_Mama.jpg" },
-  food_jamon: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Jamon_iberico_de_bellota_%28cinco_jotas%29.jpg/500px-Jamon_iberico_de_bellota_%28cinco_jotas%29.jpg", title: "Jamon iberico de bellota (cinco jotas).jpg", credit: "Cantabrucu · CC0", source: "https://commons.wikimedia.org/wiki/File:Jamon_iberico_de_bellota_(cinco_jotas).jpg" },
-  food_kolsch: { url: "https://upload.wikimedia.org/wikipedia/commons/a/a3/Koelsch.jpg", title: "Koelsch.jpg", credit: "No machine-readable author provided.  Trexer  assumed (based on copyright claims). · CC BY-SA 3.0", source: "https://commons.wikimedia.org/wiki/File:Koelsch.jpg" },
-  food_limoncello: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Homemade_limoncello.jpg/500px-Homemade_limoncello.jpg", title: "Homemade limoncello.jpg", credit: "Alessio Damato · CC BY-SA 3.0", source: "https://commons.wikimedia.org/wiki/File:Homemade_limoncello.jpg" },
-  food_melange: { url: "./assets/photos/500px-Cafe_Viennois.jpg", title: "Cafe Viennois.jpg", credit: "Xipirho  at  English Wikipedia · Public domain", source: "https://commons.wikimedia.org/wiki/File:Cafe_Viennois.jpg" },
-  food_mozartkugel: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Original_Salzburger_Mozartkugel_F%C3%BCrst_2009.jpg/500px-Original_Salzburger_Mozartkugel_F%C3%BCrst_2009.jpg", title: "Original Salzburger Mozartkugel Fürst 2009.jpg", credit: "Roberta F. · CC BY-SA 3.0", source: "https://commons.wikimedia.org/wiki/File:Original_Salzburger_Mozartkugel_Fürst_2009.jpg" },
-  food_paella: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Paella_valenciana%2C_Mazatl%C3%A1n%2C_25_de_abril_de_2023.jpg/500px-Paella_valenciana%2C_Mazatl%C3%A1n%2C_25_de_abril_de_2023.jpg", title: "Paella valenciana, Mazatlán, 25 de abril de 2023.jpg", credit: "El Nuevo Doge · CC0", source: "https://commons.wikimedia.org/wiki/File:Paella_valenciana,_Mazatlán,_25_de_abril_de_2023.jpg" },
-  food_pilsner: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Pilsner_Urquell_beer_glass_%282%29.jpg/500px-Pilsner_Urquell_beer_glass_%282%29.jpg", title: "Pilsner Urquell beer glass (2).jpg", credit: "I would appreciate  being notified  if you use my work outside Wikimedia.  Do not copy thi · CC BY-SA 3.0", source: "https://commons.wikimedia.org/wiki/File:Pilsner_Urquell_beer_glass_(2).jpg" },
-  food_pretzel: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Augsburger_Stra%C3%9Fe_15_DAH_-_2023-09-03_-_143c.jpg/500px-Augsburger_Stra%C3%9Fe_15_DAH_-_2023-09-03_-_143c.jpg", title: "Augsburger Straße 15 DAH - 2023-09-03 - 143c.jpg", credit: "Martinus KE · CC BY-SA 4.0", source: "https://commons.wikimedia.org/wiki/File:Augsburger_Straße_15_DAH_-_2023-09-03_-_143c.jpg" },
-  food_sachertorte: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Sachertorte_DSC03027_retouched.jpg/500px-Sachertorte_DSC03027_retouched.jpg", title: "Sachertorte DSC03027 retouched.jpg", credit: "CC BY-SA 3.0", source: "https://commons.wikimedia.org/wiki/File:Sachertorte_DSC03027_retouched.jpg" },
-  food_salade_nicoise: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Salade_ni%C3%A7oise_%287545098258%29.jpg/500px-Salade_ni%C3%A7oise_%287545098258%29.jpg", title: "Salade niçoise (7545098258).jpg", credit: "cyclonebill  from Copenhagen, Denmark · CC BY-SA 2.0", source: "https://commons.wikimedia.org/wiki/File:Salade_niçoise_(7545098258).jpg" },
-  food_sangria: { url: "./assets/photos/500px-Glass_of_Sangria_-_Tinto_Taperia_2026-05-17.jpg", title: "Glass of Sangria - Tinto Taperia 2026-05-17.jpg", credit: "Andy Li · CC0", source: "https://commons.wikimedia.org/wiki/File:Glass_of_Sangria_-_Tinto_Taperia_2026-05-17.jpg" },
-  food_santorini_wine: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Santorini_vineyard.jpg/500px-Santorini_vineyard.jpg", title: "Santorini vineyard.jpg", credit: "Joye~ · CC BY 2.0", source: "https://commons.wikimedia.org/wiki/File:Santorini_vineyard.jpg" },
-  food_schneeball: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Schneeball-gebaeck.jpeg/500px-Schneeball-gebaeck.jpeg", title: "Schneeball-gebaeck.jpeg", credit: "S.kapfer · CC BY-SA 3.0", source: "https://commons.wikimedia.org/wiki/File:Schneeball-gebaeck.jpeg" },
-  food_schnitzel: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Wiener_schnitzel_%28509235837%29.jpg/500px-Wiener_schnitzel_%28509235837%29.jpg", title: "Wiener schnitzel (509235837).jpg", credit: "Simon Law  from Montréal, QC, Canada · CC BY-SA 2.0", source: "https://commons.wikimedia.org/wiki/File:Wiener_schnitzel_(509235837).jpg" },
-  food_schweinshaxe: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Pork_Knuckle.jpg/500px-Pork_Knuckle.jpg", title: "Pork Knuckle.jpg", credit: "BIPL1516 · CC BY-SA 3.0", source: "https://commons.wikimedia.org/wiki/File:Pork_Knuckle.jpg" },
-  food_socca: { url: "./assets/photos/500px-La_Farinata_di_ceci.jpg", title: "La Farinata di ceci.jpg", credit: "Samuele Silva · CC BY-SA 2.0", source: "https://commons.wikimedia.org/wiki/File:La_Farinata_di_ceci.jpg" },
-  food_souvlaki: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Greek_chicken_souvlaki_merida.jpg/500px-Greek_chicken_souvlaki_merida.jpg", title: "Greek chicken souvlaki merida.jpg", credit: "Leeturtle · CC BY-SA 4.0", source: "https://commons.wikimedia.org/wiki/File:Greek_chicken_souvlaki_merida.jpg" },
-  food_squid_ink: { url: "./assets/photos/500px-Squid_ink_pasta_cropped.jpg", title: "Squid ink pasta (cropped).jpg", credit: "tednmiki · CC BY-SA 3.0", source: "https://commons.wikimedia.org/wiki/File:Squid_ink_pasta_(cropped).jpg" },
-  food_tapas: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Tapas_2012_094_Pulpitos.jpg/500px-Tapas_2012_094_Pulpitos.jpg", title: "Tapas 2012 094 Pulpitos.jpg", credit: "User:Gordito1869 · CC BY 3.0", source: "https://commons.wikimedia.org/wiki/File:Tapas_2012_094_Pulpitos.jpg" },
-  food_trdelnik: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Trdelnik_Praha.JPG/500px-Trdelnik_Praha.JPG", title: "Trdelnik Praha.JPG", credit: "MOs810 · CC BY-SA 4.0", source: "https://commons.wikimedia.org/wiki/File:Trdelnik_Praha.JPG" },
-  galerie_vivienne: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/GalerieVivienne.jpg/500px-GalerieVivienne.jpg", title: "Galerie Vivienne, Paris", credit: "Wikimedia Commons · CC BY-SA 3.0", source: "https://commons.wikimedia.org/wiki/File:GalerieVivienne.jpg" },
-  galeries_lafayette: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Galerie_Lafayette_Haussmann_Dome.jpg/500px-Galerie_Lafayette_Haussmann_Dome.jpg", title: "Galeries Lafayette", credit: "Benh LIEU SONG  ( Flickr ) · CC BY-SA 3.0", source: "https://commons.wikimedia.org/wiki/File:Galerie_Lafayette_Haussmann_Dome.jpg" },
-  galleria_milan: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Galleria_Milano_%28179532365%29.jpeg/500px-Galleria_Milano_%28179532365%29.jpeg", title: "Galleria Vittorio Emanuele II", credit: "Marco Pagani · CC BY 3.0", source: "https://commons.wikimedia.org/wiki/File:Galleria_Milano_(179532365).jpeg" },
-  gondola: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Gondola_Ride.jpg/500px-Gondola_Ride.jpg", title: "Gondola", credit: "Njsmith3 · CC BY-SA 4.0", source: "https://commons.wikimedia.org/wiki/File:Gondola_Ride.jpg" },
-  gothic_quarter: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Barcelona_-_Carrer_del_Bisbe.jpg/500px-Barcelona_-_Carrer_del_Bisbe.jpg", title: "Gothic Quarter, Barcelona", credit: "Llull · CC BY-SA 2.0", source: "https://commons.wikimedia.org/wiki/File:Barcelona_-_Carrer_del_Bisbe.jpg" },
-  grand_canal: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/View_of_the_Grand_Canal_from_Rialto_to_Ca%27Foscari.jpg/500px-View_of_the_Grand_Canal_from_Rialto_to_Ca%27Foscari.jpg", title: "Grand Canal (Venice)", credit: "Didier Descouens · CC BY-SA 4.0", source: "https://commons.wikimedia.org/wiki/File:View_of_the_Grand_Canal_from_Rialto_to_Ca'Foscari.jpg" },
-  grindelwald: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Grindelwald_View_02.jpg/500px-Grindelwald_View_02.jpg", title: "Grindelwald", credit: "Cristo Vlahos · CC BY-SA 3.0", source: "https://commons.wikimedia.org/wiki/File:Grindelwald_View_02.jpg" },
-  hall_of_mirrors: { url: "./assets/photos/500px-Chateau_Versailles_Galerie_des_Glaces.jpg", title: "Hall of Mirrors", credit: "Myrabella · CC BY-SA 3.0", source: "https://commons.wikimedia.org/wiki/File:Chateau_Versailles_Galerie_des_Glaces.jpg" },
-  hallstatt: { url: "./assets/photos/500px-Hallstatt_-_Zentrum_.JPG", title: "Hallstatt", credit: "C.Stadler/Bwag · CC BY-SA 4.0", source: "https://commons.wikimedia.org/wiki/File:Hallstatt_-_Zentrum_.JPG" },
-  heidelberg_castle: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Heidelberg-2726936.jpg/500px-Heidelberg-2726936.jpg", title: "Heidelberg Castle", credit: "Motatcho · CC BY-SA 4.0", source: "https://commons.wikimedia.org/wiki/File:Heidelberg-2726936.jpg" },
-  hofbrauhaus: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Hofbrauhaus.JPG/500px-Hofbrauhaus.JPG", title: "Hofbräuhaus am Platzl", credit: "Kiban · Public domain", source: "https://commons.wikimedia.org/wiki/File:Hofbrauhaus.JPG" },
-  hofburg: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Wien_-_Neue_Hofburg.JPG/500px-Wien_-_Neue_Hofburg.JPG", title: "Hofburg", credit: "C.Stadler/Bwag · CC BY-SA 3.0 at", source: "https://commons.wikimedia.org/wiki/File:Wien_-_Neue_Hofburg.JPG" },
-  hohensalzburg: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Salzburg_-_Festung_Hohensalzburg.JPG/500px-Salzburg_-_Festung_Hohensalzburg.JPG", title: "Hohensalzburg Fortress", credit: "C.Stadler/Bwag · CC BY-SA 4.0", source: "https://commons.wikimedia.org/wiki/File:Salzburg_-_Festung_Hohensalzburg.JPG" },
-  holocaust_memorial: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Memorial_to_the_Murdered_Jews_of_Europeabove.jpg/500px-Memorial_to_the_Murdered_Jews_of_Europeabove.jpg", title: "Memorial to the Murdered Jews of Europe", credit: "Alexander Blum · CC BY-SA 4.0", source: "https://commons.wikimedia.org/wiki/File:Memorial_to_the_Murdered_Jews_of_Europeabove.jpg" },
-  incheon: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/%EC%9D%B8%EC%B2%9C%EA%B5%AD%EC%A0%9C%EA%B3%B5%ED%95%AD_%281472%29.jpeg/500px-%EC%9D%B8%EC%B2%9C%EA%B5%AD%EC%A0%9C%EA%B3%B5%ED%95%AD_%281472%29.jpeg", title: "Incheon International Airport", credit: "Korea Aerospace Research Institute · KOGL Type 1", source: "https://commons.wikimedia.org/wiki/File:인천국제공항_(1472).jpeg" },
-  jungfraujoch: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Sphinx_et_Jungfrau_-_img_06980.jpg/500px-Sphinx_et_Jungfrau_-_img_06980.jpg", title: "Jungfraujoch", credit: "Pmau · CC BY-SA 4.0", source: "https://commons.wikimedia.org/wiki/File:Sphinx_et_Jungfrau_-_img_06980.jpg" },
-  kalambaka: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/%D0%9C%D0%B5%D1%82%D0%B5%D0%BE%D1%80%D0%B0_-_panoramio_%2814%29.jpg/500px-%D0%9C%D0%B5%D1%82%D0%B5%D0%BE%D1%80%D0%B0_-_panoramio_%2814%29.jpg", title: "Kalabaka", credit: "Stanislav Amelchyts · CC BY-SA 3.0", source: "https://commons.wikimedia.org/wiki/File:Метеора_-_panoramio_(14).jpg" },
-  karlovy_vary: { url: "./assets/photos/500px-Karlovy_Vary_Czech.jpg", title: "Karlovy Vary", credit: "Jialiang Gao ,  www.peace-on-earth.org · CC BY-SA 3.0", source: "https://commons.wikimedia.org/wiki/File:Karlovy_Vary_Czech.jpg" },
-  kunsthistorisches: { url: "https://upload.wikimedia.org/wikipedia/en/thumb/a/a3/Kunsthistorisches_Museum_logo.svg/500px-Kunsthistorisches_Museum_logo.svg.png", title: "Kunsthistorisches Museum", credit: "Petar Milošević · CC BY-SA 4.0", source: "https://commons.wikimedia.org/wiki/File:Ceiling_and_cupola_of_Kunsthistorisches_Museum_Vienna.jpg" },
-  la_rambla: { url: "./assets/photos/500px-15-10-27-Vista_des_de_lestàtua_de_Colom_a_Barcelona-WMA_2791.jpg", title: "La Rambla, Barcelona", credit: "Ralf Roletschek · GFDL 1.2", source: "https://commons.wikimedia.org/wiki/File:15-10-27-Vista_des_de_l'estàtua_de_Colom_a_Barcelona-WMA_2791.jpg" },
-  last_supper: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/The_Last_Supper_-_Leonardo_Da_Vinci_-_High_Resolution_32x16.jpg/500px-The_Last_Supper_-_Leonardo_Da_Vinci_-_High_Resolution_32x16.jpg", title: "The Last Supper (Leonardo)", credit: "Leonardo da Vinci · Public domain", source: "https://commons.wikimedia.org/wiki/File:The_Last_Supper_-_Leonardo_Da_Vinci_-_High_Resolution_32x16.jpg" },
-  le_marais: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Paris_Hotel_de_Sens_dsc04028.jpg/500px-Paris_Hotel_de_Sens_dsc04028.jpg", title: "The Marais", credit: "CC BY-SA 3.0", source: "https://commons.wikimedia.org/wiki/File:Paris_Hotel_de_Sens_dsc04028.jpg" },
-  lion_monument: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Lion_Monument.jpg/500px-Lion_Monument.jpg", title: "Lion Monument", credit: "Gürkan Sengün · Public domain", source: "https://commons.wikimedia.org/wiki/File:Lion_Monument.jpg" },
-  louvre: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Louvre_Museum_Wikimedia_Commons.jpg/500px-Louvre_Museum_Wikimedia_Commons.jpg", title: "Louvre", credit: "Benh LIEU SONG  ( Flickr ) · CC BY-SA 3.0", source: "https://commons.wikimedia.org/wiki/File:Louvre_Museum_Wikimedia_Commons.jpg" },
-  lycabettus: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/%CE%9B%CF%85%CE%BA%CE%B1%CE%B2%CE%B7%CF%84%CF%84%CF%8C%CF%82_-_Mount_Lycabettus.jpg/500px-%CE%9B%CF%85%CE%BA%CE%B1%CE%B2%CE%B7%CF%84%CF%84%CF%8C%CF%82_-_Mount_Lycabettus.jpg", title: "Mount Lycabettus", credit: "Apaleutos25 · CC BY-SA 4.0", source: "https://commons.wikimedia.org/wiki/File:Λυκαβηττός_-_Mount_Lycabettus.jpg" },
-  madrid_palace: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Palacio_Real_de_Madrid_Julio_2016_%28cropped%29.jpg/500px-Palacio_Real_de_Madrid_Julio_2016_%28cropped%29.jpg", title: "Royal Palace of Madrid", credit: "Tim Adams · CC BY-SA 4.0", source: "https://commons.wikimedia.org/wiki/File:Palacio_Real_de_Madrid_Julio_2016_(cropped).jpg" },
-  manarola: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Manarola_NW_Cinque_Terre_Sep23_A7C_07233.jpg/500px-Manarola_NW_Cinque_Terre_Sep23_A7C_07233.jpg", title: "Manarola", credit: "This Photo  was taken by    Timothy A. Gonsalves   .  Feel free to use my photos, but plea · CC BY-SA 4.0", source: "https://commons.wikimedia.org/wiki/File:Manarola_NW_Cinque_Terre_Sep23_A7C_07233.jpg" },
-  marienplatz: { url: "./assets/photos/500px-Rathaus_and_Marienplatz_from_Peterskirche_-_August_2006.jpg", title: "Marienplatz", credit: "Diliff · CC BY-SA 3.0", source: "https://commons.wikimedia.org/wiki/File:Rathaus_and_Marienplatz_from_Peterskirche_-_August_2006.jpg" },
-  mercado_san_miguel: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Mercado_de_San_Miguel_2025.jpg/500px-Mercado_de_San_Miguel_2025.jpg", title: "Market of San Miguel", credit: "Fernando · CC BY-SA 4.0", source: "https://commons.wikimedia.org/wiki/File:Mercado_de_San_Miguel_2025.jpg" },
-  meteora: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Meteora%27s_monastery_2.jpg/500px-Meteora%27s_monastery_2.jpg", title: "Meteora", credit: "Stathis floros · CC BY-SA 4.0", source: "https://commons.wikimedia.org/wiki/File:Meteora's_monastery_2.jpg" },
-  milan_duomo: { url: "./assets/photos/500px-Il_Duomo_di_Milano_-_July_2026.jpg", title: "Milan Cathedral", credit: "Zofeni · CC0", source: "https://commons.wikimedia.org/wiki/File:Il_Duomo_di_Milano_-_July_2026.jpg" },
-  miniatur_wunderland: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Miniatur_wunderland.jpg/500px-Miniatur_wunderland.jpg", title: "Miniatur Wunderland", credit: "Bildersindtoll · CC BY-SA 4.0", source: "https://commons.wikimedia.org/wiki/File:Miniatur_wunderland.jpg" },
-  mirabell: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Palatul_Mirabell1.jpg/500px-Palatul_Mirabell1.jpg", title: "Mirabell Palace", credit: "Cezar Suceveanu · CC BY-SA 3.0", source: "https://commons.wikimedia.org/wiki/File:Palatul_Mirabell1.jpg" },
-  monaco: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Monte_Carlo_%2894680805%29.jpg/500px-Monte_Carlo_%2894680805%29.jpg", title: "Monaco", credit: "Herry Lawford  from Stockbridge, UK · CC BY 2.0", source: "https://commons.wikimedia.org/wiki/File:Monte_Carlo_(94680805).jpg" },
-  monte_carlo_casino: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Casino_de_Montecarlo%2C_M%C3%B3naco%2C_2016-06-23%2C_DD_06.jpg/500px-Casino_de_Montecarlo%2C_M%C3%B3naco%2C_2016-06-23%2C_DD_06.jpg", title: "Monte Carlo Casino", credit: "Diego Delso · CC BY-SA 4.0", source: "https://commons.wikimedia.org/wiki/File:Casino_de_Montecarlo,_Mónaco,_2016-06-23,_DD_06.jpg" },
-  montjuic: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Fale_-_Spain_-_Barcelona_-_8.jpg/500px-Fale_-_Spain_-_Barcelona_-_8.jpg", title: "Montjuïc", credit: "Fabio Alessandro Locati · CC BY-SA 3.0", source: "https://commons.wikimedia.org/wiki/File:Fale_-_Spain_-_Barcelona_-_8.jpg" },
-  montmartre: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/View_from_Notre-Dame_de_Paris%2C_24_June_2014_004.jpg/500px-View_from_Notre-Dame_de_Paris%2C_24_June_2014_004.jpg", title: "Montmartre", credit: "Navin75 · CC BY-SA 2.0", source: "https://commons.wikimedia.org/wiki/File:View_from_Notre-Dame_de_Paris,_24_June_2014_004.jpg" },
-  montserrat: { url: "./assets/photos/500px-Montserrat_des_de_Manresa.JPG", title: "Montserrat (mountain)", credit: "Josep Renalias · CC BY-SA 3.0", source: "https://commons.wikimedia.org/wiki/File:Montserrat_des_de_Manresa.JPG" },
-  murano: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Murano_sunset.JPG/500px-Murano_sunset.JPG", title: "Murano", credit: "Wittylama · CC BY-SA 4.0", source: "https://commons.wikimedia.org/wiki/File:Murano_sunset.JPG" },
-  musee_orsay: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Musee_d%27_Orsay_by_slaza.jpg/500px-Musee_d%27_Orsay_by_slaza.jpg", title: "Musee d' Orsay by slaza.jpg", credit: "Sandor Laza · CC BY-SA 3.0", source: "https://commons.wikimedia.org/wiki/File:Musee_d'_Orsay_by_slaza.jpg" },
-  museum_island: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Berlin_Museumsinsel_Fernsehturm.jpg/500px-Berlin_Museumsinsel_Fernsehturm.jpg", title: "Museum Island", credit: "Thomas Wolf  ,   www.foto-tw.de · CC BY-SA 3.0", source: "https://commons.wikimedia.org/wiki/File:Berlin_Museumsinsel_Fernsehturm.jpg" },
-  mykonos: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/2011_Dimos_Mykonou.png/500px-2011_Dimos_Mykonou.png", title: "Mykonos", credit: "Pitichinaccio · CC BY 3.0", source: "https://commons.wikimedia.org/wiki/File:2011_Dimos_Mykonou.png" },
-  mykonos_windmills: { url: "./assets/photos/500px-2011_Dimos_Mykonou.png", title: "Mykonos", credit: "Pitichinaccio · CC BY 3.0", source: "https://commons.wikimedia.org/wiki/File:2011_Dimos_Mykonou.png" },
-  naples: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Napoli_-_Maschio_Angioino_-_202209302342_3.jpg/500px-Napoli_-_Maschio_Angioino_-_202209302342_3.jpg", title: "Naples", credit: "Richard Nevell · CC BY-SA 4.0", source: "https://commons.wikimedia.org/wiki/File:Napoli_-_Maschio_Angioino_-_202209302342_3.jpg" },
-  neapolitan_pizza: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Neapolitan_pizza_at_Trappica_%2848701940197%29.jpg/500px-Neapolitan_pizza_at_Trappica_%2848701940197%29.jpg", title: "Neapolitan pizza", credit: "Bex Walton  from London, England · CC BY 2.0", source: "https://commons.wikimedia.org/wiki/File:Neapolitan_pizza_at_Trappica_(48701940197).jpg" },
-  nice: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Promenade_des_Anglais_Nice_IMG_1255.jpg/500px-Promenade_des_Anglais_Nice_IMG_1255.jpg", title: "Nice", credit: "Alexander Migl · CC BY-SA 4.0", source: "https://commons.wikimedia.org/wiki/File:Promenade_des_Anglais_Nice_IMG_1255.jpg" },
-  notre_dame: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Notre-Dame_de_Paris%2C_4_October_2017.jpg/500px-Notre-Dame_de_Paris%2C_4_October_2017.jpg", title: "Notre-Dame de Paris", credit: "Ali Sabbagh · CC0", source: "https://commons.wikimedia.org/wiki/File:Notre-Dame_de_Paris,_4_October_2017.jpg" },
-  opera_garnier: { url: "./assets/photos/500px-Paris_Palais_Garnier_2010-04-06_16.55.07.jpg", title: "Palais Garnier (Opéra de Paris)", credit: "Photo by Benh LIEU SONG · CC BY-SA 2.0", source: "https://commons.wikimedia.org/wiki/File:Paris_Palais_Garnier_2010-04-06_16.55.07.jpg" },
-  oia: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Oia_sunset_-_panoramio_%282%29.jpg/500px-Oia_sunset_-_panoramio_%282%29.jpg", title: "Oia, Greece", credit: "TomasEE · CC BY 3.0", source: "https://commons.wikimedia.org/wiki/File:Oia_sunset_-_panoramio_(2).jpg" },
-  pantheon_paris: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Pantheon_-_Paris.jpg/500px-Pantheon_-_Paris.jpg", title: "Panthéon de Paris", credit: "Wikimedia Commons · CC BY-SA 3.0", source: "https://commons.wikimedia.org/wiki/File:Pantheon_-_Paris.jpg" },
-  pantheon_rome: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Pantheon_%28Rome%29_-_Right_side_and_front.jpg/500px-Pantheon_%28Rome%29_-_Right_side_and_front.jpg", title: "Pantheon, Rome", credit: "NikonZ7II · CC BY-SA 4.0", source: "https://commons.wikimedia.org/wiki/File:Pantheon_(Rome)_-_Right_side_and_front.jpg" },
-  park_guell: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Parc_guell_-_panoramio.jpg/500px-Parc_guell_-_panoramio.jpg", title: "Park Güell", credit: "essetefano · CC BY 3.0", source: "https://commons.wikimedia.org/wiki/File:Parc_guell_-_panoramio.jpg" },
-  parthenon: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/The_Parthenon_in_Athens.jpg/500px-The_Parthenon_in_Athens.jpg", title: "Parthenon", credit: "Steve Swayne · CC BY 2.0", source: "https://commons.wikimedia.org/wiki/File:The_Parthenon_in_Athens.jpg" },
-  piazza_navona: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Piazza_Navona_%28Rome%29_at_night.jpg/500px-Piazza_Navona_%28Rome%29_at_night.jpg", title: "Piazza Navona", credit: "NikonZ7II · CC BY-SA 4.0", source: "https://commons.wikimedia.org/wiki/File:Piazza_Navona_(Rome)_at_night.jpg" },
-  picasso_museum: { url: "./assets/photos/500px-Museu_Picasso_Barcelona.jpg", title: "Museu Picasso", credit: "uayebt · CC BY 2.0", source: "https://commons.wikimedia.org/wiki/File:Museu_Picasso_Barcelona.jpg" },
-  pilatus: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Luzern_-_Mount_Pilatus_-_March_2019_%2801%29.jpg/500px-Luzern_-_Mount_Pilatus_-_March_2019_%2801%29.jpg", title: "Pilatus (mountain)", credit: "Liridon · CC BY-SA 4.0", source: "https://commons.wikimedia.org/wiki/File:Luzern_-_Mount_Pilatus_-_March_2019_(01).jpg" },
-  pisa_arno: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Pisa_Arno_Panorama.jpg/500px-Pisa_Arno_Panorama.jpg", title: "Pisa Arno Panorama.jpg", credit: "Lucarelli · CC BY-SA 3.0", source: "https://commons.wikimedia.org/wiki/File:Pisa_Arno_Panorama.jpg" },
-  pisa_baptistery: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/The_Baptistery_in_Pisa_Italy.jpg/500px-The_Baptistery_in_Pisa_Italy.jpg", title: "The Baptistery in Pisa Italy.jpg", credit: "PaestumPaestum · CC BY 4.0", source: "https://commons.wikimedia.org/wiki/File:The_Baptistery_in_Pisa_Italy.jpg" },
-  pisa_miracoli: { url: "./assets/photos/500px-thumbnail.jpg", title: "Putti Fountain, Pisa Cathedral (Duomo di Pisa) (forefront), The Leaning Tower of Pisa (background), Piazza dei Miracoli (-Square of Miracles-). Pisa, Tuscany, Central Italy-2.jpg", credit: "Mstyslav Chernov · CC BY-SA 3.0", source: "https://commons.wikimedia.org/wiki/File:Putti_Fountain,_Pisa_Cathedral_(Duomo_di_Pisa)_(forefront),_The_Leaning_Tower_of_Pisa_(background),_Piazza_dei_Miracoli_(-Square_of_Miracles-)._Pisa,_Tuscany,_Central_Italy-2.jpg" },
-  pisa_tower: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/The_Duomo_and_Tower_of_Pisa_at_sunrise.jpg/500px-The_Duomo_and_Tower_of_Pisa_at_sunrise.jpg", title: "The Duomo and Tower of Pisa at sunrise.jpg", credit: "MHoser · CC BY-SA 4.0", source: "https://commons.wikimedia.org/wiki/File:The_Duomo_and_Tower_of_Pisa_at_sunrise.jpg" },
-  plaka: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Carrer_del_barri_de_Plaka%2C_Atenes.JPG/500px-Carrer_del_barri_de_Plaka%2C_Atenes.JPG", title: "Plaka", credit: "Joanbanjo · CC BY-SA 3.0", source: "https://commons.wikimedia.org/wiki/File:Carrer_del_barri_de_Plaka,_Atenes.JPG" },
-  plaza_mayor: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Madrid_Plaza_Mayor_%2848733706273%29.jpg/500px-Madrid_Plaza_Mayor_%2848733706273%29.jpg", title: "Plaza Mayor, Madrid", credit: "Jorge Franganillo · CC BY 2.0", source: "https://commons.wikimedia.org/wiki/File:Madrid_Plaza_Mayor_(48733706273).jpg" },
-  pompeii: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Aerial_image_of_Pompeii_and_Mount_Vesuvius_%28view_from_the_southeast%29.jpg/500px-Aerial_image_of_Pompeii_and_Mount_Vesuvius_%28view_from_the_southeast%29.jpg", title: "Pompeii", credit: "Carsten Steger · CC BY-SA 4.0", source: "https://commons.wikimedia.org/wiki/File:Aerial_image_of_Pompeii_and_Mount_Vesuvius_(view_from_the_southeast).jpg" },
-  ponte_vecchio: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Ponte_Vecchio_from_Ponte_alle_Grazie.jpg/500px-Ponte_Vecchio_from_Ponte_alle_Grazie.jpg", title: "Ponte Vecchio", credit: "Ingo Mehling · CC BY-SA 4.0", source: "https://commons.wikimedia.org/wiki/File:Ponte_Vecchio_from_Ponte_alle_Grazie.jpg" },
-  positano: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Positano_Sunset.JPG/500px-Positano_Sunset.JPG", title: "Positano", credit: "JeCCo · CC BY 4.0", source: "https://commons.wikimedia.org/wiki/File:Positano_Sunset.JPG" },
-  prado: { url: "./assets/photos/500px-Museo_del_Prado_2016_25185969599.jpg", title: "Museo del Prado", credit: "Emilio J. Rodríguez Posada · CC BY-SA 2.0", source: "https://commons.wikimedia.org/wiki/File:Museo_del_Prado_2016_(25185969599).jpg" },
-  prague_castle: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Karl%C5%AFv_most_Praha%2C_Star%C3%A9_M%C4%9Bsto_20170810_007.jpg/500px-Karl%C5%AFv_most_Praha%2C_Star%C3%A9_M%C4%9Bsto_20170810_007.jpg", title: "Prague Castle", credit: "Tilman2007 · CC BY-SA 4.0", source: "https://commons.wikimedia.org/wiki/File:Karlův_most_Praha,_Staré_Město_20170810_007.jpg" },
-  prague_oldtown: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Prague_07-2016_View_from_Old_Town_Hall_Tower_img3.jpg/500px-Prague_07-2016_View_from_Old_Town_Hall_Tower_img3.jpg", title: "Old Town Square", credit: "A.Savin · FAL", source: "https://commons.wikimedia.org/wiki/File:Prague_07-2016_View_from_Old_Town_Hall_Tower_img3.jpg" },
-  prenzlauer_berg: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Kastanienallee%2C_U-Bhf_Eberswalder_Str%2C_Konnopke.jpg/500px-Kastanienallee%2C_U-Bhf_Eberswalder_Str%2C_Konnopke.jpg", title: "Prenzlauer Berg", credit: "Abaris  at  German Wikipedia · CC BY-SA 3.0", source: "https://commons.wikimedia.org/wiki/File:Kastanienallee,_U-Bhf_Eberswalder_Str,_Konnopke.jpg" },
-  promenade_anglais: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/CollineDuChateau_NiceFrance2022.png/500px-CollineDuChateau_NiceFrance2022.png", title: "Promenade des Anglais", credit: "3602kiva · CC0", source: "https://commons.wikimedia.org/wiki/File:CollineDuChateau_NiceFrance2022.png" },
-  puerta_del_sol: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Puerta_del_Sol_%28Madrid%29_10.jpg/500px-Puerta_del_Sol_%28Madrid%29_10.jpg", title: "Puerta del Sol", credit: "Tomás Fano · CC BY-SA 2.0", source: "https://commons.wikimedia.org/wiki/File:Puerta_del_Sol_(Madrid)_10.jpg" },
-  pulteney_bridge: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Puente_Pulteney%2C_Bath%2C_Inglaterra%2C_2014-08-12%2C_DD_51.JPG/500px-Puente_Pulteney%2C_Bath%2C_Inglaterra%2C_2014-08-12%2C_DD_51.JPG", title: "Pulteney Bridge", credit: "Diego Delso · CC BY-SA 4.0", source: "https://commons.wikimedia.org/wiki/File:Puente_Pulteney,_Bath,_Inglaterra,_2014-08-12,_DD_51.JPG" },
-  r_7portes: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Pijama_%28Restaurant_7_Portes_de_Barcelona%29.jpg/500px-Pijama_%28Restaurant_7_Portes_de_Barcelona%29.jpg", title: "Pijama (Restaurant 7 Portes de Barcelona).jpg", credit: "Xavier Dengra · CC BY-SA 4.0", source: "https://commons.wikimedia.org/wiki/File:Pijama_(Restaurant_7_Portes_de_Barcelona).jpg" },
-  r_angelina: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Chez_Angelina_pour_le_th%C3%A9.JPG/500px-Chez_Angelina_pour_le_th%C3%A9.JPG", title: "Chez Angelina pour le thé.JPG", credit: "Schnäggli · CC BY-SA 3.0", source: "https://commons.wikimedia.org/wiki/File:Chez_Angelina_pour_le_thé.JPG" },
-  r_athens_rooftop: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Hd-hotel-grande-bretagne-athens-gb-roof-garden-restaurant-and-bar-breakfast-1-.jpg/500px-Hd-hotel-grande-bretagne-athens-gb-roof-garden-restaurant-and-bar-breakfast-1-.jpg", title: "Hd-hotel-grande-bretagne-athens-gb-roof-garden-restaurant-and-bar-breakfast-1-.jpg", credit: "Mariavazoura · CC BY-SA 4.0", source: "https://commons.wikimedia.org/wiki/File:Hd-hotel-grande-bretagne-athens-gb-roof-garden-restaurant-and-bar-breakfast-1-.jpg" },
-  r_bellini: { url: "./assets/photos/500px-Bellini_Cipriani_Macaroni_Grill_Dunwoody_GA.jpg", title: "Bellini Cipriani, Macaroni Grill, Dunwoody GA.jpg", credit: "John Phelan · CC BY-SA 3.0", source: "https://commons.wikimedia.org/wiki/File:Bellini_Cipriani,_Macaroni_Grill,_Dunwoody_GA.jpg" },
-  r_boqueria: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/La_Boqueria.JPG/500px-La_Boqueria.JPG", title: "La Boqueria.JPG", credit: "Dungodung · Public domain", source: "https://commons.wikimedia.org/wiki/File:La_Boqueria.JPG" },
-  r_borough: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Stalls_at_Borough_Market_1.jpg/500px-Stalls_at_Borough_Market_1.jpg", title: "Stalls at Borough Market 1.jpg", credit: "CC BY 2.0", source: "https://commons.wikimedia.org/wiki/File:Stalls_at_Borough_Market_1.jpg" },
-  r_botin: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/2014_-_Sobrino_de_Bot%C3%ADn_%28Casa_Bot%C3%ADn%29_Restaurant%2C_Madrid%2C_Spain_%28_Ank_Kumar_%29_05.jpg/500px-2014_-_Sobrino_de_Bot%C3%ADn_%28Casa_Bot%C3%ADn%29_Restaurant%2C_Madrid%2C_Spain_%28_Ank_Kumar_%29_05.jpg", title: "2014 - Sobrino de Botín (Casa Botín) Restaurant, Madrid, Spain ( Ank Kumar ) 05.jpg", credit: "Ank Kumar · CC BY-SA 4.0", source: "https://commons.wikimedia.org/wiki/File:2014_-_Sobrino_de_Botín_(Casa_Botín)_Restaurant,_Madrid,_Spain_(_Ank_Kumar_)_05.jpg" },
-  r_cafe_central: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Vault_Caf%C3%A9_Central_Vienna_Wien.jpg/500px-Vault_Caf%C3%A9_Central_Vienna_Wien.jpg", title: "Vault Café Central Vienna Wien.jpg", credit: "Jebulon · CC0", source: "https://commons.wikimedia.org/wiki/File:Vault_Café_Central_Vienna_Wien.jpg" },
-  r_cafe_flore: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Caf%C3%A9_de_Flore%2C_172_boulevard_Saint-Germain%2C_Paris_6e.jpg/500px-Caf%C3%A9_de_Flore%2C_172_boulevard_Saint-Germain%2C_Paris_6e.jpg", title: "Café de Flore, 172 boulevard Saint-Germain, Paris 6e.jpg", credit: "Celette · CC BY-SA 4.0", source: "https://commons.wikimedia.org/wiki/File:Café_de_Flore,_172_boulevard_Saint-Germain,_Paris_6e.jpg" },
-  r_cafe_paris_mc: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Cafe_de_Paris_Monte-Carlo_-_panoramio.jpg/500px-Cafe_de_Paris_Monte-Carlo_-_panoramio.jpg", title: "Cafe de Paris Monte-Carlo - panoramio.jpg", credit: "Mister No · CC BY 3.0", source: "https://commons.wikimedia.org/wiki/File:Cafe_de_Paris_Monte-Carlo_-_panoramio.jpg" },
-  r_cafe_sacher: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Hotel_Sacher_%28Wien_2008%29_%2810605892446%29.jpg/500px-Hotel_Sacher_%28Wien_2008%29_%2810605892446%29.jpg", title: "Hotel Sacher (Wien 2008) (10605892446).jpg", credit: "Paul Arps  from The Netherlands · CC BY 2.0", source: "https://commons.wikimedia.org/wiki/File:Hotel_Sacher_(Wien_2008)_(10605892446).jpg" },
-  r_carpaccio2: { url: "./assets/photos/500px-Carpaccio_de_boeuf.jpg", title: "Carpaccio de boeuf.jpg", credit: "M wassim salah · CC BY-SA 4.0", source: "https://commons.wikimedia.org/wiki/File:Carpaccio_de_boeuf.jpg" },
-  r_chez_pipo: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Socca_a_Nice.jpg/500px-Socca_a_Nice.jpg", title: "Socca a Nice.jpg", credit: "Myrabella · CC BY-SA 3.0", source: "https://commons.wikimedia.org/wiki/File:Socca_a_Nice.jpg" },
-  r_churros: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Chocolate_con_churros_en_La_Giralda.jpg/500px-Chocolate_con_churros_en_La_Giralda.jpg", title: "Chocolate con churros en La Giralda.jpg", credit: "Unknown author Unknown author · CC BY-SA 2.5", source: "https://commons.wikimedia.org/wiki/File:Chocolate_con_churros_en_La_Giralda.jpg" },
-  r_cochinillo: { url: "./assets/photos/500px-Cochinillo_Asado_Segoviano.jpg", title: "Cochinillo Asado Segoviano.jpg", credit: "Diegoml1933 · CC0", source: "https://commons.wikimedia.org/wiki/File:Cochinillo_Asado_Segoviano.jpg" },
-  r_delizia_limone: { url: "./assets/photos/500px-Delizia_al_limone.jpg", title: "Delizia al limone.jpg", credit: "dags 1974 · CC BY 2.0", source: "https://commons.wikimedia.org/wiki/File:Delizia_al_limone.jpg" },
-  r_deux_magots: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Les_Deux_Magots%2C_25_September_2019.jpg/500px-Les_Deux_Magots%2C_25_September_2019.jpg", title: "Les Deux Magots, 25 September 2019.jpg", credit: "Cheng-en Cheng  from Taichung City, Taiwan · CC BY-SA 2.0", source: "https://commons.wikimedia.org/wiki/File:Les_Deux_Magots,_25_September_2019.jpg" },
-  r_figlmuller: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Figlmueller._World_Famous_Schnitzel%21_Vienna.jpg/500px-Figlmueller._World_Famous_Schnitzel%21_Vienna.jpg", title: "Figlmueller. World Famous Schnitzel! Vienna.jpg", credit: "Sarah_Ackerman · CC BY 2.0", source: "https://commons.wikimedia.org/wiki/File:Figlmueller._World_Famous_Schnitzel!_Vienna.jpg" },
-  r_florian: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Venedig_Caff%C3%A8_Florian_Eingang-20110312-RM-185109.jpg/500px-Venedig_Caff%C3%A8_Florian_Eingang-20110312-RM-185109.jpg", title: "Venedig Caffè Florian Eingang-20110312-RM-185109.jpg", credit: "Ermell · CC BY-SA 4.0", source: "https://commons.wikimedia.org/wiki/File:Venedig_Caffè_Florian_Eingang-20110312-RM-185109.jpg" },
-  r_focaccia: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Focaccia_con_il_formaggio_di_Recco_classica.jpg/500px-Focaccia_con_il_formaggio_di_Recco_classica.jpg", title: "Focaccia con il formaggio di Recco classica.jpg", credit: "Superchilum · CC BY-SA 4.0", source: "https://commons.wikimedia.org/wiki/File:Focaccia_con_il_formaggio_di_Recco_classica.jpg" },
-  r_gambrinus: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Gran_Caff%C3%A8_Gambrinus_%E2%80%93_Naples_%282014%29.jpg/500px-Gran_Caff%C3%A8_Gambrinus_%E2%80%93_Naples_%282014%29.jpg", title: "Gran Caffè Gambrinus – Naples (2014).jpg", credit: "Antonio Manfredonio · CC BY-SA 2.0", source: "https://commons.wikimedia.org/wiki/File:Gran_Caffè_Gambrinus_–_Naples_(2014).jpg" },
-  r_harrys_bar: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Harry%27s_bar_Canal_Grande_Venezia.jpg/500px-Harry%27s_bar_Canal_Grande_Venezia.jpg", title: "Harry's bar Canal Grande Venezia.jpg", credit: "This Photo  was taken by    Wolfgang Moroder   .           Feel free to use my photos, but · CC BY-SA 3.0", source: "https://commons.wikimedia.org/wiki/File:Harry's_bar_Canal_Grande_Venezia.jpg" },
-  r_hot_chocolate: { url: "./assets/photos/500px-Hot_chocolate_p1150797.jpg", title: "Hot chocolate p1150797.jpg", credit: "CC BY-SA 3.0", source: "https://commons.wikimedia.org/wiki/File:Hot_chocolate_p1150797.jpg" },
-  r_konnopke: { url: "./assets/photos/500px-Currywurst_at_Konnopke_Imbiss_2014.jpg", title: "Currywurst at Konnopke Imbiss 2014.jpg", credit: "Orderinchaos · CC BY-SA 4.0", source: "https://commons.wikimedia.org/wiki/File:Currywurst_at_Konnopke_Imbiss_2014.jpg" },
-  r_kostas: { url: "./assets/photos/Gyros_C5878.jpg", title: "Gyros C5878.jpg", credit: "Yannis Samatas · Public domain", source: "https://commons.wikimedia.org/wiki/File:Gyros_C5878.jpg" },
-  r_le_consulat: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Le_Consulat%2C_Montmartre%2C_Paris_15_August_2006.jpg/500px-Le_Consulat%2C_Montmartre%2C_Paris_15_August_2006.jpg", title: "Le Consulat, Montmartre, Paris 15 August 2006.jpg", credit: "Francisco Gonzalez · CC BY 2.0", source: "https://commons.wikimedia.org/wiki/File:Le_Consulat,_Montmartre,_Paris_15_August_2006.jpg" },
-  r_letzte_instanz: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Zur_letzten_Instanz_Berlins_oldest_running_restaurant_Klosterviertel_Waisenstra%C3%9Fe_Berlin-Mitte.jpg/500px-Zur_letzten_Instanz_Berlins_oldest_running_restaurant_Klosterviertel_Waisenstra%C3%9Fe_Berlin-Mitte.jpg", title: "Zur letzten Instanz Berlins oldest running restaurant Klosterviertel Waisenstraße Berlin-Mitte.jpg", credit: "Helge Høifødt · CC BY-SA 4.0", source: "https://commons.wikimedia.org/wiki/File:Zur_letzten_Instanz_Berlins_oldest_running_restaurant_Klosterviertel_Waisenstraße_Berlin-Mitte.jpg" },
-  r_little_venice_bar: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Little_Venice%2C_Chora%2C_Mykonos%2C_Greece_%2853505710527%29.jpg/500px-Little_Venice%2C_Chora%2C_Mykonos%2C_Greece_%2853505710527%29.jpg", title: "Little Venice, Chora, Mykonos, Greece (53505710527).jpg", credit: "Warren LeMay  from Chicago, IL, United States · CC BY-SA 2.0", source: "https://commons.wikimedia.org/wiki/File:Little_Venice,_Chora,_Mykonos,_Greece_(53505710527).jpg" },
-  r_macaron: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Aquafaba_vegan_colourful_macarons.jpg/500px-Aquafaba_vegan_colourful_macarons.jpg", title: "Aquafaba vegan colourful macarons.jpg", credit: "Dulcie Irvani · CC BY-SA 4.0", source: "https://commons.wikimedia.org/wiki/File:Aquafaba_vegan_colourful_macarons.jpg" },
-  r_meteora_tavern: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Fish_meal_in_Therma.jpg/500px-Fish_meal_in_Therma.jpg", title: "Fish meal in Therma.jpg", credit: "adamansel52 · CC BY 2.0", source: "https://commons.wikimedia.org/wiki/File:Fish_meal_in_Therma.jpg" },
-  r_old_swiss: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Old_Swiss_House_-_panoramio.jpg/500px-Old_Swiss_House_-_panoramio.jpg", title: "Old Swiss House - panoramio.jpg", credit: "风二中 · CC BY 3.0", source: "https://commons.wikimedia.org/wiki/File:Old_Swiss_House_-_panoramio.jpg" },
-  r_pesto: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Pasta_al_pesto_fatto_in_casa.jpg/500px-Pasta_al_pesto_fatto_in_casa.jpg", title: "Pasta al pesto fatto in casa.jpg", credit: "Marco Del Torchio 95 · CC BY-SA 4.0", source: "https://commons.wikimedia.org/wiki/File:Pasta_al_pesto_fatto_in_casa.jpg" },
-  r_poppies: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Seashell_of_Lisson_Grove.jpg/500px-Seashell_of_Lisson_Grove.jpg", title: "Seashell of Lisson Grove.jpg", credit: "TexasCalifornia · CC BY-SA 4.0", source: "https://commons.wikimedia.org/wiki/File:Seashell_of_Lisson_Grove.jpg" },
-  r_prater_garten: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/PRATERGARTEN_BIER_GARTEN_NEAR_TO_ELBERWALDER_STRASSE_U_BAHN_STATION_BERLIN_GERMANY_JUNE_2013_%289058790131%29.jpg/500px-PRATERGARTEN_BIER_GARTEN_NEAR_TO_ELBERWALDER_STRASSE_U_BAHN_STATION_BERLIN_GERMANY_JUNE_2013_%289058790131%29.jpg", title: "PRATERGARTEN BIER GARTEN NEAR TO ELBERWALDER STRASSE U BAHN STATION BERLIN GERMANY JUNE 2013 (9058790131).jpg", credit: "calflier001 · CC BY-SA 2.0", source: "https://commons.wikimedia.org/wiki/File:PRATERGARTEN_BIER_GARTEN_NEAR_TO_ELBERWALDER_STRASSE_U_BAHN_STATION_BERLIN_GERMANY_JUNE_2013_(9058790131).jpg" },
-  r_pump_room: { url: "./assets/photos/500px-Interior_of_The_Pump_Room_Bath_by_Searcys_2025-07-25.jpg", title: "Interior of The Pump Room, Bath (by Searcys) 2025-07-25.jpg", credit: "Andy Li · CC0", source: "https://commons.wikimedia.org/wiki/File:Interior_of_The_Pump_Room,_Bath_(by_Searcys)_2025-07-25.jpg" },
-  r_pupp: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Karlovy_Vary_2004._Grandhotel_Pupp._-_panoramio.jpg/500px-Karlovy_Vary_2004._Grandhotel_Pupp._-_panoramio.jpg", title: "Karlovy Vary 2004. Grandhotel Pupp. - panoramio.jpg", credit: "Natalia Semenova · CC BY 3.0", source: "https://commons.wikimedia.org/wiki/File:Karlovy_Vary_2004._Grandhotel_Pupp._-_panoramio.jpg" },
-  r_quatre_gats: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/15-10-27-Els_Quatre_Gats-RalfR-WMA_2729.jpg/500px-15-10-27-Els_Quatre_Gats-RalfR-WMA_2729.jpg", title: "15-10-27-Els Quatre Gats-RalfR-WMA 2729.jpg", credit: "Ralf Roletschek · GFDL 1.2", source: "https://commons.wikimedia.org/wiki/File:15-10-27-Els_Quatre_Gats-RalfR-WMA_2729.jpg" },
-  r_sally_lunn: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Sally_Lunns_house.jpg/500px-Sally_Lunns_house.jpg", title: "Sally Lunns house.jpg", credit: "Fahdshariff  at  English Wikipedia · Public domain", source: "https://commons.wikimedia.org/wiki/File:Sally_Lunns_house.jpg" },
-  r_san_gines: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/At_San_Gines_again._One_of_the_oldest_chocolate_con_churros_in_Madrid_%2818761909709%29.jpg/500px-At_San_Gines_again._One_of_the_oldest_chocolate_con_churros_in_Madrid_%2818761909709%29.jpg", title: "At San Gines again. One of the oldest chocolate con churros in Madrid (18761909709).jpg", credit: "Ash Chuan  from London, United Kingdom · CC BY-SA 2.0", source: "https://commons.wikimedia.org/wiki/File:At_San_Gines_again._One_of_the_oldest_chocolate_con_churros_in_Madrid_(18761909709).jpg" },
-  r_sfogliatella: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Pastries_on_display_in_Naples.jpg/500px-Pastries_on_display_in_Naples.jpg", title: "Pastries on display in Naples.jpg", credit: "Enzo Abramo · CC0", source: "https://commons.wikimedia.org/wiki/File:Pastries_on_display_in_Naples.jpg" },
-  r_st_peter: { url: "https://upload.wikimedia.org/wikipedia/commons/3/30/Stiftskeller_salzburg.jpg", title: "Stiftskeller salzburg.jpg", credit: "Testsieger73 · Public domain", source: "https://commons.wikimedia.org/wiki/File:Stiftskeller_salzburg.jpg" },
-  r_ufleku: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Prag%2C_U_Flek%C5%AF_--_2019_--_6735.jpg/500px-Prag%2C_U_Flek%C5%AF_--_2019_--_6735.jpg", title: "Prag, U Fleků -- 2019 -- 6735.jpg", credit: "Dietmar Rabich · CC BY-SA 4.0", source: "https://commons.wikimedia.org/wiki/File:Prag,_U_Fleků_--_2019_--_6735.jpg" },
-  reims_cathedral: { url: "./assets/photos/500px-Reims_Cathedral_exterior.jpg", title: "Reims Cathedral (Notre-Dame de Reims)", credit: "Paterm · CC BY-SA 3.0", source: "https://commons.wikimedia.org/wiki/File:Reims_Cathedral_exterior.jpg" },
-  reims_champagne: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Reims_-_maison_Mumm.JPG/500px-Reims_-_maison_Mumm.JPG", title: "Maison Mumm, Reims", credit: "Wikimedia Commons · CC BY-SA 3.0", source: "https://commons.wikimedia.org/wiki/File:Reims_-_maison_Mumm.JPG" },
-  ravello: { url: "./assets/photos/500px-Ravello-coastline.jpg", title: "Ravello", credit: "Matt c j486  at  English Wikipedia · CC BY-SA 3.0", source: "https://commons.wikimedia.org/wiki/File:Ravello-coastline.jpg" },
-  retiro: { url: "./assets/photos/500px-MADRID_051116_MXALX_041.jpg", title: "Parque del Buen Retiro, Madrid", credit: "Max Alexander /  PromoMadrid · CC BY-SA 2.0", source: "https://commons.wikimedia.org/wiki/File:MADRID_051116_MXALX_041.jpg" },
-  roman_baths: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Roman_Baths_in_Bath_Spa%2C_England_-_July_2006.jpg/500px-Roman_Baths_in_Bath_Spa%2C_England_-_July_2006.jpg", title: "Roman Baths (Bath)", credit: "Diliff · CC BY 2.5", source: "https://commons.wikimedia.org/wiki/File:Roman_Baths_in_Bath_Spa,_England_-_July_2006.jpg" },
-  roman_forum: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Foro_Romano_Musei_Capitolini_Roma.jpg/500px-Foro_Romano_Musei_Capitolini_Roma.jpg", title: "Roman Forum", credit: "This Photo  was taken by    Wolfgang Moroder   .           Feel free to use my photos, but · CC BY-SA 3.0", source: "https://commons.wikimedia.org/wiki/File:Foro_Romano_Musei_Capitolini_Roma.jpg" },
-  romerberg: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Heiligenstein_Sankt_Sigismund_20110320.jpg/500px-Heiligenstein_Sankt_Sigismund_20110320.jpg", title: "Römerberg", credit: "Rudolf Stricker · Attribution", source: "https://commons.wikimedia.org/wiki/File:Heiligenstein_Sankt_Sigismund_20110320.jpg" },
-  rothenburg: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Rothenburg_BW_4.JPG/500px-Rothenburg_BW_4.JPG", title: "Rothenburg ob der Tauber", credit: "Berthold Werner · Public domain", source: "https://commons.wikimedia.org/wiki/File:Rothenburg_BW_4.JPG" },
-  royal_crescent: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Royal.crescent.aerial.bath.arp.jpg/500px-Royal.crescent.aerial.bath.arp.jpg", title: "Royal Crescent", credit: "Public domain", source: "https://commons.wikimedia.org/wiki/File:Royal.crescent.aerial.bath.arp.jpg" },
-  sacre_coeur: { url: "./assets/photos/500px-Le_sacre_coeur.jpg", title: "Sacré-Cœur, Paris", credit: "Tonchino · CC BY-SA 3.0", source: "https://commons.wikimedia.org/wiki/File:Le_sacre_coeur.jpg" },
-  sagrada_familia: { url: "./assets/photos/500px-SF_maig_2_cropped.jpg", title: "Sagrada Família", credit: "Canaan · CC BY-SA 4.0", source: "https://commons.wikimedia.org/wiki/File:SF_maig_2_cropped.jpg" },
-  sainte_chapelle: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Sainte_Chapelle_-_Upper_level_1.jpg/500px-Sainte_Chapelle_-_Upper_level_1.jpg", title: "Sainte-Chapelle", credit: "Didier B ( Sam67fr ) · CC BY-SA 2.5", source: "https://commons.wikimedia.org/wiki/File:Sainte_Chapelle_-_Upper_level_1.jpg" },
-  salzburg: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Salzburg_%2848489551981%29.jpg/500px-Salzburg_%2848489551981%29.jpg", title: "Salzburg", credit: "Jorge Franganillo · CC BY 2.0", source: "https://commons.wikimedia.org/wiki/File:Salzburg_(48489551981).jpg" },
-  salzwelten_alt: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/1089_-_Hallstatt_-_Salzbergwerk_-_Salt_Lamps.JPG/500px-1089_-_Hallstatt_-_Salzbergwerk_-_Salt_Lamps.JPG", title: "1089 - Hallstatt - Salzbergwerk - Salt Lamps.JPG", credit: "Andrew Bossi · CC BY-SA 3.0", source: "https://commons.wikimedia.org/wiki/File:1089_-_Hallstatt_-_Salzbergwerk_-_Salt_Lamps.JPG" },
-  san_marco: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Piazza_San_Marco_%28Venice%29_at_night-msu-2021-6449-.jpg/500px-Piazza_San_Marco_%28Venice%29_at_night-msu-2021-6449-.jpg", title: "Piazza San Marco", credit: "Matthias Süßen · CC BY-SA 4.0", source: "https://commons.wikimedia.org/wiki/File:Piazza_San_Marco_(Venice)_at_night-msu-2021-6449-.jpg" },
-  santorini: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/2011_Dimos_Thiras.png/500px-2011_Dimos_Thiras.png", title: "Santorini", credit: "Pitichinaccio · CC BY 3.0", source: "https://commons.wikimedia.org/wiki/File:2011_Dimos_Thiras.png" },
-  schonbrunn: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Wien_-_Schloss_Sch%C3%B6nbrunn.JPG/500px-Wien_-_Schloss_Sch%C3%B6nbrunn.JPG", title: "Schönbrunn Palace", credit: "C.Stadler/Bwag · CC BY-SA 4.0", source: "https://commons.wikimedia.org/wiki/File:Wien_-_Schloss_Schönbrunn.JPG" },
-  sistine_chapel: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Sistina-interno.jpg/500px-Sistina-interno.jpg", title: "Sistine Chapel", credit: "The original uploader was  Snowdog  at  Italian Wikipedia . · CC BY-SA 3.0", source: "https://commons.wikimedia.org/wiki/File:Sistina-interno.jpg" },
-  spaccanapoli: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Napoli_-_Maschio_Angioino_-_202209302342_3.jpg/500px-Napoli_-_Maschio_Angioino_-_202209302342_3.jpg", title: "Naples", credit: "Richard Nevell · CC BY-SA 4.0", source: "https://commons.wikimedia.org/wiki/File:Napoli_-_Maschio_Angioino_-_202209302342_3.jpg" },
-  speicherstadt: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Speicherstadt_abends.jpg/500px-Speicherstadt_abends.jpg", title: "Speicherstadt", credit: "Thomas Wolf  ,   www.foto-tw.de · CC BY-SA 3.0", source: "https://commons.wikimedia.org/wiki/File:Speicherstadt_abends.jpg" },
-  st_pancras: { url: "./assets/photos/500px-St_Pancras_Railway_Station_2012-06-23.jpg", title: "St Pancras railway station", credit: "Colin · CC BY-SA 3.0", source: "https://commons.wikimedia.org/wiki/File:St_Pancras_Railway_Station_2012-06-23.jpg" },
-  st_peters: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Basilica_di_San_Pietro_in_Vaticano_September_2015-1a.jpg/500px-Basilica_di_San_Pietro_in_Vaticano_September_2015-1a.jpg", title: "St. Peter's Basilica", credit: "Alvesgaspar · CC BY-SA 4.0", source: "https://commons.wikimedia.org/wiki/File:Basilica_di_San_Pietro_in_Vaticano_September_2015-1a.jpg" },
-  stephansdom: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Wien_-_Stephansdom_%281%29.JPG/500px-Wien_-_Stephansdom_%281%29.JPG", title: "St. Stephen's Cathedral, Vienna", credit: "C.Stadler/Bwag · CC BY-SA 4.0", source: "https://commons.wikimedia.org/wiki/File:Wien_-_Stephansdom_(1).JPG" },
-  tate_modern: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Tate_Modern_-_Bankside_Power_Station.jpg/500px-Tate_Modern_-_Bankside_Power_Station.jpg", title: "Tate Modern", credit: "Acabashi · CC BY-SA 4.0", source: "https://commons.wikimedia.org/wiki/File:Tate_Modern_-_Bankside_Power_Station.jpg" },
-  tower_bridge: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Tower_Bridge_at_Dawn.jpg/500px-Tower_Bridge_at_Dawn.jpg", title: "Tower Bridge", credit: "Fuzzypiggy · CC BY-SA 3.0", source: "https://commons.wikimedia.org/wiki/File:Tower_Bridge_at_Dawn.jpg" },
-  trastevere: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Santa_Maria_in_Trastevere_fountain.jpg/500px-Santa_Maria_in_Trastevere_fountain.jpg", title: "Trastevere", credit: "Jensens · Public domain", source: "https://commons.wikimedia.org/wiki/File:Santa_Maria_in_Trastevere_fountain.jpg" },
-  trevi: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Trevi_Fountain_-_Roma.jpg/500px-Trevi_Fountain_-_Roma.jpg", title: "Trevi Fountain", credit: "NikonZ7II · CC BY-SA 4.0", source: "https://commons.wikimedia.org/wiki/File:Trevi_Fountain_-_Roma.jpg" },
-  trocadero: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Trocad%C3%A9ro_as_seen_from_the_Eiffel_Tower%2C_25_September_2010.jpg/500px-Trocad%C3%A9ro_as_seen_from_the_Eiffel_Tower%2C_25_September_2010.jpg", title: "Trocadéro, Paris", credit: "Yortw  from Auckland, New Zealand · CC BY 2.0", source: "https://commons.wikimedia.org/wiki/File:Trocadéro_as_seen_from_the_Eiffel_Tower,_25_September_2010.jpg" },
-  tour_montparnasse: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Tour_Maine_Montparnasse_001.jpg/500px-Tour_Maine_Montparnasse_001.jpg", title: "Tour Montparnasse", credit: "Taxiarchos228 · CC BY 3.0", source: "https://commons.wikimedia.org/wiki/File:Tour_Maine_Montparnasse_001.jpg" },
-  uffizi: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Florence%2C_Italy_-_panoramio_%28125%29.jpg/500px-Florence%2C_Italy_-_panoramio_%28125%29.jpg", title: "Uffizi", credit: "Arek N. · CC BY-SA 3.0", source: "https://commons.wikimedia.org/wiki/File:Florence,_Italy_-_panoramio_(125).jpg" },
-  vatican_museums: { url: "./assets/photos/500px-Vatican_Museums_Spiral_Staircase_Looking_Up_2012.jpg", title: "Vatican Museums", credit: "Colin · CC BY-SA 3.0", source: "https://commons.wikimedia.org/wiki/File:Vatican_Museums_Spiral_Staircase_Looking_Up_2012.jpg" },
-  vernazza: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Vernazza_and_the_sea%2C_Cinque_Terre%2C_Italy.jpg/500px-Vernazza_and_the_sea%2C_Cinque_Terre%2C_Italy.jpg", title: "Vernazza", credit: "https://www.flickr.com/photos/150594450@N07/ · CC BY 2.0", source: "https://commons.wikimedia.org/wiki/File:Vernazza_and_the_sea,_Cinque_Terre,_Italy.jpg" },
-  versailles: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Vue_a%C3%A9rienne_du_domaine_de_Versailles_par_ToucanWings_-_Creative_Commons_By_Sa_3.0_-_081_%28cropped%29.jpg/500px-Vue_a%C3%A9rienne_du_domaine_de_Versailles_par_ToucanWings_-_Creative_Commons_By_Sa_3.0_-_081_%28cropped%29.jpg", title: "Palace of Versailles", credit: "ToucanWings · CC BY-SA 3.0", source: "https://commons.wikimedia.org/wiki/File:Vue_aérienne_du_domaine_de_Versailles_par_ToucanWings_-_Creative_Commons_By_Sa_3.0_-_081_(cropped).jpg" },
-  vesuvius: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Il_cratere_del_Vulcano_-_panoramio.jpg/500px-Il_cratere_del_Vulcano_-_panoramio.jpg", title: "Mount Vesuvius", credit: "pietro scerrato · CC BY 3.0", source: "https://commons.wikimedia.org/wiki/File:Il_cratere_del_Vulcano_-_panoramio.jpg" },
-  vienna_opera: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Wiener_Staatsoper_Front.jpg/500px-Wiener_Staatsoper_Front.jpg", title: "Vienna State Opera", credit: "Wiener Staatsoper GmbH · CC BY-SA 4.0", source: "https://commons.wikimedia.org/wiki/File:Wiener_Staatsoper_Front.jpg" },
-  vysehrad: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Parn%C3%ADk_Vy%C5%A1ehrad_pod_Vy%C5%A1ehradem.jpg/500px-Parn%C3%ADk_Vy%C5%A1ehrad_pod_Vy%C5%A1ehradem.jpg", title: "Vyšehrad", credit: "Stanislav Jelen · CC BY-SA 3.0", source: "https://commons.wikimedia.org/wiki/File:Parník_Vyšehrad_pod_Vyšehradem.jpg" },
-  fishermans_bastion: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Fishermans_bastion_Budapest_IMG_1429.JPG/500px-Fishermans_bastion_Budapest_IMG_1429.JPG", title: "Fisherman's Bastion, Budapest", credit: "Bjoertvedt · CC BY-SA 4.0", source: "https://commons.wikimedia.org/wiki/File:Fishermans_bastion_Budapest_IMG_1429.JPG" },
-  budapest_parliament: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Budapest-Parliament-0001.jpg/500px-Budapest-Parliament-0001.jpg", title: "Hungarian Parliament Building", credit: "CC BY-SA 4.0", source: "https://commons.wikimedia.org/wiki/File:Budapest-Parliament-0001.jpg" },
-  chain_bridge_night: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Sz%C3%A9chenyi_Chain_Bridge_in_Budapest_at_night.jpg/500px-Sz%C3%A9chenyi_Chain_Bridge_in_Budapest_at_night.jpg", title: "Széchenyi Chain Bridge at Night", credit: "CC BY-SA 4.0", source: "https://commons.wikimedia.org/wiki/File:Széchenyi_Chain_Bridge_in_Budapest_at_night.jpg" },
-  szechenyi_bath: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Szechenyi_Baths_and_Pool_Budapest_8.JPG/500px-Szechenyi_Baths_and_Pool_Budapest_8.JPG", title: "Széchenyi Thermal Bath", credit: "CC BY-SA 3.0", source: "https://commons.wikimedia.org/wiki/File:Szechenyi_Baths_and_Pool_Budapest_8.JPG" },
-  heroes_square: { url: "./assets/photos/500px-Kubinyi_Tamás_-_Hősök_tere_2014.07.07_1.JPG", title: "Heroes' Square, Budapest", credit: "Tamás Kubinyi · CC BY-SA 3.0", source: "https://commons.wikimedia.org/wiki/File:Kubinyi_Tamás_-_Hősök_tere,_2014.07.07_(1).JPG" },
-  szimpla_kert: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Szimpla_Kert_Budapest_1.jpg/500px-Szimpla_Kert_Budapest_1.jpg", title: "Szimpla Kert Ruin Bar", credit: "CC BY-SA 3.0", source: "https://commons.wikimedia.org/wiki/File:Szimpla_Kert_Budapest_1.jpg" },
-  food_langos: { url: "./assets/photos/500px-Langos_Eger_Hungary.jpg", title: "Lángos (헝가리 길거리 음식)", credit: "CC BY-SA 4.0", source: "https://commons.wikimedia.org/wiki/File:Langos_Eger_Hungary.jpg" },
-  food_kurtoskalacs: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/K%C3%BCrt%C5%91skal%C3%A1cs_-_Chimney_cake_%287885647654%29.jpg/500px-K%C3%BCrt%C5%91skal%C3%A1cs_-_Chimney_cake_%287885647654%29.jpg", title: "Kürtőskalács (굴뚝 케이크)", credit: "CC BY 2.0", source: "https://commons.wikimedia.org/wiki/File:Kürtőskalács_-_Chimney_cake_(7885647654).jpg" },
-  cesky_krumlov: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/CeskyKrumlovNacht.JPG/500px-CeskyKrumlovNacht.JPG", title: "Český Krumlov 야경", credit: "Karelj · CC BY-SA 3.0", source: "https://commons.wikimedia.org/wiki/File:CeskyKrumlovNacht.JPG" },
-  bahnhofstrasse: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Bahnhofstrasse-2019.jpg/500px-Bahnhofstrasse-2019.jpg", title: "Bahnhofstrasse, Zurich", credit: "Roland zh · CC BY-SA 3.0", source: "https://commons.wikimedia.org/wiki/File:Bahnhofstrasse_Zürich_Richtung_Hauptbahnhof.jpg" },
-  grossmuenster_zurich: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Grossmünster_Zürich.jpg/500px-Grossmünster_Zürich.jpg", title: "Grossmünster, Zurich", credit: "Wladyslaw Sojka · CC BY-SA 3.0", source: "https://commons.wikimedia.org/wiki/File:Grossmünster_Zürich.jpg" },
-  lake_zurich: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Pfannenstiel_-_Z%C3%BCrichsee_-_Sihltal_-_Albis_Baldern_IMG_5316.jpg/500px-Pfannenstiel_-_Z%C3%BCrichsee_-_Sihltal_-_Albis_Baldern_IMG_5316.jpg", title: "Lake Zurich (Zürichsee)", credit: "Roland zh · CC BY-SA 3.0", source: "https://commons.wikimedia.org/wiki/File:Zürichsee_-_Utoquai_IMG_1025.jpg" },
-  food_zuercher_geschnetzeltes: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Zürcher_Geschnetzeltes.jpg/500px-Zürcher_Geschnetzeltes.jpg", title: "Zürcher Geschnetzeltes (취리히식 송아지 크림 볶음)", credit: "Lamiot · CC BY-SA 4.0", source: "https://commons.wikimedia.org/wiki/File:Zürcher_Geschnetzeltes.jpg" },
-  zytglogge: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Zytglogge_01.jpg/500px-Zytglogge_01.jpg", title: "Zytglogge (베른 천문시계탑, 1191년)", credit: "Gzzz · CC BY-SA 4.0", source: "https://commons.wikimedia.org/wiki/File:Zytglogge_Bern_09.JPG" },
-  altstadt_bern: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Bern_old_city_from_Rosengarten.jpg/500px-Bern_old_city_from_Rosengarten.jpg", title: "Bern Altstadt from Rosengarten", credit: "Thomas Kohler · CC BY 2.0", source: "https://commons.wikimedia.org/wiki/File:Bern_old_city_from_Rosengarten.jpg" },
-  bundeshaus_bern: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Bundeshaus_Bern_1.jpg/500px-Bundeshaus_Bern_1.jpg", title: "Bundeshaus (Swiss Federal Palace), Bern", credit: "Marc Mongenet · CC BY-SA 2.5", source: "https://commons.wikimedia.org/wiki/File:Bundeshaus_Bern_1.jpg" },
-  barenpark_bern: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/BearPark_Bern.jpg/500px-BearPark_Bern.jpg", title: "Bärenpark (Bear Park), Bern", credit: "Roland zh · CC BY-SA 3.0", source: "https://commons.wikimedia.org/wiki/File:BearPark_Bern.jpg" },
-  food_berner_platte: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Berner_Platte.jpg/500px-Berner_Platte.jpg", title: "Berner Platte (베른 훈제육 모듬)", credit: "Roland zh · CC BY-SA 3.0", source: "https://commons.wikimedia.org/wiki/File:Berner_Platte.jpg" },
-  food_alpermagronen: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Aelplermagronen.jpg/500px-Aelplermagronen.jpg", title: "Älplermagronen (알프스 마카로니 그라탕)", credit: "Lamiot · CC BY-SA 4.0", source: "https://commons.wikimedia.org/wiki/File:Aelplermagronen.jpg" },
-  food_meringue_cream: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Meringue_with_double_cream_Gruyeres.jpg/500px-Meringue_with_double_cream_Gruyeres.jpg", title: "Meringue with Double Cream (그뤼에르 머랭·더블크림)", credit: "Wladyslaw · CC BY-SA 3.0", source: "https://commons.wikimedia.org/wiki/File:Meringue_with_double_cream_Gruyeres.jpg" },
-  food_lampredotto: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/Lampredotto_a_Firenze.jpg/500px-Lampredotto_a_Firenze.jpg", title: "Lampredotto (피렌체 내장 샌드위치)", credit: "Sailko · CC BY-SA 3.0", source: "https://commons.wikimedia.org/wiki/File:Lampredotto_a_Firenze.jpg" },
-  food_cinghiale: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Pappardelle_al_ragù_di_cinghiale.jpg/500px-Pappardelle_al_ragù_di_cinghiale.jpg", title: "Pappardelle al Cinghiale (멧돼지 파스타)", credit: "Sailko · CC BY-SA 3.0", source: "https://commons.wikimedia.org/wiki/File:Pappardelle_al_ragù_di_cinghiale.jpg" },
-  lauterbrunnen: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Lauterbrunnental_von_Wengen.jpg/500px-Lauterbrunnental_von_Wengen.jpg", title: "Lauterbrunnen Valley (from Wengen)", credit: "Sven Ahlström · CC BY-SA 3.0", source: "https://commons.wikimedia.org/wiki/File:Lauterbrunnental_von_Wengen.jpg" },
-  schilthorn: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Schilthorn_aerial_photo.jpg/500px-Schilthorn_aerial_photo.jpg", title: "Schilthorn (2,970m) · Piz Gloria", credit: "CC BY-SA 3.0", source: "https://commons.wikimedia.org/wiki/File:Schilthorn_aerial_photo.jpg" },
-  matterhorn: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Matterhorn_as_seen_from_Zermatt_Valais_Switzerland_2012.jpg/500px-Matterhorn_as_seen_from_Zermatt_Valais_Switzerland_2012.jpg", title: "Matterhorn (4,478m) from Zermatt", credit: "Zacharie Grossen · CC BY 3.0", source: "https://commons.wikimedia.org/wiki/File:Matterhorn_as_seen_from_Zermatt_Valais_Switzerland_2012.jpg" },
-  matterhorn_riffelsee: { url: "./assets/photos/500px-Matterhorn_Riffelsee_2005-06-11.jpg", title: "Matterhorn reflected in Riffelsee", credit: "Dirk Beyer · CC BY-SA 3.0", source: "https://commons.wikimedia.org/wiki/File:Matterhorn_Riffelsee_2005-06-11.jpg" },
-  klein_matterhorn: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Klein_Matterhorn_and_Matterhorn.jpg/500px-Klein_Matterhorn_and_Matterhorn.jpg", title: "Klein Matterhorn (3,883m) & Matterhorn Glacier Paradise", credit: "Nomo michael hoefner · CC BY-SA 2.5", source: "https://commons.wikimedia.org/wiki/File:Klein_Matterhorn_and_Matterhorn.jpg" },
-  food_rosti: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Roestiteller.jpg/500px-Roestiteller.jpg", title: "Rösti (Swiss potato cake)", credit: "Lamiot · CC BY-SA 3.0", source: "https://commons.wikimedia.org/wiki/File:Roestiteller.jpg" },
-  food_raclette: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Raclette_2.jpg/500px-Raclette_2.jpg", title: "Raclette (Swiss melted cheese dish)", credit: "Roland zh · CC BY-SA 3.0", source: "https://commons.wikimedia.org/wiki/File:Raclette_2.jpg" },
-  food_bistecca: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Bistecca_alla_fiorentina.jpg/500px-Bistecca_alla_fiorentina.jpg", title: "Bistecca alla Fiorentina", credit: "CC BY-SA 3.0", source: "https://commons.wikimedia.org/wiki/File:Bistecca_alla_fiorentina.jpg" },
-  food_risotto_milanese: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Risotto_Milanese.jpg/500px-Risotto_Milanese.jpg", title: "Risotto alla Milanese (saffron risotto)", credit: "Zeroimages · CC BY-SA 3.0", source: "https://commons.wikimedia.org/wiki/File:Risotto_Milanese.jpg" },
-  food_carbonara: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Spaghetti_alla_carbonara.jpg/500px-Spaghetti_alla_carbonara.jpg", title: "Spaghetti alla Carbonara", credit: "Antonio D'Errico · CC BY-SA 3.0", source: "https://commons.wikimedia.org/wiki/File:Spaghetti_alla_carbonara.jpg" },
-  food_suppli: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Suppl%C3%AC_al_telefono.jpg/500px-Suppl%C3%AC_al_telefono.jpg", title: "Supplì al telefono (Roman fried rice balls)", credit: "Sailko · CC BY-SA 3.0", source: "https://commons.wikimedia.org/wiki/File:Supplì_al_telefono.jpg" },
-  food_ribollita: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Ribollita.jpg/500px-Ribollita.jpg", title: "Ribollita (Florentine bean & bread soup)", credit: "CC BY-SA 3.0", source: "https://commons.wikimedia.org/wiki/File:Ribollita.jpg" },
-  food_carciofi: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Carciofi_alla_Giudia.jpg/500px-Carciofi_alla_Giudia.jpg", title: "Carciofi alla Giudia (Jewish-style fried artichokes)", credit: "Pfeifferfranz · CC BY-SA 3.0", source: "https://commons.wikimedia.org/wiki/File:Carciofi_alla_Giudia.jpg" },
-  heidelberg_alte_bruecke: { url: "./assets/photos/500px-Heidelberg_Alte_Bruecke.jpg", title: "Alte Brücke (Karl-Theodor-Brücke), Heidelberg", credit: "Wikimedia Commons · CC BY-SA 3.0", source: "https://commons.wikimedia.org/wiki/File:Heidelberg_Alte_Bruecke.jpg" },
-  frankfurt_roemerberg: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Frankfurt_Roemerberg_2008.jpg/500px-Frankfurt_Roemerberg_2008.jpg", title: "Römerberg, Frankfurt am Main", credit: "Wikimedia Commons · CC BY-SA 3.0", source: "https://commons.wikimedia.org/wiki/File:Frankfurt_Roemerberg_2008.jpg" },
-  frankfurt_skyline: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Frankfurt_am_Main_Skyline_Abend.jpg/500px-Frankfurt_am_Main_Skyline_Abend.jpg", title: "Frankfurt am Main Skyline (Abend)", credit: "Wikimedia Commons · CC BY-SA 3.0", source: "https://commons.wikimedia.org/wiki/File:Frankfurt_am_Main_Skyline_Abend.jpg" },
-  freiburg_muenster: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Freiburg_im_Breisgau_-_Muenster.jpg/500px-Freiburg_im_Breisgau_-_Muenster.jpg", title: "Freiburger Münster", credit: "Wikimedia Commons · CC BY-SA 3.0", source: "https://commons.wikimedia.org/wiki/File:Freiburg_im_Breisgau_-_Muenster.jpg" },
-  titisee: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Titisee.jpg/500px-Titisee.jpg", title: "Titisee, Schwarzwald", credit: "Wikimedia Commons · CC BY-SA 3.0", source: "https://commons.wikimedia.org/wiki/File:Titisee.jpg" },
-  schwarzwald: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Schwarzwald_Panorama.jpg/500px-Schwarzwald_Panorama.jpg", title: "Schwarzwald (Black Forest) Panorama", credit: "Wikimedia Commons · CC BY-SA 3.0", source: "https://commons.wikimedia.org/wiki/File:Schwarzwald_Panorama.jpg" },
-  strasbourg_cathedral: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Strasbourg_Cathedral.jpg/500px-Strasbourg_Cathedral.jpg", title: "Cathédrale Notre-Dame de Strasbourg", credit: "Wikimedia Commons · CC BY-SA 3.0", source: "https://commons.wikimedia.org/wiki/File:Strasbourg_Cathedral.jpg" },
-  tuebingen_altstadt: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Tuebingen_Altstadt.jpg/500px-Tuebingen_Altstadt.jpg", title: "Tübingen Altstadt (Neckar)", credit: "Wikimedia Commons · CC BY-SA 3.0", source: "https://commons.wikimedia.org/wiki/File:Tuebingen_Altstadt.jpg" },
-  ulm_muenster: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Ulm_Muenster.jpg/500px-Ulm_Muenster.jpg", title: "Ulmer Münster (세계 최고 첨탑 161m)", credit: "Wikimedia Commons · CC BY-SA 3.0", source: "https://commons.wikimedia.org/wiki/File:Ulm_Muenster.jpg" },
-  speyer_dom: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Speyer_Dom.jpg/500px-Speyer_Dom.jpg", title: "Speyer Cathedral (Kaiserdom)", credit: "Wikimedia Commons · CC BY-SA 3.0", source: "https://commons.wikimedia.org/wiki/File:Speyer_Dom.jpg" },
-  rialto_bridge: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Rialto_Bridge_Venice.jpg/500px-Rialto_Bridge_Venice.jpg", title: "Rialto Bridge, Venice", credit: "Wikimedia Commons · CC BY-SA 3.0", source: "https://commons.wikimedia.org/wiki/File:Rialto_Bridge_Venice.jpg" },
-  mainz_dom: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Mainzer_Dom_nw.jpg/500px-Mainzer_Dom_nw.jpg", title: "Mainz Cathedral", credit: "Wikimedia Commons · CC BY-SA", source: "https://commons.wikimedia.org/wiki/File:Mainzer_Dom_nw.jpg" },
-  mainz_rheinufer: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Mainzer_Dom_Blaue_Stunde_(37539430014).jpg/500px-Mainzer_Dom_Blaue_Stunde_(37539430014).jpg", title: "Mainz Waterfront (Rheinufer)", credit: "Wikimedia Commons · CC BY-SA 3.0", source: "https://commons.wikimedia.org/wiki/File:Mainz_Rheinufer.jpg" },
-  nymphenburg: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Nymphenburg_Palace_Munich.jpg/500px-Nymphenburg_Palace_Munich.jpg", title: "Nymphenburg Palace, Munich", credit: "Wikimedia Commons · CC BY-SA 3.0", source: "https://commons.wikimedia.org/wiki/File:Nymphenburg_Palace_Munich.jpg" },
-  riesenrad: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Riesenrad_Wien.jpg/500px-Riesenrad_Wien.jpg", title: "Riesenrad (Giant Ferris Wheel), Vienna Prater", credit: "Wikimedia Commons · CC BY-SA 3.0", source: "https://commons.wikimedia.org/wiki/File:Riesenrad_Wien.jpg" },
-  uhrturm_graz: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Uhrturm_Graz.jpg/500px-Uhrturm_Graz.jpg", title: "Uhrturm (Clock Tower), Schlossberg, Graz", credit: "Wikimedia Commons · CC BY-SA 3.0", source: "https://commons.wikimedia.org/wiki/File:Uhrturm_Graz.jpg" },
-  graz_hauptplatz: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Graz_Hauptplatz.jpg/500px-Graz_Hauptplatz.jpg", title: "Hauptplatz, Graz Altstadt", credit: "Wikimedia Commons · CC BY-SA 3.0", source: "https://commons.wikimedia.org/wiki/File:Graz_Hauptplatz.jpg" },
-  schoenbrunn_palace: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Schloss_Schoenbrunn,_Vienna,_Austria.jpg/500px-Schloss_Schoenbrunn,_Vienna,_Austria.jpg", title: "Schönbrunn Palace, Vienna", credit: "Wikimedia Commons · CC BY-SA 3.0", source: "https://commons.wikimedia.org/wiki/File:Schloss_Schoenbrunn,_Vienna,_Austria.jpg" },
-  marienplatz_munich: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Marienplatz_Munich.jpg/500px-Marienplatz_Munich.jpg", title: "Marienplatz, Munich", credit: "Wikimedia Commons · CC BY-SA 3.0", source: "https://commons.wikimedia.org/wiki/File:Marienplatz_Munich.jpg" },
-  manhattan_skyline: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Manhattan_from_the_Top_of_the_Rock_2012.jpg/500px-Manhattan_from_the_Top_of_the_Rock_2012.jpg", title: "Manhattan Skyline from Top of the Rock", credit: "Wikimedia Commons · CC BY-SA 3.0", source: "https://commons.wikimedia.org/wiki/File:Manhattan_from_the_Top_of_the_Rock_2012.jpg" },
-  brooklyn_bridge: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Brooklyn_Bridge_Postdlf.jpg/500px-Brooklyn_Bridge_Postdlf.jpg", title: "Brooklyn Bridge, New York City", credit: "Wikimedia Commons · CC BY-SA 3.0", source: "https://commons.wikimedia.org/wiki/File:Brooklyn_Bridge_Postdlf.jpg" },
-  times_square_night: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Times_Square,_Manhattan_at_night,_November_2012.jpg/500px-Times_Square,_Manhattan_at_night,_November_2012.jpg", title: "Times Square at Night, Manhattan", credit: "Wikimedia Commons · CC BY-SA 3.0", source: "https://commons.wikimedia.org/wiki/File:Times_Square,_Manhattan_at_night,_November_2012.jpg" },
-  statue_of_liberty: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Front_view_of_Statue_of_Liberty_%28cropped%29.jpg/500px-Front_view_of_Statue_of_Liberty_%28cropped%29.jpg", title: "Statue of Liberty, New York Harbor", credit: "Wikimedia Commons · CC BY-SA 3.0", source: "https://commons.wikimedia.org/wiki/File:Statue_of_Liberty_close.jpg" },
-  nine_eleven_memorial: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/National_September_11_Memorial_reflecting_pool.jpg/500px-National_September_11_Memorial_reflecting_pool.jpg", title: "National September 11 Memorial Reflecting Pool", credit: "Wikimedia Commons · CC BY-SA 3.0", source: "https://commons.wikimedia.org/wiki/File:National_September_11_Memorial_reflecting_pool.jpg" },
-  central_park_aerial: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Central_Park_New_York_City_Aerial.jpg/500px-Central_Park_New_York_City_Aerial.jpg", title: "Central Park, New York City (Aerial)", credit: "Wikimedia Commons · CC BY-SA 3.0", source: "https://commons.wikimedia.org/wiki/File:Central_Park_New_York_City_Aerial.jpg" },
-  chrysler_building: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Chrysler_Building_by_David_Shankbone.jpg/500px-Chrysler_Building_by_David_Shankbone.jpg", title: "Chrysler Building, Midtown Manhattan", credit: "Wikimedia Commons · CC BY-SA 3.0", source: "https://commons.wikimedia.org/wiki/File:Chrysler_Building_by_David_Shankbone.jpg" },
-  dumbo_brooklyn: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/DUMBO_neighborhood_view_from_Manhattan_Bridge_120917.jpg/500px-DUMBO_neighborhood_view_from_Manhattan_Bridge_120917.jpg", title: "DUMBO Neighborhood from Manhattan Bridge, Brooklyn", credit: "Wikimedia Commons · CC BY-SA 3.0", source: "https://commons.wikimedia.org/wiki/File:DUMBO_neighborhood_view_from_Manhattan_Bridge_120917.jpg" },
-  met_museum_nyc: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Metropolitan_Museum_of_Art_-_NYC_-_5th_Avenue.jpg/500px-Metropolitan_Museum_of_Art_-_NYC_-_5th_Avenue.jpg", title: "Metropolitan Museum of Art, 5th Avenue", credit: "Wikimedia Commons · CC BY-SA 3.0", source: "https://commons.wikimedia.org/wiki/File:Metropolitan_Museum_of_Art_-_NYC_-_5th_Avenue.jpg" },
-  high_line_nyc: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/High_Line_at_30th_St.jpg/500px-High_Line_at_30th_St.jpg", title: "High Line at 30th St, Manhattan", credit: "Wikimedia Commons · CC BY-SA 3.0", source: "https://commons.wikimedia.org/wiki/File:High_Line_at_30th_St.jpg" },
-  innsbruck_goldenes_dachl: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Innsbruck_Goldenes_Dachl_2015.jpg/500px-Innsbruck_Goldenes_Dachl_2015.jpg", title: "Goldenes Dachl, Innsbruck", credit: "A.Savin · FAL", source: "https://commons.wikimedia.org/wiki/File:Innsbruck_Goldenes_Dachl_2015.jpg" },
-  nordkette: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Nordkette_Innsbruck.jpg/500px-Nordkette_Innsbruck.jpg", title: "Nordkette, Innsbruck", credit: "Wikimedia Commons · CC BY-SA 4.0", source: "https://commons.wikimedia.org/wiki/File:Nordkette_Innsbruck.jpg" },
-  r_haxnbauer: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Pork_Knuckle.jpg/500px-Pork_Knuckle.jpg", title: "Haxnbauer, Munich", credit: "BIPL1516 · CC BY-SA 3.0", source: "https://commons.wikimedia.org/wiki/File:Pork_Knuckle.jpg" },
-  auto_bulk_1_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/20190816_Brama_Prochowa_w_Pradze_1859_5460_DxO.jpg/500px-20190816_Brama_Prochowa_w_Pradze_1859_5460_DxO.jpg", source: "Wikipedia" },
-  auto_bulk_2_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/2022-10-15_V%C3%A1clavsk%C3%A9_n%C3%A1m%C4%9Bst%C3%AD_1.jpg/500px-2022-10-15_V%C3%A1clavsk%C3%A9_n%C3%A1m%C4%9Bst%C3%AD_1.jpg", source: "Wikipedia" },
-  auto_bulk_3_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Archikatedra_%C5%9Awi%C4%99tych_Wita%2C_Wac%C5%82awa_i_Wojciecha_w_Pradze_20190816_1333_5260.jpg/500px-Archikatedra_%C5%9Awi%C4%99tych_Wita%2C_Wac%C5%82awa_i_Wojciecha_w_Pradze_20190816_1333_5260.jpg", source: "Wikipedia" },
-  auto_bulk_4_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Astronomical_Clock_%288341899828%29.jpg/500px-Astronomical_Clock_%288341899828%29.jpg", source: "Wikipedia" },
-  auto_bulk_5_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Barrande_bridge.JPG/500px-Barrande_bridge.JPG", source: "Wikipedia" },
-  auto_bulk_6_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Bohuslav_Svoboda_%282022%29.jpg/500px-Bohuslav_Svoboda_%282022%29.jpg", source: "Wikipedia" },
-  auto_bulk_7_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Charles_Bridge_%28Karl%C5%AFv_most%29%2C_Vltava_River%2C_Prague%2C_2015.jpg/500px-Charles_Bridge_%28Karl%C5%AFv_most%29%2C_Vltava_River%2C_Prague%2C_2015.jpg", source: "Wikipedia" },
-  auto_bulk_8_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/FFUK_Praha.JPG/500px-FFUK_Praha.JPG", source: "Wikipedia" },
-  auto_bulk_9_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/2007-KarlovyVary-053-wide.jpg/500px-2007-KarlovyVary-053-wide.jpg", source: "Wikipedia" },
-  auto_bulk_10_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Canal_in_Karlovy_Vary_%28Carlsbad%29.jpg/500px-Canal_in_Karlovy_Vary_%28Carlsbad%29.jpg", source: "Wikipedia" },
-  auto_bulk_11_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Carlsbad_%28Merian%29.jpg/500px-Carlsbad_%28Merian%29.jpg", source: "Wikipedia" },
-  auto_bulk_12_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/EVLAHOS_KARLOVY_VARY.jpg/500px-EVLAHOS_KARLOVY_VARY.jpg", source: "Wikipedia" },
-  auto_bulk_13_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Evlahos_carlovy_vary.jpg/500px-Evlahos_carlovy_vary.jpg", source: "Wikipedia" },
-  auto_bulk_14_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Exterior_of_Karlovy_Vary_Town_Theatre_%28Divadlo_Karlovy_Vary%29_at_night_02.jpg/500px-Exterior_of_Karlovy_Vary_Town_Theatre_%28Divadlo_Karlovy_Vary%29_at_night_02.jpg", source: "Wikipedia" },
-  auto_bulk_15_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/KV-Kurbad-I-2.jpg/500px-KV-Kurbad-I-2.jpg", source: "Wikipedia" },
-  auto_bulk_16_vienna_night: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Wien_-_Stephansdom_%282%29.JPG/500px-Wien_-_Stephansdom_%282%29.JPG", source: "Wikipedia" },
-  auto_bulk_17_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/2011-06-14_10-23-56_Austria_Nieder%C3%B6sterreich_Fischamend_Markt.jpg/500px-2011-06-14_10-23-56_Austria_Nieder%C3%B6sterreich_Fischamend_Markt.jpg", source: "Wikipedia" },
-  auto_bulk_18_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/20180109_Vienna_State_Opera_at_blue_hour_850_9387.jpg/500px-20180109_Vienna_State_Opera_at_blue_hour_850_9387.jpg", source: "Wikipedia" },
-  auto_bulk_19_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/57A_Ansch%C3%BCtzgasse.jpg/500px-57A_Ansch%C3%BCtzgasse.jpg", source: "Wikipedia" },
-  auto_bulk_20_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/62_Wolkersbergenstra%C3%9Fe.jpg/500px-62_Wolkersbergenstra%C3%9Fe.jpg", source: "Wikipedia" },
-  auto_bulk_21_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Alsergrund_%28Wien%29_-_AKH%2C_Haupteingang.JPG/500px-Alsergrund_%28Wien%29_-_AKH%2C_Haupteingang.JPG", source: "Wikipedia" },
-  auto_bulk_22_vienna_night: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Wien_-_Stephansdom_%282%29.JPG/500px-Wien_-_Stephansdom_%282%29.JPG", source: "Wikipedia" },
-  auto_bulk_23_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Alte_Donau_Wien.jpg/500px-Alte_Donau_Wien.jpg", source: "Wikipedia" },
-  auto_bulk_24_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Arsenal_Heeresgeschichtliches_Museum-DSC_7920w.jpg/500px-Arsenal_Heeresgeschichtliches_Museum-DSC_7920w.jpg", source: "Wikipedia" },
-  auto_bulk_25_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Barricade_bei_der_Universit%C3%A4t_am_26ten_Mai_1848_in_Wien.jpg/500px-Barricade_bei_der_Universit%C3%A4t_am_26ten_Mai_1848_in_Wien.jpg", source: "Wikipedia" },
-  auto_bulk_26_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Bundesarchiv_Bild_146-1972-028-14%2C_Anschluss_%C3%96sterreich.jpg/500px-Bundesarchiv_Bild_146-1972-028-14%2C_Anschluss_%C3%96sterreich.jpg", source: "Wikipedia" },
-  auto_bulk_27_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Burg_Kino_Vienna.jpg/500px-Burg_Kino_Vienna.jpg", source: "Wikipedia" },
-  auto_bulk_28_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Citybike_Vienna%2C_Sch%C3%B6nbrunner_Br%C3%BCcke.jpg/500px-Citybike_Vienna%2C_Sch%C3%B6nbrunner_Br%C3%BCcke.jpg", source: "Wikipedia" },
-  auto_bulk_29_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Das_roemische_Wien.png/500px-Das_roemische_Wien.png", source: "Wikipedia" },
-  auto_bulk_30_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Donaupark_%26_Donauturm_Vienna_2024.jpg/500px-Donaupark_%26_Donauturm_Vienna_2024.jpg", source: "Wikipedia" },
-  auto_bulk_31_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Donaustadtbr%C3%BCcke_rigardate_de_la_stacio_Donaumarina.jpg/500px-Donaustadtbr%C3%BCcke_rigardate_de_la_stacio_Donaumarina.jpg", source: "Wikipedia" },
-  auto_bulk_32_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Ernst-happel-stadion_vienna.jpg/500px-Ernst-happel-stadion_vienna.jpg", source: "Wikipedia" },
-  auto_bulk_33_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/1_hallstatt_austria.jpg/500px-1_hallstatt_austria.jpg", source: "Wikipedia" },
-  auto_bulk_34_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/400_Jahre_Fronleichnamprozession_in_Hallstatt.jpg/500px-400_Jahre_Fronleichnamprozession_in_Hallstatt.jpg", source: "Wikipedia" },
-  auto_bulk_35_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Alice_Schumacher_NHM_Wien_Abb_Salz-Reich_2008_Seite_133_6.jpg/500px-Alice_Schumacher_NHM_Wien_Abb_Salz-Reich_2008_Seite_133_6.jpg", source: "Wikipedia" },
-  auto_bulk_36_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Blue_Hallstatt_%28204466021%29.jpeg/500px-Blue_Hallstatt_%28204466021%29.jpeg", source: "Wikipedia" },
-  auto_bulk_37_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Hallstatt_1899._pogled_sa_sjevera.jpg/500px-Hallstatt_1899._pogled_sa_sjevera.jpg", source: "Wikipedia" },
-  auto_bulk_38_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Museum_Hallstatt_26.JPG/500px-Museum_Hallstatt_26.JPG", source: "Wikipedia" },
-  auto_bulk_39_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Museum_Hallstatt_35.JPG/500px-Museum_Hallstatt_35.JPG", source: "Wikipedia" },
-  auto_bulk_40_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/S%C3%ADtula_de_bronze%2C_vaixella_per_a_beure%2C_tomba_504_de_Hallstatt.JPG/500px-S%C3%ADtula_de_bronze%2C_vaixella_per_a_beure%2C_tomba_504_de_Hallstatt.JPG", source: "Wikipedia" },
-  auto_bulk_41_: { url: "https://upload.wikimedia.org/wikipedia/en/b/b8/Feb20516.JPG", source: "Wikipedia" },
-  auto_bulk_42_: { url: "https://upload.wikimedia.org/wikipedia/en/f/f1/Feb20532.JPG", source: "Wikipedia" },
-  auto_bulk_43_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/2163_-_Salzburg_-_Stift_Nonnberg.JPG/500px-2163_-_Salzburg_-_Stift_Nonnberg.JPG", source: "Wikipedia" },
-  auto_bulk_44_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/8_of_10_-_Hohensalzburg_Castle%2C_AUSTRIA.jpg/500px-8_of_10_-_Hohensalzburg_Castle%2C_AUSTRIA.jpg", source: "Wikipedia" },
-  auto_bulk_45_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/A_view_from_Getreidegasse_%28Salzburg%29.jpg/500px-A_view_from_Getreidegasse_%28Salzburg%29.jpg", source: "Wikipedia" },
-  auto_bulk_46_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Aussenansicht_red_bull_hangar-7_nacht.jpg/500px-Aussenansicht_red_bull_hangar-7_nacht.jpg", source: "Wikipedia" },
-  auto_bulk_47_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Das_Staatstheater_am_G%C3%A4rtnerplatz_04.jpg/500px-Das_Staatstheater_am_G%C3%A4rtnerplatz_04.jpg", source: "Wikipedia" },
-  auto_bulk_48_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/4_Cilindros%2C_M%C3%BAnich%2C_Alemania%2C_2013-02-11%2C_DD_02.JPG/500px-4_Cilindros%2C_M%C3%BAnich%2C_Alemania%2C_2013-02-11%2C_DD_02.JPG", source: "Wikipedia" },
-  auto_bulk_49_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Allianz_Arena_2008-02-09.jpg/500px-Allianz_Arena_2008-02-09.jpg", source: "Wikipedia" },
-  auto_bulk_50_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Ammersee.JPG/500px-Ammersee.JPG", source: "Wikipedia" },
-  auto_bulk_51_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Antiquarium%2C_M%C3%BCnchner_Residenz.jpg/500px-Antiquarium%2C_M%C3%BCnchner_Residenz.jpg", source: "Wikipedia" },
-  auto_bulk_52_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/BMW_Welt%2C_M%C3%BAnich%2C_Alemania16.jpg/500px-BMW_Welt%2C_M%C3%BAnich%2C_Alemania16.jpg", source: "Wikipedia" },
-  auto_bulk_53_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/%28Barcelona%29_Lucerne_from_the_Walls%2C_Sample_Study_-_William_Turner_-_Tate_Britain.jpg/500px-%28Barcelona%29_Lucerne_from_the_Walls%2C_Sample_Study_-_William_Turner_-_Tate_Britain.jpg", source: "Wikipedia" },
-  auto_bulk_54_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/2009_08_24_06262_Lucerne.jpg/500px-2009_08_24_06262_Lucerne.jpg", source: "Wikipedia" },
-  auto_bulk_55_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Dampfschiffe_in_Luzern_%28cropped%29.jpg/500px-Dampfschiffe_in_Luzern_%28cropped%29.jpg", source: "Wikipedia" },
-  auto_bulk_56_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Hotel_Ch%C3%A2teau_G%C3%BCtsch_Luzern_20230529_0457.jpg/500px-Hotel_Ch%C3%A2teau_G%C3%BCtsch_Luzern_20230529_0457.jpg", source: "Wikipedia" },
-  auto_bulk_57_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Johann_Heinrich_M%C3%BCller%2C_1825-1894_G01_Luzern.JPG/500px-Johann_Heinrich_M%C3%BCller%2C_1825-1894_G01_Luzern.JPG", source: "Wikipedia" },
-  auto_bulk_58_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Joseph_Mallord_William_Turner_-_Lucerne_from_the_Lake_-_Google_Art_Project.jpg/500px-Joseph_Mallord_William_Turner_-_Lucerne_from_the_Lake_-_Google_Art_Project.jpg", source: "Wikipedia" },
-  auto_bulk_59_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Lucerne%27s_Jesuit_Church_at_Sunset.jpg/500px-Lucerne%27s_Jesuit_Church_at_Sunset.jpg", source: "Wikipedia" },
-  auto_bulk_60_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Lucerne%2C_Switzerland.jpg/500px-Lucerne%2C_Switzerland.jpg", source: "Wikipedia" },
-  auto_bulk_61_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Lucerne%2C_Villa_Wallis_%281870%29.jpg/500px-Lucerne%2C_Villa_Wallis_%281870%29.jpg", source: "Wikipedia" },
-  auto_bulk_62_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Lucerne_Switzerland_Hotel_des_Balances_-_panoramio.jpg/500px-Lucerne_Switzerland_Hotel_des_Balances_-_panoramio.jpg", source: "Wikipedia" },
-  auto_bulk_63_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Lucerne_from_Pilatus.jpg/500px-Lucerne_from_Pilatus.jpg", source: "Wikipedia" },
-  auto_bulk_64_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Lucerne_reflections.jpg/500px-Lucerne_reflections.jpg", source: "Wikipedia" },
-  auto_bulk_65_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Luzern%2C_Stadtmauer.jpg/500px-Luzern%2C_Stadtmauer.jpg", source: "Wikipedia" },
-  auto_bulk_66_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Luzern_-_Rathausquai.JPG/500px-Luzern_-_Rathausquai.JPG", source: "Wikipedia" },
-  auto_bulk_67_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/20070909S236_401-308.jpg/500px-20070909S236_401-308.jpg", source: "Wikipedia" },
-  auto_bulk_68_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/2011-07-21-Interlaken_%28Foto_Dietrich_Michael_Weidmann%29_021.JPG/500px-2011-07-21-Interlaken_%28Foto_Dietrich_Michael_Weidmann%29_021.JPG", source: "Wikipedia" },
-  auto_bulk_69_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/2011-07-21-Interlaken_%28Foto_Dietrich_Michael_Weidmann%29_050.JPG/500px-2011-07-21-Interlaken_%28Foto_Dietrich_Michael_Weidmann%29_050.JPG", source: "Wikipedia" },
-  auto_bulk_70_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/2011-07-21-Interlaken_%28Foto_Dietrich_Michael_Weidmann%29_055.JPG/500px-2011-07-21-Interlaken_%28Foto_Dietrich_Michael_Weidmann%29_055.JPG", source: "Wikipedia" },
-  auto_bulk_71_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Goldswil-Viadukt_Panorama_mit_Interlaken_im_Hintergrund_2.jpg/500px-Goldswil-Viadukt_Panorama_mit_Interlaken_im_Hintergrund_2.jpg", source: "Wikipedia" },
-  auto_bulk_72_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Hotel_Park_Interlaken_na_druku_firmowym.jpg/500px-Hotel_Park_Interlaken_na_druku_firmowym.jpg", source: "Wikipedia" },
-  auto_bulk_73_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/H%C3%B6henweg_der_Aarm%C3%BChle_nach_Interlaken_1830.jpg/500px-H%C3%B6henweg_der_Aarm%C3%BChle_nach_Interlaken_1830.jpg", source: "Wikipedia" },
-  auto_bulk_74_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Interlaken_01.jpg/500px-Interlaken_01.jpg", source: "Wikipedia" },
-  auto_bulk_75_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/1807KingdomItaly.jpg/500px-1807KingdomItaly.jpg", source: "Wikipedia" },
-  auto_bulk_76_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/1952_Alfa_Romeo_1900_C52_Disco_Volante_Spider_ARM.jpg/500px-1952_Alfa_Romeo_1900_C52_Disco_Volante_Spider_ARM.jpg", source: "Wikipedia" },
-  auto_bulk_77_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/9754_-_Museo_archeologico_di_Milano_-_Olletta_celtica_%28sec._II-I_a.C.%29_-_Foto_Giovanni_Dall%27Orto%2C_13-mar-2012.jpg/500px-9754_-_Museo_archeologico_di_Milano_-_Olletta_celtica_%28sec._II-I_a.C.%29_-_Foto_Giovanni_Dall%27Orto%2C_13-mar-2012.jpg", source: "Wikipedia" },
-  auto_bulk_78_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Antica_trattoria_Bagutto.jpg/500px-Antica_trattoria_Bagutto.jpg", source: "Wikipedia" },
-  auto_bulk_79_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Arese_Museo_Storico_Alfa_Romeo_1967_33_Stradale_prototype_1.jpg/500px-Arese_Museo_Storico_Alfa_Romeo_1967_33_Stradale_prototype_1.jpg", source: "Wikipedia" },
-  auto_bulk_80_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Autodromo_Nazionale_Monza%2C_April_22%2C_2018_SkySat_%28cropped%29.jpg/500px-Autodromo_Nazionale_Monza%2C_April_22%2C_2018_SkySat_%28cropped%29.jpg", source: "Wikipedia" },
-  auto_bulk_81_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Basilica_of_San_Carlo_al_Corso_%2826512277809%29.jpg/500px-Basilica_of_San_Carlo_al_Corso_%2826512277809%29.jpg", source: "Wikipedia" },
-  auto_bulk_82_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Canaletto_-_Bucentaur%27s_return_to_the_pier_by_the_Palazzo_Ducale_-_Google_Art_Project.jpg/500px-Canaletto_-_Bucentaur%27s_return_to_the_pier_by_the_Palazzo_Ducale_-_Google_Art_Project.jpg", source: "Wikipedia" },
-  auto_bulk_83_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/%28Venice%29_Ca%27_Foscari.jpg/500px-%28Venice%29_Ca%27_Foscari.jpg", source: "Wikipedia" },
-  auto_bulk_84_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/2017_06_Venezia_Terminal_Passeggeri_Terminal_Passeggeri_2860.jpg/500px-2017_06_Venezia_Terminal_Passeggeri_Terminal_Passeggeri_2860.jpg", source: "Wikipedia" },
-  auto_bulk_85_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/2019_Venice_Film_Festival.jpg/500px-2019_Venice_Film_Festival.jpg", source: "Wikipedia" },
-  auto_bulk_86_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/AcquaAlta1_12_2008_3.JPG/500px-AcquaAlta1_12_2008_3.JPG", source: "Wikipedia" },
-  auto_bulk_87_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Actv_tram_Venezia_leaving_Piazzale_Roma_2017.jpg/500px-Actv_tram_Venezia_leaving_Piazzale_Roma_2017.jpg", source: "Wikipedia" },
-  auto_bulk_88_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Aeroporto_di_Venezia_-_vue_aerienne.jpg/500px-Aeroporto_di_Venezia_-_vue_aerienne.jpg", source: "Wikipedia" },
-  auto_bulk_89_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Arsenal_-_panoramio_-_nikola_pu.jpg/500px-Arsenal_-_panoramio_-_nikola_pu.jpg", source: "Wikipedia" },
-  auto_bulk_90_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Bartolomeo_Colleoni_by_Andrea_del_Verrocchio.jpg/500px-Bartolomeo_Colleoni_by_Andrea_del_Verrocchio.jpg", source: "Wikipedia" },
-  auto_bulk_91_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Basilica_Santa_Maria_della_Salute_Venice_1.jpg/500px-Basilica_Santa_Maria_della_Salute_Venice_1.jpg", source: "Wikipedia" },
-  auto_bulk_92_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Bernardo_Strozzi_-_Claudio_Monteverdi_%28c.1630%29.jpg/500px-Bernardo_Strozzi_-_Claudio_Monteverdi_%28c.1630%29.jpg", source: "Wikipedia" },
-  auto_bulk_93_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Bridge_of_Sighs_sea_facade_Venice.jpg/500px-Bridge_of_Sighs_sea_facade_Venice.jpg", source: "Wikipedia" },
-  auto_bulk_94_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Ca%27_Rezzonico_%28Venice%29.jpg/500px-Ca%27_Rezzonico_%28Venice%29.jpg", source: "Wikipedia" },
-  auto_bulk_95_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Ca%27_d%27Oro_facciata.jpg/500px-Ca%27_d%27Oro_facciata.jpg", source: "Wikipedia" },
-  auto_bulk_96_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Isole_di_murano.png/500px-Isole_di_murano.png", source: "Wikipedia" },
-  auto_bulk_97_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Lampadario_in_vetro_di_Murano_-_Ca%27_Rezzonico%2C_Venice.jpg/500px-Lampadario_in_vetro_di_Murano_-_Ca%27_Rezzonico%2C_Venice.jpg", source: "Wikipedia" },
-  auto_bulk_98_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Murano-view.jpg/500px-Murano-view.jpg", source: "Wikipedia" },
-  auto_bulk_99_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/MuranoSantaMariaeSanDonato20031230.JPG/500px-MuranoSantaMariaeSanDonato20031230.JPG", source: "Wikipedia" },
-  auto_bulk_100_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Murano_making_a_Glass_Horse.jpg/500px-Murano_making_a_Glass_Horse.jpg", source: "Wikipedia" },
-  auto_bulk_101_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Rii_di_Murano.png/500px-Rii_di_Murano.png", source: "Wikipedia" },
-  auto_bulk_102_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Terra.png/500px-Terra.png", source: "Wikipedia" },
-  auto_bulk_103_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Vaporetti_Venice_Lagoon.jpg/500px-Vaporetti_Venice_Lagoon.jpg", source: "Wikipedia" },
-  auto_bulk_104_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Campanile_of_St._Mark%27s_Basilica_-_remote_view.jpg/500px-Campanile_of_St._Mark%27s_Basilica_-_remote_view.jpg", source: "Wikipedia" },
-  auto_bulk_105_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Carnevale_di_Venezia_Masks_2010.jpg/500px-Carnevale_di_Venezia_Masks_2010.jpg", source: "Wikipedia" },
-  auto_bulk_106_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Cleaning_of_Venetian_canals%2C_late_90%27s.jpg/500px-Cleaning_of_Venetian_canals%2C_late_90%27s.jpg", source: "Wikipedia" },
-  auto_bulk_107_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Cruiseship_passing_bacino_San_Marco_Venise.jpg/500px-Cruiseship_passing_bacino_San_Marco_Venise.jpg", source: "Wikipedia" },
-  auto_bulk_108_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/DSC_0617_%2849258233932%29.jpg/500px-DSC_0617_%2849258233932%29.jpg", source: "Wikipedia" },
-  auto_bulk_109_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Doge%27s_Palace_%28Venice%29_at_night_2023-msu-2023-0I9A6405-.jpg/500px-Doge%27s_Palace_%28Venice%29_at_night_2023-msu-2023-0I9A6405-.jpg", source: "Wikipedia" },
-  auto_bulk_110_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Dorina_Vaccaroni.jpg/500px-Dorina_Vaccaroni.jpg", source: "Wikipedia" },
-  auto_bulk_111_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/El_dos_de_mayo_de_1808_en_Madrid.jpg/500px-El_dos_de_mayo_de_1808_en_Madrid.jpg", source: "Wikipedia" },
-  auto_bulk_112_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/%28Castillejos%29_Vista_de_Madrid_desde_Plaza_de_Castilla_03_%28cropped%29.jpg/500px-%28Castillejos%29_Vista_de_Madrid_desde_Plaza_de_Castilla_03_%28cropped%29.jpg", source: "Wikipedia" },
-  auto_bulk_113_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/20210109_Royal_Palace_of_Madrid_after_snowstorm.jpg/500px-20210109_Royal_Palace_of_Madrid_after_snowstorm.jpg", source: "Wikipedia" },
-  auto_bulk_114_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/BNE_-_panoramio.jpg/500px-BNE_-_panoramio.jpg", source: "Wikipedia" },
-  auto_bulk_115_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Ba%C3%B1os_en_el_Manzanares_en_el_paraje_de_Molino_Quemado._Museo_de_Historia_de_Madrid_%28detalle%29.JPG/500px-Ba%C3%B1os_en_el_Manzanares_en_el_paraje_de_Molino_Quemado._Museo_de_Historia_de_Madrid_%28detalle%29.JPG", source: "Wikipedia" },
-  auto_bulk_116_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/BocadilloCalamaresAtocha_%28cropped%29.JPG/500px-BocadilloCalamaresAtocha_%28cropped%29.JPG", source: "Wikipedia" },
-  auto_bulk_117_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Caleido_%28agosto_2018%29.JPG/500px-Caleido_%28agosto_2018%29.JPG", source: "Wikipedia" },
-  auto_bulk_118_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/CercaniasMadrid2018.png/500px-CercaniasMadrid2018.png", source: "Wikipedia" },
-  auto_bulk_119_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Children_during_the_Madrid_bombing.jpg/500px-Children_during_the_Madrid_bombing.jpg", source: "Wikipedia" },
-  auto_bulk_120_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Comienza_la_restauraci%C3%B3n_del_Viaje_de_Agua_de_Amaniel_para_permitir_visitas_did%C3%A1cticas_04.jpg/500px-Comienza_la_restauraci%C3%B3n_del_Viaje_de_Agua_de_Amaniel_para_permitir_visitas_did%C3%A1cticas_04.jpg", source: "Wikipedia" },
-  auto_bulk_121_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Casa_Mil%C3%A0_-_Barcelona%2C_Spain_-_Jan_2007.jpg/500px-Casa_Mil%C3%A0_-_Barcelona%2C_Spain_-_Jan_2007.jpg", source: "Wikipedia" },
-  auto_bulk_122_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Barcelona_bombing_%281938%29.jpg/500px-Barcelona_bombing_%281938%29.jpg", source: "Wikipedia" },
-  auto_bulk_123_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/08.10.2017_Manifestaci%C3%B3_%22Prou%21_Recuperem_el_seny%22_-_Barcelona_17.jpg/500px-08.10.2017_Manifestaci%C3%B3_%22Prou%21_Recuperem_el_seny%22_-_Barcelona_17.jpg", source: "Wikipedia" },
-  auto_bulk_124_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/085_Ronda_de_Dalt_%28Barcelona%29%2C_des_del_pont_de_l%27avinguda_del_Tibidabo.jpg/500px-085_Ronda_de_Dalt_%28Barcelona%29%2C_des_del_pont_de_l%27avinguda_del_Tibidabo.jpg", source: "Wikipedia" },
-  auto_bulk_125_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/14-08-05-barcelona-RalfR-022.jpg/500px-14-08-05-barcelona-RalfR-022.jpg", source: "Wikipedia" },
-  auto_bulk_126_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/14-08-06-barcelona-RalfR-222.jpg/500px-14-08-06-barcelona-RalfR-222.jpg", source: "Wikipedia" },
-  auto_bulk_127_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/15-10-27-Vista_des_de_l%27est%C3%A0tua_de_Colom_a_Barcelona-WMA_2800.jpg/500px-15-10-27-Vista_des_de_l%27est%C3%A0tua_de_Colom_a_Barcelona-WMA_2800.jpg", source: "Wikipedia" },
-  auto_bulk_128_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/26O_Llibertat_191026_60383_dc_2_%2848979743792%29.jpg/500px-26O_Llibertat_191026_60383_dc_2_%2848979743792%29.jpg", source: "Wikipedia" },
-  auto_bulk_129_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Airport_Barcelona_seen_from_air.jpg/500px-Airport_Barcelona_seen_from_air.jpg", source: "Wikipedia" },
-  auto_bulk_130_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Ajuntament_de_Barcelona_%283400686886%29.jpg/500px-Ajuntament_de_Barcelona_%283400686886%29.jpg", source: "Wikipedia" },
-  auto_bulk_131_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Arc_de_Triomf%2C_domingo_de_Ramos.jpg/500px-Arc_de_Triomf%2C_domingo_de_Ramos.jpg", source: "Wikipedia" },
-  auto_bulk_132_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Area_metropolitana_Barcelona_primera_edicion_digital_MTN50_2004-2008.jpg/500px-Area_metropolitana_Barcelona_primera_edicion_digital_MTN50_2004-2008.jpg", source: "Wikipedia" },
-  auto_bulk_133_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Avinguda_de_la_Reina_Maria_Cristina_Barcelona_2013.jpg/500px-Avinguda_de_la_Reina_Maria_Cristina_Barcelona_2013.jpg", source: "Wikipedia" },
-  auto_bulk_134_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Barcelona%2C_Spain_%2851225532527%29.jpg/500px-Barcelona%2C_Spain_%2851225532527%29.jpg", source: "Wikipedia" },
-  auto_bulk_135_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Barcelona._View_from_Tibidabo.jpg/500px-Barcelona._View_from_Tibidabo.jpg", source: "Wikipedia" },
-  auto_bulk_136_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Barcelona_-_Estaci%C3%B3n_de_Sants_y_Hotel_Barcel%C3%B3_Sants_2.jpg/500px-Barcelona_-_Estaci%C3%B3n_de_Sants_y_Hotel_Barcel%C3%B3_Sants_2.jpg", source: "Wikipedia" },
-  auto_bulk_137_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Barcelona_-_Museu_d%27Art_Contemporani_de_Barcelona_%28MACBA%29.jpg/500px-Barcelona_-_Museu_d%27Art_Contemporani_de_Barcelona_%28MACBA%29.jpg", source: "Wikipedia" },
-  auto_bulk_138_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Barcelona_4527.JPG/500px-Barcelona_4527.JPG", source: "Wikipedia" },
-  auto_bulk_139_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Admiralty_Chart_No_254_Montserrat%2C_Published_1869.jpg/500px-Admiralty_Chart_No_254_Montserrat%2C_Published_1869.jpg", source: "Wikipedia" },
-  auto_bulk_140_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Caribe_Queen.jpg/500px-Caribe_Queen.jpg", source: "Wikipedia" },
-  auto_bulk_141_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Icterus_oberi.jpg/500px-Icterus_oberi.jpg", source: "Wikipedia" },
-  auto_bulk_142_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Little_Bay%2C_Montserrat.jpg/500px-Little_Bay%2C_Montserrat.jpg", source: "Wikipedia" },
-  auto_bulk_143_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Little_Bay_from_above%2C_Montserrat.JPG/500px-Little_Bay_from_above%2C_Montserrat.JPG", source: "Wikipedia" },
-  auto_bulk_144_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Montserrat_Airport_%2815632994595%29.jpg/500px-Montserrat_Airport_%2815632994595%29.jpg", source: "Wikipedia" },
-  auto_bulk_145_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Montserrat_Cultural_Center_%285809290561%29.jpg/500px-Montserrat_Cultural_Center_%285809290561%29.jpg", source: "Wikipedia" },
-  auto_bulk_146_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Montserrat_Island_Sunset_%284568325551%29.jpg/500px-Montserrat_Island_Sunset_%284568325551%29.jpg", source: "Wikipedia" },
-  auto_bulk_147_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/AllianzRiviera342.JPG/500px-AllianzRiviera342.JPG", source: "Wikipedia" },
-  auto_bulk_148_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Avenue_Jean_Medecin_Nice.jpg/500px-Avenue_Jean_Medecin_Nice.jpg", source: "Wikipedia" },
-  auto_bulk_149_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Bataille_de_fleurs._2020-02-22_14-43-52.jpg/500px-Bataille_de_fleurs._2020-02-22_14-43-52.jpg", source: "Wikipedia" },
-  auto_bulk_150_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Cathedrale_Sainte-Reparate_Nice.jpg/500px-Cathedrale_Sainte-Reparate_Nice.jpg", source: "Wikipedia" },
-  auto_bulk_151_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Cosmographie_universelle_50551.jpg/500px-Cosmographie_universelle_50551.jpg", source: "Wikipedia" },
-  auto_bulk_152_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Coupole_Bischoffsheim.jpg/500px-Coupole_Bischoffsheim.jpg", source: "Wikipedia" },
-  auto_bulk_153_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Ambassade_de_Monaco_en_France%2C_22_boulevard_Suchet%2C_Paris_16e.jpg/500px-Ambassade_de_Monaco_en_France%2C_22_boulevard_Suchet%2C_Paris_16e.jpg", source: "Wikipedia" },
-  auto_bulk_154_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Caf%C3%A9_de_Paris%2C_Monte_Carlo_-_expresso.jpg/500px-Caf%C3%A9_de_Paris%2C_Monte_Carlo_-_expresso.jpg", source: "Wikipedia" },
-  auto_bulk_155_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/City_of_Monaco_in_2021.05.jpg/500px-City_of_Monaco_in_2021.05.jpg", source: "Wikipedia" },
-  auto_bulk_156_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/City_of_Monaco_in_2021.06.jpg/500px-City_of_Monaco_in_2021.06.jpg", source: "Wikipedia" },
-  auto_bulk_157_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Grand_Prix_Monaco96_131954710.jpg/500px-Grand_Prix_Monaco96_131954710.jpg", source: "Wikipedia" },
-  auto_bulk_158_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Harbour_of_Fontvielle%2C_Monaco_%28view_from_above%29_2009-05-09.jpg/500px-Harbour_of_Fontvielle%2C_Monaco_%28view_from_above%29_2009-05-09.jpg", source: "Wikipedia" },
-  auto_bulk_159_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Dome_of_Cattedrale_di_Santa_Maria_del_Fiore_%28Florence%29.jpg/500px-Dome_of_Cattedrale_di_Santa_Maria_del_Fiore_%28Florence%29.jpg", source: "Wikipedia" },
-  auto_bulk_160_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/%27David%27_by_Michelangelo_JBU05.JPG/500px-%27David%27_by_Michelangelo_JBU05.JPG", source: "Wikipedia" },
-  auto_bulk_161_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/1-5MahrattaLightInfantryFlorence1944.jpg/500px-1-5MahrattaLightInfantryFlorence1944.jpg", source: "Wikipedia" },
-  auto_bulk_162_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Aeroporto_di_Firenze_-_main_building_seen_from_restaurant_at_the_1st_floor.jpg/500px-Aeroporto_di_Firenze_-_main_building_seen_from_restaurant_at_the_1st_floor.jpg", source: "Wikipedia" },
-  auto_bulk_163_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Amerigo_Vespucci_%28with_turban%29_-_cropped.jpg/500px-Amerigo_Vespucci_%28with_turban%29_-_cropped.jpg", source: "Wikipedia" },
-  auto_bulk_164_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Bistecca_alla_fiorentina-01.jpg/500px-Bistecca_alla_fiorentina-01.jpg", source: "Wikipedia" },
-  auto_bulk_165_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Calcio_Storico_Corteo.jpg/500px-Calcio_Storico_Corteo.jpg", source: "Wikipedia" },
-  auto_bulk_166_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Colored_woodcut_town_view_of_Florence.jpg/500px-Colored_woodcut_town_view_of_Florence.jpg", source: "Wikipedia" },
-  auto_bulk_167_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Pisa_Baptistry.jpg/500px-Pisa_Baptistry.jpg", source: "Wikipedia" },
-  auto_bulk_168_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Comune_di_Pisa_1875.jpg/500px-Comune_di_Pisa_1875.jpg", source: "Wikipedia" },
-  auto_bulk_169_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Italy_-_Pisa.jpg/500px-Italy_-_Pisa.jpg", source: "Wikipedia" },
-  auto_bulk_170_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Italy_-_Pisa_-_Leaning_Tower.jpg/500px-Italy_-_Pisa_-_Leaning_Tower.jpg", source: "Wikipedia" },
-  auto_bulk_171_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Italy_-_Pisa_-_Stadium.jpg/500px-Italy_-_Pisa_-_Stadium.jpg", source: "Wikipedia" },
-  auto_bulk_172_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Lungarno%2C_Pisa.jpg/500px-Lungarno%2C_Pisa.jpg", source: "Wikipedia" },
-  auto_bulk_173_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/1_vernazza_2012.jpg/500px-1_vernazza_2012.jpg", source: "Wikipedia" },
-  auto_bulk_174_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/2019-05-01_Controllo_turisti_arrivo_binari_La_Spezia_10.jpg/500px-2019-05-01_Controllo_turisti_arrivo_binari_La_Spezia_10.jpg", source: "Wikipedia" },
-  auto_bulk_175_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Cinque_Terre_%28Italy%2C_October_2020%29_-_24_%2850543603956%29.jpg/500px-Cinque_Terre_%28Italy%2C_October_2020%29_-_24_%2850543603956%29.jpg", source: "Wikipedia" },
-  auto_bulk_176_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/East_Above_Corniglia_Cinque_Terre_crop_Sep23_A7C_06797.jpg/500px-East_Above_Corniglia_Cinque_Terre_crop_Sep23_A7C_06797.jpg", source: "Wikipedia" },
-  auto_bulk_177_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Manarola_NW_Cinque_Terre_Sep23_A7C_07237.jpg/500px-Manarola_NW_Cinque_Terre_Sep23_A7C_07237.jpg", source: "Wikipedia" },
-  auto_bulk_178_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Monterosso_CinqueTerre.JPG/500px-Monterosso_CinqueTerre.JPG", source: "Wikipedia" },
-  auto_bulk_179_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/0_Castel_et_pont_Sant%27Angelo_%281%29.JPG/500px-0_Castel_et_pont_Sant%27Angelo_%281%29.JPG", source: "Wikipedia" },
-  auto_bulk_180_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Aeroporto_di_Roma-Fiumicino_in_2021.03.jpg/500px-Aeroporto_di_Roma-Fiumicino_in_2021.03.jpg", source: "Wikipedia" },
-  auto_bulk_181_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Barcaccia_e_scalinata.jpg/500px-Barcaccia_e_scalinata.jpg", source: "Wikipedia" },
-  auto_bulk_182_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Biblioteca_Casanatense.jpg/500px-Biblioteca_Casanatense.jpg", source: "Wikipedia" },
-  auto_bulk_183_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Breccia_di_Porta_Pia_Ademollo.jpg/500px-Breccia_di_Porta_Pia_Ademollo.jpg", source: "Wikipedia" },
-  auto_bulk_184_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Bridge_Vittorio_Emanuele_II_at_sunset.jpg/500px-Bridge_Vittorio_Emanuele_II_at_sunset.jpg", source: "Wikipedia" },
-  auto_bulk_185_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Celebrazione_del_2777_Natale_di_Roma_-_Pietas_Comunit%C3%A0_Gentile_2.jpg/500px-Celebrazione_del_2777_Natale_di_Roma_-_Pietas_Comunit%C3%A0_Gentile_2.jpg", source: "Wikipedia" },
-  auto_bulk_186_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Colosseum_in_Rome-April_2007-1-_copie_2B.jpg/500px-Colosseum_in_Rome-April_2007-1-_copie_2B.jpg", source: "Wikipedia" },
-  auto_bulk_187_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Detail_coronation_Charles_the_Great_%28Francis_1st_of_France%29_by_Pope_Leo_III_%28Leo_X%29_Vatican_11.jpg/500px-Detail_coronation_Charles_the_Great_%28Francis_1st_of_France%29_by_Pope_Leo_III_%28Leo_X%29_Vatican_11.jpg", source: "Wikipedia" },
-  auto_bulk_188_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Doria_Pamphili_6376.jpg/500px-Doria_Pamphili_6376.jpg", source: "Wikipedia" },
-  auto_bulk_189_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/D%C3%A9tail_de_la_maquette_de_Rome_%C3%A0_l%C3%A9poque_de_Constantin_%285840455090%29.jpg/500px-D%C3%A9tail_de_la_maquette_de_Rome_%C3%A0_l%C3%A9poque_de_Constantin_%285840455090%29.jpg", source: "Wikipedia" },
-  auto_bulk_190_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Empty_Piazza_Navona_%2885148359%29.jpeg/500px-Empty_Piazza_Navona_%2885148359%29.jpeg", source: "Wikipedia" },
-  auto_bulk_191_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Engelsburg_und_Engelsbr%C3%BCcke_abends_%28Zuschnitt%29.jpg/500px-Engelsburg_und_Engelsbr%C3%BCcke_abends_%28Zuschnitt%29.jpg", source: "Wikipedia" },
-  auto_bulk_192_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Espaguetis_carbonara.jpg/500px-Espaguetis_carbonara.jpg", source: "Wikipedia" },
-  auto_bulk_193_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Food_and_Agriculture_Organization_HQ_2008.jpg/500px-Food_and_Agriculture_Organization_HQ_2008.jpg", source: "Wikipedia" },
-  auto_bulk_194_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Admiral_Byng%27s_Fleet_at_Naples.jpg/500px-Admiral_Byng%27s_Fleet_at_Naples.jpg", source: "Wikipedia" },
-  auto_bulk_195_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/CastelOvo.jpg/500px-CastelOvo.jpg", source: "Wikipedia" },
-  auto_bulk_196_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Centro_Direzionale_di_Napoli_%28cropped%29.jpg/500px-Centro_Direzionale_di_Napoli_%28cropped%29.jpg", source: "Wikipedia" },
-  auto_bulk_197_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Chiesa_del_Gesu_Nuovo.jpg/500px-Chiesa_del_Gesu_Nuovo.jpg", source: "Wikipedia" },
-  auto_bulk_198_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/ColonneDioscuriNapoli.jpg/500px-ColonneDioscuriNapoli.jpg", source: "Wikipedia" },
-  auto_bulk_199_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Cruise_ship_in_Naples_%288097207647%29.jpg/500px-Cruise_ship_in_Naples_%288097207647%29.jpg", source: "Wikipedia" },
-  auto_bulk_200_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Eq_it-na_pizza-margherita_sep2005_sml.jpg/500px-Eq_it-na_pizza-margherita_sep2005_sml.jpg", source: "Wikipedia" },
-  auto_bulk_201_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Facciata_Duomo_di_Napoli_-_BW_2013-05-16.jpg/500px-Facciata_Duomo_di_Napoli_-_BW_2013-05-16.jpg", source: "Wikipedia" },
-  auto_bulk_202_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/FantanaSantaLucia2.jpg/500px-FantanaSantaLucia2.jpg", source: "Wikipedia" },
-  auto_bulk_203_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Fergola%2C_Salvatore_The_Inauguration_of_the_Naples_-_Portici_Railway%2C_1840.JPG/500px-Fergola%2C_Salvatore_The_Inauguration_of_the_Naples_-_Portici_Railway%2C_1840.JPG", source: "Wikipedia" },
-  auto_bulk_204_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Fontana_del_Nettuno%2C_Piazza_Municipio%2C_Naples_05_bis.jpg/500px-Fontana_del_Nettuno%2C_Piazza_Municipio%2C_Naples_05_bis.jpg", source: "Wikipedia" },
-  auto_bulk_205_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Galleria_San_Martino._02_%28cropped%29.JPG/500px-Galleria_San_Martino._02_%28cropped%29.JPG", source: "Wikipedia" },
-  auto_bulk_206_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Galleria_borbonica_-_War_refuge_%28Naples%29.jpg/500px-Galleria_borbonica_-_War_refuge_%28Naples%29.jpg", source: "Wikipedia" },
-  auto_bulk_207_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/GiambattistaVicoStatueNaples.JPG/500px-GiambattistaVicoStatueNaples.JPG", source: "Wikipedia" },
-  auto_bulk_208_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Giordano_Bruno2.jpg/500px-Giordano_Bruno2.jpg", source: "Wikipedia" },
-  auto_bulk_209_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/141227_Berliner_Dom.jpg/500px-141227_Berliner_Dom.jpg", source: "Wikipedia" },
-  auto_bulk_210_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/16-07-04-Abflug-Berlin-DSC_0122.jpg/500px-16-07-04-Abflug-Berlin-DSC_0122.jpg", source: "Wikipedia" },
-  auto_bulk_211_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/20150208_-_Berlinale_Palast_and_Red_Carpet.JPG/500px-20150208_-_Berlinale_Palast_and_Red_Carpet.JPG", source: "Wikipedia" },
-  auto_bulk_212_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Alte_Nationalgalerie_abends_%28Zuschnitt%29.jpg/500px-Alte_Nationalgalerie_abends_%28Zuschnitt%29.jpg", source: "Wikipedia" },
-  auto_bulk_213_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Bebelplatz_Night_of_Shame_Monument.jpg/500px-Bebelplatz_Night_of_Shame_Monument.jpg", source: "Wikipedia" },
-  auto_bulk_214_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Berlin%2C_Mitte%2C_Behrenstrasse%2C_Berliner_Bank_05.jpg/500px-Berlin%2C_Mitte%2C_Behrenstrasse%2C_Berliner_Bank_05.jpg", source: "Wikipedia" },
-  auto_bulk_215_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Berlin-BerlinerSchloss-2-Asio_%28cropped%29.JPG/500px-Berlin-BerlinerSchloss-2-Asio_%28cropped%29.JPG", source: "Wikipedia" },
-  auto_bulk_216_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Berlin-Mitte%2C_het_Berliner_Schloss_Dm_IMG_5754_2024-09-07_12.46.jpg/500px-Berlin-Mitte%2C_het_Berliner_Schloss_Dm_IMG_5754_2024-09-07_12.46.jpg", source: "Wikipedia" },
-  auto_bulk_217_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Berlin-Mitte_Humboldt-Uni_05-2014.jpg/500px-Berlin-Mitte_Humboldt-Uni_05-2014.jpg", source: "Wikipedia" },
-  auto_bulk_218_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Berlin-mitte_heizkraftwerk-mitte_20060605_629.jpg/500px-Berlin-mitte_heizkraftwerk-mitte_20060605_629.jpg", source: "Wikipedia" },
-  auto_bulk_219_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Berlin_-_K%C3%BCrfurstendamm_Gehsteig.jpg/500px-Berlin_-_K%C3%BCrfurstendamm_Gehsteig.jpg", source: "Wikipedia" },
-  auto_bulk_220_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Berlin_-_Neue_Synagoge1_%28cropped%29.jpg/500px-Berlin_-_Neue_Synagoge1_%28cropped%29.jpg", source: "Wikipedia" },
-  auto_bulk_221_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Berlin_-_Reichstag_-_2020.jpg/500px-Berlin_-_Reichstag_-_2020.jpg", source: "Wikipedia" },
-  auto_bulk_222_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Berlin_-_Schloss_Charlottenburg_Reiterstandbild_%26_Schlossturm.jpg/500px-Berlin_-_Schloss_Charlottenburg_Reiterstandbild_%26_Schlossturm.jpg", source: "Wikipedia" },
-  auto_bulk_223_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Berlin_-_Siegess%C3%A4ule1.jpg/500px-Berlin_-_Siegess%C3%A4ule1.jpg", source: "Wikipedia" },
-  auto_bulk_224_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Berlin_-_U-Bahnhof_Heidelberger_Platz_S%C3%BCdzugang.jpg/500px-Berlin_-_U-Bahnhof_Heidelberger_Platz_S%C3%BCdzugang.jpg", source: "Wikipedia" },
-  auto_bulk_225_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Berlin_Adlershof_Photonics_Center_2016.jpg/500px-Berlin_Adlershof_Photonics_Center_2016.jpg", source: "Wikipedia" },
-  auto_bulk_226_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Berlin_Brandenburg_Airport_at_night.jpg/500px-Berlin_Brandenburg_Airport_at_night.jpg", source: "Wikipedia" },
-  auto_bulk_227_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Berlin_Elefantentor_09-2017.jpg/500px-Berlin_Elefantentor_09-2017.jpg", source: "Wikipedia" },
-  auto_bulk_228_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Berlin_Fashion_Week_2013_b.jpg/500px-Berlin_Fashion_Week_2013_b.jpg", source: "Wikipedia" },
-  auto_bulk_229_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/2013-06-08_Highflyer_HP_L4729.JPG/500px-2013-06-08_Highflyer_HP_L4729.JPG", source: "Wikipedia" },
-  auto_bulk_230_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/2013-06-08_Projekt_Hei%C3%9Fluftballon_DSCF0784.jpg/500px-2013-06-08_Projekt_Hei%C3%9Fluftballon_DSCF0784.jpg", source: "Wikipedia" },
-  auto_bulk_231_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/2017-05-01_Scholle_Finkenwerder_Art.JPG/500px-2017-05-01_Scholle_Finkenwerder_Art.JPG", source: "Wikipedia" },
-  auto_bulk_232_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/A321_final_assembly_%289351765668%29.jpg/500px-A321_final_assembly_%289351765668%29.jpg", source: "Wikipedia" },
-  auto_bulk_233_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/AlsterPanorama.jpg/500px-AlsterPanorama.jpg", source: "Wikipedia" },
-  auto_bulk_234_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Alstereisvergn%C3%BCgen_11-02-2012_09.jpg/500px-Alstereisvergn%C3%BCgen_11-02-2012_09.jpg", source: "Wikipedia" },
-  auto_bulk_235_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Ankunft_der_Queen_Mary_2_in_Hamburg_-_panoramio_-_Arnold_Schott_%283%29.jpg/500px-Ankunft_der_Queen_Mary_2_in_Hamburg_-_panoramio_-_Arnold_Schott_%283%29.jpg", source: "Wikipedia" },
-  auto_bulk_236_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Cologne_-_Panoramic_Image_of_the_old_town_at_dusk.jpg/500px-Cologne_-_Panoramic_Image_of_the_old_town_at_dusk.jpg", source: "Wikipedia" },
-  auto_bulk_237_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/00_7373_Gro%C3%9F-St-Martin-Kirche_in_K%C3%B6ln.jpg/500px-00_7373_Gro%C3%9F-St-Martin-Kirche_in_K%C3%B6ln.jpg", source: "Wikipedia" },
-  auto_bulk_238_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/146_019-5_Rheinexpressinkoelnhbf.jpg/500px-146_019-5_Rheinexpressinkoelnhbf.jpg", source: "Wikipedia" },
-  auto_bulk_239_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/1983_09_15_to_23_Envelope_of_the_Letter_from_Odessa_to_Cuba.jpg/500px-1983_09_15_to_23_Envelope_of_the_Letter_from_Odessa_to_Cuba.jpg", source: "Wikipedia" },
-  auto_bulk_240_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/2013-08-10_07-18-55_Ballonfahrt_%C3%BCber_K%C3%B6ln_EH_0626.jpg/500px-2013-08-10_07-18-55_Ballonfahrt_%C3%BCber_K%C3%B6ln_EH_0626.jpg", source: "Wikipedia" },
-  auto_bulk_241_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/4517Bensberg.jpg/500px-4517Bensberg.jpg", source: "Wikipedia" },
-  auto_bulk_242_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/A_Plan_of_the_City_of_Cologne%2C_1800%2C_John_Stockdale-9832.jpg/500px-A_Plan_of_the_City_of_Cologne%2C_1800%2C_John_Stockdale-9832.jpg", source: "Wikipedia" },
-  auto_bulk_243_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Ballonfahrt_%C3%BCber_K%C3%B6ln_-_Justizzentrum-RS-4013.jpg/500px-Ballonfahrt_%C3%BCber_K%C3%B6ln_-_Justizzentrum-RS-4013.jpg", source: "Wikipedia" },
-  auto_bulk_244_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Free_Imperial_Cities_1792.png/500px-Free_Imperial_Cities_1792.png", source: "Wikipedia" },
-  auto_bulk_245_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/ROTHfromCITYTOWER.jpg/500px-ROTHfromCITYTOWER.jpg", source: "Wikipedia" },
-  auto_bulk_246_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/RodT_Kriminalmuseum_7033.jpg/500px-RodT_Kriminalmuseum_7033.jpg", source: "Wikipedia" },
-  auto_bulk_247_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/RothenburgObDerTauberAltstadt2022OSM.png/500px-RothenburgObDerTauberAltstadt2022OSM.png", source: "Wikipedia" },
-  auto_bulk_248_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/RothenburgTauberBauerngarten.jpg/500px-RothenburgTauberBauerngarten.jpg", source: "Wikipedia" },
-  auto_bulk_249_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Rothenburg_BW_12.JPG/500px-Rothenburg_BW_12.JPG", source: "Wikipedia" },
-  auto_bulk_250_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Rothenburg_BW_28.JPG/500px-Rothenburg_BW_28.JPG", source: "Wikipedia" },
-  auto_bulk_251_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Rothenburg_BW_7.JPG/500px-Rothenburg_BW_7.JPG", source: "Wikipedia" },
-  auto_bulk_252_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/01-01-2014_-_Messeturm_-_trade_fair_tower_-_Frankfurt-_Germany_-_05.jpg/500px-01-01-2014_-_Messeturm_-_trade_fair_tower_-_Frankfurt-_Germany_-_05.jpg", source: "Wikipedia" },
-  auto_bulk_253_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/2010-07-21_A380_LH_D-AIMB_EDDF_06.jpg/500px-2010-07-21_A380_LH_D-AIMB_EDDF_06.jpg", source: "Wikipedia" },
-  auto_bulk_254_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/AirportFrankfurt_fromair_2010-09-19.jpg/500px-AirportFrankfurt_fromair_2010-09-19.jpg", source: "Wikipedia" },
-  auto_bulk_255_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Alte_Oper_Frankfurt_2019.jpg/500px-Alte_Oper_Frankfurt_2019.jpg", source: "Wikipedia" },
-  auto_bulk_256_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Alte_Oper_Frankfurt_Winter_2008.jpg/500px-Alte_Oper_Frankfurt_Winter_2008.jpg", source: "Wikipedia" },
-  auto_bulk_257_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Baustelle-hochvier-ffm001.jpg/500px-Baustelle-hochvier-ffm001.jpg", source: "Wikipedia" },
-  auto_bulk_258_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Bergerrathaus2.JPG/500px-Bergerrathaus2.JPG", source: "Wikipedia" },
-  auto_bulk_259_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/10_Downing_Street._MOD_45155532_%28cropped%29.jpg/500px-10_Downing_Street._MOD_45155532_%28cropped%29.jpg", source: "Wikipedia" },
-  auto_bulk_260_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/16-11-16-Glasgow_street_scene-RR2_7280_%28cropped%29.jpg/500px-16-11-16-Glasgow_street_scene-RR2_7280_%28cropped%29.jpg", source: "Wikipedia" },
-  auto_bulk_261_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Abbey_Rd_Studios.jpg/500px-Abbey_Rd_Studios.jpg", source: "Wikipedia" },
-  auto_bulk_262_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Aerial_Tower_of_London.jpg/500px-Aerial_Tower_of_London.jpg", source: "Wikipedia" },
-  auto_bulk_263_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Baker_Street_tube_station_MMB_19_S_Stock.jpg/500px-Baker_Street_tube_station_MMB_19_S_Stock.jpg", source: "Wikipedia" },
-  auto_bulk_264_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Belgrave_Road%2C_Victoria%2C_London_-_Boris_Bikes_-_Santander_Cycles_by_Elliott_Brown.jpg/500px-Belgrave_Road%2C_Victoria%2C_London_-_Boris_Bikes_-_Santander_Cycles_by_Elliott_Brown.jpg", source: "Wikipedia" },
-  auto_bulk_265_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/British_Museum_from_NE_2_%28cropped%29.JPG/500px-British_Museum_from_NE_2_%28cropped%29.JPG", source: "Wikipedia" },
-  auto_bulk_266_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Broadcasting_House_20160816.jpg/500px-Broadcasting_House_20160816.jpg", source: "Wikipedia" },
-  auto_bulk_267_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Buckingham_Palace%2C_London_-_April_2009.jpg/500px-Buckingham_Palace%2C_London_-_April_2009.jpg", source: "Wikipedia" },
-  auto_bulk_268_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Canary_Wharf.Reza_04.jpg/500px-Canary_Wharf.Reza_04.jpg", source: "Wikipedia" },
-  auto_bulk_269_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Centre_Building%2C_LSE_from_LSE_Square.jpg/500px-Centre_Building%2C_LSE_from_LSE_Square.jpg", source: "Wikipedia" },
-  auto_bulk_270_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Centre_Court_Wimbledon_1.jpg/500px-Centre_Court_Wimbledon_1.jpg", source: "Wikipedia" },
-  auto_bulk_271_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/City_of_London_Cemetery%2C_Newham%2C_London_England_-_fox_18.jpg/500px-City_of_London_Cemetery%2C_Newham%2C_London_England_-_fox_18.jpg", source: "Wikipedia" },
-  auto_bulk_272_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Arc_de_Triomphe_HDR_2007.jpg/500px-Arc_de_Triomphe_HDR_2007.jpg", source: "Wikipedia" },
-  auto_bulk_273_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Basilique_du_Sacr%C3%A9-C%C5%93ur_de_Montmartre%2C_Paris_18e_140223_2.jpg/500px-Basilique_du_Sacr%C3%A9-C%C5%93ur_de_Montmartre%2C_Paris_18e_140223_2.jpg", source: "Wikipedia" },
-  auto_bulk_274_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Boulevard_P%C3%A9riph%C3%A9rique_vu_depuis_Boulevard_Auteuil_-_Paris_XVI_%28FR75%29_-_2021-08-11_-_3.jpg/500px-Boulevard_P%C3%A9riph%C3%A9rique_vu_depuis_Boulevard_Auteuil_-_Paris_XVI_%28FR75%29_-_2021-08-11_-_3.jpg", source: "Wikipedia" },
-  auto_bulk_275_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/CDG_P1020431.JPG/500px-CDG_P1020431.JPG", source: "Wikipedia" },
-  auto_bulk_276_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/CFfacadePlacedelOpera.png/500px-CFfacadePlacedelOpera.png", source: "Wikipedia" },
-  auto_bulk_277_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Campus_Evergreen.jpg/500px-Campus_Evergreen.jpg", source: "Wikipedia" },
-  auto_bulk_278_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Catacombes_De_Paris.jpg/500px-Catacombes_De_Paris.jpg", source: "Wikipedia" },
-  auto_bulk_279_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Chapelle_Sainte-Ursule_de_la_Sorbonne%2C_Paris_001.jpg/500px-Chapelle_Sainte-Ursule_de_la_Sorbonne%2C_Paris_001.jpg", source: "Wikipedia" },
-  auto_bulk_280_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Cin%C3%A9matographe_Lumi%C3%A8re.jpg/500px-Cin%C3%A9matographe_Lumi%C3%A8re.jpg", source: "Wikipedia" },
-  auto_bulk_281_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Conseil_d%27Etat_Paris_WA.jpg/500px-Conseil_d%27Etat_Paris_WA.jpg", source: "Wikipedia" },
-  auto_bulk_282_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Eurostar_Paris_Gare_du_Nord_Station%2C_8_October_2011.jpg/500px-Eurostar_Paris_Gare_du_Nord_Station%2C_8_October_2011.jpg", source: "Wikipedia" },
-  auto_bulk_283_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Facade_of_the_Panth%C3%A9on%2C_Paris_24_January_2016.jpg/500px-Facade_of_the_Panth%C3%A9on%2C_Paris_24_January_2016.jpg", source: "Wikipedia" },
-  auto_bulk_284_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/07Meteora12.jpg/500px-07Meteora12.jpg", source: "Wikipedia" },
-  auto_bulk_285_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/20140414_meteora134.JPG/500px-20140414_meteora134.JPG", source: "Wikipedia" },
-  auto_bulk_286_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/20140414_meteora192.JPG/500px-20140414_meteora192.JPG", source: "Wikipedia" },
-  auto_bulk_287_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/C1.26_Agios_Io%C3%A1nnis_Pr%C3%B3domos.jpg/500px-C1.26_Agios_Io%C3%A1nnis_Pr%C3%B3domos.jpg", source: "Wikipedia" },
-  auto_bulk_288_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/C1.28_Pandokr%C3%A1tor-Ruinen.jpg/500px-C1.28_Pandokr%C3%A1tor-Ruinen.jpg", source: "Wikipedia" },
-  auto_bulk_289_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/C2.01_Filaka%C3%A9_Monak%C3%B3n.jpg/500px-C2.01_Filaka%C3%A9_Monak%C3%B3n.jpg", source: "Wikipedia" },
-  auto_bulk_290_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Cell_of_Constantius_1.jpg/500px-Cell_of_Constantius_1.jpg", source: "Wikipedia" },
-  auto_bulk_291_: { url: "https://upload.wikimedia.org/wikipedia/en/c/c8/Houses_on_the_caldera%2C_Santorini.jpg", source: "Wikipedia" },
-  auto_bulk_292_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Akrotiri_Spring_Fresco_room.jpg/500px-Akrotiri_Spring_Fresco_room.jpg", source: "Wikipedia" },
-  auto_bulk_293_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Cultural_Centre_Megaro_Gyzi_04.jpg/500px-Cultural_Centre_Megaro_Gyzi_04.jpg", source: "Wikipedia" },
-  auto_bulk_294_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Fava_%283711746562%29.jpg/500px-Fava_%283711746562%29.jpg", source: "Wikipedia" },
-  auto_bulk_295_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Firostefani.jpg/500px-Firostefani.jpg", source: "Wikipedia" },
-  auto_bulk_296_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/ISS017-E-5037_lrg.jpg/500px-ISS017-E-5037_lrg.jpg", source: "Wikipedia" },
-  auto_bulk_297_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/I_Santellini_-_Buondelmonti_Cristoforo_-_1420.jpg/500px-I_Santellini_-_Buondelmonti_Cristoforo_-_1420.jpg", source: "Wikipedia" },
-  auto_bulk_298_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Imerovigli_02.jpg/500px-Imerovigli_02.jpg", source: "Wikipedia" },
-  auto_bulk_299_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Periferia_Notiou_Egeou.png/500px-Periferia_Notiou_Egeou.png", source: "Wikipedia" },
-  auto_bulk_300_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Saffron_gatherersSantorini-3.jpg/500px-Saffron_gatherersSantorini-3.jpg", source: "Wikipedia" },
-  auto_bulk_301_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Santorini2022OSM.png/500px-Santorini2022OSM.png", source: "Wikipedia" },
-  auto_bulk_302_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/SantoriniPartialPano.jpg/500px-SantoriniPartialPano.jpg", source: "Wikipedia" },
-  auto_bulk_303_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Santorini_-_Dapper_Olfert_-_1688.jpg/500px-Santorini_-_Dapper_Olfert_-_1688.jpg", source: "Wikipedia" },
-  auto_bulk_304_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Santorini_-_Grecia_-_Vista_Aerea_del_promontorio_di_Ancient_Thira_-_agosto_2018.jpg/500px-Santorini_-_Grecia_-_Vista_Aerea_del_promontorio_di_Ancient_Thira_-_agosto_2018.jpg", source: "Wikipedia" },
-  auto_bulk_305_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Santorini_ASTER.jpg/500px-Santorini_ASTER.jpg", source: "Wikipedia" },
-  auto_bulk_306_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Santorini_Airport.JPG/500px-Santorini_Airport.JPG", source: "Wikipedia" },
-  auto_bulk_307_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Santorini_Montage_L.png/500px-Santorini_Montage_L.png", source: "Wikipedia" },
-  auto_bulk_308_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Santorini_cruise_ships_in_caldera.jpg/500px-Santorini_cruise_ships_in_caldera.jpg", source: "Wikipedia" },
-  auto_bulk_309_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Santorini_pyrgos_kastellkirche_160707.jpg/500px-Santorini_pyrgos_kastellkirche_160707.jpg", source: "Wikipedia" },
-  auto_bulk_310_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Santor%C3%ADni_aerial.jpg/500px-Santor%C3%ADni_aerial.jpg", source: "Wikipedia" },
-  auto_bulk_311_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Sea_Diamond_-_Against_Rocks.jpg/500px-Sea_Diamond_-_Against_Rocks.jpg", source: "Wikipedia" },
-  auto_bulk_312_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Skaros_Rock.jpg/500px-Skaros_Rock.jpg", source: "Wikipedia" },
-  auto_bulk_313_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Stoa_Basilica.jpg/500px-Stoa_Basilica.jpg", source: "Wikipedia" },
-  auto_bulk_314_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Viewing_Fira_from_Nea_Kameni.JPG/500px-Viewing_Fira_from_Nea_Kameni.JPG", source: "Wikipedia" },
-  auto_bulk_315_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Wojska_niemieckie_na_greckiej_wyspie_wulkanicznej_Santorin_%282-637%29.jpg/500px-Wojska_niemieckie_na_greckiej_wyspie_wulkanicznej_Santorin_%282-637%29.jpg", source: "Wikipedia" },
-  auto_bulk_316_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/20100706_Mykonos_chora_port_panorama_Greece.jpg/500px-20100706_Mykonos_chora_port_panorama_Greece.jpg", source: "Wikipedia" },
-  auto_bulk_317_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Against_Greek_skies%2C_one_of_the_Mykonos_Island_Windmills%2C_Chora._Cyclades%2C_Agean_Sea%2C_Greece.jpg/500px-Against_Greek_skies%2C_one_of_the_Mykonos_Island_Windmills%2C_Chora._Cyclades%2C_Agean_Sea%2C_Greece.jpg", source: "Wikipedia" },
-  auto_bulk_318_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Baklava%281%29.png/500px-Baklava%281%29.png", source: "Wikipedia" },
-  auto_bulk_319_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Camel_Rock_Mykonos.jpg/500px-Camel_Rock_Mykonos.jpg", source: "Wikipedia" },
-  auto_bulk_320_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Church_of_Panagia_Paraportiani_01.jpg/500px-Church_of_Panagia_Paraportiani_01.jpg", source: "Wikipedia" },
-  auto_bulk_321_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Elias_Beach_on_Mykonos.JPG/500px-Elias_Beach_on_Mykonos.JPG", source: "Wikipedia" },
-  auto_bulk_322_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/GR-mykonos-anomera-ort.jpg/500px-GR-mykonos-anomera-ort.jpg", source: "Wikipedia" },
-  auto_bulk_323_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Little_Venice%2C_Mykonos.JPG/500px-Little_Venice%2C_Mykonos.JPG", source: "Wikipedia" },
-  auto_bulk_324_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Monastery_of_Panagia_Tourliani_03.jpg/500px-Monastery_of_Panagia_Tourliani_03.jpg", source: "Wikipedia" },
-  auto_bulk_325_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Mykon_AMM_060372.jpg/500px-Mykon_AMM_060372.jpg", source: "Wikipedia" },
-  auto_bulk_326_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Mykonos_Blue_Star_Ferries_Ithaki_03.jpg/500px-Mykonos_Blue_Star_Ferries_Ithaki_03.jpg", source: "Wikipedia" },
-  auto_bulk_327_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Mykonos_City.jpg/500px-Mykonos_City.jpg", source: "Wikipedia" },
-  auto_bulk_328_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Mykonos_Maritime_Museum_paddleship_exhibit.jpg/500px-Mykonos_Maritime_Museum_paddleship_exhibit.jpg", source: "Wikipedia" },
-  auto_bulk_329_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Mykonos_Montage_L.png/500px-Mykonos_Montage_L.png", source: "Wikipedia" },
-  auto_bulk_330_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Pedestrian_Street_and_Buildings_in_Mykonos.jpg/500px-Pedestrian_Street_and_Buildings_in_Mykonos.jpg", source: "Wikipedia" },
-  auto_bulk_331_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/The_four_windmills_in_Mykonos.JPG/500px-The_four_windmills_in_Mykonos.JPG", source: "Wikipedia" },
-  auto_bulk_332_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Town_Hall_of_Mykonos_Town.jpg/500px-Town_Hall_of_Mykonos_Town.jpg", source: "Wikipedia" },
-  auto_bulk_333_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Venezianische_Kolonien.png/500px-Venezianische_Kolonien.png", source: "Wikipedia" },
-  auto_bulk_334_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Floridsdorf_%28Wien%29_-_Karl-Seitz-Hof_%282%29.JPG/500px-Floridsdorf_%28Wien%29_-_Karl-Seitz-Hof_%282%29.JPG", source: "Wikipedia" },
-  auto_bulk_335_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/14-05-06-budapest-RalfR-11.jpg/500px-14-05-06-budapest-RalfR-11.jpg", source: "Wikipedia" },
-  auto_bulk_336_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/17-es_villamos_%282211%29.jpg/500px-17-es_villamos_%282211%29.jpg", source: "Wikipedia" },
-  auto_bulk_337_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/19-10-03-Margarethenbr%C3%BCcke_und_Margaretheninsel-RalfR.jpg/500px-19-10-03-Margarethenbr%C3%BCcke_und_Margaretheninsel-RalfR.jpg", source: "Wikipedia" },
-  auto_bulk_338_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/20190503_Hungarian_Parliament_Building_1814_2263_DxO.jpg/500px-20190503_Hungarian_Parliament_Building_1814_2263_DxO.jpg", source: "Wikipedia" },
-  auto_bulk_339_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/8E_busz_%28AO-IM-013%29.jpg/500px-8E_busz_%28AO-IM-013%29.jpg", source: "Wikipedia" },
-  auto_bulk_340_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/A_M%C3%A1ria_Magdolna-templom_33.JPG/500px-A_M%C3%A1ria_Magdolna-templom_33.JPG", source: "Wikipedia" },
-  auto_bulk_341_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/AquincM4.jpg/500px-AquincM4.jpg", source: "Wikipedia" },
-  auto_bulk_342_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/BIMUN_2012_opening_1.jpg/500px-BIMUN_2012_opening_1.jpg", source: "Wikipedia" },
-  auto_bulk_343_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Budapest%2C_Bajcsy-Zsilinszki_%C3%BAt%2C_panor%C3%A1ma%2C_2.jpg/500px-Budapest%2C_Bajcsy-Zsilinszki_%C3%BAt%2C_panor%C3%A1ma%2C_2.jpg", source: "Wikipedia" },
-  auto_bulk_344_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Budapest%2C_M1_metr%C3%B3_%28kisf%C3%B6ldalatti%29%2C_Andr%C3%A1ssy_%C3%BAt.png/500px-Budapest%2C_M1_metr%C3%B3_%28kisf%C3%B6ldalatti%29%2C_Andr%C3%A1ssy_%C3%BAt.png", source: "Wikipedia" },
-  auto_bulk_345_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Budapest%2C_M%C5%B1szaki_Egyetem.jpg/500px-Budapest%2C_M%C5%B1szaki_Egyetem.jpg", source: "Wikipedia" },
-  auto_bulk_346_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Budapest%2C_XIX._K%C3%B3s_K%C3%A1roly_t%C3%A9r%2C_Wekerletelep.jpg/500px-Budapest%2C_XIX._K%C3%B3s_K%C3%A1roly_t%C3%A9r%2C_Wekerletelep.jpg", source: "Wikipedia" },
-  auto_bulk_347_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Budapest_Fine_Arts_Museum_bldg.jpg/500px-Budapest_Fine_Arts_Museum_bldg.jpg", source: "Wikipedia" },
-  auto_bulk_348_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Budapest_Gell%C3%A9rtbad_2.JPG/500px-Budapest_Gell%C3%A9rtbad_2.JPG", source: "Wikipedia" },
-  auto_bulk_349_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Budapest_Hungary_08.jpg/500px-Budapest_Hungary_08.jpg", source: "Wikipedia" },
-  auto_bulk_350_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Budapest_Sz%C3%A9chenyi_Baths_R01.jpg/500px-Budapest_Sz%C3%A9chenyi_Baths_R01.jpg", source: "Wikipedia" },
-  auto_bulk_351_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Budapest_Sz%C3%A9chenyi_Baths_R02.jpg/500px-Budapest_Sz%C3%A9chenyi_Baths_R02.jpg", source: "Wikipedia" },
-  auto_bulk_352_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Budapest_by_Sentinel-2%2C_2020-07-28.jpg/500px-Budapest_by_Sentinel-2%2C_2020-07-28.jpg", source: "Wikipedia" },
-  auto_bulk_353_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Budapest_metro_hev_en.png/500px-Budapest_metro_hev_en.png", source: "Wikipedia" },
-  auto_bulk_354_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Danube_Arena_in_2017_FINA_Budapest.jpg/500px-Danube_Arena_in_2017_FINA_Budapest.jpg", source: "Wikipedia" },
-  auto_bulk_355_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Eco_MOL_%28solar_powered%29_petrol_station._-_Budapest%2C_XII._distr._Istenhegyi_St.%2C_55.JPG/500px-Eco_MOL_%28solar_powered%29_petrol_station._-_Budapest%2C_XII._distr._Istenhegyi_St.%2C_55.JPG", source: "Wikipedia" },
-  auto_bulk_356_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/ElteFotoThalerTamas1.jpg/500px-ElteFotoThalerTamas1.jpg", source: "Wikipedia" },
-  auto_bulk_357_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Ethnographic_Museum_%28N%C3%A9prajzi_M%C3%BAzeum%29_in_Budapest%2C_Hungary.jpg/500px-Ethnographic_Museum_%28N%C3%A9prajzi_M%C3%BAzeum%29_in_Budapest%2C_Hungary.jpg", source: "Wikipedia" },
-  auto_bulk_358_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Fireworks_in_St._Stephen%27s_Day.png/500px-Fireworks_in_St._Stephen%27s_Day.png", source: "Wikipedia" },
-  auto_bulk_359_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/F%C3%B6ldtani_int%C3%A9zet_-_Budapest.jpg/500px-F%C3%B6ldtani_int%C3%A9zet_-_Budapest.jpg", source: "Wikipedia" },
-  auto_bulk_360_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/Gercse_%C5%91sszel.jpg/500px-Gercse_%C5%91sszel.jpg", source: "Wikipedia" },
-  auto_bulk_361_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/G%C3%BCl_Babab_T%C3%BCrbe.JPG/500px-G%C3%BCl_Babab_T%C3%BCrbe.JPG", source: "Wikipedia" },
-  auto_bulk_362_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/2009_Jungfraujoch.jpg/500px-2009_Jungfraujoch.jpg", source: "Wikipedia" },
-  auto_bulk_363_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Bahnhof_Jungfraujoch.jpg/500px-Bahnhof_Jungfraujoch.jpg", source: "Wikipedia" },
-  auto_bulk_364_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Jungfraujoch_-_panoramio_-_Patrick_Nouhailler%27s%E2%80%A6_%2868%29.jpg/500px-Jungfraujoch_-_panoramio_-_Patrick_Nouhailler%27s%E2%80%A6_%2868%29.jpg", source: "Wikipedia" },
-  auto_bulk_365_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Jungfraujoch_090425.jpg/500px-Jungfraujoch_090425.jpg", source: "Wikipedia" },
-  auto_bulk_366_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Pal%C3%BC_en_Diavolezza.jpg/500px-Pal%C3%BC_en_Diavolezza.jpg", source: "Wikipedia" },
-  auto_bulk_367_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Reliefkarte_Schweiz3.png/500px-Reliefkarte_Schweiz3.png", source: "Wikipedia" },
-  auto_bulk_368_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Einstein_1921_by_F_Schmutzer_-_restoration.jpg/500px-Einstein_1921_by_F_Schmutzer_-_restoration.jpg", source: "Wikipedia" },
-  auto_bulk_369_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/2014_Bern_M%C3%BCnster_Cathedral%2C_Bern_Switzerland_Ank_Kumar_Infosys_Limited_01.jpg/500px-2014_Bern_M%C3%BCnster_Cathedral%2C_Bern_Switzerland_Ank_Kumar_Infosys_Limited_01.jpg", source: "Wikipedia" },
-  auto_bulk_370_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/4377_-_Bern_-_Kindlifresserbrunnen_am_Kornhausplatz.JPG/500px-4377_-_Bern_-_Kindlifresserbrunnen_am_Kornhausplatz.JPG", source: "Wikipedia" },
-  auto_bulk_371_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Albrecht_von_Haller_1736.jpg/500px-Albrecht_von_Haller_1736.jpg", source: "Wikipedia" },
-  auto_bulk_372_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Anna_Fedorovna_by_unknown.jpg/500px-Anna_Fedorovna_by_unknown.jpg", source: "Wikipedia" },
-  auto_bulk_373_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Nuremberg_chronicles_f_45v_1.png/500px-Nuremberg_chronicles_f_45v_1.png", source: "Wikipedia" },
-  auto_bulk_374_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Landtagsgeb%C3%A4ude_Rheinland-Pfalz.jpg/500px-Landtagsgeb%C3%A4ude_Rheinland-Pfalz.jpg", source: "Wikipedia" },
-  auto_bulk_375_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/50._Breitengrad_in_Mainz.jpg/500px-50._Breitengrad_in_Mainz.jpg", source: "Wikipedia" },
-  auto_bulk_376_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Alte-Uni%2BMainzer-Dom%2BStaatstheater-vom-Bonifaziusturm-A-741-a.jpg/500px-Alte-Uni%2BMainzer-Dom%2BStaatstheater-vom-Bonifaziusturm-A-741-a.jpg", source: "Wikipedia" },
-  auto_bulk_377_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Blick-auf-mainz-aus-richtung-der-schiersteiner-bruecke.jpg/500px-Blick-auf-mainz-aus-richtung-der-schiersteiner-bruecke.jpg", source: "Wikipedia" },
-  auto_bulk_378_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/B%C3%BChnentheater_Mainz.jpg/500px-B%C3%BChnentheater_Mainz.jpg", source: "Wikipedia" },
-  auto_bulk_379_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Christuskirche_in_Mainz.jpg/500px-Christuskirche_in_Mainz.jpg", source: "Wikipedia" },
-  auto_bulk_380_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Coface-Arena_%288208664309%29.jpg/500px-Coface-Arena_%288208664309%29.jpg", source: "Wikipedia" },
-  auto_bulk_381_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Drususstein_Gesamt_2011.jpg/500px-Drususstein_Gesamt_2011.jpg", source: "Wikipedia" },
-  auto_bulk_382_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/12_Years_a_Slave_18_%289733817928%29.jpg/500px-12_Years_a_Slave_18_%289733817928%29.jpg", source: "Wikipedia" },
-  auto_bulk_383_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/2002-04-02_Hauptstra%C3%9Fe%2C_Heidelberg_IMG_0404.jpg/500px-2002-04-02_Hauptstra%C3%9Fe%2C_Heidelberg_IMG_0404.jpg", source: "Wikipedia" },
-  auto_bulk_384_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/2002-04-02_Heidelberger_Rathaus_IMG_0388.jpg/500px-2002-04-02_Heidelberger_Rathaus_IMG_0388.jpg", source: "Wikipedia" },
-  auto_bulk_385_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/2022_Hansi_Flick_%28cropped%29.jpg/500px-2022_Hansi_Flick_%28cropped%29.jpg", source: "Wikipedia" },
-  auto_bulk_386_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Academics_Heidelberg_huddle.jpg/500px-Academics_Heidelberg_huddle.jpg", source: "Wikipedia" },
-  auto_bulk_387_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Alte_Bruecke_Heidelberg_von_Konrad_Linck_1788.jpg/500px-Alte_Bruecke_Heidelberg_von_Konrad_Linck_1788.jpg", source: "Wikipedia" },
-  auto_bulk_388_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Altstadt_Heidelberg.jpg/500px-Altstadt_Heidelberg.jpg", source: "Wikipedia" },
-  auto_bulk_389_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Baden-W%C3%BCrttemberg_Heidelberg_Heiliggeistkirche_01.jpg/500px-Baden-W%C3%BCrttemberg_Heidelberg_Heiliggeistkirche_01.jpg", source: "Wikipedia" },
-  auto_bulk_390_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Bahnw%C3%A4rter_Thiel_Nightclub_Munich_Subway_Floor_1.jpg/500px-Bahnw%C3%A4rter_Thiel_Nightclub_Munich_Subway_Floor_1.jpg", source: "Wikipedia" },
-  auto_bulk_391_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Bayerische_Staatskanzlei_Munich_2014_02.jpg/500px-Bayerische_Staatskanzlei_Munich_2014_02.jpg", source: "Wikipedia" },
-  auto_bulk_392_vienna_night: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Wien_-_Stephansdom_%282%29.JPG/500px-Wien_-_Stephansdom_%282%29.JPG", source: "Wikipedia" },
-  auto_bulk_393_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Bayerisches_Nationalmuseum_-_Muenchen_-_2013.jpg/500px-Bayerisches_Nationalmuseum_-_Muenchen_-_2013.jpg", source: "Wikipedia" },
-  auto_bulk_394_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Biergarten_at_Night_2.JPG/500px-Biergarten_at_Night_2.JPG", source: "Wikipedia" },
-  auto_bulk_395_innsbruck_night: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Innsbruck_am_Abend_von_der_Innbr%C3%BCcke_%281%29.jpg/500px-Innsbruck_am_Abend_von_der_Innbr%C3%BCcke_%281%29.jpg", source: "Wikipedia" },
-  auto_bulk_396_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/12-06-05-innsbruck-by-ralfr-165.jpg/500px-12-06-05-innsbruck-by-ralfr-165.jpg", source: "Wikipedia" },
-  auto_bulk_397_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/2015-04-29-AliceTumler.jpg/500px-2015-04-29-AliceTumler.jpg", source: "Wikipedia" },
-  auto_bulk_398_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Albrecht_D%C3%BCrer_-_View_of_Innsbruck_-_WGA7356.jpg/500px-Albrecht_D%C3%BCrer_-_View_of_Innsbruck_-_WGA7356.jpg", source: "Wikipedia" },
-  auto_bulk_399_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Austria-01454_-_Wilten_Abbey_%2821402649823%29.jpg/500px-Austria-01454_-_Wilten_Abbey_%2821402649823%29.jpg", source: "Wikipedia" },
-  auto_bulk_400_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/BergiselInnsbruck2.JPG/500px-BergiselInnsbruck2.JPG", source: "Wikipedia" },
-  auto_bulk_401_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Bundesarchiv_Bild_146-1985-083-11%2C_Anschluss_%C3%96sterreich%2C_Innsbruck.jpg/500px-Bundesarchiv_Bild_146-1985-083-11%2C_Anschluss_%C3%96sterreich%2C_Innsbruck.jpg", source: "Wikipedia" },
-  auto_bulk_402_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Cathedral_of_St._James_Facade_1.jpg/500px-Cathedral_of_St._James_Facade_1.jpg", source: "Wikipedia" },
-  auto_bulk_403_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Chateau_ambras.jpg/500px-Chateau_ambras.jpg", source: "Wikipedia" },
-  auto_bulk_404_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Combat_du_Bergisel.jpg/500px-Combat_du_Bergisel.jpg", source: "Wikipedia" },
-  auto_bulk_405_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Conradstra%C3%9Fe_12_%28IMG_0688%29.jpg/500px-Conradstra%C3%9Fe_12_%28IMG_0688%29.jpg", source: "Wikipedia" },
-  auto_bulk_406_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Erwin_Faber.jpg/500px-Erwin_Faber.jpg", source: "Wikipedia" },
-  auto_bulk_407_innsbruck_night: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Innsbruck_am_Abend_von_der_Innbr%C3%BCcke_%281%29.jpg/500px-Innsbruck_am_Abend_von_der_Innbr%C3%BCcke_%281%29.jpg", source: "Wikipedia" },
-  auto_bulk_408_vienna_night: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Wien_-_Stephansdom_%282%29.JPG/500px-Wien_-_Stephansdom_%282%29.JPG", source: "Wikipedia" },
-  auto_bulk_409_vienna_night: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Wien_-_Stephansdom_%282%29.JPG/500px-Wien_-_Stephansdom_%282%29.JPG", source: "Wikipedia" },
-  auto_bulk_410_: { url: "https://upload.wikimedia.org/wikipedia/en/7/77/Ford_to_City.PNG", source: "Wikipedia" },
-  auto_bulk_411_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/1232-42_Dean_Street_Crown_Heights.jpg/500px-1232-42_Dean_Street_Crown_Heights.jpg", source: "Wikipedia" },
-  auto_bulk_412_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/5th_Avenue_9304.JPG/500px-5th_Avenue_9304.JPG", source: "Wikipedia" },
-  auto_bulk_413_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/67%C2%BA_Per%C3%ADodo_de_Sesiones_de_la_Asamblea_General_de_Naciones_Unidas_%288020913157%29_%28cropped%29.jpg/500px-67%C2%BA_Per%C3%ADodo_de_Sesiones_de_la_Asamblea_General_de_Naciones_Unidas_%288020913157%29_%28cropped%29.jpg", source: "Wikipedia" },
-  auto_bulk_414_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/74th_St_shopping_Jax_Hts_jeh.jpg/500px-74th_St_shopping_Jax_Hts_jeh.jpg", source: "Wikipedia" },
-  auto_bulk_415_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/A_view_of_Fort_George_with_the_city_of_New_York%2C_from_the_SW.jpg/500px-A_view_of_Fort_George_with_the_city_of_New_York%2C_from_the_SW.jpg", source: "Wikipedia" },
-  auto_bulk_416_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Arthur_ashe_stadium_interior.jpg/500px-Arthur_ashe_stadium_interior.jpg", source: "Wikipedia" },
-  auto_bulk_417_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/At_New_York%2C_USA_2017_119.jpg/500px-At_New_York%2C_USA_2017_119.jpg", source: "Wikipedia" },
-  auto_bulk_418_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Barclays_Center_1.jpg/500px-Barclays_Center_1.jpg", source: "Wikipedia" },
-  auto_bulk_419_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/BattleofLongisland.jpg/500px-BattleofLongisland.jpg", source: "Wikipedia" },
-  auto_bulk_420_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Brighton_beach_%287434138858%29.jpg/500px-Brighton_beach_%287434138858%29.jpg", source: "Wikipedia" },
-  auto_bulk_421_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Broadway_%289075158922%29.jpg/500px-Broadway_%289075158922%29.jpg", source: "Wikipedia" },
-  auto_bulk_422_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Carolina_Herrera_AW14_12.jpg/500px-Carolina_Herrera_AW14_12.jpg", source: "Wikipedia" },
-  auto_bulk_423_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Central_Park_-_The_Pond_%2848377220157%29.jpg/500px-Central_Park_-_The_Pond_%2848377220157%29.jpg", source: "Wikipedia" },
-  auto_bulk_424_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Chinatown%2C_New_York_%2818076448908%29.jpg/500px-Chinatown%2C_New_York_%2818076448908%29.jpg", source: "Wikipedia" },
-  auto_bulk_425_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Citi_Field_2011.JPG/500px-Citi_Field_2011.JPG", source: "Wikipedia" },
-  auto_bulk_426_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Citi_bike_%2810414610734%29.jpg/500px-Citi_bike_%2810414610734%29.jpg", source: "Wikipedia" },
-  auto_bulk_427_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Core_of_New_York_City_by_Sentinel-2.jpg/500px-Core_of_New_York_City_by_Sentinel-2.jpg", source: "Wikipedia" },
-  auto_bulk_428_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Cornell_Tech_buildings_%2841991%29.jpg/500px-Cornell_Tech_buildings_%2841991%29.jpg", source: "Wikipedia" },
-  auto_bulk_429_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Emanu-elNYjeh.JPG/500px-Emanu-elNYjeh.JPG", source: "Wikipedia" },
-  auto_bulk_430_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/FDNY_Tower_Ladder_1_%28897367891%29.jpg/500px-FDNY_Tower_Ladder_1_%28897367891%29.jpg", source: "Wikipedia" },
-  auto_bulk_431_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Facade_of_the_New_York_Public_Library_Main_Branch_2.jpg/500px-Facade_of_the_New_York_Public_Library_Main_Branch_2.jpg", source: "Wikipedia" },
-  auto_bulk_432_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Flatiron_District.jpg/500px-Flatiron_District.jpg", source: "Wikipedia" },
-  auto_bulk_433_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Freedom_Of_Speech_%28256854761%29.jpeg/500px-Freedom_Of_Speech_%28256854761%29.jpeg", source: "Wikipedia" },
-  auto_bulk_434_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Freiheitsstatue_NYC_full.jpg/500px-Freiheitsstatue_NYC_full.jpg", source: "Wikipedia" },
-  auto_bulk_435_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Gaming-Wall-Street_BTS_Prodigium-266.jpg/500px-Gaming-Wall-Street_BTS_Prodigium-266.jpg", source: "Wikipedia" },
-  auto_bulk_436_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/GezichtOpNieuwAmsterdam.jpg/500px-GezichtOpNieuwAmsterdam.jpg", source: "Wikipedia" },
-  auto_bulk_437_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Currier_%26_Ives_Brooklyn2.jpg/500px-Currier_%26_Ives_Brooklyn2.jpg", source: "Wikipedia" },
-  auto_bulk_438_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Currier_and_Ives_Brooklyn_Bridge2.jpg/500px-Currier_and_Ives_Brooklyn_Bridge2.jpg", source: "Wikipedia" },
-  auto_bulk_439_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Coney_Island_beach_and_amusement_parks_%28June_2016%29.jpg/500px-Coney_Island_beach_and_amusement_parks_%28June_2016%29.jpg", source: "Wikipedia" },
-  auto_bulk_440_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/2016_Brooklyn_College_Library.jpg/500px-2016_Brooklyn_College_Library.jpg", source: "Wikipedia" },
-  auto_bulk_441_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/2024-05-22_12_33_13_View_east_along_Interstate_278_%28Brooklyn-Queens_Expressway%29_from_the_overpass_for_Sackett_Street_in_Brooklyn%2C_New_York_City%2C_New_York.jpg/500px-2024-05-22_12_33_13_View_east_along_Interstate_278_%28Brooklyn-Queens_Expressway%29_from_the_overpass_for_Sackett_Street_in_Brooklyn%2C_New_York_City%2C_New_York.jpg", source: "Wikipedia" },
-  auto_bulk_442_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Antonio_Reynoso.jpg/500px-Antonio_Reynoso.jpg", source: "Wikipedia" },
-  auto_bulk_443_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Atlantic_Terminal_LIRR_and_Subway_entrances.jpg/500px-Atlantic_Terminal_LIRR_and_Subway_entrances.jpg", source: "Wikipedia" },
-  auto_bulk_444_: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/BBG_cherry_esplanade.jpg/500px-BBG_cherry_esplanade.jpg", source: "Wikipedia" },
-  auto_smart_food_10001: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Sakotis2.jpg/500px-Sakotis2.jpg", source: "Wikipedia" },
-  auto_smart_food_10002: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/2009-09-gulasch-p%C3%B6rk%C3%B6lt-paprikas-2.jpg/500px-2009-09-gulasch-p%C3%B6rk%C3%B6lt-paprikas-2.jpg", source: "Wikipedia" },
-  auto_smart_food_10003: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/A_bottle_of_Pilsner_Urquell.jpg/500px-A_bottle_of_Pilsner_Urquell.jpg", source: "Wikipedia" },
-  auto_smart_food_10004: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Sv%C3%AD%C4%8Dkov%C3%A1_na_smetan%C4%9B.JPG/500px-Sv%C3%AD%C4%8Dkov%C3%A1_na_smetan%C4%9B.JPG", source: "Wikipedia" },
-  auto_smart_lm_10005: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/2014_Praga%2C_Hradczany.JPG/500px-2014_Praga%2C_Hradczany.JPG", source: "Wikipedia" },
-  auto_smart_food_10008: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Berlin_goulash.png/500px-Berlin_goulash.png", source: "Wikipedia" },
-  auto_smart_food_10011: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Afghan_bread.jpg/500px-Afghan_bread.jpg", source: "Wikipedia" },
-  auto_smart_food_10012: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/%28Pasta%29_by_David_Adam_Kess_%28pic.2%29.jpg/500px-%28Pasta%29_by_David_Adam_Kess_%28pic.2%29.jpg", source: "Wikipedia" },
-  auto_smart_food_10013: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/CafeMia.jpg/500px-CafeMia.jpg", source: "Wikipedia" },
-  auto_smart_food_10014: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/A_good_cappuccino_starts_with_a_perfect_espresso%21%21_%284441914182%29.jpg/500px-A_good_cappuccino_starts_with_a_perfect_espresso%21%21_%284441914182%29.jpg", source: "Wikipedia" },
-  auto_smart_lm_10015: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Akhenathon_and_Nefertiti_E15593_mp3h8771-gradient.jpg/500px-Akhenathon_and_Nefertiti_E15593_mp3h8771-gradient.jpg", source: "Wikipedia" },
-  auto_smart_food_10017: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/California_club_pizza.jpg/500px-California_club_pizza.jpg", source: "Wikipedia" },
-  auto_smart_food_10019: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/6-alimenti%2C_pasta%2CTaccuino_Sanitatis%2C_Casanatense_4182..jpg/500px-6-alimenti%2C_pasta%2CTaccuino_Sanitatis%2C_Casanatense_4182..jpg", source: "Wikipedia" },
-  auto_smart_food_10022: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Bezzera_%26_caff%C3%A8_espresso.jpg/500px-Bezzera_%26_caff%C3%A8_espresso.jpg", source: "Wikipedia" },
-  auto_smart_food_10025: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/CalzoneAlForno.jpg/500px-CalzoneAlForno.jpg", source: "Wikipedia" },
-  auto_smart_food_10028: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/A_better_homemade_pasta.jpg/500px-A_better_homemade_pasta.jpg", source: "Wikipedia" },
-  auto_smart_food_10032: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Caf%C3%A9-Konditorei_F%C3%BCrst.jpg/500px-Caf%C3%A9-Konditorei_F%C3%BCrst.jpg", source: "Wikipedia" },
-  auto_smart_food_10033: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Salzburger_Nockerln_04_gastronomie_001.jpg/500px-Salzburger_Nockerln_04_gastronomie_001.jpg", source: "Wikipedia" },
-  auto_smart_lm_10034: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Anton_Doll_Der_Marienplatz_in_M%C3%BCnchen_1853.jpg/500px-Anton_Doll_Der_Marienplatz_in_M%C3%BCnchen_1853.jpg", source: "Wikipedia" },
-  auto_smart_food_10035: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/2010.08.22.143425_N%C3%BCrnberger_Rostbratwurst_Kirwa_Sulzbach-Rosenberg.jpg/500px-2010.08.22.143425_N%C3%BCrnberger_Rostbratwurst_Kirwa_Sulzbach-Rosenberg.jpg", source: "Wikipedia" },
-  auto_smart_food_10036: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Absolute_bretzel_01.jpg/500px-Absolute_bretzel_01.jpg", source: "Wikipedia" },
-  auto_smart_food_10037: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/2018-01-11-Raclette_Lokal_K-1449.jpg/500px-2018-01-11-Raclette_Lokal_K-1449.jpg", source: "Wikipedia" },
-  auto_smart_food_10038: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/A_suchard_on_nov_2020_%281%29.jpg/500px-A_suchard_on_nov_2020_%281%29.jpg", source: "Wikipedia" },
-  auto_smart_lm_10039: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/1249_Finsteraarhorn_%28Jungfrau%29.jpg/500px-1249_Finsteraarhorn_%28Jungfrau%29.jpg", source: "Wikipedia" },
-  auto_smart_food_10041: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Ernest_Bi%C3%A9ler_les_comptes_de_lalpage_ou_la_raclette.jpg/500px-Ernest_Bi%C3%A9ler_les_comptes_de_lalpage_ou_la_raclette.jpg", source: "Wikipedia" },
-  auto_smart_food_10043: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Chocolat_Suchard_-_Tauzin_Louis_%281895%29.jpg/500px-Chocolat_Suchard_-_Tauzin_Louis_%281895%29.jpg", source: "Wikipedia" },
-  auto_smart_lm_10045: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/2008_Jungfrau.jpg/500px-2008_Jungfrau.jpg", source: "Wikipedia" },
-  auto_smart_lm_10048: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Aachen_Germany_Imperial-Cathedral-01.jpg/500px-Aachen_Germany_Imperial-Cathedral-01.jpg", source: "Wikipedia" },
-  auto_smart_lm_10050: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Buurkerk_en_Domtoren.jpg/500px-Buurkerk_en_Domtoren.jpg", source: "Wikipedia" },
-  auto_smart_food_10060: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Red_Wine_Sangria_with_lemon%2C_lime%2C_apple%2C_and_orange_served_in_a_glass_-_Evan_Swigart.jpg/500px-Red_Wine_Sangria_with_lemon%2C_lime%2C_apple%2C_and_orange_served_in_a_glass_-_Evan_Swigart.jpg", source: "Wikipedia" },
-  auto_smart_food_10061: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Creme_catalane.jpg/500px-Creme_catalane.jpg", source: "Wikipedia" },
-  auto_smart_lm_10062: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/%28Barcelona%29_The_Beggars_Cathedral_by_Joaquim_Mir_-_Museu_Nacional_d%27Art_de_Catalunya.jpg/500px-%28Barcelona%29_The_Beggars_Cathedral_by_Joaquim_Mir_-_Museu_Nacional_d%27Art_de_Catalunya.jpg", source: "Wikipedia" },
-  auto_smart_lm_10063: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/A_musician_playing_among_columns_of_Sala_Hip%C3%B3stila%2C_Park_G%C3%BCell_%28_UNESCO_World_Heritage_Site%29%2C_hill_of_El_Carmel%2C_Gr%C3%A0cia_%28district%29%2C_Barcelona%2C_Catalonia%2C_Spain.jpg/500px-A_musician_playing_among_columns_of_Sala_Hip%C3%B3stila%2C_Park_G%C3%BCell_%28_UNESCO_World_Heritage_Site%29%2C_hill_of_El_Carmel%2C_Gr%C3%A0cia_%28district%29%2C_Barcelona%2C_Catalonia%2C_Spain.jpg", source: "Wikipedia" },
-  auto_smart_lm_10064: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Antoni_Gaud%C3%AD_%281910%29.jpg/500px-Antoni_Gaud%C3%AD_%281910%29.jpg", source: "Wikipedia" },
-  auto_smart_lm_10065: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Attic_of_Casa_Mil%C3%A0.jpg/500px-Attic_of_Casa_Mil%C3%A0.jpg", source: "Wikipedia" },
-  auto_smart_food_10067: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Sangria_%283918621551%29.jpg/500px-Sangria_%283918621551%29.jpg", source: "Wikipedia" },
-  auto_smart_lm_10072: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Montserrat_Mountains%2C_Catalonia%2C_Spain_-_Jan_2007.jpg/500px-Montserrat_Mountains%2C_Catalonia%2C_Spain_-_Jan_2007.jpg", source: "Wikipedia" },
-  auto_smart_food_10073: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Afghan_bread.jpg/500px-Afghan_bread.jpg", source: "Wikipedia" },
-  auto_smart_food_10074: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/%28Pasta%29_by_David_Adam_Kess_%28pic.2%29.jpg/500px-%28Pasta%29_by_David_Adam_Kess_%28pic.2%29.jpg", source: "Wikipedia" },
-  auto_smart_food_10075: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/CafeMia.jpg/500px-CafeMia.jpg", source: "Wikipedia" },
-  auto_smart_food_10076: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/A_good_cappuccino_starts_with_a_perfect_espresso%21%21_%284441914182%29.jpg/500px-A_good_cappuccino_starts_with_a_perfect_espresso%21%21_%284441914182%29.jpg", source: "Wikipedia" },
-  auto_smart_food_10078: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/California_club_pizza.jpg/500px-California_club_pizza.jpg", source: "Wikipedia" },
-  auto_smart_food_10080: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/6-alimenti%2C_pasta%2CTaccuino_Sanitatis%2C_Casanatense_4182..jpg/500px-6-alimenti%2C_pasta%2CTaccuino_Sanitatis%2C_Casanatense_4182..jpg", source: "Wikipedia" },
-  auto_smart_food_10083: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Bezzera_%26_caff%C3%A8_espresso.jpg/500px-Bezzera_%26_caff%C3%A8_espresso.jpg", source: "Wikipedia" },
-  auto_smart_lm_10084: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Aachen_Germany_Imperial-Cathedral-01.jpg/500px-Aachen_Germany_Imperial-Cathedral-01.jpg", source: "Wikipedia" },
-  auto_smart_food_10086: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Deus_Pizza.png/500px-Deus_Pizza.png", source: "Wikipedia" },
-  auto_smart_lm_10088: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Buurkerk_en_Domtoren.jpg/500px-Buurkerk_en_Domtoren.jpg", source: "Wikipedia" },
-  auto_smart_food_10093: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/CalzoneAlForno.jpg/500px-CalzoneAlForno.jpg", source: "Wikipedia" },
-  auto_smart_food_10096: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/A_better_homemade_pasta.jpg/500px-A_better_homemade_pasta.jpg", source: "Wikipedia" },
-  auto_smart_lm_10100: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/046CupolaSPietro.jpg/500px-046CupolaSPietro.jpg", source: "Wikipedia" },
-  auto_smart_lm_10101: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Albrecht_D%C3%BCrer_-_Adorazione_dei_Magi_-_Google_Art_Project.jpg/500px-Albrecht_D%C3%BCrer_-_Adorazione_dei_Magi_-_Google_Art_Project.jpg", source: "Wikipedia" },
-  auto_smart_lm_10104: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/%22The_School_of_Athens%22_by_Raffaello_Sanzio_da_Urbino.jpg/500px-%22The_School_of_Athens%22_by_Raffaello_Sanzio_da_Urbino.jpg", source: "Wikipedia" },
-  auto_smart_lm_10105: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/01_Baldacchino_St_Peter%27s.jpg/500px-01_Baldacchino_St_Peter%27s.jpg", source: "Wikipedia" },
-  auto_smart_lm_10129: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/00_2486_Quadriga_-_Brandenburger_Tor_%28Berlin%29.jpg/500px-00_2486_Quadriga_-_Brandenburger_Tor_%28Berlin%29.jpg", source: "Wikipedia" },
-  auto_smart_food_10130: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Afghan_bread.jpg/500px-Afghan_bread.jpg", source: "Wikipedia" },
-  auto_smart_food_10131: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/%28Pasta%29_by_David_Adam_Kess_%28pic.2%29.jpg/500px-%28Pasta%29_by_David_Adam_Kess_%28pic.2%29.jpg", source: "Wikipedia" },
-  auto_smart_food_10132: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/CafeMia.jpg/500px-CafeMia.jpg", source: "Wikipedia" },
-  auto_smart_food_10133: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/A_good_cappuccino_starts_with_a_perfect_espresso%21%21_%284441914182%29.jpg/500px-A_good_cappuccino_starts_with_a_perfect_espresso%21%21_%284441914182%29.jpg", source: "Wikipedia" },
-  auto_smart_food_10135: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/California_club_pizza.jpg/500px-California_club_pizza.jpg", source: "Wikipedia" },
-  auto_smart_food_10137: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/6-alimenti%2C_pasta%2CTaccuino_Sanitatis%2C_Casanatense_4182..jpg/500px-6-alimenti%2C_pasta%2CTaccuino_Sanitatis%2C_Casanatense_4182..jpg", source: "Wikipedia" },
-  auto_smart_food_10140: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Bezzera_%26_caff%C3%A8_espresso.jpg/500px-Bezzera_%26_caff%C3%A8_espresso.jpg", source: "Wikipedia" },
-  auto_smart_food_10143: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/CalzoneAlForno.jpg/500px-CalzoneAlForno.jpg", source: "Wikipedia" },
-  auto_smart_food_10146: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/A_better_homemade_pasta.jpg/500px-A_better_homemade_pasta.jpg", source: "Wikipedia" },
-  auto_smart_food_10147: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Absolute_bretzel_01.jpg/500px-Absolute_bretzel_01.jpg", source: "Wikipedia" },
-  auto_smart_lm_10148: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Chithrubar.jpg/500px-Chithrubar.jpg", source: "Wikipedia" },
-  auto_smart_food_10149: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Australian_Hotel%2C_St_George%2C_Queensland%2C_2021%2C_03.jpg/500px-Australian_Hotel%2C_St_George%2C_Queensland%2C_2021%2C_03.jpg", source: "Wikipedia" },
-  auto_smart_food_10150: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Beef_Wellington_-_Whole.jpg/500px-Beef_Wellington_-_Whole.jpg", source: "Wikipedia" },
-  auto_smart_lm_10151: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/AHOTWgold_lama.JPG/500px-AHOTWgold_lama.JPG", source: "Wikipedia" },
-  auto_smart_food_10153: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/BCLM_fish%2Bchips.jpg/500px-BCLM_fish%2Bchips.jpg", source: "Wikipedia" },
-  auto_smart_food_10155: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Beef_Wellington_2019.jpg/500px-Beef_Wellington_2019.jpg", source: "Wikipedia" },
-  auto_smart_food_10163: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Baguette_de_pain%2C_WikiCheese_Lausanne.jpg/500px-Baguette_de_pain%2C_WikiCheese_Lausanne.jpg", source: "Wikipedia" },
-  auto_smart_food_10164: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/202412_%E5%BD%A9%E8%99%B9%E5%8D%83%E5%B1%A4%E8%9B%8B%E7%B3%95%E8%88%87%E8%8D%89%E8%8E%93%E5%A5%B6%E6%B2%B9%E5%8D%83%E5%B1%A4%E8%9B%8B%E7%B3%95%28Photo_by_Junyu-K%29.jpg/500px-202412_%E5%BD%A9%E8%99%B9%E5%8D%83%E5%B1%A4%E8%9B%8B%E7%B3%95%E8%88%87%E8%8D%89%E8%8E%93%E5%A5%B6%E6%B2%B9%E5%8D%83%E5%B1%A4%E8%9B%8B%E7%B3%95%28Photo_by_Junyu-K%29.jpg", source: "Wikipedia" },
-  auto_smart_food_10165: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/2021-03-26_Onion_soup.jpg/500px-2021-03-26_Onion_soup.jpg", source: "Wikipedia" },
-  auto_smart_lm_10166: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/1000_Eiffel_tower_night_illumination_by_Pierre_Bideau_in_Paris_Photo_by_Giles_Laurent.jpg/500px-1000_Eiffel_tower_night_illumination_by_Pierre_Bideau_in_Paris_Photo_by_Giles_Laurent.jpg", source: "Wikipedia" },
-  auto_smart_lm_10167: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Akhenathon_and_Nefertiti_E15593_mp3h8771-gradient.jpg/500px-Akhenathon_and_Nefertiti_E15593_mp3h8771-gradient.jpg", source: "Wikipedia" },
-  auto_smart_lm_10168: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/3_cent_U.S._Army_U.S._Postage_stamp_issued_1945.png/500px-3_cent_U.S._Army_U.S._Postage_stamp_issued_1945.png", source: "Wikipedia" },
-  auto_smart_food_10170: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Baguette_interior.jpg/500px-Baguette_interior.jpg", source: "Wikipedia" },
-  auto_smart_food_10172: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/49ers_flapjack_OHP.jpg/500px-49ers_flapjack_OHP.jpg", source: "Wikipedia" },
-  auto_smart_lm_10174: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Chateau_Versailles_Galerie_des_Glaces.jpg/500px-Chateau_Versailles_Galerie_des_Glaces.jpg", source: "Wikipedia" },
-  auto_smart_lm_10182: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Amor-Psyche-Canova-JBU02.JPG/500px-Amor-Psyche-Canova-JBU02.JPG", source: "Wikipedia" },
-  auto_smart_food_10185: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Baguettes%2C_Paris%2C_France_-_panoramio.jpg/500px-Baguettes%2C_Paris%2C_France_-_panoramio.jpg", source: "Wikipedia" },
-  auto_smart_lm_10190: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/2013_Fireworks_on_Eiffel_Tower_11.jpg/500px-2013_Fireworks_on_Eiffel_Tower_11.jpg", source: "Wikipedia" },
-  auto_smart_lm_10199: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Caricature_Gustave_Eiffel.png/500px-Caricature_Gustave_Eiffel.png", source: "Wikipedia" },
-  auto_smart_food_10212: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/%28Pasta%29_by_David_Adam_Kess_%28pic.2%29.jpg/500px-%28Pasta%29_by_David_Adam_Kess_%28pic.2%29.jpg", source: "Wikipedia" },
-  auto_smart_food_10213: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/CafeMia.jpg/500px-CafeMia.jpg", source: "Wikipedia" },
-  auto_smart_food_10214: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/A_good_cappuccino_starts_with_a_perfect_espresso%21%21_%284441914182%29.jpg/500px-A_good_cappuccino_starts_with_a_perfect_espresso%21%21_%284441914182%29.jpg", source: "Wikipedia" },
-  auto_smart_food_10216: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/6-alimenti%2C_pasta%2CTaccuino_Sanitatis%2C_Casanatense_4182..jpg/500px-6-alimenti%2C_pasta%2CTaccuino_Sanitatis%2C_Casanatense_4182..jpg", source: "Wikipedia" },
-  auto_smart_food_10219: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Bezzera_%26_caff%C3%A8_espresso.jpg/500px-Bezzera_%26_caff%C3%A8_espresso.jpg", source: "Wikipedia" },
-  auto_smart_food_10220: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Afghan_bread.jpg/500px-Afghan_bread.jpg", source: "Wikipedia" },
-  auto_smart_food_10223: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/A_better_homemade_pasta.jpg/500px-A_better_homemade_pasta.jpg", source: "Wikipedia" },
-  auto_smart_food_10228: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/California_club_pizza.jpg/500px-California_club_pizza.jpg", source: "Wikipedia" },
-  auto_smart_food_10235: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/CalzoneAlForno.jpg/500px-CalzoneAlForno.jpg", source: "Wikipedia" },
-  auto_smart_food_10253: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Sakotis2.jpg/500px-Sakotis2.jpg", source: "Wikipedia" },
-  auto_smart_food_10254: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/2009-09-gulasch-p%C3%B6rk%C3%B6lt-paprikas-2.jpg/500px-2009-09-gulasch-p%C3%B6rk%C3%B6lt-paprikas-2.jpg", source: "Wikipedia" },
-  auto_smart_food_10255: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/A_bottle_of_Pilsner_Urquell.jpg/500px-A_bottle_of_Pilsner_Urquell.jpg", source: "Wikipedia" },
-  auto_smart_food_10256: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Sv%C3%AD%C4%8Dkov%C3%A1_na_smetan%C4%9B.JPG/500px-Sv%C3%AD%C4%8Dkov%C3%A1_na_smetan%C4%9B.JPG", source: "Wikipedia" },
-  auto_smart_lm_10257: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/2014_Praga%2C_Hradczany.JPG/500px-2014_Praga%2C_Hradczany.JPG", source: "Wikipedia" },
-  auto_smart_lm_10258: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Charles_Bridge_%28Karl%C5%AFv_most%29%2C_Vltava_River%2C_Prague%2C_2015.jpg/500px-Charles_Bridge_%28Karl%C5%AFv_most%29%2C_Vltava_River%2C_Prague%2C_2015.jpg", source: "Wikipedia" },
-  auto_smart_food_10261: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Berlin_goulash.png/500px-Berlin_goulash.png", source: "Wikipedia" },
-  auto_smart_food_10269: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Afghan_bread.jpg/500px-Afghan_bread.jpg", source: "Wikipedia" },
-  auto_smart_food_10270: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/%28Pasta%29_by_David_Adam_Kess_%28pic.2%29.jpg/500px-%28Pasta%29_by_David_Adam_Kess_%28pic.2%29.jpg", source: "Wikipedia" },
-  auto_smart_food_10271: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/CafeMia.jpg/500px-CafeMia.jpg", source: "Wikipedia" },
-  auto_smart_food_10272: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/A_good_cappuccino_starts_with_a_perfect_espresso%21%21_%284441914182%29.jpg/500px-A_good_cappuccino_starts_with_a_perfect_espresso%21%21_%284441914182%29.jpg", source: "Wikipedia" },
-  auto_smart_lm_10273: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Bp_Halaszbastya_Binder_Janos_rezkarca.jpg/500px-Bp_Halaszbastya_Binder_Janos_rezkarca.jpg", source: "Wikipedia" },
-  auto_smart_lm_10274: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Budapest_Parliament_Building_.jpg/500px-Budapest_Parliament_Building_.jpg", source: "Wikipedia" },
-  auto_smart_lm_10275: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Budapest-Bains_Sz%C3%A9chenyi_f%C3%BCrd%C5%91-coupole.jpg/500px-Budapest-Bains_Sz%C3%A9chenyi_f%C3%BCrd%C5%91-coupole.jpg", source: "Wikipedia" },
-  auto_smart_lm_10279: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Budapest_parlament_interior_9.jpg/500px-Budapest_parlament_interior_9.jpg", source: "Wikipedia" },
-  auto_smart_lm_10283: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Buda_Dominican_Church.jpg/500px-Buda_Dominican_Church.jpg", source: "Wikipedia" },
-  auto_smart_lm_10285: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Budapest-Sz%C3%A9chenyi.jpg/500px-Budapest-Sz%C3%A9chenyi.jpg", source: "Wikipedia" },
-  auto_smart_lm_10290: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/1249_Finsteraarhorn_%28Jungfrau%29.jpg/500px-1249_Finsteraarhorn_%28Jungfrau%29.jpg", source: "Wikipedia" },
-  auto_smart_food_10291: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/A_suchard_on_nov_2020_%281%29.jpg/500px-A_suchard_on_nov_2020_%281%29.jpg", source: "Wikipedia" },
-  auto_smart_lm_10293: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/2008_Jungfrau.jpg/500px-2008_Jungfrau.jpg", source: "Wikipedia" },
-  auto_smart_food_10294: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/CafeMia.jpg/500px-CafeMia.jpg", source: "Wikipedia" },
-  auto_smart_food_10295: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/A_good_cappuccino_starts_with_a_perfect_espresso%21%21_%284441914182%29.jpg/500px-A_good_cappuccino_starts_with_a_perfect_espresso%21%21_%284441914182%29.jpg", source: "Wikipedia" },
-  auto_smart_food_10296: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Afghan_bread.jpg/500px-Afghan_bread.jpg", source: "Wikipedia" },
-  auto_smart_food_10297: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/%28Pasta%29_by_David_Adam_Kess_%28pic.2%29.jpg/500px-%28Pasta%29_by_David_Adam_Kess_%28pic.2%29.jpg", source: "Wikipedia" },
-  auto_smart_food_10300: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Bezzera_%26_caff%C3%A8_espresso.jpg/500px-Bezzera_%26_caff%C3%A8_espresso.jpg", source: "Wikipedia" },
-  auto_smart_lm_10301: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Aachen_Germany_Imperial-Cathedral-01.jpg/500px-Aachen_Germany_Imperial-Cathedral-01.jpg", source: "Wikipedia" },
-  auto_smart_food_10303: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Deus_Pizza.png/500px-Deus_Pizza.png", source: "Wikipedia" },
-  auto_smart_lm_10305: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Buurkerk_en_Domtoren.jpg/500px-Buurkerk_en_Domtoren.jpg", source: "Wikipedia" },
-  auto_smart_lm_10306: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Albrecht_D%C3%BCrer_-_Adorazione_dei_Magi_-_Google_Art_Project.jpg/500px-Albrecht_D%C3%BCrer_-_Adorazione_dei_Magi_-_Google_Art_Project.jpg", source: "Wikipedia" },
-  auto_smart_lm_10311: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Church_of_Saint_Sava_4.jpg/500px-Church_of_Saint_Sava_4.jpg", source: "Wikipedia" },
-  auto_smart_lm_10313: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/046CupolaSPietro.jpg/500px-046CupolaSPietro.jpg", source: "Wikipedia" },
-  auto_smart_lm_10314: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/%22The_School_of_Athens%22_by_Raffaello_Sanzio_da_Urbino.jpg/500px-%22The_School_of_Athens%22_by_Raffaello_Sanzio_da_Urbino.jpg", source: "Wikipedia" },
-  auto_smart_lm_10315: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/01_Baldacchino_St_Peter%27s.jpg/500px-01_Baldacchino_St_Peter%27s.jpg", source: "Wikipedia" },
-  auto_smart_food_10320: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Baguette_de_pain%2C_WikiCheese_Lausanne.jpg/500px-Baguette_de_pain%2C_WikiCheese_Lausanne.jpg", source: "Wikipedia" },
-  auto_smart_food_10321: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/202412_%E5%BD%A9%E8%99%B9%E5%8D%83%E5%B1%A4%E8%9B%8B%E7%B3%95%E8%88%87%E8%8D%89%E8%8E%93%E5%A5%B6%E6%B2%B9%E5%8D%83%E5%B1%A4%E8%9B%8B%E7%B3%95%28Photo_by_Junyu-K%29.jpg/500px-202412_%E5%BD%A9%E8%99%B9%E5%8D%83%E5%B1%A4%E8%9B%8B%E7%B3%95%E8%88%87%E8%8D%89%E8%8E%93%E5%A5%B6%E6%B2%B9%E5%8D%83%E5%B1%A4%E8%9B%8B%E7%B3%95%28Photo_by_Junyu-K%29.jpg", source: "Wikipedia" },
-  auto_smart_food_10322: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/2021-03-26_Onion_soup.jpg/500px-2021-03-26_Onion_soup.jpg", source: "Wikipedia" },
-  auto_smart_lm_10323: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/1000_Eiffel_tower_night_illumination_by_Pierre_Bideau_in_Paris_Photo_by_Giles_Laurent.jpg/500px-1000_Eiffel_tower_night_illumination_by_Pierre_Bideau_in_Paris_Photo_by_Giles_Laurent.jpg", source: "Wikipedia" },
-  auto_smart_lm_10324: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Butte_Montmartre_1.jpg/500px-Butte_Montmartre_1.jpg", source: "Wikipedia" },
-  auto_smart_food_10326: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Baguette_interior.jpg/500px-Baguette_interior.jpg", source: "Wikipedia" },
-  auto_smart_food_10328: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/49ers_flapjack_OHP.jpg/500px-49ers_flapjack_OHP.jpg", source: "Wikipedia" },
-  auto_smart_lm_10330: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Chateau_Versailles_Galerie_des_Glaces.jpg/500px-Chateau_Versailles_Galerie_des_Glaces.jpg", source: "Wikipedia" },
-  auto_smart_food_10331: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Afghan_bread.jpg/500px-Afghan_bread.jpg", source: "Wikipedia" },
-  auto_smart_food_10332: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/%28Pasta%29_by_David_Adam_Kess_%28pic.2%29.jpg/500px-%28Pasta%29_by_David_Adam_Kess_%28pic.2%29.jpg", source: "Wikipedia" },
-  auto_smart_food_10335: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Baguettes%2C_Paris%2C_France_-_panoramio.jpg/500px-Baguettes%2C_Paris%2C_France_-_panoramio.jpg", source: "Wikipedia" },
-  auto_smart_lm_10340: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/2013_Fireworks_on_Eiffel_Tower_11.jpg/500px-2013_Fireworks_on_Eiffel_Tower_11.jpg", source: "Wikipedia" },
-  auto_smart_lm_10347: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Akhenathon_and_Nefertiti_E15593_mp3h8771-gradient.jpg/500px-Akhenathon_and_Nefertiti_E15593_mp3h8771-gradient.jpg", source: "Wikipedia" },
-  auto_smart_lm_10348: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/3_cent_U.S._Army_U.S._Postage_stamp_issued_1945.png/500px-3_cent_U.S._Army_U.S._Postage_stamp_issued_1945.png", source: "Wikipedia" },
-  auto_smart_lm_10357: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Caricature_Gustave_Eiffel.png/500px-Caricature_Gustave_Eiffel.png", source: "Wikipedia" },
-  auto_smart_lm_10359: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Chapelle_des_Martyrs_Montmartre_Abbey.jpg/500px-Chapelle_des_Martyrs_Montmartre_Abbey.jpg", source: "Wikipedia" },
-  auto_smart_food_10360: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/APileOfCroissants.jpg/500px-APileOfCroissants.jpg", source: "Wikipedia" },
-  auto_smart_food_10361: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Afghan_bread.jpg/500px-Afghan_bread.jpg", source: "Wikipedia" },
-  auto_smart_food_10362: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Absolute_bretzel_01.jpg/500px-Absolute_bretzel_01.jpg", source: "Wikipedia" },
-  auto_smart_food_10364: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/California_club_pizza.jpg/500px-California_club_pizza.jpg", source: "Wikipedia" },
-  auto_smart_food_10365: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/%28Pasta%29_by_David_Adam_Kess_%28pic.2%29.jpg/500px-%28Pasta%29_by_David_Adam_Kess_%28pic.2%29.jpg", source: "Wikipedia" },
-  auto_smart_food_10366: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/CafeMia.jpg/500px-CafeMia.jpg", source: "Wikipedia" },
-  auto_smart_food_10367: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/A_good_cappuccino_starts_with_a_perfect_espresso%21%21_%284441914182%29.jpg/500px-A_good_cappuccino_starts_with_a_perfect_espresso%21%21_%284441914182%29.jpg", source: "Wikipedia" },
-  auto_smart_food_10370: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/CalzoneAlForno.jpg/500px-CalzoneAlForno.jpg", source: "Wikipedia" },
-  auto_smart_food_10372: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/6-alimenti%2C_pasta%2CTaccuino_Sanitatis%2C_Casanatense_4182..jpg/500px-6-alimenti%2C_pasta%2CTaccuino_Sanitatis%2C_Casanatense_4182..jpg", source: "Wikipedia" },
-  auto_smart_food_10375: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Bezzera_%26_caff%C3%A8_espresso.jpg/500px-Bezzera_%26_caff%C3%A8_espresso.jpg", source: "Wikipedia" },
-  auto_smart_lm_10376: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/01_Baldacchino_St_Peter%27s.jpg/500px-01_Baldacchino_St_Peter%27s.jpg", source: "Wikipedia" },
-  auto_smart_food_10377: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/2010.08.22.143425_N%C3%BCrnberger_Rostbratwurst_Kirwa_Sulzbach-Rosenberg.jpg/500px-2010.08.22.143425_N%C3%BCrnberger_Rostbratwurst_Kirwa_Sulzbach-Rosenberg.jpg", source: "Wikipedia" },
-  auto_smart_food_10379: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Alsace%2C_Bas-Rhin%2C_Strasbourg%2C_%22_march%C3%A9_de_No%C3%ABl_%22_place_de_Broglie_%284840720073%29.jpg/500px-Alsace%2C_Bas-Rhin%2C_Strasbourg%2C_%22_march%C3%A9_de_No%C3%ABl_%22_place_de_Broglie_%284840720073%29.jpg", source: "Wikipedia" },
-  auto_smart_lm_10380: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Budapest_Parliament_Building_.jpg/500px-Budapest_Parliament_Building_.jpg", source: "Wikipedia" },
-  auto_smart_food_10386: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/A_better_homemade_pasta.jpg/500px-A_better_homemade_pasta.jpg", source: "Wikipedia" },
-  auto_smart_food_10390: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Afghan_bread.jpg/500px-Afghan_bread.jpg", source: "Wikipedia" },
-  auto_smart_food_10391: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Absolute_bretzel_01.jpg/500px-Absolute_bretzel_01.jpg", source: "Wikipedia" },
-  auto_smart_food_10393: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/California_club_pizza.jpg/500px-California_club_pizza.jpg", source: "Wikipedia" },
-  auto_smart_food_10394: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/%28Pasta%29_by_David_Adam_Kess_%28pic.2%29.jpg/500px-%28Pasta%29_by_David_Adam_Kess_%28pic.2%29.jpg", source: "Wikipedia" },
-  auto_smart_food_10395: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/CafeMia.jpg/500px-CafeMia.jpg", source: "Wikipedia" },
-  auto_smart_food_10396: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/A_good_cappuccino_starts_with_a_perfect_espresso%21%21_%284441914182%29.jpg/500px-A_good_cappuccino_starts_with_a_perfect_espresso%21%21_%284441914182%29.jpg", source: "Wikipedia" },
-  auto_smart_food_10397: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/2010.08.22.143425_N%C3%BCrnberger_Rostbratwurst_Kirwa_Sulzbach-Rosenberg.jpg/500px-2010.08.22.143425_N%C3%BCrnberger_Rostbratwurst_Kirwa_Sulzbach-Rosenberg.jpg", source: "Wikipedia" },
-  auto_smart_food_10399: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Alsace%2C_Bas-Rhin%2C_Strasbourg%2C_%22_march%C3%A9_de_No%C3%ABl_%22_place_de_Broglie_%284840720073%29.jpg/500px-Alsace%2C_Bas-Rhin%2C_Strasbourg%2C_%22_march%C3%A9_de_No%C3%ABl_%22_place_de_Broglie_%284840720073%29.jpg", source: "Wikipedia" },
-  auto_smart_food_10402: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/CalzoneAlForno.jpg/500px-CalzoneAlForno.jpg", source: "Wikipedia" },
-  auto_smart_food_10404: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/6-alimenti%2C_pasta%2CTaccuino_Sanitatis%2C_Casanatense_4182..jpg/500px-6-alimenti%2C_pasta%2CTaccuino_Sanitatis%2C_Casanatense_4182..jpg", source: "Wikipedia" },
-  auto_smart_food_10410: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/A_better_homemade_pasta.jpg/500px-A_better_homemade_pasta.jpg", source: "Wikipedia" },
-  auto_smart_food_10419: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Bezzera_%26_caff%C3%A8_espresso.jpg/500px-Bezzera_%26_caff%C3%A8_espresso.jpg", source: "Wikipedia" },
-  auto_smart_lm_10420: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Budapest_Parliament_Building_.jpg/500px-Budapest_Parliament_Building_.jpg", source: "Wikipedia" },
-  auto_smart_food_10421: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/%2Athis%2A_is_a_bagel.jpg/500px-%2Athis%2A_is_a_bagel.jpg", source: "Wikipedia" },
-  auto_smart_food_10422: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/2023_Sernik_polski_%281%29.jpg/500px-2023_Sernik_polski_%281%29.jpg", source: "Wikipedia" },
-  auto_smart_food_10424: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Bagel-Plain-Alt.jpg/500px-Bagel-Plain-Alt.jpg", source: "Wikipedia" },
-  auto_smart_food_10426: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Baked_cheesecake_with_raspberries_and_blueberries.jpg/500px-Baked_cheesecake_with_raspberries_and_blueberries.jpg", source: "Wikipedia" },
-  auto_smart_lm_10427: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Bomber_Crashed_into_Empire_State_Building_1945.jpg/500px-Bomber_Crashed_into_Empire_State_Building_1945.jpg", source: "Wikipedia" },
-  auto_smart_food_10430: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Bagel_with_sesame_3.jpg/500px-Bagel_with_sesame_3.jpg", source: "Wikipedia" },
-  auto_smart_lm_10433: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/30th_St_10h_Av_td_%282018-08-16%29_05_-_High_Line_Spur.jpg/500px-30th_St_10h_Av_td_%282018-08-16%29_05_-_High_Line_Spur.jpg", source: "Wikipedia" },
-  auto_smart_lm_10439: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/1883_Frank_Leslie%27s_Illustrated_Newspaper_Brooklyn_Bridge_New_York_City.jpg/500px-1883_Frank_Leslie%27s_Illustrated_Newspaper_Brooklyn_Bridge_New_York_City.jpg", source: "Wikipedia" },
-  auto_smart_lm_10441: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/1905_The_Spider%27s_Web%2C_Brooklyn_Bridge%2C_NY_City_A.jpg/500px-1905_The_Spider%27s_Web%2C_Brooklyn_Bridge%2C_NY_City_A.jpg", source: "Wikipedia" },
-  auto_smart_lm_10454: { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/AmCyc_Caisson_-_Caisson_of_East_River_Bridge.jpg/500px-AmCyc_Caisson_-_Caisson_of_East_River_Bridge.jpg", source: "Wikipedia" },
+  "auto_1_d8_hallstatt": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fb%2Fb0%2FHallstatt_-_Zentrum_.JPG%2F500px-Hallstatt_-_Zentrum_.JPG&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_3_d17_paris": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F4%2F4b%2FLa_Tour_Eiffel_vue_de_la_Tour_Saint-Jacques%252C_Paris_ao%25C3%25BBt_2014_%25282%2529.jpg%2F500px-La_Tour_Eiffel_vue_de_la_Tour_Saint-Jacques%252C_Paris_ao%25C3%25BBt_2014_%25282%2529.jpg&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_4_d9_mykonos": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fb%2Fb2%2F2011_Dimos_Mykonou.png%2F500px-2011_Dimos_Mykonou.png&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_5_d11_budapest": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F5%2F53%2FView_from_Gell%25C3%25A9rt_Hill_to_the_Danube%252C_Hungary_-_Budapest_%252828493220635%2529.jpg%2F500px-View_from_Gell%25C3%25A9rt_Hill_to_the_Danube%252C_Hungary_-_Budapest_%252828493220635%2529.jpg&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_7_d1_paris": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F4%2F4b%2FLa_Tour_Eiffel_vue_de_la_Tour_Saint-Jacques%252C_Paris_ao%25C3%25BBt_2014_%25282%2529.jpg%2F500px-La_Tour_Eiffel_vue_de_la_Tour_Saint-Jacques%252C_Paris_ao%25C3%25BBt_2014_%25282%2529.jpg&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_8_d8_vienna": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F5%2F5b%2FSchoenbrunn_philharmoniker_2012.jpg%2F500px-Schoenbrunn_philharmoniker_2012.jpg&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_8_d13_venice": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F4%2F4f%2FVenezia_aerial_view.jpg%2F500px-Venezia_aerial_view.jpg&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_9_d1_mainz": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fc%2Fc6%2FMainzer_Dom_Blaue_Stunde_%252837539430014%2529.jpg%2F500px-Mainzer_Dom_Blaue_Stunde_%252837539430014%2529.jpg&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_9_d4_munich": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fd%2Fd3%2FStadtbild_M%25C3%25BCnchen.jpg%2F500px-Stadtbild_M%25C3%25BCnchen.jpg&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_9_d7_innsbruck": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F1%2F14%2FB%25C3%25BCrgerstra%25C3%259Fe_26%252B24_%2528BT0A2830%2529.jpg%2F500px-B%25C3%25BCrgerstra%25C3%259Fe_26%252B24_%2528BT0A2830%2529.jpg&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_9_d9_vienna": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F5%2F5b%2FSchoenbrunn_philharmoniker_2012.jpg%2F500px-Schoenbrunn_philharmoniker_2012.jpg&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_9_d10_vienna": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F5%2F5b%2FSchoenbrunn_philharmoniker_2012.jpg%2F500px-Schoenbrunn_philharmoniker_2012.jpg&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_9_d11_vienna": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F5%2F5b%2FSchoenbrunn_philharmoniker_2012.jpg%2F500px-Schoenbrunn_philharmoniker_2012.jpg&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_9_d13_vienna": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F5%2F5b%2FSchoenbrunn_philharmoniker_2012.jpg%2F500px-Schoenbrunn_philharmoniker_2012.jpg&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_10_d7_new_york_city": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F7%2F7a%2FView_of_Empire_State_Building_from_Rockefeller_Center_New_York_City_dllu_%2528cropped%2529.jpg%2F500px-View_of_Empire_State_Building_from_Rockefeller_Center_New_York_City_dllu_%2528cropped%2529.jpg&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_10_d8_new_york_city": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F7%2F7a%2FView_of_Empire_State_Building_from_Rockefeller_Center_New_York_City_dllu_%2528cropped%2529.jpg%2F500px-View_of_Empire_State_Building_from_Rockefeller_Center_New_York_City_dllu_%2528cropped%2529.jpg&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "acropolis": {
+    "url": "./assets/photos/500px-1029_Acropolis_of_Athens_in_Greece_at_night_Photo_by_Giles_Laurent.jpg",
+    "title": "Acropolis of Athens",
+    "credit": "Giles Laurent · CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:1029_Acropolis_of_Athens_in_Greece_at_night_Photo_by_Giles_Laurent.jpg"
+  },
+  "acropolis_museum": {
+    "url": "./assets/photos/500px-Interior_of_the_New_Acropolis_Museum_1.jpg",
+    "title": "Acropolis Museum",
+    "credit": "Tilemahos Efthimiadis · CC BY-SA 2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Interior_of_the_New_Acropolis_Museum_1.jpg"
+  },
+  "amalfi": {
+    "url": "./assets/photos/500px-Amalfi_sea_view_Italy.JPG",
+    "title": "Amalfi",
+    "credit": "No machine-readable author provided.  Sudodana2048  assumed (based on copyright claims). · CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Amalfi_sea_view_Italy.JPG"
+  },
+  "ancient_agora": {
+    "url": "./assets/photos/500px-Agora_-_Athènes_GRA1_-_2022-03-26_-_97.jpg",
+    "title": "Ancient Agora of Athens",
+    "credit": "Chabe01 · CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Agora_-_Athènes_(GRA1)_-_2022-03-26_-_97.jpg"
+  },
+  "barceloneta": {
+    "url": "./assets/photos/500px-Beach_Barcelona_P1170713.jpg",
+    "title": "La Barceloneta, Barcelona",
+    "credit": "Matti Blume · CC BY-SA",
+    "source": "https://commons.wikimedia.org/wiki/File:Beach,_Barcelona_(P1170713).jpg"
+  },
+  "belvedere": {
+    "url": "./assets/photos/500px-Palacio_Belvedere_Viena_Austria_2020-02-01_DD_93-95_HDR.jpg",
+    "title": "Belvedere, Vienna",
+    "credit": "Diego Delso · CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Palacio_Belvedere,_Viena,_Austria,_2020-02-01,_DD_93-95_HDR.jpg"
+  },
+  "blue_grotto": {
+    "url": "./assets/photos/500px-Grotta_azzurra.jpg",
+    "title": "Blue Grotto (Capri)",
+    "credit": "Frédéric de Goldschmidt www.frederic.net · CC BY 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Grotta_azzurra.jpg"
+  },
+  "bmw_museum": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fb%2Fbd%2FMus%25C3%25A9e_BMW_004.jpg%2F500px-Mus%25C3%25A9e_BMW_004.jpg&w=500&output=webp",
+    "title": "BMW Museum",
+    "credit": "Arnaud 25 · CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Musée_BMW_004.jpg"
+  },
+  "brandenburg_gate": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fa%2Fa6%2FBrandenburger_Tor_abends.jpg%2F500px-Brandenburger_Tor_abends.jpg&w=500&output=webp",
+    "title": "Brandenburg Gate",
+    "credit": "Thomas Wolf  ,   www.foto-tw.de · CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Brandenburger_Tor_abends.jpg"
+  },
+  "british_museum": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F8%2F86%2FBritish_Museum_%2528aerial%2529.jpg%2F500px-British_Museum_%2528aerial%2529.jpg&w=500&output=webp",
+    "title": "British Museum",
+    "credit": "Luke Massey & the Greater London National Park City Initiative · CC BY 2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:British_Museum_(aerial).jpg"
+  },
+  "bruges_canal": {
+    "url": "./assets/photos/500px-Brugge-CanalRozenhoedkaai.JPG",
+    "title": "Rozenhoedkaai, Bruges",
+    "credit": "JoJan · CC BY 2.5",
+    "source": "https://commons.wikimedia.org/wiki/File:Brugge-CanalRozenhoedkaai.JPG"
+  },
+  "bruges_markt": {
+    "url": "./assets/photos/500px-Bruges_Market_Square_and_Belfry.jpg",
+    "title": "Bruges Market Square and Belfry",
+    "credit": "Wolfgang Staudt · CC BY 2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Bruges_Market_Square_and_Belfry.jpg"
+  },
+  "burano": {
+    "url": "./assets/photos/500px-Burano_Venice_17.jpg",
+    "title": "Burano",
+    "credit": "kallerna · CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Burano_Venice_17.jpg"
+  },
+  "canal_saint_martin": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F4%2F43%2FCanal_Saint-Martin_P1060441.JPG%2F500px-Canal_Saint-Martin_P1060441.JPG&w=500&output=webp",
+    "title": "Canal Saint-Martin, Paris",
+    "credit": "Wikimedia Commons · CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Canal_Saint-Martin_P1060441.JPG"
+  },
+  "catacombes": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Ff%2Ffb%2FA-Procession-in-the-Catacomb-of-Callistus.jpg%2F500px-A-Procession-in-the-Catacomb-of-Callistus.jpg&w=500&output=webp",
+    "title": "Catacombes de Paris",
+    "credit": "Vlastimil Juricek · CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Catacombes_de_Paris_edit.jpg"
+  },
+  "capri": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F7%2F7d%2FCapri_in_Cartolina_-_Vista_da_Termini_%2528Massa_Lubrense%2529.jpg%2F500px-Capri_in_Cartolina_-_Vista_da_Termini_%2528Massa_Lubrense%2529.jpg&w=500&output=webp",
+    "title": "Capri",
+    "credit": "Mario Apuzzo · CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Capri_in_Cartolina_-_Vista_da_Termini_(Massa_Lubrense).jpg"
+  },
+  "casa_mila": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fd%2Fde%2FCasa_Mil%25C3%25A0%252C_general_view.jpg%2F500px-Casa_Mil%25C3%25A0%252C_general_view.jpg&w=500&output=webp",
+    "title": "Casa Milà",
+    "credit": "Thomas Ledl · CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Casa_Milà,_general_view.jpg"
+  },
+  "chapel_bridge": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F1%2F1e%2FKapellbruecke.JPG%2F500px-Kapellbruecke.JPG&w=500&output=webp",
+    "title": "Kapellbrücke",
+    "credit": "Simon Koopmann · CC BY-SA 2.5",
+    "source": "https://commons.wikimedia.org/wiki/File:Kapellbruecke.JPG"
+  },
+  "charles_bridge": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F2%2F22%2FPrague_07-2016_view_from_Lesser_Town_Tower_of_Charles_Bridge_img3.jpg%2F500px-Prague_07-2016_view_from_Lesser_Town_Tower_of_Charles_Bridge_img3.jpg&w=500&output=webp",
+    "title": "Charles Bridge",
+    "credit": "A.Savin · FAL",
+    "source": "https://commons.wikimedia.org/wiki/File:Prague_07-2016_view_from_Lesser_Town_Tower_of_Charles_Bridge_img3.jpg"
+  },
+  "checkpoint_charlie": {
+    "url": "./assets/photos/500px-Berlin_-_Checkpoint_Charlie_1963.jpg",
+    "title": "Checkpoint Charlie",
+    "credit": "Roger Wollstadt · CC BY-SA 2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Berlin_-_Checkpoint_Charlie_1963.jpg"
+  },
+  "cinque_terre": {
+    "url": "./assets/photos/500px-Cinque_Terre_Italy_October_2020_-_24_50543603956.jpg",
+    "title": "Cinque Terre",
+    "credit": "Bruno Rijsman · CC BY-SA 2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Cinque_Terre_(Italy,_October_2020)_-_24_(50543603956).jpg"
+  },
+  "cologne_cathedral": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F0%2F04%2FK%25C3%25B6lner_Dom_-_Westfassade_2022_ohne_Ger%25C3%25BCst-0968_b.jpg%2F500px-K%25C3%25B6lner_Dom_-_Westfassade_2022_ohne_Ger%25C3%25BCst-0968_b.jpg&w=500&output=webp",
+    "title": "Cologne Cathedral",
+    "credit": "Raimond Spekking · CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Kölner_Dom_-_Westfassade_2022_ohne_Gerüst-0968_b.jpg"
+  },
+  "colosseum": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fd%2Fde%2FColosseo_2020.jpg%2F500px-Colosseo_2020.jpg&w=500&output=webp",
+    "title": "Colosseum",
+    "credit": "FeaturedPics · CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Colosseo_2020.jpg"
+  },
+  "covent_garden": {
+    "url": "./assets/photos/500px-Covent_Garden_Interior_May_2006_crop.jpg",
+    "title": "Covent Garden",
+    "credit": "Covent_Garden_Interior_May_2006.jpg :  Diliff  \n derivative work:  SilkTork  (  talk  ) · CC BY 2.5",
+    "source": "https://commons.wikimedia.org/wiki/File:Covent_Garden_Interior_May_2006_crop.jpg"
+  },
+  "doges_palace": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F0%2F00%2F%2528Venice%2529_Doge%2527s_Palace_and_campanile_of_St._Mark%2527s_Basilica_facing_the_sea.jpg%2F500px-%2528Venice%2529_Doge%2527s_Palace_and_campanile_of_St._Mark%2527s_Basilica_facing_the_sea.jpg&w=500&output=webp",
+    "title": "Doge's Palace",
+    "credit": "Didier Descouens · CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:(Venice)_Doge's_Palace_and_campanile_of_St._Mark's_Basilica_facing_the_sea.jpg"
+  },
+  "east_side_gallery": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F2%2F2b%2FSegment_with_Graffiti_of_the_Berlin_Wall_%25283_of_4%2529_%2528cropped%2529.jpg%2F500px-Segment_with_Graffiti_of_the_Berlin_Wall_%25283_of_4%2529_%2528cropped%2529.jpg&w=500&output=webp",
+    "title": "East Side Gallery",
+    "credit": "Lklundin · CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Segment_with_Graffiti_of_the_Berlin_Wall_(3_of_4)_(cropped).jpg"
+  },
+  "eiffel_tower": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fen%2Fthumb%2Fb%2Fba%2FEiffel_Tower_logo.svg%2F500px-Eiffel_Tower_logo.svg.png&w=500&output=webp",
+    "title": "Eiffel Tower",
+    "credit": "Benh LIEU SONG · Public domain",
+    "source": "https://commons.wikimedia.org/wiki/File:Tour_Eiffel_Wikimedia_Commons.jpg"
+  },
+  "fira": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fe%2Fe9%2FSantorini_Fira3_tango7174.jpg%2F500px-Santorini_Fira3_tango7174.jpg&w=500&output=webp",
+    "title": "Fira",
+    "credit": "Tango7174 · CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Santorini_Fira3_tango7174.jpg"
+  },
+  "florence_duomo": {
+    "url": "./assets/photos/500px-Cattedrale_di_Santa_Maria_del_Fiore__Il_Duomo_di_Firenze.jpg",
+    "title": "Florence Cathedral",
+    "credit": "Gary Campbell-Hall · CC BY 2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Cattedrale_di_Santa_Maria_del_Fiore_–_Il_Duomo_di_Firenze.jpg"
+  },
+  "food_afternoon_tea": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fd%2Fde%2FAfternoon_meal_in_Tiffin.jpg%2F500px-Afternoon_meal_in_Tiffin.jpg&w=500&output=webp",
+    "title": "Scones Jam Cream.jpg",
+    "credit": "Alpha  from Melbourne, Australia · CC BY-SA 2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Scones_Jam_Cream.jpg"
+  },
+  "food_apfelwein": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F6%2F6b%2FApfelwein_Geripptes_Bembel.jpg%2F500px-Apfelwein_Geripptes_Bembel.jpg&w=500&output=webp",
+    "title": "Apfelwein Geripptes Bembel.jpg",
+    "credit": "Eva K. on Commons  /  Eva K. on German Wikipedia · CC BY-SA 2.5",
+    "source": "https://commons.wikimedia.org/wiki/File:Apfelwein_Geripptes_Bembel.jpg"
+  },
+  "food_becherovka": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fen%2F9%2F9b%2FBecherovka_logo.png&w=500&output=webp",
+    "title": "Becherovka bottle.jpg",
+    "credit": "CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Becherovka_bottle.jpg"
+  },
+  "food_cacio_pepe": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F9%2F99%2FCacio_e_pepe.jpg%2F500px-Cacio_e_pepe.jpg&w=500&output=webp",
+    "title": "Cacio e Pepe (카치오 에 페페)",
+    "credit": "Valerio Capello · CC BY-SA 2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Cacio_e_pepe.jpg"
+  },
+  "food_champagne": {
+    "url": "./assets/photos/Champagne_toasting.png",
+    "title": "Champagne toasting.png",
+    "credit": "Candyman777 · CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Champagne_toasting.png"
+  },
+  "food_croissant": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fd%2Fdc%2FCroissants_au_beurre_%252818953292873%2529.jpg%2F500px-Croissants_au_beurre_%252818953292873%2529.jpg&w=500&output=webp",
+    "title": "Croissants au beurre (18953292873).jpg",
+    "credit": "Herry Wibisono ( herryway ) · CC0",
+    "source": "https://commons.wikimedia.org/wiki/File:Croissants_au_beurre_(18953292873).jpg"
+  },
+  "food_currywurst": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fb%2Fb0%2FBerlin-Mitte_Deutsches_Currywurst_Museum.jpg%2F500px-Berlin-Mitte_Deutsches_Currywurst_Museum.jpg&w=500&output=webp",
+    "title": "Berlin-Mitte Deutsches Currywurst Museum.jpg",
+    "credit": "Assenmacher · CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Berlin-Mitte_Deutsches_Currywurst_Museum.jpg"
+  },
+  "food_espresso": {
+    "url": "./assets/photos/500px-Espresso_Coffee_01.jpg",
+    "title": "Espresso Coffee 01.jpg",
+    "credit": "Jubair1985 · CC0",
+    "source": "https://commons.wikimedia.org/wiki/File:Espresso_Coffee_01.jpg"
+  },
+  "food_fischbrotchen": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F7%2F7e%2FFischbroetchen_01_%2528fcm%2529.jpg%2F500px-Fischbroetchen_01_%2528fcm%2529.jpg&w=500&output=webp",
+    "title": "Fischbroetchen 01 (fcm).jpg",
+    "credit": "Frank C. Müller , Baden-Baden · CC BY-SA 2.0 de",
+    "source": "https://commons.wikimedia.org/wiki/File:Fischbroetchen_01_(fcm).jpg"
+  },
+  "food_fish_chips": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fd%2Fdc%2FEgg_and_chips_or_fish_and_chips_-_geograph.org.uk_-_4060739.jpg%2F500px-Egg_and_chips_or_fish_and_chips_-_geograph.org.uk_-_4060739.jpg&w=500&output=webp",
+    "title": "Egg and chips or fish and chips - geograph.org.uk - 4060739.jpg",
+    "credit": "Richard Humphrey · CC BY-SA 2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Egg_and_chips_or_fish_and_chips_-_geograph.org.uk_-_4060739.jpg"
+  },
+  "food_fondue": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F8%2F86%2FFull_cheese_fondue_set_-_in_Switzerland.JPG%2F500px-Full_cheese_fondue_set_-_in_Switzerland.JPG&w=500&output=webp",
+    "title": "Full cheese fondue set - in Switzerland.JPG",
+    "credit": "EquatorialSky  at  English Wikipedia · Public domain",
+    "source": "https://commons.wikimedia.org/wiki/File:Full_cheese_fondue_set_-_in_Switzerland.JPG"
+  },
+  "food_gelato": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F7%2F74%2FGelato_under_the_Duomo_in_Milan.jpg%2F500px-Gelato_under_the_Duomo_in_Milan.jpg&w=500&output=webp",
+    "title": "Gelato under the Duomo in Milan.jpg",
+    "credit": "MollySVH · CC BY 2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Gelato_under_the_Duomo_in_Milan.jpg"
+  },
+  "food_goulash": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fc%2Fcb%2F02021_1020_%25282%2529_Goulash_soup_of_Poland.jpg%2F500px-02021_1020_%25282%2529_Goulash_soup_of_Poland.jpg&w=500&output=webp",
+    "title": "02021 1020 (2) Goulash soup of Poland.jpg",
+    "credit": "Silar · CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:02021_1020_(2)_Goulash_soup_of_Poland.jpg"
+  },
+  "food_greek_salad": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fe%2Fe2%2FHoriatiki_salad.jpg%2F500px-Horiatiki_salad.jpg&w=500&output=webp",
+    "title": "Horiatiki salad.jpg",
+    "credit": "Scudsvlad · CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Horiatiki_salad.jpg"
+  },
+  "food_greek_seafood": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F0%2F03%2FGrilled_octopus_at_Other_Mama.jpg%2F500px-Grilled_octopus_at_Other_Mama.jpg&w=500&output=webp",
+    "title": "Grilled octopus at Other Mama.jpg",
+    "credit": "T.Tseng · CC BY 2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Grilled_octopus_at_Other_Mama.jpg"
+  },
+  "food_jamon": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fd%2Fd6%2FJamon_iberico_de_bellota_%2528cinco_jotas%2529.jpg%2F500px-Jamon_iberico_de_bellota_%2528cinco_jotas%2529.jpg&w=500&output=webp",
+    "title": "Jamon iberico de bellota (cinco jotas).jpg",
+    "credit": "Cantabrucu · CC0",
+    "source": "https://commons.wikimedia.org/wiki/File:Jamon_iberico_de_bellota_(cinco_jotas).jpg"
+  },
+  "food_kolsch": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fa%2Fa3%2FKoelsch.jpg&w=500&output=webp",
+    "title": "Koelsch.jpg",
+    "credit": "No machine-readable author provided.  Trexer  assumed (based on copyright claims). · CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Koelsch.jpg"
+  },
+  "food_limoncello": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Ff%2Ffb%2FHomemade_limoncello.jpg%2F500px-Homemade_limoncello.jpg&w=500&output=webp",
+    "title": "Homemade limoncello.jpg",
+    "credit": "Alessio Damato · CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Homemade_limoncello.jpg"
+  },
+  "food_melange": {
+    "url": "./assets/photos/500px-Cafe_Viennois.jpg",
+    "title": "Cafe Viennois.jpg",
+    "credit": "Xipirho  at  English Wikipedia · Public domain",
+    "source": "https://commons.wikimedia.org/wiki/File:Cafe_Viennois.jpg"
+  },
+  "food_mozartkugel": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fc%2Fc6%2FOriginal_Salzburger_Mozartkugel_F%25C3%25BCrst_2009.jpg%2F500px-Original_Salzburger_Mozartkugel_F%25C3%25BCrst_2009.jpg&w=500&output=webp",
+    "title": "Original Salzburger Mozartkugel Fürst 2009.jpg",
+    "credit": "Roberta F. · CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Original_Salzburger_Mozartkugel_Fürst_2009.jpg"
+  },
+  "food_paella": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fa%2Fa2%2FPaella_valenciana%252C_Mazatl%25C3%25A1n%252C_25_de_abril_de_2023.jpg%2F500px-Paella_valenciana%252C_Mazatl%25C3%25A1n%252C_25_de_abril_de_2023.jpg&w=500&output=webp",
+    "title": "Paella valenciana, Mazatlán, 25 de abril de 2023.jpg",
+    "credit": "El Nuevo Doge · CC0",
+    "source": "https://commons.wikimedia.org/wiki/File:Paella_valenciana,_Mazatlán,_25_de_abril_de_2023.jpg"
+  },
+  "food_pilsner": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F5%2F50%2FPilsner_Urquell_beer_glass_%25282%2529.jpg%2F500px-Pilsner_Urquell_beer_glass_%25282%2529.jpg&w=500&output=webp",
+    "title": "Pilsner Urquell beer glass (2).jpg",
+    "credit": "I would appreciate  being notified  if you use my work outside Wikimedia.  Do not copy thi · CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Pilsner_Urquell_beer_glass_(2).jpg"
+  },
+  "food_pretzel": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fa%2Fad%2FAugsburger_Stra%25C3%259Fe_15_DAH_-_2023-09-03_-_143c.jpg%2F500px-Augsburger_Stra%25C3%259Fe_15_DAH_-_2023-09-03_-_143c.jpg&w=500&output=webp",
+    "title": "Augsburger Straße 15 DAH - 2023-09-03 - 143c.jpg",
+    "credit": "Martinus KE · CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Augsburger_Straße_15_DAH_-_2023-09-03_-_143c.jpg"
+  },
+  "food_sachertorte": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F1%2F14%2FSachertorte_DSC03027_retouched.jpg%2F500px-Sachertorte_DSC03027_retouched.jpg&w=500&output=webp",
+    "title": "Sachertorte DSC03027 retouched.jpg",
+    "credit": "CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Sachertorte_DSC03027_retouched.jpg"
+  },
+  "food_salade_nicoise": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Ff%2Ff1%2FSalade_ni%25C3%25A7oise_%25287545098258%2529.jpg%2F500px-Salade_ni%25C3%25A7oise_%25287545098258%2529.jpg&w=500&output=webp",
+    "title": "Salade niçoise (7545098258).jpg",
+    "credit": "cyclonebill  from Copenhagen, Denmark · CC BY-SA 2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Salade_niçoise_(7545098258).jpg"
+  },
+  "food_sangria": {
+    "url": "./assets/photos/500px-Glass_of_Sangria_-_Tinto_Taperia_2026-05-17.jpg",
+    "title": "Glass of Sangria - Tinto Taperia 2026-05-17.jpg",
+    "credit": "Andy Li · CC0",
+    "source": "https://commons.wikimedia.org/wiki/File:Glass_of_Sangria_-_Tinto_Taperia_2026-05-17.jpg"
+  },
+  "food_santorini_wine": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F1%2F10%2FSantorini_vineyard.jpg%2F500px-Santorini_vineyard.jpg&w=500&output=webp",
+    "title": "Santorini vineyard.jpg",
+    "credit": "Joye~ · CC BY 2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Santorini_vineyard.jpg"
+  },
+  "food_schneeball": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F7%2F77%2FSchneeball-gebaeck.jpeg%2F500px-Schneeball-gebaeck.jpeg&w=500&output=webp",
+    "title": "Schneeball-gebaeck.jpeg",
+    "credit": "S.kapfer · CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Schneeball-gebaeck.jpeg"
+  },
+  "food_schnitzel": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F9%2F99%2FWiener_schnitzel_%2528509235837%2529.jpg%2F500px-Wiener_schnitzel_%2528509235837%2529.jpg&w=500&output=webp",
+    "title": "Wiener schnitzel (509235837).jpg",
+    "credit": "Simon Law  from Montréal, QC, Canada · CC BY-SA 2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Wiener_schnitzel_(509235837).jpg"
+  },
+  "food_schweinshaxe": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fb%2Fb2%2FPork_Knuckle.jpg%2F500px-Pork_Knuckle.jpg&w=500&output=webp",
+    "title": "Pork Knuckle.jpg",
+    "credit": "BIPL1516 · CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Pork_Knuckle.jpg"
+  },
+  "food_socca": {
+    "url": "./assets/photos/500px-La_Farinata_di_ceci.jpg",
+    "title": "La Farinata di ceci.jpg",
+    "credit": "Samuele Silva · CC BY-SA 2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:La_Farinata_di_ceci.jpg"
+  },
+  "food_souvlaki": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fe%2Fe3%2FGreek_chicken_souvlaki_merida.jpg%2F500px-Greek_chicken_souvlaki_merida.jpg&w=500&output=webp",
+    "title": "Greek chicken souvlaki merida.jpg",
+    "credit": "Leeturtle · CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Greek_chicken_souvlaki_merida.jpg"
+  },
+  "food_squid_ink": {
+    "url": "./assets/photos/500px-Squid_ink_pasta_cropped.jpg",
+    "title": "Squid ink pasta (cropped).jpg",
+    "credit": "tednmiki · CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Squid_ink_pasta_(cropped).jpg"
+  },
+  "food_tapas": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F9%2F97%2FTapas_2012_094_Pulpitos.jpg%2F500px-Tapas_2012_094_Pulpitos.jpg&w=500&output=webp",
+    "title": "Tapas 2012 094 Pulpitos.jpg",
+    "credit": "User:Gordito1869 · CC BY 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Tapas_2012_094_Pulpitos.jpg"
+  },
+  "food_trdelnik": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F3%2F31%2FTrdelnik_Praha.JPG%2F500px-Trdelnik_Praha.JPG&w=500&output=webp",
+    "title": "Trdelnik Praha.JPG",
+    "credit": "MOs810 · CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Trdelnik_Praha.JPG"
+  },
+  "galeries_lafayette": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F6%2F6b%2FGalerie_Lafayette_Haussmann_Dome.jpg%2F500px-Galerie_Lafayette_Haussmann_Dome.jpg&w=500&output=webp",
+    "title": "Galeries Lafayette",
+    "credit": "Benh LIEU SONG  ( Flickr ) · CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Galerie_Lafayette_Haussmann_Dome.jpg"
+  },
+  "galleria_milan": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fb%2Fb6%2FGalleria_Milano_%2528179532365%2529.jpeg%2F500px-Galleria_Milano_%2528179532365%2529.jpeg&w=500&output=webp",
+    "title": "Galleria Vittorio Emanuele II",
+    "credit": "Marco Pagani · CC BY 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Galleria_Milano_(179532365).jpeg"
+  },
+  "gondola": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fc%2Fc8%2FGondola_Ride.jpg%2F500px-Gondola_Ride.jpg&w=500&output=webp",
+    "title": "Gondola",
+    "credit": "Njsmith3 · CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Gondola_Ride.jpg"
+  },
+  "gothic_quarter": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F6%2F6d%2FBarcelona_-_Carrer_del_Bisbe.jpg%2F500px-Barcelona_-_Carrer_del_Bisbe.jpg&w=500&output=webp",
+    "title": "Gothic Quarter, Barcelona",
+    "credit": "Llull · CC BY-SA 2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Barcelona_-_Carrer_del_Bisbe.jpg"
+  },
+  "grand_canal": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F5%2F51%2FView_of_the_Grand_Canal_from_Rialto_to_Ca%2527Foscari.jpg%2F500px-View_of_the_Grand_Canal_from_Rialto_to_Ca%2527Foscari.jpg&w=500&output=webp",
+    "title": "Grand Canal (Venice)",
+    "credit": "Didier Descouens · CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:View_of_the_Grand_Canal_from_Rialto_to_Ca'Foscari.jpg"
+  },
+  "grindelwald": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fb%2Fba%2FGrindelwald_View_02.jpg%2F500px-Grindelwald_View_02.jpg&w=500&output=webp",
+    "title": "Grindelwald",
+    "credit": "Cristo Vlahos · CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Grindelwald_View_02.jpg"
+  },
+  "hall_of_mirrors": {
+    "url": "./assets/photos/500px-Chateau_Versailles_Galerie_des_Glaces.jpg",
+    "title": "Hall of Mirrors",
+    "credit": "Myrabella · CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Chateau_Versailles_Galerie_des_Glaces.jpg"
+  },
+  "hallstatt": {
+    "url": "./assets/photos/500px-Hallstatt_-_Zentrum_.JPG",
+    "title": "Hallstatt",
+    "credit": "C.Stadler/Bwag · CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Hallstatt_-_Zentrum_.JPG"
+  },
+  "heidelberg_castle": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F1%2F1d%2FHeidelberg-2726936.jpg%2F500px-Heidelberg-2726936.jpg&w=500&output=webp",
+    "title": "Heidelberg Castle",
+    "credit": "Motatcho · CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Heidelberg-2726936.jpg"
+  },
+  "hofbrauhaus": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F6%2F60%2FHofbrauhaus.JPG%2F500px-Hofbrauhaus.JPG&w=500&output=webp",
+    "title": "Hofbräuhaus am Platzl",
+    "credit": "Kiban · Public domain",
+    "source": "https://commons.wikimedia.org/wiki/File:Hofbrauhaus.JPG"
+  },
+  "hofburg": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F3%2F31%2FWien_-_Neue_Hofburg.JPG%2F500px-Wien_-_Neue_Hofburg.JPG&w=500&output=webp",
+    "title": "Hofburg",
+    "credit": "C.Stadler/Bwag · CC BY-SA 3.0 at",
+    "source": "https://commons.wikimedia.org/wiki/File:Wien_-_Neue_Hofburg.JPG"
+  },
+  "hohensalzburg": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fd%2Fdd%2FSalzburg_-_Festung_Hohensalzburg.JPG%2F500px-Salzburg_-_Festung_Hohensalzburg.JPG&w=500&output=webp",
+    "title": "Hohensalzburg Fortress",
+    "credit": "C.Stadler/Bwag · CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Salzburg_-_Festung_Hohensalzburg.JPG"
+  },
+  "holocaust_memorial": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Ff%2Ff3%2FMemorial_to_the_Murdered_Jews_of_Europeabove.jpg%2F500px-Memorial_to_the_Murdered_Jews_of_Europeabove.jpg&w=500&output=webp",
+    "title": "Memorial to the Murdered Jews of Europe",
+    "credit": "Alexander Blum · CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Memorial_to_the_Murdered_Jews_of_Europeabove.jpg"
+  },
+  "incheon": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fb%2Fbc%2F%25EC%259D%25B8%25EC%25B2%259C%25EA%25B5%25AD%25EC%25A0%259C%25EA%25B3%25B5%25ED%2595%25AD_%25281472%2529.jpeg%2F500px-%25EC%259D%25B8%25EC%25B2%259C%25EA%25B5%25AD%25EC%25A0%259C%25EA%25B3%25B5%25ED%2595%25AD_%25281472%2529.jpeg&w=500&output=webp",
+    "title": "Incheon International Airport",
+    "credit": "Korea Aerospace Research Institute · KOGL Type 1",
+    "source": "https://commons.wikimedia.org/wiki/File:인천국제공항_(1472).jpeg"
+  },
+  "jungfraujoch": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F0%2F0e%2FSphinx_et_Jungfrau_-_img_06980.jpg%2F500px-Sphinx_et_Jungfrau_-_img_06980.jpg&w=500&output=webp",
+    "title": "Jungfraujoch",
+    "credit": "Pmau · CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Sphinx_et_Jungfrau_-_img_06980.jpg"
+  },
+  "kalambaka": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F3%2F32%2F%25D0%259C%25D0%25B5%25D1%2582%25D0%25B5%25D0%25BE%25D1%2580%25D0%25B0_-_panoramio_%252814%2529.jpg%2F500px-%25D0%259C%25D0%25B5%25D1%2582%25D0%25B5%25D0%25BE%25D1%2580%25D0%25B0_-_panoramio_%252814%2529.jpg&w=500&output=webp",
+    "title": "Kalabaka",
+    "credit": "Stanislav Amelchyts · CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Метеора_-_panoramio_(14).jpg"
+  },
+  "karlovy_vary": {
+    "url": "./assets/photos/500px-Karlovy_Vary_Czech.jpg",
+    "title": "Karlovy Vary",
+    "credit": "Jialiang Gao ,  www.peace-on-earth.org · CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Karlovy_Vary_Czech.jpg"
+  },
+  "kunsthistorisches": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fen%2Fthumb%2Fa%2Fa3%2FKunsthistorisches_Museum_logo.svg%2F500px-Kunsthistorisches_Museum_logo.svg.png&w=500&output=webp",
+    "title": "Kunsthistorisches Museum",
+    "credit": "Petar Milošević · CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Ceiling_and_cupola_of_Kunsthistorisches_Museum_Vienna.jpg"
+  },
+  "la_rambla": {
+    "url": "./assets/photos/500px-15-10-27-Vista_des_de_lestàtua_de_Colom_a_Barcelona-WMA_2791.jpg",
+    "title": "La Rambla, Barcelona",
+    "credit": "Ralf Roletschek · GFDL 1.2",
+    "source": "https://commons.wikimedia.org/wiki/File:15-10-27-Vista_des_de_l'estàtua_de_Colom_a_Barcelona-WMA_2791.jpg"
+  },
+  "last_supper": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F4%2F48%2FThe_Last_Supper_-_Leonardo_Da_Vinci_-_High_Resolution_32x16.jpg%2F500px-The_Last_Supper_-_Leonardo_Da_Vinci_-_High_Resolution_32x16.jpg&w=500&output=webp",
+    "title": "The Last Supper (Leonardo)",
+    "credit": "Leonardo da Vinci · Public domain",
+    "source": "https://commons.wikimedia.org/wiki/File:The_Last_Supper_-_Leonardo_Da_Vinci_-_High_Resolution_32x16.jpg"
+  },
+  "le_marais": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fd%2Fd3%2FParis_Hotel_de_Sens_dsc04028.jpg%2F500px-Paris_Hotel_de_Sens_dsc04028.jpg&w=500&output=webp",
+    "title": "The Marais",
+    "credit": "CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Paris_Hotel_de_Sens_dsc04028.jpg"
+  },
+  "lion_monument": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F0%2F01%2FLion_Monument.jpg%2F500px-Lion_Monument.jpg&w=500&output=webp",
+    "title": "Lion Monument",
+    "credit": "Gürkan Sengün · Public domain",
+    "source": "https://commons.wikimedia.org/wiki/File:Lion_Monument.jpg"
+  },
+  "louvre": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F6%2F66%2FLouvre_Museum_Wikimedia_Commons.jpg%2F500px-Louvre_Museum_Wikimedia_Commons.jpg&w=500&output=webp",
+    "title": "Louvre",
+    "credit": "Benh LIEU SONG  ( Flickr ) · CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Louvre_Museum_Wikimedia_Commons.jpg"
+  },
+  "lycabettus": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F6%2F6d%2F%25CE%259B%25CF%2585%25CE%25BA%25CE%25B1%25CE%25B2%25CE%25B7%25CF%2584%25CF%2584%25CF%258C%25CF%2582_-_Mount_Lycabettus.jpg%2F500px-%25CE%259B%25CF%2585%25CE%25BA%25CE%25B1%25CE%25B2%25CE%25B7%25CF%2584%25CF%2584%25CF%258C%25CF%2582_-_Mount_Lycabettus.jpg&w=500&output=webp",
+    "title": "Mount Lycabettus",
+    "credit": "Apaleutos25 · CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Λυκαβηττός_-_Mount_Lycabettus.jpg"
+  },
+  "madrid_palace": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F9%2F9b%2FPalacio_Real_de_Madrid_Julio_2016_%2528cropped%2529.jpg%2F500px-Palacio_Real_de_Madrid_Julio_2016_%2528cropped%2529.jpg&w=500&output=webp",
+    "title": "Royal Palace of Madrid",
+    "credit": "Tim Adams · CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Palacio_Real_de_Madrid_Julio_2016_(cropped).jpg"
+  },
+  "manarola": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fe%2Fe9%2FManarola_NW_Cinque_Terre_Sep23_A7C_07233.jpg%2F500px-Manarola_NW_Cinque_Terre_Sep23_A7C_07233.jpg&w=500&output=webp",
+    "title": "Manarola",
+    "credit": "This Photo  was taken by    Timothy A. Gonsalves   .  Feel free to use my photos, but plea · CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Manarola_NW_Cinque_Terre_Sep23_A7C_07233.jpg"
+  },
+  "marienplatz": {
+    "url": "./assets/photos/500px-Rathaus_and_Marienplatz_from_Peterskirche_-_August_2006.jpg",
+    "title": "Marienplatz",
+    "credit": "Diliff · CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Rathaus_and_Marienplatz_from_Peterskirche_-_August_2006.jpg"
+  },
+  "mercado_san_miguel": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fb%2Fb3%2FMercado_de_San_Miguel_2025.jpg%2F500px-Mercado_de_San_Miguel_2025.jpg&w=500&output=webp",
+    "title": "Market of San Miguel",
+    "credit": "Fernando · CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Mercado_de_San_Miguel_2025.jpg"
+  },
+  "meteora": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F7%2F7c%2FMeteora%2527s_monastery_2.jpg%2F500px-Meteora%2527s_monastery_2.jpg&w=500&output=webp",
+    "title": "Meteora",
+    "credit": "Stathis floros · CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Meteora's_monastery_2.jpg"
+  },
+  "milan_duomo": {
+    "url": "./assets/photos/500px-Il_Duomo_di_Milano_-_July_2026.jpg",
+    "title": "Milan Cathedral",
+    "credit": "Zofeni · CC0",
+    "source": "https://commons.wikimedia.org/wiki/File:Il_Duomo_di_Milano_-_July_2026.jpg"
+  },
+  "miniatur_wunderland": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Ff%2Ffc%2FMiniatur_wunderland.jpg%2F500px-Miniatur_wunderland.jpg&w=500&output=webp",
+    "title": "Miniatur Wunderland",
+    "credit": "Bildersindtoll · CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Miniatur_wunderland.jpg"
+  },
+  "mirabell": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F9%2F9e%2FPalatul_Mirabell1.jpg%2F500px-Palatul_Mirabell1.jpg&w=500&output=webp",
+    "title": "Mirabell Palace",
+    "credit": "Cezar Suceveanu · CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Palatul_Mirabell1.jpg"
+  },
+  "monaco": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F8%2F87%2FMonte_Carlo_%252894680805%2529.jpg%2F500px-Monte_Carlo_%252894680805%2529.jpg&w=500&output=webp",
+    "title": "Monaco",
+    "credit": "Herry Lawford  from Stockbridge, UK · CC BY 2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Monte_Carlo_(94680805).jpg"
+  },
+  "monte_carlo_casino": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fa%2Fac%2FCasino_de_Montecarlo%252C_M%25C3%25B3naco%252C_2016-06-23%252C_DD_06.jpg%2F500px-Casino_de_Montecarlo%252C_M%25C3%25B3naco%252C_2016-06-23%252C_DD_06.jpg&w=500&output=webp",
+    "title": "Monte Carlo Casino",
+    "credit": "Diego Delso · CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Casino_de_Montecarlo,_Mónaco,_2016-06-23,_DD_06.jpg"
+  },
+  "montjuic": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fd%2Fd7%2FFale_-_Spain_-_Barcelona_-_8.jpg%2F500px-Fale_-_Spain_-_Barcelona_-_8.jpg&w=500&output=webp",
+    "title": "Montjuïc",
+    "credit": "Fabio Alessandro Locati · CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Fale_-_Spain_-_Barcelona_-_8.jpg"
+  },
+  "montmartre": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F1%2F10%2FView_from_Notre-Dame_de_Paris%252C_24_June_2014_004.jpg%2F500px-View_from_Notre-Dame_de_Paris%252C_24_June_2014_004.jpg&w=500&output=webp",
+    "title": "Montmartre",
+    "credit": "Navin75 · CC BY-SA 2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:View_from_Notre-Dame_de_Paris,_24_June_2014_004.jpg"
+  },
+  "montserrat": {
+    "url": "./assets/photos/500px-Montserrat_des_de_Manresa.JPG",
+    "title": "Montserrat (mountain)",
+    "credit": "Josep Renalias · CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Montserrat_des_de_Manresa.JPG"
+  },
+  "murano": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fb%2Fbb%2FMurano_sunset.JPG%2F500px-Murano_sunset.JPG&w=500&output=webp",
+    "title": "Murano",
+    "credit": "Wittylama · CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Murano_sunset.JPG"
+  },
+  "musee_orsay": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F6%2F69%2FMusee_d%2527_Orsay_by_slaza.jpg%2F500px-Musee_d%2527_Orsay_by_slaza.jpg&w=500&output=webp",
+    "title": "Musee d' Orsay by slaza.jpg",
+    "credit": "Sandor Laza · CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Musee_d'_Orsay_by_slaza.jpg"
+  },
+  "museum_island": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fc%2Fc9%2FBerlin_Museumsinsel_Fernsehturm.jpg%2F500px-Berlin_Museumsinsel_Fernsehturm.jpg&w=500&output=webp",
+    "title": "Museum Island",
+    "credit": "Thomas Wolf  ,   www.foto-tw.de · CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Berlin_Museumsinsel_Fernsehturm.jpg"
+  },
+  "mykonos": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fb%2Fb2%2F2011_Dimos_Mykonou.png%2F500px-2011_Dimos_Mykonou.png&w=500&output=webp",
+    "title": "Mykonos",
+    "credit": "Pitichinaccio · CC BY 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:2011_Dimos_Mykonou.png"
+  },
+  "mykonos_windmills": {
+    "url": "./assets/photos/500px-2011_Dimos_Mykonou.png",
+    "title": "Mykonos",
+    "credit": "Pitichinaccio · CC BY 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:2011_Dimos_Mykonou.png"
+  },
+  "naples": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F8%2F88%2FNapoli_-_Maschio_Angioino_-_202209302342_3.jpg%2F500px-Napoli_-_Maschio_Angioino_-_202209302342_3.jpg&w=500&output=webp",
+    "title": "Naples",
+    "credit": "Richard Nevell · CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Napoli_-_Maschio_Angioino_-_202209302342_3.jpg"
+  },
+  "neapolitan_pizza": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F5%2F57%2FNeapolitan_pizza_at_Trappica_%252848701940197%2529.jpg%2F500px-Neapolitan_pizza_at_Trappica_%252848701940197%2529.jpg&w=500&output=webp",
+    "title": "Neapolitan pizza",
+    "credit": "Bex Walton  from London, England · CC BY 2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Neapolitan_pizza_at_Trappica_(48701940197).jpg"
+  },
+  "nice": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fb%2Fba%2FPromenade_des_Anglais_Nice_IMG_1255.jpg%2F500px-Promenade_des_Anglais_Nice_IMG_1255.jpg&w=500&output=webp",
+    "title": "Nice",
+    "credit": "Alexander Migl · CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Promenade_des_Anglais_Nice_IMG_1255.jpg"
+  },
+  "notre_dame": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Ff%2Ff7%2FNotre-Dame_de_Paris%252C_4_October_2017.jpg%2F500px-Notre-Dame_de_Paris%252C_4_October_2017.jpg&w=500&output=webp",
+    "title": "Notre-Dame de Paris",
+    "credit": "Ali Sabbagh · CC0",
+    "source": "https://commons.wikimedia.org/wiki/File:Notre-Dame_de_Paris,_4_October_2017.jpg"
+  },
+  "opera_garnier": {
+    "url": "./assets/photos/500px-Paris_Palais_Garnier_2010-04-06_16.55.07.jpg",
+    "title": "Palais Garnier (Opéra de Paris)",
+    "credit": "Photo by Benh LIEU SONG · CC BY-SA 2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Paris_Palais_Garnier_2010-04-06_16.55.07.jpg"
+  },
+  "oia": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F3%2F37%2FOia_sunset_-_panoramio_%25282%2529.jpg%2F500px-Oia_sunset_-_panoramio_%25282%2529.jpg&w=500&output=webp",
+    "title": "Oia, Greece",
+    "credit": "TomasEE · CC BY 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Oia_sunset_-_panoramio_(2).jpg"
+  },
+  "pantheon_rome": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F7%2F7b%2FPantheon_%2528Rome%2529_-_Right_side_and_front.jpg%2F500px-Pantheon_%2528Rome%2529_-_Right_side_and_front.jpg&w=500&output=webp",
+    "title": "Pantheon, Rome",
+    "credit": "NikonZ7II · CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Pantheon_(Rome)_-_Right_side_and_front.jpg"
+  },
+  "park_guell": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F3%2F33%2FParc_guell_-_panoramio.jpg%2F500px-Parc_guell_-_panoramio.jpg&w=500&output=webp",
+    "title": "Park Güell",
+    "credit": "essetefano · CC BY 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Parc_guell_-_panoramio.jpg"
+  },
+  "parthenon": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fd%2Fda%2FThe_Parthenon_in_Athens.jpg%2F500px-The_Parthenon_in_Athens.jpg&w=500&output=webp",
+    "title": "Parthenon",
+    "credit": "Steve Swayne · CC BY 2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:The_Parthenon_in_Athens.jpg"
+  },
+  "piazza_navona": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F0%2F08%2FPiazza_Navona_%2528Rome%2529_at_night.jpg%2F500px-Piazza_Navona_%2528Rome%2529_at_night.jpg&w=500&output=webp",
+    "title": "Piazza Navona",
+    "credit": "NikonZ7II · CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Piazza_Navona_(Rome)_at_night.jpg"
+  },
+  "picasso_museum": {
+    "url": "./assets/photos/500px-Museu_Picasso_Barcelona.jpg",
+    "title": "Museu Picasso",
+    "credit": "uayebt · CC BY 2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Museu_Picasso_Barcelona.jpg"
+  },
+  "pilatus": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F8%2F8a%2FLuzern_-_Mount_Pilatus_-_March_2019_%252801%2529.jpg%2F500px-Luzern_-_Mount_Pilatus_-_March_2019_%252801%2529.jpg&w=500&output=webp",
+    "title": "Pilatus (mountain)",
+    "credit": "Liridon · CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Luzern_-_Mount_Pilatus_-_March_2019_(01).jpg"
+  },
+  "pisa_arno": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F2%2F2e%2FPisa_Arno_Panorama.jpg%2F500px-Pisa_Arno_Panorama.jpg&w=500&output=webp",
+    "title": "Pisa Arno Panorama.jpg",
+    "credit": "Lucarelli · CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Pisa_Arno_Panorama.jpg"
+  },
+  "pisa_baptistery": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fe%2Fe7%2FThe_Baptistery_in_Pisa_Italy.jpg%2F500px-The_Baptistery_in_Pisa_Italy.jpg&w=500&output=webp",
+    "title": "The Baptistery in Pisa Italy.jpg",
+    "credit": "PaestumPaestum · CC BY 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:The_Baptistery_in_Pisa_Italy.jpg"
+  },
+  "pisa_miracoli": {
+    "url": "./assets/photos/500px-thumbnail.jpg",
+    "title": "Putti Fountain, Pisa Cathedral (Duomo di Pisa) (forefront), The Leaning Tower of Pisa (background), Piazza dei Miracoli (-Square of Miracles-). Pisa, Tuscany, Central Italy-2.jpg",
+    "credit": "Mstyslav Chernov · CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Putti_Fountain,_Pisa_Cathedral_(Duomo_di_Pisa)_(forefront),_The_Leaning_Tower_of_Pisa_(background),_Piazza_dei_Miracoli_(-Square_of_Miracles-)._Pisa,_Tuscany,_Central_Italy-2.jpg"
+  },
+  "pisa_tower": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F5%2F5f%2FThe_Duomo_and_Tower_of_Pisa_at_sunrise.jpg%2F500px-The_Duomo_and_Tower_of_Pisa_at_sunrise.jpg&w=500&output=webp",
+    "title": "The Duomo and Tower of Pisa at sunrise.jpg",
+    "credit": "MHoser · CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:The_Duomo_and_Tower_of_Pisa_at_sunrise.jpg"
+  },
+  "plaka": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fa%2Fa4%2FCarrer_del_barri_de_Plaka%252C_Atenes.JPG%2F500px-Carrer_del_barri_de_Plaka%252C_Atenes.JPG&w=500&output=webp",
+    "title": "Plaka",
+    "credit": "Joanbanjo · CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Carrer_del_barri_de_Plaka,_Atenes.JPG"
+  },
+  "plaza_mayor": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fd%2Fd2%2FMadrid_Plaza_Mayor_%252848733706273%2529.jpg%2F500px-Madrid_Plaza_Mayor_%252848733706273%2529.jpg&w=500&output=webp",
+    "title": "Plaza Mayor, Madrid",
+    "credit": "Jorge Franganillo · CC BY 2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Madrid_Plaza_Mayor_(48733706273).jpg"
+  },
+  "pompeii": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Ff%2Ff5%2FAerial_image_of_Pompeii_and_Mount_Vesuvius_%2528view_from_the_southeast%2529.jpg%2F500px-Aerial_image_of_Pompeii_and_Mount_Vesuvius_%2528view_from_the_southeast%2529.jpg&w=500&output=webp",
+    "title": "Pompeii",
+    "credit": "Carsten Steger · CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Aerial_image_of_Pompeii_and_Mount_Vesuvius_(view_from_the_southeast).jpg"
+  },
+  "ponte_vecchio": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F7%2F7d%2FPonte_Vecchio_from_Ponte_alle_Grazie.jpg%2F500px-Ponte_Vecchio_from_Ponte_alle_Grazie.jpg&w=500&output=webp",
+    "title": "Ponte Vecchio",
+    "credit": "Ingo Mehling · CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Ponte_Vecchio_from_Ponte_alle_Grazie.jpg"
+  },
+  "positano": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F9%2F9b%2FPositano_Sunset.JPG%2F500px-Positano_Sunset.JPG&w=500&output=webp",
+    "title": "Positano",
+    "credit": "JeCCo · CC BY 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Positano_Sunset.JPG"
+  },
+  "prado": {
+    "url": "./assets/photos/500px-Museo_del_Prado_2016_25185969599.jpg",
+    "title": "Museo del Prado",
+    "credit": "Emilio J. Rodríguez Posada · CC BY-SA 2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Museo_del_Prado_2016_(25185969599).jpg"
+  },
+  "prague_castle": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F5%2F5e%2FKarl%25C5%25AFv_most_Praha%252C_Star%25C3%25A9_M%25C4%259Bsto_20170810_007.jpg%2F500px-Karl%25C5%25AFv_most_Praha%252C_Star%25C3%25A9_M%25C4%259Bsto_20170810_007.jpg&w=500&output=webp",
+    "title": "Prague Castle",
+    "credit": "Tilman2007 · CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Karlův_most_Praha,_Staré_Město_20170810_007.jpg"
+  },
+  "prague_oldtown": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F4%2F44%2FPrague_07-2016_View_from_Old_Town_Hall_Tower_img3.jpg%2F500px-Prague_07-2016_View_from_Old_Town_Hall_Tower_img3.jpg&w=500&output=webp",
+    "title": "Old Town Square",
+    "credit": "A.Savin · FAL",
+    "source": "https://commons.wikimedia.org/wiki/File:Prague_07-2016_View_from_Old_Town_Hall_Tower_img3.jpg"
+  },
+  "prenzlauer_berg": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Ff%2Ff5%2FKastanienallee%252C_U-Bhf_Eberswalder_Str%252C_Konnopke.jpg%2F500px-Kastanienallee%252C_U-Bhf_Eberswalder_Str%252C_Konnopke.jpg&w=500&output=webp",
+    "title": "Prenzlauer Berg",
+    "credit": "Abaris  at  German Wikipedia · CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Kastanienallee,_U-Bhf_Eberswalder_Str,_Konnopke.jpg"
+  },
+  "promenade_anglais": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F6%2F60%2FCollineDuChateau_NiceFrance2022.png%2F500px-CollineDuChateau_NiceFrance2022.png&w=500&output=webp",
+    "title": "Promenade des Anglais",
+    "credit": "3602kiva · CC0",
+    "source": "https://commons.wikimedia.org/wiki/File:CollineDuChateau_NiceFrance2022.png"
+  },
+  "puerta_del_sol": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F3%2F31%2FPuerta_del_Sol_%2528Madrid%2529_10.jpg%2F500px-Puerta_del_Sol_%2528Madrid%2529_10.jpg&w=500&output=webp",
+    "title": "Puerta del Sol",
+    "credit": "Tomás Fano · CC BY-SA 2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Puerta_del_Sol_(Madrid)_10.jpg"
+  },
+  "pulteney_bridge": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F8%2F88%2FPuente_Pulteney%252C_Bath%252C_Inglaterra%252C_2014-08-12%252C_DD_51.JPG%2F500px-Puente_Pulteney%252C_Bath%252C_Inglaterra%252C_2014-08-12%252C_DD_51.JPG&w=500&output=webp",
+    "title": "Pulteney Bridge",
+    "credit": "Diego Delso · CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Puente_Pulteney,_Bath,_Inglaterra,_2014-08-12,_DD_51.JPG"
+  },
+  "r_7portes": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F4%2F4a%2FPijama_%2528Restaurant_7_Portes_de_Barcelona%2529.jpg%2F500px-Pijama_%2528Restaurant_7_Portes_de_Barcelona%2529.jpg&w=500&output=webp",
+    "title": "Pijama (Restaurant 7 Portes de Barcelona).jpg",
+    "credit": "Xavier Dengra · CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Pijama_(Restaurant_7_Portes_de_Barcelona).jpg"
+  },
+  "r_angelina": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F2%2F22%2FChez_Angelina_pour_le_th%25C3%25A9.JPG%2F500px-Chez_Angelina_pour_le_th%25C3%25A9.JPG&w=500&output=webp",
+    "title": "Chez Angelina pour le thé.JPG",
+    "credit": "Schnäggli · CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Chez_Angelina_pour_le_thé.JPG"
+  },
+  "r_athens_rooftop": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F3%2F3e%2FHd-hotel-grande-bretagne-athens-gb-roof-garden-restaurant-and-bar-breakfast-1-.jpg%2F500px-Hd-hotel-grande-bretagne-athens-gb-roof-garden-restaurant-and-bar-breakfast-1-.jpg&w=500&output=webp",
+    "title": "Hd-hotel-grande-bretagne-athens-gb-roof-garden-restaurant-and-bar-breakfast-1-.jpg",
+    "credit": "Mariavazoura · CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Hd-hotel-grande-bretagne-athens-gb-roof-garden-restaurant-and-bar-breakfast-1-.jpg"
+  },
+  "r_bellini": {
+    "url": "./assets/photos/500px-Bellini_Cipriani_Macaroni_Grill_Dunwoody_GA.jpg",
+    "title": "Bellini Cipriani, Macaroni Grill, Dunwoody GA.jpg",
+    "credit": "John Phelan · CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Bellini_Cipriani,_Macaroni_Grill,_Dunwoody_GA.jpg"
+  },
+  "r_borough": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fe%2Fef%2FStalls_at_Borough_Market_1.jpg%2F500px-Stalls_at_Borough_Market_1.jpg&w=500&output=webp",
+    "title": "Stalls at Borough Market 1.jpg",
+    "credit": "CC BY 2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Stalls_at_Borough_Market_1.jpg"
+  },
+  "r_botin": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F5%2F5c%2F2014_-_Sobrino_de_Bot%25C3%25ADn_%2528Casa_Bot%25C3%25ADn%2529_Restaurant%252C_Madrid%252C_Spain_%2528_Ank_Kumar_%2529_05.jpg%2F500px-2014_-_Sobrino_de_Bot%25C3%25ADn_%2528Casa_Bot%25C3%25ADn%2529_Restaurant%252C_Madrid%252C_Spain_%2528_Ank_Kumar_%2529_05.jpg&w=500&output=webp",
+    "title": "2014 - Sobrino de Botín (Casa Botín) Restaurant, Madrid, Spain ( Ank Kumar ) 05.jpg",
+    "credit": "Ank Kumar · CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:2014_-_Sobrino_de_Botín_(Casa_Botín)_Restaurant,_Madrid,_Spain_(_Ank_Kumar_)_05.jpg"
+  },
+  "r_cafe_central": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F9%2F90%2FVault_Caf%25C3%25A9_Central_Vienna_Wien.jpg%2F500px-Vault_Caf%25C3%25A9_Central_Vienna_Wien.jpg&w=500&output=webp",
+    "title": "Vault Café Central Vienna Wien.jpg",
+    "credit": "Jebulon · CC0",
+    "source": "https://commons.wikimedia.org/wiki/File:Vault_Café_Central_Vienna_Wien.jpg"
+  },
+  "r_cafe_paris_mc": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fd%2Fd5%2FCafe_de_Paris_Monte-Carlo_-_panoramio.jpg%2F500px-Cafe_de_Paris_Monte-Carlo_-_panoramio.jpg&w=500&output=webp",
+    "title": "Cafe de Paris Monte-Carlo - panoramio.jpg",
+    "credit": "Mister No · CC BY 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Cafe_de_Paris_Monte-Carlo_-_panoramio.jpg"
+  },
+  "r_cafe_sacher": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fe%2Fe4%2FHotel_Sacher_%2528Wien_2008%2529_%252810605892446%2529.jpg%2F500px-Hotel_Sacher_%2528Wien_2008%2529_%252810605892446%2529.jpg&w=500&output=webp",
+    "title": "Hotel Sacher (Wien 2008) (10605892446).jpg",
+    "credit": "Paul Arps  from The Netherlands · CC BY 2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Hotel_Sacher_(Wien_2008)_(10605892446).jpg"
+  },
+  "r_carpaccio2": {
+    "url": "./assets/photos/500px-Carpaccio_de_boeuf.jpg",
+    "title": "Carpaccio de boeuf.jpg",
+    "credit": "M wassim salah · CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Carpaccio_de_boeuf.jpg"
+  },
+  "r_chez_pipo": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Ff%2Ff0%2FSocca_a_Nice.jpg%2F500px-Socca_a_Nice.jpg&w=500&output=webp",
+    "title": "Socca a Nice.jpg",
+    "credit": "Myrabella · CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Socca_a_Nice.jpg"
+  },
+  "r_cochinillo": {
+    "url": "./assets/photos/500px-Cochinillo_Asado_Segoviano.jpg",
+    "title": "Cochinillo Asado Segoviano.jpg",
+    "credit": "Diegoml1933 · CC0",
+    "source": "https://commons.wikimedia.org/wiki/File:Cochinillo_Asado_Segoviano.jpg"
+  },
+  "r_delizia_limone": {
+    "url": "./assets/photos/500px-Delizia_al_limone.jpg",
+    "title": "Delizia al limone.jpg",
+    "credit": "dags 1974 · CC BY 2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Delizia_al_limone.jpg"
+  },
+  "r_figlmuller": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fe%2Fea%2FFiglmueller._World_Famous_Schnitzel%2521_Vienna.jpg%2F500px-Figlmueller._World_Famous_Schnitzel%2521_Vienna.jpg&w=500&output=webp",
+    "title": "Figlmueller. World Famous Schnitzel! Vienna.jpg",
+    "credit": "Sarah_Ackerman · CC BY 2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Figlmueller._World_Famous_Schnitzel!_Vienna.jpg"
+  },
+  "r_gambrinus": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Ff%2Ffb%2FGran_Caff%25C3%25A8_Gambrinus_%25E2%2580%2593_Naples_%25282014%2529.jpg%2F500px-Gran_Caff%25C3%25A8_Gambrinus_%25E2%2580%2593_Naples_%25282014%2529.jpg&w=500&output=webp",
+    "title": "Gran Caffè Gambrinus – Naples (2014).jpg",
+    "credit": "Antonio Manfredonio · CC BY-SA 2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Gran_Caffè_Gambrinus_–_Naples_(2014).jpg"
+  },
+  "r_hot_chocolate": {
+    "url": "./assets/photos/500px-Hot_chocolate_p1150797.jpg",
+    "title": "Hot chocolate p1150797.jpg",
+    "credit": "CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Hot_chocolate_p1150797.jpg"
+  },
+  "r_konnopke": {
+    "url": "./assets/photos/500px-Currywurst_at_Konnopke_Imbiss_2014.jpg",
+    "title": "Currywurst at Konnopke Imbiss 2014.jpg",
+    "credit": "Orderinchaos · CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Currywurst_at_Konnopke_Imbiss_2014.jpg"
+  },
+  "r_kostas": {
+    "url": "./assets/photos/Gyros_C5878.jpg",
+    "title": "Gyros C5878.jpg",
+    "credit": "Yannis Samatas · Public domain",
+    "source": "https://commons.wikimedia.org/wiki/File:Gyros_C5878.jpg"
+  },
+  "r_letzte_instanz": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fa%2Fae%2FZur_letzten_Instanz_Berlins_oldest_running_restaurant_Klosterviertel_Waisenstra%25C3%259Fe_Berlin-Mitte.jpg%2F500px-Zur_letzten_Instanz_Berlins_oldest_running_restaurant_Klosterviertel_Waisenstra%25C3%259Fe_Berlin-Mitte.jpg&w=500&output=webp",
+    "title": "Zur letzten Instanz Berlins oldest running restaurant Klosterviertel Waisenstraße Berlin-Mitte.jpg",
+    "credit": "Helge Høifødt · CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Zur_letzten_Instanz_Berlins_oldest_running_restaurant_Klosterviertel_Waisenstraße_Berlin-Mitte.jpg"
+  },
+  "r_little_venice_bar": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F9%2F99%2FLittle_Venice%252C_Chora%252C_Mykonos%252C_Greece_%252853505710527%2529.jpg%2F500px-Little_Venice%252C_Chora%252C_Mykonos%252C_Greece_%252853505710527%2529.jpg&w=500&output=webp",
+    "title": "Little Venice, Chora, Mykonos, Greece (53505710527).jpg",
+    "credit": "Warren LeMay  from Chicago, IL, United States · CC BY-SA 2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Little_Venice,_Chora,_Mykonos,_Greece_(53505710527).jpg"
+  },
+  "r_meteora_tavern": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fa%2Fab%2FFish_meal_in_Therma.jpg%2F500px-Fish_meal_in_Therma.jpg&w=500&output=webp",
+    "title": "Fish meal in Therma.jpg",
+    "credit": "adamansel52 · CC BY 2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Fish_meal_in_Therma.jpg"
+  },
+  "r_prater_garten": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F4%2F4b%2FPRATERGARTEN_BIER_GARTEN_NEAR_TO_ELBERWALDER_STRASSE_U_BAHN_STATION_BERLIN_GERMANY_JUNE_2013_%25289058790131%2529.jpg%2F500px-PRATERGARTEN_BIER_GARTEN_NEAR_TO_ELBERWALDER_STRASSE_U_BAHN_STATION_BERLIN_GERMANY_JUNE_2013_%25289058790131%2529.jpg&w=500&output=webp",
+    "title": "PRATERGARTEN BIER GARTEN NEAR TO ELBERWALDER STRASSE U BAHN STATION BERLIN GERMANY JUNE 2013 (9058790131).jpg",
+    "credit": "calflier001 · CC BY-SA 2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:PRATERGARTEN_BIER_GARTEN_NEAR_TO_ELBERWALDER_STRASSE_U_BAHN_STATION_BERLIN_GERMANY_JUNE_2013_(9058790131).jpg"
+  },
+  "r_pump_room": {
+    "url": "./assets/photos/500px-Interior_of_The_Pump_Room_Bath_by_Searcys_2025-07-25.jpg",
+    "title": "Interior of The Pump Room, Bath (by Searcys) 2025-07-25.jpg",
+    "credit": "Andy Li · CC0",
+    "source": "https://commons.wikimedia.org/wiki/File:Interior_of_The_Pump_Room,_Bath_(by_Searcys)_2025-07-25.jpg"
+  },
+  "r_quatre_gats": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F3%2F30%2F15-10-27-Els_Quatre_Gats-RalfR-WMA_2729.jpg%2F500px-15-10-27-Els_Quatre_Gats-RalfR-WMA_2729.jpg&w=500&output=webp",
+    "title": "15-10-27-Els Quatre Gats-RalfR-WMA 2729.jpg",
+    "credit": "Ralf Roletschek · GFDL 1.2",
+    "source": "https://commons.wikimedia.org/wiki/File:15-10-27-Els_Quatre_Gats-RalfR-WMA_2729.jpg"
+  },
+  "r_sfogliatella": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fb%2Fba%2FPastries_on_display_in_Naples.jpg%2F500px-Pastries_on_display_in_Naples.jpg&w=500&output=webp",
+    "title": "Pastries on display in Naples.jpg",
+    "credit": "Enzo Abramo · CC0",
+    "source": "https://commons.wikimedia.org/wiki/File:Pastries_on_display_in_Naples.jpg"
+  },
+  "r_st_peter": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2F3%2F30%2FStiftskeller_salzburg.jpg&w=500&output=webp",
+    "title": "Stiftskeller salzburg.jpg",
+    "credit": "Testsieger73 · Public domain",
+    "source": "https://commons.wikimedia.org/wiki/File:Stiftskeller_salzburg.jpg"
+  },
+  "r_ufleku": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F9%2F93%2FPrag%252C_U_Flek%25C5%25AF_--_2019_--_6735.jpg%2F500px-Prag%252C_U_Flek%25C5%25AF_--_2019_--_6735.jpg&w=500&output=webp",
+    "title": "Prag, U Fleků -- 2019 -- 6735.jpg",
+    "credit": "Dietmar Rabich · CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Prag,_U_Fleků_--_2019_--_6735.jpg"
+  },
+  "reims_cathedral": {
+    "url": "./assets/photos/500px-Reims_Cathedral_exterior.jpg",
+    "title": "Reims Cathedral (Notre-Dame de Reims)",
+    "credit": "Paterm · CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Reims_Cathedral_exterior.jpg"
+  },
+  "reims_champagne": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F2%2F2f%2FReims_-_maison_Mumm.JPG%2F500px-Reims_-_maison_Mumm.JPG&w=500&output=webp",
+    "title": "Maison Mumm, Reims",
+    "credit": "Wikimedia Commons · CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Reims_-_maison_Mumm.JPG"
+  },
+  "ravello": {
+    "url": "./assets/photos/500px-Ravello-coastline.jpg",
+    "title": "Ravello",
+    "credit": "Matt c j486  at  English Wikipedia · CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Ravello-coastline.jpg"
+  },
+  "retiro": {
+    "url": "./assets/photos/500px-MADRID_051116_MXALX_041.jpg",
+    "title": "Parque del Buen Retiro, Madrid",
+    "credit": "Max Alexander /  PromoMadrid · CC BY-SA 2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:MADRID_051116_MXALX_041.jpg"
+  },
+  "rothenburg": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F7%2F71%2FRothenburg_BW_4.JPG%2F500px-Rothenburg_BW_4.JPG&w=500&output=webp",
+    "title": "Rothenburg ob der Tauber",
+    "credit": "Berthold Werner · Public domain",
+    "source": "https://commons.wikimedia.org/wiki/File:Rothenburg_BW_4.JPG"
+  },
+  "sacre_coeur": {
+    "url": "./assets/photos/500px-Le_sacre_coeur.jpg",
+    "title": "Sacré-Cœur, Paris",
+    "credit": "Tonchino · CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Le_sacre_coeur.jpg"
+  },
+  "sagrada_familia": {
+    "url": "./assets/photos/500px-SF_maig_2_cropped.jpg",
+    "title": "Sagrada Família",
+    "credit": "Canaan · CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:SF_maig_2_cropped.jpg"
+  },
+  "salzburg": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F9%2F91%2FSalzburg_%252848489551981%2529.jpg%2F500px-Salzburg_%252848489551981%2529.jpg&w=500&output=webp",
+    "title": "Salzburg",
+    "credit": "Jorge Franganillo · CC BY 2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Salzburg_(48489551981).jpg"
+  },
+  "san_marco": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F1%2F17%2FPiazza_San_Marco_%2528Venice%2529_at_night-msu-2021-6449-.jpg%2F500px-Piazza_San_Marco_%2528Venice%2529_at_night-msu-2021-6449-.jpg&w=500&output=webp",
+    "title": "Piazza San Marco",
+    "credit": "Matthias Süßen · CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Piazza_San_Marco_(Venice)_at_night-msu-2021-6449-.jpg"
+  },
+  "sistine_chapel": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F8%2F82%2FSistina-interno.jpg%2F500px-Sistina-interno.jpg&w=500&output=webp",
+    "title": "Sistine Chapel",
+    "credit": "The original uploader was  Snowdog  at  Italian Wikipedia . · CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Sistina-interno.jpg"
+  },
+  "spaccanapoli": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F8%2F88%2FNapoli_-_Maschio_Angioino_-_202209302342_3.jpg%2F500px-Napoli_-_Maschio_Angioino_-_202209302342_3.jpg&w=500&output=webp",
+    "title": "Naples",
+    "credit": "Richard Nevell · CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Napoli_-_Maschio_Angioino_-_202209302342_3.jpg"
+  },
+  "st_pancras": {
+    "url": "./assets/photos/500px-St_Pancras_Railway_Station_2012-06-23.jpg",
+    "title": "St Pancras railway station",
+    "credit": "Colin · CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:St_Pancras_Railway_Station_2012-06-23.jpg"
+  },
+  "trevi": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fc%2Fc7%2FTrevi_Fountain_-_Roma.jpg%2F500px-Trevi_Fountain_-_Roma.jpg&w=500&output=webp",
+    "title": "Trevi Fountain",
+    "credit": "NikonZ7II · CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Trevi_Fountain_-_Roma.jpg"
+  },
+  "trocadero": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fd%2Fdd%2FTrocad%25C3%25A9ro_as_seen_from_the_Eiffel_Tower%252C_25_September_2010.jpg%2F500px-Trocad%25C3%25A9ro_as_seen_from_the_Eiffel_Tower%252C_25_September_2010.jpg&w=500&output=webp",
+    "title": "Trocadéro, Paris",
+    "credit": "Yortw  from Auckland, New Zealand · CC BY 2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Trocadéro_as_seen_from_the_Eiffel_Tower,_25_September_2010.jpg"
+  },
+  "uffizi": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fd%2Fd7%2FFlorence%252C_Italy_-_panoramio_%2528125%2529.jpg%2F500px-Florence%252C_Italy_-_panoramio_%2528125%2529.jpg&w=500&output=webp",
+    "title": "Uffizi",
+    "credit": "Arek N. · CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Florence,_Italy_-_panoramio_(125).jpg"
+  },
+  "vatican_museums": {
+    "url": "./assets/photos/500px-Vatican_Museums_Spiral_Staircase_Looking_Up_2012.jpg",
+    "title": "Vatican Museums",
+    "credit": "Colin · CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Vatican_Museums_Spiral_Staircase_Looking_Up_2012.jpg"
+  },
+  "vernazza": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Ff%2Ffa%2FVernazza_and_the_sea%252C_Cinque_Terre%252C_Italy.jpg%2F500px-Vernazza_and_the_sea%252C_Cinque_Terre%252C_Italy.jpg&w=500&output=webp",
+    "title": "Vernazza",
+    "credit": "https://www.flickr.com/photos/150594450@N07/ · CC BY 2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Vernazza_and_the_sea,_Cinque_Terre,_Italy.jpg"
+  },
+  "versailles": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F9%2F95%2FVue_a%25C3%25A9rienne_du_domaine_de_Versailles_par_ToucanWings_-_Creative_Commons_By_Sa_3.0_-_081_%2528cropped%2529.jpg%2F500px-Vue_a%25C3%25A9rienne_du_domaine_de_Versailles_par_ToucanWings_-_Creative_Commons_By_Sa_3.0_-_081_%2528cropped%2529.jpg&w=500&output=webp",
+    "title": "Palace of Versailles",
+    "credit": "ToucanWings · CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Vue_aérienne_du_domaine_de_Versailles_par_ToucanWings_-_Creative_Commons_By_Sa_3.0_-_081_(cropped).jpg"
+  },
+  "vysehrad": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Ff%2Ff1%2FParn%25C3%25ADk_Vy%25C5%25A1ehrad_pod_Vy%25C5%25A1ehradem.jpg%2F500px-Parn%25C3%25ADk_Vy%25C5%25A1ehrad_pod_Vy%25C5%25A1ehradem.jpg&w=500&output=webp",
+    "title": "Vyšehrad",
+    "credit": "Stanislav Jelen · CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Parník_Vyšehrad_pod_Vyšehradem.jpg"
+  },
+  "budapest_parliament": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fd%2Fd0%2FBudapest-Parliament-0001.jpg%2F500px-Budapest-Parliament-0001.jpg&w=500&output=webp",
+    "title": "Hungarian Parliament Building",
+    "credit": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Budapest-Parliament-0001.jpg"
+  },
+  "chain_bridge_night": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Ff%2Ffd%2FSz%25C3%25A9chenyi_Chain_Bridge_in_Budapest_at_night.jpg%2F500px-Sz%25C3%25A9chenyi_Chain_Bridge_in_Budapest_at_night.jpg&w=500&output=webp",
+    "title": "Széchenyi Chain Bridge at Night",
+    "credit": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Széchenyi_Chain_Bridge_in_Budapest_at_night.jpg"
+  },
+  "heroes_square": {
+    "url": "./assets/photos/500px-Kubinyi_Tamás_-_Hősök_tere_2014.07.07_1.JPG",
+    "title": "Heroes' Square, Budapest",
+    "credit": "Tamás Kubinyi · CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Kubinyi_Tamás_-_Hősök_tere,_2014.07.07_(1).JPG"
+  },
+  "food_langos": {
+    "url": "./assets/photos/500px-Langos_Eger_Hungary.jpg",
+    "title": "Lángos (헝가리 길거리 음식)",
+    "credit": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Langos_Eger_Hungary.jpg"
+  },
+  "matterhorn_riffelsee": {
+    "url": "./assets/photos/500px-Matterhorn_Riffelsee_2005-06-11.jpg",
+    "title": "Matterhorn reflected in Riffelsee",
+    "credit": "Dirk Beyer · CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Matterhorn_Riffelsee_2005-06-11.jpg"
+  },
+  "food_raclette": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fe%2Fe6%2FRaclette_2.jpg%2F500px-Raclette_2.jpg&w=500&output=webp",
+    "title": "Raclette (Swiss melted cheese dish)",
+    "credit": "Roland zh · CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Raclette_2.jpg"
+  },
+  "food_suppli": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fb%2Fbb%2FSuppl%25C3%25AC_al_telefono.jpg%2F500px-Suppl%25C3%25AC_al_telefono.jpg&w=500&output=webp",
+    "title": "Supplì al telefono (Roman fried rice balls)",
+    "credit": "Sailko · CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Supplì_al_telefono.jpg"
+  },
+  "heidelberg_alte_bruecke": {
+    "url": "./assets/photos/500px-Heidelberg_Alte_Bruecke.jpg",
+    "title": "Alte Brücke (Karl-Theodor-Brücke), Heidelberg",
+    "credit": "Wikimedia Commons · CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Heidelberg_Alte_Bruecke.jpg"
+  },
+  "strasbourg_cathedral": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fe%2Fea%2FStrasbourg_Cathedral.jpg%2F500px-Strasbourg_Cathedral.jpg&w=500&output=webp",
+    "title": "Cathédrale Notre-Dame de Strasbourg",
+    "credit": "Wikimedia Commons · CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Strasbourg_Cathedral.jpg"
+  },
+  "ulm_muenster": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F5%2F57%2FUlm_Muenster.jpg%2F500px-Ulm_Muenster.jpg&w=500&output=webp",
+    "title": "Ulmer Münster (세계 최고 첨탑 161m)",
+    "credit": "Wikimedia Commons · CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Ulm_Muenster.jpg"
+  },
+  "mainz_dom": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F5%2F53%2FMainzer_Dom_nw.jpg%2F500px-Mainzer_Dom_nw.jpg&w=500&output=webp",
+    "title": "Mainz Cathedral",
+    "credit": "Wikimedia Commons · CC BY-SA",
+    "source": "https://commons.wikimedia.org/wiki/File:Mainzer_Dom_nw.jpg"
+  },
+  "mainz_rheinufer": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fc%2Fc6%2FMainzer_Dom_Blaue_Stunde_(37539430014).jpg%2F500px-Mainzer_Dom_Blaue_Stunde_(37539430014).jpg&w=500&output=webp",
+    "title": "Mainz Waterfront (Rheinufer)",
+    "credit": "Wikimedia Commons · CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Mainz_Rheinufer.jpg"
+  },
+  "graz_hauptplatz": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fd%2Fd5%2FGraz_Hauptplatz.jpg%2F500px-Graz_Hauptplatz.jpg&w=500&output=webp",
+    "title": "Hauptplatz, Graz Altstadt",
+    "credit": "Wikimedia Commons · CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Graz_Hauptplatz.jpg"
+  },
+  "brooklyn_bridge": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Ff%2Ff0%2FBrooklyn_Bridge_Postdlf.jpg%2F500px-Brooklyn_Bridge_Postdlf.jpg&w=500&output=webp",
+    "title": "Brooklyn Bridge, New York City",
+    "credit": "Wikimedia Commons · CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Brooklyn_Bridge_Postdlf.jpg"
+  },
+  "statue_of_liberty": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F8%2F89%2FFront_view_of_Statue_of_Liberty_%2528cropped%2529.jpg%2F500px-Front_view_of_Statue_of_Liberty_%2528cropped%2529.jpg&w=500&output=webp",
+    "title": "Statue of Liberty, New York Harbor",
+    "credit": "Wikimedia Commons · CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Statue_of_Liberty_close.jpg"
+  },
+  "r_haxnbauer": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fb%2Fb2%2FPork_Knuckle.jpg%2F500px-Pork_Knuckle.jpg&w=500&output=webp",
+    "title": "Haxnbauer, Munich",
+    "credit": "BIPL1516 · CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Pork_Knuckle.jpg"
+  },
+  "auto_bulk_2_": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fa%2Fa2%2F2022-10-15_V%25C3%25A1clavsk%25C3%25A9_n%25C3%25A1m%25C4%259Bst%25C3%25AD_1.jpg%2F500px-2022-10-15_V%25C3%25A1clavsk%25C3%25A9_n%25C3%25A1m%25C4%259Bst%25C3%25AD_1.jpg&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_bulk_3_": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F4%2F46%2FArchikatedra_%25C5%259Awi%25C4%2599tych_Wita%252C_Wac%25C5%2582awa_i_Wojciecha_w_Pradze_20190816_1333_5260.jpg%2F500px-Archikatedra_%25C5%259Awi%25C4%2599tych_Wita%252C_Wac%25C5%2582awa_i_Wojciecha_w_Pradze_20190816_1333_5260.jpg&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_bulk_4_": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F3%2F37%2FAstronomical_Clock_%25288341899828%2529.jpg%2F500px-Astronomical_Clock_%25288341899828%2529.jpg&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_bulk_5_": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fc%2Fc7%2FBarrande_bridge.JPG%2F500px-Barrande_bridge.JPG&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_bulk_6_": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F3%2F3c%2FBohuslav_Svoboda_%25282022%2529.jpg%2F500px-Bohuslav_Svoboda_%25282022%2529.jpg&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_bulk_9_": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fa%2Fa1%2F2007-KarlovyVary-053-wide.jpg%2F500px-2007-KarlovyVary-053-wide.jpg&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_bulk_11_": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F1%2F1c%2FCarlsbad_%2528Merian%2529.jpg%2F500px-Carlsbad_%2528Merian%2529.jpg&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_bulk_17_": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F7%2F77%2F2011-06-14_10-23-56_Austria_Nieder%25C3%25B6sterreich_Fischamend_Markt.jpg%2F500px-2011-06-14_10-23-56_Austria_Nieder%25C3%25B6sterreich_Fischamend_Markt.jpg&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_bulk_19_": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F3%2F38%2F57A_Ansch%25C3%25BCtzgasse.jpg%2F500px-57A_Ansch%25C3%25BCtzgasse.jpg&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_bulk_20_": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fe%2Fe3%2F62_Wolkersbergenstra%25C3%259Fe.jpg%2F500px-62_Wolkersbergenstra%25C3%259Fe.jpg&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_bulk_21_": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fb%2Fba%2FAlsergrund_%2528Wien%2529_-_AKH%252C_Haupteingang.JPG%2F500px-Alsergrund_%2528Wien%2529_-_AKH%252C_Haupteingang.JPG&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_bulk_23_": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F6%2F62%2FAlte_Donau_Wien.jpg%2F500px-Alte_Donau_Wien.jpg&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_bulk_24_": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fc%2Fc5%2FArsenal_Heeresgeschichtliches_Museum-DSC_7920w.jpg%2F500px-Arsenal_Heeresgeschichtliches_Museum-DSC_7920w.jpg&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_bulk_25_": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F8%2F8f%2FBarricade_bei_der_Universit%25C3%25A4t_am_26ten_Mai_1848_in_Wien.jpg%2F500px-Barricade_bei_der_Universit%25C3%25A4t_am_26ten_Mai_1848_in_Wien.jpg&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_bulk_26_": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fb%2Fba%2FBundesarchiv_Bild_146-1972-028-14%252C_Anschluss_%25C3%2596sterreich.jpg%2F500px-Bundesarchiv_Bild_146-1972-028-14%252C_Anschluss_%25C3%2596sterreich.jpg&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_bulk_27_": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fd%2Fd0%2FBurg_Kino_Vienna.jpg%2F500px-Burg_Kino_Vienna.jpg&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_bulk_28_": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F7%2F7d%2FCitybike_Vienna%252C_Sch%25C3%25B6nbrunner_Br%25C3%25BCcke.jpg%2F500px-Citybike_Vienna%252C_Sch%25C3%25B6nbrunner_Br%25C3%25BCcke.jpg&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_bulk_29_": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F3%2F30%2FDas_roemische_Wien.png%2F500px-Das_roemische_Wien.png&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_bulk_30_": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F7%2F79%2FDonaupark_%2526_Donauturm_Vienna_2024.jpg%2F500px-Donaupark_%2526_Donauturm_Vienna_2024.jpg&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_bulk_31_": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fc%2Fc5%2FDonaustadtbr%25C3%25BCcke_rigardate_de_la_stacio_Donaumarina.jpg%2F500px-Donaustadtbr%25C3%25BCcke_rigardate_de_la_stacio_Donaumarina.jpg&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_bulk_32_": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Ff%2Ff7%2FErnst-happel-stadion_vienna.jpg%2F500px-Ernst-happel-stadion_vienna.jpg&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_bulk_33_": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F5%2F54%2F1_hallstatt_austria.jpg%2F500px-1_hallstatt_austria.jpg&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_bulk_34_": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F7%2F76%2F400_Jahre_Fronleichnamprozession_in_Hallstatt.jpg%2F500px-400_Jahre_Fronleichnamprozession_in_Hallstatt.jpg&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_bulk_37_": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F7%2F71%2FHallstatt_1899._pogled_sa_sjevera.jpg%2F500px-Hallstatt_1899._pogled_sa_sjevera.jpg&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_bulk_39_": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F4%2F43%2FMuseum_Hallstatt_35.JPG%2F500px-Museum_Hallstatt_35.JPG&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_bulk_41_": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fen%2Fb%2Fb8%2FFeb20516.JPG&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_bulk_44_": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fb%2Fb8%2F8_of_10_-_Hohensalzburg_Castle%252C_AUSTRIA.jpg%2F500px-8_of_10_-_Hohensalzburg_Castle%252C_AUSTRIA.jpg&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_bulk_46_": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Ff%2Ff0%2FAussenansicht_red_bull_hangar-7_nacht.jpg%2F500px-Aussenansicht_red_bull_hangar-7_nacht.jpg&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_bulk_48_": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F3%2F3c%2F4_Cilindros%252C_M%25C3%25BAnich%252C_Alemania%252C_2013-02-11%252C_DD_02.JPG%2F500px-4_Cilindros%252C_M%25C3%25BAnich%252C_Alemania%252C_2013-02-11%252C_DD_02.JPG&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_bulk_49_": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fe%2Fe9%2FAllianz_Arena_2008-02-09.jpg%2F500px-Allianz_Arena_2008-02-09.jpg&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_bulk_51_": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fd%2Fde%2FAntiquarium%252C_M%25C3%25BCnchner_Residenz.jpg%2F500px-Antiquarium%252C_M%25C3%25BCnchner_Residenz.jpg&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_bulk_52_": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fc%2Fce%2FBMW_Welt%252C_M%25C3%25BAnich%252C_Alemania16.jpg%2F500px-BMW_Welt%252C_M%25C3%25BAnich%252C_Alemania16.jpg&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_bulk_53_": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fc%2Fc1%2F%2528Barcelona%2529_Lucerne_from_the_Walls%252C_Sample_Study_-_William_Turner_-_Tate_Britain.jpg%2F500px-%2528Barcelona%2529_Lucerne_from_the_Walls%252C_Sample_Study_-_William_Turner_-_Tate_Britain.jpg&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_bulk_54_": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F7%2F7c%2F2009_08_24_06262_Lucerne.jpg%2F500px-2009_08_24_06262_Lucerne.jpg&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_bulk_57_": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F6%2F6e%2FJohann_Heinrich_M%25C3%25BCller%252C_1825-1894_G01_Luzern.JPG%2F500px-Johann_Heinrich_M%25C3%25BCller%252C_1825-1894_G01_Luzern.JPG&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_bulk_58_": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F0%2F00%2FJoseph_Mallord_William_Turner_-_Lucerne_from_the_Lake_-_Google_Art_Project.jpg%2F500px-Joseph_Mallord_William_Turner_-_Lucerne_from_the_Lake_-_Google_Art_Project.jpg&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_bulk_62_": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F7%2F73%2FLucerne_Switzerland_Hotel_des_Balances_-_panoramio.jpg%2F500px-Lucerne_Switzerland_Hotel_des_Balances_-_panoramio.jpg&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_bulk_65_": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fe%2Fe7%2FLuzern%252C_Stadtmauer.jpg%2F500px-Luzern%252C_Stadtmauer.jpg&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_bulk_71_": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F1%2F14%2FGoldswil-Viadukt_Panorama_mit_Interlaken_im_Hintergrund_2.jpg%2F500px-Goldswil-Viadukt_Panorama_mit_Interlaken_im_Hintergrund_2.jpg&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_bulk_72_": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F8%2F8b%2FHotel_Park_Interlaken_na_druku_firmowym.jpg%2F500px-Hotel_Park_Interlaken_na_druku_firmowym.jpg&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_bulk_73_": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fd%2Fdf%2FH%25C3%25B6henweg_der_Aarm%25C3%25BChle_nach_Interlaken_1830.jpg%2F500px-H%25C3%25B6henweg_der_Aarm%25C3%25BChle_nach_Interlaken_1830.jpg&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_bulk_82_": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fe%2Fed%2FCanaletto_-_Bucentaur%2527s_return_to_the_pier_by_the_Palazzo_Ducale_-_Google_Art_Project.jpg%2F500px-Canaletto_-_Bucentaur%2527s_return_to_the_pier_by_the_Palazzo_Ducale_-_Google_Art_Project.jpg&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_bulk_83_": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fc%2Fc3%2F%2528Venice%2529_Ca%2527_Foscari.jpg%2F500px-%2528Venice%2529_Ca%2527_Foscari.jpg&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_bulk_87_": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F8%2F80%2FActv_tram_Venezia_leaving_Piazzale_Roma_2017.jpg%2F500px-Actv_tram_Venezia_leaving_Piazzale_Roma_2017.jpg&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_bulk_95_": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F7%2F74%2FCa%2527_d%2527Oro_facciata.jpg%2F500px-Ca%2527_d%2527Oro_facciata.jpg&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_bulk_97_": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fd%2Fd7%2FLampadario_in_vetro_di_Murano_-_Ca%2527_Rezzonico%252C_Venice.jpg%2F500px-Lampadario_in_vetro_di_Murano_-_Ca%2527_Rezzonico%252C_Venice.jpg&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_bulk_105_": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F1%2F13%2FCarnevale_di_Venezia_Masks_2010.jpg%2F500px-Carnevale_di_Venezia_Masks_2010.jpg&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_bulk_107_": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fc%2Fce%2FCruiseship_passing_bacino_San_Marco_Venise.jpg%2F500px-Cruiseship_passing_bacino_San_Marco_Venise.jpg&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_bulk_111_": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F7%2F76%2FEl_dos_de_mayo_de_1808_en_Madrid.jpg%2F500px-El_dos_de_mayo_de_1808_en_Madrid.jpg&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_bulk_112_": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fe%2Fea%2F%2528Castillejos%2529_Vista_de_Madrid_desde_Plaza_de_Castilla_03_%2528cropped%2529.jpg%2F500px-%2528Castillejos%2529_Vista_de_Madrid_desde_Plaza_de_Castilla_03_%2528cropped%2529.jpg&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_bulk_113_": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Ff%2Ffd%2F20210109_Royal_Palace_of_Madrid_after_snowstorm.jpg%2F500px-20210109_Royal_Palace_of_Madrid_after_snowstorm.jpg&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_bulk_115_": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Ff%2Ffc%2FBa%25C3%25B1os_en_el_Manzanares_en_el_paraje_de_Molino_Quemado._Museo_de_Historia_de_Madrid_%2528detalle%2529.JPG%2F500px-Ba%25C3%25B1os_en_el_Manzanares_en_el_paraje_de_Molino_Quemado._Museo_de_Historia_de_Madrid_%2528detalle%2529.JPG&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_bulk_119_": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F9%2F96%2FChildren_during_the_Madrid_bombing.jpg%2F500px-Children_during_the_Madrid_bombing.jpg&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_bulk_123_": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F6%2F60%2F08.10.2017_Manifestaci%25C3%25B3_%2522Prou%2521_Recuperem_el_seny%2522_-_Barcelona_17.jpg%2F500px-08.10.2017_Manifestaci%25C3%25B3_%2522Prou%2521_Recuperem_el_seny%2522_-_Barcelona_17.jpg&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_bulk_125_": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fa%2Fa3%2F14-08-05-barcelona-RalfR-022.jpg%2F500px-14-08-05-barcelona-RalfR-022.jpg&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_bulk_127_": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fc%2Fc2%2F15-10-27-Vista_des_de_l%2527est%25C3%25A0tua_de_Colom_a_Barcelona-WMA_2800.jpg%2F500px-15-10-27-Vista_des_de_l%2527est%25C3%25A0tua_de_Colom_a_Barcelona-WMA_2800.jpg&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_bulk_128_": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F9%2F90%2F26O_Llibertat_191026_60383_dc_2_%252848979743792%2529.jpg%2F500px-26O_Llibertat_191026_60383_dc_2_%252848979743792%2529.jpg&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_bulk_129_": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F6%2F61%2FAirport_Barcelona_seen_from_air.jpg%2F500px-Airport_Barcelona_seen_from_air.jpg&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_bulk_133_": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fe%2Fe2%2FAvinguda_de_la_Reina_Maria_Cristina_Barcelona_2013.jpg%2F500px-Avinguda_de_la_Reina_Maria_Cristina_Barcelona_2013.jpg&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_bulk_137_": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F1%2F17%2FBarcelona_-_Museu_d%2527Art_Contemporani_de_Barcelona_%2528MACBA%2529.jpg%2F500px-Barcelona_-_Museu_d%2527Art_Contemporani_de_Barcelona_%2528MACBA%2529.jpg&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_bulk_138_": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F2%2F25%2FBarcelona_4527.JPG%2F500px-Barcelona_4527.JPG&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_bulk_139_": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fd%2Fd1%2FAdmiralty_Chart_No_254_Montserrat%252C_Published_1869.jpg%2F500px-Admiralty_Chart_No_254_Montserrat%252C_Published_1869.jpg&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_bulk_143_": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F1%2F19%2FLittle_Bay_from_above%252C_Montserrat.JPG%2F500px-Little_Bay_from_above%252C_Montserrat.JPG&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_bulk_149_": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F2%2F23%2FBataille_de_fleurs._2020-02-22_14-43-52.jpg%2F500px-Bataille_de_fleurs._2020-02-22_14-43-52.jpg&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_bulk_152_": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F9%2F96%2FCoupole_Bischoffsheim.jpg%2F500px-Coupole_Bischoffsheim.jpg&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_bulk_154_": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F1%2F1c%2FCaf%25C3%25A9_de_Paris%252C_Monte_Carlo_-_expresso.jpg%2F500px-Caf%25C3%25A9_de_Paris%252C_Monte_Carlo_-_expresso.jpg&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_bulk_158_": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F9%2F9d%2FHarbour_of_Fontvielle%252C_Monaco_%2528view_from_above%2529_2009-05-09.jpg%2F500px-Harbour_of_Fontvielle%252C_Monaco_%2528view_from_above%2529_2009-05-09.jpg&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_bulk_160_": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F3%2F3a%2F%2527David%2527_by_Michelangelo_JBU05.JPG%2F500px-%2527David%2527_by_Michelangelo_JBU05.JPG&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_bulk_165_": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fe%2Fe8%2FCalcio_Storico_Corteo.jpg%2F500px-Calcio_Storico_Corteo.jpg&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_bulk_166_": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fa%2Fae%2FColored_woodcut_town_view_of_Florence.jpg%2F500px-Colored_woodcut_town_view_of_Florence.jpg&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_bulk_168_": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F3%2F3c%2FComune_di_Pisa_1875.jpg%2F500px-Comune_di_Pisa_1875.jpg&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_bulk_174_": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F9%2F98%2F2019-05-01_Controllo_turisti_arrivo_binari_La_Spezia_10.jpg%2F500px-2019-05-01_Controllo_turisti_arrivo_binari_La_Spezia_10.jpg&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_bulk_175_": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F7%2F70%2FCinque_Terre_%2528Italy%252C_October_2020%2529_-_24_%252850543603956%2529.jpg%2F500px-Cinque_Terre_%2528Italy%252C_October_2020%2529_-_24_%252850543603956%2529.jpg&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_bulk_185_": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fc%2Fc3%2FCelebrazione_del_2777_Natale_di_Roma_-_Pietas_Comunit%25C3%25A0_Gentile_2.jpg%2F500px-Celebrazione_del_2777_Natale_di_Roma_-_Pietas_Comunit%25C3%25A0_Gentile_2.jpg&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_bulk_188_": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F2%2F23%2FDoria_Pamphili_6376.jpg%2F500px-Doria_Pamphili_6376.jpg&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_bulk_190_": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fb%2Fbe%2FEmpty_Piazza_Navona_%252885148359%2529.jpeg%2F500px-Empty_Piazza_Navona_%252885148359%2529.jpeg&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_bulk_193_": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F2%2F25%2FFood_and_Agriculture_Organization_HQ_2008.jpg%2F500px-Food_and_Agriculture_Organization_HQ_2008.jpg&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_bulk_197_": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F8%2F82%2FChiesa_del_Gesu_Nuovo.jpg%2F500px-Chiesa_del_Gesu_Nuovo.jpg&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_bulk_198_": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F1%2F1b%2FColonneDioscuriNapoli.jpg%2F500px-ColonneDioscuriNapoli.jpg&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_bulk_199_": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F5%2F5e%2FCruise_ship_in_Naples_%25288097207647%2529.jpg%2F500px-Cruise_ship_in_Naples_%25288097207647%2529.jpg&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_bulk_202_": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fe%2Fec%2FFantanaSantaLucia2.jpg%2F500px-FantanaSantaLucia2.jpg&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_bulk_203_": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F3%2F39%2FFergola%252C_Salvatore_The_Inauguration_of_the_Naples_-_Portici_Railway%252C_1840.JPG%2F500px-Fergola%252C_Salvatore_The_Inauguration_of_the_Naples_-_Portici_Railway%252C_1840.JPG&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_bulk_207_": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F9%2F99%2FGiambattistaVicoStatueNaples.JPG%2F500px-GiambattistaVicoStatueNaples.JPG&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_bulk_209_": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F8%2F84%2F141227_Berliner_Dom.jpg%2F500px-141227_Berliner_Dom.jpg&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_bulk_210_": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fa%2Faa%2F16-07-04-Abflug-Berlin-DSC_0122.jpg%2F500px-16-07-04-Abflug-Berlin-DSC_0122.jpg&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_bulk_214_": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fa%2Fae%2FBerlin%252C_Mitte%252C_Behrenstrasse%252C_Berliner_Bank_05.jpg%2F500px-Berlin%252C_Mitte%252C_Behrenstrasse%252C_Berliner_Bank_05.jpg&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_bulk_215_": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F9%2F92%2FBerlin-BerlinerSchloss-2-Asio_%2528cropped%2529.JPG%2F500px-Berlin-BerlinerSchloss-2-Asio_%2528cropped%2529.JPG&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_bulk_218_": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F6%2F69%2FBerlin-mitte_heizkraftwerk-mitte_20060605_629.jpg%2F500px-Berlin-mitte_heizkraftwerk-mitte_20060605_629.jpg&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_bulk_220_": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F2%2F28%2FBerlin_-_Neue_Synagoge1_%2528cropped%2529.jpg%2F500px-Berlin_-_Neue_Synagoge1_%2528cropped%2529.jpg&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_bulk_224_": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F2%2F2a%2FBerlin_-_U-Bahnhof_Heidelberger_Platz_S%25C3%25BCdzugang.jpg%2F500px-Berlin_-_U-Bahnhof_Heidelberger_Platz_S%25C3%25BCdzugang.jpg&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_bulk_225_": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fa%2Faf%2FBerlin_Adlershof_Photonics_Center_2016.jpg%2F500px-Berlin_Adlershof_Photonics_Center_2016.jpg&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_bulk_226_": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F8%2F80%2FBerlin_Brandenburg_Airport_at_night.jpg%2F500px-Berlin_Brandenburg_Airport_at_night.jpg&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_bulk_227_": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F8%2F89%2FBerlin_Elefantentor_09-2017.jpg%2F500px-Berlin_Elefantentor_09-2017.jpg&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_bulk_228_": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F6%2F63%2FBerlin_Fashion_Week_2013_b.jpg%2F500px-Berlin_Fashion_Week_2013_b.jpg&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_bulk_229_": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fe%2Fe9%2F2013-06-08_Highflyer_HP_L4729.JPG%2F500px-2013-06-08_Highflyer_HP_L4729.JPG&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_bulk_232_": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F3%2F30%2FA321_final_assembly_%25289351765668%2529.jpg%2F500px-A321_final_assembly_%25289351765668%2529.jpg&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_bulk_233_": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F3%2F34%2FAlsterPanorama.jpg%2F500px-AlsterPanorama.jpg&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_bulk_234_": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fe%2Feb%2FAlstereisvergn%25C3%25BCgen_11-02-2012_09.jpg%2F500px-Alstereisvergn%25C3%25BCgen_11-02-2012_09.jpg&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_bulk_235_": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F5%2F5c%2FAnkunft_der_Queen_Mary_2_in_Hamburg_-_panoramio_-_Arnold_Schott_%25283%2529.jpg%2F500px-Ankunft_der_Queen_Mary_2_in_Hamburg_-_panoramio_-_Arnold_Schott_%25283%2529.jpg&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_bulk_238_": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fb%2Fb6%2F146_019-5_Rheinexpressinkoelnhbf.jpg%2F500px-146_019-5_Rheinexpressinkoelnhbf.jpg&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_bulk_239_": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F9%2F9a%2F1983_09_15_to_23_Envelope_of_the_Letter_from_Odessa_to_Cuba.jpg%2F500px-1983_09_15_to_23_Envelope_of_the_Letter_from_Odessa_to_Cuba.jpg&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_bulk_242_": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F9%2F98%2FA_Plan_of_the_City_of_Cologne%252C_1800%252C_John_Stockdale-9832.jpg%2F500px-A_Plan_of_the_City_of_Cologne%252C_1800%252C_John_Stockdale-9832.jpg&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_bulk_249_": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F4%2F4a%2FRothenburg_BW_12.JPG%2F500px-Rothenburg_BW_12.JPG&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_bulk_252_": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fa%2Fa7%2F01-01-2014_-_Messeturm_-_trade_fair_tower_-_Frankfurt-_Germany_-_05.jpg%2F500px-01-01-2014_-_Messeturm_-_trade_fair_tower_-_Frankfurt-_Germany_-_05.jpg&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_bulk_257_": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F9%2F90%2FBaustelle-hochvier-ffm001.jpg%2F500px-Baustelle-hochvier-ffm001.jpg&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_bulk_259_": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F5%2F58%2F10_Downing_Street._MOD_45155532_%2528cropped%2529.jpg%2F500px-10_Downing_Street._MOD_45155532_%2528cropped%2529.jpg&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_bulk_267_": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fb%2Fb4%2FBuckingham_Palace%252C_London_-_April_2009.jpg%2F500px-Buckingham_Palace%252C_London_-_April_2009.jpg&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_bulk_269_": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F7%2F79%2FCentre_Building%252C_LSE_from_LSE_Square.jpg%2F500px-Centre_Building%252C_LSE_from_LSE_Square.jpg&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_bulk_304_": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F2%2F23%2FSantorini_-_Grecia_-_Vista_Aerea_del_promontorio_di_Ancient_Thira_-_agosto_2018.jpg%2F500px-Santorini_-_Grecia_-_Vista_Aerea_del_promontorio_di_Ancient_Thira_-_agosto_2018.jpg&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_bulk_334_": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fe%2Fe4%2FFloridsdorf_%2528Wien%2529_-_Karl-Seitz-Hof_%25282%2529.JPG%2F500px-Floridsdorf_%2528Wien%2529_-_Karl-Seitz-Hof_%25282%2529.JPG&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_bulk_335_": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F5%2F56%2F14-05-06-budapest-RalfR-11.jpg%2F500px-14-05-06-budapest-RalfR-11.jpg&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_bulk_336_": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fe%2Fed%2F17-es_villamos_%25282211%2529.jpg%2F500px-17-es_villamos_%25282211%2529.jpg&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_bulk_339_": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F6%2F61%2F8E_busz_%2528AO-IM-013%2529.jpg%2F500px-8E_busz_%2528AO-IM-013%2529.jpg&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_bulk_342_": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Ff%2Ff7%2FBIMUN_2012_opening_1.jpg%2F500px-BIMUN_2012_opening_1.jpg&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_bulk_344_": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F2%2F20%2FBudapest%252C_M1_metr%25C3%25B3_%2528kisf%25C3%25B6ldalatti%2529%252C_Andr%25C3%25A1ssy_%25C3%25BAt.png%2F500px-Budapest%252C_M1_metr%25C3%25B3_%2528kisf%25C3%25B6ldalatti%2529%252C_Andr%25C3%25A1ssy_%25C3%25BAt.png&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_bulk_345_": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fb%2Fb4%2FBudapest%252C_M%25C5%25B1szaki_Egyetem.jpg%2F500px-Budapest%252C_M%25C5%25B1szaki_Egyetem.jpg&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_bulk_346_": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F3%2F3d%2FBudapest%252C_XIX._K%25C3%25B3s_K%25C3%25A1roly_t%25C3%25A9r%252C_Wekerletelep.jpg%2F500px-Budapest%252C_XIX._K%25C3%25B3s_K%25C3%25A1roly_t%25C3%25A9r%252C_Wekerletelep.jpg&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_bulk_347_": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Ff%2Ff8%2FBudapest_Fine_Arts_Museum_bldg.jpg%2F500px-Budapest_Fine_Arts_Museum_bldg.jpg&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_bulk_348_": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F7%2F7a%2FBudapest_Gell%25C3%25A9rtbad_2.JPG%2F500px-Budapest_Gell%25C3%25A9rtbad_2.JPG&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_bulk_350_": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F7%2F71%2FBudapest_Sz%25C3%25A9chenyi_Baths_R01.jpg%2F500px-Budapest_Sz%25C3%25A9chenyi_Baths_R01.jpg&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_bulk_351_": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Ff%2Ffa%2FBudapest_Sz%25C3%25A9chenyi_Baths_R02.jpg%2F500px-Budapest_Sz%25C3%25A9chenyi_Baths_R02.jpg&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_bulk_352_": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F1%2F10%2FBudapest_by_Sentinel-2%252C_2020-07-28.jpg%2F500px-Budapest_by_Sentinel-2%252C_2020-07-28.jpg&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_bulk_353_": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F3%2F39%2FBudapest_metro_hev_en.png%2F500px-Budapest_metro_hev_en.png&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_bulk_354_": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F4%2F46%2FDanube_Arena_in_2017_FINA_Budapest.jpg%2F500px-Danube_Arena_in_2017_FINA_Budapest.jpg&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_bulk_356_": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Ff%2Ff4%2FElteFotoThalerTamas1.jpg%2F500px-ElteFotoThalerTamas1.jpg&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_bulk_360_": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fd%2Fdc%2FGercse_%25C5%2591sszel.jpg%2F500px-Gercse_%25C5%2591sszel.jpg&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_bulk_361_": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fd%2Fdb%2FG%25C3%25BCl_Babab_T%25C3%25BCrbe.JPG%2F500px-G%25C3%25BCl_Babab_T%25C3%25BCrbe.JPG&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_bulk_362_": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F2%2F24%2F2009_Jungfraujoch.jpg%2F500px-2009_Jungfraujoch.jpg&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_bulk_396_": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F9%2F93%2F12-06-05-innsbruck-by-ralfr-165.jpg%2F500px-12-06-05-innsbruck-by-ralfr-165.jpg&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_bulk_425_": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F8%2F8d%2FCiti_Field_2011.JPG%2F500px-Citi_Field_2011.JPG&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_bulk_428_": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F0%2F05%2FCornell_Tech_buildings_%252841991%2529.jpg%2F500px-Cornell_Tech_buildings_%252841991%2529.jpg&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_bulk_441_": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fb%2Fba%2F2024-05-22_12_33_13_View_east_along_Interstate_278_%2528Brooklyn-Queens_Expressway%2529_from_the_overpass_for_Sackett_Street_in_Brooklyn%252C_New_York_City%252C_New_York.jpg%2F500px-2024-05-22_12_33_13_View_east_along_Interstate_278_%2528Brooklyn-Queens_Expressway%2529_from_the_overpass_for_Sackett_Street_in_Brooklyn%252C_New_York_City%252C_New_York.jpg&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_bulk_442_": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fc%2Fc9%2FAntonio_Reynoso.jpg%2F500px-Antonio_Reynoso.jpg&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_smart_food_10019": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fe%2Fe8%2F6-alimenti%252C_pasta%252CTaccuino_Sanitatis%252C_Casanatense_4182..jpg%2F500px-6-alimenti%252C_pasta%252CTaccuino_Sanitatis%252C_Casanatense_4182..jpg&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_smart_food_10028": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Ff%2Ffe%2FA_better_homemade_pasta.jpg%2F500px-A_better_homemade_pasta.jpg&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_smart_food_10036": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fd%2Fd1%2FAbsolute_bretzel_01.jpg%2F500px-Absolute_bretzel_01.jpg&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_smart_food_10060": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fb%2Fb5%2FRed_Wine_Sangria_with_lemon%252C_lime%252C_apple%252C_and_orange_served_in_a_glass_-_Evan_Swigart.jpg%2F500px-Red_Wine_Sangria_with_lemon%252C_lime%252C_apple%252C_and_orange_served_in_a_glass_-_Evan_Swigart.jpg&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_smart_food_10061": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fb%2Fbb%2FCreme_catalane.jpg%2F500px-Creme_catalane.jpg&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_smart_food_10080": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fe%2Fe8%2F6-alimenti%252C_pasta%252CTaccuino_Sanitatis%252C_Casanatense_4182..jpg%2F500px-6-alimenti%252C_pasta%252CTaccuino_Sanitatis%252C_Casanatense_4182..jpg&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_smart_food_10096": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Ff%2Ffe%2FA_better_homemade_pasta.jpg%2F500px-A_better_homemade_pasta.jpg&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_smart_food_10137": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fe%2Fe8%2F6-alimenti%252C_pasta%252CTaccuino_Sanitatis%252C_Casanatense_4182..jpg%2F500px-6-alimenti%252C_pasta%252CTaccuino_Sanitatis%252C_Casanatense_4182..jpg&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_smart_food_10146": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Ff%2Ffe%2FA_better_homemade_pasta.jpg%2F500px-A_better_homemade_pasta.jpg&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_smart_food_10147": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fd%2Fd1%2FAbsolute_bretzel_01.jpg%2F500px-Absolute_bretzel_01.jpg&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_smart_food_10170": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fe%2Fea%2FBaguette_interior.jpg%2F500px-Baguette_interior.jpg&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_smart_food_10216": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fe%2Fe8%2F6-alimenti%252C_pasta%252CTaccuino_Sanitatis%252C_Casanatense_4182..jpg%2F500px-6-alimenti%252C_pasta%252CTaccuino_Sanitatis%252C_Casanatense_4182..jpg&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_smart_food_10223": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Ff%2Ffe%2FA_better_homemade_pasta.jpg%2F500px-A_better_homemade_pasta.jpg&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_smart_lm_10273": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F8%2F84%2FBp_Halaszbastya_Binder_Janos_rezkarca.jpg%2F500px-Bp_Halaszbastya_Binder_Janos_rezkarca.jpg&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_smart_lm_10274": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F5%2F53%2FBudapest_Parliament_Building_.jpg%2F500px-Budapest_Parliament_Building_.jpg&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_smart_lm_10279": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fe%2Fe9%2FBudapest_parlament_interior_9.jpg%2F500px-Budapest_parlament_interior_9.jpg&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_smart_lm_10283": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fd%2Fd8%2FBuda_Dominican_Church.jpg%2F500px-Buda_Dominican_Church.jpg&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_smart_lm_10311": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F8%2F85%2FChurch_of_Saint_Sava_4.jpg%2F500px-Church_of_Saint_Sava_4.jpg&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_smart_lm_10324": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fc%2Fc4%2FButte_Montmartre_1.jpg%2F500px-Butte_Montmartre_1.jpg&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_smart_food_10326": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fe%2Fea%2FBaguette_interior.jpg%2F500px-Baguette_interior.jpg&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_smart_lm_10359": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Ff%2Ffd%2FChapelle_des_Martyrs_Montmartre_Abbey.jpg%2F500px-Chapelle_des_Martyrs_Montmartre_Abbey.jpg&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_smart_food_10362": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fd%2Fd1%2FAbsolute_bretzel_01.jpg%2F500px-Absolute_bretzel_01.jpg&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_smart_food_10372": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fe%2Fe8%2F6-alimenti%252C_pasta%252CTaccuino_Sanitatis%252C_Casanatense_4182..jpg%2F500px-6-alimenti%252C_pasta%252CTaccuino_Sanitatis%252C_Casanatense_4182..jpg&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_smart_lm_10380": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F5%2F53%2FBudapest_Parliament_Building_.jpg%2F500px-Budapest_Parliament_Building_.jpg&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_smart_food_10386": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Ff%2Ffe%2FA_better_homemade_pasta.jpg%2F500px-A_better_homemade_pasta.jpg&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_smart_food_10391": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fd%2Fd1%2FAbsolute_bretzel_01.jpg%2F500px-Absolute_bretzel_01.jpg&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_smart_food_10404": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fe%2Fe8%2F6-alimenti%252C_pasta%252CTaccuino_Sanitatis%252C_Casanatense_4182..jpg%2F500px-6-alimenti%252C_pasta%252CTaccuino_Sanitatis%252C_Casanatense_4182..jpg&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_smart_food_10410": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Ff%2Ffe%2FA_better_homemade_pasta.jpg%2F500px-A_better_homemade_pasta.jpg&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_smart_lm_10420": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F5%2F53%2FBudapest_Parliament_Building_.jpg%2F500px-Budapest_Parliament_Building_.jpg&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_smart_food_10421": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F2%2F27%2F%252Athis%252A_is_a_bagel.jpg%2F500px-%252Athis%252A_is_a_bagel.jpg&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_smart_food_10424": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F1%2F1d%2FBagel-Plain-Alt.jpg%2F500px-Bagel-Plain-Alt.jpg&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_smart_food_10426": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fe%2Fea%2FBaked_cheesecake_with_raspberries_and_blueberries.jpg%2F500px-Baked_cheesecake_with_raspberries_and_blueberries.jpg&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_smart_lm_10427": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Ff%2Ff4%2FBomber_Crashed_into_Empire_State_Building_1945.jpg%2F500px-Bomber_Crashed_into_Empire_State_Building_1945.jpg&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_smart_food_10430": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F8%2F85%2FBagel_with_sesame_3.jpg%2F500px-Bagel_with_sesame_3.jpg&w=500&output=webp",
+    "source": "Wikipedia"
+  },
+  "auto_smart_lm_10439": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F2%2F28%2F1883_Frank_Leslie%2527s_Illustrated_Newspaper_Brooklyn_Bridge_New_York_City.jpg%2F500px-1883_Frank_Leslie%2527s_Illustrated_Newspaper_Brooklyn_Bridge_New_York_City.jpg&w=500&output=webp",
+    "source": "Wikipedia"
+  }
 };
+
+if (typeof window !== 'undefined') { window.PHOTOS = PHOTOS; }
+if (typeof module !== 'undefined') { module.exports = PHOTOS; }
