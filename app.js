@@ -6,6 +6,7 @@
   const state = {
     course: null,
     dayIndex: 0,
+    maxVisitedDay: 0,
     subStep: null,   // null | { type: 'trip-base' } | { type: 'entry-airport' } | { type: 'transit', beforeIdx: N }
     transitioning: false,
     mapInitTried: false,
@@ -403,11 +404,15 @@
         await TravelMap.goToDay(prevDay, days[state.dayIndex], false);
       }
     }
-
     renderPanel();
     panelInner.classList.remove('fade-out');
     await wait(300);
     state.transitioning = false;
+    
+    if (state.dayIndex > state.maxVisitedDay) {
+      state.maxVisitedDay = state.dayIndex;
+    }
+    
     renderPanel();
   }
 
@@ -425,6 +430,35 @@
     state.transitioning = false;
     renderPanel();
   }
+
+  window.goToDay = async function(index) {
+    if (!state.course || state.transitioning || TravelMap.isAnimating() || state.dayIndex === index) return;
+    if (index > Math.max(state.dayIndex, state.maxVisitedDay)) return; // Prevents jumping to unvisited days
+
+    state.transitioning = true;
+    lockNav(true);
+    panelInner.classList.add('fade-out');
+    await wait(200);
+
+    const prevDay = state.course.days[state.dayIndex];
+    state.dayIndex = index;
+    state.subStep = null;
+    state.returnedHome = false;
+    
+    // update max visited day
+    if (state.dayIndex > state.maxVisitedDay) {
+      state.maxVisitedDay = state.dayIndex;
+    }
+
+    const newDay = state.course.days[state.dayIndex];
+    await TravelMap.goToDay(prevDay, newDay, false); // jump without slow animation
+
+    renderPanel();
+    panelInner.classList.remove('fade-out');
+    await wait(300);
+    state.transitioning = false;
+    renderPanel();
+  };
 
   // ---------- 이벤트 ----------
   btnPrev.addEventListener('click', () => navigate(-1));
