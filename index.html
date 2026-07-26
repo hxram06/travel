@@ -5,6 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
   <meta name="referrer" content="no-referrer" />
   <title>유럽 여행 10코스 맵</title>
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get('share') !== 'k3n8b7') {
+      document.documentElement.innerHTML = '<div style="display:flex;justify-content:center;align-items:center;height:100vh;background:#f9fafb;font-family:system-ui,-apple-system,sans-serif;color:#6b7280;text-align:center;"><div><h1 style="font-size:1.5rem;font-weight:600;margin-bottom:0.5rem;color:#374151;">잘못된 접근입니다</h1><p>유효한 공유 링크(share=...)를 통해 접속해주세요.</p></div></div>';
+      throw new Error("Unauthorized access");
+    }
+  </script>
 
   <!--
     ⚠️ 시작 전 설정 필요:
