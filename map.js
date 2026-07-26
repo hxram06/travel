@@ -552,6 +552,11 @@ const TravelMap = (() => {
     }
   }
 
+  // 진행 중인 이동 애니메이션을 즉시 끝낸다 (칩/버튼 클릭이 애니메이션에 막히지 않도록)
+  function skip() {
+    cancelFlag = true;
+  }
+
   function reset() {
     cancelFlag = true;
     travelledLegs = [];
@@ -567,7 +572,7 @@ const TravelMap = (() => {
 
   return {
     init, isReady, isAnimating,
-    goToDay, enterCourse, returnHome, reset,
+    goToDay, enterCourse, returnHome, reset, skip,
     returnToBase, moveStep, showDayPhotos,
     // 디버깅용 — 콘솔에서 지도 상태를 확인할 때 쓴다
     getMap: () => map,

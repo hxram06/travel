@@ -282,6 +282,7 @@
     panelInner.classList.add('fade-out');
     await wait(200);
 
+    try {
     const day = state.course.days[state.dayIndex];
     const days = state.course.days;
 
@@ -404,16 +405,20 @@
         await TravelMap.goToDay(prevDay, days[state.dayIndex], false);
       }
     }
-    renderPanel();
-    panelInner.classList.remove('fade-out');
-    await wait(300);
-    state.transitioning = false;
-    
-    if (state.dayIndex > state.maxVisitedDay) {
-      state.maxVisitedDay = state.dayIndex;
+    } catch (e) {
+      // 지도 애니메이션이 실패해도 일정 패널은 반드시 갱신한다
+      console.error('일정 이동 중 지도 오류 — 패널은 계속 표시합니다.', e);
+    } finally {
+      renderPanel();
+      panelInner.classList.remove('fade-out');
+      state.transitioning = false;
+
+      if (state.dayIndex > state.maxVisitedDay) {
+        state.maxVisitedDay = state.dayIndex;
+      }
+
+      renderPanel();
     }
-    
-    renderPanel();
   }
 
   async function goHome() {
@@ -422,17 +427,35 @@
     lockNav(true);
     btnHome.textContent = '✈️ 귀국 중...';
 
-    const lastDay = state.course.days[state.course.days.length - 1];
-    await TravelMap.returnHome(lastDay);
-
-    state.returnedHome = true;
-    btnHome.textContent = '✈️ 인천으로 귀국';
-    state.transitioning = false;
-    renderPanel();
+    try {
+      const lastDay = state.course.days[state.course.days.length - 1];
+      await TravelMap.returnHome(lastDay);
+      state.returnedHome = true;
+    } catch (e) {
+      console.error('귀국 애니메이션 오류 — 패널은 계속 표시합니다.', e);
+      state.returnedHome = true;
+    } finally {
+      btnHome.textContent = '✈️ 인천으로 귀국';
+      state.transitioning = false;
+      renderPanel();
+    }
   }
 
+  let navToken = 0;
   window.goToDay = async function(index) {
-    if (!state.course || state.transitioning || TravelMap.isAnimating() || state.dayIndex === index) return;
+    if (!state.course) return;
+
+    // 칩 클릭은 진행 중인 지도 애니메이션에 막히지 않고 항상 반영돼야 한다.
+    // 애니메이션이 돌고 있으면 즉시 끝내고 정리될 때까지 잠깐 기다린다.
+    const myToken = ++navToken;
+    if (state.transitioning || TravelMap.isAnimating()) {
+      TravelMap.skip();
+      for (let i = 0; i < 60 && (state.transitioning || TravelMap.isAnimating()); i++) {
+        await wait(50);
+      }
+    }
+    if (myToken !== navToken) return;               // 더 최신 클릭이 있으면 양보
+    if (state.dayIndex === index) { renderPanel(); return; }
 
     state.transitioning = true;
     lockNav(true);
@@ -443,20 +466,23 @@
     state.dayIndex = index;
     state.subStep = null;
     state.returnedHome = false;
-    
+
     // update max visited day
     if (state.dayIndex > state.maxVisitedDay) {
       state.maxVisitedDay = state.dayIndex;
     }
 
-    const newDay = state.course.days[state.dayIndex];
-    await TravelMap.goToDay(prevDay, newDay, false); // jump without slow animation
-
-    renderPanel();
-    panelInner.classList.remove('fade-out');
-    await wait(300);
-    state.transitioning = false;
-    renderPanel();
+    try {
+      const newDay = state.course.days[state.dayIndex];
+      await TravelMap.goToDay(prevDay, newDay, false); // jump without slow animation
+    } catch (e) {
+      console.error('날짜 이동 중 지도 오류 — 패널은 계속 표시합니다.', e);
+    } finally {
+      renderPanel();
+      panelInner.classList.remove('fade-out');
+      state.transitioning = false;
+      renderPanel();
+    }
   };
 
   // ---------- 이벤트 ----------
