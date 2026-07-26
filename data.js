@@ -51,8 +51,8 @@ const COURSES = [
               14.4205,
               50.087
             ],
-            "cap": "프라하 07-2016 구시청사 타워에서 본 전망 이미지3(Prague 07-2016 View from Old Town Hall Tower img3)",
-            "desc": "위키미디어에서 제공하는 프라하 07-2016 구시청사 타워에서 본 전망 이미지3의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "cap": "프라하 2016년 7월 구시청사 타워에서 본 전망(Prague 07 2016 View from Old Town Hall Tower)",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "food_trdelnik",
@@ -61,7 +61,7 @@ const COURSES = [
               50.0872
             ],
             "cap": "트르델니크 프라하(Trdelnik Praha)",
-            "desc": "위키미디어에서 제공하는 트르델니크 프라하의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "charles_bridge",
@@ -69,7 +69,7 @@ const COURSES = [
               14.4114,
               50.0865
             ],
-            "cap": "카를 다리 야경",
+            "cap": "Lesser Town Tower의 프라하 07 2016 전망(Prague 07 2016 view from Lesser Town Tower of)",
             "desc": "1357년에 착공한 보헤미아 최고(最古)의 석교로, 난간에 30개의 바로크 성인상이 늘어서 있다. 밤에는 조명이 켜지고 인파가 빠져 낮과 완전히 다르다."
           },
           {
@@ -78,8 +78,8 @@ const COURSES = [
               14.4163,
               50.0796
             ],
-            "cap": "2022-10-15 Václavské námě장í 1(2022-10-15 Václavské náměstí 1)",
-            "desc": "위키미디어에서 제공하는 2022-10-15 Václavské námě장í 1의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "cap": "2022-10-15 Václavské náměstí 1(2022-10-15 Václavské náměstí 1)",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_bulk_3_",
@@ -87,23 +87,23 @@ const COURSES = [
               14.4213,
               50.0968
             ],
-            "cap": "아르히카테드라 Świętych 비타, 바츠와바 이 보이치에하 브 프라제 20190816 1333 5260(Archikatedra Świętych Wita, Wacława i Wojciecha w Pradze 20190816 1333 5260)",
+            "cap": "Archikatedra Świętych Wita, Wacława i Wojciec(Archikatedra Świętych Wita, Wacława i Wojciec)",
             "desc": "밤이 되면 화려한 조명으로 또 다른 매력을 뽐내는 로맨틱한 장소입니다."
           },
           {
             "spot": "auto_fill_50001",
-            "cap": "20190816 Brama Prochowa w Pradze 1859 5460 DxO",
-            "desc": "위키미디어에서 제공하는 프라하 관련 사진입니다."
+            "cap": "20190816 Brama Prochowa w Pradze 1859 5460 Dx(20190816 Brama Prochowa w Pradze 1859 5460 Dx)",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_fill_50002",
-            "cap": "Charles Bridge (Karlův most), Vltava River, Prague, 2015",
-            "desc": "위키미디어에서 제공하는 프라하 관련 사진입니다."
+            "cap": "카를교, 블타바 강, 프라하, 2015(Charles Bridge , Vltava River, Prague, 2015)",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_fill_50003",
-            "cap": "FFUK Praha",
-            "desc": "위키미디어에서 제공하는 프라하 관련 사진입니다."
+            "cap": "FFUK 프라하(FFUK Praha)",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           }
         ]
       },
@@ -135,7 +135,7 @@ const COURSES = [
               14.4009,
               50.0911
             ],
-            "cap": "프라하 성(Prague Castle)",
+            "cap": "Karlův 대부분의 프라하, Staré Město 20170810 007(Karlův most Praha, Staré Město 20170810 007)",
             "desc": "기네스에 세계에서 가장 큰 고대 성으로 등재된 복합 단지다. 성 비투스 대성당의 남쪽 장미창과 알폰스 무하가 디자인한 스테인드글라스가 핵심이고, 뒤편 황금 소로에는 카프카가 잠시 작업하던 22번지 집이 남아 있다."
           },
           {
@@ -144,7 +144,7 @@ const COURSES = [
               14.4206,
               50.0757
             ],
-            "cap": "우 플레쿠 (U Fleků) — 1499년 개업",
+            "cap": "프라그, U Fleků -- 2019 -- 6735(Prag, U Fleků -- 2019 -- 6735)",
             "desc": "1499년부터 같은 자리에서 맥주를 빚어온 프라하에서 가장 오래된 양조장 겸 식당이다. 자체 제조한 흑맥주 한 종류만 팔며, 앉아 있으면 종업원이 묻지 않고 잔을 계속 채운다. 그만 마시려면 컵받침을 잔 위에 올리면 된다. 아코디언 연주가 도는 큰 홀이 유명하다."
           },
           {
@@ -153,8 +153,8 @@ const COURSES = [
               14.42,
               50.076
             ],
-            "cap": "02021 1020 (2) 폴란드산 굴라쉬 수프(02021 1020 (2) Goulash soup of Poland)",
-            "desc": "위키미디어에서 제공하는 02021 1020의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "cap": "02021 1020 (2) Goulash soup of Poland.jpg",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "food_pilsner",
@@ -163,7 +163,7 @@ const COURSES = [
               50.0762
             ],
             "cap": "필스너 우르켈 맥주잔(Pilsner Urquell beer glass)",
-            "desc": "위키미디어에서 제공하는 필스너 우르켈 맥주잔의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           }
         ]
       },
@@ -216,7 +216,7 @@ const COURSES = [
               12.883,
               50.2306
             ],
-            "cap": "온천 콜로나다",
+            "cap": "카를로비바리 체코어(Karlovy Vary Czech)",
             "desc": "테플라 강을 따라 12개의 온천 원천이 늘어선 회랑이다. 원천마다 온도와 성분이 달라 맛이 다르고, 주둥이가 달린 전용 도자기 컵(라젠스키 포하레크)으로 마시는 것이 이곳의 방식이다."
           },
           {
@@ -226,7 +226,7 @@ const COURSES = [
               50.23
             ],
             "cap": "베체로프카 로고(Becherovka logo)",
-            "desc": "위키미디어에서 제공하는 베체로프카 로고의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_bulk_9_",
@@ -234,8 +234,8 @@ const COURSES = [
               12.8792,
               50.2366
             ],
-            "cap": "2007-카를로비바리-053-와이드(2007-KarlovyVary-053-wide)",
-            "desc": "위키미디어에서 제공하는 2007-카를로비바리-053-와이드의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "cap": "2007-KarlovyVary-053-와이드(2007-KarlovyVary-053-wide)",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_bulk_11_",
@@ -244,27 +244,27 @@ const COURSES = [
               50.231
             ],
             "cap": "칼즈배드(Carlsbad)",
-            "desc": "위키미디어에서 제공하는 칼즈배드의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_fill_50004",
-            "cap": "Canal in Karlovy Vary (Carlsbad)",
-            "desc": "위키미디어에서 제공하는 카를로비바리 관련 사진입니다."
+            "cap": "카를로비바리의 운하(Canal in Karlovy Vary)",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_fill_50005",
-            "cap": "EVLAHOS KARLOVY VARY",
-            "desc": "위키미디어에서 제공하는 카를로비바리 관련 사진입니다."
+            "cap": "에블라호스 카를로비바리(EVLAHOS KARLOVY VARY)",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_fill_50006",
-            "cap": "Evlahos carlovy vary",
-            "desc": "위키미디어에서 제공하는 카를로비바리 관련 사진입니다."
+            "cap": "에블라호스 카를로비 베리(Evlahos carlovy vary)",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_fill_50007",
-            "cap": "Exterior of Karlovy Vary Town Theatre (Divadlo Karlovy Vary) at night 02",
-            "desc": "위키미디어에서 제공하는 카를로비바리 관련 사진입니다."
+            "cap": "카를로비바리 타운 극장의 외관이 가까이에 있습니다.(Exterior of Karlovy Vary Town Theatre at nigh)",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           }
         ]
       },
@@ -318,7 +318,7 @@ const COURSES = [
               14.4186,
               50.064
             ],
-            "cap": "비셰흐라드 요새",
+            "cap": "파르니크 비셰흐라드 포드 비셰흐라뎀(Parník Vyšehrad pod Vyšehradem)",
             "desc": "블타바 강을 내려다보는 언덕 위 요새로, 관광객이 적어 조용하다. 성 베드로 성당과 국립묘지가 있고 드보르자크와 스메타나가 여기에 묻혀 있다."
           },
           {
@@ -327,7 +327,7 @@ const COURSES = [
               16.3659,
               48.2103
             ],
-            "cap": "왕립 정원",
+            "cap": "볼트 카페 센트럴 비엔나 빈(Vault Café Central Vienna Wien)",
             "desc": "프로이트와 트로츠키, 알텐베르크가 드나들던 빈의 대표 커피하우스다. 아치형 천장의 홀이 인상적이고 입구에는 시인 알텐베르크의 인형이 앉아 있다. 빈 커피하우스 문화는 유네스코 무형문화유산에 등재되어 있다 — 커피 한 잔으로 몇 시간이고 앉아 신문을 읽는 것이 원래 방식이다."
           },
           {
@@ -337,7 +337,7 @@ const COURSES = [
               48.21
             ],
             "cap": "카페 비에누아(Cafe Viennois)",
-            "desc": "위키미디어에서 제공하는 카페 비에누아의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_bulk_17_",
@@ -345,7 +345,7 @@ const COURSES = [
               16.3757,
               48.2181
             ],
-            "cap": "2011-06-14 10-23-56 오스트리아 니더외스터라이히 피샤멘트 마르크트(2011-06-14 10-23-56 Austria Niederösterreich Fischamend Markt)",
+            "cap": "2011 06 14 10 23 56 오스트리아 Niederösterreich(2011 06 14 10 23 56 Austria Niederösterreich)",
             "desc": "웅장한 규모와 정교한 디테일이 한눈에 시선을 사로잡는 랜드마크입니다."
           },
           {
@@ -355,7 +355,7 @@ const COURSES = [
               48.2121
             ],
             "cap": "57A 안슈츠가세(57A Anschützgasse)",
-            "desc": "위키미디어에서 제공하는 57A 안슈츠가세의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_bulk_20_",
@@ -363,13 +363,13 @@ const COURSES = [
               16.3777,
               48.2154
             ],
-            "cap": "62 볼커스베르겐슈트라세(62 Wolkersbergenstraße)",
-            "desc": "위키미디어에서 제공하는 62 볼커스베르겐슈트라세의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "cap": "62 Wolkersbergenstraße(62 Wolkersbergenstraße)",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_fill_50008",
-            "cap": "20180109 Vienna State Opera at blue hour 850 9387",
-            "desc": "위키미디어에서 제공하는 빈 관련 사진입니다."
+            "cap": "20180109 블루 아워 850의 비엔나 국립 오페라(20180109 Vienna State Opera at blue hour 850)",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           }
         ]
       },
@@ -401,7 +401,7 @@ const COURSES = [
               16.3806,
               48.1915
             ],
-            "cap": "벨베데레 궁전(Belvedere)",
+            "cap": "Palacio Belvedere 비엔나 오스트리아 2020 02 01 DD(Palacio Belvedere Viena Austria 2020 02 01 DD)",
             "desc": "오이겐 공의 여름 궁전이었다가 미술관이 되었다. 「키스」는 실물의 금박 질감이 인쇄물과 완전히 달라서 직접 볼 가치가 있다. 에곤 실레와 코코슈카 컬렉션도 같은 층에 있다."
           },
           {
@@ -410,7 +410,7 @@ const COURSES = [
               16.3697,
               48.2036
             ],
-            "cap": "현지 전통 시장",
+            "cap": "호텔 자허(Hotel Sacher)",
             "desc": "호텔 자허에 딸린 카페로, 오리지널 자허토르테를 파는 곳이다. 1832년 프란츠 자허가 열여섯 살 견습생 시절 만든 것이 시작이고, 데멜과 '어느 쪽이 진짜 자허토르테인가'를 두고 7년간 소송을 벌인 일화가 유명하다."
           },
           {
@@ -429,7 +429,7 @@ const COURSES = [
               48.2133
             ],
             "cap": "알테 도나우 빈(Alte Donau Wien)",
-            "desc": "위키미디어에서 제공하는 알테 도나우 빈의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_bulk_24_",
@@ -437,8 +437,8 @@ const COURSES = [
               16.3798,
               48.2069
             ],
-            "cap": "아스날 헤레스게시히틀리헤스 박물관-DSC 7920w(Arsenal Heeresgeschichtliches Museum-DSC 7920w)",
-            "desc": "위키미디어에서 제공하는 아스날 헤레스게시히틀리헤스 박물관-DSC 7920w의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "cap": "아스날 Heeresgeschichtliches 박물관 DSC 7920(Arsenal Heeresgeschichtliches Museum DSC 7920)",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_bulk_25_",
@@ -446,7 +446,7 @@ const COURSES = [
               16.3679,
               48.2072
             ],
-            "cap": "바리케이드 바이 데어 우니베르지테트 암 26텐 마이 1848 인 빈(Barricade bei der Universität am 26ten Mai 1848 in Wien)",
+            "cap": "바리케이드 bei der Universität am 26ten Mai 18(Barricade bei der Universität am 26ten Mai 18)",
             "desc": "높은 곳에서 내려다보이는 빈의 파노라마 뷰가 가슴을 뻥 뚫어줍니다."
           },
           {
@@ -455,8 +455,8 @@ const COURSES = [
               16.3776,
               48.207
             ],
-            "cap": "분데스아르히프 빌트 146-1972-028-14, 안슐루스 Österreich(Bundesarchiv Bild 146-1972-028-14, Anschluss Österreich)",
-            "desc": "위키미디어에서 제공하는 분데스아르히프 빌트 146-1972-028-14, 안슐루스 Österreich의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "cap": "Bundesarchiv Bild 146 1972 028 14, Anschluss(Bundesarchiv Bild 146 1972 028 14, Anschluss)",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           }
         ]
       },
@@ -488,7 +488,7 @@ const COURSES = [
               16.3656,
               48.2065
             ],
-            "cap": "호프부르크 왕궁(Hofburg)",
+            "cap": "빈 - 노이에 호프부르크(Wien - Neue Hofburg)",
             "desc": "합스부르크가가 600여 년간 사용한 겨울 궁전이다. 시시 박물관에서는 황후 엘리자베트의 실제 삶 — 강박적인 체중 관리와 궁정 생활에 대한 거부감 — 을 다루는데, 쇤브룬에서 본 화려한 이미지와 대비된다."
           },
           {
@@ -497,7 +497,7 @@ const COURSES = [
               16.3616,
               48.2038
             ],
-            "cap": "미술사 박물관",
+            "cap": "미술사 박물관 logo.svg(Kunsthistorisches Museum logo.svg)",
             "desc": "합스부르크가의 수집품이 그대로 미술관이 된 곳이다. 브뤼헐 컬렉션이 세계 최대 규모이며 「바벨탑」과 「눈 속의 사냥꾼」이 있다. 계단홀의 클림트 벽화와 돔 아래 카페도 유명하다."
           },
           {
@@ -506,8 +506,8 @@ const COURSES = [
               16.3736,
               48.2088
             ],
-            "cap": "피글뮐러. 세계적으로 유명한 슈니첼! 비엔나(Figlmueller. World Famous Schnitzel! Vienna)",
-            "desc": "위키미디어에서 제공하는 피글뮐러. 세계적으로 유명한 슈니첼! 비엔나의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "cap": "Figlmueller. (Figlmueller. World Famous Schnitzel! Vienna)",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "food_schnitzel",
@@ -516,7 +516,7 @@ const COURSES = [
               48.209
             ],
             "cap": "비엔나 슈니첼(Wiener schnitzel)",
-            "desc": "위키미디어에서 제공하는 비엔나 슈니첼의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_bulk_27_",
@@ -525,7 +525,7 @@ const COURSES = [
               48.2097
             ],
             "cap": "비엔나 키노 성(Burg Kino Vienna)",
-            "desc": "위키미디어에서 제공하는 비엔나 키노 성의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_bulk_28_",
@@ -533,8 +533,8 @@ const COURSES = [
               16.3658,
               48.2016
             ],
-            "cap": "시티바이크 비엔나, 쇤브루너 브뤼케(Citybike Vienna, Schönbrunner Brücke)",
-            "desc": "위키미디어에서 제공하는 시티바이크 비엔나, 쇤브루너 브뤼케의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "cap": "시티바이크 비엔나, Schönbrunner Brücke(Citybike Vienna, Schönbrunner Brücke)",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_bulk_29_",
@@ -543,7 +543,7 @@ const COURSES = [
               48.214
             ],
             "cap": "다스 로미셰 빈(Das roemische Wien)",
-            "desc": "위키미디어에서 제공하는 다스 로미셰 빈의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_bulk_30_",
@@ -551,8 +551,8 @@ const COURSES = [
               16.3685,
               48.2145
             ],
-            "cap": "도나우파르크 & ​​도나우투름 비엔나 2024(Donaupark & Donauturm Vienna 2024)",
-            "desc": "위키미디어에서 제공하는 도나우파르크 & ​​도나우투름 비엔나 2024의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "cap": "Donaupark & ​​Donauturm 비엔나 2024(Donaupark & Donauturm Vienna 2024)",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_bulk_31_",
@@ -560,8 +560,8 @@ const COURSES = [
               16.372,
               48.2182
             ],
-            "cap": "도나우슈타트브뤼케 리가르다테 데 라 스타치오 도나우마리나(Donaustadtbrücke rigardate de la stacio Donaumarina)",
-            "desc": "위키미디어에서 제공하는 도나우슈타트브뤼케 리가르다테 데 라 스타치오 도나우마리나의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "cap": "Donaustadtbrücke rigardate de la stacio Donau(Donaustadtbrücke rigardate de la stacio Donau)",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_bulk_32_",
@@ -570,7 +570,7 @@ const COURSES = [
               48.2098
             ],
             "cap": "에른스트 하펠 슈타디온 비엔나(Ernst-happel-stadion vienna)",
-            "desc": "위키미디어에서 제공하는 에른스트 하펠 슈타디온 비엔나의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           }
         ]
       },
@@ -624,7 +624,7 @@ const COURSES = [
               13.6455,
               47.559
             ],
-            "cap": "할슈타트(Hallstatt)",
+            "cap": "할슈타트 - 젠트룸(Hallstatt - Zentrum)",
             "desc": "기차역이 호수 건너편에 있어서 배를 타고 물을 건너야 마을에 닿는다. 이 페리 위에서 보는 각도가 할슈타트의 대표 이미지이며, 도착이 아니라 접근 과정 자체가 명장면이다."
           },
           {
@@ -633,7 +633,7 @@ const COURSES = [
               13.6462,
               47.5565
             ],
-            "cap": "할슈타트(Hallstatt)",
+            "cap": "할슈타트 - 젠트룸(Hallstatt - Zentrum)",
             "desc": "전 세계 여행객들의 발길이 끊이지 않는 할슈타트의 상징적인 장소입니다."
           },
           {
@@ -642,8 +642,8 @@ const COURSES = [
               13.6453,
               47.558
             ],
-            "cap": "6가지 음식, 파스타, 타쿠이노 사니타티스, 카사나텐세 4182.(6-alimenti, pasta,Taccuino Sanitatis, Casanatense 4182.)",
-            "desc": "위키미디어에서 제공하는 6가지 음식, 파스타, 타쿠이노 사니타티스, 카사나텐세 4182.의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "cap": "6가지 반찬, 파스타, 타쿠이노 사니타티스, 카사나트(6 alimenti, pasta,Taccuino Sanitatis, Casanat)",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_bulk_33_",
@@ -652,7 +652,7 @@ const COURSES = [
               47.5595
             ],
             "cap": "1 오스트리아 할슈타트(1 hallstatt austria)",
-            "desc": "위키미디어에서 제공하는 1 오스트리아 할슈타트의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_bulk_34_",
@@ -660,23 +660,23 @@ const COURSES = [
               13.6508,
               47.565
             ],
-            "cap": "할슈타트의 400 야레 프론라이히남프로체치온(400 Jahre Fronleichnamprozession in Hallstatt)",
+            "cap": "할슈타트의 400 Jahre Fronleichnamprozession(400 Jahre Fronleichnamprozession in Hallstatt)",
             "desc": "수백 년의 역사와 문화가 거리 구석구석 살아 숨 쉬는 매력적인 명소입니다."
           },
           {
             "spot": "auto_fill_50009",
-            "cap": "Alice Schumacher NHM Wien Abb Salz-Reich 2008 Seite 133 6",
-            "desc": "위키미디어에서 제공하는 할슈타트 관련 사진입니다."
+            "cap": "앨리스 슈마허 NHM Wien Abb Salz Reich 2008(Alice Schumacher NHM Wien Abb Salz Reich 2008)",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_fill_50010",
-            "cap": "Blue Hallstatt (204466021)",
-            "desc": "위키미디어에서 제공하는 할슈타트 관련 사진입니다."
+            "cap": "블루 할슈타트(Blue Hallstatt)",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_fill_50011",
-            "cap": "Museum Hallstatt 26",
-            "desc": "위키미디어에서 제공하는 할슈타트 관련 사진입니다."
+            "cap": "박물관 할슈타트 26(Museum Hallstatt 26)",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           }
         ]
       },
@@ -709,7 +709,7 @@ const COURSES = [
               47.5534
             ],
             "cap": "집에서 만든 파스타가 더 맛있어요(A better homemade pasta)",
-            "desc": "위키미디어에서 제공하는 집에서 만든 파스타가 더 맛있어요의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           }
         ]
       },
@@ -762,7 +762,7 @@ const COURSES = [
               13.0424,
               47.8054
             ],
-            "cap": "미라벨 정원",
+            "cap": "팔라툴 미라벨1(Palatul Mirabell1)",
             "desc": "「사운드 오브 뮤직」의 도레미 송을 찍은 계단과 페가수스 분수가 있다. 정원 축이 호엔잘츠부르크 성을 정면으로 향하도록 설계되어 있어 사진 구도가 자연스럽게 잡힌다."
           },
           {
@@ -771,7 +771,7 @@ const COURSES = [
               13.0475,
               47.795
             ],
-            "cap": "호엔잘츠부르크 성",
+            "cap": "잘츠부르크 - 페스퉁 호엔잘츠부르크(Salzburg - Festung Hohensalzburg)",
             "desc": "1077년에 지어진 중앙유럽 최대 규모의 요새 중 하나로, 한 번도 함락된 적이 없다. 푸니쿨라로 오르며 성벽에서 잘차흐 강과 알프스가 내려다보인다."
           },
           {
@@ -780,7 +780,7 @@ const COURSES = [
               13.045,
               47.7972
             ],
-            "cap": "장크트 페터 슈티프츠쿨리나리움 — 803년 기록",
+            "cap": "슈티프스켈러 잘츠부르크(Stiftskeller salzburg)",
             "desc": "803년 문헌에 등장해 유럽에서 가장 오래된 식당으로 불리는 곳이다. 베네딕도회 수도원 안에 있고 암벽에 붙어 있는 홀이 인상적이다. 모차르트 시대 음악을 연주하며 코스를 내는 '모차르트 디너'가 대표 프로그램이다."
           },
           {
@@ -790,7 +790,7 @@ const COURSES = [
               47.7995
             ],
             "cap": "오리지널 잘츠부르크 모차르트쿠겔 퓌르스트 2009(Original Salzburger Mozartkugel Fürst 2009)",
-            "desc": "위키미디어에서 제공하는 오리지널 잘츠부르크 모차르트쿠겔 퓌르스트 2009의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_bulk_41_",
@@ -799,7 +799,7 @@ const COURSES = [
               47.8147
             ],
             "cap": "20516년 2월(Feb20516)",
-            "desc": "위키미디어에서 제공하는 20516년 2월의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_bulk_44_",
@@ -808,17 +808,17 @@ const COURSES = [
               47.8017
             ],
             "cap": "8/10 - 호엔잘츠부르크 성, 오스트리아(8 of 10 - Hohensalzburg Castle, AUSTRIA)",
-            "desc": "위키미디어에서 제공하는 8/10 - 호엔잘츠부르크 성, 오스트리아의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_fill_50012",
-            "cap": "Feb20532",
-            "desc": "위키미디어에서 제공하는 잘츠부르크 관련 사진입니다."
+            "cap": "20532년 2월(Feb20532)",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_fill_50013",
-            "cap": "2163 - Salzburg - Stift Nonnberg",
-            "desc": "위키미디어에서 제공하는 잘츠부르크 관련 사진입니다."
+            "cap": "2163 - 잘츠부르크 - 논베르크 Stift(2163 - Salzburg - Stift Nonnberg)",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           }
         ]
       },
@@ -872,7 +872,7 @@ const COURSES = [
               11.5755,
               48.1374
             ],
-            "cap": "페터스키르헤의 라트하우스와 마리엔플라츠 - 2006년 8월(Rathaus and Marienplatz from Peterskirche - August 2006)",
+            "cap": "Peterskirche Aug의 Rathaus와 Marienplatz(Rathaus and Marienplatz from Peterskirche Aug)",
             "desc": "뮌헨의 중심 광장으로, 신 시청사의 글로켄슈필은 32개 인형이 결혼식 장면과 통 제조공의 춤을 재현한다. 하루 두세 차례 정해진 시각에만 작동하니 시간을 맞춰 가야 한다."
           },
           {
@@ -881,7 +881,7 @@ const COURSES = [
               11.58,
               48.1376
             ],
-            "cap": "호프브로이하우스 — 1589년",
+            "cap": "호프브로이하우스(Hofbrauhaus)",
             "desc": "바이에른 공작의 궁정 양조장으로 시작해 지금은 세계에서 가장 유명한 맥주홀이 되었다. 긴 나무 테이블에 모르는 사람과 합석하는 것이 이곳의 방식이고, 브라스 밴드가 홀 가운데서 연주한다. 단골들이 맥주잔을 보관하는 자물쇠 달린 사물함도 남아 있다."
           },
           {
@@ -891,7 +891,7 @@ const COURSES = [
               48.1378
             ],
             "cap": "돼지고기 너클(Pork Knuckle)",
-            "desc": "위키미디어에서 제공하는 돼지고기 너클의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "food_pretzel",
@@ -899,8 +899,8 @@ const COURSES = [
               11.576,
               48.137
             ],
-            "cap": "아우크스부르거 슈트라세 15 DAH - 2023-09-03 - 143c(Augsburger Straße 15 DAH - 2023-09-03 - 143c)",
-            "desc": "위키미디어에서 제공하는 아우크스부르거 슈트라세 15 DAH - 2023-09-03 - 143c의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "cap": "Augsburger Straße 15 DAH 2023 09 03 143c(Augsburger Straße 15 DAH 2023 09 03 143c)",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_smart_food_10036",
@@ -909,7 +909,7 @@ const COURSES = [
               48.1277
             ],
             "cap": "앱솔루트 브레첼 01(Absolute bretzel 01)",
-            "desc": "위키미디어에서 제공하는 앱솔루트 브레첼 01의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_bulk_48_",
@@ -917,8 +917,8 @@ const COURSES = [
               11.5765,
               48.1383
             ],
-            "cap": "4 실린드로스, 뮌헨, 알레마니아, 2013-02-11, DD 02(4 Cilindros, Múnich, Alemania, 2013-02-11, DD 02)",
-            "desc": "위키미디어에서 제공하는 4 실린드로스, 뮌헨, 알레마니아, 2013-02-11, DD 02의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "cap": "4 Cilindros, 뮌헨, 알레마니아, 2013 02 11, DD(4 Cilindros, Múnich, Alemania, 2013 02 11, DD)",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_bulk_49_",
@@ -927,12 +927,12 @@ const COURSES = [
               48.1405
             ],
             "cap": "알리안츠 아레나 2008-02-09(Allianz Arena 2008-02-09)",
-            "desc": "위키미디어에서 제공하는 알리안츠 아레나 2008-02-09의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_fill_50014",
-            "cap": "Das Staatstheater am Gärtnerplatz 04",
-            "desc": "위키미디어에서 제공하는 뮌헨 관련 사진입니다."
+            "cap": "Das Staatstheater am Gärtnerplatz 04(Das Staatstheater am Gärtnerplatz 04)",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           }
         ]
       },
@@ -990,7 +990,7 @@ const COURSES = [
               11.5583,
               48.177
             ],
-            "cap": "BMW 박물관",
+            "cap": "BMW 004 박물관(Musée BMW 004)",
             "desc": "'그릇'을 뒤집은 모양의 은색 건물로, 옆의 BMW 벨트는 무료로 들어갈 수 있다. 본사 건물은 4기통 엔진을 형상화한 실린더 네 개 모양이다."
           },
           {
@@ -999,7 +999,7 @@ const COURSES = [
               8.308,
               47.0515
             ],
-            "cap": "카펠교(Kapellbrücke)",
+            "cap": "카펠브뤼케(Kapellbruecke)",
             "desc": "1333년에 놓인 유럽에서 가장 오래된 목조 지붕 다리다. 1993년 화재로 상당 부분이 소실되었다가 복원되었고, 다리 중간의 팔각 물탑은 원래 감옥과 보물창고로 쓰였다."
           },
           {
@@ -1009,7 +1009,7 @@ const COURSES = [
               47.0508
             ],
             "cap": "풀 치즈 퐁듀 세트 - 스위스산(Full cheese fondue set - in Switzerland)",
-            "desc": "위키미디어에서 제공하는 풀 치즈 퐁듀 세트 - 스위스산의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_bulk_53_",
@@ -1017,7 +1017,7 @@ const COURSES = [
               8.31,
               47.0578
             ],
-            "cap": "(바르셀로나) 성벽의 루체른, 샘플 연구 - 윌리엄 터너 - 테이트 브리튼((Barcelona) Lucerne from the Walls, Sample Study - William Turner - Tate Britain)",
+            "cap": "성벽의 루체른, 샘플 연구 윌리엄(Lucerne from the Walls, Sample Study William)",
             "desc": "마치 한 장의 엽서 속으로 직접 들어온 듯한 그림 같은 풍경을 선사합니다."
           },
           {
@@ -1027,12 +1027,12 @@ const COURSES = [
               47.0471
             ],
             "cap": "2009 08 24 06262 루체른(2009 08 24 06262 Lucerne)",
-            "desc": "위키미디어에서 제공하는 2009 08 24 06262 루체른의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_fill_50015",
-            "cap": "Dampfschiffe in Luzern (cropped)",
-            "desc": "위키미디어에서 제공하는 루체른 관련 사진입니다."
+            "cap": "루체른의 Dampfschiffe(Dampfschiffe in Luzern)",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           }
         ]
       },
@@ -1064,7 +1064,7 @@ const COURSES = [
               8.311,
               47.0583
             ],
-            "cap": "빈사의 사자상",
+            "cap": "사자 기념비(Lion Monument)",
             "desc": "프랑스 혁명 때 튈르리 궁을 지키다 전사한 스위스 용병들을 기리는 조각이다. 마크 트웨인이 '세상에서 가장 슬프고 감동적인 바위'라고 썼다. 창에 찔린 사자가 방패를 감싼 채 죽어가는 모습이다."
           },
           {
@@ -1073,7 +1073,7 @@ const COURSES = [
               8.2551,
               46.9789
             ],
-            "cap": "필라투스 산",
+            "cap": "루체른 - 필라투스산 - 2019년 3월(Luzern - Mount Pilatus - March 2019)",
             "desc": "루체른 남쪽의 2,128m 산으로, 세계에서 가장 가파른 톱니바퀴 열차(최대 경사 48%)가 오른다. 다만 이 구간은 겨울에 운휴하고 케이블카만 운행한다."
           },
           {
@@ -1082,7 +1082,7 @@ const COURSES = [
               8.3016,
               47.0558
             ],
-            "cap": "루체른 스위스 호텔 데 발란스 - 파노라마(Lucerne Switzerland Hotel des Balances - panoramio)",
+            "cap": "루체른 스위스 호텔 데 발란스(Lucerne Switzerland Hotel des Balances)",
             "desc": "세월의 흔적이 고스란히 묻어나는 장엄하고 아름다운 건축물입니다."
           }
         ]
@@ -1144,7 +1144,7 @@ const COURSES = [
               8.0413,
               46.6242
             ],
-            "cap": "그린델발트 — 아이거 북벽 아래",
+            "cap": "그린델발트 뷰 02(Grindelwald View 02)",
             "desc": "융프라우 지역의 관문 마을로, 아이거 북벽이 정면으로 서 있다. 이 북벽은 등반 역사에서 가장 악명 높은 벽 중 하나로 꼽힌다."
           },
           {
@@ -1153,8 +1153,8 @@ const COURSES = [
               7.9803,
               46.5474
             ],
-            "cap": "스핑크스와 융프라우 - 이미지 06980(Sphinx et Jungfrau - img 06980)",
-            "desc": "위키미디어에서 제공하는 스핑크스와 융프라우 - 이미지 06980의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "cap": "스핑크스와 융프라우 - img 06980(Sphinx et Jungfrau - img 06980)",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_bulk_71_",
@@ -1162,8 +1162,8 @@ const COURSES = [
               7.8709,
               46.6863
             ],
-            "cap": "골츠빌-비아둑트 파노라마 미트 인터라켄 임 힌터그룬트 2(Goldswil-Viadukt Panorama mit Interlaken im Hintergrund 2)",
-            "desc": "위키미디어에서 제공하는 골츠빌-비아둑트 파노라마 미트 인터라켄 임 힌터그룬트 2의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "cap": "Goldswil Viadukt Panorama mit Interlaken im H(Goldswil Viadukt Panorama mit Interlaken im H)",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_bulk_72_",
@@ -1172,7 +1172,7 @@ const COURSES = [
               46.6788
             ],
             "cap": "호텔 파크 인터라켄 나 드루쿠 퍼모윔(Hotel Park Interlaken na druku firmowym)",
-            "desc": "위키미디어에서 제공하는 호텔 파크 인터라켄 나 드루쿠 퍼모윔의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_bulk_73_",
@@ -1180,8 +1180,8 @@ const COURSES = [
               7.8689,
               46.6817
             ],
-            "cap": "회엔베크 데어 아르뮐레 나흐 인터라켄 1830(Höhenweg der Aarmühle nach Interlaken 1830)",
-            "desc": "위키미디어에서 제공하는 회엔베크 데어 아르뮐레 나흐 인터라켄 1830의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "cap": "Höhenweg der Aarmühle nach 인터라켄 1830(Höhenweg der Aarmühle nach Interlaken 1830)",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           }
         ]
       },
@@ -1239,7 +1239,7 @@ const COURSES = [
               9.1916,
               45.4642
             ],
-            "cap": "두오모(Duomo)",
+            "cap": "Il Duomo di Milano - 2026년 7월(Il Duomo di Milano - July 2026)",
             "desc": "완공까지 약 600년이 걸린 고딕 성당으로 135개의 첨탑과 3,400여 개의 조각상이 있다. 옥상 테라스에 올라가면 첨탑 숲 사이를 직접 걸을 수 있다."
           },
           {
@@ -1248,7 +1248,7 @@ const COURSES = [
               9.19,
               45.4658
             ],
-            "cap": "갈레리아 비토리오 에마누엘레 2세",
+            "cap": "갤러리아 밀라노(Galleria Milano)",
             "desc": "1877년에 완성된 유리 지붕 아케이드로 세계에서 가장 오래된 쇼핑몰 중 하나다. 바닥 모자이크의 토리노 상징 황소 위에서 뒤꿈치로 세 바퀴 돌면 행운이 온다는 관습이 있어 그 부분만 파여 있다."
           },
           {
@@ -1258,7 +1258,7 @@ const COURSES = [
               45.4655
             ],
             "cap": "벨리니 치프리아니 마카로니 그릴 던우디 GA(Bellini Cipriani Macaroni Grill Dunwoody GA)",
-            "desc": "위키미디어에서 제공하는 벨리니 치프리아니 마카로니 그릴 던우디 GA의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           }
         ]
       },
@@ -1316,7 +1316,7 @@ const COURSES = [
               9.1707,
               45.4659
             ],
-            "cap": "「최후의 만찬」",
+            "cap": "최후의 만찬 레오나르도 다빈치 고해상도(The Last Supper Leonardo Da Vinci High Resolu)",
             "desc": "산타 마리아 델레 그라치에 성당 식당 벽에 그려진 레오나르도의 벽화다. 프레스코가 아니라 마른 벽에 그려 일찍부터 훼손이 시작됐고, 2차 대전 폭격에도 이 벽만 살아남았다. 15분 정원제라 예약 없이는 절대 볼 수 없다."
           },
           {
@@ -1325,8 +1325,8 @@ const COURSES = [
               12.3388,
               45.4341
             ],
-            "cap": "밤의 산마르코 광장(베니스)-msu-2021-6449-(Piazza San Marco (Venice) at night-msu-2021-6449-)",
-            "desc": "위키미디어에서 제공하는 밤의 산마르코 광장의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "cap": "밤의 산 마르코 광장 msu 2021 6449(Piazza San Marco at night msu 2021 6449)",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_bulk_82_",
@@ -1334,8 +1334,8 @@ const COURSES = [
               12.3172,
               45.4497
             ],
-            "cap": "카날레토 - 두칼레 궁전의 부두로 돌아온 부켄타우로스 - 구글 아트 프로젝트(Canaletto - Bucentaur's return to the pier by the Palazzo Ducale - Google Art Project)",
-            "desc": "위키미디어에서 제공하는 카날레토 - 두칼레 궁전의 부두로 돌아온 부켄타우로스 - 구글 아트 프로젝트의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "cap": "Canaletto Bucentaur가 t에 의해 부두로 돌아옴(Canaletto Bucentaur's return to the pier by t)",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_bulk_83_",
@@ -1344,7 +1344,7 @@ const COURSES = [
               45.4339
             ],
             "cap": "카 포스카리(Ca' Foscari)",
-            "desc": "위키미디어에서 제공하는 카 포스카리의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_bulk_87_",
@@ -1352,8 +1352,8 @@ const COURSES = [
               12.3085,
               45.45
             ],
-            "cap": "로마 광장을 떠나는 악티프 트램 베네치아 2017(Actv tram Venezia leaving Piazzale Roma 2017)",
-            "desc": "위키미디어에서 제공하는 로마 광장을 떠나는 악티프 트램 베네치아 2017의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "cap": "로마 광장을 떠나는 Actv 트램 베네치아 2017(Actv tram Venezia leaving Piazzale Roma 2017)",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           }
         ]
       },
@@ -1385,7 +1385,7 @@ const COURSES = [
               12.3403,
               45.4337
             ],
-            "cap": "두칼레 궁전과 탄식의 다리",
+            "cap": "총독의 궁전과 산 마르코 바스의 종탑(Doge's Palace and campanile of St. Mark's Bas)",
             "desc": "베네치아 공화국 총독의 궁전이자 정부 청사였다. 재판정에서 감옥으로 건너가는 통로가 탄식의 다리인데, 죄수가 그 창으로 마지막 바깥 풍경을 봤다는 데서 이름이 붙었다."
           },
           {
@@ -1394,7 +1394,7 @@ const COURSES = [
               12.3358,
               45.438
             ],
-            "cap": "곤돌라 — 리알토 다리 아래",
+            "cap": "곤돌라 탑승(Gondola Ride)",
             "desc": "곤돌라는 좌우 비대칭으로 만들어져 한쪽에서만 노를 저어도 직진한다. 요금은 시청이 정한 정찰제이고 30분 기준이다. 일몰 직후가 수로가 한산하고 빛이 좋다."
           },
           {
@@ -1404,7 +1404,7 @@ const COURSES = [
               45.4372
             ],
             "cap": "오징어 먹물 파스타 크롭(Squid ink pasta cropped)",
-            "desc": "위키미디어에서 제공하는 오징어 먹물 파스타 크롭의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_bulk_95_",
@@ -1413,7 +1413,7 @@ const COURSES = [
               45.4393
             ],
             "cap": "카 도로 파치아타(Ca' d'Oro facciata)",
-            "desc": "위키미디어에서 제공하는 카 도로 파치아타의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           }
         ]
       },
@@ -1462,7 +1462,7 @@ const COURSES = [
               12.354,
               45.4586
             ],
-            "cap": "무라노 — 유리공예의 섬",
+            "cap": "무라노 일몰(Murano sunset)",
             "desc": "1291년 화재 위험 때문에 본섬의 유리 공방을 전부 이 섬으로 옮긴 것이 시작이다. 장인들은 기술 유출을 막으려 섬 밖으로 나가는 것이 금지됐다. 지금도 공방에서 1,000도가 넘는 유리를 다루는 시연을 볼 수 있다."
           },
           {
@@ -1471,7 +1471,7 @@ const COURSES = [
               12.4167,
               45.4853
             ],
-            "cap": "부라노 — 알록달록한 어부의 집",
+            "cap": "부라노 베니스 17(Burano Venice 17)",
             "desc": "어부들이 안개 속에서도 자기 집을 찾도록 집집마다 다른 색을 칠했다는 이야기가 전해진다. 지금도 색을 바꾸려면 시의 허가를 받아야 한다. 레이스 공예로도 유명하다."
           },
           {
@@ -1480,8 +1480,8 @@ const COURSES = [
               12.344,
               45.4609
             ],
-            "cap": "무라노 베트로의 람파다리오 - 카' 레초니코, 베니스(Lampadario in vetro di Murano - Ca' Rezzonico, Venice)",
-            "desc": "위키미디어에서 제공하는 무라노 베트로의 람파다리오 - 카' 레초니코, 베니스의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "cap": "Vetro di Murano Ca' Rezzonico의 람파다리오,(Lampadario in vetro di Murano Ca' Rezzonico,)",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           }
         ]
       },
@@ -1513,7 +1513,7 @@ const COURSES = [
               12.33,
               45.438
             ],
-            "cap": "새벽의 대운하",
+            "cap": "리알토에서 카포스까지 대운하의 전망(View of the Grand Canal from Rialto to Ca'Fos)",
             "desc": "길이 3.8km의 S자 수로로 베네치아의 중심 축이다. 새벽에는 배달 배와 청소 배만 다녀서, 낮과 달리 이 도시가 실제로 굴러가는 방식이 보인다."
           },
           {
@@ -1523,7 +1523,7 @@ const COURSES = [
               45.4349
             ],
             "cap": "카니발 디 베네치아 마스크 2010(Carnevale di Venezia Masks 2010)",
-            "desc": "위키미디어에서 제공하는 카니발 디 베네치아 마스크 2010의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_bulk_107_",
@@ -1532,7 +1532,7 @@ const COURSES = [
               45.4391
             ],
             "cap": "바시노 산 마르코 베니스를 지나는 유람선(Cruiseship passing bacino San Marco Venise)",
-            "desc": "위키미디어에서 제공하는 바시노 산 마르코 베니스를 지나는 유람선의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           }
         ]
       }
@@ -1584,7 +1584,7 @@ const COURSES = [
               -3.7038,
               40.4169
             ],
-            "cap": "푸에르타 델 솔 10(Puerta del Sol  10)",
+            "cap": "푸에르타 델 솔 10(Puerta del Sol 10)",
             "desc": "스페인 도로망의 0km 지점이 바닥에 표시되어 있다. 곰과 마드로뇨 나무 동상이 마드리드의 상징이고, 12월 31일에는 이 광장에서 포도 12알을 먹으며 새해를 맞는다."
           },
           {
@@ -1602,8 +1602,8 @@ const COURSES = [
               -3.7086,
               40.4142
             ],
-            "cap": "2014 - 소브리노 데 보틴 (Casa Botín) 레스토랑, 스페인 마드리드 (Ank Kumar) 05(2014 - Sobrino de Botín (Casa Botín) Restaurant, Madrid, Spain ( Ank Kumar ) 05)",
-            "desc": "위키미디어에서 제공하는 2014 - 소브리노 데 보틴의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "cap": "2014 Sobrino de Botín 레스토랑, 마드리드, 스파(2014 Sobrino de Botín Restaurant, Madrid, Spa)",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "r_cochinillo",
@@ -1611,7 +1611,7 @@ const COURSES = [
               -3.7084,
               40.4144
             ],
-            "cap": "코치니요 아사도 (새끼돼지 통구이)",
+            "cap": "코치니요 아사도 세고비아노(Cochinillo Asado Segoviano)",
             "desc": "보틴의 대표 메뉴로, 생후 3주 이내의 새끼돼지를 장작 화덕에서 굽는다. 껍질이 유리처럼 얇고 바삭해서 접시 가장자리로 잘릴 정도다. 1인분이 4분의 1마리라 양이 상당하다."
           },
           {
@@ -1620,7 +1620,7 @@ const COURSES = [
               -3.709,
               40.4154
             ],
-            "cap": "산 미겔 시장",
+            "cap": "메르카도 데 산 미구엘 2025(Mercado de San Miguel 2025)",
             "desc": "1916년에 지어진 철골 유리 건물 안에 수십 개의 타파스 바가 모여 있다. 원래는 재래시장이었다가 미식 시장으로 바뀌었다. 조금씩 여러 가지를 맛보기 좋지만 저녁에는 서 있을 자리도 없을 만큼 붐빈다."
           },
           {
@@ -1630,7 +1630,7 @@ const COURSES = [
               40.4258
             ],
             "cap": "엘 도스 데 마요 데 1808년 마드리드(El dos de mayo de 1808 en Madrid)",
-            "desc": "위키미디어에서 제공하는 엘 도스 데 마요 데 1808년 마드리드의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_bulk_112_",
@@ -1638,8 +1638,8 @@ const COURSES = [
               -3.713,
               40.4171
             ],
-            "cap": "(카스티예호스) 비스타 데 마드리드 데데 플라자 드 카스티야 03(자른)((카스티예호스) 비스타 데 마드리드 데스데 플라사 데 카스티야 03 (cropped))",
-            "desc": "위키미디어에서 제공하는 의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "cap": "비스타 데 마드리드 데스데 플라자 데 카스티야 03(Vista de Madrid desde Plaza de Castilla 03)",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_bulk_113_",
@@ -1647,8 +1647,8 @@ const COURSES = [
               -3.7101,
               40.4213
             ],
-            "cap": "20210109 눈보라 후 마드리드 왕궁(20210109 Royal Palace of Madrid after snowstorm)",
-            "desc": "위키미디어에서 제공하는 20210109 눈보라 후 마드리드 왕궁의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "cap": "20210109 스노우스토 이후 마드리드 왕궁(20210109 Royal Palace of Madrid after snowsto)",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_bulk_115_",
@@ -1656,7 +1656,7 @@ const COURSES = [
               -3.7049,
               40.4076
             ],
-            "cap": "바뇨스 엔 엘 만사나레스 엔 엘 파라헤 데 몰리노 케마도. 마드리드 역사 박물관(세부)(Baños en el Manzanares en el paraje de Molino Quemado. Museo de Historia de Madrid (detalle))",
+            "cap": "Baños en el Manzanares en el paraje de Molino(Baños en el Manzanares en el paraje de Molino)",
             "desc": "눈부시게 푸른 바다와 눈부신 햇살이 여행의 피로를 씻어내 줍니다."
           }
         ]
@@ -1689,7 +1689,7 @@ const COURSES = [
               -3.6921,
               40.4138
             ],
-            "cap": "프라도 미술관(Prado)",
+            "cap": "프라도 미술관 2016 25185969599(Museo del Prado 2016 25185969599)",
             "desc": "벨라스케스의 「시녀들」과 고야의 「검은 그림」 연작이 핵심이다. 「1808년 5월 3일」은 근대 전쟁화의 출발점으로 꼽힌다. 소장품이 방대해서 전부 보려 하지 말고 두세 구역만 정해 보는 편이 낫다."
           },
           {
@@ -1698,7 +1698,7 @@ const COURSES = [
               -3.7143,
               40.418
             ],
-            "cap": "마드리드 왕궁(Royal Palace of Madrid)",
+            "cap": "팔라시오 레알 데 마드리드 2016년 7월(Palacio Real de Madrid Julio 2016)",
             "desc": "방이 3,000개가 넘는 서유럽 최대 규모의 궁전이다. 국왕이 거주하지는 않지만 공식 행사에는 지금도 사용된다. 왕좌의 방과 스트라디바리우스 현악기 컬렉션이 볼거리다."
           },
           {
@@ -1707,7 +1707,7 @@ const COURSES = [
               -3.6828,
               40.4153
             ],
-            "cap": "레티로 공원",
+            "cap": "마드리드 051116 MXALX 041(MADRID 051116 MXALX 041)",
             "desc": "원래 왕실 정원이었다가 시민에게 개방된 공원이다. 호수에서 노 젓는 배를 탈 수 있고, 유리와 철로 지은 크리스탈 궁전에서는 현대미술 전시가 열린다."
           },
           {
@@ -1717,7 +1717,7 @@ const COURSES = [
               40.4196
             ],
             "cap": "마드리드 폭탄 테러 당시의 어린이들(Children during the Madrid bombing)",
-            "desc": "위키미디어에서 제공하는 마드리드 폭탄 테러 당시의 어린이들의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           }
         ]
       },
@@ -1749,7 +1749,7 @@ const COURSES = [
               2.1734,
               41.3809
             ],
-            "cap": "15-10-27-비스타 데 데 레스따투아 데 콜롬 어 바르셀로나-WMA 2791(15-10-27-Vista des de lestàtua de Colom a Barcelona-WMA 2791)",
+            "cap": "15 10 27 Vista des de lestàtua de Colom a Bar(15 10 27 Vista des de lestàtua de Colom a Bar)",
             "desc": "카탈루냐 광장에서 항구까지 1.2km 이어지는 보행자 거리다. 원래 하수도가 흐르던 자리를 덮어 만든 길이다. 유럽에서 소매치기가 가장 많은 구역 중 하나이니 가방을 앞으로 메자."
           },
           {
@@ -1758,7 +1758,7 @@ const COURSES = [
               2.1719,
               41.3815
             ],
-            "cap": "보케리아 시장",
+            "cap": "하몽 이베리코 데 벨로타(Jamon iberico de bellota)",
             "desc": "[하몽(Jamon)] 도토리를 먹여 키운 흑돼지 뒷다리를 36개월 이상 건조 숙성한 것이 하몽 이베리코 데 베요타다. 지방이 상온에서 녹을 정도로 부드럽고 견과 향이 난다. 시장에서 접시 단위로 팔아 서서 먹을 수 있다."
           },
           {
@@ -1767,7 +1767,7 @@ const COURSES = [
               2.1928,
               41.3785
             ],
-            "cap": "바르셀로네타 해변",
+            "cap": "해변 바르셀로나 P1170713(Beach Barcelona P1170713)",
             "desc": "1992년 올림픽을 앞두고 정비해 만든 인공 해변이다. 도심에서 지하철로 갈 수 있는 도시형 해변이며 해산물 식당이 늘어서 있다."
           },
           {
@@ -1776,7 +1776,7 @@ const COURSES = [
               2.1809,
               41.3913
             ],
-            "cap": "레몬, 라임, 사과, 오렌지를 잔에 담은 레드 와인 상그리아 - 에반 스위가트(Red Wine Sangria with lemon, lime, apple, and orange served in a glass - Evan Swigart)",
+            "cap": "레몬, 라임, 사과가 들어간 레드 와인 상그리아(Red Wine Sangria with lemon, lime, apple, and)",
             "desc": "[상그리아(Sangria)] 오랜 시간 정성껏 끓여내어 깊은 맛을 자랑하는 셰프의 추천 메뉴입니다."
           },
           {
@@ -1794,8 +1794,8 @@ const COURSES = [
               2.1807,
               41.3799
             ],
-            "cap": "2017년 8월 10일 선언문 \"Prou! Recuperem el seny\" - 바르셀로나 17(08.10.2017 Manifestació \"Prou! Recuperem el seny\" - Barcelona 17)",
-            "desc": "위키미디어에서 제공하는 2017년 8월 10일 선언문 \"Prou! Recuperem el seny\" - 바르셀로나 17의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "cap": "2017년 8월 10일 선언문 \"Prou! Recuperem el s(08.10.2017 Manifestació \"Prou! Recuperem el s)",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           }
         ]
       },
@@ -1827,7 +1827,7 @@ const COURSES = [
               2.1744,
               41.4036
             ],
-            "cap": "사그라다 파밀리아(Sagrada)",
+            "cap": "SF 마이그 2 크롭(SF maig 2 cropped)",
             "desc": "1882년 착공해 아직 공사 중인 성당이다. 탄생 파사드는 가우디 생전에 완성됐고 수난 파사드는 후대 조각가의 작업이라 분위기가 완전히 다르다. 내부 기둥은 나무가 가지를 뻗는 구조를 본떴고, 동쪽 창의 파란빛이 오전에, 서쪽의 붉은빛이 오후에 강하다."
           },
           {
@@ -1836,7 +1836,7 @@ const COURSES = [
               2.1527,
               41.4145
             ],
-            "cap": "구엘 공원(Güell)",
+            "cap": "구엘 공원(Parc guell)",
             "desc": "원래 고급 주택단지로 계획됐다가 분양 실패로 공원이 된 곳이다. 물결치는 모자이크 벤치는 폐타일을 깨서 붙인 트렌카디스 기법이고, 도마뱀 분수가 입구를 지킨다. 유료 구역은 시간 지정 인원 제한이 있다."
           },
           {
@@ -1845,7 +1845,7 @@ const COURSES = [
               2.1619,
               41.3953
             ],
-            "cap": "카사 밀라(Milà)",
+            "cap": "카사 밀라, 일반 전망(Casa Milà, general view)",
             "desc": "직선이 거의 없는 물결 모양 외벽 때문에 '채석장'이라는 별명이 붙었다. 옥상의 굴뚝 조각들이 「스타워즈」 스톰트루퍼 헬멧의 모티프가 되었다는 이야기가 있다."
           },
           {
@@ -1854,8 +1854,8 @@ const COURSES = [
               2.1737,
               41.3856
             ],
-            "cap": "15-10-27-엘스 콰트로 가츠-랄프알-WMA 2729(15-10-27-Els Quatre Gats-RalfR-WMA 2729)",
-            "desc": "위키미디어에서 제공하는 15-10-27-엘스 콰트로 가츠-랄프알-WMA 2729의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "cap": "15-10-27-엘스 콰트로 Gats-RalfR-WMA 2729(15-10-27-Els Quatre Gats-RalfR-WMA 2729)",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_bulk_127_",
@@ -1863,8 +1863,8 @@ const COURSES = [
               2.1759,
               41.394
             ],
-            "cap": "15-10-27-비스타 데 데 레스타투아 데 콜롬 어 바르셀로나-WMA 2800(15-10-27-Vista des de l'estàtua de Colom a Barcelona-WMA 2800)",
-            "desc": "위키미디어에서 제공하는 15-10-27-비스타 데 데 레스타투아 데 콜롬 어 바르셀로나-WMA 2800의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "cap": "15 10 27 Vista des de l'estàtua de Colom a Ba(15 10 27 Vista des de l'estàtua de Colom a Ba)",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           }
         ]
       },
@@ -1896,7 +1896,7 @@ const COURSES = [
               2.177,
               41.3833
             ],
-            "cap": "고딕 지구 (바리 고틱)",
+            "cap": "바르셀로나 - 카레르 델 비스베(Barcelona - Carrer del Bisbe)",
             "desc": "로마 시대 성벽 위에 중세 도시가 그대로 얹힌 구역이다. 산 펠립 네리 광장 벽에는 스페인 내전 당시 폭격 파편 자국이 남아 있다. 길이 좁고 복잡해 길을 잃기 쉽다."
           },
           {
@@ -1905,7 +1905,7 @@ const COURSES = [
               2.1806,
               41.3851
             ],
-            "cap": "피카소 미술관",
+            "cap": "바르셀로나 피카소 미술관(Museu Picasso Barcelona)",
             "desc": "중세 저택 다섯 채를 이어 만든 미술관이다. 청색 시대 초기작과 벨라스케스 「시녀들」을 58점으로 변주한 연작이 핵심이다. 후기 대표작보다 '피카소가 어떻게 피카소가 되었는지'를 보는 곳이다."
           },
           {
@@ -1914,7 +1914,7 @@ const COURSES = [
               2.165,
               41.3641
             ],
-            "cap": "몬주익 — 카탈루냐 국립미술관",
+            "cap": "팔레 - 스페인 - 바르셀로나 - 8(Fale - Spain - Barcelona - 8)",
             "desc": "1929년 만국박람회 건물을 미술관으로 쓰고 있다. 로마네스크 벽화 컬렉션이 세계 최고 수준인데, 피레네 산골 성당들의 프레스코를 통째로 떼어 옮겨 재현해 놓았다."
           },
           {
@@ -1924,7 +1924,7 @@ const COURSES = [
               41.3808
             ],
             "cap": "피자마(Pijama)",
-            "desc": "위키미디어에서 제공하는 피자마의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_bulk_133_",
@@ -1932,8 +1932,8 @@ const COURSES = [
               2.1648,
               41.379
             ],
-            "cap": "아빙구다 데 라 레이나 마리아 크리스티나 바르셀로나 2013(Avinguda de la Reina Maria Cristina Barcelona 2013)",
-            "desc": "위키미디어에서 제공하는 아빙구다 데 라 레이나 마리아 크리스티나 바르셀로나 2013의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "cap": "아빈구다 데 라 레이나 마리아 크리스티나 바르셀로나(Avinguda de la Reina Maria Cristina Barcelona)",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_bulk_137_",
@@ -1941,8 +1941,8 @@ const COURSES = [
               2.1655,
               41.3877
             ],
-            "cap": "바르셀로나 - 바르셀로나 현대미술관(마크바)(Barcelona - Museu d'Art Contemporani de Barcelona (MACBA))",
-            "desc": "위키미디어에서 제공하는 바르셀로나 - 바르셀로나 현대미술관의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "cap": "바르셀로나 현대미술관 바르셀로(Barcelona Museu d'Art Contemporani de Barcelo)",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_bulk_138_",
@@ -2000,7 +2000,7 @@ const COURSES = [
               1.8347,
               41.5928
             ],
-            "cap": "몬세라트(Montserrat)",
+            "cap": "몬세라트 데 마레사(Montserrat des de Manresa)",
             "desc": "'톱니 산'이라는 뜻의 이름 그대로 침식된 역암 봉우리가 늘어서 있다. 베네딕도회 수도원이 절벽에 박혀 있고, 검은 성모상(라 모레네타)은 카탈루냐의 수호성인이다. 소년 합창단 에스콜라니아는 유럽에서 가장 오래된 합창단 중 하나로 평일 정해진 시각에 노래한다."
           },
           {
@@ -2009,8 +2009,8 @@ const COURSES = [
               2.1922,
               41.3788
             ],
-            "cap": "파에야 발렌시아나, 마사틀란, 2023년 4월 25일(Paella valenciana, Mazatlán, 25 de abril de 2023)",
-            "desc": "위키미디어에서 제공하는 파에야 발렌시아나, 마사틀란, 2023년 4월 25일의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "cap": "빠에야 발렌시아나, 마사틀란, 25 de abril de 2(Paella valenciana, Mazatlán, 25 de abril de 2)",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_bulk_139_",
@@ -2018,7 +2018,7 @@ const COURSES = [
               1.836,
               41.5894
             ],
-            "cap": "해군도 노 254 몬세라트, 1869년 출판(Admiralty Chart No 254 Montserrat, Published 1869)",
+            "cap": "해군도 No 254 Montserrat, 출판됨(Admiralty Chart No 254 Montserrat, Published)",
             "desc": "시간이 멈춘 듯 평화롭고 고즈넉한 분위기를 간직한 아름다운 마을입니다."
           },
           {
@@ -2060,7 +2060,7 @@ const COURSES = [
               7.262,
               43.695
             ],
-            "cap": "영국인의 산책로",
+            "cap": "CollineDuChateau Nice프랑스2022(CollineDuChateau NiceFrance2022)",
             "desc": "19세기 니스에서 겨울을 나던 영국 귀족들이 비용을 대 만든 7km 해안 산책로다. 니스 해변은 모래가 아니라 굵은 자갈이라 맨발로 걷기 어렵다."
           },
           {
@@ -2069,8 +2069,8 @@ const COURSES = [
               7.276,
               43.697
             ],
-            "cap": "프롬나드 데 장글레 니스 이미지 1255(Promenade des Anglais Nice IMG 1255)",
-            "desc": "위키미디어에서 제공하는 프롬나드 데 장글레 니스 이미지 1255의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "cap": "프롬나드 데 장글레 니스 IMG 1255(Promenade des Anglais Nice IMG 1255)",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "r_chez_pipo",
@@ -2079,7 +2079,7 @@ const COURSES = [
               43.6955
             ],
             "cap": "소카 아 니스(Socca a Nice)",
-            "desc": "위키미디어에서 제공하는 소카 아 니스의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "food_salade_nicoise",
@@ -2088,7 +2088,7 @@ const COURSES = [
               43.6968
             ],
             "cap": "샐러드 니수아즈(Salade niçoise)",
-            "desc": "위키미디어에서 제공하는 샐러드 니수아즈의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_bulk_149_",
@@ -2096,7 +2096,7 @@ const COURSES = [
               7.2673,
               43.701
             ],
-            "cap": "바타이유 드 플뢰르. 2020-02-22 14-43-52(Bataille de fleurs. 2020-02-22 14-43-52)",
+            "cap": "바타이유 드 플뢰르. (Bataille de fleurs. 2020-02-22 14-43-52)",
             "desc": "과거와 현재가 공존하는 니스 특유의 독특한 분위기를 자아냅니다."
           }
         ]
@@ -2146,7 +2146,7 @@ const COURSES = [
               7.4218,
               43.7315
             ],
-            "cap": "모나코 — 항구와 언덕의 도시",
+            "cap": "몬테카를로(Monte Carlo)",
             "desc": "면적 2km²로 바티칸 다음으로 작은 나라다. 그리말디 왕가가 13세기부터 통치하고 있고, 왕궁 앞 근위병 교대식이 매일 11시 55분에 있다. F1 그랑프리 서킷이 실제 시내 도로라 헤어핀 커브와 터널을 걸어볼 수 있다."
           },
           {
@@ -2155,8 +2155,8 @@ const COURSES = [
               7.4272,
               43.7402
             ],
-            "cap": "카페 드 파리 몬테카를로 - 파노라마(Cafe de Paris Monte-Carlo - panoramio)",
-            "desc": "위키미디어에서 제공하는 카페 드 파리 몬테카를로 - 파노라마의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "cap": "카페 드 파리 몬테카를로(Cafe de Paris Monte-Carlo)",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "monte_carlo_casino",
@@ -2164,7 +2164,7 @@ const COURSES = [
               7.428,
               43.7396
             ],
-            "cap": "몬테카를로 카지노",
+            "cap": "카지노 드 몬테카를로, 모나코, 2016 06 23, DD(Casino de Montecarlo, Mónaco, 2016 06 23, DD)",
             "desc": "1863년 문을 연 카지노로 파리 오페라 가르니에를 설계한 샤를 가르니에의 작품이다. 입장에 복장 규정과 신분 확인이 있고 유료다. 모나코 국민은 출입이 금지되어 있다."
           },
           {
@@ -2174,7 +2174,7 @@ const COURSES = [
               43.6955
             ],
             "cap": "밀라노 두오모 아래 젤라또(Gelato under the Duomo in Milan)",
-            "desc": "위키미디어에서 제공하는 밀라노 두오모 아래 젤라또의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_smart_food_10080",
@@ -2182,8 +2182,8 @@ const COURSES = [
               7.4253,
               43.7374
             ],
-            "cap": "6가지 음식, 파스타, 타쿠이노 사니타티스, 카사나텐세 4182.(6-alimenti, pasta,Taccuino Sanitatis, Casanatense 4182.)",
-            "desc": "위키미디어에서 제공하는 6가지 음식, 파스타, 타쿠이노 사니타티스, 카사나텐세 4182.의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "cap": "6가지 반찬, 파스타, 타쿠이노 사니타티스, 카사나트(6 alimenti, pasta,Taccuino Sanitatis, Casanat)",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_bulk_154_",
@@ -2192,7 +2192,7 @@ const COURSES = [
               43.7295
             ],
             "cap": "카페 드 파리, 몬테카를로 - 에스프레소(Café de Paris, Monte Carlo - expresso)",
-            "desc": "위키미디어에서 제공하는 카페 드 파리, 몬테카를로 - 에스프레소의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           }
         ]
       },
@@ -2254,7 +2254,7 @@ const COURSES = [
               11.2531,
               43.768
             ],
-            "cap": "폰테 베키오",
+            "cap": "폰테 알레 그라치에(Ponte alle Grazie)의 베키오 다리(Ponte Vecchio)(Ponte Vecchio from Ponte alle Grazie)",
             "desc": "아르노 강 위에 상점이 얹힌 중세 다리다. 원래 정육점이 있었는데 냄새 때문에 메디치 가문이 금세공점으로 바꿨다. 위층의 바사리 회랑은 메디치가 사람들이 시민과 마주치지 않고 이동하던 비밀 통로다."
           },
           {
@@ -2263,7 +2263,7 @@ const COURSES = [
               11.256,
               43.7731
             ],
-            "cap": "두오모(Duomo)",
+            "cap": "Cattedrale di Santa Maria del Fiore Il Duomo(Cattedrale di Santa Maria del Fiore Il Duomo)",
             "desc": "브루넬레스키의 돔은 당시 기술로 불가능하다고 여겨진 규모였고, 지지대 없이 벽돌을 나선형으로 쌓아 완성했다. 지금도 세계 최대의 조적조 돔이다. 옆의 조토 종탑과 대비되는 흰·초록·분홍 대리석 외장이 특징이다."
           },
           {
@@ -2273,7 +2273,7 @@ const COURSES = [
               43.7748
             ],
             "cap": "미켈란젤로의 '다비드' JBU05('David' by Michelangelo JBU05)",
-            "desc": "위키미디어에서 제공하는 미켈란젤로의 '다비드' JBU05의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           }
         ]
       },
@@ -2326,7 +2326,7 @@ const COURSES = [
               10.3966,
               43.7232
             ],
-            "cap": "피사의 사탑(Pisa)",
+            "cap": "두오모와 피사의 사탑 일출(The Duomo and Tower of Pisa at sunrise)",
             "desc": "1173년 착공 직후부터 지반이 내려앉아 기울기 시작했다. 공사가 100년 가까이 중단된 덕분에 지반이 다져져 무너지지 않았다. 1990년대 보강 공사로 기울기를 약 4도로 줄였다. 294개 나선 계단을 오르는데 기울기 때문에 방향에 따라 체감이 다르다."
           },
           {
@@ -2336,7 +2336,7 @@ const COURSES = [
               43.7232
             ],
             "cap": "미리보기 이미지(thumbnail)",
-            "desc": "위키미디어에서 제공하는 미리보기 이미지의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "pisa_baptistery",
@@ -2344,7 +2344,7 @@ const COURSES = [
               10.3937,
               43.7234
             ],
-            "cap": "피사의 사탑(Pisa)",
+            "cap": "이탈리아 피사의 세례당(The Baptistery in Pisa Italy)",
             "desc": "이탈리아에서 가장 큰 세례당이다. 내부 음향이 특이해서 관리인이 정해진 시각에 소리를 내어 10초 넘게 이어지는 울림을 들려준다. 이 순간이 세례당 관람의 핵심이다."
           },
           {
@@ -2353,7 +2353,7 @@ const COURSES = [
               10.401,
               43.716
             ],
-            "cap": "피사의 사탑(Pisa)",
+            "cap": "피사 아르노 파노라마(Pisa Arno Panorama)",
             "desc": "관광객이 몰리는 기적의 광장과 달리 강변은 조용하다. 파스텔색 건물이 강을 따라 이어지고, 작은 고딕 성당 산타 마리아 델라 스피나가 강가에 붙어 있다."
           },
           {
@@ -2416,7 +2416,7 @@ const COURSES = [
               9.7285,
               44.1058
             ],
-            "cap": "마나롤라 — 절벽 위 파스텔 마을",
+            "cap": "마나롤라 NW 친퀘테레 Sep23 A7C 07233(Manarola NW Cinque Terre Sep23 A7C 07233)",
             "desc": "친퀘테레 다섯 마을 중 가장 사진이 많이 찍히는 곳이다. 집들이 절벽을 따라 계단식으로 붙어 있고, 마을 남쪽 산책로에서 전체가 한눈에 들어온다. 일몰 무렵 서향이라 빛이 좋다."
           },
           {
@@ -2425,7 +2425,7 @@ const COURSES = [
               9.6845,
               44.135
             ],
-            "cap": "베르나차 항구",
+            "cap": "베르나차와 바다, 이탈리아 친퀘테레(Vernazza and the sea, Cinque Terre, Italy)",
             "desc": "천연 항구를 가진 유일한 마을이다. 11세기 도리아 성이 바다 쪽으로 튀어나와 있고, 항구 앞 작은 광장에 식당들이 늘어서 있다. 2011년 대홍수로 마을이 진흙에 잠겼다가 복구된 곳이기도 하다."
           },
           {
@@ -2435,7 +2435,7 @@ const COURSES = [
               44.1163
             ],
             "cap": "집에서 만든 파스타가 더 맛있어요(A better homemade pasta)",
-            "desc": "위키미디어에서 제공하는 집에서 만든 파스타가 더 맛있어요의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_bulk_174_",
@@ -2443,8 +2443,8 @@ const COURSES = [
               9.7217,
               44.1022
             ],
-            "cap": "2019-05-01 콘트롤로 투리스티 도착 비나리 라 스페치아 10(2019-05-01 Controllo turisti arrivo binari La Spezia 10)",
-            "desc": "위키미디어에서 제공하는 2019-05-01 콘트롤로 투리스티 도착 비나리 라 스페치아 10의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "cap": "2019 05 01 Controllo turisti arrivo binari La(2019 05 01 Controllo turisti arrivo binari La)",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_bulk_175_",
@@ -2452,8 +2452,8 @@ const COURSES = [
               9.7326,
               44.1013
             ],
-            "cap": "친퀘테레 - 24(Cinque Terre  - 24)",
-            "desc": "위키미디어에서 제공하는 친퀘테레 - 24의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "cap": "친퀘테레 - 24(Cinque Terre - 24)",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           }
         ]
       },
@@ -2507,7 +2507,7 @@ const COURSES = [
               11.2553,
               43.7678
             ],
-            "cap": "우피치 미술관(Uffizi)",
+            "cap": "이탈리아 피렌체(Florence, Italy)",
             "desc": "메디치 가문의 집무동(uffizi = 사무실)이 그대로 미술관이 된 곳이다. 보티첼리 방이 정점이고, 복도 창으로 아르노 강과 폰테 베키오가 내려다보인다. 관람 동선이 한 방향이라 되돌아가기 어려우니 순서를 미리 정해두면 좋다."
           },
           {
@@ -2516,7 +2516,7 @@ const COURSES = [
               12.4768,
               41.8986
             ],
-            "cap": "판테온(Pantheon)",
+            "cap": "판테온 - 오른쪽 측면과 전면(Pantheon - Right side and front)",
             "desc": "서기 126년에 완성된 신전으로, 지름 43.3m의 돔은 지금도 세계 최대 무근콘크리트 돔이다. 돔 꼭대기의 오쿨루스는 유일한 광원이자 실제로 뚫려 있어서 비가 오면 안으로 들이친다. 바닥에 배수 구멍이 있다."
           },
           {
@@ -2525,8 +2525,8 @@ const COURSES = [
               12.4731,
               41.8992
             ],
-            "cap": "밤의 나보나 광장(Piazza Navona  at night)",
-            "desc": "위키미디어에서 제공하는 밤의 나보나 광장의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "cap": "밤의 나보나 광장(Piazza Navona at night)",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           }
         ]
       },
@@ -2558,7 +2558,7 @@ const COURSES = [
               12.4922,
               41.8902
             ],
-            "cap": "콜로세움(Colosseum)",
+            "cap": "콜로세오 2020(Colosseo 2020)",
             "desc": "서기 80년에 완공된 원형경기장이다. 지하의 히포게움은 검투사와 맹수를 무대로 올리던 승강 장치가 있던 곳으로, 별도 예약을 하면 내려가 볼 수 있다. 외벽 한쪽이 무너진 것은 지진과 석재 반출 때문이다."
           },
           {
@@ -2567,7 +2567,7 @@ const COURSES = [
               12.4833,
               41.9009
             ],
-            "cap": "트레비 분수(Trevi)",
+            "cap": "트레비 분수 - 로마(Trevi Fountain - Roma)",
             "desc": "기원전 19년에 만들어진 수도교 아쿠아 비르고의 종착점에 세워진 바로크 분수다. 지금도 그 수도교에서 물이 온다. 던져진 동전은 매일 수거해 자선단체에 기부된다."
           },
           {
@@ -2577,7 +2577,7 @@ const COURSES = [
               41.8887
             ],
             "cap": "카시오 에 페페(Cacio e pepe)",
-            "desc": "위키미디어에서 제공하는 카시오 에 페페의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_bulk_188_",
@@ -2586,7 +2586,7 @@ const COURSES = [
               41.8961
             ],
             "cap": "도리아 팜필리 6376(Doria Pamphili 6376)",
-            "desc": "위키미디어에서 제공하는 도리아 팜필리 6376의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_bulk_190_",
@@ -2595,7 +2595,7 @@ const COURSES = [
               41.8965
             ],
             "cap": "빈 나보나 광장(Empty Piazza Navona)",
-            "desc": "위키미디어에서 제공하는 빈 나보나 광장의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           }
         ]
       },
@@ -2627,7 +2627,7 @@ const COURSES = [
               12.4534,
               41.9065
             ],
-            "cap": "바티칸 박물관(Vatican)",
+            "cap": "바티칸 박물관 나선형 계단 올려다보기 2(Vatican Museums Spiral Staircase Looking Up 2)",
             "desc": "1932년 주세페 모모가 설계한 이중 나선 계단이다. 올라가는 사람과 내려가는 사람이 마주치지 않도록 두 개의 나선이 겹쳐 있다. 박물관 출구 쪽에 있어 관람의 마지막에 만나게 된다."
           },
           {
@@ -2636,7 +2636,7 @@ const COURSES = [
               12.4545,
               41.9029
             ],
-            "cap": "시스티나 예배당",
+            "cap": "시스티나-인테르노(Sistina-interno)",
             "desc": "미켈란젤로가 1508~1512년에 천장을, 20여 년 뒤에 제단 벽의 「최후의 심판」을 그렸다. 교황 선출 콘클라베가 열리는 곳이기도 하다. 내부에서는 사진과 대화가 금지되며 경비원이 수시로 정숙을 요청한다."
           },
           {
@@ -2646,7 +2646,7 @@ const COURSES = [
               41.9062
             ],
             "cap": "식량농업기구 본부 2008(Food and Agriculture Organization HQ 2008)",
-            "desc": "위키미디어에서 제공하는 식량농업기구 본부 2008의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           }
         ]
       },
@@ -2700,7 +2700,7 @@ const COURSES = [
               14.4989,
               40.7497
             ],
-            "cap": "폼페이 유적",
+            "cap": "폼페이와 베수비오 산의 항공 이미지(Aerial image of Pompeii and Mount Vesuvius)",
             "desc": "서기 79년 베수비오 화산 폭발로 6m 두께의 화산재에 덮여 그대로 보존된 도시다. 포룸과 원형극장, 목욕탕, 빵집의 맷돌까지 남아 있고, 화산재 공동에 석고를 부어 만든 희생자 주형도 전시되어 있다."
           },
           {
@@ -2709,7 +2709,7 @@ const COURSES = [
               14.4845,
               40.6288
             ],
-            "cap": "포지타노 — 절벽 마을",
+            "cap": "포지타노 일몰(Positano Sunset)",
             "desc": "아말피 해안에서 가장 유명한 마을이다. 파스텔색 집들이 절벽에 계단식으로 붙어 있고, 마을 전체가 사실상 계단으로 연결된다. 산타 마리아 아순타 성당의 마욜리카 타일 돔이 마을의 중심 표지다."
           },
           {
@@ -2719,7 +2719,7 @@ const COURSES = [
               40.6285
             ],
             "cap": "직접 만든 리몬첼로(Homemade limoncello)",
-            "desc": "위키미디어에서 제공하는 직접 만든 리몬첼로의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           }
         ]
       },
@@ -2751,7 +2751,7 @@ const COURSES = [
               14.6033,
               40.6349
             ],
-            "cap": "아말피 대성당",
+            "cap": "아말피 바다 전망 이탈리아(Amalfi sea view Italy)",
             "desc": "9세기에 세워져 여러 시대 양식이 겹친 성당이다. 62개의 계단 위에 정면이 서 있고, 아라비아·노르만 양식의 줄무늬 파사드가 특징이다. 옆의 「천국의 회랑」은 아치가 교차하는 아랍풍 안뜰이다."
           },
           {
@@ -2760,7 +2760,7 @@ const COURSES = [
               14.6119,
               40.6494
             ],
-            "cap": "라벨로 — 무한의 테라스",
+            "cap": "라벨로 해안선(Ravello-coastline)",
             "desc": "빌라 침브로네 정원 끝의 테라스로, 대리석 흉상들이 늘어선 난간 너머로 해안이 트인다. 바그너가 「파르지팔」의 영감을 얻은 빌라 루폴로도 같은 마을에 있고 여름에는 야외 음악제가 열린다."
           },
           {
@@ -2769,7 +2769,7 @@ const COURSES = [
               14.603,
               40.6345
             ],
-            "cap": "델리치아 알 리모네 — 파스티체리아 판사",
+            "cap": "델리지아 알 리몬(Delizia al limone)",
             "desc": "레몬 크림을 채운 돔 모양 스펀지 케이크로 아말피 해안의 대표 디저트다. 아말피 대성당 계단 앞의 파스티체리아 판사(1830년 개업)가 이 지역에서 가장 오래된 제과점이며, 광장 테이블에 앉아 성당을 보며 먹을 수 있다."
           }
         ]
@@ -2820,7 +2820,7 @@ const COURSES = [
               14.254,
               40.849
             ],
-            "cap": "스파카나폴리",
+            "cap": "나폴리 마스키오 안조이노 202209302342 3(Napoli Maschio Angioino 202209302342 3)",
             "desc": "구시가지를 동서로 가르는 직선 골목으로, 고대 그리스·로마 시대 도로망이 그대로 남은 것이다. 양옆으로 성당과 공방, 노점이 빽빽하게 이어지고 위층 발코니에는 빨래가 걸려 있다."
           },
           {
@@ -2829,8 +2829,8 @@ const COURSES = [
               14.2617,
               40.8497
             ],
-            "cap": "트라피카의 나폴리 피자(Neapolitan pizza at Trappica)",
-            "desc": "위키미디어에서 제공하는 트라피카의 나폴리 피자의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "cap": "Trappica의 나폴리 피자(Neapolitan pizza at Trappica)",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "r_sfogliatella",
@@ -2839,7 +2839,7 @@ const COURSES = [
               40.85
             ],
             "cap": "나폴리에 진열된 페이스트리(Pastries on display in Naples)",
-            "desc": "위키미디어에서 제공하는 나폴리에 진열된 페이스트리의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_bulk_197_",
@@ -2856,8 +2856,8 @@ const COURSES = [
               14.267,
               40.852
             ],
-            "cap": "콜로네디오스쿠리나폴리(ColonneDioscuriNapoli)",
-            "desc": "위키미디어에서 제공하는 콜로네디오스쿠리나폴리의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "cap": "ColonneDioscuri나폴리(ColonneDioscuriNapoli)",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_bulk_199_",
@@ -2866,7 +2866,7 @@ const COURSES = [
               40.8606
             ],
             "cap": "나폴리의 유람선(Cruise ship in Naples)",
-            "desc": "위키미디어에서 제공하는 나폴리의 유람선의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           }
         ]
       },
@@ -2899,7 +2899,7 @@ const COURSES = [
               40.8371
             ],
             "cap": "그란 카페 감브리누스 - 나폴리(Gran Caffè Gambrinus – Naples)",
-            "desc": "위키미디어에서 제공하는 그란 카페 감브리누스 - 나폴리의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "naples",
@@ -2907,7 +2907,7 @@ const COURSES = [
               14.253,
               40.83
             ],
-            "cap": "나폴리 만과 베수비오",
+            "cap": "나폴리 마스키오 안조이노 202209302342 3(Napoli Maschio Angioino 202209302342 3)",
             "desc": "만 건너편으로 베수비오가 정면에 보인다. 산타 루치아 해안이나 카스텔 델로보 근처에서 각도가 가장 좋고, 아침에는 역광이 덜해 화산 능선이 또렷하다."
           },
           {
@@ -2917,7 +2917,7 @@ const COURSES = [
               40.8526
             ],
             "cap": "판타나산타루시아2(FantanaSantaLucia2)",
-            "desc": "위키미디어에서 제공하는 판타나산타루시아2의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_bulk_203_",
@@ -2925,8 +2925,8 @@ const COURSES = [
               14.2756,
               40.8541
             ],
-            "cap": "페르골라, 살바토레 나폴리 취임식 - 포르티치 철도, 1840년(Fergola, Salvatore The Inauguration of the Naples - Portici Railway, 1840)",
-            "desc": "위키미디어에서 제공하는 페르골라, 살바토레 나폴리 취임식 - 포르티치 철도, 1840년의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "cap": "페르골라, 살바토레 나(Na)의 취임식(Fergola, Salvatore The Inauguration of the Na)",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_bulk_207_",
@@ -2935,7 +2935,7 @@ const COURSES = [
               40.8501
             ],
             "cap": "지암바티스타비코동상나폴리(GiambattistaVicoStatueNaples)",
-            "desc": "위키미디어에서 제공하는 지암바티스타비코동상나폴리의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           }
         ]
       }
@@ -2987,7 +2987,7 @@ const COURSES = [
               13.3777,
               52.5163
             ],
-            "cap": "브란덴부르크 문(Brandenburg)",
+            "cap": "Brandenburger Tor가 이상 종료됨(Brandenburger Tor abends)",
             "desc": "1791년에 세워진 개선문으로 냉전 시기에는 장벽 바로 앞 무인지대에 서 있어 아무도 지나갈 수 없었다. 통일 후 통행이 열리면서 분단과 통일을 함께 상징하는 자리가 되었다. 위의 콰드리가는 나폴레옹이 파리로 가져갔다가 반환된 것이다."
           },
           {
@@ -2996,7 +2996,7 @@ const COURSES = [
               13.4136,
               52.5177
             ],
-            "cap": "추어 레츠텐 인스탄츠 — 1621년",
+            "cap": "Zur letzten Instanz 베를린에서 가장 오래된 러닝 대회(Zur letzten Instanz Berlins oldest running re)",
             "desc": "베를린에서 가장 오래된 식당으로 400년 넘게 영업하고 있다. 이름은 '최후의 심급'이라는 뜻인데 근처에 법원이 있어 붙었다. 나폴레옹과 베토벤이 다녀갔다고 전해지며, 타일 난로가 있는 좁은 홀이 그대로 남아 있다."
           },
           {
@@ -3006,7 +3006,7 @@ const COURSES = [
               52.5175
             ],
             "cap": "비엔나 슈니첼(Wiener schnitzel)",
-            "desc": "위키미디어에서 제공하는 비엔나 슈니첼의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_bulk_209_",
@@ -3015,7 +3015,7 @@ const COURSES = [
               52.523
             ],
             "cap": "141227 베를린 돔(141227 Berliner Dom)",
-            "desc": "위키미디어에서 제공하는 141227 베를린 돔의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_bulk_210_",
@@ -3024,7 +3024,7 @@ const COURSES = [
               52.5131
             ],
             "cap": "16-07-04-압플루그-베를린-DSC 0122(16-07-04-Abflug-Berlin-DSC 0122)",
-            "desc": "위키미디어에서 제공하는 16-07-04-압플루그-베를린-DSC 0122의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_bulk_214_",
@@ -3032,8 +3032,8 @@ const COURSES = [
               13.4121,
               52.5247
             ],
-            "cap": "베를린, 미테, 베렌슈트라세, 베를리너 방크 05(Berlin, Mitte, Behrenstrasse, Berliner Bank 05)",
-            "desc": "위키미디어에서 제공하는 베를린, 미테, 베렌슈트라세, 베를리너 방크 05의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "cap": "베를린, Mitte, Behrenstrasse, Berliner Bank 0(Berlin, Mitte, Behrenstrasse, Berliner Bank 0)",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           }
         ]
       },
@@ -3065,7 +3065,7 @@ const COURSES = [
               13.397,
               52.5169
             ],
-            "cap": "박물관 섬",
+            "cap": "베를린 Museumsinsel Fernsehturm(Berlin Museumsinsel Fernsehturm)",
             "desc": "슈프레 강 위 섬에 박물관 다섯 곳이 모인 유네스코 세계유산이다. 페르가몬의 이슈타르 문과 신 박물관의 네페르티티 흉상이 대표작이다. 페르가몬은 대규모 보수 중이라 개관 구역을 미리 확인해야 한다."
           },
           {
@@ -3074,7 +3074,7 @@ const COURSES = [
               13.3789,
               52.5139
             ],
-            "cap": "홀로코스트 메모리얼",
+            "cap": "위의 유럽에서 살해된 유대인 추모비(Memorial to the Murdered Jews of Europeabove)",
             "desc": "크기가 조금씩 다른 2,711개의 콘크리트 기둥이 격자로 서 있다. 가운데로 들어갈수록 바닥이 꺼지고 기둥이 높아져 시야가 막히고 소리가 멀어지도록 설계됐다. 지하 정보관에는 희생자 개개인의 편지와 기록이 전시되어 있다."
           },
           {
@@ -3083,7 +3083,7 @@ const COURSES = [
               13.3904,
               52.5075
             ],
-            "cap": "체크포인트 찰리(Checkpoint Charlie)",
+            "cap": "베를린 - 체크포인트 찰리 1963(Berlin - Checkpoint Charlie 1963)",
             "desc": "동서 베를린을 잇던 연합군 측 검문소다. 1961년 미소 전차가 대치했던 지점이며, 지금 서 있는 초소는 복제품이다."
           },
           {
@@ -3092,7 +3092,7 @@ const COURSES = [
               13.4394,
               52.505
             ],
-            "cap": "이스트 사이드 갤러리",
+            "cap": "베를린 장벽 낙서가 있는 부분(Segment with Graffiti of the Berlin Wall)",
             "desc": "장벽 1.3km 구간에 전 세계 작가들이 그린 벽화가 남아 있다. 브레즈네프와 호네커의 「형제의 키스」가 가장 유명하다."
           },
           {
@@ -3101,8 +3101,8 @@ const COURSES = [
               13.4124,
               52.5406
             ],
-            "cap": "코노프케 임비스 2014의 커리부르스트(Currywurst at Konnopke Imbiss 2014)",
-            "desc": "위키미디어에서 제공하는 코노프케 임비스 2014의 커리부르스트의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "cap": "Konnopke Imbiss 2014의 커리부르스트(Currywurst at Konnopke Imbiss 2014)",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_bulk_218_",
@@ -3110,8 +3110,8 @@ const COURSES = [
               13.3959,
               52.5123
             ],
-            "cap": "베를린-미테 하이츠크라프트베르크-미테 20060605 629(Berlin-mitte heizkraftwerk-mitte 20060605 629)",
-            "desc": "위키미디어에서 제공하는 베를린-미테 하이츠크라프트베르크-미테 20060605 629의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "cap": "베를린 미테 heizkraftwerk 미테 20060605 629(Berlin mitte heizkraftwerk mitte 20060605 629)",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_bulk_220_",
@@ -3119,8 +3119,8 @@ const COURSES = [
               13.4148,
               52.5275
             ],
-            "cap": "베를린 - 노이에 지나고게1(Berlin - Neue Synagoge1)",
-            "desc": "위키미디어에서 제공하는 베를린 - 노이에 지나고게1의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "cap": "베를린 - Neue Synagoge1(Berlin - Neue Synagoge1)",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           }
         ]
       },
@@ -3152,7 +3152,7 @@ const COURSES = [
               13.418,
               52.54
             ],
-            "cap": "프렌츠라우어 베르크",
+            "cap": "Kastanienallee, U Bhf Eberswalder Str, Konnop(Kastanienallee, U Bhf Eberswalder Str, Konnop)",
             "desc": "동독 시절 낡은 채로 남아 있던 19세기 건물들이 통일 후 리모델링되어 카페와 서점이 모인 동네가 되었다. 카스타니엔알레 거리가 중심축이고 일요일에는 마우어파크에서 벼룩시장이 열린다."
           },
           {
@@ -3161,8 +3161,8 @@ const COURSES = [
               13.4118,
               52.539
             ],
-            "cap": "PRATERGARTEN BIER GARTEN ELBERWALDER STRASSE U BAHN 역 베를린 독일 2013년 6월 근처 (9058790131)(PRATERGARTEN BIER GARTEN NEAR TO ELBERWALDER STRASSE U BAHN STATION BERLIN GERMANY JUNE 2013 (9058790131))",
-            "desc": "위키미디어에서 제공하는 PRATERGARTEN BIER GARTEN ELBERWALDER STRASSE U BAHN 역 베를린 독일 2013년 6월 근처의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "cap": "ELBERWALDER 근처의 Pratergarten BIER GARTEN(PRATERGARTEN BIER GARTEN NEAR TO ELBERWALDER)",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_bulk_224_",
@@ -3170,8 +3170,8 @@ const COURSES = [
               13.4134,
               52.5191
             ],
-            "cap": "베를린 - U-반호프 하이델베르거 플라츠 쥐트추강(Berlin - U-Bahnhof Heidelberger Platz Südzugang)",
-            "desc": "위키미디어에서 제공하는 베를린 - U-반호프 하이델베르거 플라츠 쥐트추강의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "cap": "베를린 U 반호프 하이델베르거 플라츠 쥐강(Berlin U Bahnhof Heidelberger Platz Südzugang)",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_bulk_225_",
@@ -3179,8 +3179,8 @@ const COURSES = [
               13.4102,
               52.5258
             ],
-            "cap": "베를린 아들러스호프 포토닉스 센터 2016(Berlin Adlershof Photonics Center 2016)",
-            "desc": "위키미디어에서 제공하는 베를린 아들러스호프 포토닉스 센터 2016의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "cap": "베를린 Adlershof 포토닉스 센터 2016(Berlin Adlershof Photonics Center 2016)",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_bulk_226_",
@@ -3198,7 +3198,7 @@ const COURSES = [
               52.5188
             ],
             "cap": "베를린 엘레판텐토르 09-2017(Berlin Elefantentor 09-2017)",
-            "desc": "위키미디어에서 제공하는 베를린 엘레판텐토르 09-2017의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_bulk_228_",
@@ -3207,7 +3207,7 @@ const COURSES = [
               52.5257
             ],
             "cap": "2013년 베를린 패션위크b(Berlin Fashion Week 2013 b)",
-            "desc": "위키미디어에서 제공하는 2013년 베를린 패션위크b의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           }
         ]
       },
@@ -3257,7 +3257,7 @@ const COURSES = [
               9.9885,
               53.5437
             ],
-            "cap": "미니어처 분더란트",
+            "cap": "미니어처 원더랜드(Miniatur wunderland)",
             "desc": "세계 최대의 모형 철도 박물관으로 선로 길이만 16km가 넘는다. 실제 도시와 공항을 축소 재현했고 15분마다 낮과 밤이 바뀐다. 비행기가 실제로 이륙하는 공항 구역이 압권이라 어른이 더 오래 머문다."
           },
           {
@@ -3267,7 +3267,7 @@ const COURSES = [
               53.546
             ],
             "cap": "피쉬브로첸 01(Fischbroetchen 01)",
-            "desc": "위키미디어에서 제공하는 피쉬브로첸 01의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_bulk_229_",
@@ -3276,7 +3276,7 @@ const COURSES = [
               53.5717
             ],
             "cap": "2013-06-08 하이플라이어 HP L4729(2013-06-08 Highflyer HP L4729)",
-            "desc": "위키미디어에서 제공하는 2013-06-08 하이플라이어 HP L4729의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           }
         ]
       },
@@ -3334,7 +3334,7 @@ const COURSES = [
               6.9583,
               50.9413
             ],
-            "cap": "쾰른 대성당(Cologne)",
+            "cap": "Kölner Dom Westfassade 2022 ohne Gerüst 0968(Kölner Dom Westfassade 2022 ohne Gerüst 0968)",
             "desc": "1248년 착공해 1880년에 완성된 163m 쌍탑의 고딕 성당이다. 동방박사의 유해를 안치한 황금 성유물함이 있고, 게르하르트 리히터가 만든 픽셀 패턴 스테인드글라스가 남쪽 트랜셉트에 있다. 2차 대전 폭격에도 뼈대가 남아 도시의 상징이 되었다."
           },
           {
@@ -3344,7 +3344,7 @@ const COURSES = [
               50.9391
             ],
             "cap": "쾰쉬(Koelsch)",
-            "desc": "위키미디어에서 제공하는 쾰쉬의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_smart_food_10137",
@@ -3352,8 +3352,8 @@ const COURSES = [
               6.9667,
               50.9368
             ],
-            "cap": "6가지 음식, 파스타, 타쿠이노 사니타티스, 카사나텐세 4182.(6-alimenti, pasta,Taccuino Sanitatis, Casanatense 4182.)",
-            "desc": "위키미디어에서 제공하는 6가지 음식, 파스타, 타쿠이노 사니타티스, 카사나텐세 4182.의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "cap": "6가지 반찬, 파스타, 타쿠이노 사니타티스, 카사나트(6 alimenti, pasta,Taccuino Sanitatis, Casanat)",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_bulk_238_",
@@ -3362,7 +3362,7 @@ const COURSES = [
               50.9249
             ],
             "cap": "146 019-5 라인익스프레스인코엘nhbf(146 019-5 Rheinexpressinkoelnhbf)",
-            "desc": "위키미디어에서 제공하는 146 019-5 라인익스프레스인코엘nhbf의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_bulk_239_",
@@ -3370,8 +3370,8 @@ const COURSES = [
               6.9664,
               50.9289
             ],
-            "cap": "1983 09 15~23 오데사에서 쿠바로 보내는 편지봉투(1983 09 15 to 23 Envelope of the Letter from Odessa to Cuba)",
-            "desc": "위키미디어에서 제공하는 1983 09 15~23 오데사에서 쿠바로 보내는 편지봉투의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "cap": "1983 09 15~23 서신봉투(1983 09 15 to 23 Envelope of the Letter from)",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           }
         ]
       },
@@ -3425,7 +3425,7 @@ const COURSES = [
               10.1794,
               49.3752
             ],
-            "cap": "로텐부르크 — 중세 성벽 도시",
+            "cap": "로텐부르크 BW 4(Rothenburg BW 4)",
             "desc": "성벽이 온전히 남아 있어 위를 따라 한 바퀴 걸을 수 있다. 30년 전쟁 이후 경제가 몰락해 개발이 멈춘 덕에 중세 모습이 그대로 보존됐다. 플뢴라인 갈림길이 이 도시의 대표 사진 각도다."
           },
           {
@@ -3435,7 +3435,7 @@ const COURSES = [
               49.3775
             ],
             "cap": "슈니볼게베크(Schneeball-gebaeck)",
-            "desc": "위키미디어에서 제공하는 슈니볼게베크의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_smart_food_10146",
@@ -3444,7 +3444,7 @@ const COURSES = [
               49.3765
             ],
             "cap": "집에서 만든 파스타가 더 맛있어요(A better homemade pasta)",
-            "desc": "위키미디어에서 제공하는 집에서 만든 파스타가 더 맛있어요의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_bulk_249_",
@@ -3507,7 +3507,7 @@ const COURSES = [
               8.715,
               49.4106
             ],
-            "cap": "하이델베르크 성",
+            "cap": "하이델베르그-2726936(Heidelberg-2726936)",
             "desc": "30년 전쟁과 두 차례 낙뢰로 부서진 뒤 복원하지 않아 폐허인 채로 남아 있다. 그 미완성이 오히려 독일 낭만주의의 상징이 되었다. 지하에 22만 리터짜리 세계 최대 와인통이 있다."
           },
           {
@@ -3517,7 +3517,7 @@ const COURSES = [
               50.102
             ],
             "cap": "아펠바인 게립테스 벰벨(Apfelwein Geripptes Bembel)",
-            "desc": "위키미디어에서 제공하는 아펠바인 게립테스 벰벨의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_smart_food_10147",
@@ -3526,7 +3526,7 @@ const COURSES = [
               50.1171
             ],
             "cap": "앱솔루트 브레첼 01(Absolute bretzel 01)",
-            "desc": "위키미디어에서 제공하는 앱솔루트 브레첼 01의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_bulk_252_",
@@ -3534,8 +3534,8 @@ const COURSES = [
               8.683,
               50.1106
             ],
-            "cap": "01-01-2014 - 메세투름 - 무역 박람회 타워 - 프랑크푸르트 - 독일 - 05(01-01-2014 - Messeturm - trade fair tower - Frankfurt- Germany - 05)",
-            "desc": "위키미디어에서 제공하는 01-01-2014 - 메세투름 - 무역 박람회 타워 - 프랑크푸르트 - 독일 - 05의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "cap": "01 01 2014 Messeturm 무역 박람회 타워 Frankfu(01 01 2014 Messeturm trade fair tower Frankfu)",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_bulk_257_",
@@ -3543,8 +3543,8 @@ const COURSES = [
               8.6794,
               50.1017
             ],
-            "cap": "바우슈텔레-호흐피어-ffm001(Baustelle-hochvier-ffm001)",
-            "desc": "위키미디어에서 제공하는 바우슈텔레-호흐피어-ffm001의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "cap": "Baustelle-hochvier-ffm001(Baustelle-hochvier-ffm001)",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           }
         ]
       },
@@ -3576,8 +3576,8 @@ const COURSES = [
               -0.1671,
               51.5227
             ],
-            "cap": "에그 앤 칩스 또는 피시 앤 칩스 - 지오그래프.org.uk - 4060739(Egg and chips or fish and chips - geograph.org.uk - 4060739)",
-            "desc": "위키미디어에서 제공하는 에그 앤 칩스 또는 피시 앤 칩스 - 지오그래프.org.uk - 4060739의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "cap": "에그 앤 칩스 또는 피쉬 앤 칩스(Egg and chips or fish and chips)",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_bulk_259_",
@@ -3585,38 +3585,38 @@ const COURSES = [
               -0.1368,
               51.5084
             ],
-            "cap": "10 다우닝 스트리트. MOD 45155532(잘림)(10 Downing Street. MOD 45155532 (cropped))",
-            "desc": "위키미디어에서 제공하는 10 다우닝 스트리트. MOD 45155532의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "cap": "10 다우닝 스트리트. (10 Downing Street. MOD 45155532)",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_fill_50016",
-            "cap": "16-11-16-Glasgow street scene-RR2 7280 (cropped)",
-            "desc": "위키미디어에서 제공하는 런던 관련 사진입니다."
+            "cap": "16-11-16-글래스고 거리 풍경-RR2 7280(16-11-16-Glasgow street scene-RR2 7280)",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_fill_50017",
-            "cap": "Abbey Rd Studios",
-            "desc": "위키미디어에서 제공하는 런던 관련 사진입니다."
+            "cap": "애비 로드 스튜디오(Abbey Rd Studios)",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_fill_50018",
-            "cap": "Aerial Tower of London",
-            "desc": "위키미디어에서 제공하는 런던 관련 사진입니다."
+            "cap": "런던 에어리얼 타워(Aerial Tower of London)",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_fill_50019",
-            "cap": "Baker Street tube station MMB 19 S Stock",
-            "desc": "위키미디어에서 제공하는 런던 관련 사진입니다."
+            "cap": "베이커 스트리트 지하철역 MMB 19 S Stock(Baker Street tube station MMB 19 S Stock)",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_fill_50020",
-            "cap": "Belgrave Road, Victoria, London - Boris Bikes - Santander Cycles by Elliott Brown",
-            "desc": "위키미디어에서 제공하는 런던 관련 사진입니다."
+            "cap": "벨그레이브 로드, 빅토리아, 런던 보리스 바이크 S(Belgrave Road, Victoria, London Boris Bikes S)",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_fill_50021",
-            "cap": "British Museum from NE 2 (cropped)",
-            "desc": "위키미디어에서 제공하는 런던 관련 사진입니다."
+            "cap": "NE 2의 대영 박물관(British Museum from NE 2)",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           }
         ]
       },
@@ -3657,7 +3657,7 @@ const COURSES = [
               -0.123,
               51.5117
             ],
-            "cap": "코벤트 가든",
+            "cap": "코벤트 가든 인테리어 2006년 5월 자르기(Covent Garden Interior May 2006 crop)",
             "desc": "원래 청과 시장이었다가 상점가로 바뀐 곳이다. 거리 공연자는 오디션을 통과해야 설 수 있어 수준이 높고, 애플 마켓 지하의 오페라 성악가 공연이 유명하다."
           },
           {
@@ -3666,7 +3666,7 @@ const COURSES = [
               -0.0909,
               51.5055
             ],
-            "cap": "기념비",
+            "cap": "버로우 마켓 1의 노점(Stalls at Borough Market 1)",
             "desc": "1,000년 넘는 기록을 가진 런던 최대의 식재료 시장이다. 치즈·굴·초리조롤·커피 노점이 이어지고 시식이 활발하다. 점심시간에는 몹시 붐빈다."
           },
           {
@@ -3680,23 +3680,23 @@ const COURSES = [
           },
           {
             "spot": "auto_fill_50022",
-            "cap": "Broadcasting House 20160816",
-            "desc": "위키미디어에서 제공하는 런던 관련 사진입니다."
+            "cap": "방송사 20160816(Broadcasting House 20160816)",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_fill_50023",
-            "cap": "Canary Wharf.Reza 04",
-            "desc": "위키미디어에서 제공하는 런던 관련 사진입니다."
+            "cap": "카나리 워프.레자 04(Canary Wharf.Reza 04)",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_fill_50024",
-            "cap": "Centre Court Wimbledon 1",
-            "desc": "위키미디어에서 제공하는 런던 관련 사진입니다."
+            "cap": "센터 코트 윔블던 1(Centre Court Wimbledon 1)",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_fill_50025",
-            "cap": "City of London Cemetery, Newham, London England - fox 18",
-            "desc": "위키미디어에서 제공하는 런던 관련 사진입니다."
+            "cap": "런던시 묘지, 뉴엄, 런던 잉글라(City of London Cemetery, Newham, London Engla)",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           }
         ]
       },
@@ -3749,7 +3749,7 @@ const COURSES = [
               -2.3572,
               51.3839
             ],
-            "cap": "풀트니 브리지",
+            "cap": "푸엔테 풀테니(Puente Pulteney), 바스, 잉글라테라, 2014 08 12(Puente Pulteney, Bath, Inglaterra, 2014 08 12)",
             "desc": "다리 양쪽에 상점이 들어선, 세계에 몇 남지 않은 형태의 다리다. 아래의 반원형 둑에서 물이 층지어 떨어지는 풍경과 함께 본다."
           },
           {
@@ -3758,7 +3758,7 @@ const COURSES = [
               -2.3594,
               51.3808
             ],
-            "cap": "기념비",
+            "cap": "Searcys 202의 펌프실 욕조 인테리어(Interior of The Pump Room Bath by Searcys 202)",
             "desc": "로만 배스에 붙어 있는 18세기 연회장으로 지금은 애프터눈 티를 낸다. 실내악 연주가 있고, 온천수를 한 잔 맛볼 수 있는데 미네랄 맛이 강해 호불호가 갈린다."
           }
         ]
@@ -3821,7 +3821,7 @@ const COURSES = [
               -0.1263,
               51.532
             ],
-            "cap": "세인트 판크라스 역",
+            "cap": "세인트 판크라스 기차역 2012-06-23(St Pancras Railway Station 2012-06-23)",
             "desc": "빅토리아 시대 고딕 양식의 역사 건물로, 한때 철거 위기에 몰렸다가 보존 운동으로 살아남았다. 유로스타 출발역이며 역 안의 대형 연인 조각상과 시계 아래가 만남의 장소로 쓰인다."
           },
           {
@@ -3830,7 +3830,7 @@ const COURSES = [
               2.362,
               48.857
             ],
-            "cap": "마레 지구",
+            "cap": "파리 호텔 드 상스 dsc04028(Paris Hotel de Sens dsc04028)",
             "desc": "17세기 귀족 저택이 남아 있는 파리에서 몇 안 되는 옛 구역이다. 오스만 대개조를 피해 좁은 길이 그대로 남았다. 유대인 거리와 갤러리, 편집숍이 섞여 있다."
           },
           {
@@ -3840,32 +3840,32 @@ const COURSES = [
               48.8575
             ],
             "cap": "크루아상 오뵈르(Croissants au beurre)",
-            "desc": "위키미디어에서 제공하는 크루아상 오뵈르의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_fill_50026",
-            "cap": "Arc de Triomphe HDR 2007",
-            "desc": "위키미디어에서 제공하는 파리 관련 사진입니다."
+            "cap": "개선문 HDR 2007(Arc de Triomphe HDR 2007)",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_fill_50027",
-            "cap": "Basilique du Sacré-Cœur de Montmartre, Paris 18e 140223 2",
-            "desc": "위키미디어에서 제공하는 파리 관련 사진입니다."
+            "cap": "바실리크 뒤 사크레 쾨르 드 몽마르트르, 파리(Basilique du Sacré Cœur de Montmartre, Paris)",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_fill_50028",
-            "cap": "Boulevard Périphérique vu depuis Boulevard Auteuil - Paris XVI (FR75) - 2021-08-11 - 3",
-            "desc": "위키미디어에서 제공하는 파리 관련 사진입니다."
+            "cap": "Boulevard Périphérique vu depuis Boulevard Au(Boulevard Périphérique vu depuis Boulevard Au)",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_fill_50029",
-            "cap": "CDG P1020431",
-            "desc": "위키미디어에서 제공하는 파리 관련 사진입니다."
+            "cap": "CDG P1020431(CDG P1020431)",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_fill_50030",
-            "cap": "CFfacadePlacedelOpera",
-            "desc": "위키미디어에서 제공하는 파리 관련 사진입니다."
+            "cap": "CF외관Placedel오페라(CFfacadePlacedelOpera)",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           }
         ]
       },
@@ -3897,7 +3897,7 @@ const COURSES = [
               2.2945,
               48.8584
             ],
-            "cap": "에펠탑(Eiffel)",
+            "cap": "에펠탑 logo.svg(Eiffel Tower logo.svg)",
             "desc": "1889년 만국박람회를 위해 세워졌고 20년 뒤 철거될 예정이었다가 무선 안테나로 쓸모가 생겨 살아남았다. 2층까지는 계단으로 오를 수 있고 꼭대기는 엘리베이터만 가능하다. 철이라 여름과 겨울에 높이가 15cm가량 달라진다."
           },
           {
@@ -3906,7 +3906,7 @@ const COURSES = [
               2.287,
               48.862
             ],
-            "cap": "에펠탑(Eiffel)",
+            "cap": "에펠탑에서 본 트로카데로, 25 S(Trocadéro as seen from the Eiffel Tower, 25 S)",
             "desc": "에펠탑 전체가 정면으로 들어오는 각도라 파리에서 탑을 담는 가장 좋은 자리다. 샤이오 궁의 두 날개 사이 테라스가 명당이고, 이른 아침이 사람이 가장 적다."
           },
           {
@@ -3915,7 +3915,7 @@ const COURSES = [
               2.3376,
               48.8606
             ],
-            "cap": "루브르 박물관(Louvre)",
+            "cap": "루브르 박물관 위키미디어 공용(Louvre Museum Wikimedia Commons)",
             "desc": "요새에서 궁전으로, 다시 미술관이 된 건물이다. 「모나리자」·「사모트라케의 니케」·「밀로의 비너스」가 핵심이며 드농관에 몰려 있다. 유리 피라미드는 1989년 이오 밍 페이가 설계했고 당시에는 격렬한 반대가 있었다."
           },
           {
@@ -3924,7 +3924,7 @@ const COURSES = [
               2.3283,
               48.8654
             ],
-            "cap": "셰 앙젤리나 푸르 르 thé(Chez Angelina pour le thé)",
+            "cap": "Chez Angelina pour le thé(Chez Angelina pour le thé)",
             "desc": "리볼리 거리의 살롱 드 테로, 프루스트와 샤넬이 단골이었다. 대표 메뉴인 '아프리캥'은 컵에 담긴 녹인 초콜릿에 가까울 만큼 진하고, 생크림이 따로 나온다. 몽블랑(밤 크림 케이크)도 이 집에서 시작된 것이다."
           },
           {
@@ -3934,22 +3934,22 @@ const COURSES = [
               48.8639
             ],
             "cap": "바게트 인테리어(Baguette interior)",
-            "desc": "위키미디어에서 제공하는 바게트 인테리어의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_fill_50031",
-            "cap": "Campus Evergreen",
-            "desc": "위키미디어에서 제공하는 파리 관련 사진입니다."
+            "cap": "캠퍼스 에버그린(Campus Evergreen)",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_fill_50032",
-            "cap": "Catacombes De Paris",
-            "desc": "위키미디어에서 제공하는 파리 관련 사진입니다."
+            "cap": "카타콤브 드 파리(Catacombes De Paris)",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_fill_50033",
-            "cap": "Chapelle Sainte-Ursule de la Sorbonne, Paris 001",
-            "desc": "위키미디어에서 제공하는 파리 관련 사진입니다."
+            "cap": "샤펠 생트 우르술 드 라 소르본, 파리(Chapelle Sainte Ursule de la Sorbonne, Paris)",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           }
         ]
       },
@@ -3998,7 +3998,7 @@ const COURSES = [
               2.12,
               48.8044
             ],
-            "cap": "베르사유 궁전(Versailles)",
+            "cap": "Vue aérienne du domaine de Versailles par Tou(Vue aérienne du domaine de Versailles par Tou)",
             "desc": "루이 14세가 사냥용 별장을 확장해 만든 절대왕정의 상징이다. 귀족들을 궁에 상주시켜 통제하는 장치이기도 했다. 화요일 휴관이며 시간 예약이 필수다."
           },
           {
@@ -4007,7 +4007,7 @@ const COURSES = [
               2.121,
               48.8052
             ],
-            "cap": "베르사유 궁전(Versailles)",
+            "cap": "샤토 베르사유 갤러리 데 글라스(Chateau Versailles Galerie des Glaces)",
             "desc": "길이 73m 회랑에 357장의 거울이 정원 쪽 17개 창을 마주 본다. 당시 거울은 베네치아가 독점하던 초고가 사치품이라 이 방 자체가 국력의 과시였다. 1919년 베르사유 조약이 여기서 조인됐다."
           },
           {
@@ -4016,7 +4016,7 @@ const COURSES = [
               2.3431,
               48.8867
             ],
-            "cap": "사크레쾨르 성당",
+            "cap": "르 사크레 쾨르(Le sacre coeur)",
             "desc": "몽마르트 언덕 꼭대기의 흰 성당으로, 비를 맞으면 하얗게 변하는 석회암으로 지어져 항상 밝다. 계단 앞에서 파리 시내가 트인다."
           }
         ]
@@ -4049,7 +4049,7 @@ const COURSES = [
               2.3266,
               48.86
             ],
-            "cap": "오르세 미술관(Orsay)",
+            "cap": "slaza의 오르세 미술관(Musee d' Orsay by slaza)",
             "desc": "1900년에 지어진 기차역을 미술관으로 개조했다. 대형 역 시계 뒤에서 파리를 내다보는 구도가 유명하다. 루브르가 고전이라면 오르세는 인상주의로, 모네·르누아르·드가와 반 고흐의 「자화상」이 있다."
           },
           {
@@ -4058,28 +4058,28 @@ const COURSES = [
               2.3499,
               48.853
             ],
-            "cap": "노트르담 대성당",
+            "cap": "노트르담 드 파리, 2017년 10월 4일(Notre-Dame de Paris, 4 October 2017)",
             "desc": "1163년에 착공한 고딕 성당으로, 2019년 화재로 첨탑과 지붕이 무너졌다가 복원을 마치고 다시 문을 열었다. 서쪽 정면의 장미창과 괴수 석상(가고일)이 대표적이다."
           },
           {
             "spot": "auto_fill_50034",
-            "cap": "Cinématographe Lumière",
-            "desc": "위키미디어에서 제공하는 파리 관련 사진입니다."
+            "cap": "시네마토그래프 뤼미에르(Cinématographe Lumière)",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_fill_50035",
-            "cap": "Conseil d'Etat Paris WA",
-            "desc": "위키미디어에서 제공하는 파리 관련 사진입니다."
+            "cap": "콩세이데타 파리 WA(Conseil d'Etat Paris WA)",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_fill_50036",
-            "cap": "Eurostar Paris Gare du Nord Station, 8 October 2011",
-            "desc": "위키미디어에서 제공하는 파리 관련 사진입니다."
+            "cap": "유로스타 파리 북역(Gare du Nord) 역, 10월 8일(Eurostar Paris Gare du Nord Station, 8 Octobe)",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_fill_50037",
-            "cap": "Facade of the Panthéon, Paris 24 January 2016",
-            "desc": "위키미디어에서 제공하는 파리 관련 사진입니다."
+            "cap": "판테온의 외관, 파리 2016년 1월 24일(Facade of the Panthéon, Paris 24 January 2016)",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           }
         ]
       },
@@ -4111,7 +4111,7 @@ const COURSES = [
               2.332,
               48.8738
             ],
-            "cap": "갤러리 라파예트 돔",
+            "cap": "갤러리 라파예트 오스만 돔(Galerie Lafayette Haussmann Dome)",
             "desc": "1912년에 만들어진 아르누보 스테인드글라스 돔이 중앙 홀을 덮는다. 쇼핑을 하지 않아도 볼 만하고, 옥상 테라스는 무료이며 오페라 가르니에와 에펠탑이 함께 보인다."
           },
           {
@@ -4120,7 +4120,7 @@ const COURSES = [
               2.34,
               48.886
             ],
-            "cap": "몽마르트 골목",
+            "cap": "노트르담 드 파리에서 본 풍경, 2014년 6월 24일 0(View from Notre Dame de Paris, 24 June 2014 0)",
             "desc": "언덕 위 사크레쾨르 계단은 야경이 좋지만 사람이 많다. 조용한 분위기를 원하면 아래쪽 골목이 낫다. 아직 포도밭이 남아 있고 매년 10월에 수확 축제가 열린다."
           }
         ]
@@ -4216,7 +4216,7 @@ const COURSES = [
               23.729,
               37.972
             ],
-            "cap": "플라카 지구",
+            "cap": "Carrer del barri de Plaka, 아테네(Carrer del barri de Plaka, Atenes)",
             "desc": "아크로폴리스 바로 아래 옛 동네로 좁은 골목과 낮은 흰 건물이 이어진다. 아나피오티카 구역은 19세기에 아나피 섬 출신 석공들이 고향처럼 지어 올린 곳이라 섬마을 분위기가 난다."
           },
           {
@@ -4225,7 +4225,7 @@ const COURSES = [
               23.7257,
               37.9715
             ],
-            "cap": "아크로폴리스(Acropolis)",
+            "cap": "1029 밤 P의 그리스 아테네 아크로폴리스(1029 Acropolis of Athens in Greece at night P)",
             "desc": "밤이 되면 유적 전체에 조명이 들어와 플라카 어디서든 올려다보인다. 루프탑 식당들은 이 각도를 놓고 자리 값이 매겨진다."
           },
           {
@@ -4234,7 +4234,7 @@ const COURSES = [
               23.7345,
               37.976
             ],
-            "cap": "아크로폴리스(Acropolis)",
+            "cap": "Hd 호텔 그란데 브르타뉴 아테네 gb 루프 가르드(Hd hotel grande bretagne athens gb roof garde)",
             "desc": "신타그마 광장의 그란데 브르타뉴 호텔 옥상을 비롯해 아크로폴리스가 정면으로 보이는 루프탑들이 있다. 일몰 30분 전에 자리를 잡으면 낮에서 밤으로 조명이 바뀌는 과정을 다 볼 수 있다. 예약이 사실상 필수다."
           },
           {
@@ -4244,7 +4244,7 @@ const COURSES = [
               37.9722
             ],
             "cap": "호리아티키 샐러드(Horiatiki salad)",
-            "desc": "위키미디어에서 제공하는 호리아티키 샐러드의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           }
         ]
       },
@@ -4276,7 +4276,7 @@ const COURSES = [
               23.7266,
               37.9715
             ],
-            "cap": "파르테논 신전",
+            "cap": "아테네의 파르테논 신전(The Parthenon in Athens)",
             "desc": "기원전 447~432년에 아테나 여신에게 바쳐졌다. 직선처럼 보이는 기둥과 바닥이 실제로는 미세하게 휘어 있는데, 멀리서 곧게 보이도록 착시를 보정한 설계다. 기둥도 가운데가 살짝 볼록하다."
           },
           {
@@ -4285,7 +4285,7 @@ const COURSES = [
               23.7286,
               37.9683
             ],
-            "cap": "아크로폴리스(Acropolis)",
+            "cap": "뉴 아크로폴리스 박물관 내부 1(Interior of the New Acropolis Museum 1)",
             "desc": "유리 바닥 아래로 발굴 중인 고대 주거지가 그대로 보인다. 최상층은 파르테논과 같은 방향·같은 크기로 지어져 조각들이 원래 위치대로 배치되어 있다. 빈자리는 대영박물관이 소장한 부분이다."
           },
           {
@@ -4294,7 +4294,7 @@ const COURSES = [
               23.7222,
               37.9755
             ],
-            "cap": "고대 아고라",
+            "cap": "아고라 - 아테네 GRA1 - 2022-03-26 - 97(Agora - Athènes GRA1 - 2022-03-26 - 97)",
             "desc": "소크라테스가 논쟁하고 시민들이 모이던 광장이다. 헤파이스토스 신전은 그리스에서 가장 잘 보존된 도리아식 신전이며, 아탈로스 스토아는 복원되어 박물관으로 쓰인다."
           },
           {
@@ -4303,7 +4303,7 @@ const COURSES = [
               23.728,
               37.9758
             ],
-            "cap": "수블라키·기로스 — 모나스티라키 골목",
+            "cap": "자이로스코프 C5878(Gyros C5878)",
             "desc": "수블라키는 꼬치구이, 기로스는 회전구이 고기를 피타에 감싼 것이다. 그리스에서는 감자튀김과 차치키를 안에 함께 넣어 말아준다. 모나스티라키 광장 뒤편에 오래된 가게들이 모여 있고 대부분 서서 먹거나 포장이다."
           },
           {
@@ -4312,7 +4312,7 @@ const COURSES = [
               23.743,
               37.9838
             ],
-            "cap": "리카비토스 언덕",
+            "cap": "Λυκαβτός - 리카베투스 산(Λυκαβηττός - Mount Lycabettus)",
             "desc": "해발 277m로 아테네에서 가장 높은 지점이다. 푸니쿨라로 오르며 아크로폴리스와 도시 전체, 맑은 날에는 바다까지 보인다."
           },
           {
@@ -4321,8 +4321,8 @@ const COURSES = [
               23.7267,
               37.9804
             ],
-            "cap": "6가지 음식, 파스타, 타쿠이노 사니타티스, 카사나텐세 4182.(6-alimenti, pasta,Taccuino Sanitatis, Casanatense 4182.)",
-            "desc": "위키미디어에서 제공하는 6가지 음식, 파스타, 타쿠이노 사니타티스, 카사나텐세 4182.의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "cap": "6가지 반찬, 파스타, 타쿠이노 사니타티스, 카사나트(6 alimenti, pasta,Taccuino Sanitatis, Casanat)",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           }
         ]
       },
@@ -4376,7 +4376,7 @@ const COURSES = [
               21.6303,
               39.7217
             ],
-            "cap": "메테오라(Meteora)",
+            "cap": "메테오라 수도원 2(Meteora's monastery 2)",
             "desc": "'공중에 떠 있다'는 뜻의 이름이다. 14세기 수도사들이 세속과 단절하려고 사암 기둥 꼭대기에 지었고, 초기에는 밧줄과 그물, 접이 사다리로만 오르내렸다. 지금은 계단이 놓여 있다."
           },
           {
@@ -4385,7 +4385,7 @@ const COURSES = [
               21.6231,
               39.705
             ],
-            "cap": "칼람바카 마을",
+            "cap": "메테오라(Метеора)",
             "desc": "메테오라 바위 바로 아래 마을로 숙박 거점이다. 마을 어디서든 고개를 들면 수직 암벽이 보인다."
           },
           {
@@ -4394,7 +4394,7 @@ const COURSES = [
               21.625,
               39.706
             ],
-            "cap": "마을 타베르나",
+            "cap": "Therma의 생선 식사(Fish meal in Therma)",
             "desc": "그리스 내륙 산간이라 해산물보다 고기와 콩 요리가 강하다. 클레프티코(양고기 종이 구이)나 야이니아 같은 조림이 이 지역 음식이고, 크실로 화덕에서 구운 빵을 곁들인다. 타베르나는 대체로 가족 운영이라 메뉴판 없이 그날 되는 것을 말해주는 곳도 있다."
           },
           {
@@ -4404,7 +4404,7 @@ const COURSES = [
               39.7215
             ],
             "cap": "집에서 만든 파스타가 더 맛있어요(A better homemade pasta)",
-            "desc": "위키미디어에서 제공하는 집에서 만든 파스타가 더 맛있어요의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           }
         ]
       },
@@ -4436,7 +4436,7 @@ const COURSES = [
               25.4318,
               36.4167
             ],
-            "cap": "산토리니(Santorini)",
+            "cap": "산토리니 피라3 탱고7174(Santorini Fira3 tango7174)",
             "desc": "산토리니의 중심 마을로 절벽 위에 붙어 있다. 칼데라는 3,600년 전 미노아 분화로 섬 한가운데가 무너져 생긴 것이며, 그 폭발이 아틀란티스 전설의 기원이라는 설이 있다."
           }
         ]
@@ -4469,7 +4469,7 @@ const COURSES = [
               25.3756,
               36.4618
             ],
-            "cap": "오이아 — 파란 돔과 흰 마을",
+            "cap": "이아 일몰(Oia sunset)",
             "desc": "섬 북쪽 끝 마을로 산토리니의 대표 이미지가 만들어지는 곳이다. 흰 벽은 햇빛을 반사해 온도를 낮추려는 실용적 이유에서 시작됐다. 세 개의 파란 돔이 겹쳐 보이는 유명한 각도가 마을 북쪽 골목에 있다."
           },
           {
@@ -4478,8 +4478,8 @@ const COURSES = [
               25.376,
               36.461
             ],
-            "cap": "아더마마(아더 마마)의 문어구이(Grilled octopus at Other Mama)",
-            "desc": "위키미디어에서 제공하는 아더마마의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "cap": "아더마마(Other Mama)의 문어구이(Grilled octopus at Other Mama)",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_bulk_304_",
@@ -4487,8 +4487,8 @@ const COURSES = [
               25.4672,
               36.3834
             ],
-            "cap": "산토리니 - 그리스 - 비스타 아에레아 델 프로몬토리오 디 에인션트 티라 - 아고스토 2018(Santorini - Grecia - Vista Aerea del promontorio di Ancient Thira - agosto 2018)",
-            "desc": "위키미디어에서 제공하는 산토리니 - 그리스 - 비스타 아에레아 델 프로몬토리오 디 에인션트 티라 - 아고스토 2018의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "cap": "산토리니 그레시아 비스타 아에레아 델 프로몬토리오(Santorini Grecia Vista Aerea del promontorio)",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           }
         ]
       },
@@ -4521,7 +4521,7 @@ const COURSES = [
               36.39
             ],
             "cap": "산토리니 포도원(Santorini vineyard)",
-            "desc": "위키미디어에서 제공하는 산토리니 포도원의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           }
         ]
       },
@@ -4575,7 +4575,7 @@ const COURSES = [
               25.3255,
               37.4453
             ],
-            "cap": "카토 밀리 풍차",
+            "cap": "2011 디모스 미코누(2011 Dimos Mykonou)",
             "desc": "16세기부터 밀을 빻던 풍차들이 언덕에 나란히 서 있다. 미코노스는 바람이 강해 풍차가 발달했고, 지금은 섬의 상징이 되었다."
           },
           {
@@ -4584,7 +4584,7 @@ const COURSES = [
               25.3245,
               37.446
             ],
-            "cap": "미코노스(Mykonos)",
+            "cap": "리틀 베니스, 코라, 미코노스, 그리스(Little Venice, Chora, Mykonos, Greece)",
             "desc": "바다에 바로 면한 건물들의 발코니가 물 위에 걸쳐 있어 붙은 이름이다. 원래 18세기 선주와 상인들의 집이었고 지금은 1층이 바로 쓰인다. 해질 무렵 이 앞에 앉아 있는 것이 미코노스의 방식이다."
           },
           {
@@ -4593,7 +4593,7 @@ const COURSES = [
               25.3247,
               37.4531
             ],
-            "cap": "미코노스(Mykonos)",
+            "cap": "2011 디모스 미코누(2011 Dimos Mykonou)",
             "desc": "전 세계 여행객들의 발길이 끊이지 않는 미코노스의 상징적인 장소입니다."
           }
         ]
@@ -4626,7 +4626,7 @@ const COURSES = [
               25.386,
               37.41
             ],
-            "cap": "파라다이스 해변",
+            "cap": "2011 디모스 미코누(2011 Dimos Mykonou)",
             "desc": "비치 클럽이 모인 활기찬 해변이다. 조용한 곳을 원하면 플라티스 얄로스나 오르노스가 낫다. 에게해의 물빛이 산토리니의 화산 해변과 또 다르다."
           }
         ]
@@ -4698,8 +4698,8 @@ const COURSES = [
               14.42,
               50.0874
             ],
-            "cap": "프라하 07-2016 구시청사 타워에서 본 전망 이미지3(Prague 07-2016 View from Old Town Hall Tower img3)",
-            "desc": "위키미디어에서 제공하는 프라하 07-2016 구시청사 타워에서 본 전망 이미지3의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "cap": "프라하 2016년 7월 구시청사 타워에서 본 전망(Prague 07 2016 View from Old Town Hall Tower)",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "charles_bridge",
@@ -4707,7 +4707,7 @@ const COURSES = [
               14.4122,
               50.0865
             ],
-            "cap": "카를교(Charles Bridge)",
+            "cap": "Lesser Town Tower의 프라하 07 2016 전망(Prague 07 2016 view from Lesser Town Tower of)",
             "desc": "블타바 강을 가로지르는 중세 석교. 30개의 성인 조각상이 양쪽으로 늘어서 있어 유럽 도시 중 손꼽히는 야경을 만들어낸다."
           },
           {
@@ -4716,8 +4716,8 @@ const COURSES = [
               14.4124,
               50.0849
             ],
-            "cap": "2022-10-15 Václavské námě장í 1(2022-10-15 Václavské náměstí 1)",
-            "desc": "위키미디어에서 제공하는 2022-10-15 Václavské námě장í 1의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "cap": "2022-10-15 Václavské náměstí 1(2022-10-15 Václavské náměstí 1)",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_bulk_3_",
@@ -4725,8 +4725,8 @@ const COURSES = [
               14.4305,
               50.0979
             ],
-            "cap": "아르히카테드라 Świętych 비타, 바츠와바 이 보이치에하 브 프라제 20190816 1333 5260(Archikatedra Świętych Wita, Wacława i Wojciecha w Pradze 20190816 1333 5260)",
-            "desc": "위키미디어에서 제공하는 아르히카테드라 Świętych 비타, 바츠와바 이 보이치에하 브 프라제 20190816 1333 5260의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "cap": "Archikatedra Świętych Wita, Wacława i Wojciec(Archikatedra Świętych Wita, Wacława i Wojciec)",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_bulk_4_",
@@ -4735,7 +4735,7 @@ const COURSES = [
               50.0809
             ],
             "cap": "천문시계(Astronomical Clock)",
-            "desc": "위키미디어에서 제공하는 천문시계의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           }
         ]
       },
@@ -4767,7 +4767,7 @@ const COURSES = [
               14.4004,
               50.0903
             ],
-            "cap": "프라하 성(Prague Castle)",
+            "cap": "Karlův 대부분의 프라하, Staré Město 20170810 007(Karlův most Praha, Staré Město 20170810 007)",
             "desc": "세계에서 가장 큰 고성 단지로 블타바 강 건너편에서 보면 구시가지 스카이라인 전체를 압도하는 장관이 펼쳐진다."
           }
         ]
@@ -4800,7 +4800,7 @@ const COURSES = [
               14.4181,
               50.0808
             ],
-            "cap": "U Fleků 양조장",
+            "cap": "프라그, U Fleků -- 2019 -- 6735(Prag, U Fleků -- 2019 -- 6735)",
             "desc": "1499년 문을 연 체코 최고 역사의 양조장 레스토랑. 자체 생산 흑맥주와 전통 돼지 구이를 현장에서 즐길 수 있다."
           },
           {
@@ -4809,7 +4809,7 @@ const COURSES = [
               14.42,
               50.088
             ],
-            "cap": "U Fleků",
+            "cap": "트르델니크 프라하(Trdelnik Praha)",
             "desc": "[전통 요리] 장작불에 구워내는 체코 전통 간식. 계피 설탕이 코팅된 따뜻한 도넛형 빵으로 프라하 구시가지 어디서나 볼 수 있다."
           },
           {
@@ -4818,7 +4818,7 @@ const COURSES = [
               14.4181,
               50.0808
             ],
-            "cap": "U Fleků",
+            "cap": "필스너 우르켈 맥주잔(Pilsner Urquell beer glass)",
             "desc": "[필스너 우르켈(Pilsner)] 세계 최초의 황금빛 라거 맥주. 1842년 플젠에서 탄생했으며 체코 어느 식당에서도 생맥주로 만날 수 있다."
           }
         ]
@@ -4905,8 +4905,8 @@ const COURSES = [
               16.3817,
               48.2011
             ],
-            "cap": "2011-06-14 10-23-56 오스트리아 니더외스터라이히 피샤멘트 마르크트(2011-06-14 10-23-56 Austria Niederösterreich Fischamend Markt)",
-            "desc": "위키미디어에서 제공하는 2011-06-14 10-23-56 오스트리아 니더외스터라이히 피샤멘트 마르크트의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "cap": "2011 06 14 10 23 56 오스트리아 Niederösterreich(2011 06 14 10 23 56 Austria Niederösterreich)",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_bulk_19_",
@@ -4915,7 +4915,7 @@ const COURSES = [
               48.2056
             ],
             "cap": "57A 안슈츠가세(57A Anschützgasse)",
-            "desc": "위키미디어에서 제공하는 57A 안슈츠가세의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_bulk_20_",
@@ -4923,8 +4923,8 @@ const COURSES = [
               16.3722,
               48.2104
             ],
-            "cap": "62 볼커스베르겐슈트라세(62 Wolkersbergenstraße)",
-            "desc": "위키미디어에서 제공하는 62 볼커스베르겐슈트라세의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "cap": "62 Wolkersbergenstraße(62 Wolkersbergenstraße)",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_bulk_21_",
@@ -4932,8 +4932,8 @@ const COURSES = [
               16.3672,
               48.2019
             ],
-            "cap": "알저그룬트 (Wien) - AKH, Haupteingang(Alsergrund (Wien) - AKH, Haupteingang)",
-            "desc": "위키미디어에서 제공하는 알저그룬트의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "cap": "Alsergrund - AKH, Haupteingang(Alsergrund - AKH, Haupteingang)",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_bulk_23_",
@@ -4942,7 +4942,7 @@ const COURSES = [
               48.2141
             ],
             "cap": "알테 도나우 빈(Alte Donau Wien)",
-            "desc": "위키미디어에서 제공하는 알테 도나우 빈의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_bulk_24_",
@@ -4950,8 +4950,8 @@ const COURSES = [
               16.3783,
               48.2109
             ],
-            "cap": "아스날 헤레스게시히틀리헤스 박물관-DSC 7920w(Arsenal Heeresgeschichtliches Museum-DSC 7920w)",
-            "desc": "위키미디어에서 제공하는 아스날 헤레스게시히틀리헤스 박물관-DSC 7920w의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "cap": "아스날 Heeresgeschichtliches 박물관 DSC 7920(Arsenal Heeresgeschichtliches Museum DSC 7920)",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_bulk_25_",
@@ -4959,8 +4959,8 @@ const COURSES = [
               16.3694,
               48.217
             ],
-            "cap": "바리케이드 바이 데어 우니베르지테트 암 26텐 마이 1848 인 빈(Barricade bei der Universität am 26ten Mai 1848 in Wien)",
-            "desc": "위키미디어에서 제공하는 바리케이드 바이 데어 우니베르지테트 암 26텐 마이 1848 인 빈의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "cap": "바리케이드 bei der Universität am 26ten Mai 18(Barricade bei der Universität am 26ten Mai 18)",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           }
         ]
       },
@@ -4992,7 +4992,7 @@ const COURSES = [
               16.38,
               48.192
             ],
-            "cap": "벨베데레 궁전(Belvedere)",
+            "cap": "Palacio Belvedere 비엔나 오스트리아 2020 02 01 DD(Palacio Belvedere Viena Austria 2020 02 01 DD)",
             "desc": "클림트의 황금빛 걸작 «키스» 원화를 소장한 바로크 궁전. 정원에서 바라보는 궁전 정면이 빈에서 가장 인상적인 풍경 중 하나다."
           },
           {
@@ -5001,8 +5001,8 @@ const COURSES = [
               16.364,
               48.2057
             ],
-            "cap": "분데스아르히프 빌트 146-1972-028-14, 안슐루스 Österreich(Bundesarchiv Bild 146-1972-028-14, Anschluss Österreich)",
-            "desc": "위키미디어에서 제공하는 분데스아르히프 빌트 146-1972-028-14, 안슐루스 Österreich의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "cap": "Bundesarchiv Bild 146 1972 028 14, Anschluss(Bundesarchiv Bild 146 1972 028 14, Anschluss)",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_bulk_27_",
@@ -5011,7 +5011,7 @@ const COURSES = [
               48.2154
             ],
             "cap": "비엔나 키노 성(Burg Kino Vienna)",
-            "desc": "위키미디어에서 제공하는 비엔나 키노 성의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_bulk_28_",
@@ -5019,7 +5019,7 @@ const COURSES = [
               16.3723,
               48.2135
             ],
-            "cap": "시티바이크 비엔나, 쇤브루너 브뤼케(Citybike Vienna, Schönbrunner Brücke)",
+            "cap": "시티바이크 비엔나, Schönbrunner Brücke(Citybike Vienna, Schönbrunner Brücke)",
             "desc": "푸른 하늘과 맞닿은 아름다운 스카이라인이 마음까지 탁 트이게 합니다."
           },
           {
@@ -5029,7 +5029,7 @@ const COURSES = [
               48.216
             ],
             "cap": "다스 로미셰 빈(Das roemische Wien)",
-            "desc": "위키미디어에서 제공하는 다스 로미셰 빈의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_bulk_30_",
@@ -5037,8 +5037,8 @@ const COURSES = [
               16.3728,
               48.2103
             ],
-            "cap": "도나우파르크 & ​​도나우투름 비엔나 2024(Donaupark & Donauturm Vienna 2024)",
-            "desc": "위키미디어에서 제공하는 도나우파르크 & ​​도나우투름 비엔나 2024의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "cap": "Donaupark & ​​Donauturm 비엔나 2024(Donaupark & Donauturm Vienna 2024)",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_bulk_31_",
@@ -5046,8 +5046,8 @@ const COURSES = [
               16.3785,
               48.2073
             ],
-            "cap": "도나우슈타트브뤼케 리가르다테 데 라 스타치오 도나우마리나(Donaustadtbrücke rigardate de la stacio Donaumarina)",
-            "desc": "위키미디어에서 제공하는 도나우슈타트브뤼케 리가르다테 데 라 스타치오 도나우마리나의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "cap": "Donaustadtbrücke rigardate de la stacio Donau(Donaustadtbrücke rigardate de la stacio Donau)",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_bulk_32_",
@@ -5064,8 +5064,8 @@ const COURSES = [
               16.3811,
               48.2047
             ],
-            "cap": "플로리드스도르프 - 칼-자이츠-호프(Floridsdorf  - Karl-Seitz-Hof)",
-            "desc": "위키미디어에서 제공하는 플로리드스도르프 - 칼-자이츠-호프의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "cap": "플로리드스도르프 - 칼-자이츠-호프(Floridsdorf - Karl-Seitz-Hof)",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           }
         ]
       },
@@ -5097,7 +5097,7 @@ const COURSES = [
               16.3614,
               48.2034
             ],
-            "cap": "미술사 박물관",
+            "cap": "미술사 박물관 logo.svg(Kunsthistorisches Museum logo.svg)",
             "desc": "합스부르크 왕가의 미술 컬렉션을 소장한 신르네상스 건물. 1891년 개관 이래 유럽 최고 수준의 미술관으로 꼽힌다."
           },
           {
@@ -5107,7 +5107,7 @@ const COURSES = [
               48.2098
             ],
             "cap": "볼트 카페 센트럴 비엔나 빈(Vault Café Central Vienna Wien)",
-            "desc": "위키미디어에서 제공하는 볼트 카페 센트럴 비엔나 빈의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "food_schnitzel",
@@ -5116,7 +5116,7 @@ const COURSES = [
               48.2082
             ],
             "cap": "비엔나 슈니첼(Wiener schnitzel)",
-            "desc": "위키미디어에서 제공하는 비엔나 슈니첼의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "food_sachertorte",
@@ -5125,7 +5125,7 @@ const COURSES = [
               48.203
             ],
             "cap": "자허토르테 DSC03027 리터칭(Sachertorte DSC03027 retouched)",
-            "desc": "위키미디어에서 제공하는 자허토르테 DSC03027 리터칭의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           }
         ]
       },
@@ -5167,7 +5167,7 @@ const COURSES = [
               19.048,
               47.4975
             ],
-            "cap": "세체니 온천(Széchenyi)",
+            "cap": "밤에 부다페스트의 세체니 체인 브리지(Széchenyi Chain Bridge in Budapest at night)",
             "desc": "1849년 완공된 부다와 페스트를 최초로 연결한 현수교. 야간 조명을 받으면 다뉴브 강에 황금빛 반영이 생겨난다."
           },
           {
@@ -5176,8 +5176,8 @@ const COURSES = [
               19.05,
               47.4934
             ],
-            "cap": "부다페스트 헐라주바슈처 바인더 야노슈 레즈카르차(Bp Halaszbastya Binder Janos rezkarca)",
-            "desc": "위키미디어에서 제공하는 부다페스트 헐라주바슈처 바인더 야노슈 레즈카르차의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "cap": "Bp Halaszbastya 바인더 Janos rezkarca(Bp Halaszbastya Binder Janos rezkarca)",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_smart_lm_10274",
@@ -5186,7 +5186,7 @@ const COURSES = [
               47.5009
             ],
             "cap": "부다페스트 국회의사당(Budapest Parliament Building)",
-            "desc": "위키미디어에서 제공하는 부다페스트 국회의사당의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_bulk_335_",
@@ -5194,8 +5194,8 @@ const COURSES = [
               19.0413,
               47.5068
             ],
-            "cap": "14-05-06-부다페스트-랄프알-11(14-05-06-budapest-RalfR-11)",
-            "desc": "위키미디어에서 제공하는 14-05-06-부다페스트-랄프알-11의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "cap": "14-05-06-부다페스트-RalfR-11(14-05-06-budapest-RalfR-11)",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_bulk_336_",
@@ -5203,8 +5203,8 @@ const COURSES = [
               19.0403,
               47.4897
             ],
-            "cap": "17-에시 빌라모스(17-es villamos)",
-            "desc": "위키미디어에서 제공하는 17-에시 빌라모스의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "cap": "17-es 빌라모스(17-es villamos)",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_bulk_339_",
@@ -5213,7 +5213,7 @@ const COURSES = [
               47.5064
             ],
             "cap": "8E 버스(8E busz)",
-            "desc": "위키미디어에서 제공하는 8E 버스의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           }
         ]
       },
@@ -5245,7 +5245,7 @@ const COURSES = [
               19.0452,
               47.5072
             ],
-            "cap": "국회의사당(Parliament)",
+            "cap": "부다페스트-의회-0001(Budapest-Parliament-0001)",
             "desc": "1902년 완공된 고딕 리바이벌 양식의 건물. 다뉴브 강변에서 바라보는 야경이 유럽에서 가장 아름다운 도시 경관 중 하나로 꼽힌다."
           },
           {
@@ -5254,8 +5254,8 @@ const COURSES = [
               19.078,
               47.5146
             ],
-            "cap": "쿠비니 터마시 - 회쇠크 테레 2014.07.07 1(Kubinyi Tamás - Hősök tere 2014.07.07 1)",
-            "desc": "위키미디어에서 제공하는 쿠비니 터마시 - 회쇠크 테레 2014.07.07 1의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "cap": "Kubinyi Tamás - Hòsök tere 2014.07.07 1(Kubinyi Tamás - Hősök tere 2014.07.07 1)",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "food_langos",
@@ -5264,7 +5264,7 @@ const COURSES = [
               47.487
             ],
             "cap": "랑고스 에게르 헝가리(Langos Eger Hungary)",
-            "desc": "위키미디어에서 제공하는 랑고스 에게르 헝가리의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_smart_lm_10279",
@@ -5273,7 +5273,7 @@ const COURSES = [
               47.5017
             ],
             "cap": "부다페스트 팔라멘트 인테리어 9(Budapest parlament interior 9)",
-            "desc": "위키미디어에서 제공하는 부다페스트 팔라멘트 인테리어 9의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_bulk_344_",
@@ -5281,8 +5281,8 @@ const COURSES = [
               19.0478,
               47.4906
             ],
-            "cap": "부다페스트, M1 지하철(kisföldalatti), Andrássy út(Budapest, M1 metró (kisföldalatti), Andrássy út)",
-            "desc": "위키미디어에서 제공하는 부다페스트, M1 지하철의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "cap": "부다페스트, M1 지하철, Andrássy út(Budapest, M1 metró , Andrássy út)",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_bulk_345_",
@@ -5290,8 +5290,8 @@ const COURSES = [
               19.032,
               47.4978
             ],
-            "cap": "부다페스트, 뮈서키 에제템(Budapest, Műszaki Egyetem)",
-            "desc": "위키미디어에서 제공하는 부다페스트, 뮈서키 에제템의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "cap": "부다페스트, Műszaki Egyetem(Budapest, Műszaki Egyetem)",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_bulk_346_",
@@ -5299,8 +5299,8 @@ const COURSES = [
               19.0478,
               47.4964
             ],
-            "cap": "부다페스트, XIX. 코시 카로이 테르, 베케를레텔레프(Budapest, XIX. Kós Károly tér, Wekerletelep)",
-            "desc": "위키미디어에서 제공하는 부다페스트, XIX. 코시 카로이 테르, 베케를레텔레프의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "cap": "부다페스트, XIX. (Budapest, XIX. Kós Károly tér, Wekerletelep)",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_bulk_347_",
@@ -5309,7 +5309,7 @@ const COURSES = [
               47.4953
             ],
             "cap": "부다페스트 미술관 빌딩(Budapest Fine Arts Museum bldg)",
-            "desc": "위키미디어에서 제공하는 부다페스트 미술관 빌딩의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           }
         ]
       },
@@ -5341,8 +5341,8 @@ const COURSES = [
               19.0402,
               47.4979
             ],
-            "cap": "02021 1020 (2) 폴란드산 굴라쉬 수프(02021 1020 (2) Goulash soup of Poland)",
-            "desc": "위키미디어에서 제공하는 02021 1020의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "cap": "02021 1020 (2) Goulash soup of Poland.jpg",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_smart_lm_10283",
@@ -5351,7 +5351,7 @@ const COURSES = [
               47.4904
             ],
             "cap": "부다 도미니크회 교회(Buda Dominican Church)",
-            "desc": "위키미디어에서 제공하는 부다 도미니크회 교회의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_bulk_350_",
@@ -5360,7 +5360,7 @@ const COURSES = [
               47.5064
             ],
             "cap": "부다페스트 세체니 온천 R01(Budapest Széchenyi Baths R01)",
-            "desc": "위키미디어에서 제공하는 부다페스트 세체니 온천 R01의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_bulk_351_",
@@ -5377,8 +5377,8 @@ const COURSES = [
               19.049,
               47.4924
             ],
-            "cap": "부다페스트 센티넬-2, 2020-07-28(Budapest by Sentinel-2, 2020-07-28)",
-            "desc": "위키미디어에서 제공하는 부다페스트 센티넬-2, 2020-07-28의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "cap": "부다페스트 Sentinel-2, 2020-07-28(Budapest by Sentinel-2, 2020-07-28)",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_bulk_353_",
@@ -5386,8 +5386,8 @@ const COURSES = [
               19.0425,
               47.499
             ],
-            "cap": "부다페스트 지하철 헤브 엔(Budapest metro hev en)",
-            "desc": "위키미디어에서 제공하는 부다페스트 지하철 헤브 엔의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "cap": "부다페스트 지하철 hev en(Budapest metro hev en)",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_bulk_354_",
@@ -5396,7 +5396,7 @@ const COURSES = [
               47.491
             ],
             "cap": "2017 FINA 부다페스트의 다뉴브 아레나(Danube Arena in 2017 FINA Budapest)",
-            "desc": "위키미디어에서 제공하는 2017 FINA 부다페스트의 다뉴브 아레나의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           }
         ]
       },
@@ -5428,8 +5428,8 @@ const COURSES = [
               19.0308,
               47.5
             ],
-            "cap": "게르체 összel(Gercse ősszel)",
-            "desc": "위키미디어에서 제공하는 게르체 összel의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "cap": "Gercse összel(Gercse ősszel)",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_bulk_361_",
@@ -5438,7 +5438,7 @@ const COURSES = [
               47.4987
             ],
             "cap": "굴 바밥 투르베(Gül Babab Türbe)",
-            "desc": "위키미디어에서 제공하는 굴 바밥 투르베의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           }
         ]
       }
@@ -5570,7 +5570,7 @@ const COURSES = [
               7.8632,
               46.6863
             ],
-            "cap": "인터라켄 · 알프스의 관문",
+            "cap": "그린델발트 뷰 02(Grindelwald View 02)",
             "desc": "해발 568m의 인터라켄은 툰 호수와 브리엔츠 호수 사이에 자리한 작은 도시다. 아이거, 묀히, 융프라우 삼봉이 마을 위로 솟아 있으며, 스위스 알프스 여행의 최고 거점이다."
           },
           {
@@ -5580,7 +5580,7 @@ const COURSES = [
               46.6835
             ],
             "cap": "풀 치즈 퐁듀 세트 - 스위스산(Full cheese fondue set - in Switzerland)",
-            "desc": "위키미디어에서 제공하는 풀 치즈 퐁듀 세트 - 스위스산의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_bulk_71_",
@@ -5588,7 +5588,7 @@ const COURSES = [
               7.8606,
               46.6924
             ],
-            "cap": "골츠빌-비아둑트 파노라마 미트 인터라켄 임 힌터그룬트 2(Goldswil-Viadukt Panorama mit Interlaken im Hintergrund 2)",
+            "cap": "Goldswil Viadukt Panorama mit Interlaken im H(Goldswil Viadukt Panorama mit Interlaken im H)",
             "desc": "푸른 하늘과 맞닿은 아름다운 스카이라인이 마음까지 탁 트이게 합니다."
           }
         ]
@@ -5642,7 +5642,7 @@ const COURSES = [
               7.9711,
               46.5474
             ],
-            "cap": "융프라우요흐(Jungfrau)",
+            "cap": "스핑크스와 융프라우 - img 06980(Sphinx et Jungfrau - img 06980)",
             "desc": "해발 3,454m의 융프라우요흐는 유럽에서 기차로 갈 수 있는 가장 높은 역이다. 스핑크스 전망대에서 알레치 빙하와 융프라우 정상이 한눈에 들어오며, 맑은 날에는 독일 블랙 포레스트까지 보인다."
           },
           {
@@ -5809,7 +5809,7 @@ const COURSES = [
               11.2531,
               43.768
             ],
-            "cap": "폰테 베키오 · 아르노의 황금 다리",
+            "cap": "폰테 알레 그라치에(Ponte alle Grazie)의 베키오 다리(Ponte Vecchio)(Ponte Vecchio from Ponte alle Grazie)",
             "desc": "1345년 재건된 피렌체의 상징. 보석상과 금세공사 가게들이 다리 위에 늘어서 있으며, 2차 세계대전 때 독일군이 피렌체에서 유일하게 파괴하지 않은 다리다. 석양에 황금빛으로 물드는 아르노 강이 특히 아름답다."
           },
           {
@@ -5819,7 +5819,7 @@ const COURSES = [
               43.7632
             ],
             "cap": "미켈란젤로의 '다비드' JBU05('David' by Michelangelo JBU05)",
-            "desc": "위키미디어에서 제공하는 미켈란젤로의 '다비드' JBU05의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           }
         ]
       },
@@ -5883,7 +5883,7 @@ const COURSES = [
               10.3966,
               43.7228
             ],
-            "cap": "피사의 사탑(Pisa)",
+            "cap": "두오모와 피사의 사탑 일출(The Duomo and Tower of Pisa at sunrise)",
             "desc": "12세기에 착공해 200년에 걸쳐 지어졌으며, 지반 침하로 기울기 시작했다. 1990년대 복원 공사로 현재 기울기는 안정적으로 유지 중. 등반 시 56m 높이에서 피사 시내와 리구리아해가 보인다."
           },
           {
@@ -5893,7 +5893,7 @@ const COURSES = [
               43.723
             ],
             "cap": "미리보기 이미지(thumbnail)",
-            "desc": "위키미디어에서 제공하는 미리보기 이미지의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "uffizi",
@@ -5901,7 +5901,7 @@ const COURSES = [
               11.2551,
               43.7678
             ],
-            "cap": "우피치 미술관(Uffizi)",
+            "cap": "이탈리아 피렌체(Florence, Italy)",
             "desc": "메디치 가문이 수집한 르네상스 최대 컬렉션. 보티첼리의 비너스의 탄생과 봄, 레오나르도 다빈치의 수태고지, 미켈란젤로의 성가족 등 교과서에서 보던 원작들이 한 건물 안에 있다."
           },
           {
@@ -5951,7 +5951,7 @@ const COURSES = [
               12.4922,
               41.8902
             ],
-            "cap": "콜로세움(Colosseum)",
+            "cap": "콜로세오 2020(Colosseo 2020)",
             "desc": "베스파시아누스 황제가 서기 72년 착공해 80년 완공한 플라비우스 원형 경기장. 약 5만 명을 수용했으며 검투사 경기, 맹수 사냥, 모의 해전이 열렸다. 외벽의 3층 아케이드 각 층마다 다른 그리스 주식(도리아, 이오니아, 코린트)이 적용되어 있다."
           },
           {
@@ -5960,7 +5960,7 @@ const COURSES = [
               12.4833,
               41.9009
             ],
-            "cap": "트레비 분수(Trevi)",
+            "cap": "트레비 분수 - 로마(Trevi Fountain - Roma)",
             "desc": "1762년 완공된 바로크 양식의 분수로 높이 26m, 폭 49m. 바다의 신 넵튠이 조개 수레를 몰고 있는 장면을 묘사한다. 동전을 뒤로 던지면 로마에 다시 온다는 전설이 있어 매일 수천 개의 동전이 수거된다."
           },
           {
@@ -6000,7 +6000,7 @@ const COURSES = [
               12.4545,
               41.9029
             ],
-            "cap": "시스티나 예배당 · 미켈란젤로",
+            "cap": "시스티나-인테르노(Sistina-interno)",
             "desc": "1508~1512년 미켈란젤로가 홀로 그린 천장화. 창세기 9개 장면에 343명의 인물이 등장하며 1,100㎡를 가득 채운다. 하느님과 아담의 손이 맞닿는 순간인 아담의 창조는 인류 미술사의 정점으로 꼽힌다."
           },
           {
@@ -6009,7 +6009,7 @@ const COURSES = [
               12.4769,
               41.8986
             ],
-            "cap": "판테온(Pantheon)",
+            "cap": "판테온 - 오른쪽 측면과 전면(Pantheon - Right side and front)",
             "desc": "서기 125년경 하드리아누스 황제가 재건한 로마 최고의 건축물. 직경 43.3m의 돔 꼭대기에 뚫린 오쿨루스(지름 8.7m)가 빛의 통로이자 배수구 역할을 한다. 르네상스 거장 라파엘로가 여기 잠들어 있다."
           },
           {
@@ -6019,7 +6019,7 @@ const COURSES = [
               41.8973
             ],
             "cap": "전화 지원(Supplì al telefono)",
-            "desc": "위키미디어에서 제공하는 전화 지원의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "food_cacio_pepe",
@@ -6028,7 +6028,7 @@ const COURSES = [
               41.8951
             ],
             "cap": "카시오 에 페페(Cacio e pepe)",
-            "desc": "위키미디어에서 제공하는 카시오 에 페페의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_bulk_185_",
@@ -6036,8 +6036,8 @@ const COURSES = [
               12.4985,
               41.9023
             ],
-            "cap": "첼레브라치오네 델 2777 나탈레 디 로마 - 피에타스 Comunità 젠틸레 2(Celebrazione del 2777 Natale di Roma - Pietas Comunità Gentile 2)",
-            "desc": "위키미디어에서 제공하는 첼레브라치오네 델 2777 나탈레 디 로마 - 피에타스 Comunità 젠틸레 2의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "cap": "Celebrazione del 2777 나탈레 디 로마 피에타스 C(Celebrazione del 2777 Natale di Roma Pietas C)",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           }
         ]
       },
@@ -6068,7 +6068,7 @@ const COURSES = [
               41.9028
             ],
             "cap": "에스프레소 커피 01(Espresso Coffee 01)",
-            "desc": "위키미디어에서 제공하는 에스프레소 커피 01의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_bulk_190_",
@@ -6077,7 +6077,7 @@ const COURSES = [
               41.8948
             ],
             "cap": "빈 나보나 광장(Empty Piazza Navona)",
-            "desc": "위키미디어에서 제공하는 빈 나보나 광장의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_bulk_193_",
@@ -6086,7 +6086,7 @@ const COURSES = [
               41.893
             ],
             "cap": "식량농업기구 본부 2008(Food and Agriculture Organization HQ 2008)",
-            "desc": "위키미디어에서 제공하는 식량농업기구 본부 2008의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           }
         ]
       }
@@ -6224,7 +6224,7 @@ const COURSES = [
               2.3431,
               48.8867
             ],
-            "cap": "몽마르트르(Montmartre)",
+            "cap": "르 사크레 쾨르(Le sacre coeur)",
             "desc": "1875년 착공, 1914년 봉헌된 로마-비잔틴 양식 성당. 빗물과 반응해 하얗게 변하는 트라베르탱 석회암으로 지었다. Batignolles 호텔에서 도보 15분 거리로 하루의 시작을 이곳 계단에서 파리 전경과 함께 연다. 입장 무료."
           },
           {
@@ -6233,7 +6233,7 @@ const COURSES = [
               2.3266,
               48.86
             ],
-            "cap": "오르세 미술관(Orsay)",
+            "cap": "slaza의 오르세 미술관(Musee d' Orsay by slaza)",
             "desc": "1900년 파리 만국박람회를 위해 지어진 기차역을 미술관으로 개조했다. 대형 역 시계 뒤에서 센강을 내다보는 구도가 오르세 최고의 포토존이다. 루브르가 고전이라면 오르세는 인상파 — 모네·르누아르·드가와 반 고흐의 자화상이 같은 건물에 있다. 월요일 휴관."
           },
           {
@@ -6242,7 +6242,7 @@ const COURSES = [
               2.287,
               48.862
             ],
-            "cap": "에펠탑(Eiffel)",
+            "cap": "에펠탑에서 본 트로카데로, 25 S(Trocadéro as seen from the Eiffel Tower, 25 S)",
             "desc": "샤이오 궁의 두 날개 사이 테라스가 에펠탑 전체를 정면으로 담는 최고의 자리다. 계단 분수 수조에 탑이 반사되는 구도도 놓치지 말자. 겨울에는 안개 속 탑이 몽환적이다."
           },
           {
@@ -6261,7 +6261,7 @@ const COURSES = [
               48.8798
             ],
             "cap": "바게트 인테리어(Baguette interior)",
-            "desc": "위키미디어에서 제공하는 바게트 인테리어의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           }
         ]
       },
@@ -6313,7 +6313,7 @@ const COURSES = [
               2.12,
               48.8044
             ],
-            "cap": "베르사유 궁전(Versailles)",
+            "cap": "Vue aérienne du domaine de Versailles par Tou(Vue aérienne du domaine de Versailles par Tou)",
             "desc": "루이 14세가 사냥용 별장을 30년에 걸쳐 확장해 만든 궁전이다. 2,300개의 방, 1,400개의 분수, 800헥타르의 정원을 거느린다. 귀족들을 궁에 상주시켜 서로 감시하게 함으로써 반란을 차단한 정치적 건축의 정수다. 1919년 베르사유 조약도 이곳에서 조인됐다."
           },
           {
@@ -6322,7 +6322,7 @@ const COURSES = [
               2.121,
               48.8052
             ],
-            "cap": "도심 공원",
+            "cap": "샤토 베르사유 갤러리 데 글라스(Chateau Versailles Galerie des Glaces)",
             "desc": "당시 베네치아가 독점하던 초고가 사치품인 거울 357장이 정원 쪽 17개 창을 마주본다. 태양왕 루이 14세의 치적을 담은 30개의 천장화가 거울에 무한히 반사된다. 1919년 제1차 세계대전을 끝낸 베르사유 조약이 이 방에서 조인됐다."
           }
         ]
@@ -6381,7 +6381,7 @@ const COURSES = [
               2.3317,
               48.872
             ],
-            "cap": "팔레 가르니에 — 1875년 오페라 하우스",
+            "cap": "파리 팔레 가르니에 2010-04-06 16.55.07(Paris Palais Garnier 2010-04-06 16.55.07)",
             "desc": "샤를 가르니에가 설계한 보자르 양식의 결정체. 1875년 완공 당시 세계에서 가장 큰 극장이었으며, 가스통 르루의 소설 '오페라의 유령'의 실제 무대다. 지하에 인공 호수가 있고, 마르크 샤갈이 그린 천장화(1964년)가 화려하다. 외관 광장은 무료 입장."
           },
           {
@@ -6390,7 +6390,7 @@ const COURSES = [
               2.332,
               48.8734
             ],
-            "cap": "갤러리 라파예트 — 스테인드글라스 돔",
+            "cap": "갤러리 라파예트 오스만 돔(Galerie Lafayette Haussmann Dome)",
             "desc": "1912년 완공된 오스만 양식 백화점의 상징. 43m 높이의 신 비잔틴 스테인드글라스 돔은 파리 최고의 무료 실내 경관 중 하나로 꼽힌다. 9층 테라스에 오르면 오스만 대로와 오페라 가르니에 지붕이 한눈에 보인다. 입장 무료."
           },
           {
@@ -6399,7 +6399,7 @@ const COURSES = [
               2.3653,
               48.8671
             ],
-            "cap": "카날 생마르탱 — 아멜리에의 운하",
+            "cap": "캐널 생마르탱 P1060441(Canal Saint-Martin P1060441)",
             "desc": "1825년 완공, 총 4.5km의 운하로 9개의 수문과 철제 아치 교량이 이어진다. 영화 '아멜리에'(2001)에서 오드레 토투가 물수제비를 뛰던 바로 그 장소. 운하 주변 10구는 파리에서 가장 활기찬 카페 문화 지구 중 하나다."
           }
         ]
@@ -6458,7 +6458,7 @@ const COURSES = [
               2.3318,
               48.8335
             ],
-            "cap": "카타콩브 — 파리 지하 6백만 구의 유골",
+            "cap": "칼리스토 카타콤에서의 행렬(A Procession in the Catacomb of Callistus)",
             "desc": "18세기 말 파리의 묘지가 과포화되자 도시 지하 채석장(깊이 20m)으로 유골을 옮기기 시작했다. 1786년부터 1814년까지 총 6백만 구 이상이 이전됐으며, 2km 터널 벽을 따라 정교하게 쌓인 두개골과 대퇴골이 이어진다. 연중 11~14℃로 여름엔 서늘하고 겨울엔 따뜻하다."
           }
         ]
@@ -6521,7 +6521,7 @@ const COURSES = [
               2.3499,
               48.853
             ],
-            "cap": "노트르담 대성당 — 2024년 재개관",
+            "cap": "노트르담 드 파리, 2017년 10월 4일(Notre-Dame de Paris, 4 October 2017)",
             "desc": "1163년 착공한 고딕 성당으로, 2019년 화재로 첨탑과 지붕이 무너졌다가 2024년 복원을 마치고 다시 문을 열었다. 서쪽 정면의 장미창(지름 10m)과 가고일 석상, 그리고 새로 세워진 첨탑이 과거보다 선명하게 빛난다. 내부 무료 입장."
           },
           {
@@ -6531,7 +6531,7 @@ const COURSES = [
               48.857
             ],
             "cap": "파리 호텔 드 상스 dsc04028(Paris Hotel de Sens dsc04028)",
-            "desc": "위키미디어에서 제공하는 파리 호텔 드 상스 dsc04028의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           }
         ]
       },
@@ -6576,7 +6576,7 @@ const COURSES = [
               48.885
             ],
             "cap": "크루아상 오뵈르(Croissants au beurre)",
-            "desc": "위키미디어에서 제공하는 크루아상 오뵈르의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "montmartre",
@@ -6584,7 +6584,7 @@ const COURSES = [
               2.34,
               48.886
             ],
-            "cap": "몽마르트르(Montmartre)",
+            "cap": "노트르담 드 파리에서 본 풍경, 2014년 6월 24일 0(View from Notre Dame de Paris, 24 June 2014 0)",
             "desc": "17구 Batignolles 호텔에서 체크아웃 전 아침, 창밖으로 사크레쾨르 흰 돔이 보이는 방향이 몽마르트르다. 고흐·피카소·르누아르가 이 언덕에서 그림을 그리던 시절을 생각하며 파리를 눈에 담고 공항으로 향한다."
           },
           {
@@ -6594,7 +6594,7 @@ const COURSES = [
               49.0064
             ],
             "cap": "순교자 예배당 몽마르트르 수도원(Chapelle des Martyrs Montmartre Abbey)",
-            "desc": "위키미디어에서 제공하는 순교자 예배당 몽마르트르 수도원의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           }
         ]
       }
@@ -6661,7 +6661,7 @@ const COURSES = [
               8.2742,
               49.9929
             ],
-            "cap": "마인츠 돔 — 첫날 밤",
+            "cap": "마인처 돔 뉴(Mainzer Dom nw)",
             "desc": "975년 착공, 1137년 완공. 6개의 탑을 가진 로마네스크 대성당으로 독일에서 가장 완전하게 보존된 로마네스크 건물 중 하나다. 라인헤센 와인 산지의 수도, 구텐베르크(활판인쇄 발명, 1450년)의 탄생지이기도 하다."
           },
           {
@@ -6670,8 +6670,23 @@ const COURSES = [
               8.277,
               50.005
             ],
-            "cap": "라인강변",
+            "cap": "마인처 돔 블라우에 슈뇰데(Mainzer Dom Blaue Stunde)",
             "desc": "마인츠의 라인강 풍경."
+          },
+          {
+            "spot": "auto_fill_60001",
+            "cap": "베커와 사르토리우스 Baugeschichte der Fruehz(Becker und Sartorius Baugeschichte der Fruehz)",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
+          },
+          {
+            "spot": "auto_fill_60002",
+            "cap": "046큐폴라피에트로(046CupolaSPietro)",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
+          },
+          {
+            "spot": "auto_fill_60003",
+            "cap": "B42 프린트(B42-print)",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           }
         ]
       },
@@ -6713,7 +6728,7 @@ const COURSES = [
               50.1198
             ],
             "cap": "아펠바인 게립테스 벰벨(Apfelwein Geripptes Bembel)",
-            "desc": "위키미디어에서 제공하는 아펠바인 게립테스 벰벨의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_smart_food_10362",
@@ -6722,7 +6737,7 @@ const COURSES = [
               50.1069
             ],
             "cap": "앱솔루트 브레첼 01(Absolute bretzel 01)",
-            "desc": "위키미디어에서 제공하는 앱솔루트 브레첼 01의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_bulk_252_",
@@ -6730,8 +6745,8 @@ const COURSES = [
               8.6792,
               50.1088
             ],
-            "cap": "01-01-2014 - 메세투름 - 무역 박람회 타워 - 프랑크푸르트 - 독일 - 05(01-01-2014 - Messeturm - trade fair tower - Frankfurt- Germany - 05)",
-            "desc": "위키미디어에서 제공하는 01-01-2014 - 메세투름 - 무역 박람회 타워 - 프랑크푸르트 - 독일 - 05의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "cap": "01 01 2014 Messeturm 무역 박람회 타워 Frankfu(01 01 2014 Messeturm trade fair tower Frankfu)",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_bulk_257_",
@@ -6739,8 +6754,8 @@ const COURSES = [
               8.6792,
               50.1099
             ],
-            "cap": "바우슈텔레-호흐피어-ffm001(Baustelle-hochvier-ffm001)",
-            "desc": "위키미디어에서 제공하는 바우슈텔레-호흐피어-ffm001의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "cap": "Baustelle-hochvier-ffm001(Baustelle-hochvier-ffm001)",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           }
         ]
       },
@@ -6781,7 +6796,7 @@ const COURSES = [
               6.9603,
               50.9413
             ],
-            "cap": "쾰른 대성당(Cologne)",
+            "cap": "Kölner Dom Westfassade 2022 ohne Gerüst 0968(Kölner Dom Westfassade 2022 ohne Gerüst 0968)",
             "desc": "1248년 착공, 1880년 완공. 632년 역사. 완공 당시 세계 최고층 건물(157m)이었던 쌍탑이 역 광장에서 바로 내려다보인다. 내부 동방박사 황금 성골함이 중세 쾰른 순례의 기원이었다. 고딕 건축의 완성으로 불리며, 2차대전 폭격에도 기적적으로 생존했다."
           },
           {
@@ -6791,7 +6806,7 @@ const COURSES = [
               50.9375
             ],
             "cap": "쾰쉬(Koelsch)",
-            "desc": "위키미디어에서 제공하는 쾰쉬의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_bulk_238_",
@@ -6808,8 +6823,8 @@ const COURSES = [
               6.9643,
               50.9421
             ],
-            "cap": "1983 09 15~23 오데사에서 쿠바로 보내는 편지봉투(1983 09 15 to 23 Envelope of the Letter from Odessa to Cuba)",
-            "desc": "위키미디어에서 제공하는 1983 09 15~23 오데사에서 쿠바로 보내는 편지봉투의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "cap": "1983 09 15~23 서신봉투(1983 09 15 to 23 Envelope of the Letter from)",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           }
         ]
       },
@@ -6850,7 +6865,7 @@ const COURSES = [
               8.7139,
               49.4096
             ],
-            "cap": "하이델베르크 성 야경",
+            "cap": "하이델베르그-2726936(Heidelberg-2726936)",
             "desc": "해가 지면 성 조명이 켜지고 성 폐허가 주황빛으로 물든다. 낮보다 야경이 훨씬 극적이다. 1월 16:00 이후 이미 밤이다."
           },
           {
@@ -6859,7 +6874,7 @@ const COURSES = [
               8.7097,
               49.4121
             ],
-            "cap": "알테 브뤼케 야간",
+            "cap": "하이델베르그 알테 브뤼케(Heidelberg Alte Bruecke)",
             "desc": "1788년 카를 테오도르 다리. 밤에는 다리 조명이 넥카 강에 반영된다. 다리 위에서 동쪽 성 야경과 서쪽 구시가지가 동시에 보인다."
           },
           {
@@ -6868,8 +6883,8 @@ const COURSES = [
               8.705,
               49.4053
             ],
-            "cap": "6가지 음식, 파스타, 타쿠이노 사니타티스, 카사나텐세 4182.(6-alimenti, pasta,Taccuino Sanitatis, Casanatense 4182.)",
-            "desc": "위키미디어에서 제공하는 6가지 음식, 파스타, 타쿠이노 사니타티스, 카사나텐세 4182.의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "cap": "6가지 반찬, 파스타, 타쿠이노 사니타티스, 카사나트(6 alimenti, pasta,Taccuino Sanitatis, Casanat)",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           }
         ]
       },
@@ -6911,7 +6926,7 @@ const COURSES = [
               11.5591,
               48.1768
             ],
-            "cap": "BMW 박물관",
+            "cap": "BMW 004 박물관(Musée BMW 004)",
             "desc": "독일 자동차의 역사."
           },
           {
@@ -6920,8 +6935,8 @@ const COURSES = [
               11.5741,
               48.1446
             ],
-            "cap": "4 실린드로스, 뮌헨, 알레마니아, 2013-02-11, DD 02(4 Cilindros, Múnich, Alemania, 2013-02-11, DD 02)",
-            "desc": "위키미디어에서 제공하는 4 실린드로스, 뮌헨, 알레마니아, 2013-02-11, DD 02의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "cap": "4 Cilindros, 뮌헨, 알레마니아, 2013 02 11, DD(4 Cilindros, Múnich, Alemania, 2013 02 11, DD)",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_bulk_49_",
@@ -6930,7 +6945,7 @@ const COURSES = [
               48.144
             ],
             "cap": "알리안츠 아레나 2008-02-09(Allianz Arena 2008-02-09)",
-            "desc": "위키미디어에서 제공하는 알리안츠 아레나 2008-02-09의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_bulk_51_",
@@ -6938,8 +6953,8 @@ const COURSES = [
               11.5829,
               48.1285
             ],
-            "cap": "골동품 수족관, 뮌히너 레지덴츠(Antiquarium, Münchner Residenz)",
-            "desc": "위키미디어에서 제공하는 골동품 수족관, 뮌히너 레지덴츠의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "cap": "골동품 수족관, Münchner Residenz(Antiquarium, Münchner Residenz)",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           }
         ]
       },
@@ -6982,7 +6997,7 @@ const COURSES = [
               48.2082
             ],
             "cap": "카페 비에누아(Cafe Viennois)",
-            "desc": "위키미디어에서 제공하는 카페 비에누아의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_smart_lm_10380",
@@ -6991,7 +7006,7 @@ const COURSES = [
               48.2075
             ],
             "cap": "부다페스트 국회의사당(Budapest Parliament Building)",
-            "desc": "위키미디어에서 제공하는 부다페스트 국회의사당의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_bulk_17_",
@@ -6999,8 +7014,8 @@ const COURSES = [
               16.3832,
               48.2177
             ],
-            "cap": "2011-06-14 10-23-56 오스트리아 니더외스터라이히 피샤멘트 마르크트(2011-06-14 10-23-56 Austria Niederösterreich Fischamend Markt)",
-            "desc": "위키미디어에서 제공하는 2011-06-14 10-23-56 오스트리아 니더외스터라이히 피샤멘트 마르크트의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "cap": "2011 06 14 10 23 56 오스트리아 Niederösterreich(2011 06 14 10 23 56 Austria Niederösterreich)",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_bulk_19_",
@@ -7009,7 +7024,7 @@ const COURSES = [
               48.2163
             ],
             "cap": "57A 안슈츠가세(57A Anschützgasse)",
-            "desc": "위키미디어에서 제공하는 57A 안슈츠가세의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_bulk_20_",
@@ -7017,8 +7032,8 @@ const COURSES = [
               16.3673,
               48.2015
             ],
-            "cap": "62 볼커스베르겐슈트라세(62 Wolkersbergenstraße)",
-            "desc": "위키미디어에서 제공하는 62 볼커스베르겐슈트라세의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "cap": "62 Wolkersbergenstraße(62 Wolkersbergenstraße)",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_bulk_21_",
@@ -7026,8 +7041,8 @@ const COURSES = [
               16.3749,
               48.2026
             ],
-            "cap": "알저그룬트 (Wien) - AKH, Haupteingang(Alsergrund (Wien) - AKH, Haupteingang)",
-            "desc": "위키미디어에서 제공하는 알저그룬트의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "cap": "Alsergrund - AKH, Haupteingang(Alsergrund - AKH, Haupteingang)",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_bulk_23_",
@@ -7044,8 +7059,8 @@ const COURSES = [
               16.3705,
               48.2098
             ],
-            "cap": "아스날 헤레스게시히틀리헤스 박물관-DSC 7920w(Arsenal Heeresgeschichtliches Museum-DSC 7920w)",
-            "desc": "위키미디어에서 제공하는 아스날 헤레스게시히틀리헤스 박물관-DSC 7920w의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "cap": "아스날 Heeresgeschichtliches 박물관 DSC 7920(Arsenal Heeresgeschichtliches Museum DSC 7920)",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           }
         ]
       },
@@ -7095,8 +7110,8 @@ const COURSES = [
               16.3752,
               48.2003
             ],
-            "cap": "분데스아르히프 빌트 146-1972-028-14, 안슐루스 Österreich(Bundesarchiv Bild 146-1972-028-14, Anschluss Österreich)",
-            "desc": "위키미디어에서 제공하는 분데스아르히프 빌트 146-1972-028-14, 안슐루스 Österreich의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "cap": "Bundesarchiv Bild 146 1972 028 14, Anschluss(Bundesarchiv Bild 146 1972 028 14, Anschluss)",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_bulk_27_",
@@ -7105,7 +7120,7 @@ const COURSES = [
               48.2069
             ],
             "cap": "비엔나 키노 성(Burg Kino Vienna)",
-            "desc": "위키미디어에서 제공하는 비엔나 키노 성의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_bulk_28_",
@@ -7113,7 +7128,7 @@ const COURSES = [
               16.3732,
               48.2041
             ],
-            "cap": "시티바이크 비엔나, 쇤브루너 브뤼케(Citybike Vienna, Schönbrunner Brücke)",
+            "cap": "시티바이크 비엔나, Schönbrunner Brücke(Citybike Vienna, Schönbrunner Brücke)",
             "desc": "웅장한 규모와 정교한 디테일이 한눈에 시선을 사로잡는 랜드마크입니다."
           },
           {
@@ -7123,7 +7138,7 @@ const COURSES = [
               48.2098
             ],
             "cap": "다스 로미셰 빈(Das roemische Wien)",
-            "desc": "위키미디어에서 제공하는 다스 로미셰 빈의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_bulk_30_",
@@ -7131,8 +7146,8 @@ const COURSES = [
               16.3792,
               48.2019
             ],
-            "cap": "도나우파르크 & ​​도나우투름 비엔나 2024(Donaupark & Donauturm Vienna 2024)",
-            "desc": "위키미디어에서 제공하는 도나우파르크 & ​​도나우투름 비엔나 2024의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "cap": "Donaupark & ​​Donauturm 비엔나 2024(Donaupark & Donauturm Vienna 2024)",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_bulk_31_",
@@ -7140,8 +7155,8 @@ const COURSES = [
               16.3666,
               48.2065
             ],
-            "cap": "도나우슈타트브뤼케 리가르다테 데 라 스타치오 도나우마리나(Donaustadtbrücke rigardate de la stacio Donaumarina)",
-            "desc": "위키미디어에서 제공하는 도나우슈타트브뤼케 리가르다테 데 라 스타치오 도나우마리나의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "cap": "Donaustadtbrücke rigardate de la stacio Donau(Donaustadtbrücke rigardate de la stacio Donau)",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_bulk_32_",
@@ -7150,7 +7165,7 @@ const COURSES = [
               48.1993
             ],
             "cap": "에른스트 하펠 슈타디온 비엔나(Ernst-happel-stadion vienna)",
-            "desc": "위키미디어에서 제공하는 에른스트 하펠 슈타디온 비엔나의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_bulk_334_",
@@ -7158,8 +7173,8 @@ const COURSES = [
               16.3829,
               48.2052
             ],
-            "cap": "플로리드스도르프 - 칼-자이츠-호프(Floridsdorf  - Karl-Seitz-Hof)",
-            "desc": "위키미디어에서 제공하는 플로리드스도르프 - 칼-자이츠-호프의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "cap": "플로리드스도르프 - 칼-자이츠-호프(Floridsdorf - Karl-Seitz-Hof)",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           }
         ]
       },
@@ -7209,7 +7224,7 @@ const COURSES = [
               16.381,
               48.1916
             ],
-            "cap": "벨베데레 궁전(Belvedere)",
+            "cap": "Palacio Belvedere 비엔나 오스트리아 2020 02 01 DD(Palacio Belvedere Viena Austria 2020 02 01 DD)",
             "desc": "클림트의 키스 전시."
           }
         ]
@@ -7249,7 +7264,7 @@ const COURSES = [
               47.0703
             ],
             "cap": "그라츠 하우프트 광장(Graz Hauptplatz)",
-            "desc": "위키미디어에서 제공하는 그라츠 하우프트 광장의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_smart_food_10386",
@@ -7258,7 +7273,7 @@ const COURSES = [
               47.079
             ],
             "cap": "집에서 만든 파스타가 더 맛있어요(A better homemade pasta)",
-            "desc": "위키미디어에서 제공하는 집에서 만든 파스타가 더 맛있어요의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           }
         ]
       },
@@ -7300,8 +7315,8 @@ const COURSES = [
               12.338,
               45.434
             ],
-            "cap": "밤의 산마르코 광장(베니스)-msu-2021-6449-(Piazza San Marco (Venice) at night-msu-2021-6449-)",
-            "desc": "위키미디어에서 제공하는 밤의 산마르코 광장의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "cap": "밤의 산 마르코 광장 msu 2021 6449(Piazza San Marco at night msu 2021 6449)",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_bulk_82_",
@@ -7309,8 +7324,8 @@ const COURSES = [
               12.3343,
               45.433
             ],
-            "cap": "카날레토 - 두칼레 궁전의 부두로 돌아온 부켄타우로스 - 구글 아트 프로젝트(Canaletto - Bucentaur's return to the pier by the Palazzo Ducale - Google Art Project)",
-            "desc": "위키미디어에서 제공하는 카날레토 - 두칼레 궁전의 부두로 돌아온 부켄타우로스 - 구글 아트 프로젝트의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "cap": "Canaletto Bucentaur가 t에 의해 부두로 돌아옴(Canaletto Bucentaur's return to the pier by t)",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_bulk_83_",
@@ -7327,8 +7342,8 @@ const COURSES = [
               12.3359,
               45.4348
             ],
-            "cap": "로마 광장을 떠나는 악티프 트램 베네치아 2017(Actv tram Venezia leaving Piazzale Roma 2017)",
-            "desc": "위키미디어에서 제공하는 로마 광장을 떠나는 악티프 트램 베네치아 2017의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "cap": "로마 광장을 떠나는 Actv 트램 베네치아 2017(Actv tram Venezia leaving Piazzale Roma 2017)",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           }
         ]
       },
@@ -7382,7 +7397,7 @@ const COURSES = [
               12.3409,
               45.4336
             ],
-            "cap": "두칼레 궁전 — 베네치아 공화국의 심장",
+            "cap": "총독의 궁전과 산 마르코 바스의 종탑(Doge's Palace and campanile of St. Mark's Bas)",
             "desc": "810년부터 자리를 지킨 베네치아 총독(Doge)의 궁전. 현재 건물은 1340~1424년 고딕 양식으로 완성됐다. 옆에 붙은 탄식의 다리(Ponte dei Sospiri)는 심문실과 감옥을 잇는 통로로, 죄수들이 마지막으로 베네치아 풍경을 보며 탄식했다는 데서 이름이 붙었다."
           },
           {
@@ -7392,7 +7407,7 @@ const COURSES = [
               45.4247
             ],
             "cap": "카 도로 파치아타(Ca' d'Oro facciata)",
-            "desc": "위키미디어에서 제공하는 카 도로 파치아타의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_bulk_105_",
@@ -7401,7 +7416,7 @@ const COURSES = [
               45.4284
             ],
             "cap": "카니발 디 베네치아 마스크 2010(Carnevale di Venezia Masks 2010)",
-            "desc": "위키미디어에서 제공하는 카니발 디 베네치아 마스크 2010의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           }
         ]
       },
@@ -7455,7 +7470,7 @@ const COURSES = [
               12.4167,
               45.4854
             ],
-            "cap": "부라노 섬",
+            "cap": "부라노 베니스 17(Burano Venice 17)",
             "desc": "이탈리아 베네치아 석호에 있는 섬으로 형형색색으로 칠해진 아름다운 집들이 유명합니다."
           },
           {
@@ -7465,7 +7480,7 @@ const COURSES = [
               45.4272
             ],
             "cap": "바시노 산 마르코 베니스를 지나는 유람선(Cruiseship passing bacino San Marco Venise)",
-            "desc": "위키미디어에서 제공하는 바시노 산 마르코 베니스를 지나는 유람선의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           }
         ]
       },
@@ -7568,7 +7583,7 @@ const COURSES = [
               8.2742,
               49.9984
             ],
-            "cap": "마인츠 돔 — 첫날 밤 로마네스크 대성당",
+            "cap": "마인처 돔 뉴(Mainzer Dom nw)",
             "desc": "975년 착공되어 1137년에 완공된 6개의 탑을 가진 로마네스크 양식의 대성당. 마인츠의 웅장한 역사와 구텐베르크의 인쇄술 고향을 상징한다."
           },
           {
@@ -7577,7 +7592,7 @@ const COURSES = [
               8.272,
               50.001
             ],
-            "cap": "마인츠 라인강변 야경",
+            "cap": "마인처 돔 블라우에 슈뇰데(Mainzer Dom Blaue Stunde)",
             "desc": "유럽의 젖줄 라인강이 시원하게 흘러가는 마인츠 강변 산책로. 밤이 되면 정결한 조명과 잔잔한 강물이 어우러져 한적한 분위기를 자아낸다."
           }
         ]
@@ -7620,7 +7635,7 @@ const COURSES = [
               50.1032
             ],
             "cap": "아펠바인 게립테스 벰벨(Apfelwein Geripptes Bembel)",
-            "desc": "위키미디어에서 제공하는 아펠바인 게립테스 벰벨의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_smart_food_10391",
@@ -7629,7 +7644,7 @@ const COURSES = [
               50.1039
             ],
             "cap": "앱솔루트 브레첼 01(Absolute bretzel 01)",
-            "desc": "위키미디어에서 제공하는 앱솔루트 브레첼 01의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_bulk_252_",
@@ -7637,8 +7652,8 @@ const COURSES = [
               8.6765,
               50.117
             ],
-            "cap": "01-01-2014 - 메세투름 - 무역 박람회 타워 - 프랑크푸르트 - 독일 - 05(01-01-2014 - Messeturm - trade fair tower - Frankfurt- Germany - 05)",
-            "desc": "위키미디어에서 제공하는 01-01-2014 - 메세투름 - 무역 박람회 타워 - 프랑크푸르트 - 독일 - 05의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "cap": "01 01 2014 Messeturm 무역 박람회 타워 Frankfu(01 01 2014 Messeturm trade fair tower Frankfu)",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_bulk_257_",
@@ -7646,8 +7661,8 @@ const COURSES = [
               8.6887,
               50.1035
             ],
-            "cap": "바우슈텔레-호흐피어-ffm001(Baustelle-hochvier-ffm001)",
-            "desc": "위키미디어에서 제공하는 바우슈텔레-호흐피어-ffm001의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "cap": "Baustelle-hochvier-ffm001(Baustelle-hochvier-ffm001)",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           }
         ]
       },
@@ -7688,7 +7703,7 @@ const COURSES = [
               6.9583,
               50.9413
             ],
-            "cap": "쾰른 대성당(Cologne)",
+            "cap": "Kölner Dom Westfassade 2022 ohne Gerüst 0968(Kölner Dom Westfassade 2022 ohne Gerüst 0968)",
             "desc": "157m의 쌍탑이 돋보이는 쾰른 대성당. 낮에는 압도적인 영성을, 밤에는 황금빛 조명 아래 낭만적인 밤 야경을 선사한다."
           },
           {
@@ -7698,7 +7713,7 @@ const COURSES = [
               50.938
             ],
             "cap": "쾰쉬(Koelsch)",
-            "desc": "위키미디어에서 제공하는 쾰쉬의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_bulk_238_",
@@ -7707,7 +7722,7 @@ const COURSES = [
               50.9376
             ],
             "cap": "146 019-5 라인익스프레스인코엘nhbf(146 019-5 Rheinexpressinkoelnhbf)",
-            "desc": "위키미디어에서 제공하는 146 019-5 라인익스프레스인코엘nhbf의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_bulk_239_",
@@ -7715,8 +7730,8 @@ const COURSES = [
               6.9679,
               50.9332
             ],
-            "cap": "1983 09 15~23 오데사에서 쿠바로 보내는 편지봉투(1983 09 15 to 23 Envelope of the Letter from Odessa to Cuba)",
-            "desc": "위키미디어에서 제공하는 1983 09 15~23 오데사에서 쿠바로 보내는 편지봉투의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "cap": "1983 09 15~23 서신봉투(1983 09 15 to 23 Envelope of the Letter from)",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           }
         ]
       },
@@ -7749,8 +7764,8 @@ const COURSES = [
               11.5812,
               48.138
             ],
-            "cap": "4 실린드로스, 뮌헨, 알레마니아, 2013-02-11, DD 02(4 Cilindros, Múnich, Alemania, 2013-02-11, DD 02)",
-            "desc": "위키미디어에서 제공하는 4 실린드로스, 뮌헨, 알레마니아, 2013-02-11, DD 02의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "cap": "4 Cilindros, 뮌헨, 알레마니아, 2013 02 11, DD(4 Cilindros, Múnich, Alemania, 2013 02 11, DD)",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_bulk_49_",
@@ -7767,8 +7782,8 @@ const COURSES = [
               11.5905,
               48.1386
             ],
-            "cap": "골동품 수족관, 뮌히너 레지덴츠(Antiquarium, Münchner Residenz)",
-            "desc": "위키미디어에서 제공하는 골동품 수족관, 뮌히너 레지덴츠의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "cap": "골동품 수족관, Münchner Residenz(Antiquarium, Münchner Residenz)",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_bulk_52_",
@@ -7777,7 +7792,7 @@ const COURSES = [
               48.133
             ],
             "cap": "BMW 벨트, 뮌헨, 알레마니아16(BMW Welt, Múnich, Alemania16)",
-            "desc": "위키미디어에서 제공하는 BMW 벨트, 뮌헨, 알레마니아16의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           }
         ],
         "before": [
@@ -7860,7 +7875,7 @@ const COURSES = [
               11.5808,
               48.1355
             ],
-            "cap": "오래된 성곽",
+            "cap": "돼지고기 너클(Pork Knuckle)",
             "desc": "14세기 건물의 뮌헨 대표 슈바인스학센 전문점 학센바우어. 유리창 너머 숯불 직화에 회전하며 노릇하게 익어가는 학센과 맥주의 환상 조합."
           },
           {
@@ -7869,8 +7884,8 @@ const COURSES = [
               11.3923,
               47.2729
             ],
-            "cap": "사진으로 남기고 싶은 인스부르크",
-            "desc": "위키미디어에서 제공하는 사진으로 남기고 싶은 인스부르크의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "cap": "뷔르거슈트라세 26 24(Bürgerstraße 26 24)",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_smart_food_10404",
@@ -7878,7 +7893,7 @@ const COURSES = [
               11.3912,
               47.2635
             ],
-            "cap": "6가지 음식, 파스타, 타쿠이노 사니타티스, 카사나텐세 4182.(6-alimenti, pasta,Taccuino Sanitatis, Casanatense 4182.)",
+            "cap": "6가지 반찬, 파스타, 타쿠이노 사니타티스, 카사나트(6 alimenti, pasta,Taccuino Sanitatis, Casanat)",
             "desc": "[파스타(Pasta)] 현지인들이 아침저녁으로 즐겨 찾는 소박하지만 든든한 일상식입니다."
           },
           {
@@ -7888,7 +7903,7 @@ const COURSES = [
               47.2782
             ],
             "cap": "12-06-05-인스브루크-바이-랄프-165(12-06-05-innsbruck-by-ralfr-165)",
-            "desc": "위키미디어에서 제공하는 12-06-05-인스브루크-바이-랄프-165의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           }
         ]
       },
@@ -7935,7 +7950,7 @@ const COURSES = [
               47.261
             ],
             "cap": "집에서 만든 파스타가 더 맛있어요(A better homemade pasta)",
-            "desc": "위키미디어에서 제공하는 집에서 만든 파스타가 더 맛있어요의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           }
         ]
       },
@@ -8055,8 +8070,8 @@ const COURSES = [
               16.366,
               48.2004
             ],
-            "cap": "2011-06-14 10-23-56 오스트리아 니더외스터라이히 피샤멘트 마르크트(2011-06-14 10-23-56 Austria Niederösterreich Fischamend Markt)",
-            "desc": "위키미디어에서 제공하는 2011-06-14 10-23-56 오스트리아 니더외스터라이히 피샤멘트 마르크트의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "cap": "2011 06 14 10 23 56 오스트리아 Niederösterreich(2011 06 14 10 23 56 Austria Niederösterreich)",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_bulk_19_",
@@ -8065,7 +8080,7 @@ const COURSES = [
               48.2163
             ],
             "cap": "57A 안슈츠가세(57A Anschützgasse)",
-            "desc": "위키미디어에서 제공하는 57A 안슈츠가세의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_bulk_20_",
@@ -8073,8 +8088,8 @@ const COURSES = [
               16.375,
               48.2052
             ],
-            "cap": "62 볼커스베르겐슈트라세(62 Wolkersbergenstraße)",
-            "desc": "위키미디어에서 제공하는 62 볼커스베르겐슈트라세의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "cap": "62 Wolkersbergenstraße(62 Wolkersbergenstraße)",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_bulk_21_",
@@ -8082,8 +8097,8 @@ const COURSES = [
               16.3688,
               48.2148
             ],
-            "cap": "알저그룬트 (Wien) - AKH, Haupteingang(Alsergrund (Wien) - AKH, Haupteingang)",
-            "desc": "위키미디어에서 제공하는 알저그룬트의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "cap": "Alsergrund - AKH, Haupteingang(Alsergrund - AKH, Haupteingang)",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_bulk_23_",
@@ -8092,7 +8107,7 @@ const COURSES = [
               48.2026
             ],
             "cap": "알테 도나우 빈(Alte Donau Wien)",
-            "desc": "위키미디어에서 제공하는 알테 도나우 빈의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           }
         ]
       },
@@ -8138,8 +8153,8 @@ const COURSES = [
               16.3662,
               48.2
             ],
-            "cap": "바리케이드 바이 데어 우니베르지테트 암 26텐 마이 1848 인 빈(Barricade bei der Universität am 26ten Mai 1848 in Wien)",
-            "desc": "위키미디어에서 제공하는 바리케이드 바이 데어 우니베르지테트 암 26텐 마이 1848 인 빈의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "cap": "바리케이드 bei der Universität am 26ten Mai 18(Barricade bei der Universität am 26ten Mai 18)",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_bulk_26_",
@@ -8147,8 +8162,8 @@ const COURSES = [
               16.377,
               48.2174
             ],
-            "cap": "분데스아르히프 빌트 146-1972-028-14, 안슐루스 Österreich(Bundesarchiv Bild 146-1972-028-14, Anschluss Österreich)",
-            "desc": "위키미디어에서 제공하는 분데스아르히프 빌트 146-1972-028-14, 안슐루스 Österreich의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "cap": "Bundesarchiv Bild 146 1972 028 14, Anschluss(Bundesarchiv Bild 146 1972 028 14, Anschluss)",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_bulk_27_",
@@ -8165,7 +8180,7 @@ const COURSES = [
               16.3801,
               48.2046
             ],
-            "cap": "시티바이크 비엔나, 쇤브루너 브뤼케(Citybike Vienna, Schönbrunner Brücke)",
+            "cap": "시티바이크 비엔나, Schönbrunner Brücke(Citybike Vienna, Schönbrunner Brücke)",
             "desc": "따스한 햇살 아래 찬란하게 빛나는 빈의 잊지 못할 전경입니다."
           },
           {
@@ -8175,7 +8190,7 @@ const COURSES = [
               48.2159
             ],
             "cap": "다스 로미셰 빈(Das roemische Wien)",
-            "desc": "위키미디어에서 제공하는 다스 로미셰 빈의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_bulk_30_",
@@ -8183,8 +8198,8 @@ const COURSES = [
               16.3722,
               48.2057
             ],
-            "cap": "도나우파르크 & ​​도나우투름 비엔나 2024(Donaupark & Donauturm Vienna 2024)",
-            "desc": "위키미디어에서 제공하는 도나우파르크 & ​​도나우투름 비엔나 2024의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "cap": "Donaupark & ​​Donauturm 비엔나 2024(Donaupark & Donauturm Vienna 2024)",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_bulk_31_",
@@ -8192,8 +8207,8 @@ const COURSES = [
               16.3813,
               48.2106
             ],
-            "cap": "도나우슈타트브뤼케 리가르다테 데 라 스타치오 도나우마리나(Donaustadtbrücke rigardate de la stacio Donaumarina)",
-            "desc": "위키미디어에서 제공하는 도나우슈타트브뤼케 리가르다테 데 라 스타치오 도나우마리나의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "cap": "Donaustadtbrücke rigardate de la stacio Donau(Donaustadtbrücke rigardate de la stacio Donau)",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           }
         ]
       },
@@ -8239,7 +8254,7 @@ const COURSES = [
               16.3813,
               48.1912
             ],
-            "cap": "벨베데레 궁전(Belvedere)",
+            "cap": "Palacio Belvedere 비엔나 오스트리아 2020 02 01 DD(Palacio Belvedere Viena Austria 2020 02 01 DD)",
             "desc": "오이겐 공작의 여름 별궁으로 바로크 건축의 미학을 자랑하며 오스트리아 핀 드 시에클(세기말) 미술의 보고다."
           },
           {
@@ -8248,7 +8263,7 @@ const COURSES = [
               16.3602,
               48.2033
             ],
-            "cap": "빈 미술사 박물관",
+            "cap": "미술사 박물관 logo.svg(Kunsthistorisches Museum logo.svg)",
             "desc": "합스부르크 가문의 예술 소장품을 모아놓은 세계 정상급 박물관으로 내부 중앙 계단과 화려한 돔 천장이 예술이다."
           },
           {
@@ -8266,8 +8281,8 @@ const COURSES = [
               16.3721,
               48.201
             ],
-            "cap": "플로리드스도르프 - 칼-자이츠-호프(Floridsdorf  - Karl-Seitz-Hof)",
-            "desc": "위키미디어에서 제공하는 플로리드스도르프 - 칼-자이츠-호프의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "cap": "플로리드스도르프 - 칼-자이츠-호프(Floridsdorf - Karl-Seitz-Hof)",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           }
         ]
       },
@@ -8314,7 +8329,7 @@ const COURSES = [
               48.2036
             ],
             "cap": "호텔 자허(Hotel Sacher)",
-            "desc": "위키미디어에서 제공하는 호텔 자허의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "hofburg",
@@ -8322,7 +8337,7 @@ const COURSES = [
               16.3658,
               48.2065
             ],
-            "cap": "호프부르크 왕궁(Hofburg)",
+            "cap": "빈 - 노이에 호프부르크(Wien - Neue Hofburg)",
             "desc": "600년 동안 합스부르크 황가들이 거주한 대단지 왕궁으로 현재 오스트리아 대통령 집무실과 여러 박물관이 모여있다."
           }
         ]
@@ -8368,7 +8383,7 @@ const COURSES = [
               48.2036
             ],
             "cap": "자허토르테 DSC03027 리터칭(Sachertorte DSC03027 retouched)",
-            "desc": "위키미디어에서 제공하는 자허토르테 DSC03027 리터칭의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           }
         ]
       }
@@ -8432,7 +8447,7 @@ const COURSES = [
               40.7554
             ],
             "cap": "*이것은* 베이글이에요(*this* is a bagel)",
-            "desc": "위키미디어에서 제공하는 *이것은* 베이글이에요의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           }
         ]
       },
@@ -8486,8 +8501,8 @@ const COURSES = [
               -73.9813,
               40.7574
             ],
-            "cap": "베이글-플레인-알트(Bagel-Plain-Alt)",
-            "desc": "위키미디어에서 제공하는 베이글-플레인-알트의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "cap": "베이글-플레인-Alt(Bagel-Plain-Alt)",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_smart_food_10426",
@@ -8495,8 +8510,8 @@ const COURSES = [
               -73.9829,
               40.7658
             ],
-            "cap": "라즈베리와 블루베리를 곁들인 구운 치즈케이크(Baked cheesecake with raspberries and blueberries)",
-            "desc": "위키미디어에서 제공하는 라즈베리와 블루베리를 곁들인 구운 치즈케이크의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "cap": "라즈베리와 블루버를 곁들인 구운 치즈케이크(Baked cheesecake with raspberries and blueber)",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           }
         ]
       },
@@ -8554,7 +8569,7 @@ const COURSES = [
               -73.9942,
               40.7582
             ],
-            "cap": "1945년 엠파이어 스테이트 빌딩에 폭격기가 충돌했습니다.(Bomber Crashed into Empire State Building 1945)",
+            "cap": "폭격기가 엠파이어 스테이트 빌딩 194에 충돌했습니다.(Bomber Crashed into Empire State Building 194)",
             "desc": "과거와 현재가 공존하는 뉴욕 특유의 독특한 분위기를 자아냅니다."
           },
           {
@@ -8564,7 +8579,7 @@ const COURSES = [
               40.7667
             ],
             "cap": "참깨 베이글 3(Bagel with sesame 3)",
-            "desc": "위키미디어에서 제공하는 참깨 베이글 3의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_bulk_428_",
@@ -8573,7 +8588,7 @@ const COURSES = [
               40.7522
             ],
             "cap": "코넬 테크 빌딩(Cornell Tech buildings)",
-            "desc": "위키미디어에서 제공하는 코넬 테크 빌딩의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           }
         ]
       },
@@ -8675,7 +8690,7 @@ const COURSES = [
               -73.9969,
               40.7061
             ],
-            "cap": "브루클린 브리지(Brooklyn Bridge)",
+            "cap": "브루클린 브리지 포스트델프(Brooklyn Bridge Postdlf)",
             "desc": "착공 1870년, 완공 1883년. 당시 세계 최장 현수교(486m). 공사 중 총감독 워싱턴 로블링이 잠수병으로 쓰러졌고, 아내 에밀리가 14년간 공사를 대신 지휘해 완성했다. 보행자 통로 위에서 바라보는 맨해튼은 지구에서 가장 강렬한 스카이라인이다."
           },
           {
@@ -8684,8 +8699,8 @@ const COURSES = [
               -73.9852,
               40.695
             ],
-            "cap": "1883년 프랭크 레슬리의 그림 신문 브루클린 브리지 뉴욕시(1883 Frank Leslie's Illustrated Newspaper Brooklyn Bridge New York City)",
-            "desc": "위키미디어에서 제공하는 1883년 프랭크 레슬리의 그림 신문 브루클린 브리지 뉴욕시의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "cap": "1883년 프랭크 레슬리의 그림 신문 Bro(1883 Frank Leslie's Illustrated Newspaper Bro)",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_bulk_441_",
@@ -8693,8 +8708,8 @@ const COURSES = [
               -73.9788,
               40.7056
             ],
-            "cap": "2024-05-22 12 33 13 뉴욕주 뉴욕 브루클린의 새킷 스트리트 고가도로에서 278번 고속도로(브루클린-퀸즈 고속도로)를 따라 동쪽을 봅니다.(2024-05-22 12 33 13 View east along Interstate 278 (Brooklyn-Queens Expressway) from the overpass for Sackett Street in Brooklyn, New York City, New York)",
-            "desc": "위키미디어에서 제공하는 2024-05-22 12 33 13 뉴욕주 뉴욕 브루클린의 새킷 스트리트 고가도로에서 278번 고속도로의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "cap": "2024 05 22 12 33 13 Interstat를 따라 동쪽 보기(2024 05 22 12 33 13 View east along Interstat)",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_bulk_442_",
@@ -8703,7 +8718,7 @@ const COURSES = [
               40.6952
             ],
             "cap": "안토니오 레이노소(Antonio Reynoso)",
-            "desc": "위키미디어에서 제공하는 안토니오 레이노소의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           }
         ]
       },
@@ -8761,7 +8776,7 @@ const COURSES = [
               -74.0445,
               40.6892
             ],
-            "cap": "자유의 여신상(Statue of Liberty)",
+            "cap": "자유의 여신상 전면 모습(Front view of Statue of Liberty)",
             "desc": "프랑스와 미국 우정의 상징으로 1886년 프랑스가 미국에 선물했다. 받침대까지 높이 93m. 횃불을 든 로마 신화의 자유의 여신 리베르타스상. 뉴욕항에서 들어오는 이민자들이 처음 보는 것이 이 동상이었다."
           }
         ]
@@ -8838,43 +8853,43 @@ const COURSES = [
         "photos": [
           {
             "spot": "auto_fill_50038",
-            "cap": "1232-42 Dean Street Crown Heights",
-            "desc": "위키미디어에서 제공하는 뉴욕 관련 사진입니다."
+            "cap": "1232-42 딘 스트리트 크라운 하이츠(1232-42 Dean Street Crown Heights)",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_fill_50039",
-            "cap": "5th Avenue 9304",
-            "desc": "위키미디어에서 제공하는 뉴욕 관련 사진입니다."
+            "cap": "5번가 9304(5th Avenue 9304)",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_fill_50040",
-            "cap": "67º Período de Sesiones de la Asamblea General de Naciones Unidas (8020913157) (cropped)",
-            "desc": "위키미디어에서 제공하는 뉴욕 관련 사진입니다."
+            "cap": "67° Período de Sesiones de la Asamblea Genera(67º Período de Sesiones de la Asamblea Genera)",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_fill_50041",
-            "cap": "74th St shopping Jax Hts jeh",
-            "desc": "위키미디어에서 제공하는 뉴욕 관련 사진입니다."
+            "cap": "74번가 쇼핑 Jax Hts jeh(74th St shopping Jax Hts jeh)",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_fill_50042",
-            "cap": "A view of Fort George with the city of New York, from the SW",
-            "desc": "위키미디어에서 제공하는 뉴욕 관련 사진입니다."
+            "cap": "뉴요(New Yo) 시와 포트 조지(Fort George)의 전망(A view of Fort George with the city of New Yo)",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_fill_50043",
-            "cap": "Arthur ashe stadium interior",
-            "desc": "위키미디어에서 제공하는 뉴욕 관련 사진입니다."
+            "cap": "아서 애쉬 스타디움 내부(Arthur ashe stadium interior)",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_fill_50044",
-            "cap": "At New York, USA 2017 119",
-            "desc": "위키미디어에서 제공하는 뉴욕 관련 사진입니다."
+            "cap": "미국 뉴욕에서 2017 119(At New York, USA 2017 119)",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           },
           {
             "spot": "auto_fill_50045",
-            "cap": "Barclays Center 1",
-            "desc": "위키미디어에서 제공하는 뉴욕 관련 사진입니다."
+            "cap": "바클레이스 센터 1(Barclays Center 1)",
+            "desc": "해당 도시의 아름다운 전경이나 유명 명소의 모습입니다."
           }
         ]
       }
