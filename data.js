@@ -73,6 +73,18 @@ const COURSES = [
             "desc": "1357년에 착공한 보헤미아 최고(最古)의 석교로, 난간에 30개의 바로크 성인상이 늘어서 있다. 밤에는 조명이 켜지고 인파가 빠져 낮과 완전히 다르다."
           },
           {
+            "spot": "auto_smart_food_10001"
+          },
+          {
+            "spot": "auto_smart_food_10002"
+          },
+          {
+            "spot": "auto_smart_food_10003"
+          },
+          {
+            "spot": "auto_smart_food_10004"
+          },
+          {
             "spot": "auto_bulk_1_"
           },
           {
@@ -80,18 +92,6 @@ const COURSES = [
           },
           {
             "spot": "auto_bulk_3_"
-          },
-          {
-            "spot": "auto_bulk_4_"
-          },
-          {
-            "spot": "auto_bulk_5_"
-          },
-          {
-            "spot": "auto_bulk_6_"
-          },
-          {
-            "spot": "auto_bulk_7_"
           }
         ]
       },
@@ -152,6 +152,12 @@ const COURSES = [
             ],
             "cap": "필스너 우르켈",
             "desc": "1842년 플젠에서 세계 최초의 라거로 만들어진 맥주다. 체코에서는 거품을 두껍게 올려 따르는 '흘라딘카' 방식이 기본이며, 원산지에서 마시면 수입 병맥주와 쓴맛의 결이 다르다."
+          },
+          {
+            "spot": "auto_smart_lm_10005"
+          },
+          {
+            "spot": "auto_smart_food_10008"
           },
           {
             "spot": "auto_bulk_8_"
@@ -229,6 +235,18 @@ const COURSES = [
             "desc": "베헤로브카는 1807년 이 도시에서 만들어진 허브 리큐어로 계피와 정향 향이 강하다. 오블라치는 지름 20cm 정도의 얇은 원형 웨이퍼로, 온천수로 반죽해 굽는 이 지역 과자다."
           },
           {
+            "spot": "auto_smart_food_10011"
+          },
+          {
+            "spot": "auto_smart_food_10012"
+          },
+          {
+            "spot": "auto_smart_food_10013"
+          },
+          {
+            "spot": "auto_smart_food_10014"
+          },
+          {
             "spot": "auto_bulk_9_"
           },
           {
@@ -236,18 +254,6 @@ const COURSES = [
           },
           {
             "spot": "auto_bulk_11_"
-          },
-          {
-            "spot": "auto_bulk_12_"
-          },
-          {
-            "spot": "auto_bulk_13_"
-          },
-          {
-            "spot": "auto_bulk_14_"
-          },
-          {
-            "spot": "auto_bulk_15_"
           }
         ]
       },
@@ -335,6 +341,9 @@ const COURSES = [
             "desc": "에스프레소에 데운 우유와 우유 거품을 올린 빈식 커피로 카푸치노와 비슷하지만 더 부드럽다. 빈에서는 커피를 시키면 작은 물잔이 함께 나오는데, 이는 '오래 앉아 있어도 좋다'는 뜻이다."
           },
           {
+            "spot": "auto_smart_lm_10015"
+          },
+          {
             "spot": "auto_bulk_17_"
           },
           {
@@ -345,9 +354,6 @@ const COURSES = [
           },
           {
             "spot": "auto_bulk_20_"
-          },
-          {
-            "spot": "auto_bulk_21_"
           }
         ]
       },
@@ -576,6 +582,18 @@ const COURSES = [
             "desc": "겨울에는 식당이 일찍 닫고 관광객이 빠져나가 마을이 아주 조용해진다. 호수에 마을 조명이 비치는 시간이 짧게 있다."
           },
           {
+            "spot": "auto_1_d8_hallstatt"
+          },
+          {
+            "spot": "auto_smart_food_10017"
+          },
+          {
+            "spot": "auto_smart_food_10019"
+          },
+          {
+            "spot": "auto_smart_food_10022"
+          },
+          {
             "spot": "auto_bulk_33_"
           },
           {
@@ -586,18 +604,6 @@ const COURSES = [
           },
           {
             "spot": "auto_bulk_36_"
-          },
-          {
-            "spot": "auto_1_d8_hallstatt"
-          },
-          {
-            "spot": "auto_bulk_37_"
-          },
-          {
-            "spot": "auto_bulk_38_"
-          },
-          {
-            "spot": "auto_bulk_39_"
           }
         ]
       },
@@ -623,6 +629,12 @@ const COURSES = [
         "ev": "호수 앞 레스토랑에서 저녁을 먹는다. 이 지역 송어 요리와 오스트리아 화이트 와인이 잘 어울린다. 서두를 일이 없는 밤이다.",
         "tip": "이날은 숙박 자체가 목적이다. 당일치기로 왔다 가는 사람들이 볼 수 없는 새벽과 밤을 갖는 것이 3박 일정의 이유다. 겨울에는 길이 얼어 미끄러우니 밑창이 좋은 신발을 준비하자.",
         "photos": [
+          {
+            "spot": "auto_smart_food_10025"
+          },
+          {
+            "spot": "auto_smart_food_10028"
+          },
           {
             "spot": "auto_bulk_40_"
           }
@@ -708,6 +720,12 @@ const COURSES = [
             "desc": "피스타치오 마지팬을 누가로 감싸고 초콜릿을 입힌 공 모양 과자다. 1890년 잘츠부르크 제과사 파울 퓌르스트가 만든 것이 원조이고, 퓌르스트 본점의 은박·파란 포장이 오리지널이다. 붉은 포장은 대량 생산품이다."
           },
           {
+            "spot": "auto_smart_food_10032"
+          },
+          {
+            "spot": "auto_smart_food_10033"
+          },
+          {
             "spot": "auto_bulk_41_"
           },
           {
@@ -718,12 +736,6 @@ const COURSES = [
           },
           {
             "spot": "auto_bulk_44_"
-          },
-          {
-            "spot": "auto_bulk_45_"
-          },
-          {
-            "spot": "auto_bulk_46_"
           }
         ]
       },
@@ -808,6 +820,15 @@ const COURSES = [
             "desc": "잿물에 담갔다 구워 겉이 짙고 쫄깃한 바이에른식 프레첼이다. 굵은 소금이 박혀 있고 맥주 안주로 먹는다. 아침에는 흰 소시지(바이스부어스트)와 함께 내는 것이 전통이다."
           },
           {
+            "spot": "auto_smart_lm_10034"
+          },
+          {
+            "spot": "auto_smart_food_10035"
+          },
+          {
+            "spot": "auto_smart_food_10036"
+          },
+          {
             "spot": "auto_bulk_47_"
           },
           {
@@ -815,15 +836,6 @@ const COURSES = [
           },
           {
             "spot": "auto_bulk_49_"
-          },
-          {
-            "spot": "auto_bulk_50_"
-          },
-          {
-            "spot": "auto_bulk_51_"
-          },
-          {
-            "spot": "auto_bulk_52_"
           }
         ]
       },
@@ -912,6 +924,12 @@ const COURSES = [
             "desc": "그뤼예르와 에멘탈 치즈를 화이트 와인에 녹여 빵을 찍어 먹는다. 빵을 냄비에 빠뜨리면 벌칙이 있다는 관습이 있고, 중간에 키르슈(체리 브랜디)를 한 잔 마시는 것이 소화에 좋다고 여겨진다. 여름보다 겨울 음식이다."
           },
           {
+            "spot": "auto_smart_food_10037"
+          },
+          {
+            "spot": "auto_smart_food_10038"
+          },
+          {
             "spot": "auto_bulk_53_"
           },
           {
@@ -922,12 +940,6 @@ const COURSES = [
           },
           {
             "spot": "auto_bulk_56_"
-          },
-          {
-            "spot": "auto_bulk_57_"
-          },
-          {
-            "spot": "auto_bulk_58_"
           }
         ]
       },
@@ -972,6 +984,15 @@ const COURSES = [
             "desc": "루체른 남쪽의 2,128m 산으로, 세계에서 가장 가파른 톱니바퀴 열차(최대 경사 48%)가 오른다. 다만 이 구간은 겨울에 운휴하고 케이블카만 운행한다."
           },
           {
+            "spot": "auto_smart_lm_10039"
+          },
+          {
+            "spot": "auto_smart_food_10041"
+          },
+          {
+            "spot": "auto_smart_food_10043"
+          },
+          {
             "spot": "auto_bulk_59_"
           },
           {
@@ -985,15 +1006,6 @@ const COURSES = [
           },
           {
             "spot": "auto_bulk_63_"
-          },
-          {
-            "spot": "auto_bulk_64_"
-          },
-          {
-            "spot": "auto_bulk_65_"
-          },
-          {
-            "spot": "auto_bulk_66_"
           }
         ]
       },
@@ -1067,6 +1079,9 @@ const COURSES = [
             "desc": "유럽에서 가장 높은 기차역으로 '유럽의 지붕'이라 불린다. 아이거와 묀히를 관통하는 터널을 20분 넘게 지나 올라가며, 스핑크스 전망대에서 길이 22km의 알레치 빙하가 내려다보인다. 고산이라 숨이 빨리 차니 천천히 움직여야 한다."
           },
           {
+            "spot": "auto_smart_lm_10045"
+          },
+          {
             "spot": "auto_bulk_67_"
           },
           {
@@ -1086,9 +1101,6 @@ const COURSES = [
           },
           {
             "spot": "auto_bulk_73_"
-          },
-          {
-            "spot": "auto_bulk_74_"
           }
         ]
       },
@@ -1168,6 +1180,9 @@ const COURSES = [
             "desc": "밀라노는 저녁 식사 전 술 한 잔에 안주가 딸려 나오는 아페리티보 문화의 중심지다. 갈레리아 안의 카페들이 대표적이고, 캄파리를 베이스로 한 네그로니나 스프리츠가 기본 선택이다."
           },
           {
+            "spot": "auto_smart_lm_10048"
+          },
+          {
             "spot": "auto_bulk_75_"
           },
           {
@@ -1184,9 +1199,6 @@ const COURSES = [
           },
           {
             "spot": "auto_bulk_80_"
-          },
-          {
-            "spot": "auto_bulk_81_"
           }
         ]
       },
@@ -1257,6 +1269,9 @@ const COURSES = [
             "desc": "나폴레옹이 '유럽에서 가장 아름다운 응접실'이라 불렀다는 광장이다. 밤에는 카페의 라이브 연주가 광장을 채운다."
           },
           {
+            "spot": "auto_smart_lm_10050"
+          },
+          {
             "spot": "auto_bulk_82_"
           },
           {
@@ -1276,9 +1291,6 @@ const COURSES = [
           },
           {
             "spot": "auto_bulk_88_"
-          },
-          {
-            "spot": "auto_bulk_89_"
           }
         ]
       },
@@ -1744,6 +1756,12 @@ const COURSES = [
             "desc": "1992년 올림픽을 앞두고 정비해 만든 인공 해변이다. 도심에서 지하철로 갈 수 있는 도시형 해변이며 해산물 식당이 늘어서 있다."
           },
           {
+            "spot": "auto_smart_food_10060"
+          },
+          {
+            "spot": "auto_smart_food_10061"
+          },
+          {
             "spot": "auto_bulk_121_"
           },
           {
@@ -1754,12 +1772,6 @@ const COURSES = [
           },
           {
             "spot": "auto_bulk_124_"
-          },
-          {
-            "spot": "auto_bulk_125_"
-          },
-          {
-            "spot": "auto_bulk_126_"
           }
         ]
       },
@@ -1822,22 +1834,22 @@ const COURSES = [
             "desc": "피카소가 열일곱 살에 첫 개인전을 연 카페다. 그가 그린 메뉴판 그림이 지금도 쓰인다. 파리의 '검은 고양이'를 본떠 만든 곳으로 모더니즘 예술가들의 아지트였다. 음식보다 공간과 내력으로 가는 곳이다."
           },
           {
+            "spot": "auto_smart_lm_10062"
+          },
+          {
+            "spot": "auto_smart_lm_10063"
+          },
+          {
+            "spot": "auto_smart_lm_10064"
+          },
+          {
+            "spot": "auto_smart_lm_10065"
+          },
+          {
+            "spot": "auto_smart_food_10067"
+          },
+          {
             "spot": "auto_bulk_127_"
-          },
-          {
-            "spot": "auto_bulk_128_"
-          },
-          {
-            "spot": "auto_bulk_129_"
-          },
-          {
-            "spot": "auto_bulk_130_"
-          },
-          {
-            "spot": "auto_bulk_131_"
-          },
-          {
-            "spot": "auto_bulk_132_"
           }
         ]
       },
@@ -1977,6 +1989,15 @@ const COURSES = [
             "desc": "발렌시아에서 시작된 쌀 요리로, 원래는 토끼와 달팽이를 넣은 육지 요리였다. 바닥에 눌어붙은 누룽지(소카라트)가 핵심이고, 관광지에서 미리 만들어둔 것은 이게 없다. 스페인에서는 점심 음식이라 저녁에 파에야를 파는 곳은 관광객용인 경우가 많다."
           },
           {
+            "spot": "auto_smart_lm_10072"
+          },
+          {
+            "spot": "auto_smart_food_10073"
+          },
+          {
+            "spot": "auto_smart_food_10074"
+          },
+          {
             "spot": "auto_bulk_139_"
           },
           {
@@ -1990,15 +2011,6 @@ const COURSES = [
           },
           {
             "spot": "auto_bulk_143_"
-          },
-          {
-            "spot": "auto_bulk_144_"
-          },
-          {
-            "spot": "auto_bulk_145_"
-          },
-          {
-            "spot": "auto_bulk_146_"
           }
         ]
       },
@@ -2061,6 +2073,12 @@ const COURSES = [
             "desc": "토마토·삶은 달걀·올리브·안초비 또는 참치를 올린 니스식 샐러드다. 정통 방식에는 익힌 채소를 넣지 않는다는 원칙이 있어 감자와 껍질콩을 넣으면 현지인들이 이의를 제기한다."
           },
           {
+            "spot": "auto_smart_food_10075"
+          },
+          {
+            "spot": "auto_smart_food_10076"
+          },
+          {
             "spot": "auto_bulk_147_"
           },
           {
@@ -2071,12 +2089,6 @@ const COURSES = [
           },
           {
             "spot": "auto_bulk_150_"
-          },
-          {
-            "spot": "auto_bulk_151_"
-          },
-          {
-            "spot": "auto_bulk_152_"
           }
         ]
       },
@@ -2156,6 +2168,15 @@ const COURSES = [
             "desc": "구시가지의 페노키오는 라벤더, 올리브, 토마토 바질 등 100가지 가까운 맛으로 유명하다. 해변 산책로를 걸으며 먹기 좋다."
           },
           {
+            "spot": "auto_smart_food_10078"
+          },
+          {
+            "spot": "auto_smart_food_10080"
+          },
+          {
+            "spot": "auto_smart_food_10083"
+          },
+          {
             "spot": "auto_bulk_153_"
           },
           {
@@ -2163,15 +2184,6 @@ const COURSES = [
           },
           {
             "spot": "auto_bulk_155_"
-          },
-          {
-            "spot": "auto_bulk_156_"
-          },
-          {
-            "spot": "auto_bulk_157_"
-          },
-          {
-            "spot": "auto_bulk_158_"
           }
         ]
       },
@@ -2246,6 +2258,12 @@ const COURSES = [
             "desc": "브루넬레스키의 돔은 당시 기술로 불가능하다고 여겨진 규모였고, 지지대 없이 벽돌을 나선형으로 쌓아 완성했다. 지금도 세계 최대의 조적조 돔이다. 옆의 조토 종탑과 대비되는 흰·초록·분홍 대리석 외장이 특징이다."
           },
           {
+            "spot": "auto_smart_lm_10084"
+          },
+          {
+            "spot": "auto_smart_food_10086"
+          },
+          {
             "spot": "auto_bulk_159_"
           },
           {
@@ -2262,12 +2280,6 @@ const COURSES = [
           },
           {
             "spot": "auto_bulk_164_"
-          },
-          {
-            "spot": "auto_bulk_165_"
-          },
-          {
-            "spot": "auto_bulk_166_"
           }
         ]
       },
@@ -2351,6 +2363,9 @@ const COURSES = [
             "desc": "관광객이 몰리는 기적의 광장과 달리 강변은 조용하다. 파스텔색 건물이 강을 따라 이어지고, 작은 고딕 성당 산타 마리아 델라 스피나가 강가에 붙어 있다."
           },
           {
+            "spot": "auto_smart_lm_10088"
+          },
+          {
             "spot": "auto_bulk_167_"
           },
           {
@@ -2364,9 +2379,6 @@ const COURSES = [
           },
           {
             "spot": "auto_bulk_171_"
-          },
-          {
-            "spot": "auto_bulk_172_"
           }
         ]
       },
@@ -2450,6 +2462,12 @@ const COURSES = [
             "desc": "리구리아 포카차는 다른 지역보다 얇고 올리브유가 많다. 레코식은 얇은 반죽 사이에 크레센차 치즈를 넣어 구운 것으로 이 지역 명물이다. 골목 빵집에서 조각으로 사서 걸어 다니며 먹는 것이 보통이다."
           },
           {
+            "spot": "auto_smart_food_10093"
+          },
+          {
+            "spot": "auto_smart_food_10096"
+          },
+          {
             "spot": "auto_bulk_173_"
           },
           {
@@ -2460,12 +2478,6 @@ const COURSES = [
           },
           {
             "spot": "auto_bulk_176_"
-          },
-          {
-            "spot": "auto_bulk_177_"
-          },
-          {
-            "spot": "auto_bulk_178_"
           }
         ]
       },
@@ -2541,6 +2553,12 @@ const COURSES = [
             "desc": "고대 도미티아누스 경기장 터 위에 그대로 지어져 길쭉한 타원형이다. 가운데 베르니니의 「네 강의 분수」가 있고, 나일·갠지스·다뉴브·라플라타를 의인화한 조각이 배치되어 있다."
           },
           {
+            "spot": "auto_smart_lm_10100"
+          },
+          {
+            "spot": "auto_smart_lm_10101"
+          },
+          {
             "spot": "auto_bulk_179_"
           },
           {
@@ -2554,12 +2572,6 @@ const COURSES = [
           },
           {
             "spot": "auto_bulk_183_"
-          },
-          {
-            "spot": "auto_bulk_184_"
-          },
-          {
-            "spot": "auto_bulk_185_"
           }
         ]
       },
@@ -2695,6 +2707,12 @@ const COURSES = [
             ],
             "cap": "성 베드로 대성당",
             "desc": "베드로의 무덤 위에 세워졌다고 전해지는 성당이다. 미켈란젤로가 돔을 설계했고 베르니니가 광장의 타원형 회랑을 만들었다. 회랑 바닥의 표시된 지점에 서면 네 겹의 기둥이 한 줄로 겹쳐 보인다."
+          },
+          {
+            "spot": "auto_smart_lm_10104"
+          },
+          {
+            "spot": "auto_smart_lm_10105"
           },
           {
             "spot": "auto_bulk_191_"
@@ -3066,6 +3084,9 @@ const COURSES = [
             "desc": "첫날은 무겁지 않게 독일식 기본 메뉴로 간다. 아이스바인은 염장한 돼지 정강이를 삶은 베를린 향토 요리로, 바이에른의 구운 학센과는 조리법이 다르다."
           },
           {
+            "spot": "auto_smart_lm_10129"
+          },
+          {
             "spot": "auto_bulk_209_"
           },
           {
@@ -3082,9 +3103,6 @@ const COURSES = [
           },
           {
             "spot": "auto_bulk_214_"
-          },
-          {
-            "spot": "auto_bulk_215_"
           }
         ]
       },
@@ -3306,6 +3324,18 @@ const COURSES = [
             "desc": "청어 절임이나 새우, 생선튀김을 빵에 끼운 북독일 간식이다. 항구의 란둥스브뤼켄 일대 노점에서 서서 먹는 것이 보통이고, 마차스 절임 청어(마체스)를 넣은 것이 가장 전통적이다."
           },
           {
+            "spot": "auto_smart_food_10130"
+          },
+          {
+            "spot": "auto_smart_food_10131"
+          },
+          {
+            "spot": "auto_smart_food_10132"
+          },
+          {
+            "spot": "auto_smart_food_10133"
+          },
+          {
             "spot": "auto_bulk_229_"
           },
           {
@@ -3313,18 +3343,6 @@ const COURSES = [
           },
           {
             "spot": "auto_bulk_231_"
-          },
-          {
-            "spot": "auto_bulk_232_"
-          },
-          {
-            "spot": "auto_bulk_233_"
-          },
-          {
-            "spot": "auto_bulk_234_"
-          },
-          {
-            "spot": "auto_bulk_235_"
           }
         ]
       },
@@ -3395,6 +3413,15 @@ const COURSES = [
             "desc": "쾰쉬는 쾰른에서만 만들 수 있도록 협약으로 보호되는 맥주다. 상면발효인데 저온 숙성해 에일과 라거의 중간 성격을 띠고, 가볍고 산뜻하다. 대성당 옆 프뤼 암 돔을 비롯한 브로이하우스에서는 200ml 가는 잔(슈탕에)에 담아 내는데, 쾨베스라 부르는 종업원이 둥근 쟁반을 들고 다니며 빈 잔을 묻지도 않고 새것으로 바꿔준다. 그만 마시려면 잔 위에 컵받침을 올려두면 되고, 계산은 받침에 그은 선으로 센다."
           },
           {
+            "spot": "auto_smart_food_10135"
+          },
+          {
+            "spot": "auto_smart_food_10137"
+          },
+          {
+            "spot": "auto_smart_food_10140"
+          },
+          {
             "spot": "auto_bulk_236_"
           },
           {
@@ -3408,15 +3435,6 @@ const COURSES = [
           },
           {
             "spot": "auto_bulk_240_"
-          },
-          {
-            "spot": "auto_bulk_241_"
-          },
-          {
-            "spot": "auto_bulk_242_"
-          },
-          {
-            "spot": "auto_bulk_243_"
           }
         ]
       },
@@ -3483,6 +3501,12 @@ const COURSES = [
             "desc": "반죽을 가늘게 뽑아 공 모양으로 뭉쳐 튀긴 뒤 설탕이나 초콜릿을 입힌 이 지역 과자다. 300년 넘게 만들어온 것으로, 원래는 결혼식 같은 특별한 날 음식이었다. 상당히 딱딱해서 동봉된 망치로 깨 먹는다."
           },
           {
+            "spot": "auto_smart_food_10143"
+          },
+          {
+            "spot": "auto_smart_food_10146"
+          },
+          {
             "spot": "auto_bulk_244_"
           },
           {
@@ -3499,12 +3523,6 @@ const COURSES = [
           },
           {
             "spot": "auto_bulk_249_"
-          },
-          {
-            "spot": "auto_bulk_250_"
-          },
-          {
-            "spot": "auto_bulk_251_"
           }
         ]
       },
@@ -3580,6 +3598,9 @@ const COURSES = [
             "desc": "사과로 만든 발효주로 사이다보다 시고 탄산이 약하다. 벰벨이라 부르는 회청색 도자기 주전자에 담아 나오고, 마름모 무늬가 새겨진 게리프테스 잔에 따라 마신다. 그뤼네 조세(일곱 가지 허브 소스)를 곁들인 요리가 짝이다."
           },
           {
+            "spot": "auto_smart_food_10147"
+          },
+          {
             "spot": "auto_bulk_252_"
           },
           {
@@ -3596,9 +3617,6 @@ const COURSES = [
           },
           {
             "spot": "auto_bulk_257_"
-          },
-          {
-            "spot": "auto_bulk_258_"
           }
         ]
       },
@@ -3652,6 +3670,15 @@ const COURSES = [
             "desc": "펍에서는 카운터에서 직접 주문하고 결제한 뒤 자리로 가져온다. 영국 에일은 냉장하지 않고 지하 저장고 온도(12도 안팎)로 내는데, 미지근한 것이 아니라 향을 살리기 위한 온도다."
           },
           {
+            "spot": "auto_smart_lm_10148"
+          },
+          {
+            "spot": "auto_smart_food_10149"
+          },
+          {
+            "spot": "auto_smart_food_10150"
+          },
+          {
             "spot": "auto_bulk_259_"
           },
           {
@@ -3662,15 +3689,6 @@ const COURSES = [
           },
           {
             "spot": "auto_bulk_262_"
-          },
-          {
-            "spot": "auto_bulk_263_"
-          },
-          {
-            "spot": "auto_bulk_264_"
-          },
-          {
-            "spot": "auto_bulk_265_"
           }
         ]
       },
@@ -3733,6 +3751,15 @@ const COURSES = [
             "desc": "1,000년 넘는 기록을 가진 런던 최대의 식재료 시장이다. 치즈·굴·초리조롤·커피 노점이 이어지고 시식이 활발하다. 점심시간에는 몹시 붐빈다."
           },
           {
+            "spot": "auto_smart_lm_10151"
+          },
+          {
+            "spot": "auto_smart_food_10153"
+          },
+          {
+            "spot": "auto_smart_food_10155"
+          },
+          {
             "spot": "auto_bulk_266_"
           },
           {
@@ -3740,15 +3767,6 @@ const COURSES = [
           },
           {
             "spot": "auto_bulk_268_"
-          },
-          {
-            "spot": "auto_bulk_269_"
-          },
-          {
-            "spot": "auto_bulk_270_"
-          },
-          {
-            "spot": "auto_bulk_271_"
           }
         ]
       },
@@ -3922,6 +3940,15 @@ const COURSES = [
             "desc": "'크루아상 오 뵈르'는 버터만 쓴 것이고 '크루아상 오르디네르'는 마가린을 섞은 것이라 표기를 보면 된다. 파리에서는 매년 최고의 바게트를 뽑는 대회가 있고 우승 빵집은 1년간 대통령궁에 납품한다."
           },
           {
+            "spot": "auto_smart_food_10163"
+          },
+          {
+            "spot": "auto_smart_food_10164"
+          },
+          {
+            "spot": "auto_smart_food_10165"
+          },
+          {
             "spot": "auto_bulk_272_"
           },
           {
@@ -3932,15 +3959,6 @@ const COURSES = [
           },
           {
             "spot": "auto_bulk_275_"
-          },
-          {
-            "spot": "auto_bulk_276_"
-          },
-          {
-            "spot": "auto_bulk_277_"
-          },
-          {
-            "spot": "auto_bulk_278_"
           }
         ]
       },
@@ -4003,19 +4021,22 @@ const COURSES = [
             "desc": "리볼리 거리의 살롱 드 테로, 프루스트와 샤넬이 단골이었다. 대표 메뉴인 '아프리캥'은 컵에 담긴 녹인 초콜릿에 가까울 만큼 진하고, 생크림이 따로 나온다. 몽블랑(밤 크림 케이크)도 이 집에서 시작된 것이다."
           },
           {
+            "spot": "auto_smart_lm_10166"
+          },
+          {
+            "spot": "auto_smart_lm_10167"
+          },
+          {
+            "spot": "auto_smart_lm_10168"
+          },
+          {
+            "spot": "auto_smart_food_10170"
+          },
+          {
+            "spot": "auto_smart_food_10172"
+          },
+          {
             "spot": "auto_bulk_279_"
-          },
-          {
-            "spot": "auto_bulk_280_"
-          },
-          {
-            "spot": "auto_bulk_281_"
-          },
-          {
-            "spot": "auto_bulk_282_"
-          },
-          {
-            "spot": "auto_bulk_283_"
           }
         ]
       },
@@ -4093,6 +4114,9 @@ const COURSES = [
             ],
             "cap": "르 콩쉴라 (Le Consulat)",
             "desc": "몽마르트 골목 모퉁이의 오래된 비스트로다. 피카소·모딜리아니·반 고흐가 이 동네에 살던 시절부터 있던 자리로, 붉은 차양과 모퉁이 구도가 몽마르트의 대표 이미지 중 하나다."
+          },
+          {
+            "spot": "auto_smart_lm_10174"
           }
         ]
       },
@@ -4153,6 +4177,12 @@ const COURSES = [
             ],
             "cap": "레 되 마고 (Les Deux Magots) — 1885년",
             "desc": "생제르맹데프레의 카페로 사르트르와 보부아르가 매일 앉아 글을 쓰던 자리가 있다. 헤밍웨이와 피카소도 단골이었다. 옆의 카페 드 플로르와 함께 실존주의 문학의 무대였고, 지금도 자체 문학상을 준다."
+          },
+          {
+            "spot": "auto_smart_lm_10182"
+          },
+          {
+            "spot": "auto_smart_food_10185"
           }
         ]
       },
@@ -4204,6 +4234,9 @@ const COURSES = [
             ],
             "cap": "몽마르트 골목",
             "desc": "언덕 위 사크레쾨르 계단은 야경이 좋지만 사람이 많다. 조용한 분위기를 원하면 아래쪽 골목이 낫다. 아직 포도밭이 남아 있고 매년 10월에 수확 축제가 열린다."
+          },
+          {
+            "spot": "auto_smart_lm_10190"
           }
         ]
       },
@@ -4237,6 +4270,9 @@ const COURSES = [
             ],
             "cap": "카페 드 플로르 — 1887년",
             "desc": "생제르맹데프레의 카페로 아르 데코 인테리어가 그대로 남아 있다. 사르트르와 보부아르, 카뮈가 드나들던 곳이다. 옆의 레 되 마고와 함께 파리 카페 문화의 상징이며, 마지막 날 저녁 전에 한 잔 하기 좋다."
+          },
+          {
+            "spot": "auto_smart_lm_10199"
           }
         ]
       },
@@ -4337,6 +4373,15 @@ const COURSES = [
             ],
             "cap": "호리아티키 (그릭 샐러드)",
             "desc": "그리스에서는 양상추를 넣지 않는다. 토마토·오이·양파·올리브에 페타 치즈를 통째로 얹고 올리브유와 오레가노만 뿌린다. 빵으로 접시에 남은 기름을 닦아 먹는 것이 보통이다."
+          },
+          {
+            "spot": "auto_smart_food_10212"
+          },
+          {
+            "spot": "auto_smart_food_10213"
+          },
+          {
+            "spot": "auto_smart_food_10214"
           }
         ]
       },
@@ -4406,6 +4451,12 @@ const COURSES = [
             ],
             "cap": "리카비토스 언덕",
             "desc": "해발 277m로 아테네에서 가장 높은 지점이다. 푸니쿨라로 오르며 아크로폴리스와 도시 전체, 맑은 날에는 바다까지 보인다."
+          },
+          {
+            "spot": "auto_smart_food_10216"
+          },
+          {
+            "spot": "auto_smart_food_10219"
           }
         ]
       },
@@ -4481,6 +4532,12 @@ const COURSES = [
             "desc": "그리스 내륙 산간이라 해산물보다 고기와 콩 요리가 강하다. 클레프티코(양고기 종이 구이)나 야이니아 같은 조림이 이 지역 음식이고, 크실로 화덕에서 구운 빵을 곁들인다. 타베르나는 대체로 가족 운영이라 메뉴판 없이 그날 되는 것을 말해주는 곳도 있다."
           },
           {
+            "spot": "auto_smart_food_10220"
+          },
+          {
+            "spot": "auto_smart_food_10223"
+          },
+          {
             "spot": "auto_bulk_284_"
           },
           {
@@ -4494,12 +4551,6 @@ const COURSES = [
           },
           {
             "spot": "auto_bulk_288_"
-          },
-          {
-            "spot": "auto_bulk_289_"
-          },
-          {
-            "spot": "auto_bulk_290_"
           }
         ]
       },
@@ -4535,6 +4586,9 @@ const COURSES = [
             "desc": "산토리니의 중심 마을로 절벽 위에 붙어 있다. 칼데라는 3,600년 전 미노아 분화로 섬 한가운데가 무너져 생긴 것이며, 그 폭발이 아틀란티스 전설의 기원이라는 설이 있다."
           },
           {
+            "spot": "auto_smart_food_10228"
+          },
+          {
             "spot": "auto_bulk_291_"
           },
           {
@@ -4557,9 +4611,6 @@ const COURSES = [
           },
           {
             "spot": "auto_bulk_298_"
-          },
-          {
-            "spot": "auto_bulk_299_"
           }
         ]
       },
@@ -4613,6 +4664,9 @@ const COURSES = [
             "desc": "일몰 명당인 성채 터는 한두 시간 전부터 사람이 몰린다. 인파를 피하려면 칼데라를 마주 보는 테라스 레스토랑을 예약해 앉아서 보는 방법이 있다. 일몰 시각 기준으로 예약 시간을 잡아야 한다."
           },
           {
+            "spot": "auto_smart_food_10235"
+          },
+          {
             "spot": "auto_bulk_300_"
           },
           {
@@ -4629,9 +4683,6 @@ const COURSES = [
           },
           {
             "spot": "auto_bulk_305_"
-          },
-          {
-            "spot": "auto_bulk_306_"
           }
         ]
       },
@@ -4758,10 +4809,10 @@ const COURSES = [
             "desc": "바다에 바로 면한 건물들의 발코니가 물 위에 걸쳐 있어 붙은 이름이다. 원래 18세기 선주와 상인들의 집이었고 지금은 1층이 바로 쓰인다. 해질 무렵 이 앞에 앉아 있는 것이 미코노스의 방식이다."
           },
           {
-            "spot": "auto_bulk_316_"
+            "spot": "auto_4_d9_mykonos"
           },
           {
-            "spot": "auto_4_d9_mykonos"
+            "spot": "auto_bulk_316_"
           },
           {
             "spot": "auto_bulk_317_"
@@ -4930,6 +4981,18 @@ const COURSES = [
             "desc": "블타바 강을 가로지르는 중세 석교. 30개의 성인 조각상이 양쪽으로 늘어서 있어 유럽 도시 중 손꼽히는 야경을 만들어낸다."
           },
           {
+            "spot": "auto_smart_food_10253"
+          },
+          {
+            "spot": "auto_smart_food_10254"
+          },
+          {
+            "spot": "auto_smart_food_10255"
+          },
+          {
+            "spot": "auto_smart_food_10256"
+          },
+          {
             "spot": "auto_bulk_1_"
           },
           {
@@ -4940,18 +5003,6 @@ const COURSES = [
           },
           {
             "spot": "auto_bulk_4_"
-          },
-          {
-            "spot": "auto_bulk_5_"
-          },
-          {
-            "spot": "auto_bulk_6_"
-          },
-          {
-            "spot": "auto_bulk_7_"
-          },
-          {
-            "spot": "auto_bulk_8_"
           }
         ]
       },
@@ -4985,6 +5036,15 @@ const COURSES = [
             ],
             "cap": "프라하 성 전경",
             "desc": "세계에서 가장 큰 고성 단지로 블타바 강 건너편에서 보면 구시가지 스카이라인 전체를 압도하는 장관이 펼쳐진다."
+          },
+          {
+            "spot": "auto_smart_lm_10257"
+          },
+          {
+            "spot": "auto_smart_lm_10258"
+          },
+          {
+            "spot": "auto_smart_food_10261"
           }
         ]
       },
@@ -5095,6 +5155,18 @@ const COURSES = [
             ],
             "cap": "쿠르토샬라치",
             "desc": "장작불에 구워내는 원통 모양의 전통 과자. 계피 설탕을 입혀 바삭하고 달콤하며 체코와 헝가리 어디서나 만날 수 있다."
+          },
+          {
+            "spot": "auto_smart_food_10269"
+          },
+          {
+            "spot": "auto_smart_food_10270"
+          },
+          {
+            "spot": "auto_smart_food_10271"
+          },
+          {
+            "spot": "auto_smart_food_10272"
           }
         ]
       },
@@ -5355,6 +5427,15 @@ const COURSES = [
             "desc": "1849년 완공된 부다와 페스트를 최초로 연결한 현수교. 야간 조명을 받으면 다뉴브 강에 황금빛 반영이 생겨난다."
           },
           {
+            "spot": "auto_smart_lm_10273"
+          },
+          {
+            "spot": "auto_smart_lm_10274"
+          },
+          {
+            "spot": "auto_smart_lm_10275"
+          },
+          {
             "spot": "auto_bulk_335_"
           },
           {
@@ -5368,15 +5449,6 @@ const COURSES = [
           },
           {
             "spot": "auto_bulk_339_"
-          },
-          {
-            "spot": "auto_bulk_340_"
-          },
-          {
-            "spot": "auto_bulk_341_"
-          },
-          {
-            "spot": "auto_bulk_342_"
           }
         ]
       },
@@ -5439,6 +5511,9 @@ const COURSES = [
             "desc": "기름에 튀긴 납작한 반죽에 사워크림과 치즈를 얹어 먹는 헝가리 대표 길거리 음식. 중앙시장 2층에서 가장 맛있게 먹을 수 있다."
           },
           {
+            "spot": "auto_smart_lm_10279"
+          },
+          {
             "spot": "auto_bulk_343_"
           },
           {
@@ -5452,9 +5527,6 @@ const COURSES = [
           },
           {
             "spot": "auto_bulk_347_"
-          },
-          {
-            "spot": "auto_bulk_348_"
           }
         ]
       },
@@ -5499,6 +5571,12 @@ const COURSES = [
             "desc": "소고기와 파프리카를 넣고 오래 끓인 헝가리의 국민 스튜. 빵과 함께 먹으면 든든한 한 끼가 되는 여행의 마지막 만찬이다."
           },
           {
+            "spot": "auto_smart_lm_10283"
+          },
+          {
+            "spot": "auto_smart_lm_10285"
+          },
+          {
             "spot": "auto_bulk_349_"
           },
           {
@@ -5515,12 +5593,6 @@ const COURSES = [
           },
           {
             "spot": "auto_bulk_354_"
-          },
-          {
-            "spot": "auto_bulk_355_"
-          },
-          {
-            "spot": "auto_bulk_356_"
           }
         ]
       },
@@ -5713,6 +5785,12 @@ const COURSES = [
             "desc": "에멘탈·그뤼에르 치즈를 화이트 와인에 녹인 스위스의 대표 공동 요리. 길고 긴 포크로 빵 조각을 찍어 치즈 냄비 속에 돌려가며 녹이는 것이 규칙이며, 빠뜨리면 키스를 해야 한다는 전통이 있다."
           },
           {
+            "spot": "auto_smart_lm_10290"
+          },
+          {
+            "spot": "auto_smart_food_10291"
+          },
+          {
             "spot": "auto_bulk_67_"
           },
           {
@@ -5726,12 +5804,6 @@ const COURSES = [
           },
           {
             "spot": "auto_bulk_71_"
-          },
-          {
-            "spot": "auto_bulk_72_"
-          },
-          {
-            "spot": "auto_bulk_73_"
           }
         ]
       },
@@ -5786,6 +5858,15 @@ const COURSES = [
             ],
             "cap": "Top of Europe · 3,454m",
             "desc": "해발 3,454m의 융프라우요흐는 유럽에서 기차로 갈 수 있는 가장 높은 역이다. 스핑크스 전망대에서 알레치 빙하와 융프라우 정상이 한눈에 들어오며, 맑은 날에는 독일 블랙 포레스트까지 보인다."
+          },
+          {
+            "spot": "auto_smart_lm_10293"
+          },
+          {
+            "spot": "auto_smart_food_10294"
+          },
+          {
+            "spot": "auto_smart_food_10295"
           },
           {
             "spot": "auto_bulk_362_"
@@ -5887,19 +5968,19 @@ const COURSES = [
             "desc": "소금에 절인 돼지 족발, 훈제 소시지, 베이컨, 삶은 감자와 사우어크라우트를 한 접시에 담아내는 베른 향토 요리. CHF 30~40으로 든든한 한 끼이며, 구시가지 아케이드 아래 어느 레스토랑에서든 주문할 수 있다."
           },
           {
+            "spot": "auto_smart_food_10296"
+          },
+          {
+            "spot": "auto_smart_food_10297"
+          },
+          {
+            "spot": "auto_smart_food_10300"
+          },
+          {
             "spot": "auto_bulk_368_"
           },
           {
             "spot": "auto_bulk_369_"
-          },
-          {
-            "spot": "auto_bulk_370_"
-          },
-          {
-            "spot": "auto_bulk_371_"
-          },
-          {
-            "spot": "auto_bulk_372_"
           }
         ],
         "returnPhotos": [
@@ -6043,6 +6124,12 @@ const COURSES = [
             "desc": "소의 4번째 위(abomasum)를 향신료 국물에 오래 삶아 자른 뒤 세몰리나 빵에 끼워주는 피렌체 특유의 길거리 음식. 산 로렌초 시장 인근 Nerbone 또는 노점 Tripperia에서 €5~7에 맛볼 수 있다. 느끼한 내장이 아니라 깊고 짙은 브로스 향이 인상적이다."
           },
           {
+            "spot": "auto_smart_lm_10301"
+          },
+          {
+            "spot": "auto_smart_food_10303"
+          },
+          {
             "spot": "auto_bulk_159_"
           },
           {
@@ -6056,12 +6143,6 @@ const COURSES = [
           },
           {
             "spot": "auto_bulk_163_"
-          },
-          {
-            "spot": "auto_bulk_164_"
-          },
-          {
-            "spot": "auto_bulk_165_"
           }
         ]
       },
@@ -6147,6 +6228,12 @@ const COURSES = [
             "desc": "메디치 가문이 수집한 르네상스 최대 컬렉션. 보티첼리의 비너스의 탄생과 봄, 레오나르도 다빈치의 수태고지, 미켈란젤로의 성가족 등 교과서에서 보던 원작들이 한 건물 안에 있다."
           },
           {
+            "spot": "auto_smart_lm_10305"
+          },
+          {
+            "spot": "auto_smart_lm_10306"
+          },
+          {
             "spot": "auto_bulk_167_"
           },
           {
@@ -6160,12 +6247,6 @@ const COURSES = [
           },
           {
             "spot": "auto_bulk_171_"
-          },
-          {
-            "spot": "auto_bulk_172_"
-          },
-          {
-            "spot": "auto_bulk_373_"
           }
         ]
       },
@@ -6236,6 +6317,9 @@ const COURSES = [
             "desc": "과이알레(돼지 볼살 베이컨)·달걀 노른자·페코리노 로마노·후추만으로 만드는 로마 전통 파스타. 크림은 절대 들어가지 않는다. 트라스테베레 Da Enzo al 29의 카르보나라는 로마 현지인들이 꼽는 최고 맛집 중 하나다."
           },
           {
+            "spot": "auto_smart_lm_10311"
+          },
+          {
             "spot": "auto_bulk_179_"
           },
           {
@@ -6249,9 +6333,6 @@ const COURSES = [
           },
           {
             "spot": "auto_bulk_183_"
-          },
-          {
-            "spot": "auto_bulk_184_"
           }
         ]
       },
@@ -6324,16 +6405,16 @@ const COURSES = [
             "spot": "food_cacio_pepe"
           },
           {
+            "spot": "auto_smart_lm_10313"
+          },
+          {
+            "spot": "auto_smart_lm_10314"
+          },
+          {
+            "spot": "auto_smart_lm_10315"
+          },
+          {
             "spot": "auto_bulk_185_"
-          },
-          {
-            "spot": "auto_bulk_186_"
-          },
-          {
-            "spot": "auto_bulk_187_"
-          },
-          {
-            "spot": "auto_bulk_188_"
           }
         ]
       },
@@ -6472,6 +6553,15 @@ const COURSES = [
         "tip": "Le Bus Direct는 CDG T1 출구에서 바로 탑승 가능. 온라인 구매(lebusdirect.com)가 현장보다 저렴하다. Navigo 주간권(€30/인)은 내일 아침 Brochant역 창구에서 구매한다.",
         "photos": [
           {
+            "spot": "auto_smart_food_10320"
+          },
+          {
+            "spot": "auto_smart_food_10321"
+          },
+          {
+            "spot": "auto_smart_food_10322"
+          },
+          {
             "spot": "auto_bulk_272_"
           },
           {
@@ -6491,15 +6581,6 @@ const COURSES = [
           },
           {
             "spot": "auto_bulk_278_"
-          },
-          {
-            "spot": "auto_bulk_279_"
-          },
-          {
-            "spot": "auto_bulk_280_"
-          },
-          {
-            "spot": "auto_bulk_281_"
           }
         ]
       },
@@ -6588,6 +6669,18 @@ const COURSES = [
             "desc": "생제르맹데프레의 상징 카페. 장폴 사르트르와 시몬 드 보부아르가 매일 이곳에서 글을 썼고, 카뮈·피카소·헤밍웨이도 드나들었다. 아르 데코 인테리어가 그대로 남아 있으며, 카페 크렘과 크루아상으로 파리 지성의 공기를 마실 수 있다."
           },
           {
+            "spot": "auto_smart_lm_10323"
+          },
+          {
+            "spot": "auto_smart_lm_10324"
+          },
+          {
+            "spot": "auto_smart_food_10326"
+          },
+          {
+            "spot": "auto_smart_food_10328"
+          },
+          {
             "spot": "auto_bulk_282_"
           },
           {
@@ -6654,6 +6747,15 @@ const COURSES = [
             ],
             "cap": "거울의 방 — 길이 73m, 357장의 거울",
             "desc": "당시 베네치아가 독점하던 초고가 사치품인 거울 357장이 정원 쪽 17개 창을 마주본다. 태양왕 루이 14세의 치적을 담은 30개의 천장화가 거울에 무한히 반사된다. 1919년 제1차 세계대전을 끝낸 베르사유 조약이 이 방에서 조인됐다."
+          },
+          {
+            "spot": "auto_smart_lm_10330"
+          },
+          {
+            "spot": "auto_smart_food_10331"
+          },
+          {
+            "spot": "auto_smart_food_10332"
           }
         ]
       },
@@ -6740,6 +6842,9 @@ const COURSES = [
             ],
             "cap": "카날 생마르탱 — 아멜리에의 운하",
             "desc": "1825년 완공, 총 4.5km의 운하로 9개의 수문과 철제 아치 교량이 이어진다. 영화 '아멜리에'(2001)에서 오드레 토투가 물수제비를 뛰던 바로 그 장소. 운하 주변 10구는 파리에서 가장 활기찬 카페 문화 지구 중 하나다."
+          },
+          {
+            "spot": "auto_smart_food_10335"
           }
         ]
       },
@@ -6817,6 +6922,9 @@ const COURSES = [
             ],
             "cap": "몽파르나스 타워 — 에펠탑이 보이는 자리",
             "desc": "1973년 완공, 210m 높이의 파리에서 가장 키 큰 마천루. 56층 전망대에서 파리 전체를 내려다보는 경험이 진짜 이유인데, 에펠탑을 정면으로 볼 수 있는 몇 안 되는 뷰포인트 중 하나다. \"파리에서 가장 좋은 뷰는 여기서 보이는 파리다 — 유일하게 이 건물이 빠진 채로\"라는 농담이 유명하다."
+          },
+          {
+            "spot": "auto_smart_lm_10340"
           }
         ]
       },
@@ -6898,6 +7006,12 @@ const COURSES = [
             ],
             "cap": "마레 지구 — 보쥬 광장과 팔라펠 점심",
             "desc": "파리 4구의 마레는 19세기 오스만의 대개조에서 비껴난 덕분에 중세 골목이 그대로 남았다. 보쥬 광장(1612년, 파리 최초의 계획 광장)을 중심으로 아트 갤러리·유대인 거리·편집숍이 뒤섞여 있다. 뤼 데 로지에의 팔라펠이 점심 최강 가성비다."
+          },
+          {
+            "spot": "auto_smart_lm_10347"
+          },
+          {
+            "spot": "auto_smart_lm_10348"
           }
         ]
       },
@@ -6952,6 +7066,15 @@ const COURSES = [
             ],
             "cap": "몽마르트르 · 마지막 시선",
             "desc": "17구 Batignolles 호텔에서 체크아웃 전 아침, 창밖으로 사크레쾨르 흰 돔이 보이는 방향이 몽마르트르다. 고흐·피카소·르누아르가 이 언덕에서 그림을 그리던 시절을 생각하며 파리를 눈에 담고 공항으로 향한다."
+          },
+          {
+            "spot": "auto_smart_lm_10357"
+          },
+          {
+            "spot": "auto_smart_lm_10359"
+          },
+          {
+            "spot": "auto_smart_food_10360"
           }
         ]
       }
@@ -7031,6 +7154,9 @@ const COURSES = [
             "desc": "마인츠의 라인강 풍경."
           },
           {
+            "spot": "auto_smart_food_10361"
+          },
+          {
             "spot": "auto_bulk_374_"
           },
           {
@@ -7050,9 +7176,6 @@ const COURSES = [
           },
           {
             "spot": "auto_bulk_380_"
-          },
-          {
-            "spot": "auto_bulk_381_"
           }
         ]
       },
@@ -7106,6 +7229,12 @@ const COURSES = [
             "desc": "자흐젠하우젠 철교 위에서 바라본 프랑크푸르트 금융 타워 군. 유럽에서 고층 빌딩이 가장 밀집한 도시로 'Mainhattan'이라는 별명을 얻었다. ECB(유럽중앙은행) 본부도 이 강변에 있다."
           },
           {
+            "spot": "food_apfelwein"
+          },
+          {
+            "spot": "auto_smart_food_10362"
+          },
+          {
             "spot": "auto_bulk_252_"
           },
           {
@@ -7121,13 +7250,7 @@ const COURSES = [
             "spot": "auto_bulk_256_"
           },
           {
-            "spot": "food_apfelwein"
-          },
-          {
             "spot": "auto_bulk_257_"
-          },
-          {
-            "spot": "auto_bulk_258_"
           }
         ]
       },
@@ -7181,6 +7304,18 @@ const COURSES = [
             "desc": "쾰른의 전통 맥주."
           },
           {
+            "spot": "auto_smart_food_10364"
+          },
+          {
+            "spot": "auto_smart_food_10365"
+          },
+          {
+            "spot": "auto_smart_food_10366"
+          },
+          {
+            "spot": "auto_smart_food_10367"
+          },
+          {
             "spot": "auto_bulk_236_"
           },
           {
@@ -7191,18 +7326,6 @@ const COURSES = [
           },
           {
             "spot": "auto_bulk_239_"
-          },
-          {
-            "spot": "auto_bulk_240_"
-          },
-          {
-            "spot": "auto_bulk_241_"
-          },
-          {
-            "spot": "auto_bulk_242_"
-          },
-          {
-            "spot": "auto_bulk_243_"
           }
         ]
       },
@@ -7256,6 +7379,15 @@ const COURSES = [
             "desc": "1788년 카를 테오도르 다리. 밤에는 다리 조명이 넥카 강에 반영된다. 다리 위에서 동쪽 성 야경과 서쪽 구시가지가 동시에 보인다."
           },
           {
+            "spot": "auto_smart_food_10370"
+          },
+          {
+            "spot": "auto_smart_food_10372"
+          },
+          {
+            "spot": "auto_smart_food_10375"
+          },
+          {
             "spot": "auto_bulk_382_"
           },
           {
@@ -7269,15 +7401,6 @@ const COURSES = [
           },
           {
             "spot": "auto_bulk_386_"
-          },
-          {
-            "spot": "auto_bulk_387_"
-          },
-          {
-            "spot": "auto_bulk_388_"
-          },
-          {
-            "spot": "auto_bulk_389_"
           }
         ]
       },
@@ -7332,6 +7455,15 @@ const COURSES = [
             "desc": "독일 자동차의 역사."
           },
           {
+            "spot": "auto_smart_lm_10376"
+          },
+          {
+            "spot": "auto_smart_food_10377"
+          },
+          {
+            "spot": "auto_smart_food_10379"
+          },
+          {
             "spot": "auto_bulk_47_"
           },
           {
@@ -7345,15 +7477,6 @@ const COURSES = [
           },
           {
             "spot": "auto_bulk_51_"
-          },
-          {
-            "spot": "auto_bulk_52_"
-          },
-          {
-            "spot": "auto_bulk_390_"
-          },
-          {
-            "spot": "auto_bulk_391_"
           }
         ]
       },
@@ -7408,6 +7531,9 @@ const COURSES = [
             "desc": "빈의 전통 카페 멜란지."
           },
           {
+            "spot": "auto_smart_lm_10380"
+          },
+          {
             "spot": "auto_bulk_17_"
           },
           {
@@ -7427,9 +7553,6 @@ const COURSES = [
           },
           {
             "spot": "auto_bulk_24_"
-          },
-          {
-            "spot": "auto_bulk_25_"
           }
         ]
       },
@@ -7607,6 +7730,9 @@ const COURSES = [
             ],
             "cap": "하우프트플라츠 — 그라츠 구시가지 중심",
             "desc": "1245년부터 그라츠의 중심 광장. 분수 주위로 16~19세기 건물이 에워싸고 있다. 에르체르초그 요한(Erzherzog Johann) 분수 주변에서 트램이 지나는 이 광장은 그라츠 일상의 무대다. 1999년 구시가지 전체가 유네스코 세계유산에 등재됐다."
+          },
+          {
+            "spot": "auto_smart_food_10386"
           }
         ]
       },
@@ -7947,6 +8073,9 @@ const COURSES = [
             "desc": "유럽의 젖줄 라인강이 시원하게 흘러가는 마인츠 강변 산책로. 밤이 되면 정결한 조명과 잔잔한 강물이 어우러져 한적한 분위기를 자아낸다."
           },
           {
+            "spot": "auto_smart_food_10390"
+          },
+          {
             "spot": "auto_bulk_374_"
           },
           {
@@ -7966,9 +8095,6 @@ const COURSES = [
           },
           {
             "spot": "auto_bulk_380_"
-          },
-          {
-            "spot": "auto_bulk_381_"
           }
         ]
       },
@@ -8022,6 +8148,12 @@ const COURSES = [
             "desc": "유럽중앙은행(ECB) 등 초고층 빌딩이 밀집해 있어 마인해튼(Mainhattan)이라 불리는 프랑크푸르트의 현대적인 스카이라인 비경이다."
           },
           {
+            "spot": "food_apfelwein"
+          },
+          {
+            "spot": "auto_smart_food_10391"
+          },
+          {
             "spot": "auto_bulk_252_"
           },
           {
@@ -8037,13 +8169,7 @@ const COURSES = [
             "spot": "auto_bulk_256_"
           },
           {
-            "spot": "food_apfelwein"
-          },
-          {
             "spot": "auto_bulk_257_"
-          },
-          {
-            "spot": "auto_bulk_258_"
           }
         ]
       },
@@ -8097,6 +8223,18 @@ const COURSES = [
             "desc": "0.2L 전용 원통형 잔(Stange)에 담겨 나오는 상면발효 맥주로, 서빙하는 쾨베스가 잔이 비면 계속 새 잔으로 교체해주는 독특한 문화가 있다."
           },
           {
+            "spot": "auto_smart_food_10393"
+          },
+          {
+            "spot": "auto_smart_food_10394"
+          },
+          {
+            "spot": "auto_smart_food_10395"
+          },
+          {
+            "spot": "auto_smart_food_10396"
+          },
+          {
             "spot": "auto_bulk_236_"
           },
           {
@@ -8107,18 +8245,6 @@ const COURSES = [
           },
           {
             "spot": "auto_bulk_239_"
-          },
-          {
-            "spot": "auto_bulk_240_"
-          },
-          {
-            "spot": "auto_bulk_241_"
-          },
-          {
-            "spot": "auto_bulk_242_"
-          },
-          {
-            "spot": "auto_bulk_243_"
           }
         ]
       },
@@ -8146,6 +8272,12 @@ const COURSES = [
         "tip": "뮌헨행 ICE는 사전 좌석 지정이 유용하다.",
         "photos": [
           {
+            "spot": "auto_smart_food_10397"
+          },
+          {
+            "spot": "auto_smart_food_10399"
+          },
+          {
             "spot": "auto_bulk_47_"
           },
           {
@@ -8168,12 +8300,6 @@ const COURSES = [
           },
           {
             "spot": "auto_bulk_391_"
-          },
-          {
-            "spot": "auto_bulk_393_"
-          },
-          {
-            "spot": "auto_bulk_394_"
           }
         ],
         "before": [
@@ -8272,6 +8398,15 @@ const COURSES = [
             "desc": "1158년 이래 뮌헨의 중심 광장. 85m 높이의 시청사 탑 위에서 펼쳐지는 글로켄슈필 인형극과 바이에른의 열정을 만끽한다."
           },
           {
+            "spot": "auto_9_d7_innsbruck"
+          },
+          {
+            "spot": "auto_smart_food_10402"
+          },
+          {
+            "spot": "auto_smart_food_10404"
+          },
+          {
             "spot": "auto_bulk_396_"
           },
           {
@@ -8282,15 +8417,6 @@ const COURSES = [
           },
           {
             "spot": "auto_bulk_399_"
-          },
-          {
-            "spot": "auto_bulk_400_"
-          },
-          {
-            "spot": "auto_bulk_401_"
-          },
-          {
-            "spot": "auto_9_d7_innsbruck"
           }
         ]
       },
@@ -8347,6 +8473,9 @@ const COURSES = [
             ],
             "cap": "황금 지붕 — 1500년 황제 막시밀리안 1세의 발코니",
             "desc": "2,657개의 순금 박편 기와로 빛나는 인스부르크의 대표 상징물로 티롤 합스부르크 황실의 고풍스러운 멋을 보여준다."
+          },
+          {
+            "spot": "auto_smart_food_10410"
           },
           {
             "spot": "auto_bulk_402_"
@@ -8436,7 +8565,11 @@ const COURSES = [
         "pm": "해발 929m에 위치한 티롤 최대의 청정 호수 아헨제 유람선 탑승. 알프스 암봉들이 호수를 둘러싼 비경 속에서 호숫가 산책 및 점심 식사.",
         "ev": "알프스 고원 호수의 상쾌한 바람을 만끽 후 인스부르크 귀환. 인스부르크에서의 마지막 밤 저녁 식사 및 내일 빈 이동 준비.",
         "tip": "아헨제는 \"티롤의 바다\"라 불리며 맑은 물과 웅장한 산맥이 어우러진 알프스 보석 같은 휴양지다.",
-        "photos": []
+        "photos": [
+          {
+            "spot": "auto_smart_food_10419"
+          }
+        ]
       },
       {
         "day": 9,
@@ -8492,6 +8625,9 @@ const COURSES = [
             "desc": "세계 3대 오페라하우스 중 하나로 1869년 모차르트 <돈 조반니>로 개관한 합스부르크 제국의 음악적 자부심이다."
           },
           {
+            "spot": "auto_smart_lm_10420"
+          },
+          {
             "spot": "auto_bulk_17_"
           },
           {
@@ -8508,9 +8644,6 @@ const COURSES = [
           },
           {
             "spot": "auto_bulk_23_"
-          },
-          {
-            "spot": "auto_bulk_24_"
           }
         ]
       },
@@ -8829,6 +8962,12 @@ const COURSES = [
             "desc": "뉴욕의 상징."
           },
           {
+            "spot": "auto_smart_food_10421"
+          },
+          {
+            "spot": "auto_smart_food_10422"
+          },
+          {
             "spot": "auto_bulk_410_"
           },
           {
@@ -8845,12 +8984,6 @@ const COURSES = [
           },
           {
             "spot": "auto_bulk_415_"
-          },
-          {
-            "spot": "auto_bulk_416_"
-          },
-          {
-            "spot": "auto_bulk_417_"
           }
         ]
       },
@@ -8917,6 +9050,12 @@ const COURSES = [
             "desc": "1872년 개관, 소장품 약 150만 점. 5번가 맞은편으로는 센트럴파크가, 건물 뒤로는 도시가 펼쳐진다. 한국관(Korean Art Gallery)에는 조선시대 가구·도자기·서화가 전시되어 있다."
           },
           {
+            "spot": "auto_smart_food_10424"
+          },
+          {
+            "spot": "auto_smart_food_10426"
+          },
+          {
             "spot": "auto_bulk_418_"
           },
           {
@@ -8933,12 +9072,6 @@ const COURSES = [
           },
           {
             "spot": "auto_bulk_423_"
-          },
-          {
-            "spot": "auto_bulk_424_"
-          },
-          {
-            "spot": "auto_bulk_425_"
           }
         ]
       },
@@ -9000,6 +9133,12 @@ const COURSES = [
             "desc": "1930년 완공, 319m. 자동차 부품(바퀴 덮개·독수리 장식)에서 영감을 받은 스테인리스 스틸 아르데코 첨탑은 뉴욕 최고의 건축적 디테일로 꼽힌다. 엠파이어 스테이트에 1년도 안 돼 세계 최고층 자리를 내줬지만, 아름다움만큼은 여전히 No.1을 다툰다."
           },
           {
+            "spot": "auto_smart_lm_10427"
+          },
+          {
+            "spot": "auto_smart_food_10430"
+          },
+          {
             "spot": "auto_bulk_426_"
           },
           {
@@ -9019,12 +9158,6 @@ const COURSES = [
           },
           {
             "spot": "auto_bulk_432_"
-          },
-          {
-            "spot": "auto_bulk_433_"
-          },
-          {
-            "spot": "auto_bulk_434_"
           }
         ]
       },
@@ -9088,6 +9221,9 @@ const COURSES = [
             ],
             "cap": "하이라인 — 폐철도가 된 공중 정원",
             "desc": "1930년대 미트패킹 지구의 화물 철도선. 수십 년간 방치되다가 2009년 공원으로 재탄생했다. 사계절 다른 풀꽃·나무가 심어진 2.4km 산책로 위에서 서쪽으로 허드슨강, 동쪽으로 미드타운 스카이라인이 보인다."
+          },
+          {
+            "spot": "auto_smart_lm_10433"
           },
           {
             "spot": "auto_bulk_435_"
@@ -9155,6 +9291,9 @@ const COURSES = [
             "desc": "Down Under the Manhattan Bridge Overpass. 1990년대까지 창고 지구였다가 지금은 갤러리·스튜디오·IT기업이 가득한 브루클린 최고의 힙스터 동네다. Washington St에서 맨해튼 브리지 아치 사이로 브루클린 브리지와 맨해튼이 프레임처럼 담긴다."
           },
           {
+            "spot": "auto_smart_lm_10439"
+          },
+          {
             "spot": "auto_bulk_437_"
           },
           {
@@ -9174,9 +9313,6 @@ const COURSES = [
           },
           {
             "spot": "auto_bulk_443_"
-          },
-          {
-            "spot": "auto_bulk_444_"
           }
         ]
       },
@@ -9245,6 +9381,9 @@ const COURSES = [
             ],
             "cap": "자유의 여신상 — 1886년 프랑스의 선물",
             "desc": "프랑스와 미국 우정의 상징으로 1886년 프랑스가 미국에 선물했다. 받침대까지 높이 93m. 횃불을 든 로마 신화의 자유의 여신 리베르타스상. 뉴욕항에서 들어오는 이민자들이 처음 보는 것이 이 동상이었다."
+          },
+          {
+            "spot": "auto_smart_lm_10441"
           }
         ]
       },
@@ -9317,7 +9456,11 @@ const COURSES = [
         "pm": "JFK 이륙. 14시간 후 인천 도착. 기내에서 내려다보는 허드슨강과 맨해튼 섬이 잠시 보인다 — 이 섬에서 7박을 보냈다.",
         "ev": "귀국. 뉴욕이 남긴 것: 센트럴파크의 아침 공기, 브루클린 브리지 위에서 본 스카이라인, 9/11 풀의 침묵, 브로드웨이 공연 커튼콜의 기립박수.",
         "tip": "귀국 후 세관 신고: 미국에서 구입한 물품 $800 초과분은 신고 대상(한국 면세 한도 $800). 주류 1병·담배 1보루 추가 면세. JFK → 미드타운 마지막 날 아침 지하철 이용 시 큰 캐리어가 있으면 옐로캡($70~90)이 현실적으로 더 편하다.",
-        "photos": []
+        "photos": [
+          {
+            "spot": "auto_smart_lm_10454"
+          }
+        ]
       }
     ]
   }
