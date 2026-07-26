@@ -89,6 +89,21 @@ const COURSES = [
             ],
             "cap": "아르히카테드라 Świętych 비타, 바츠와바 이 보이치에하 브 프라제 20190816 1333 5260(Archikatedra Świętych Wita, Wacława i Wojciecha w Pradze 20190816 1333 5260)",
             "desc": "밤이 되면 화려한 조명으로 또 다른 매력을 뽐내는 로맨틱한 장소입니다."
+          },
+          {
+            "spot": "auto_fill_50001",
+            "cap": "20190816 Brama Prochowa w Pradze 1859 5460 DxO",
+            "desc": "위키미디어에서 제공하는 프라하 관련 사진입니다."
+          },
+          {
+            "spot": "auto_fill_50002",
+            "cap": "Charles Bridge (Karlův most), Vltava River, Prague, 2015",
+            "desc": "위키미디어에서 제공하는 프라하 관련 사진입니다."
+          },
+          {
+            "spot": "auto_fill_50003",
+            "cap": "FFUK Praha",
+            "desc": "위키미디어에서 제공하는 프라하 관련 사진입니다."
           }
         ]
       },
@@ -230,6 +245,26 @@ const COURSES = [
             ],
             "cap": "칼즈배드(Carlsbad)",
             "desc": "위키미디어에서 제공하는 칼즈배드의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+          },
+          {
+            "spot": "auto_fill_50004",
+            "cap": "Canal in Karlovy Vary (Carlsbad)",
+            "desc": "위키미디어에서 제공하는 카를로비바리 관련 사진입니다."
+          },
+          {
+            "spot": "auto_fill_50005",
+            "cap": "EVLAHOS KARLOVY VARY",
+            "desc": "위키미디어에서 제공하는 카를로비바리 관련 사진입니다."
+          },
+          {
+            "spot": "auto_fill_50006",
+            "cap": "Evlahos carlovy vary",
+            "desc": "위키미디어에서 제공하는 카를로비바리 관련 사진입니다."
+          },
+          {
+            "spot": "auto_fill_50007",
+            "cap": "Exterior of Karlovy Vary Town Theatre (Divadlo Karlovy Vary) at night 02",
+            "desc": "위키미디어에서 제공하는 카를로비바리 관련 사진입니다."
           }
         ]
       },
@@ -330,6 +365,11 @@ const COURSES = [
             ],
             "cap": "62 볼커스베르겐슈트라세(62 Wolkersbergenstraße)",
             "desc": "위키미디어에서 제공하는 62 볼커스베르겐슈트라세의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+          },
+          {
+            "spot": "auto_fill_50008",
+            "cap": "20180109 Vienna State Opera at blue hour 850 9387",
+            "desc": "위키미디어에서 제공하는 빈 관련 사진입니다."
           }
         ]
       },
@@ -622,6 +662,21 @@ const COURSES = [
             ],
             "cap": "할슈타트의 400 야레 프론라이히남프로체치온(400 Jahre Fronleichnamprozession in Hallstatt)",
             "desc": "수백 년의 역사와 문화가 거리 구석구석 살아 숨 쉬는 매력적인 명소입니다."
+          },
+          {
+            "spot": "auto_fill_50009",
+            "cap": "Alice Schumacher NHM Wien Abb Salz-Reich 2008 Seite 133 6",
+            "desc": "위키미디어에서 제공하는 할슈타트 관련 사진입니다."
+          },
+          {
+            "spot": "auto_fill_50010",
+            "cap": "Blue Hallstatt (204466021)",
+            "desc": "위키미디어에서 제공하는 할슈타트 관련 사진입니다."
+          },
+          {
+            "spot": "auto_fill_50011",
+            "cap": "Museum Hallstatt 26",
+            "desc": "위키미디어에서 제공하는 할슈타트 관련 사진입니다."
           }
         ]
       },
@@ -754,6 +809,16 @@ const COURSES = [
             ],
             "cap": "8/10 - 호엔잘츠부르크 성, 오스트리아(8 of 10 - Hohensalzburg Castle, AUSTRIA)",
             "desc": "위키미디어에서 제공하는 8/10 - 호엔잘츠부르크 성, 오스트리아의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+          },
+          {
+            "spot": "auto_fill_50012",
+            "cap": "Feb20532",
+            "desc": "위키미디어에서 제공하는 잘츠부르크 관련 사진입니다."
+          },
+          {
+            "spot": "auto_fill_50013",
+            "cap": "2163 - Salzburg - Stift Nonnberg",
+            "desc": "위키미디어에서 제공하는 잘츠부르크 관련 사진입니다."
           }
         ]
       },
@@ -863,6 +928,11 @@ const COURSES = [
             ],
             "cap": "알리안츠 아레나 2008-02-09(Allianz Arena 2008-02-09)",
             "desc": "위키미디어에서 제공하는 알리안츠 아레나 2008-02-09의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+          },
+          {
+            "spot": "auto_fill_50014",
+            "cap": "Das Staatstheater am Gärtnerplatz 04",
+            "desc": "위키미디어에서 제공하는 뮌헨 관련 사진입니다."
           }
         ]
       },
@@ -958,6 +1028,11 @@ const COURSES = [
             ],
             "cap": "2009 08 24 06262 루체른(2009 08 24 06262 Lucerne)",
             "desc": "위키미디어에서 제공하는 2009 08 24 06262 루체른의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+          },
+          {
+            "spot": "auto_fill_50015",
+            "cap": "Dampfschiffe in Luzern (cropped)",
+            "desc": "위키미디어에서 제공하는 루체른 관련 사진입니다."
           }
         ]
       },
@@ -3512,6 +3587,36 @@ const COURSES = [
             ],
             "cap": "10 다우닝 스트리트. MOD 45155532(잘림)(10 Downing Street. MOD 45155532 (cropped))",
             "desc": "위키미디어에서 제공하는 10 다우닝 스트리트. MOD 45155532의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+          },
+          {
+            "spot": "auto_fill_50016",
+            "cap": "16-11-16-Glasgow street scene-RR2 7280 (cropped)",
+            "desc": "위키미디어에서 제공하는 런던 관련 사진입니다."
+          },
+          {
+            "spot": "auto_fill_50017",
+            "cap": "Abbey Rd Studios",
+            "desc": "위키미디어에서 제공하는 런던 관련 사진입니다."
+          },
+          {
+            "spot": "auto_fill_50018",
+            "cap": "Aerial Tower of London",
+            "desc": "위키미디어에서 제공하는 런던 관련 사진입니다."
+          },
+          {
+            "spot": "auto_fill_50019",
+            "cap": "Baker Street tube station MMB 19 S Stock",
+            "desc": "위키미디어에서 제공하는 런던 관련 사진입니다."
+          },
+          {
+            "spot": "auto_fill_50020",
+            "cap": "Belgrave Road, Victoria, London - Boris Bikes - Santander Cycles by Elliott Brown",
+            "desc": "위키미디어에서 제공하는 런던 관련 사진입니다."
+          },
+          {
+            "spot": "auto_fill_50021",
+            "cap": "British Museum from NE 2 (cropped)",
+            "desc": "위키미디어에서 제공하는 런던 관련 사진입니다."
           }
         ]
       },
@@ -3572,6 +3677,26 @@ const COURSES = [
             ],
             "cap": "버킹엄 궁전, 런던 - 2009년 4월(Buckingham Palace, London - April 2009)",
             "desc": "수백 년의 역사와 문화가 거리 구석구석 살아 숨 쉬는 매력적인 명소입니다."
+          },
+          {
+            "spot": "auto_fill_50022",
+            "cap": "Broadcasting House 20160816",
+            "desc": "위키미디어에서 제공하는 런던 관련 사진입니다."
+          },
+          {
+            "spot": "auto_fill_50023",
+            "cap": "Canary Wharf.Reza 04",
+            "desc": "위키미디어에서 제공하는 런던 관련 사진입니다."
+          },
+          {
+            "spot": "auto_fill_50024",
+            "cap": "Centre Court Wimbledon 1",
+            "desc": "위키미디어에서 제공하는 런던 관련 사진입니다."
+          },
+          {
+            "spot": "auto_fill_50025",
+            "cap": "City of London Cemetery, Newham, London England - fox 18",
+            "desc": "위키미디어에서 제공하는 런던 관련 사진입니다."
           }
         ]
       },
@@ -3716,6 +3841,31 @@ const COURSES = [
             ],
             "cap": "크루아상 오뵈르(Croissants au beurre)",
             "desc": "위키미디어에서 제공하는 크루아상 오뵈르의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+          },
+          {
+            "spot": "auto_fill_50026",
+            "cap": "Arc de Triomphe HDR 2007",
+            "desc": "위키미디어에서 제공하는 파리 관련 사진입니다."
+          },
+          {
+            "spot": "auto_fill_50027",
+            "cap": "Basilique du Sacré-Cœur de Montmartre, Paris 18e 140223 2",
+            "desc": "위키미디어에서 제공하는 파리 관련 사진입니다."
+          },
+          {
+            "spot": "auto_fill_50028",
+            "cap": "Boulevard Périphérique vu depuis Boulevard Auteuil - Paris XVI (FR75) - 2021-08-11 - 3",
+            "desc": "위키미디어에서 제공하는 파리 관련 사진입니다."
+          },
+          {
+            "spot": "auto_fill_50029",
+            "cap": "CDG P1020431",
+            "desc": "위키미디어에서 제공하는 파리 관련 사진입니다."
+          },
+          {
+            "spot": "auto_fill_50030",
+            "cap": "CFfacadePlacedelOpera",
+            "desc": "위키미디어에서 제공하는 파리 관련 사진입니다."
           }
         ]
       },
@@ -3785,6 +3935,21 @@ const COURSES = [
             ],
             "cap": "바게트 인테리어(Baguette interior)",
             "desc": "위키미디어에서 제공하는 바게트 인테리어의 모습입니다. 현지의 다채로운 풍경과 분위기를 엿볼 수 있습니다."
+          },
+          {
+            "spot": "auto_fill_50031",
+            "cap": "Campus Evergreen",
+            "desc": "위키미디어에서 제공하는 파리 관련 사진입니다."
+          },
+          {
+            "spot": "auto_fill_50032",
+            "cap": "Catacombes De Paris",
+            "desc": "위키미디어에서 제공하는 파리 관련 사진입니다."
+          },
+          {
+            "spot": "auto_fill_50033",
+            "cap": "Chapelle Sainte-Ursule de la Sorbonne, Paris 001",
+            "desc": "위키미디어에서 제공하는 파리 관련 사진입니다."
           }
         ]
       },
@@ -3895,6 +4060,26 @@ const COURSES = [
             ],
             "cap": "노트르담 대성당",
             "desc": "1163년에 착공한 고딕 성당으로, 2019년 화재로 첨탑과 지붕이 무너졌다가 복원을 마치고 다시 문을 열었다. 서쪽 정면의 장미창과 괴수 석상(가고일)이 대표적이다."
+          },
+          {
+            "spot": "auto_fill_50034",
+            "cap": "Cinématographe Lumière",
+            "desc": "위키미디어에서 제공하는 파리 관련 사진입니다."
+          },
+          {
+            "spot": "auto_fill_50035",
+            "cap": "Conseil d'Etat Paris WA",
+            "desc": "위키미디어에서 제공하는 파리 관련 사진입니다."
+          },
+          {
+            "spot": "auto_fill_50036",
+            "cap": "Eurostar Paris Gare du Nord Station, 8 October 2011",
+            "desc": "위키미디어에서 제공하는 파리 관련 사진입니다."
+          },
+          {
+            "spot": "auto_fill_50037",
+            "cap": "Facade of the Panthéon, Paris 24 January 2016",
+            "desc": "위키미디어에서 제공하는 파리 관련 사진입니다."
           }
         ]
       },
@@ -8650,7 +8835,48 @@ const COURSES = [
         "pm": "JFK 이륙. 14시간 후 인천 도착. 기내에서 내려다보는 허드슨강과 맨해튼 섬이 잠시 보인다 — 이 섬에서 7박을 보냈다.",
         "ev": "귀국. 뉴욕이 남긴 것: 센트럴파크의 아침 공기, 브루클린 브리지 위에서 본 스카이라인, 9/11 풀의 침묵, 브로드웨이 공연 커튼콜의 기립박수.",
         "tip": "귀국 후 세관 신고: 미국에서 구입한 물품 $800 초과분은 신고 대상(한국 면세 한도 $800). 주류 1병·담배 1보루 추가 면세. JFK → 미드타운 마지막 날 아침 지하철 이용 시 큰 캐리어가 있으면 옐로캡($70~90)이 현실적으로 더 편하다.",
-        "photos": []
+        "photos": [
+          {
+            "spot": "auto_fill_50038",
+            "cap": "1232-42 Dean Street Crown Heights",
+            "desc": "위키미디어에서 제공하는 뉴욕 관련 사진입니다."
+          },
+          {
+            "spot": "auto_fill_50039",
+            "cap": "5th Avenue 9304",
+            "desc": "위키미디어에서 제공하는 뉴욕 관련 사진입니다."
+          },
+          {
+            "spot": "auto_fill_50040",
+            "cap": "67º Período de Sesiones de la Asamblea General de Naciones Unidas (8020913157) (cropped)",
+            "desc": "위키미디어에서 제공하는 뉴욕 관련 사진입니다."
+          },
+          {
+            "spot": "auto_fill_50041",
+            "cap": "74th St shopping Jax Hts jeh",
+            "desc": "위키미디어에서 제공하는 뉴욕 관련 사진입니다."
+          },
+          {
+            "spot": "auto_fill_50042",
+            "cap": "A view of Fort George with the city of New York, from the SW",
+            "desc": "위키미디어에서 제공하는 뉴욕 관련 사진입니다."
+          },
+          {
+            "spot": "auto_fill_50043",
+            "cap": "Arthur ashe stadium interior",
+            "desc": "위키미디어에서 제공하는 뉴욕 관련 사진입니다."
+          },
+          {
+            "spot": "auto_fill_50044",
+            "cap": "At New York, USA 2017 119",
+            "desc": "위키미디어에서 제공하는 뉴욕 관련 사진입니다."
+          },
+          {
+            "spot": "auto_fill_50045",
+            "cap": "Barclays Center 1",
+            "desc": "위키미디어에서 제공하는 뉴욕 관련 사진입니다."
+          }
+        ]
       }
     ]
   }
