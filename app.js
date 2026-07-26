@@ -433,7 +433,6 @@
 
   window.goToDay = async function(index) {
     if (!state.course || state.transitioning || TravelMap.isAnimating() || state.dayIndex === index) return;
-    if (index > Math.max(state.dayIndex, state.maxVisitedDay)) return; // Prevents jumping to unvisited days
 
     state.transitioning = true;
     lockNav(true);
