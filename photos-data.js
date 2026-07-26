@@ -1231,6 +1231,48 @@ const PHOTOS = {
     "credit": "Wikimedia Commons · CC BY-SA 3.0",
     "source": "https://commons.wikimedia.org/wiki/File:Mainz_Rheinufer.jpg"
   },
+  "auto_bulk_376_": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fb%2Fba%2FAlte-Uni%252BMainzer-Dom%252BStaatstheater-vom-Bonifaziusturm-A-741-a.jpg%2F500px-Alte-Uni%252BMainzer-Dom%252BStaatstheater-vom-Bonifaziusturm-A-741-a.jpg&w=500&output=webp",
+    "title": "마인츠 파노라마 — 대학·돔·주립극장(Alte-Uni · Mainzer Dom · Staatstheater)",
+    "credit": "Wikimedia Commons · CC BY-SA",
+    "source": "https://commons.wikimedia.org/wiki/File:Alte-Uni%2BMainzer-Dom%2BStaatstheater-vom-Bonifaziusturm-A-741-a.jpg"
+  },
+  "auto_bulk_377_": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fc%2Fcb%2FBlick-auf-mainz-aus-richtung-der-schiersteiner-bruecke.jpg%2F500px-Blick-auf-mainz-aus-richtung-der-schiersteiner-bruecke.jpg&w=500&output=webp",
+    "title": "쉬어슈타이너 다리에서 본 마인츠(Blick auf Mainz — Schiersteiner Brücke)",
+    "credit": "Wikimedia Commons · CC BY-SA",
+    "source": "https://commons.wikimedia.org/wiki/File:Blick-auf-mainz-aus-richtung-der-schiersteiner-bruecke.jpg"
+  },
+  "auto_bulk_374_": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F2%2F26%2FLandtagsgeb%25C3%25A4ude_Rheinland-Pfalz.jpg%2F500px-Landtagsgeb%25C3%25A4ude_Rheinland-Pfalz.jpg&w=500&output=webp",
+    "title": "라인란트팔츠 주의회 의사당(Landtagsgebäude Rheinland-Pfalz)",
+    "credit": "Wikimedia Commons · CC BY-SA",
+    "source": "https://commons.wikimedia.org/wiki/File:Landtagsgeb%C3%A4ude_Rheinland-Pfalz.jpg"
+  },
+  "auto_bulk_378_": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F4%2F4b%2FB%25C3%25BChnentheater_Mainz.jpg%2F500px-B%25C3%25BChnentheater_Mainz.jpg&w=500&output=webp",
+    "title": "마인츠 뷔넨극장(Bühnentheater Mainz)",
+    "credit": "Wikimedia Commons · CC BY-SA",
+    "source": "https://commons.wikimedia.org/wiki/File:B%C3%BChnentheater_Mainz.jpg"
+  },
+  "auto_bulk_379_": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fa%2Faa%2FChristuskirche_in_Mainz.jpg%2F500px-Christuskirche_in_Mainz.jpg&w=500&output=webp",
+    "title": "마인츠 크리스투스 교회(Christuskirche in Mainz)",
+    "credit": "Wikimedia Commons · CC BY-SA",
+    "source": "https://commons.wikimedia.org/wiki/File:Christuskirche_in_Mainz.jpg"
+  },
+  "auto_bulk_375_": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fe%2Fec%2F50._Breitengrad_in_Mainz.jpg%2F500px-50._Breitengrad_in_Mainz.jpg&w=500&output=webp",
+    "title": "마인츠 북위 50도 표석(50. Breitengrad in Mainz)",
+    "credit": "Wikimedia Commons · CC BY-SA",
+    "source": "https://commons.wikimedia.org/wiki/File:50._Breitengrad_in_Mainz.jpg"
+  },
+  "auto_bulk_380_": {
+    "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F0%2F08%2FCoface-Arena_%25288208664309%2529.jpg%2F500px-Coface-Arena_%25288208664309%2529.jpg&w=500&output=webp",
+    "title": "코파체 아레나(Coface-Arena)",
+    "credit": "Wikimedia Commons · CC BY-SA",
+    "source": "https://commons.wikimedia.org/wiki/File:Coface-Arena_(8208664309).jpg"
+  },
   "graz_hauptplatz": {
     "url": "https://wsrv.nl/?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fd%2Fd5%2FGraz_Hauptplatz.jpg%2F500px-Graz_Hauptplatz.jpg&w=500&output=webp",
     "title": "그라츠 하우프트 광장(Graz Hauptplatz)",

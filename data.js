@@ -7594,6 +7594,69 @@ const COURSES = [
             ],
             "cap": "마인처 돔 블라우에 슈뇰데(Mainzer Dom Blaue Stunde)",
             "desc": "유럽의 젖줄 라인강이 시원하게 흘러가는 마인츠 강변 산책로. 밤이 되면 정결한 조명과 잔잔한 강물이 어우러져 한적한 분위기를 자아낸다."
+          },
+          {
+            "spot": "auto_bulk_376_",
+            "at": [
+              8.2718,
+              50.0021
+            ],
+            "cap": "마인츠 파노라마 — 대학·돔·주립극장(Alte-Uni · Mainzer Dom · Staatstheater)",
+            "desc": "보니파치우스투름에서 내려다본 마인츠 구시가지 스카이라인. 옛 대학, 마인츠 돔, 주립극장이 한눈에 들어온다."
+          },
+          {
+            "spot": "auto_bulk_377_",
+            "at": [
+              8.2721,
+              49.9919
+            ],
+            "cap": "쉬어슈타이너 다리에서 본 마인츠(Blick auf Mainz — Schiersteiner Brücke)",
+            "desc": "라인강 쉬어슈타이너 다리 방향에서 바라본 마인츠 시가지 전경."
+          },
+          {
+            "spot": "auto_bulk_374_",
+            "at": [
+              8.2666,
+              49.9882
+            ],
+            "cap": "라인란트팔츠 주의회 의사당(Landtagsgebäude Rheinland-Pfalz)",
+            "desc": "마인츠는 라인란트팔츠 주의 주도. 라인강변에 자리한 주의회 의사당(도이치하우스)."
+          },
+          {
+            "spot": "auto_bulk_378_",
+            "at": [
+              8.2748,
+              49.9833
+            ],
+            "cap": "마인츠 뷔넨극장(Bühnentheater Mainz)",
+            "desc": "마인츠의 공연·극장 건축물."
+          },
+          {
+            "spot": "auto_bulk_379_",
+            "at": [
+              8.267,
+              49.9879
+            ],
+            "cap": "마인츠 크리스투스 교회(Christuskirche in Mainz)",
+            "desc": "네오르네상스 양식의 개신교 교회로 마인츠의 대표적 랜드마크 중 하나."
+          },
+          {
+            "spot": "auto_bulk_375_",
+            "at": [
+              8.2733,
+              49.9942
+            ],
+            "cap": "마인츠 북위 50도 표석(50. Breitengrad in Mainz)",
+            "desc": "마인츠 시내를 지나는 북위 50도선을 표시한 기념 표석."
+          },
+          {
+            "spot": "auto_bulk_380_",
+            "at": [
+              8.2652,
+              49.9891
+            ],
+            "cap": "코파체 아레나(Coface-Arena)",
+            "desc": "분데스리가 1. FSV 마인츠 05의 홈구장(현 메바 아레나)."
           }
         ]
       },
