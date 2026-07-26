@@ -494,6 +494,12 @@
   function initApp() {
     const params = new URLSearchParams(window.location.search);
 
+    // 주인 접속: 전체 코스 목록(랜딩) 표시
+    if (params.get('owner') === 'a8f4k9x2m') {
+      renderLanding();
+      return;
+    }
+
     if (params.has('share')) {
       const shareToken = params.get('share');
       // 토큰으로 코스 ID 찾기
