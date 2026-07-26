@@ -208,16 +208,32 @@
     }
 
     // 사진 안내
-    const n = (vDay.photos || []).filter((p) => PHOTOS[p.spot]).length;
+    const photosForDay = (vDay.photos || []).filter((p) => PHOTOS[p.spot]);
+    const n = photosForDay.length;
     $('panel-photo-note').innerHTML = n
-      ? `📷 오늘의 사진 <strong>${n}장</strong>은 지도 위 명소 위치에 표시됩니다. 마커를 누르면 사진과 출처를 볼 수 있습니다.`
+      ? `📷 오늘의 사진 <strong>${n}장</strong>은 지도 위 명소 위치에 표시됩니다.`
       : '📷 이날은 지도에 표시할 사진이 없습니다.';
+
+    // 사진 리스트 렌더링
+    $('panel-photo-list').innerHTML = photosForDay.map((p, idx) => {
+      const data = PHOTOS[p.spot];
+      return `
+        <div class="panel-photo-item" id="photo-list-item-${idx}">
+          <img src="${data.url}" alt="${p.cap}" />
+          <div class="panel-photo-info">
+            <strong>${p.cap}</strong>
+            <p>${p.desc}</p>
+            <small>© ${data.author}</small>
+          </div>
+        </div>
+      `;
+    }).join('');
 
     $('panel-visited').innerHTML = course.days.map((d, i) => {
       const cls = i < state.dayIndex ? 'visited-city done'
         : i === state.dayIndex ? 'visited-city current' : 'visited-city';
       const check = i < state.dayIndex ? '✓ ' : '';
-      return `<span class="${cls}">${check}D${d.day} ${d.cityKo}</span>`;
+      return `<span class="${cls}" onclick="window.goToDay(${i})" style="cursor:pointer">${check}D${d.day} ${d.cityKo}</span>`;
     }).join('');
 
     // 버튼 상태

@@ -223,6 +223,7 @@ const TravelMap = (() => {
   function showPhotos(day) {
     clearPhotos();
     if (!isReady() || !day.photos) return;
+    let validIndex = 0;
     day.photos.forEach((p) => {
       const meta = PHOTOS[p.spot];
       if (!meta) return;
@@ -260,6 +261,7 @@ const TravelMap = (() => {
       const marker = new mapboxgl.Marker({ element: el, anchor: 'bottom' })
         .setLngLat(p.at).addTo(map);
       marker._photoPopup = popup;
+      marker._photoIndex = validIndex++;
 
       // 팝업은 마커 위쪽으로 펼쳐지므로, 열기 전에 마커를 화면 아래쪽으로 옮겨
       // 위쪽 공간을 확보한다. 열고 나서 지도를 미는 방식은 통하지 않는다 —
@@ -289,17 +291,21 @@ const TravelMap = (() => {
    * 있어서 지도를 밀면 팝업도 같은 만큼 따라 움직이기 때문이다.
    */
   function openPhotoPopup(marker, popup) {
-    // 다른 팝업은 닫는다
+    // 이미 열려있는 다른 팝업 닫기
     photoMarkers.forEach((m) => {
       if (m !== marker && m._photoPopup && m._photoPopup.isOpen()) m._photoPopup.remove();
     });
-    if (popup.isOpen()) { popup.remove(); return; }
-
-    // 팝업을 먼저 연다 — 클릭에 바로 반응해야 하고, 팝업은 마커에 붙어 있어서
-    // 뒤이은 지도 이동을 그대로 따라온다.
+    if (popup.isOpen()) {
+      popup.remove();
+      return;
+    }
     popup.addTo(map);
 
-    const h = map.getContainer().getBoundingClientRect().height;
+    // 하단 패널 리스트로 자동 스크롤 연동
+    if (typeof marker._photoIndex === 'number') {
+      const el = document.getElementById(`photo-list-item-${marker._photoIndex}`);
+      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }    const h = map.getContainer().getBoundingClientRect().height;
     // 지도가 낮으면(모바일) 팝업이 쓸 수 있는 공간이 적으니 마커를 더 아래로 보낸다
     const targetRatio = h < 520 ? 0.94 : 0.8;
     // easeTo의 offset은 '지정한 좌표를 화면 중앙에서 얼마나 밀어놓을지'를 뜻한다
