@@ -184,7 +184,9 @@ const COURSES = [
         pm: '푸니쿨라를 타고 올라가 소금광산(잘츠벨텐)을 본다. 세계에서 가장 오래된 소금광산으로, 광부들이 쓰던 나무 미끄럼틀을 타고 내려가는 구간이 있다. 스카이워크 전망대에서는 마을과 호수가 정면으로 내려다보인다. 날씨가 나쁘면 실내인 광산 쪽이 안전한 선택이다.',
         ev: '호수 앞 레스토랑에서 저녁을 먹는다. 이 지역 송어 요리와 오스트리아 화이트 와인이 잘 어울린다. 서두를 일이 없는 밤이다.',
         tip: '이날은 숙박 자체가 목적이다. 당일치기로 왔다 가는 사람들이 볼 수 없는 새벽과 밤을 갖는 것이 3박 일정의 이유다. 겨울에는 길이 얼어 미끄러우니 밑창이 좋은 신발을 준비하자.',
-        photos: [],
+        photos: [
+          { spot: 'auto_1_d8_hallstatt', at: [13.6493, 47.5622], cap: '할슈타트 풍경', desc: 'Hallstatt is a small town in the Gmunden District of the Austrian state of Upper Austria. Situated b...' }
+        ],
       },
       {
         day: 9, cityKo: '잘츠부르크', cityEn: 'Salzburg', coords: [13.0550, 47.8095],
@@ -1064,7 +1066,9 @@ const COURSES = [
         pm: '샤를 드골 공항으로 이동해 귀국 비행기에 오른다. 베를린에서 시작해 독일을 남쪽으로 훑고 런던을 거쳐 파리에서 끝난 17일이 여기서 마무리된다.',
         ev: '기내 이동. 파리에서 인천까지는 약 11시간이며 시차는 7~8시간이다. 돌아가서 바로 일상에 복귀해야 한다면 기내에서 한국 시간에 맞춰 자두는 편이 회복이 빠르다.',
         tip: '샤를 드골 공항까지는 RER B로 약 50분, 택시는 정액제다. 면세 환급은 출국장 키오스크에서 처리하는데 성수기에는 줄이 길어 두세 시간 여유를 두는 것이 안전하다. 유럽연합을 떠나는 공항에서 처리해야 한다는 점을 잊지 말자.',
-        photos: [],
+        photos: [
+          { spot: 'auto_3_d17_paris', at: [2.3522, 48.8566], cap: '파리 풍경', desc: 'Paris is the capital and largest city of France, with an estimated city population of 2.04 million i...' }
+        ],
       },
     ],
   },
@@ -1229,7 +1233,9 @@ const COURSES = [
         pm: '귀국 비행. 아테네 경유라면 환승 대기 시간에 공항 내 고고학 전시(아테네 공항 2터미널)를 볼 수 있다.',
         ev: '기내 이동. 신혼여행의 마지막 밤은 하늘 위에서 보내게 된다.',
         tip: '섬 일정은 결항 리스크가 있다. 국제선 연결이 빠듯하다면 귀국 전날 아테네로 넘어가 하룻밤 자는 편이 훨씬 안전하다. 여름 성수기에는 미코노스 공항이 매우 혼잡하다.',
-        photos: [],
+        photos: [
+          { spot: 'auto_4_d9_mykonos', at: [25.329, 37.4467], cap: '미코노스 풍경', desc: 'Mykonos is a Greek island, part of the Cyclades, lying between Tinos, Syros, Paros and Naxos. The is...' }
+        ],
       },
     ],
   },
@@ -1429,7 +1435,9 @@ const COURSES = [
         pm: '귀국 비행 탑승. 부다페스트에서 인천까지는 직항이 없어 프랑크푸르트, 아부다비, 두바이 등을 경유하며 약 15-18시간 소요된다.',
         ev: '기내 이동. 프라하의 석조 골목, 빈의 커피 향, 부다페스트의 온천과 야경이 담긴 11일의 여정이 마무리된다.',
         tip: '부다페스트 공항 면세구역에서 헝가리산 파프리카 파우더, 토카이 와인, 팔링카(과실 증류주)를 기념품으로 구입하면 좋다. 유럽 내 경유편은 환승 시간을 넉넉히 잡자.',
-        photos: [],
+        photos: [
+          { spot: 'auto_5_d11_budapest', at: [19.0402, 47.4979], cap: '부다페스트 풍경', desc: 'Budapest is the capital and most populous city of Hungary. It is Hungary\'s primate city with 1.7 mil...' }
+        ],
       },
     ],
   },
@@ -1760,7 +1768,9 @@ const COURSES = [
         pm: '현지 시간 22시 55분, 샤를 드 골 터미널 1 도착. 수하물 수취 후 입국 심사를 마치고 환전 또는 ATM 카드로 현금을 준비한다. 야간이므로 Le Bus Direct 공항버스(€20/인)로 시내까지 약 60분을 이동한다.',
         ev: '23시 30분경 시내 도착, 메트로 13호선 Brochant역 근처 B&B Hotel Paris 17 Batignolles에 체크인. 버스가 파리 중심부를 지날 때 창밖으로 불 켜진 건물들이 처음 눈에 들어온다. 짐을 풀고 바로 취침.',
         tip: 'Le Bus Direct는 CDG T1 출구에서 바로 탑승 가능. 온라인 구매(lebusdirect.com)가 현장보다 저렴하다. Navigo 주간권(€30/인)은 내일 아침 Brochant역 창구에서 구매한다.',
-        photos: [],
+        photos: [
+          { spot: 'auto_7_d1_paris', at: [2.3191, 48.8878], cap: '파리 풍경', desc: 'Paris is the capital and largest city of France, with an estimated city population of 2.04 million i...' }
+        ],
       },
       {
         day: 2, cityKo: '파리', cityEn: 'Paris', coords: [2.3100, 48.8700],
@@ -1948,7 +1958,9 @@ const COURSES = [
           cityEn: 'Frankfurt Airport T1',
           title: '프랑크푸르트 공항 도착',
           transport: { mode: 'train', label: 'ICE Fernbahnhof T1 → 마인츠 Hbf (35분). DB 앱으로 당일 빠른 열차 검색. €18~22.' },
-          photos: [],
+          photos: [
+          { spot: 'auto_9_d1_mainz', at: [8.2742, 49.9929], cap: '마인츠 풍경', desc: 'Mainz is the capital and largest city of the German state of Rhineland-Palatinate, and with around 2...' }
+        ],
         },
         title: '마인츠 도착 — 저녁 구시가지 첫 산책',
         am: '인천공항 12:55 출발. 루프트한자 LH714 직항 13시간 45분. 기내 식사 후 수면 — 프랑크푸르트는 한국보다 8시간(1월 동계 CET) 느리다.',
@@ -2099,7 +2111,9 @@ const COURSES = [
         pm: '링슈트라세 도보로 미술사 박물관(Kunsthistorisches Museum, €21). 합스부르크 왕가 소장품 총집합 — 피터르 브뤼헐 부자 회화(세계 최대 컬렉션), 렘브란트·라파엘로·카라바조·벨라스케스. 이집트관·그리스·로마관도 인상적. 점심: 박물관 내 카페(비엔나 스타일, €12~18).',
         ev: '국립오페라(Staatsoper) 공연. 스탠딩 티켓(Stehplatz)이 당일 공연 2시간 전부터 €10~13에 현장 판매 — 세계 최고 수준의 오페라를 €10에 볼 수 있는 유일한 기회. 복장: 스탠딩은 캐주얼 가능. 공연 후 빈 밤거리 산책.',
         tip: '벨베데레+미술사박물관 콤보권(€30~35) 있으나 체력 소모가 크니 벨베데레 오전+미술사 오후로 나누는 것이 효율적. Staatsoper 스탠딩: 공식 홈페이지 wiener-staatsoper.at에서 레퍼토리 확인 후 현장 방문. 1월 레퍼토리: 모차르트·베르디 오페라가 많다.',
-        photos: [],
+        photos: [
+          { spot: 'auto_8_d8_vienna', at: [16.3738, 48.2082], cap: '빈 풍경', desc: 'Vienna is the capital, most populous city, and one of the nine states of Austria. It is Austria\'s pr...' }
+        ],
       },
 
       // ── Day 9 : 빈 → 그라츠 ────────────────────────────────────
@@ -2200,7 +2214,9 @@ const COURSES = [
         pm: 'VCE 13:30 에어돌로미티(Air Dolomiti) → 뮌헨(MUC) 약 1시간 35분. 뮌헨 T2 환승. 루프트한자 MUC → 인천(ICN) 약 11시간. 창밖으로 알프스가 마지막으로 보인다.',
         ev: '1월 29일(금) 11:15 인천 도착. 12박 13일간: 마인츠 라인강변에서 그라츠 슐로스베르크, 빈 리젠라트, 그리고 베네치아 그란 카날레. 겨울 유럽의 한적함과 짙은 빛이 남는다.',
         tip: '알릴라구나 Line Blue: 산 마르코 → Guglie → 공항, 산 마르코 정류장 기준 1시간 15분. 피아찰레 로마에서 ATVO 버스가 더 빠르고 저렴(30분, €10). VCE 국제선: 출발 3시간 전 도착 권장(1월 비수기이므로 보안 30분 이내). 세금환급(Tax Refund): 출국 전 PABLO 키오스크(공항 공개 구역, 보안 전)에서 도장.',
-        photos: [],
+        photos: [
+          { spot: 'auto_8_d13_venice', at: [12.3388, 45.4341], cap: '베네치아 풍경', desc: 'Venice is a city in northeastern Italy and the capital of the region of Veneto. It is built on a gro...' }
+        ],
       },
 
 
@@ -2284,7 +2300,9 @@ const COURSES = [
         pm: null,
         ev: '저녁 하이델베르크 구시가지 식사 후 Hbf에서 짐을 찾아 20:00경 뮌헨행 ICE 탑승. 23:00 뮌헨 Hbf 도착 후 중앙역 인근 호텔 체크인.',
         tip: '뮌헨행 ICE는 사전 좌석 지정이 유용하다.',
-        photos: [],
+        photos: [
+          { spot: 'auto_9_d4_munich', at: [11.582, 48.1351], cap: '뮌헨 풍경', desc: 'Munich is the capital and most populous city of Bavaria, Germany. As of 30 November 2024, its popula...' }
+        ],
         before: [
           {
             coords: [8.7086, 49.4094],
@@ -2357,7 +2375,9 @@ const COURSES = [
         pm: '인스부르크 남쪽 언덕의 암브라스 성(Schloss Ambras) 탐방. 르네상스 시대 무기 전시관과 호화로운 스페인 홀(Spanischer Saal) 관람.',
         ev: '버그이젤(Bergisel) 스키점프대 전망대 카페에서 인스부르크 시내 야경 조망하며 커피 한 잔. 구시가지로 돌아와 티롤식 갈비 저녁 식사.',
         tip: '스바롭스키 크리스탈 월드 셔틀버스는 인스부르크 중앙역에서 정기적으로 운행되며 인스부르크 카드로 무료 이용 가능하다.',
-        photos: [],
+        photos: [
+          { spot: 'auto_9_d7_innsbruck', at: [11.3927, 47.2692], cap: '인스부르크 풍경', desc: 'Innsbruck is the capital of the Austrian state of Tyrol and the fifth-largest city in Austria. It is...' }
+        ],
       },
 
       // ── Day 8 : [알프스 3탄] 아헨제 호수 & 알프스 고원 탐방 ───────
@@ -2388,7 +2408,9 @@ const COURSES = [
         pm: '링슈트라세(Ringstraße) 도보권 호텔 체크인. 1137년 착공된 고딕 대성당 슈테판스돔(Stephansdom) 관람 및 그라벤 보행자 거리 산책.',
         ev: '프란츠 요제프 1세가 조성한 황제의 대로 링슈트라세 야간 산책. 국립오페라하우스와 국회의사당의 웅장한 야경 감상.',
         tip: '인스부르크-빈 Railjet 이동은 오스트리아 알프스와 평야 지대를 관통하는 대표 파노라마 구간으로 창밖 풍경 감상에 최적이다.',
-        photos: [],
+        photos: [
+          { spot: 'auto_9_d9_vienna', at: [16.3738, 48.2082], cap: '빈 풍경', desc: 'Vienna is the capital, most populous city, and one of the nine states of Austria. It is Austria\'s pr...' }
+        ],
       },
 
       // ── Day 10 : 빈 — 쇤브룬 궁전 + 프라터 리젠라트 ────────────
@@ -2406,7 +2428,9 @@ const COURSES = [
         pm: '나슈마르크트(Naschmarkt) 시장에서 슈니첼, 팔라펠 등 다양한 먹거리 점심. 오손 웰스의 영화 <제3의 사나이> 배경인 프라터 유원지 이동.',
         ev: '1897년 건립된 세계 최초의 전기 대관람차 리젠라트(Riesenrad)에 탑승하여 빈 시가지 야경 관람.',
         tip: '쇤브룬 궁전 내부 입장권(Grand Tour)은 아침 일찍 온라인으로 미리 예매하면 대기 없이 입장할 수 있다.',
-        photos: [],
+        photos: [
+          { spot: 'auto_9_d10_vienna', at: [16.3738, 48.2082], cap: '빈 풍경', desc: 'Vienna is the capital, most populous city, and one of the nine states of Austria. It is Austria\'s pr...' }
+        ],
       },
 
       // ── Day 11 : 빈 — 벨베데레 + 미술사 박물관 ──────────────────
@@ -2424,7 +2448,9 @@ const COURSES = [
         pm: '미술사 박물관(Kunsthistorisches Museum) 탐방. 합스부르크 왕가가 수집한 피터르 브뤼헐, 렘브란트, 라파엘로의 대작 감상.',
         ev: '빈 국립오페라하우스 당일 입석 티켓(Stehplatz) 체험 또는 인근 오스테리아에서 굴라시 저녁 식사.',
         tip: '벨베데레 미술관의 클림트 <키스> 전시는 오전에 비교적 한적하게 관람할 수 있다.',
-        photos: [],
+        photos: [
+          { spot: 'auto_9_d11_vienna', at: [16.3738, 48.2082], cap: '빈 풍경', desc: 'Vienna is the capital, most populous city, and one of the nine states of Austria. It is Austria\'s pr...' }
+        ],
       },
 
       // ── Day 12 : 빈 — 구시가지 + 카페 자허 ─────────────────────
@@ -2462,7 +2488,9 @@ const COURSES = [
         pm: '13:20 빈 국제공항 T3 출발 항공편 탑승 (오스트리아항공/루프트한자 뮌헨 1시간 45분 환승). 창밖으로 멀어지는 유럽 대륙 감상.',
         ev: '기내 휴식. 2027년 1월 29일(금) 오전 11:15 인천국제공항 T1 도착. 12박 13일의 독일 서부, 인스부르크 알프스, 빈 여행 완주.',
         tip: '빈 공항 CAT 열차는 Wien Mitte 역에서 30분 간격으로 운행되며, 공항 도달 시간을 정확히 맞추기 가장 좋다.',
-        photos: [],
+        photos: [
+          { spot: 'auto_9_d13_vienna', at: [16.3738, 48.2082], cap: '빈 풍경', desc: 'Vienna is the capital, most populous city, and one of the nine states of Austria. It is Austria\'s pr...' }
+        ],
       },
 
     ],
@@ -2649,7 +2677,9 @@ const COURSES = [
         pm: '지하철 A선으로 할렘(Harlem, 125th St역). 아폴로 극장(Apollo Theater, 1934년 — 엘라 피츠제럴드·빌리 홀리데이·마이클 잭슨이 데뷔한 곳, 외관 무료), 할렘 소울푸드 점심(Sylvia\'s Restaurant, 할렘 100년 역사 레스토랑 — 프라이드치킨·맥앤치즈·콜라드그린, $20~35). 125th St는 아프리카계 미국 문화의 중심가다.',
         ev: '저녁 브로드웨이 공연. 추천: "Hamilton" (리처드 로저스 시어터, $80~250) 또는 "The Lion King" ($70~200) — 뉴욕 여행 버킷리스트 1위. 티켓은 공식 사이트(telecharge.com·ticketmaster) 또는 당일 TKTS 부스(타임스스퀘어, 할인율 최대 50%). 공연 후 타임스스퀘어 야경으로 여행 마무리.',
         tip: '브로드웨이 티켓: TKTS 부스(타임스스퀘어 TKTS 앱 사전 확인)에서 당일 $50~130에 살 수 있다. 비성수기 주중 마티네(낮 공연)는 더 저렴. 할렘 소울푸드 예산: Sylvia\'s $25~35/인. 링컨 센터 → 할렘은 지하철 10분이지만 걸으면 30분(1.6km, 부담 없는 거리).',
-        photos: [],
+        photos: [
+          { spot: 'auto_10_d7_new_york_city', at: [-73.9857, 40.758], cap: '뉴욕 풍경', desc: 'New York, often called New York City (NYC), is the most populous city in the United States. It is lo...' }
+        ],
       },
 
       // ── Day 8 : JFK 출발 → 인천 귀국 ────────────────────────────
@@ -2664,7 +2694,9 @@ const COURSES = [
         pm: 'JFK 이륙. 14시간 후 인천 도착. 기내에서 내려다보는 허드슨강과 맨해튼 섬이 잠시 보인다 — 이 섬에서 7박을 보냈다.',
         ev: '귀국. 뉴욕이 남긴 것: 센트럴파크의 아침 공기, 브루클린 브리지 위에서 본 스카이라인, 9/11 풀의 침묵, 브로드웨이 공연 커튼콜의 기립박수.',
         tip: '귀국 후 세관 신고: 미국에서 구입한 물품 $800 초과분은 신고 대상(한국 면세 한도 $800). 주류 1병·담배 1보루 추가 면세. JFK → 미드타운 마지막 날 아침 지하철 이용 시 큰 캐리어가 있으면 옐로캡($70~90)이 현실적으로 더 편하다.',
-        photos: [],
+        photos: [
+          { spot: 'auto_10_d8_new_york_city', at: [-73.9857, 40.758], cap: '뉴욕 풍경', desc: 'New York, often called New York City (NYC), is the most populous city in the United States. It is lo...' }
+        ],
       },
 
     ],
