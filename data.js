@@ -51,7 +51,7 @@ const COURSES = [
               14.4205,
               50.087
             ],
-            "cap": "프라하 07-2016 구시청사 타워에서 ...(Prague 07-2016 View from Ol...)",
+            "cap": "프라하 07-2016 구시청사 타워에서 본 전망 img3(Prague 07-2016 View from Old Town Hall Tower img3)",
             "desc": "[광장 크리스마스 마켓 풍경] 프라하 구시가지의 중심 광장으로, 12월이면 대형 트리와 목조 노점이 들어선다. 오후 4시면 어두워지는 대신 조명이 일찍 켜져 마켓이 오래 빛난다. 광장을 둘러싼 틴 성모 교회의 두 첨탑이 배경이 된다."
           },
           {
@@ -87,7 +87,7 @@ const COURSES = [
               14.412,
               50.0799
             ],
-            "cap": "2009-09-gulasch-pörköl...(2009-09-gulasch-pörkölt-pap...)",
+            "cap": "2009-09-gulasch-pörkölt-파프리카스-2(2009-09-gulasch-pörkölt-paprikas-2)",
             "desc": "[카페 풍경] [오븐에 구운 빵] 현지의 오리지널 레시피로 만들어진 깊고 풍부한 맛을 느껴보세요."
           },
           {
@@ -114,7 +114,7 @@ const COURSES = [
               14.427,
               50.0965
             ],
-            "cap": "20190816 Brama Prochow...(20190816 Brama Prochowa w P...)",
+            "cap": "20190816 Brama Prochowa w Pradze 1859 5460 DxO(20190816 Brama Prochowa w Pradze 1859 5460 DxO)",
             "desc": "[역사 지구 풍경] 프라하의 거리를 걷다 마주치게 되는 일상적이면서도 이국적인 모습입니다."
           },
           {
@@ -123,7 +123,7 @@ const COURSES = [
               14.4163,
               50.0796
             ],
-            "cap": "2022-10-15 Václavské n...(2022-10-15 Václavské náměstí 1)",
+            "cap": "2022-10-15 Václavské náměstí 1(2022-10-15 Václavské náměstí 1)",
             "desc": "[낭만의 거리 풍경] 수백 년의 역사와 문화가 거리 구석구석 살아 숨 쉬는 매력적인 명소입니다."
           },
           {
@@ -132,7 +132,7 @@ const COURSES = [
               14.4213,
               50.0968
             ],
-            "cap": "Archikatedra Świętych ...(Archikatedra Świętych Wita,...)",
+            "cap": "Archikatedra Świętych Wita, Wacława i Wojciecha w Pradze 20190816 1333 5260(Archikatedra Świętych Wita, Wacława i Wojciecha w Pradze 20190816 1333 5260)",
             "desc": "밤이 되면 화려한 조명으로 또 다른 매력을 뽐내는 로맨틱한 장소입니다."
           }
         ]
@@ -183,7 +183,7 @@ const COURSES = [
               14.42,
               50.076
             ],
-            "cap": "02021 1020 폴란드 굴라쉬 수프(02021 1020  Goulash soup of...)",
+            "cap": "02021 1020 (2) 폴란드산 굴라쉬 수프(02021 1020 (2) Goulash soup of Poland)",
             "desc": "[마켓 노점 풍경] [굴라시와 크네들리키] 쇠고기를 파프리카로 오래 끓인 스튜다. 체코식은 헝가리식보다 걸쭉하고, 크네들리키(찐 빵 만두)를 곁들여 국물을 적셔 먹는다. 흑맥주와 함께 내는 것이 정석이다."
           },
           {
@@ -282,7 +282,7 @@ const COURSES = [
               12.879,
               50.226
             ],
-            "cap": "카를로비 바리 2004. 그랜드호텔 퍼프. (Karlovy Vary 2004. Grandhot...)",
+            "cap": "카를로비 바리 2004. 그랜드호텔 퍼프. - 파노라마(Karlovy Vary 2004. Grandhotel Pupp. - panoramio)",
             "desc": "[거리 풍경] 300년이 넘은 이 도시의 상징적인 호텔로, 영화 「007 카지노 로얄」과 「그랜드 부다페스트 호텔」의 모티프가 된 곳이다. 투숙하지 않아도 카페 푸프에서 커피와 케이크를 먹을 수 있고, 홀의 벨 에포크 인테리어가 그대로 남아 있다."
           },
           {
@@ -309,7 +309,7 @@ const COURSES = [
               12.875,
               50.2403
             ],
-            "cap": "데이비드 아담 케스(David Adam ...(by David Adam Kess)",
+            "cap": "(파스타) David Adam Kess 작성(그림 2)((Pasta) by David Adam Kess (pic.2))",
             "desc": "[카페 풍경] [파스타(Pasta)] 오랜 시간 정성껏 끓여내어 깊은 맛을 자랑하는 셰프의 추천 메뉴입니다."
           },
           {
@@ -327,7 +327,7 @@ const COURSES = [
               12.8659,
               50.227
             ],
-            "cap": "좋은 카푸치노는 완벽한 에스프레소에서 시...(A good cappuccino starts wi...)",
+            "cap": "좋은 카푸치노는 완벽한 에스프레소에서 시작됩니다!! (4441914182)(A good cappuccino starts with a perfect espresso!! (4441914182))",
             "desc": "[전통 맛집 풍경] [에스프레소(Espresso)] 한 입 베어 무는 순간 카를로비바리의 매력에 흠뻑 빠지게 될 특별한 맛입니다."
           },
           {
@@ -454,7 +454,7 @@ const COURSES = [
               16.3717,
               48.2133
             ],
-            "cap": "Akhenathon 및 Nefertiti...(Akhenathon and Nefertiti E1...)",
+            "cap": "Akhenathon 및 Nefertiti E15593 mp3h8771-gradient(Akhenathon and Nefertiti E15593 mp3h8771-gradient)",
             "desc": "높은 곳에서 내려다보이는 빈의 파노라마 뷰가 가슴을 뻥 뚫어줍니다."
           },
           {
@@ -463,7 +463,7 @@ const COURSES = [
               16.3757,
               48.2181
             ],
-            "cap": "2011-06-14 10-23-56 오스...(2011-06-14 10-23-56 Austria...)",
+            "cap": "2011-06-14 10-23-56 오스트리아 Niederösterreich 피샤멘트 마르크트(2011-06-14 10-23-56 Austria Niederösterreich Fischamend Markt)",
             "desc": "웅장한 규모와 정교한 디테일이 한눈에 시선을 사로잡는 랜드마크입니다."
           },
           {
@@ -472,7 +472,7 @@ const COURSES = [
               16.3746,
               48.2121
             ],
-            "cap": "20180109 비엔나 국립 오페라 블루...(20180109 Vienna State Opera...)",
+            "cap": "20180109 비엔나 국립 오페라 블루 아워 850 9387(20180109 Vienna State Opera at blue hour 850 9387)",
             "desc": "[뷰 포인트 풍경] 과거와 현재가 공존하는 빈 특유의 독특한 분위기를 자아냅니다."
           },
           {
@@ -586,7 +586,7 @@ const COURSES = [
               16.3798,
               48.2069
             ],
-            "cap": "아스날 Heeresgeschichtlic...(Arsenal Heeresgeschichtlich...)",
+            "cap": "아스날 Heeresgeschichtliches 박물관-DSC 7920w(Arsenal Heeresgeschichtliches Museum-DSC 7920w)",
             "desc": "[역사 지구 풍경] 높은 곳에서 내려다보이는 빈의 파노라마 뷰가 가슴을 뻥 뚫어줍니다."
           },
           {
@@ -595,7 +595,7 @@ const COURSES = [
               16.3679,
               48.2072
             ],
-            "cap": "바리케이드 bei der Universi...(Barricade bei der Universit...)",
+            "cap": "바리케이드 bei der Universität am 26ten Mai 1848 in Wien(Barricade bei der Universität am 26ten Mai 1848 in Wien)",
             "desc": "높은 곳에서 내려다보이는 빈의 파노라마 뷰가 가슴을 뻥 뚫어줍니다."
           },
           {
@@ -604,7 +604,7 @@ const COURSES = [
               16.3776,
               48.207
             ],
-            "cap": "Bundesarchiv Bild 146-...(Bundesarchiv Bild 146-1972-...)",
+            "cap": "Bundesarchiv Bild 146-1972-028-14, Anschluss Österreich(Bundesarchiv Bild 146-1972-028-14, Anschluss Österreich)",
             "desc": "[뷰 포인트 풍경] 과거와 현재가 공존하는 빈 특유의 독특한 분위기를 자아냅니다."
           }
         ]
@@ -655,7 +655,7 @@ const COURSES = [
               16.3736,
               48.2088
             ],
-            "cap": "Figlmueller. (Figlmueller. World Famous S...)",
+            "cap": "Figlmueller. 세계적으로 유명한 슈니첼! 비엔나(Figlmueller. World Famous Schnitzel! Vienna)",
             "desc": "[로컬 레스토랑 풍경] [슈니첼(Schnitzel)] 빈에서 가장 유명한 슈니첼 가게다. 접시보다 큰 지름 30cm짜리 슈니첼로 알려져 있는데, 고기를 얇게 두들겨 펴서 그렇게 되는 것이다. 돼지고기를 쓰며 송아지는 별도 메뉴다. 대기가 길고 예약을 받는 지점과 안 받는 지점이 나뉜다."
           },
           {
@@ -682,7 +682,7 @@ const COURSES = [
               16.3658,
               48.2016
             ],
-            "cap": "시티바이크 비엔나, Schönbrunne...(Citybike Vienna, Schönbrunn...)",
+            "cap": "시티바이크 비엔나, Schönbrunner Brücke(Citybike Vienna, Schönbrunner Brücke)",
             "desc": "마치 동화 속 한 장면에 들어온 듯한 낭만적인 분위기를 선사합니다."
           },
           {
@@ -700,7 +700,7 @@ const COURSES = [
               16.3685,
               48.2145
             ],
-            "cap": "Donaupark & ​​Donautur...(Donaupark & Donauturm Vienn...)",
+            "cap": "Donaupark & ​​Donauturm 비엔나 2024(Donaupark & Donauturm Vienna 2024)",
             "desc": "빈의 거리를 걷다 마주치게 되는 일상적이면서도 이국적인 모습입니다."
           },
           {
@@ -709,7 +709,7 @@ const COURSES = [
               16.372,
               48.2182
             ],
-            "cap": "Donaustadtbrücke rigar...(Donaustadtbrücke rigardate ...)",
+            "cap": "Donaustadtbrücke rigardate de la stacio Donaumarina(Donaustadtbrücke rigardate de la stacio Donaumarina)",
             "desc": "[역사 지구 풍경] 마치 동화 속 한 장면에 들어온 듯한 낭만적인 분위기를 선사합니다."
           },
           {
@@ -809,7 +809,7 @@ const COURSES = [
               13.6453,
               47.558
             ],
-            "cap": "6가지 음식, 파스타, 타쿠이노 사니타티...(6-alimenti, pasta,Taccuino ...)",
+            "cap": "6가지 음식, 파스타, 타쿠이노 사니타티스, 카사나텐세 4182.(6-alimenti, pasta,Taccuino Sanitatis, Casanatense 4182.)",
             "desc": "[할슈타트 풍경] [파스타(Pasta)] 현지 분위기가 물씬 풍기는 골목 식당에서 갓 만들어낸 따뜻한 요리입니다."
           },
           {
@@ -836,7 +836,7 @@ const COURSES = [
               13.6508,
               47.565
             ],
-            "cap": "할슈타트의 400 Jahre Fronle...(400 Jahre Fronleichnamproze...)",
+            "cap": "할슈타트의 400 Jahre Fronleichnamprozession(400 Jahre Fronleichnamprozession in Hallstatt)",
             "desc": "수백 년의 역사와 문화가 거리 구석구석 살아 숨 쉬는 매력적인 명소입니다."
           },
           {
@@ -845,7 +845,7 @@ const COURSES = [
               13.657,
               47.5527
             ],
-            "cap": "Alice Schumacher NHM W...(Alice Schumacher NHM Wien A...)",
+            "cap": "Alice Schumacher NHM Wien Abb Salz-Reich 2008 페이지 133 6(Alice Schumacher NHM Wien Abb Salz-Reich 2008 Seite 133 6)",
             "desc": "밤이 되면 화려한 조명으로 또 다른 매력을 뽐내는 로맨틱한 장소입니다."
           },
           {
@@ -905,7 +905,7 @@ const COURSES = [
               13.6458,
               47.5707
             ],
-            "cap": "Sítula de bronze, vaix...(Sítula de bronze, vaixella ...)",
+            "cap": "Sítula de bronze, vaixella per a beure, tomba 504 de Hallstatt(Sítula de bronze, vaixella per a beure, tomba 504 de Hallstatt)",
             "desc": "과거와 현재가 공존하는 할슈타트 특유의 독특한 분위기를 자아냅니다."
           }
         ]
@@ -986,7 +986,7 @@ const COURSES = [
               13.0435,
               47.7995
             ],
-            "cap": "오리지널 잘츠부르크 모차르트쿠겔 퓌르스트...(Original Salzburger Mozartk...)",
+            "cap": "오리지널 잘츠부르크 모차르트쿠겔 퓌르스트 2009(Original Salzburger Mozartkugel Fürst 2009)",
             "desc": "[전통 맛집 풍경] [모차르트 초콜릿(Mozartkugel)] 피스타치오 마지팬을 누가로 감싸고 초콜릿을 입힌 공 모양 과자다. 1890년 잘츠부르크 제과사 파울 퓌르스트가 만든 것이 원조이고, 퓌르스트 본점의 은박·파란 포장이 오리지널이다. 붉은 포장은 대량 생산품이다."
           },
           {
@@ -1004,7 +1004,7 @@ const COURSES = [
               13.0565,
               47.8172
             ],
-            "cap": "Salzburger Nockerln 04...(Salzburger Nockerln 04 gast...)",
+            "cap": "Salzburger Nockerln 04 요리법 001(Salzburger Nockerln 04 gastronomie 001)",
             "desc": "[전통 맛집 풍경] [잘츠부르거 노케를(Nockerl)] 잘츠부르크 특유의 매력적인 향신료와 식재료가 돋보이는 한 접시입니다."
           },
           {
@@ -1031,7 +1031,7 @@ const COURSES = [
               13.0593,
               47.8133
             ],
-            "cap": "2163 - 잘츠부르크 - 논베르크 Stift(2163 - Salzburg - Stift Non...)",
+            "cap": "2163 - 잘츠부르크 - 논베르크 Stift(2163 - Salzburg - Stift Nonnberg)",
             "desc": "[도심 광장 풍경] 아름다운 자연과 인공적인 건축물이 환상적인 조화를 이루는 곳입니다."
           },
           {
@@ -1040,7 +1040,7 @@ const COURSES = [
               13.0618,
               47.8017
             ],
-            "cap": "8/10 - 호엔잘츠부르크 성, 오스트리아(8 of 10 - Hohensalzburg Cas...)",
+            "cap": "8/10 - 호엔잘츠부르크 성, 오스트리아(8 of 10 - Hohensalzburg Castle, AUSTRIA)",
             "desc": "[낭만의 거리 풍경] 웅장한 규모와 정교한 디테일이 한눈에 시선을 사로잡는 랜드마크입니다."
           }
         ]
@@ -1095,7 +1095,7 @@ const COURSES = [
               11.5755,
               48.1374
             ],
-            "cap": "Peterskirche의 Rathaus와...(Rathaus and Marienplatz fro...)",
+            "cap": "Peterskirche의 Rathaus와 Marienplatz - 2006년 8월(Rathaus and Marienplatz from Peterskirche - August 2006)",
             "desc": "뮌헨의 중심 광장으로, 신 시청사의 글로켄슈필은 32개 인형이 결혼식 장면과 통 제조공의 춤을 재현한다. 하루 두세 차례 정해진 시각에만 작동하니 시간을 맞춰 가야 한다."
           },
           {
@@ -1122,7 +1122,7 @@ const COURSES = [
               11.576,
               48.137
             ],
-            "cap": "Augsburger Straße 15 D...(Augsburger Straße 15 DAH - ...)",
+            "cap": "Augsburger Straße 15 DAH - 2023-09-03 - 143c(Augsburger Straße 15 DAH - 2023-09-03 - 143c)",
             "desc": "[전통 맛집 풍경] [전통 요리] 잿물에 담갔다 구워 겉이 짙고 쫄깃한 바이에른식 프레첼이다. 굵은 소금이 박혀 있고 맥주 안주로 먹는다. 아침에는 흰 소시지(바이스부어스트)와 함께 내는 것이 전통이다."
           },
           {
@@ -1131,7 +1131,7 @@ const COURSES = [
               11.5825,
               48.1311
             ],
-            "cap": "1853년 뮌헨의 안톤 인형 데르 마리엔플라츠(Anton Doll Der Marienplatz ...)",
+            "cap": "1853년 뮌헨의 안톤 인형 데르 마리엔플라츠(Anton Doll Der Marienplatz in München 1853)",
             "desc": "[광장 풍경] 섬세한 조각상들과 화려한 장식들이 당시의 찬란했던 예술성을 보여줍니다."
           },
           {
@@ -1140,7 +1140,7 @@ const COURSES = [
               11.5836,
               48.1283
             ],
-            "cap": "2010.08.22.143425 Nürn...(2010.08.22.143425 Nürnberge...)",
+            "cap": "2010.08.22.143425 Nürnberger Rostbratwurst Kirwa Sulzbach-Rosenberg(2010.08.22.143425 Nürnberger Rostbratwurst Kirwa Sulzbach-Rosenberg)",
             "desc": "[카페 풍경] [브라트부어스트(Bratwurst)] 뮌헨 여행에서 결코 빼놓을 수 없는 미식 탐험의 하이라이트입니다."
           },
           {
@@ -1158,7 +1158,7 @@ const COURSES = [
               11.5794,
               48.1364
             ],
-            "cap": "Das Staatstheater am G...(Das Staatstheater am Gärtne...)",
+            "cap": "Das Staatstheater am Gärtnerplatz 04(Das Staatstheater am Gärtnerplatz 04)",
             "desc": "[구시가지 풍경] 전 세계 여행객들의 발길이 끊이지 않는 뮌헨의 상징적인 장소입니다."
           },
           {
@@ -1167,7 +1167,7 @@ const COURSES = [
               11.5765,
               48.1383
             ],
-            "cap": "4 Cilindros, 뮌헨, 알레마니아...(4 Cilindros, Múnich, Aleman...)",
+            "cap": "4 Cilindros, 뮌헨, 알레마니아, 2013-02-11, DD 02(4 Cilindros, Múnich, Alemania, 2013-02-11, DD 02)",
             "desc": "[구시가지 풍경] 따스한 햇살 아래 찬란하게 빛나는 뮌헨의 잊지 못할 전경입니다."
           },
           {
@@ -1262,7 +1262,7 @@ const COURSES = [
               8.3072,
               47.0508
             ],
-            "cap": "풀 치즈 퐁듀 세트 - 스위스산(Full cheese fondue set - in...)",
+            "cap": "풀 치즈 퐁듀 세트 - 스위스산(Full cheese fondue set - in Switzerland)",
             "desc": "[현지 베이커리 풍경] [치즈 폰듀(fondue)] 그뤼예르와 에멘탈 치즈를 화이트 와인에 녹여 빵을 찍어 먹는다. 빵을 냄비에 빠뜨리면 벌칙이 있다는 관습이 있고, 중간에 키르슈(체리 브랜디)를 한 잔 마시는 것이 소화에 좋다고 여겨진다. 여름보다 겨울 음식이다."
           },
           {
@@ -1271,7 +1271,7 @@ const COURSES = [
               8.3131,
               47.0516
             ],
-            "cap": "2018-01-11-라클렛 로칼 K-1449(2018-01-11-Raclette Lokal K...)",
+            "cap": "2018-01-11-라클렛 로칼 K-1449(2018-01-11-Raclette Lokal K-1449)",
             "desc": "[전통 맛집 풍경] [라클렛(Raclette)] 시원한 맥주나 와인 한 잔에 곁들이기 완벽한 최고의 안주입니다."
           },
           {
@@ -1289,7 +1289,7 @@ const COURSES = [
               8.31,
               47.0578
             ],
-            "cap": "성벽에서 본 루체른, 샘플 연구 - 윌리...(Lucerne from the Walls, Sam...)",
+            "cap": "(바르셀로나) 성벽의 루체른, 샘플 연구 - 윌리엄 터너 - 테이트 브리튼((Barcelona) Lucerne from the Walls, Sample Study - William Turner - Tate Britain)",
             "desc": "마치 한 장의 엽서 속으로 직접 들어온 듯한 그림 같은 풍경을 선사합니다."
           },
           {
@@ -1316,7 +1316,7 @@ const COURSES = [
               8.3085,
               47.0415
             ],
-            "cap": "호텔 샤토 구치 루체른 20230529 ...(Hotel Château Gütsch Luzern...)",
+            "cap": "호텔 샤토 구치 루체른 20230529 0457(Hotel Château Gütsch Luzern 20230529 0457)",
             "desc": "[뷰 포인트 풍경] 예술가들의 영감이 살아 숨 쉬는 낭만적이고 보헤미안적인 거리입니다."
           }
         ]
@@ -1376,7 +1376,7 @@ const COURSES = [
               8.3094,
               47.0587
             ],
-            "cap": "어니스트 비엘러(Ernest Biéler...(Ernest Biéler les comptes d...)",
+            "cap": "어니스트 비엘러(Ernest Biéler) les comptes de lalpage ou la raclette(Ernest Biéler les comptes de lalpage ou la raclette)",
             "desc": "[현지 베이커리 풍경] [라클렛(Raclette)] 입안 가득 퍼지는 현지의 풍미가 여행의 즐거움을 배가시켜 줍니다."
           },
           {
@@ -1385,7 +1385,7 @@ const COURSES = [
               8.3068,
               47.0539
             ],
-            "cap": "쇼콜라 수차드 - 타우진 루이스(Chocolat Suchard - Tauzin L...)",
+            "cap": "쇼콜라 수차드 - 타우장 루이스(1895)(Chocolat Suchard - Tauzin Louis (1895))",
             "desc": "[전통 맛집 풍경] [젤라또(Gelato)] 한 입 베어 무는 순간 루체른의 매력에 흠뻑 빠지게 될 특별한 맛입니다."
           },
           {
@@ -1394,7 +1394,7 @@ const COURSES = [
               8.3094,
               47.0559
             ],
-            "cap": "해질녘의 루체른 예수회 교회(Lucerne's Jesuit Church at ...)",
+            "cap": "해질녘의 루체른 예수회 교회(Lucerne's Jesuit Church at Sunset)",
             "desc": "수백 년의 역사와 문화가 거리 구석구석 살아 숨 쉬는 매력적인 명소입니다."
           },
           {
@@ -1421,7 +1421,7 @@ const COURSES = [
               8.3016,
               47.0558
             ],
-            "cap": "루체른 스위스 호텔 데 발란스 - 파노라마(Lucerne Switzerland Hotel d...)",
+            "cap": "루체른 스위스 호텔 데 발란스 - 파노라마(Lucerne Switzerland Hotel des Balances - panoramio)",
             "desc": "세월의 흔적이 고스란히 묻어나는 장엄하고 아름다운 건축물입니다."
           },
           {
@@ -1555,7 +1555,7 @@ const COURSES = [
               7.8709,
               46.6863
             ],
-            "cap": "Goldswil-Viadukt Panor...(Goldswil-Viadukt Panorama m...)",
+            "cap": "Goldswil-Viadukt Panorama mit Interlaken im Hintergrund 2(Goldswil-Viadukt Panorama mit Interlaken im Hintergrund 2)",
             "desc": "[도심 광장 풍경] 따스한 햇살 아래 찬란하게 빛나는 인터라켄의 잊지 못할 전경입니다."
           },
           {
@@ -1564,7 +1564,7 @@ const COURSES = [
               7.8599,
               46.6788
             ],
-            "cap": "호텔 파크 인터라켄 나 드루쿠 퍼모윔(Hotel Park Interlaken na dr...)",
+            "cap": "호텔 파크 인터라켄 나 드루쿠 퍼모윔(Hotel Park Interlaken na druku firmowym)",
             "desc": "[낭만의 거리 풍경] 조용한 골목길에서 우연히 마주친 비밀스럽고 매력적인 뷰 포인트입니다."
           },
           {
@@ -1573,7 +1573,7 @@ const COURSES = [
               7.8689,
               46.6817
             ],
-            "cap": "Höhenweg der Aarmühle ...(Höhenweg der Aarmühle nach ...)",
+            "cap": "Höhenweg der Aarmühle nach 인터라켄 1830(Höhenweg der Aarmühle nach Interlaken 1830)",
             "desc": "[역사 지구 풍경] 조용한 골목길에서 우연히 마주친 비밀스럽고 매력적인 뷰 포인트입니다."
           }
         ]
@@ -1650,7 +1650,7 @@ const COURSES = [
               9.1905,
               45.4655
             ],
-            "cap": "벨리니 치프리아니 마카로니 그릴 던우디 GA(Bellini Cipriani Macaroni G...)",
+            "cap": "벨리니 치프리아니 마카로니 그릴 던우디 GA(Bellini Cipriani Macaroni Grill Dunwoody GA)",
             "desc": "[골목 식당 풍경] [마카롱(Macaron)] 밀라노는 저녁 식사 전 술 한 잔에 안주가 딸려 나오는 아페리티보 문화의 중심지다. 갈레리아 안의 카페들이 대표적이고, 캄파리를 베이스로 한 네그로니나 스프리츠가 기본 선택이다."
           },
           {
@@ -1659,7 +1659,7 @@ const COURSES = [
               9.1802,
               45.4752
             ],
-            "cap": "아헨 독일 Imperial-Cathedr...(Aachen Germany Imperial-Cat...)",
+            "cap": "아헨 독일 Imperial-Cathedral-01(Aachen Germany Imperial-Cathedral-01)",
             "desc": "과거와 현재가 공존하는 밀라노 특유의 독특한 분위기를 자아냅니다."
           },
           {
@@ -1677,7 +1677,7 @@ const COURSES = [
               9.1882,
               45.4606
             ],
-            "cap": "1952 알파 로미오 1900 C52 디...(1952 Alfa Romeo 1900 C52 Di...)",
+            "cap": "1952 알파 로미오 1900 C52 디스코 볼란테 스파이더 ARM(1952 Alfa Romeo 1900 C52 Disco Volante Spider ARM)",
             "desc": "[뷰 포인트 풍경] 높은 곳에서 내려다보이는 밀라노의 파노라마 뷰가 가슴을 뻥 뚫어줍니다."
           },
           {
@@ -1686,7 +1686,7 @@ const COURSES = [
               9.1965,
               45.4635
             ],
-            "cap": "9754 - 밀라노 고고학 박물관 - O...(9754 - Museo archeologico d...)",
+            "cap": "9754 - 밀라노 고고학 박물관 - Olletta celtica (초 II-I a.C.) - 사진 Giovanni Dall'Orto, 2012년 3월 13일(9754 - Museo archeologico di Milano - Olletta celtica (sec. II-I a.C.) - Foto Giovanni Dall'Orto, 13-mar-2012)",
             "desc": "[구시가지 풍경] 아름다운 자연과 인공적인 건축물이 환상적인 조화를 이루는 곳입니다."
           },
           {
@@ -1704,7 +1704,7 @@ const COURSES = [
               9.1836,
               45.4588
             ],
-            "cap": "Arese Museo Storico Al...(Arese Museo Storico Alfa Ro...)",
+            "cap": "Arese Museo Storico Alfa Romeo 1967 33 Stradale 프로토타입 1(Arese Museo Storico Alfa Romeo 1967 33 Stradale prototype 1)",
             "desc": "[뷰 포인트 풍경] 높은 곳에서 내려다보이는 밀라노의 파노라마 뷰가 가슴을 뻥 뚫어줍니다."
           },
           {
@@ -1713,7 +1713,7 @@ const COURSES = [
               9.1839,
               45.461
             ],
-            "cap": "Autodromo Nazionale Mo...(Autodromo Nazionale Monza, ...)",
+            "cap": "Autodromo Nazionale Monza, 2018년 4월 22일 SkySat(자른)(Autodromo Nazionale Monza, April 22, 2018 SkySat (cropped))",
             "desc": "[뷰 포인트 풍경] 수백 년의 역사와 문화가 거리 구석구석 살아 숨 쉬는 매력적인 명소입니다."
           }
         ]
@@ -1781,7 +1781,7 @@ const COURSES = [
               12.3388,
               45.4341
             ],
-            "cap": "밤의 산마르코 광장 -msu-2021-6...(Piazza San Marco  at night-...)",
+            "cap": "밤의 산마르코 광장(베니스)-msu-2021-6449-(Piazza San Marco (Venice) at night-msu-2021-6449-)",
             "desc": "[마르코 광장 첫 야경 풍경] 나폴레옹이 '유럽에서 가장 아름다운 응접실'이라 불렀다는 광장이다. 밤에는 카페의 라이브 연주가 광장을 채운다."
           },
           {
@@ -1799,7 +1799,7 @@ const COURSES = [
               12.3172,
               45.4497
             ],
-            "cap": "카날레토 - 두칼레 궁전의 부두로 돌아온...(Canaletto - Bucentaur's ret...)",
+            "cap": "카날레토 - 두칼레 궁전의 부두로 돌아온 부켄타우로스 - Google Art Project(Canaletto - Bucentaur's return to the pier by the Palazzo Ducale - Google Art Project)",
             "desc": "[구시가지 풍경] 웅장한 규모와 정교한 디테일이 한눈에 시선을 사로잡는 랜드마크입니다."
           },
           {
@@ -1817,7 +1817,7 @@ const COURSES = [
               12.3181,
               45.4437
             ],
-            "cap": "2017 06 베네치아 터미널 파세게리 ...(2017 06 Venezia Terminal Pa...)",
+            "cap": "2017 06 베네치아 터미널 파세게리 터미널 파세게리 2860(2017 06 Venezia Terminal Passeggeri Terminal Passeggeri 2860)",
             "desc": "[역사 지구 풍경] 조용한 골목길에서 우연히 마주친 비밀스럽고 매력적인 뷰 포인트입니다."
           },
           {
@@ -1844,7 +1844,7 @@ const COURSES = [
               12.3085,
               45.45
             ],
-            "cap": "로마 광장을 떠나는 Actv 트램 베네치...(Actv tram Venezia leaving P...)",
+            "cap": "로마 광장을 떠나는 Actv 트램 베네치아 2017(Actv tram Venezia leaving Piazzale Roma 2017)",
             "desc": "[낭만의 거리 풍경] 시간이 멈춘 듯 평화롭고 고즈넉한 분위기를 간직한 아름다운 마을입니다."
           },
           {
@@ -1853,7 +1853,7 @@ const COURSES = [
               12.3187,
               45.4358
             ],
-            "cap": "Aeroporto di Venezia -...(Aeroporto di Venezia - vue ...)",
+            "cap": "Aeroporto di Venezia - vue aerienne(Aeroporto di Venezia - vue aerienne)",
             "desc": "[역사 지구 풍경] 전 세계 여행객들의 발길이 끊이지 않는 베네치아의 상징적인 장소입니다."
           }
         ]
@@ -1922,7 +1922,7 @@ const COURSES = [
               12.3208,
               45.4452
             ],
-            "cap": "안드레아 델 베로키오의 바르톨로메오 콜레오니(Bartolomeo Colleoni by Andr...)",
+            "cap": "안드레아 델 베로키오의 바르톨로메오 콜레오니(Bartolomeo Colleoni by Andrea del Verrocchio)",
             "desc": "[낭만의 거리 풍경] 맑고 투명한 물빛이 아름다운 자연 경관과 어우러져 장관을 연출합니다."
           },
           {
@@ -1931,7 +1931,7 @@ const COURSES = [
               12.3179,
               45.4319
             ],
-            "cap": "베네치아 산타마리아 델라 살루테 대성당 1(Basilica Santa Maria della ...)",
+            "cap": "베네치아 산타마리아 델라 살루테 대성당 1(Basilica Santa Maria della Salute Venice 1)",
             "desc": "[뷰 포인트 풍경] 눈부시게 푸른 바다와 눈부신 햇살이 여행의 피로를 씻어내 줍니다."
           },
           {
@@ -1940,7 +1940,7 @@ const COURSES = [
               12.3089,
               45.4365
             ],
-            "cap": "베르나르도 스트로치 - 클라우디오 몬테베르디(Bernardo Strozzi - Claudio ...)",
+            "cap": "베르나르도 스트로치 - 클라우디오 몬테베르디(c.1630)(Bernardo Strozzi - Claudio Monteverdi (c.1630))",
             "desc": "[낭만의 거리 풍경] 과거와 현재가 공존하는 베네치아 특유의 독특한 분위기를 자아냅니다."
           },
           {
@@ -1949,7 +1949,7 @@ const COURSES = [
               12.3074,
               45.4475
             ],
-            "cap": "탄식의 다리 바다 정면 베니스(Bridge of Sighs sea facade ...)",
+            "cap": "탄식의 다리 바다 정면 베니스(Bridge of Sighs sea facade Venice)",
             "desc": "[대성당 인근 풍경] 마치 한 장의 엽서 속으로 직접 들어온 듯한 그림 같은 풍경을 선사합니다."
           },
           {
@@ -2044,7 +2044,7 @@ const COURSES = [
               12.344,
               45.4609
             ],
-            "cap": "무라노 베트로의 람파다리오 - Ca' R...(Lampadario in vetro di Mura...)",
+            "cap": "무라노 베트로의 람파다리오 - Ca' Rezzonico, 베니스(Lampadario in vetro di Murano - Ca' Rezzonico, Venice)",
             "desc": "[낭만의 거리 풍경] 높은 곳에서 내려다보이는 무라노의 파노라마 뷰가 가슴을 뻥 뚫어줍니다."
           },
           {
@@ -2062,7 +2062,7 @@ const COURSES = [
               12.3486,
               45.4532
             ],
-            "cap": "무라노산타마리아에산도나토20031230(MuranoSantaMariaeSanDonato2...)",
+            "cap": "무라노산타마리아에산도나토20031230(MuranoSantaMariaeSanDonato20031230)",
             "desc": "[역사 지구 풍경] 따스한 햇살 아래 찬란하게 빛나는 무라노의 잊지 못할 전경입니다."
           },
           {
@@ -2140,7 +2140,7 @@ const COURSES = [
               12.3097,
               45.4385
             ],
-            "cap": "산 마르코 대성당의 종탑 - 원격 뷰(Campanile of St. Mark's Bas...)",
+            "cap": "산 마르코 대성당의 종탑 - 원격 뷰(Campanile of St. Mark's Basilica - remote view)",
             "desc": "[낭만의 거리 풍경] 수백 년의 역사와 문화가 거리 구석구석 살아 숨 쉬는 매력적인 명소입니다."
           },
           {
@@ -2149,7 +2149,7 @@ const COURSES = [
               12.3156,
               45.4349
             ],
-            "cap": "카니발 디 베네치아 마스크 2010(Carnevale di Venezia Masks ...)",
+            "cap": "카니발 디 베네치아 마스크 2010(Carnevale di Venezia Masks 2010)",
             "desc": "[역사 지구 풍경] 따스한 햇살 아래 찬란하게 빛나는 베네치아의 잊지 못할 전경입니다."
           },
           {
@@ -2158,7 +2158,7 @@ const COURSES = [
               12.3078,
               45.4473
             ],
-            "cap": "90년대 후반 베네치아 운하 청소(Cleaning of Venetian canals...)",
+            "cap": "90년대 후반 베네치아 운하 청소(Cleaning of Venetian canals, late 90's)",
             "desc": "조용한 골목길에서 우연히 마주친 비밀스럽고 매력적인 뷰 포인트입니다."
           },
           {
@@ -2167,7 +2167,7 @@ const COURSES = [
               12.3106,
               45.4391
             ],
-            "cap": "바시노 산 마르코 베니스를 지나는 유람선(Cruiseship passing bacino S...)",
+            "cap": "바시노 산 마르코 베니스를 지나는 유람선(Cruiseship passing bacino San Marco Venise)",
             "desc": "[뷰 포인트 풍경] 수백 년의 역사와 문화가 거리 구석구석 살아 숨 쉬는 매력적인 명소입니다."
           },
           {
@@ -2185,7 +2185,7 @@ const COURSES = [
               12.3096,
               45.4311
             ],
-            "cap": "밤의 총독의 궁전 2023-msu-202...(Doge's Palace  at night 202...)",
+            "cap": "밤의 총독의 궁전(베니스) 2023-msu-2023-0I9A6405-(Doge's Palace (Venice) at night 2023-msu-2023-0I9A6405-)",
             "desc": "[도심 광장 풍경] 시간이 멈춘 듯 평화롭고 고즈넉한 분위기를 간직한 아름다운 마을입니다."
           },
           {
@@ -2265,7 +2265,7 @@ const COURSES = [
               -3.7086,
               40.4142
             ],
-            "cap": "2014 - 스페인 마드리드 Sobrin...(2014 - Sobrino de Botín  Re...)",
+            "cap": "2014 - Sobrino de Botín (Casa Botín) 레스토랑, 스페인 마드리드 (Ank Kumar) 05(2014 - Sobrino de Botín (Casa Botín) Restaurant, Madrid, Spain ( Ank Kumar ) 05)",
             "desc": "[분수 광장 풍경] 기네스가 인정한 세계에서 가장 오래된 레스토랑이다. 1725년부터 같은 참나무 장작 화덕을 꺼뜨리지 않고 써 왔다. 고야가 젊은 시절 접시닦이로 일했다는 이야기가 전해지고, 헤밍웨이의 「태양은 다시 떠오른다」 마지막 장면에 등장한다. 예약 필수다."
           },
           {
@@ -2292,7 +2292,7 @@ const COURSES = [
               -3.7136,
               40.4258
             ],
-            "cap": "엘 도스 데 마요 데 1808년 마드리드(El dos de mayo de 1808 en M...)",
+            "cap": "엘 도스 데 마요 데 1808년 마드리드(El dos de mayo de 1808 en Madrid)",
             "desc": "[대성당 인근 풍경] 웅장한 규모와 정교한 디테일이 한눈에 시선을 사로잡는 랜드마크입니다."
           },
           {
@@ -2301,7 +2301,7 @@ const COURSES = [
               -3.713,
               40.4171
             ],
-            "cap": "비스타 데 마드리드 데스데 플라자 데 카...(Vista de Madrid desde Plaza...)",
+            "cap": "(카스티예호스) 비스타 데 마드리드 데데 플라자 드 카스티야 03(자른)((Castillejos) Vista de Madrid desde Plaza de Castilla 03 (cropped))",
             "desc": "[낭만의 거리 풍경] 따스한 햇살 아래 찬란하게 빛나는 마드리드의 잊지 못할 전경입니다."
           },
           {
@@ -2310,7 +2310,7 @@ const COURSES = [
               -3.7101,
               40.4213
             ],
-            "cap": "20210109 눈보라 후 마드리드 왕궁(20210109 Royal Palace of Ma...)",
+            "cap": "20210109 눈보라 후 마드리드 왕궁(20210109 Royal Palace of Madrid after snowstorm)",
             "desc": "[낭만의 거리 풍경] 마치 동화 속 한 장면에 들어온 듯한 낭만적인 분위기를 선사합니다."
           },
           {
@@ -2328,7 +2328,7 @@ const COURSES = [
               -3.7049,
               40.4076
             ],
-            "cap": "Baños en el Manzanares...(Baños en el Manzanares en e...)",
+            "cap": "Baños en el Manzanares en el paraje de Molino Quemado. 마드리드 역사 박물관(세부)(Baños en el Manzanares en el paraje de Molino Quemado. Museo de Historia de Madrid (detalle))",
             "desc": "눈부시게 푸른 바다와 눈부신 햇살이 여행의 피로를 씻어내 줍니다."
           }
         ]
@@ -2379,7 +2379,7 @@ const COURSES = [
               -3.7068,
               40.4166
             ],
-            "cap": "다시 San Gines에서. (At San Gines again. One of ...)",
+            "cap": "다시 San Gines에서. 마드리드에서 가장 오래된 초콜릿 콘 츄로스 중 하나(18761909709)(At San Gines again. One of the oldest chocolate con churros in Madrid (18761909709))",
             "desc": "[마켓 노점 풍경] [츄러스(Churros)] 130년 넘게 24시간 가까이 문을 여는 추로스 전문점이다. 마드리드에서는 밤새 놀고 새벽에 여기서 추로스를 먹고 귀가하는 것이 오랜 관습이다. 초록색 대리석 테이블과 거울 인테리어가 개업 당시 그대로다."
           },
           {
@@ -2388,7 +2388,7 @@ const COURSES = [
               -3.7066,
               40.4168
             ],
-            "cap": "La Giralda의 초콜릿 콘 츄로스(Chocolate con churros en La...)",
+            "cap": "La Giralda의 초콜릿 콘 츄로스(Chocolate con churros en La Giralda)",
             "desc": "[전통 맛집 풍경] [츄러스(Churros)] 스페인식 핫초콜릿은 마시는 음료가 아니라 찍어 먹는 소스에 가깝게 걸쭉하다. 추로스는 설탕을 뿌리지 않고 나오며, 더 굵은 포라스(porras)를 선택할 수도 있다."
           },
           {
@@ -2433,7 +2433,7 @@ const COURSES = [
               -3.7074,
               40.4196
             ],
-            "cap": "마드리드 폭탄 테러 당시의 어린이들(Children during the Madrid ...)",
+            "cap": "마드리드 폭탄 테러 당시의 어린이들(Children during the Madrid bombing)",
             "desc": "[도심 광장 풍경] 과거와 현재가 공존하는 마드리드 특유의 독특한 분위기를 자아냅니다."
           },
           {
@@ -2442,7 +2442,7 @@ const COURSES = [
               -3.7112,
               40.4173
             ],
-            "cap": "Comienza la restauraci...(Comienza la restauración de...)",
+            "cap": "Comienza la restauración del Viaje de Agua de Amaniel 방문 허가서 04(Comienza la restauración del Viaje de Agua de Amaniel para permitir visitas didácticas 04)",
             "desc": "[도심 광장 풍경] 높은 곳에서 내려다보이는 마드리드의 파노라마 뷰가 가슴을 뻥 뚫어줍니다."
           }
         ]
@@ -2475,7 +2475,7 @@ const COURSES = [
               2.1734,
               41.3809
             ],
-            "cap": "15-10-27-Vista des de ...(15-10-27-Vista des de lestà...)",
+            "cap": "15-10-27-Vista des de lestàtua de Colom a Barcelona-WMA 2791(15-10-27-Vista des de lestàtua de Colom a Barcelona-WMA 2791)",
             "desc": "카탈루냐 광장에서 항구까지 1.2km 이어지는 보행자 거리다. 원래 하수도가 흐르던 자리를 덮어 만든 길이다. 유럽에서 소매치기가 가장 많은 구역 중 하나이니 가방을 앞으로 메자."
           },
           {
@@ -2511,7 +2511,7 @@ const COURSES = [
               2.1809,
               41.3913
             ],
-            "cap": "레몬, 라임, 사과, 오렌지를 잔에 담은...(Red Wine Sangria with lemon...)",
+            "cap": "레몬, 라임, 사과, 오렌지를 잔에 담은 레드 와인 상그리아 - Evan Swigart(Red Wine Sangria with lemon, lime, apple, and orange served in a glass - Evan Swigart)",
             "desc": "[상그리아(Sangria)] 오랜 시간 정성껏 끓여내어 깊은 맛을 자랑하는 셰프의 추천 메뉴입니다."
           },
           {
@@ -2529,7 +2529,7 @@ const COURSES = [
               2.1676,
               41.3826
             ],
-            "cap": "카사 밀라 - 바르셀로나, 스페인 - 2...(Casa Milà - Barcelona, Spai...)",
+            "cap": "카사 밀라 - 바르셀로나, 스페인 - 2007년 1월(Casa Milà - Barcelona, Spain - Jan 2007)",
             "desc": "마치 동화 속 한 장면에 들어온 듯한 낭만적인 분위기를 선사합니다."
           },
           {
@@ -2547,7 +2547,7 @@ const COURSES = [
               2.1807,
               41.3799
             ],
-            "cap": "2017년 8월 10일 선언문 \"Prou...(08.10.2017 Manifestació \"Pr...)",
+            "cap": "2017년 8월 10일 선언문 \"Prou! Recuperem el seny\" - 바르셀로나 17(08.10.2017 Manifestació \"Prou! Recuperem el seny\" - Barcelona 17)",
             "desc": "[도심 광장 풍경] 예술가들의 영감이 살아 숨 쉬는 낭만적이고 보헤미안적인 거리입니다."
           },
           {
@@ -2556,7 +2556,7 @@ const COURSES = [
               2.1803,
               41.3844
             ],
-            "cap": "085 Ronda de Dalt, des...(085 Ronda de Dalt , des del...)",
+            "cap": "085 론다 데 달트(바르셀로나), 데 델 퐁 데 라베구다 델 티비다보(085 Ronda de Dalt (Barcelona), des del pont de l'avinguda del Tibidabo)",
             "desc": "[역사 지구 풍경] 과거와 현재가 공존하는 바르셀로나 특유의 독특한 분위기를 자아냅니다."
           }
         ]
@@ -2616,7 +2616,7 @@ const COURSES = [
               2.1737,
               41.3856
             ],
-            "cap": "15-10-27-엘스 콰트로 Gats-R...(15-10-27-Els Quatre Gats-Ra...)",
+            "cap": "15-10-27-엘스 콰트로 Gats-RalfR-WMA 2729(15-10-27-Els Quatre Gats-RalfR-WMA 2729)",
             "desc": "[분수 광장 풍경] 피카소가 열일곱 살에 첫 개인전을 연 카페다. 그가 그린 메뉴판 그림이 지금도 쓰인다. 파리의 '검은 고양이'를 본떠 만든 곳으로 모더니즘 예술가들의 아지트였다. 음식보다 공간과 내력으로 가는 곳이다."
           },
           {
@@ -2625,7 +2625,7 @@ const COURSES = [
               2.1642,
               41.3766
             ],
-            "cap": "Joaquim Mir의 거지 대성당 - ...(The Beggars Cathedral by Jo...)",
+            "cap": "(바르셀로나) Joaquim Mir의 거지 대성당 - Museu Nacional d'Art de Catalunya((Barcelona) The Beggars Cathedral by Joaquim Mir - Museu Nacional d'Art de Catalunya)",
             "desc": "마치 한 장의 엽서 속으로 직접 들어온 듯한 그림 같은 풍경을 선사합니다."
           },
           {
@@ -2634,7 +2634,7 @@ const COURSES = [
               2.1752,
               41.3847
             ],
-            "cap": "A musician playing amo...(A musician playing among co...)",
+            "cap": "살라 히포스틸라(Sala Hipóstila), 구엘 공원(유네스코 세계문화유산), 엘 카르멜 언덕, 그라시아(지구), 바르셀로나, 카탈로니아, 스페인의 기둥 사이에서 연주하는 음악가(A musician playing among columns of Sala Hipóstila, Park Güell ( UNESCO World Heritage Site), hill of El Carmel, Gràcia (district), Barcelona, Catalonia, Spain)",
             "desc": "눈부시게 푸른 바다와 눈부신 햇살이 여행의 피로를 씻어내 줍니다."
           },
           {
@@ -2670,7 +2670,7 @@ const COURSES = [
               2.1759,
               41.394
             ],
-            "cap": "15-10-27-Vista des de ...(15-10-27-Vista des de l'est...)",
+            "cap": "15-10-27-Vista des de l'estàtua de Colom a Barcelona-WMA 2800(15-10-27-Vista des de l'estàtua de Colom a Barcelona-WMA 2800)",
             "desc": "[도심 광장 풍경] 높은 곳에서 내려다보이는 바르셀로나의 파노라마 뷰가 가슴을 뻥 뚫어줍니다."
           }
         ]
@@ -2739,7 +2739,7 @@ const COURSES = [
               2.1648,
               41.379
             ],
-            "cap": "Avinguda de la Reina M...(Avinguda de la Reina Maria ...)",
+            "cap": "Avinguda de la Reina Maria Cristina 바르셀로나 2013(Avinguda de la Reina Maria Cristina Barcelona 2013)",
             "desc": "[대성당 인근 풍경] 높은 곳에서 내려다보이는 바르셀로나의 파노라마 뷰가 가슴을 뻥 뚫어줍니다."
           },
           {
@@ -2766,7 +2766,7 @@ const COURSES = [
               2.1773,
               41.3819
             ],
-            "cap": "바르셀로나 - Estación de Sa...(Barcelona - Estación de San...)",
+            "cap": "바르셀로나 - Estación de Sants y Hotel Barceló Sants 2(Barcelona - Estación de Sants y Hotel Barceló Sants 2)",
             "desc": "[구시가지 풍경] 바르셀로나의 거리를 걷다 마주치게 되는 일상적이면서도 이국적인 모습입니다."
           },
           {
@@ -2775,7 +2775,7 @@ const COURSES = [
               2.1655,
               41.3877
             ],
-            "cap": "바르셀로나 - 바르셀로나 현대미술관(Barcelona - Museu d'Art Con...)",
+            "cap": "바르셀로나 - 바르셀로나 현대미술관(MACBA)(Barcelona - Museu d'Art Contemporani de Barcelona (MACBA))",
             "desc": "[역사 지구 풍경] 시간이 멈춘 듯 평화롭고 고즈넉한 분위기를 간직한 아름다운 마을입니다."
           },
           {
@@ -2843,7 +2843,7 @@ const COURSES = [
               2.1922,
               41.3788
             ],
-            "cap": "Paella Valenciana, 마사틀...(Paella valenciana, Mazatlán...)",
+            "cap": "Paella Valenciana, 마사틀란, 2023년 4월 25일(Paella valenciana, Mazatlán, 25 de abril de 2023)",
             "desc": "[몬세라트 풍경] [파에야(Paella)] 발렌시아에서 시작된 쌀 요리로, 원래는 토끼와 달팽이를 넣은 육지 요리였다. 바닥에 눌어붙은 누룽지(소카라트)가 핵심이고, 관광지에서 미리 만들어둔 것은 이게 없다. 스페인에서는 점심 음식이라 저녁에 파에야를 파는 곳은 관광객용인 경우가 많다."
           },
           {
@@ -2852,7 +2852,7 @@ const COURSES = [
               1.8315,
               41.5942
             ],
-            "cap": "몬세라트 산맥, 카탈로니아, 스페인 - ...(Montserrat Mountains, Catal...)",
+            "cap": "몬세라트 산맥, 카탈로니아, 스페인 - 2007년 1월(Montserrat Mountains, Catalonia, Spain - Jan 2007)",
             "desc": "과거와 현재가 공존하는 몬세라트 특유의 독특한 분위기를 자아냅니다."
           },
           {
@@ -2870,7 +2870,7 @@ const COURSES = [
               1.8288,
               41.5924
             ],
-            "cap": "데이비드 아담 케스(David Adam ...(by David Adam Kess)",
+            "cap": "(파스타) David Adam Kess 작성(그림 2)((Pasta) by David Adam Kess (pic.2))",
             "desc": "[몬세라트 풍경] [파스타(Pasta)] 현지의 오리지널 레시피로 만들어진 깊고 풍부한 맛을 느껴보세요."
           },
           {
@@ -2879,7 +2879,7 @@ const COURSES = [
               1.836,
               41.5894
             ],
-            "cap": "해군도 No 254 Montserrat,...(Admiralty Chart No 254 Mont...)",
+            "cap": "해군도 No 254 Montserrat, 1869년 출판(Admiralty Chart No 254 Montserrat, Published 1869)",
             "desc": "시간이 멈춘 듯 평화롭고 고즈넉한 분위기를 간직한 아름다운 마을입니다."
           },
           {
@@ -2915,7 +2915,7 @@ const COURSES = [
               1.8365,
               41.5889
             ],
-            "cap": "위에서 바라본 리틀 베이, 몬세라트(Little Bay from above, Mont...)",
+            "cap": "위에서 바라본 리틀 베이, 몬세라트(Little Bay from above, Montserrat)",
             "desc": "푸른 하늘과 맞닿은 아름다운 스카이라인이 마음까지 탁 트이게 합니다."
           }
         ]
@@ -2957,7 +2957,7 @@ const COURSES = [
               7.276,
               43.697
             ],
-            "cap": "프롬나드 데 장글레 니스 IMG 1255(Promenade des Anglais Nice ...)",
+            "cap": "프롬나드 데 장글레 니스 IMG 1255(Promenade des Anglais Nice IMG 1255)",
             "desc": "[구시가지  풍경] 이탈리아풍 파스텔 건물이 이어지는 구역이다. 니스는 1860년까지 사르데냐 왕국 영토였고, 그래서 음식과 건축이 프랑스보다 이탈리아에 가깝다."
           },
           {
@@ -2993,7 +2993,7 @@ const COURSES = [
               7.2622,
               43.7087
             ],
-            "cap": "좋은 카푸치노는 완벽한 에스프레소에서 시...(A good cappuccino starts wi...)",
+            "cap": "좋은 카푸치노는 완벽한 에스프레소에서 시작됩니다!! (4441914182)(A good cappuccino starts with a perfect espresso!! (4441914182))",
             "desc": "[마켓 노점 풍경] [에스프레소(Espresso)] 달콤쌉싸름한 매력으로 여행자들의 발길을 사로잡는 마성의 디저트입니다."
           },
           {
@@ -3020,7 +3020,7 @@ const COURSES = [
               7.2673,
               43.701
             ],
-            "cap": "바타이유 드 플뢰르. (Bataille de fleurs. 2020-02...)",
+            "cap": "바타이유 드 플뢰르. 2020-02-22 14-43-52(Bataille de fleurs. 2020-02-22 14-43-52)",
             "desc": "과거와 현재가 공존하는 니스 특유의 독특한 분위기를 자아냅니다."
           },
           {
@@ -3029,7 +3029,7 @@ const COURSES = [
               7.2583,
               43.712
             ],
-            "cap": "Cathedrale Sainte-Repa...(Cathedrale Sainte-Reparate ...)",
+            "cap": "Cathedrale Sainte-Reparate 니스(Cathedrale Sainte-Reparate Nice)",
             "desc": "[낭만의 거리 풍경] 따스한 햇살 아래 찬란하게 빛나는 니스의 잊지 못할 전경입니다."
           }
         ]
@@ -3088,7 +3088,7 @@ const COURSES = [
               7.4272,
               43.7402
             ],
-            "cap": "카페 드 파리 몬테카를로 - 파노라마(Cafe de Paris Monte-Carlo -...)",
+            "cap": "카페 드 파리 몬테카를로 - 파노라마(Cafe de Paris Monte-Carlo - panoramio)",
             "desc": "[드 파리 몬테카를로 — 1868년 풍경] 카지노 광장에 면한 벨 에포크 브라세리다. 크레페 쉬제트가 여기서 우연히 만들어졌다는 이야기가 전해진다 — 소스에 불이 붙는 사고가 오히려 요리가 됐다는 것이다. 테라스에서 카지노와 슈퍼카 행렬을 구경하는 것이 이 자리의 값이다."
           },
           {
@@ -3106,7 +3106,7 @@ const COURSES = [
               7.268,
               43.6955
             ],
-            "cap": "밀라노 두오모 아래 젤라또(Gelato under the Duomo in M...)",
+            "cap": "밀라노 두오모 아래 젤라또(Gelato under the Duomo in Milan)",
             "desc": "[전통 맛집 풍경] [젤라또(Gelato)] 구시가지의 페노키오는 라벤더, 올리브, 토마토 바질 등 100가지 가까운 맛으로 유명하다. 해변 산책로를 걸으며 먹기 좋다."
           },
           {
@@ -3124,7 +3124,7 @@ const COURSES = [
               7.4253,
               43.7374
             ],
-            "cap": "6가지 음식, 파스타, 타쿠이노 사니타티...(6-alimenti, pasta,Taccuino ...)",
+            "cap": "6가지 음식, 파스타, 타쿠이노 사니타티스, 카사나텐세 4182.(6-alimenti, pasta,Taccuino Sanitatis, Casanatense 4182.)",
             "desc": "[마켓 노점 풍경] [파스타(Pasta)] 한 입 베어 무는 순간 모나코의 매력에 흠뻑 빠지게 될 특별한 맛입니다."
           },
           {
@@ -3142,7 +3142,7 @@ const COURSES = [
               7.4299,
               43.7476
             ],
-            "cap": "프랑스 대사 모나코, 22 bouleva...(Ambassade de Monaco en Fran...)",
+            "cap": "프랑스 대사 모나코, 22 boulevard Suchet, Paris 16e(Ambassade de Monaco en France, 22 boulevard Suchet, Paris 16e)",
             "desc": "[대성당 인근 풍경] 섬세한 조각상들과 화려한 장식들이 당시의 찬란했던 예술성을 보여줍니다."
           },
           {
@@ -3151,7 +3151,7 @@ const COURSES = [
               7.4246,
               43.7295
             ],
-            "cap": "카페 드 파리, 몬테카를로 - 에스프레소(Café de Paris, Monte Carlo ...)",
+            "cap": "카페 드 파리, 몬테카를로 - 에스프레소(Café de Paris, Monte Carlo - expresso)",
             "desc": "[도심 광장 풍경] 웅장한 규모와 정교한 디테일이 한눈에 시선을 사로잡는 랜드마크입니다."
           },
           {
@@ -3241,7 +3241,7 @@ const COURSES = [
               11.2545,
               43.7731
             ],
-            "cap": "아헨 독일 Imperial-Cathedr...(Aachen Germany Imperial-Cat...)",
+            "cap": "아헨 독일 Imperial-Cathedral-01(Aachen Germany Imperial-Cathedral-01)",
             "desc": "섬세한 조각상들과 화려한 장식들이 당시의 찬란했던 예술성을 보여줍니다."
           },
           {
@@ -3259,7 +3259,7 @@ const COURSES = [
               11.2643,
               43.7765
             ],
-            "cap": "Cattedrale di Santa Ma...(Dome of Cattedrale di Santa...)",
+            "cap": "Cattedrale di Santa Maria del Fiore의 돔(피렌체)(Dome of Cattedrale di Santa Maria del Fiore (Florence))",
             "desc": "[역사 지구 풍경] 세월의 흔적이 고스란히 묻어나는 장엄하고 아름다운 건축물입니다."
           },
           {
@@ -3277,7 +3277,7 @@ const COURSES = [
               11.2597,
               43.7771
             ],
-            "cap": "1-5마라타빛보병플로렌스1944(1-5MahrattaLightInfantryFlo...)",
+            "cap": "1-5마라타빛보병플로렌스1944(1-5MahrattaLightInfantryFlorence1944)",
             "desc": "눈부시게 푸른 바다와 눈부신 햇살이 여행의 피로를 씻어내 줍니다."
           },
           {
@@ -3286,7 +3286,7 @@ const COURSES = [
               11.2474,
               43.776
             ],
-            "cap": "Aeroporto di Firenze -...(Aeroporto di Firenze - main...)",
+            "cap": "Aeroporto di Firenze - 1층 레스토랑에서 본 본관(Aeroporto di Firenze - main building seen from restaurant at the 1st floor)",
             "desc": "[구시가지 풍경] 마치 동화 속 한 장면에 들어온 듯한 낭만적인 분위기를 선사합니다."
           },
           {
@@ -3556,7 +3556,7 @@ const COURSES = [
               9.7217,
               44.1022
             ],
-            "cap": "2019-05-01 Controllo t...(2019-05-01 Controllo turist...)",
+            "cap": "2019-05-01 Controllo turisti 도착 binari La Spezia 10(2019-05-01 Controllo turisti arrivo binari La Spezia 10)",
             "desc": "[대성당 인근 풍경] 수백 년의 역사와 문화가 거리 구석구석 살아 숨 쉬는 매력적인 명소입니다."
           },
           {
@@ -3574,7 +3574,7 @@ const COURSES = [
               9.7383,
               44.102
             ],
-            "cap": "Corniglia Cinque Terre...(East Above Corniglia Cinque...)",
+            "cap": "Corniglia Cinque Terre 자르기 위의 동쪽 Sep23 A7C 06797(East Above Corniglia Cinque Terre crop Sep23 A7C 06797)",
             "desc": "[낭만의 거리 풍경] 섬세한 조각상들과 화려한 장식들이 당시의 찬란했던 예술성을 보여줍니다."
           }
         ]
@@ -3665,7 +3665,7 @@ const COURSES = [
               12.494,
               41.8938
             ],
-            "cap": "알브레히트 뒤러 - Adorazione ...(Albrecht Dürer - Adorazione...)",
+            "cap": "알브레히트 뒤러 - Adorazione dei Magi - Google Art Project(Albrecht Dürer - Adorazione dei Magi - Google Art Project)",
             "desc": "전 세계 여행객들의 발길이 끊이지 않는 로마의 상징적인 장소입니다."
           },
           {
@@ -3683,7 +3683,7 @@ const COURSES = [
               12.5051,
               41.8948
             ],
-            "cap": "2021.03의 Aeroporto di ...(Aeroporto di Roma-Fiumicino...)",
+            "cap": "2021.03의 Aeroporto di Roma-Fiumicino(Aeroporto di Roma-Fiumicino in 2021.03)",
             "desc": "현지인들의 여유로운 일상을 가장 가까이서 엿볼 수 있는 활기찬 광장입니다."
           },
           {
@@ -3788,7 +3788,7 @@ const COURSES = [
               12.496,
               41.9044
             ],
-            "cap": "로마의 콜로세움 - 2007년 4월 - ...(Colosseum in Rome-April 200...)",
+            "cap": "로마의 콜로세움 - 2007년 4월 - 1 - 사본 2B(Colosseum in Rome-April 2007-1- copie 2B)",
             "desc": "아름다운 자연과 인공적인 건축물이 환상적인 조화를 이루는 곳입니다."
           },
           {
@@ -3797,7 +3797,7 @@ const COURSES = [
               12.4967,
               41.9076
             ],
-            "cap": "교황 레오 3세 바티칸 11세의 대관식 ...(Detail coronation Charles t...)",
+            "cap": "교황 레오 3세(레오 10세)의 대관식 세부 대관식(프랑스의 프란치스코 1세) 바티칸 11(Detail coronation Charles the Great (Francis 1st of France) by Pope Leo III (Leo X) Vatican 11)",
             "desc": "웅장한 규모와 정교한 디테일이 한눈에 시선을 사로잡는 랜드마크입니다."
           },
           {
@@ -3815,7 +3815,7 @@ const COURSES = [
               12.4974,
               41.8949
             ],
-            "cap": "로마의 축소판 세부 묘사 콘스탄틴(Détail de la maquette de Ro...)",
+            "cap": "Détail de la maquette de Rome à lépoque de Constantin (5840455090)(Détail de la maquette de Rome à lépoque de Constantin (5840455090))",
             "desc": "조용한 골목길에서 우연히 마주친 비밀스럽고 매력적인 뷰 포인트입니다."
           },
           {
@@ -3884,7 +3884,7 @@ const COURSES = [
               12.4986,
               41.8967
             ],
-            "cap": "라파엘로 산치오 다 우르비노의 '아테네 학당'(\"The School of Athens\" by R...)",
+            "cap": "라파엘로 산치오 다 우르비노의 '아테네 학당'(\"The School of Athens\" by Raffaello Sanzio da Urbino)",
             "desc": "[광장 풍경] 시간이 멈춘 듯 평화롭고 고즈넉한 분위기를 간직한 아름다운 마을입니다."
           },
           {
@@ -3902,7 +3902,7 @@ const COURSES = [
               12.4947,
               41.9055
             ],
-            "cap": "엥겔스부르크와 엥겔스브뤼케 이상(Engelsburg und Engelsbrücke...)",
+            "cap": "Engelsburg und Engelsbrücke 이상(Zuschnitt)(Engelsburg und Engelsbrücke abends (Zuschnitt))",
             "desc": "[구시가지 풍경] 세월의 흔적이 고스란히 묻어나는 장엄하고 아름다운 건축물입니다."
           },
           {
@@ -3920,7 +3920,7 @@ const COURSES = [
               12.5033,
               41.9062
             ],
-            "cap": "식량농업기구 본부 2008(Food and Agriculture Organi...)",
+            "cap": "식량농업기구 본부 2008(Food and Agriculture Organization HQ 2008)",
             "desc": "[낭만의 거리 풍경] 눈부시게 푸른 바다와 눈부신 햇살이 여행의 피로를 씻어내 줍니다."
           }
         ]
@@ -4185,7 +4185,7 @@ const COURSES = [
               14.2603,
               40.8589
             ],
-            "cap": "Eq 잇나 피자 마르게리타 sep2005...(Eq it-na pizza-margherita s...)",
+            "cap": "Eq 잇나 피자 마르게리타 sep2005 sml(Eq it-na pizza-margherita sep2005 sml)",
             "desc": "[현지 베이커리 풍경] [마르게리타 피자(Margherita)] 마치 동화 속 한 장면에 들어온 듯한 낭만적인 분위기를 선사합니다."
           }
         ]
@@ -4236,7 +4236,7 @@ const COURSES = [
               14.2728,
               40.8573
             ],
-            "cap": "파치아타 두오모 디 나폴리 - BW 20...(Facciata Duomo di Napoli - ...)",
+            "cap": "파치아타 두오모 디 나폴리 - BW 2013-05-16(Facciata Duomo di Napoli - BW 2013-05-16)",
             "desc": "마치 한 장의 엽서 속으로 직접 들어온 듯한 그림 같은 풍경을 선사합니다."
           },
           {
@@ -4254,7 +4254,7 @@ const COURSES = [
               14.2756,
               40.8541
             ],
-            "cap": "페르골라, 살바토레 나폴리 취임식 - 포...(Fergola, Salvatore The Inau...)",
+            "cap": "페르골라, 살바토레 나폴리 취임식 - 포르티치 철도, 1840년(Fergola, Salvatore The Inauguration of the Naples - Portici Railway, 1840)",
             "desc": "[도심 광장 풍경] 시간이 멈춘 듯 평화롭고 고즈넉한 분위기를 간직한 아름다운 마을입니다."
           },
           {
@@ -4263,7 +4263,7 @@ const COURSES = [
               14.2727,
               40.8529
             ],
-            "cap": "폰타나 델 네투노(Fontana del ...(Fontana del Nettuno, Piazza...)",
+            "cap": "폰타나 델 네투노(Fontana del Nettuno), 무니치피오 광장, 나폴리 05 bis(Fontana del Nettuno, Piazza Municipio, Naples 05 bis)",
             "desc": "[낭만의 거리 풍경] 밤이 되면 화려한 조명으로 또 다른 매력을 뽐내는 로맨틱한 장소입니다."
           },
           {
@@ -4281,7 +4281,7 @@ const COURSES = [
               14.267,
               40.8456
             ],
-            "cap": "갤러리아 보르보니카 - 전쟁 피난처(Galleria borbonica - War re...)",
+            "cap": "갤러리아 보르보니카 - 전쟁 피난처(나폴리)(Galleria borbonica - War refuge (Naples))",
             "desc": "높은 곳에서 내려다보이는 나폴리의 파노라마 뷰가 가슴을 뻥 뚫어줍니다."
           },
           {
@@ -4379,7 +4379,7 @@ const COURSES = [
               13.4119,
               52.5282
             ],
-            "cap": "00 2486 Quadriga - Bra...(00 2486 Quadriga - Brandenb...)",
+            "cap": "00 2486 Quadriga - Brandenburger Tor (베를린)(00 2486 Quadriga - Brandenburger Tor (Berlin))",
             "desc": "섬세한 조각상들과 화려한 장식들이 당시의 찬란했던 예술성을 보여줍니다."
           },
           {
@@ -4397,7 +4397,7 @@ const COURSES = [
               13.3971,
               52.5131
             ],
-            "cap": "16-07-04-압플루그-베를린-DSC ...(16-07-04-Abflug-Berlin-DSC ...)",
+            "cap": "16-07-04-압플루그-베를린-DSC 0122(16-07-04-Abflug-Berlin-DSC 0122)",
             "desc": "[낭만의 거리 풍경] 조용한 골목길에서 우연히 마주친 비밀스럽고 매력적인 뷰 포인트입니다."
           },
           {
@@ -4406,7 +4406,7 @@ const COURSES = [
               13.4054,
               52.528
             ],
-            "cap": "20150208 - 베를린날레 궁전과 레드카펫(20150208 - Berlinale Palast...)",
+            "cap": "20150208 - 베를린날레 궁전과 레드카펫(20150208 - Berlinale Palast and Red Carpet)",
             "desc": "[낭만의 거리 풍경] 아름다운 자연과 인공적인 건축물이 환상적인 조화를 이루는 곳입니다."
           },
           {
@@ -4415,7 +4415,7 @@ const COURSES = [
               13.3966,
               52.5138
             ],
-            "cap": "Alte Nationalgalerie가 ...(Alte Nationalgalerie abends)",
+            "cap": "Alte Nationalgalerie 이상(Zuschnitt)(Alte Nationalgalerie abends (Zuschnitt))",
             "desc": "[뷰 포인트 풍경] 푸른 하늘과 맞닿은 아름다운 스카이라인이 마음까지 탁 트이게 합니다."
           },
           {
@@ -4424,7 +4424,7 @@ const COURSES = [
               13.405,
               52.5136
             ],
-            "cap": "베벨플라츠 수치의 밤 기념비(Bebelplatz Night of Shame M...)",
+            "cap": "베벨플라츠 수치의 밤 기념비(Bebelplatz Night of Shame Monument)",
             "desc": "[도심 광장 풍경] 섬세한 조각상들과 화려한 장식들이 당시의 찬란했던 예술성을 보여줍니다."
           },
           {
@@ -4433,7 +4433,7 @@ const COURSES = [
               13.4121,
               52.5247
             ],
-            "cap": "베를린, Mitte, Behrenstra...(Berlin, Mitte, Behrenstrass...)",
+            "cap": "베를린, Mitte, Behrenstrasse, Berliner Bank 05(Berlin, Mitte, Behrenstrasse, Berliner Bank 05)",
             "desc": "[로컬 레스토랑 풍경] [베를리너 도넛(Berliner)] 아름다운 자연과 인공적인 건축물이 환상적인 조화를 이루는 곳입니다."
           }
         ]
@@ -4502,7 +4502,7 @@ const COURSES = [
               13.4124,
               52.5406
             ],
-            "cap": "Konnopke Imbiss 2014의 ...(Currywurst at Konnopke Imbi...)",
+            "cap": "Konnopke Imbiss 2014의 커리부르스트(Currywurst at Konnopke Imbiss 2014)",
             "desc": "[전통 맛집 풍경] [커리부어스트(Currywurst)] 고가 지하철 아래에서 90년 넘게 영업한 커리부어스트 노점이다. 동독 시절에도 국영화되지 않고 가족이 계속 운영한 드문 사례다. 커리부어스트는 2차 대전 직후 베를린에서 만들어진 음식으로, 구운 소시지에 카레 가루를 섞은 케첩 소스를 끼얹고 감자튀김을 곁들인다."
           },
           {
@@ -4511,7 +4511,7 @@ const COURSES = [
               13.4093,
               52.5255
             ],
-            "cap": "Berlin-Mitte, het Berl...(Berlin-Mitte, het Berliner ...)",
+            "cap": "Berlin-Mitte, het Berliner Schloss Dm IMG 5754 2024-09-07 12.46(Berlin-Mitte, het Berliner Schloss Dm IMG 5754 2024-09-07 12.46)",
             "desc": "[골목 식당 풍경] [베를리너 도넛(Berliner)] 과거와 현재가 공존하는 베를린 특유의 독특한 분위기를 자아냅니다."
           },
           {
@@ -4520,7 +4520,7 @@ const COURSES = [
               13.4068,
               52.527
             ],
-            "cap": "베를린-미테 훔볼트-유니 05-2014(Berlin-Mitte Humboldt-Uni 0...)",
+            "cap": "베를린-미테 훔볼트-유니 05-2014(Berlin-Mitte Humboldt-Uni 05-2014)",
             "desc": "[낭만의 거리 풍경] 맑고 투명한 물빛이 아름다운 자연 경관과 어우러져 장관을 연출합니다."
           },
           {
@@ -4529,7 +4529,7 @@ const COURSES = [
               13.3959,
               52.5123
             ],
-            "cap": "Berlin-mitte heizkraft...(Berlin-mitte heizkraftwerk-...)",
+            "cap": "Berlin-mitte heizkraftwerk-mitte 20060605 629(Berlin-mitte heizkraftwerk-mitte 20060605 629)",
             "desc": "[역사 지구 풍경] 현지인들의 여유로운 일상을 가장 가까이서 엿볼 수 있는 활기찬 광장입니다."
           },
           {
@@ -4538,7 +4538,7 @@ const COURSES = [
               13.4125,
               52.5248
             ],
-            "cap": "베를린 - 쿠르퓌르스텐담 게슈타이크(Berlin - Kürfurstendamm Geh...)",
+            "cap": "베를린 - 쿠르퓌르스텐담 게슈타이크(Berlin - Kürfurstendamm Gehsteig)",
             "desc": "시간이 멈춘 듯 평화롭고 고즈넉한 분위기를 간직한 아름다운 마을입니다."
           },
           {
@@ -4589,7 +4589,7 @@ const COURSES = [
               13.4118,
               52.539
             ],
-            "cap": "PRATERGARTEN BIER GART...(PRATERGARTEN BIER GARTEN NE...)",
+            "cap": "PRATERGARTEN BIER GARTEN ELBERWALDER STRASSE U BAHN 역 베를린 독일 2013년 6월 근처 (9058790131)(PRATERGARTEN BIER GARTEN NEAR TO ELBERWALDER STRASSE U BAHN STATION BERLIN GERMANY JUNE 2013 (9058790131))",
             "desc": "[거리 풍경] 베를린에서 가장 오래된 비어가든이다. 밤나무 그늘 아래 긴 테이블이 놓여 있고 셀프서비스로 맥주와 소시지를 받아 온다. 여름에만 정원이 열리고 겨울에는 실내 식당만 운영한다."
           },
           {
@@ -4607,7 +4607,7 @@ const COURSES = [
               13.4117,
               52.521
             ],
-            "cap": "베를린 - Schloss Charlott...(Berlin - Schloss Charlotten...)",
+            "cap": "베를린 - Schloss Charlottenburg Reiterstandbild & Schlossturm(Berlin - Schloss Charlottenburg Reiterstandbild & Schlossturm)",
             "desc": "[구시가지 풍경] 현지인들의 여유로운 일상을 가장 가까이서 엿볼 수 있는 활기찬 광장입니다."
           },
           {
@@ -4625,7 +4625,7 @@ const COURSES = [
               13.4134,
               52.5191
             ],
-            "cap": "베를린 - U-Bahnhof Heidel...(Berlin - U-Bahnhof Heidelbe...)",
+            "cap": "베를린 - U-Bahnhof Heidelberger Platz Südzugang(Berlin - U-Bahnhof Heidelberger Platz Südzugang)",
             "desc": "[대성당 인근 풍경] 눈부시게 푸른 바다와 눈부신 햇살이 여행의 피로를 씻어내 줍니다."
           },
           {
@@ -4634,7 +4634,7 @@ const COURSES = [
               13.4102,
               52.5258
             ],
-            "cap": "베를린 Adlershof 포토닉스 센터 ...(Berlin Adlershof Photonics ...)",
+            "cap": "베를린 Adlershof 포토닉스 센터 2016(Berlin Adlershof Photonics Center 2016)",
             "desc": "[대성당 인근 풍경] 밤이 되면 화려한 조명으로 또 다른 매력을 뽐내는 로맨틱한 장소입니다."
           },
           {
@@ -4643,7 +4643,7 @@ const COURSES = [
               13.4051,
               52.5206
             ],
-            "cap": "밤의 베를린 브란덴부르크 공항(Berlin Brandenburg Airport ...)",
+            "cap": "밤의 베를린 브란덴부르크 공항(Berlin Brandenburg Airport at night)",
             "desc": "웅장한 규모와 정교한 디테일이 한눈에 시선을 사로잡는 랜드마크입니다."
           },
           {
@@ -4748,7 +4748,7 @@ const COURSES = [
               9.9884,
               53.5702
             ],
-            "cap": "데이비드 아담 케스(David Adam ...(by David Adam Kess)",
+            "cap": "(파스타) David Adam Kess 작성(그림 2)((Pasta) by David Adam Kess (pic.2))",
             "desc": "[로컬 레스토랑 풍경] [파스타(Pasta)] 달콤한 디저트 한 입으로 여행의 당을 완벽하게 충전해 보세요."
           },
           {
@@ -4766,7 +4766,7 @@ const COURSES = [
               9.9848,
               53.5794
             ],
-            "cap": "좋은 카푸치노는 완벽한 에스프레소에서 시...(A good cappuccino starts wi...)",
+            "cap": "좋은 카푸치노는 완벽한 에스프레소에서 시작됩니다!! (4441914182)(A good cappuccino starts with a perfect espresso!! (4441914182))",
             "desc": "[전통 맛집 풍경] [에스프레소(Espresso)] 현지 분위기가 물씬 풍기는 골목 식당에서 갓 만들어낸 따뜻한 요리입니다."
           },
           {
@@ -4775,7 +4775,7 @@ const COURSES = [
               9.9865,
               53.5717
             ],
-            "cap": "2013-06-08 하이플라이어 HP L...(2013-06-08 Highflyer HP L4729)",
+            "cap": "2013-06-08 하이플라이어 HP L4729(2013-06-08 Highflyer HP L4729)",
             "desc": "[대성당 인근 풍경] 눈부시게 푸른 바다와 눈부신 햇살이 여행의 피로를 씻어내 줍니다."
           },
           {
@@ -4784,7 +4784,7 @@ const COURSES = [
               10.0007,
               53.5841
             ],
-            "cap": "2013-06-08 프로젝트 Heißlu...(2013-06-08 Projekt Heißluft...)",
+            "cap": "2013-06-08 프로젝트 Heißluftballon DSCF0784(2013-06-08 Projekt Heißluftballon DSCF0784)",
             "desc": "[낭만의 거리 풍경] 눈부시게 푸른 바다와 눈부신 햇살이 여행의 피로를 씻어내 줍니다."
           },
           {
@@ -4793,7 +4793,7 @@ const COURSES = [
               9.9999,
               53.5654
             ],
-            "cap": "2017-05-01 Scholle Fin...(2017-05-01 Scholle Finkenwe...)",
+            "cap": "2017-05-01 Scholle Finkenwerder 아트(2017-05-01 Scholle Finkenwerder Art)",
             "desc": "[낭만의 거리 풍경] 높은 곳에서 내려다보이는 함부르크의 파노라마 뷰가 가슴을 뻥 뚫어줍니다."
           }
         ]
@@ -4879,7 +4879,7 @@ const COURSES = [
               6.9667,
               50.9368
             ],
-            "cap": "6가지 음식, 파스타, 타쿠이노 사니타티...(6-alimenti, pasta,Taccuino ...)",
+            "cap": "6가지 음식, 파스타, 타쿠이노 사니타티스, 카사나텐세 4182.(6-alimenti, pasta,Taccuino Sanitatis, Casanatense 4182.)",
             "desc": "[카페 풍경] [파스타(Pasta)] 현지의 오리지널 레시피로 만들어진 깊고 풍부한 맛을 느껴보세요."
           },
           {
@@ -4897,7 +4897,7 @@ const COURSES = [
               6.9631,
               50.9337
             ],
-            "cap": "쾰른 - 황혼의 구시가지 파노라마 이미지(Cologne - Panoramic Image o...)",
+            "cap": "쾰른 - 황혼의 구시가지 파노라마 이미지(Cologne - Panoramic Image of the old town at dusk)",
             "desc": "마치 한 장의 엽서 속으로 직접 들어온 듯한 그림 같은 풍경을 선사합니다."
           },
           {
@@ -4906,7 +4906,7 @@ const COURSES = [
               6.9512,
               50.9287
             ],
-            "cap": "00 7373 Groß-St-Martin...(00 7373 Groß-St-Martin-Kirc...)",
+            "cap": "00 7373 Groß-St-Martin-Kirche in Köln(00 7373 Groß-St-Martin-Kirche in Köln)",
             "desc": "[대성당 풍경] 수백 년의 역사와 문화가 거리 구석구석 살아 숨 쉬는 매력적인 명소입니다."
           },
           {
@@ -4915,7 +4915,7 @@ const COURSES = [
               6.9668,
               50.9249
             ],
-            "cap": "146 019-5 라인익스프레스인코엘nhbf(146 019-5 Rheinexpressinkoe...)",
+            "cap": "146 019-5 라인익스프레스인코엘nhbf(146 019-5 Rheinexpressinkoelnhbf)",
             "desc": "[구시가지 풍경] 시간이 멈춘 듯 평화롭고 고즈넉한 분위기를 간직한 아름다운 마을입니다."
           },
           {
@@ -4924,7 +4924,7 @@ const COURSES = [
               6.9664,
               50.9289
             ],
-            "cap": "1983 09 15~23 오데사에서 쿠바...(1983 09 15 to 23 Envelope o...)",
+            "cap": "1983 09 15~23 오데사에서 쿠바로 보내는 편지봉투(1983 09 15 to 23 Envelope of the Letter from Odessa to Cuba)",
             "desc": "[구시가지 풍경] 쾰른의 거리를 걷다 마주치게 되는 일상적이면서도 이국적인 모습입니다."
           },
           {
@@ -4933,7 +4933,7 @@ const COURSES = [
               6.9676,
               50.9271
             ],
-            "cap": "2013-08-10 07-18-55 Ba...(2013-08-10 07-18-55 Ballonf...)",
+            "cap": "2013-08-10 07-18-55 Ballonfahrt 위버 쾰른 EH 0626(2013-08-10 07-18-55 Ballonfahrt über Köln EH 0626)",
             "desc": "[구시가지 풍경] 쾰른의 거리를 걷다 마주치게 되는 일상적이면서도 이국적인 모습입니다."
           }
         ]
@@ -5051,7 +5051,7 @@ const COURSES = [
               10.1821,
               49.3716
             ],
-            "cap": "로텐부르크ObDerTauberAltsta...(RothenburgObDerTauberAltsta...)",
+            "cap": "로텐부르크ObDerTauberAltstadt2022OSM(RothenburgObDerTauberAltstadt2022OSM)",
             "desc": "눈부시게 푸른 바다와 눈부신 햇살이 여행의 피로를 씻어내 줍니다."
           },
           {
@@ -5133,7 +5133,7 @@ const COURSES = [
               8.6819,
               50.1106
             ],
-            "cap": "하일리겐슈타인 장크트 지기스문트 2011...(Heiligenstein Sankt Sigismu...)",
+            "cap": "하일리겐슈타인 장크트 지기스문트 20110320(Heiligenstein Sankt Sigismund 20110320)",
             "desc": "[광장 풍경] 목조 골조 건물이 늘어선 프랑크푸르트 구시가지의 중심이다. 2차 대전 폭격으로 완전히 파괴된 것을 원형대로 복원했다. 뒤편의 현대적 금융가 스카이라인과 대비가 뚜렷하다."
           },
           {
@@ -5160,7 +5160,7 @@ const COURSES = [
               8.683,
               50.1106
             ],
-            "cap": "01-01-2014 - Messeturm...(01-01-2014 - Messeturm - tr...)",
+            "cap": "01-01-2014 - Messeturm - 무역 박람회 타워 - 프랑크푸르트 - 독일 - 05(01-01-2014 - Messeturm - trade fair tower - Frankfurt- Germany - 05)",
             "desc": "[대성당 인근 풍경] 시간이 멈춘 듯 평화롭고 고즈넉한 분위기를 간직한 아름다운 마을입니다."
           },
           {
@@ -5169,7 +5169,7 @@ const COURSES = [
               8.6828,
               50.1043
             ],
-            "cap": "2010-07-21 A380 LH D-A...(2010-07-21 A380 LH D-AIMB E...)",
+            "cap": "2010-07-21 A380 LH D-AIMB EDDF 06(2010-07-21 A380 LH D-AIMB EDDF 06)",
             "desc": "[역사 지구 풍경] 높은 곳에서 내려다보이는 프랑크푸르트의 파노라마 뷰가 가슴을 뻥 뚫어줍니다."
           },
           {
@@ -5178,7 +5178,7 @@ const COURSES = [
               8.6873,
               50.107
             ],
-            "cap": "공항프랑크푸르트항공 2010-09-19(AirportFrankfurt fromair 20...)",
+            "cap": "공항프랑크푸르트항공 2010-09-19(AirportFrankfurt fromair 2010-09-19)",
             "desc": "[낭만의 거리 풍경] 수백 년의 역사와 문화가 거리 구석구석 살아 숨 쉬는 매력적인 명소입니다."
           },
           {
@@ -5196,7 +5196,7 @@ const COURSES = [
               8.6744,
               50.1168
             ],
-            "cap": "Alte Oper 프랑크푸르트 겨울 2008(Alte Oper Frankfurt Winter ...)",
+            "cap": "Alte Oper 프랑크푸르트 겨울 2008(Alte Oper Frankfurt Winter 2008)",
             "desc": "[도심 광장 풍경] 전 세계 여행객들의 발길이 끊이지 않는 프랑크푸르트의 상징적인 장소입니다."
           },
           {
@@ -5256,7 +5256,7 @@ const COURSES = [
               -0.1671,
               51.5227
             ],
-            "cap": "에그 앤 칩스 또는 피시 앤 칩스 - g...(Egg and chips or fish and c...)",
+            "cap": "에그 앤 칩스 또는 피시 앤 칩스 - geograph.org.uk - 4060739(Egg and chips or fish and chips - geograph.org.uk - 4060739)",
             "desc": "[카페 풍경] [피시 앤 칩스(Fish and chips)] 펍에서는 카운터에서 직접 주문하고 결제한 뒤 자리로 가져온다. 영국 에일은 냉장하지 않고 지하 저장고 온도(12도 안팎)로 내는데, 미지근한 것이 아니라 향을 살리기 위한 온도다."
           },
           {
@@ -5274,7 +5274,7 @@ const COURSES = [
               -0.1369,
               51.5082
             ],
-            "cap": "호주 호텔, 세인트 조지, 퀸즈랜드, 2...(Australian Hotel, St George...)",
+            "cap": "호주 호텔, 세인트 조지, 퀸즈랜드, 2021, 03(Australian Hotel, St George, Queensland, 2021, 03)",
             "desc": "[마켓 노점 풍경] [피자(Margherita)] 현지 분위기가 물씬 풍기는 골목 식당에서 갓 만들어낸 따뜻한 요리입니다."
           },
           {
@@ -5292,7 +5292,7 @@ const COURSES = [
               -0.1368,
               51.5084
             ],
-            "cap": "10 다우닝 스트리트. (10 Downing Street. MOD 4515...)",
+            "cap": "10 다우닝 스트리트. MOD 45155532(잘림)(10 Downing Street. MOD 45155532 (cropped))",
             "desc": "[구시가지 풍경] 높은 곳에서 내려다보이는 런던의 파노라마 뷰가 가슴을 뻥 뚫어줍니다."
           },
           {
@@ -5301,7 +5301,7 @@ const COURSES = [
               -0.1372,
               51.5146
             ],
-            "cap": "16-11-16-글래스고 거리 풍경-RR...(16-11-16-Glasgow street sce...)",
+            "cap": "16-11-16-글래스고 거리 장면-RR2 7280(자른)(16-11-16-Glasgow street scene-RR2 7280 (cropped))",
             "desc": "[낭만의 거리 풍경] 아름다운 자연과 인공적인 건축물이 환상적인 조화를 이루는 곳입니다."
           },
           {
@@ -5424,7 +5424,7 @@ const COURSES = [
               -0.1368,
               51.5099
             ],
-            "cap": "버킹엄 궁전, 런던 - 2009년 4월(Buckingham Palace, London -...)",
+            "cap": "버킹엄 궁전, 런던 - 2009년 4월(Buckingham Palace, London - April 2009)",
             "desc": "수백 년의 역사와 문화가 거리 구석구석 살아 숨 쉬는 매력적인 명소입니다."
           },
           {
@@ -5613,7 +5613,7 @@ const COURSES = [
               2.3531,
               48.8519
             ],
-            "cap": "바게트 드 통증, 위키치즈 로잔(Baguette de pain, WikiChees...)",
+            "cap": "바게트 드 통증, 위키치즈 로잔(Baguette de pain, WikiCheese Lausanne)",
             "desc": "[로컬 레스토랑 풍경] [바게트(Baguette)] 시원한 맥주나 와인 한 잔에 곁들이기 완벽한 최고의 안주입니다."
           },
           {
@@ -5649,7 +5649,7 @@ const COURSES = [
               2.3558,
               48.8529
             ],
-            "cap": "Basilique du Sacré-Cœu...(Basilique du Sacré-Cœur de ...)",
+            "cap": "Basilique du Sacré-Cœur de Montmartre, Paris 18e 140223 2(Basilique du Sacré-Cœur de Montmartre, Paris 18e 140223 2)",
             "desc": "맑고 투명한 물빛이 아름다운 자연 경관과 어우러져 장관을 연출합니다."
           },
           {
@@ -5658,7 +5658,7 @@ const COURSES = [
               2.3452,
               48.8628
             ],
-            "cap": "Boulevard Périphérique...(Boulevard Périphérique vu d...)",
+            "cap": "Boulevard Périphérique vu depuis Boulevard Auteuil - 파리 XVI (FR75) - 2021-08-11 - 3(Boulevard Périphérique vu depuis Boulevard Auteuil - Paris XVI (FR75) - 2021-08-11 - 3)",
             "desc": "[낭만의 거리 풍경] 마치 한 장의 엽서 속으로 직접 들어온 듯한 그림 같은 풍경을 선사합니다."
           },
           {
@@ -5736,7 +5736,7 @@ const COURSES = [
               2.353,
               48.852
             ],
-            "cap": "파리의 Pierre Bideau가 제작한...(1000 Eiffel tower night ill...)",
+            "cap": "파리의 Pierre Bideau가 제작한 1000 에펠탑 야간 조명 사진: Giles Laurent(1000 Eiffel tower night illumination by Pierre Bideau in Paris Photo by Giles Laurent)",
             "desc": "맑고 투명한 물빛이 아름다운 자연 경관과 어우러져 장관을 연출합니다."
           },
           {
@@ -5745,7 +5745,7 @@ const COURSES = [
               2.3504,
               48.8554
             ],
-            "cap": "Akhenathon 및 Nefertiti...(Akhenathon and Nefertiti E1...)",
+            "cap": "Akhenathon 및 Nefertiti E15593 mp3h8771-gradient(Akhenathon and Nefertiti E15593 mp3h8771-gradient)",
             "desc": "[거리 풍경] 마치 한 장의 엽서 속으로 직접 들어온 듯한 그림 같은 풍경을 선사합니다."
           },
           {
@@ -5754,7 +5754,7 @@ const COURSES = [
               2.3523,
               48.8521
             ],
-            "cap": "1945년 발행된 3센트 미 육군 미국 우표(3 cent U.S. Army U.S. Posta...)",
+            "cap": "1945년 발행된 3센트 미 육군 미국 우표(3 cent U.S. Army U.S. Postage stamp issued 1945)",
             "desc": "맑고 투명한 물빛이 아름다운 자연 경관과 어우러져 장관을 연출합니다."
           },
           {
@@ -5781,7 +5781,7 @@ const COURSES = [
               2.3448,
               48.8601
             ],
-            "cap": "샤펠 생트 우르술 드 라 소르본, 파리 001(Chapelle Sainte-Ursule de l...)",
+            "cap": "샤펠 생트 우르술 드 라 소르본, 파리 001(Chapelle Sainte-Ursule de la Sorbonne, Paris 001)",
             "desc": "[구시가지 풍경] 웅장한 규모와 정교한 디테일이 한눈에 시선을 사로잡는 랜드마크입니다."
           }
         ]
@@ -5858,7 +5858,7 @@ const COURSES = [
               2.3405,
               48.8865
             ],
-            "cap": "Le Consulat, 몽마르트르, 파리...(Le Consulat, Montmartre, Pa...)",
+            "cap": "Le Consulat, 몽마르트르, 파리 2006년 8월 15일(Le Consulat, Montmartre, Paris 15 August 2006)",
             "desc": "[광장 풍경] 몽마르트 골목 모퉁이의 오래된 비스트로다. 피카소·모딜리아니·반 고흐가 이 동네에 살던 시절부터 있던 자리로, 붉은 차양과 모퉁이 구도가 몽마르트의 대표 이미지 중 하나다."
           },
           {
@@ -5867,7 +5867,7 @@ const COURSES = [
               2.1189,
               48.8028
             ],
-            "cap": "샤토 베르사유 갤러리 데 글라스(Chateau Versailles Galerie ...)",
+            "cap": "샤토 베르사유 갤러리 데 글라스(Chateau Versailles Galerie des Glaces)",
             "desc": "섬세한 조각상들과 화려한 장식들이 당시의 찬란했던 예술성을 보여줍니다."
           }
         ]
@@ -5945,7 +5945,7 @@ const COURSES = [
               2.3596,
               48.8568
             ],
-            "cap": "바게트, 파리, 프랑스 - 파노라마(Baguettes, Paris, France - ...)",
+            "cap": "바게트, 파리, 프랑스 - 파노라마(Baguettes, Paris, France - panoramio)",
             "desc": "[마켓 노점 풍경] [바게트(Baguette)] 현지 시장에서 갓 공수한 신선한 재료들로 만들어낸 건강한 요리입니다."
           }
         ]
@@ -5987,7 +5987,7 @@ const COURSES = [
               2.326,
               48.87
             ],
-            "cap": "아쿠아파바 비건 컬러풀 마카롱(Aquafaba vegan colourful ma...)",
+            "cap": "아쿠아파바 비건 컬러풀 마카롱(Aquafaba vegan colourful macarons)",
             "desc": "[마켓 노점 풍경] [마카롱(Macaron)] 지금의 샌드형 마카롱은 20세기 초 파리에서 완성된 형태다. 라뒤레가 고전적인 맛을, 피에르 에르메가 실험적인 조합을 대표한다. 상온에 오래 두면 눅으니 사서 바로 먹거나 보냉백을 요청하자."
           },
           {
@@ -6005,7 +6005,7 @@ const COURSES = [
               2.3456,
               48.8586
             ],
-            "cap": "2013년 에펠탑 11번 불꽃놀이(2013 Fireworks on Eiffel To...)",
+            "cap": "2013년 에펠탑 11번 불꽃놀이(2013 Fireworks on Eiffel Tower 11)",
             "desc": "마치 동화 속 한 장면에 들어온 듯한 낭만적인 분위기를 선사합니다."
           }
         ]
@@ -6038,7 +6038,7 @@ const COURSES = [
               2.3327,
               48.8542
             ],
-            "cap": "카페 드 플로르(Café de Flore...(Café de Flore, 172 boulevar...)",
+            "cap": "카페 드 플로르(Café de Flore), 172 boulevard Saint-Germain, Paris 6e(Café de Flore, 172 boulevard Saint-Germain, Paris 6e)",
             "desc": "[드 플로르 — 1887년 풍경] 생제르맹데프레의 카페로 아르 데코 인테리어가 그대로 남아 있다. 사르트르와 보부아르, 카뮈가 드나들던 곳이다. 옆의 레 되 마고와 함께 파리 카페 문화의 상징이며, 마지막 날 저녁 전에 한 잔 하기 좋다."
           },
           {
@@ -6156,7 +6156,7 @@ const COURSES = [
               23.7278,
               37.9772
             ],
-            "cap": "데이비드 아담 케스(David Adam ...(by David Adam Kess)",
+            "cap": "(파스타) David Adam Kess 작성(그림 2)((Pasta) by David Adam Kess (pic.2))",
             "desc": "[골목 식당 풍경] [파스타(Pasta)] 거리를 걷다 보면 어디선가 풍겨오는 달콤하고 고소한 냄새의 주인공입니다."
           },
           {
@@ -6174,7 +6174,7 @@ const COURSES = [
               23.7335,
               37.9892
             ],
-            "cap": "좋은 카푸치노는 완벽한 에스프레소에서 시...(A good cappuccino starts wi...)",
+            "cap": "좋은 카푸치노는 완벽한 에스프레소에서 시작됩니다!! (4441914182)(A good cappuccino starts with a perfect espresso!! (4441914182))",
             "desc": "[카페 풍경] [에스프레소(Espresso)] 현지 시장에서 갓 공수한 신선한 재료들로 만들어낸 건강한 요리입니다."
           }
         ]
@@ -6252,7 +6252,7 @@ const COURSES = [
               23.7267,
               37.9804
             ],
-            "cap": "6가지 음식, 파스타, 타쿠이노 사니타티...(6-alimenti, pasta,Taccuino ...)",
+            "cap": "6가지 음식, 파스타, 타쿠이노 사니타티스, 카사나텐세 4182.(6-alimenti, pasta,Taccuino Sanitatis, Casanatense 4182.)",
             "desc": "[마켓 노점 풍경] [파스타(Pasta)] 거리를 걷다 보면 어디선가 풍겨오는 달콤하고 고소한 냄새의 주인공입니다."
           },
           {
@@ -6448,7 +6448,7 @@ const COURSES = [
               25.4576,
               36.3905
             ],
-            "cap": "칼데라에 있는 집, 산토리니(Houses on the caldera, Sant...)",
+            "cap": "칼데라에 있는 집, 산토리니(Houses on the caldera, Santorini)",
             "desc": "전 세계 여행객들의 발길이 끊이지 않는 산토리니의 상징적인 장소입니다."
           },
           {
@@ -6502,7 +6502,7 @@ const COURSES = [
               25.471,
               36.3887
             ],
-            "cap": "I Santellini - Buondel...(I Santellini - Buondelmonti...)",
+            "cap": "I Santellini - Buondelmonti Cristoforo - 1420(I Santellini - Buondelmonti Cristoforo - 1420)",
             "desc": "밤이 되면 화려한 조명으로 또 다른 매력을 뽐내는 로맨틱한 장소입니다."
           },
           {
@@ -6607,7 +6607,7 @@ const COURSES = [
               25.4545,
               36.3944
             ],
-            "cap": "산토리니 - Dapper Olfert -...(Santorini - Dapper Olfert -...)",
+            "cap": "산토리니 - Dapper Olfert - 1688(Santorini - Dapper Olfert - 1688)",
             "desc": "시간이 멈춘 듯 평화롭고 고즈넉한 분위기를 간직한 아름다운 마을입니다."
           },
           {
@@ -6616,7 +6616,7 @@ const COURSES = [
               25.4672,
               36.3834
             ],
-            "cap": "산토리니 - 그리스 - Vista Aer...(Santorini - Grecia - Vista ...)",
+            "cap": "산토리니 - 그리스 - Vista Aerea del promontorio di Ancient Thira - agosto 2018(Santorini - Grecia - Vista Aerea del promontorio di Ancient Thira - agosto 2018)",
             "desc": "아름다운 자연과 인공적인 건축물이 환상적인 조화를 이루는 곳입니다."
           },
           {
@@ -6676,7 +6676,7 @@ const COURSES = [
               25.4518,
               36.3986
             ],
-            "cap": "칼데라의 산토리니 크루즈 선박(Santorini cruise ships in c...)",
+            "cap": "칼데라의 산토리니 크루즈 선박(Santorini cruise ships in caldera)",
             "desc": "수백 년의 역사와 문화가 거리 구석구석 살아 숨 쉬는 매력적인 명소입니다."
           },
           {
@@ -6685,7 +6685,7 @@ const COURSES = [
               25.4518,
               36.3904
             ],
-            "cap": "산토리니 피르고스 카스텔키르헤 160707(Santorini pyrgos kastellkir...)",
+            "cap": "산토리니 피르고스 카스텔키르헤 160707(Santorini pyrgos kastellkirche 160707)",
             "desc": "마치 한 장의 엽서 속으로 직접 들어온 듯한 그림 같은 풍경을 선사합니다."
           },
           {
@@ -6730,7 +6730,7 @@ const COURSES = [
               25.4643,
               36.3848
             ],
-            "cap": "네아 카메니(Nea Kameni)에서 피...(Viewing Fira from Nea Kameni)",
+            "cap": "네아 카메니(Nea Kameni)에서 피라(Fira) 보기(Viewing Fira from Nea Kameni)",
             "desc": "따스한 햇살 아래 찬란하게 빛나는 산토리니의 잊지 못할 전경입니다."
           },
           {
@@ -6739,7 +6739,7 @@ const COURSES = [
               25.4536,
               36.3967
             ],
-            "cap": "Wojska niemieckie na g...(Wojska niemieckie na grecki...)",
+            "cap": "Wojska niemieckie na greckiej wyspie wulkanicznej 산토리니(2-637)(Wojska niemieckie na greckiej wyspie wulkanicznej Santorin (2-637))",
             "desc": "예술가들의 영감이 살아 숨 쉬는 낭만적이고 보헤미안적인 거리입니다."
           }
         ]
@@ -6821,7 +6821,7 @@ const COURSES = [
               25.3374,
               37.444
             ],
-            "cap": "20100706 미코노스 코라 포트 파노...(20100706 Mykonos chora port...)",
+            "cap": "20100706 미코노스 코라 포트 파노라마 그리스(20100706 Mykonos chora port panorama Greece)",
             "desc": "전 세계 여행객들의 발길이 끊이지 않는 미코노스의 상징적인 장소입니다."
           },
           {
@@ -6830,7 +6830,7 @@ const COURSES = [
               25.3331,
               37.4425
             ],
-            "cap": "그리스 하늘을 배경으로 미코노스 섬 풍차...(Against Greek skies, one of...)",
+            "cap": "그리스 하늘을 배경으로 미코노스 섬 풍차 중 하나인 코라(Chora). 키클라데스, 아게아 해, 그리스(Against Greek skies, one of the Mykonos Island Windmills, Chora. Cyclades, Agean Sea, Greece)",
             "desc": "과거와 현재가 공존하는 미코노스 특유의 독특한 분위기를 자아냅니다."
           },
           {
@@ -6857,7 +6857,7 @@ const COURSES = [
               25.3362,
               37.4446
             ],
-            "cap": "파나기아 파라포르티아니 교회 01(Church of Panagia Paraporti...)",
+            "cap": "파나기아 파라포르티아니 교회 01(Church of Panagia Paraportiani 01)",
             "desc": "과거와 현재가 공존하는 미코노스 특유의 독특한 분위기를 자아냅니다."
           },
           {
@@ -6926,7 +6926,7 @@ const COURSES = [
               25.3321,
               37.4466
             ],
-            "cap": "파나기아 투어리아니 03 수도원(Monastery of Panagia Tourli...)",
+            "cap": "파나기아 투어리아니 03 수도원(Monastery of Panagia Tourliani 03)",
             "desc": "높은 곳에서 내려다보이는 미코노스의 파노라마 뷰가 가슴을 뻥 뚫어줍니다."
           },
           {
@@ -6944,7 +6944,7 @@ const COURSES = [
               25.3324,
               37.4439
             ],
-            "cap": "미코노스 블루 스타 페리 이타키 03(Mykonos Blue Star Ferries I...)",
+            "cap": "미코노스 블루 스타 페리 이타키 03(Mykonos Blue Star Ferries Ithaki 03)",
             "desc": "세월의 흔적이 고스란히 묻어나는 장엄하고 아름다운 건축물입니다."
           },
           {
@@ -6962,7 +6962,7 @@ const COURSES = [
               25.3235,
               37.4427
             ],
-            "cap": "미코노스 해양 박물관 패들십 전시(Mykonos Maritime Museum pad...)",
+            "cap": "미코노스 해양 박물관 패들십 전시(Mykonos Maritime Museum paddleship exhibit)",
             "desc": "맑고 투명한 물빛이 아름다운 자연 경관과 어우러져 장관을 연출합니다."
           },
           {
@@ -6980,7 +6980,7 @@ const COURSES = [
               25.3316,
               37.4545
             ],
-            "cap": "미코노스의 보행자 거리와 건물(Pedestrian Street and Build...)",
+            "cap": "미코노스의 보행자 거리와 건물(Pedestrian Street and Buildings in Mykonos)",
             "desc": "맑고 투명한 물빛이 아름다운 자연 경관과 어우러져 장관을 연출합니다."
           },
           {
@@ -7080,7 +7080,7 @@ const COURSES = [
               14.42,
               50.0874
             ],
-            "cap": "프라하 07-2016 구시청사 타워에서 ...(Prague 07-2016 View from Ol...)",
+            "cap": "프라하 07-2016 구시청사 타워에서 본 전망 img3(Prague 07-2016 View from Old Town Hall Tower img3)",
             "desc": "[구시가지 광장 풍경] 중세 건축물이 빼곡히 둘러싼 광장. 밤에는 조명을 받아 동화 속 세계처럼 빛난다. 여행의 첫 인상이 될 장소다."
           },
           {
@@ -7107,7 +7107,7 @@ const COURSES = [
               14.4122,
               50.0907
             ],
-            "cap": "2009-09-gulasch-pörköl...(2009-09-gulasch-pörkölt-pap...)",
+            "cap": "2009-09-gulasch-pörkölt-파프리카스-2(2009-09-gulasch-pörkölt-paprikas-2)",
             "desc": "[마켓 노점 풍경] [수제 소시지] 보기만 해도 군침이 도는, 프라하 미식 여행의 필수 코스입니다."
           },
           {
@@ -7134,7 +7134,7 @@ const COURSES = [
               14.4155,
               50.0843
             ],
-            "cap": "20190816 Brama Prochow...(20190816 Brama Prochowa w P...)",
+            "cap": "20190816 Brama Prochowa w Pradze 1859 5460 DxO(20190816 Brama Prochowa w Pradze 1859 5460 DxO)",
             "desc": "[낭만의 거리 풍경] 아름다운 자연과 인공적인 건축물이 환상적인 조화를 이루는 곳입니다."
           },
           {
@@ -7143,7 +7143,7 @@ const COURSES = [
               14.4124,
               50.0849
             ],
-            "cap": "2022-10-15 Václavské n...(2022-10-15 Václavské náměstí 1)",
+            "cap": "2022-10-15 Václavské náměstí 1(2022-10-15 Václavské náměstí 1)",
             "desc": "[낭만의 거리 풍경] 아름다운 자연과 인공적인 건축물이 환상적인 조화를 이루는 곳입니다."
           },
           {
@@ -7152,7 +7152,7 @@ const COURSES = [
               14.4305,
               50.0979
             ],
-            "cap": "Archikatedra Świętych ...(Archikatedra Świętych Wita,...)",
+            "cap": "Archikatedra Świętych Wita, Wacława i Wojciecha w Pradze 20190816 1333 5260(Archikatedra Świętych Wita, Wacława i Wojciecha w Pradze 20190816 1333 5260)",
             "desc": "[낭만의 거리 풍경] 높은 곳에서 내려다보이는 프라하의 파노라마 뷰가 가슴을 뻥 뚫어줍니다."
           },
           {
@@ -7212,7 +7212,7 @@ const COURSES = [
               14.4253,
               50.0954
             ],
-            "cap": "카를교, 블타바 강, 프라하, 2015(Charles Bridge , Vltava Riv...)",
+            "cap": "카를교(Karlův 대부분), 블타바 강, 프라하, 2015(Charles Bridge (Karlův most), Vltava River, Prague, 2015)",
             "desc": "눈부시게 푸른 바다와 눈부신 햇살이 여행의 피로를 씻어내 줍니다."
           },
           {
@@ -7349,7 +7349,7 @@ const COURSES = [
               14.3087,
               48.8155
             ],
-            "cap": "데이비드 아담 케스(David Adam ...(by David Adam Kess)",
+            "cap": "(파스타) David Adam Kess 작성(그림 2)((Pasta) by David Adam Kess (pic.2))",
             "desc": "[마켓 노점 풍경] [파스타(Pasta)] 신선한 치즈와 풍부한 버터의 조화가 예술적인 맛을 선사합니다."
           },
           {
@@ -7367,7 +7367,7 @@ const COURSES = [
               14.3126,
               48.8223
             ],
-            "cap": "좋은 카푸치노는 완벽한 에스프레소에서 시...(A good cappuccino starts wi...)",
+            "cap": "좋은 카푸치노는 완벽한 에스프레소에서 시작됩니다!! (4441914182)(A good cappuccino starts with a perfect espresso!! (4441914182))",
             "desc": "[골목 식당 풍경] [에스프레소(Espresso)] 신선한 치즈와 풍부한 버터의 조화가 예술적인 맛을 선사합니다."
           }
         ]
@@ -7432,7 +7432,7 @@ const COURSES = [
               16.3817,
               48.2011
             ],
-            "cap": "2011-06-14 10-23-56 오스...(2011-06-14 10-23-56 Austria...)",
+            "cap": "2011-06-14 10-23-56 오스트리아 Niederösterreich 피샤멘트 마르크트(2011-06-14 10-23-56 Austria Niederösterreich Fischamend Markt)",
             "desc": "[뷰 포인트 풍경] 따스한 햇살 아래 찬란하게 빛나는 빈의 잊지 못할 전경입니다."
           },
           {
@@ -7441,7 +7441,7 @@ const COURSES = [
               16.3795,
               48.2103
             ],
-            "cap": "20180109 비엔나 국립 오페라 블루...(20180109 Vienna State Opera...)",
+            "cap": "20180109 비엔나 국립 오페라 블루 아워 850 9387(20180109 Vienna State Opera at blue hour 850 9387)",
             "desc": "[낭만의 거리 풍경] 전 세계 여행객들의 발길이 끊이지 않는 빈의 상징적인 장소입니다."
           },
           {
@@ -7468,7 +7468,7 @@ const COURSES = [
               16.3672,
               48.2019
             ],
-            "cap": "Alsergrund - AKH, Haup...(Alsergrund  - AKH, Hauptein...)",
+            "cap": "Alsergrund (Wien) - AKH, Haupteingang(Alsergrund (Wien) - AKH, Haupteingang)",
             "desc": "[구시가지 풍경] 아름다운 자연과 인공적인 건축물이 환상적인 조화를 이루는 곳입니다."
           },
           {
@@ -7486,7 +7486,7 @@ const COURSES = [
               16.3783,
               48.2109
             ],
-            "cap": "아스날 Heeresgeschichtlic...(Arsenal Heeresgeschichtlich...)",
+            "cap": "아스날 Heeresgeschichtliches 박물관-DSC 7920w(Arsenal Heeresgeschichtliches Museum-DSC 7920w)",
             "desc": "[도심 광장 풍경] 아름다운 자연과 인공적인 건축물이 환상적인 조화를 이루는 곳입니다."
           },
           {
@@ -7495,7 +7495,7 @@ const COURSES = [
               16.3694,
               48.217
             ],
-            "cap": "바리케이드 bei der Universi...(Barricade bei der Universit...)",
+            "cap": "바리케이드 bei der Universität am 26ten Mai 1848 in Wien(Barricade bei der Universität am 26ten Mai 1848 in Wien)",
             "desc": "[뷰 포인트 풍경] 과거와 현재가 공존하는 빈 특유의 독특한 분위기를 자아냅니다."
           }
         ]
@@ -7546,7 +7546,7 @@ const COURSES = [
               16.364,
               48.2057
             ],
-            "cap": "Bundesarchiv Bild 146-...(Bundesarchiv Bild 146-1972-...)",
+            "cap": "Bundesarchiv Bild 146-1972-028-14, Anschluss Österreich(Bundesarchiv Bild 146-1972-028-14, Anschluss Österreich)",
             "desc": "[대성당 인근 풍경] 마치 동화 속 한 장면에 들어온 듯한 낭만적인 분위기를 선사합니다."
           },
           {
@@ -7564,7 +7564,7 @@ const COURSES = [
               16.3723,
               48.2135
             ],
-            "cap": "시티바이크 비엔나, Schönbrunne...(Citybike Vienna, Schönbrunn...)",
+            "cap": "시티바이크 비엔나, Schönbrunner Brücke(Citybike Vienna, Schönbrunner Brücke)",
             "desc": "푸른 하늘과 맞닿은 아름다운 스카이라인이 마음까지 탁 트이게 합니다."
           },
           {
@@ -7582,7 +7582,7 @@ const COURSES = [
               16.3728,
               48.2103
             ],
-            "cap": "Donaupark & ​​Donautur...(Donaupark & Donauturm Vienn...)",
+            "cap": "Donaupark & ​​Donauturm 비엔나 2024(Donaupark & Donauturm Vienna 2024)",
             "desc": "[역사 지구 풍경] 세월의 흔적이 고스란히 묻어나는 장엄하고 아름다운 건축물입니다."
           },
           {
@@ -7591,7 +7591,7 @@ const COURSES = [
               16.3785,
               48.2073
             ],
-            "cap": "Donaustadtbrücke rigar...(Donaustadtbrücke rigardate ...)",
+            "cap": "Donaustadtbrücke rigardate de la stacio Donaumarina(Donaustadtbrücke rigardate de la stacio Donaumarina)",
             "desc": "[도심 광장 풍경] 예술가들의 영감이 살아 숨 쉬는 낭만적이고 보헤미안적인 거리입니다."
           },
           {
@@ -7730,7 +7730,7 @@ const COURSES = [
               19.05,
               47.4934
             ],
-            "cap": "Bp Halaszbastya 바인더 Ja...(Bp Halaszbastya Binder Jano...)",
+            "cap": "Bp Halaszbastya 바인더 Janos rezkarca(Bp Halaszbastya Binder Janos rezkarca)",
             "desc": "[광장 풍경] 섬세한 조각상들과 화려한 장식들이 당시의 찬란했던 예술성을 보여줍니다."
           },
           {
@@ -7748,7 +7748,7 @@ const COURSES = [
               19.0381,
               47.4902
             ],
-            "cap": "부다페스트-뱅(Budapest-Bains...(Budapest-Bains Széchenyi fü...)",
+            "cap": "부다페스트-뱅(Budapest-Bains) Széchenyi fürdò-coupole(Budapest-Bains Széchenyi fürdő-coupole)",
             "desc": "마치 동화 속 한 장면에 들어온 듯한 낭만적인 분위기를 선사합니다."
           },
           {
@@ -7775,7 +7775,7 @@ const COURSES = [
               19.0459,
               47.5054
             ],
-            "cap": "19-10-03-Margarethenbr...(19-10-03-Margarethenbrücke ...)",
+            "cap": "19-10-03-Margarethenbrücke 및 Margaretheninsel-RalfR(19-10-03-Margarethenbrücke und Margaretheninsel-RalfR)",
             "desc": "[도심 광장 풍경] 시간이 멈춘 듯 평화롭고 고즈넉한 분위기를 간직한 아름다운 마을입니다."
           },
           {
@@ -7784,7 +7784,7 @@ const COURSES = [
               19.031,
               47.4895
             ],
-            "cap": "20190503 헝가리 국회의사당 181...(20190503 Hungarian Parliame...)",
+            "cap": "20190503 헝가리 국회의사당 1814 2263 DxO(20190503 Hungarian Parliament Building 1814 2263 DxO)",
             "desc": "밤이 되면 화려한 조명으로 또 다른 매력을 뽐내는 로맨틱한 장소입니다."
           },
           {
@@ -7835,7 +7835,7 @@ const COURSES = [
               19.078,
               47.5146
             ],
-            "cap": "Kubinyi Tamás - Hòsök ...(Kubinyi Tamás - Hősök tere ...)",
+            "cap": "Kubinyi Tamás - Hòsök tere 2014.07.07 1(Kubinyi Tamás - Hősök tere 2014.07.07 1)",
             "desc": "[영웅광장 풍경] 건국 1000주년 기념 광장. 헝가리를 세운 7명의 족장 기마상과 역대 국왕 조각상이 줄지어 서 있다."
           },
           {
@@ -7871,7 +7871,7 @@ const COURSES = [
               19.0311,
               47.4881
             ],
-            "cap": "부다페스트, Bajcsy-Zsilinsz...(Budapest, Bajcsy-Zsilinszki...)",
+            "cap": "부다페스트, Bajcsy-Zsilinszki út, 파노라마, 2(Budapest, Bajcsy-Zsilinszki út, panoráma, 2)",
             "desc": "[역사 지구 풍경] 밤이 되면 화려한 조명으로 또 다른 매력을 뽐내는 로맨틱한 장소입니다."
           },
           {
@@ -7880,7 +7880,7 @@ const COURSES = [
               19.0478,
               47.4906
             ],
-            "cap": "부다페스트, M1 지하철, Andráss...(Budapest, M1 metró , András...)",
+            "cap": "부다페스트, M1 지하철(kisföldalatti), Andrássy út(Budapest, M1 metró (kisföldalatti), Andrássy út)",
             "desc": "[대성당 인근 풍경] 따스한 햇살 아래 찬란하게 빛나는 부다페스트의 잊지 못할 전경입니다."
           },
           {
@@ -7898,7 +7898,7 @@ const COURSES = [
               19.0478,
               47.4964
             ],
-            "cap": "부다페스트, XIX. (Budapest, XIX. Kós Károly t...)",
+            "cap": "부다페스트, XIX. Kós Károly tér, Wekerletelep(Budapest, XIX. Kós Károly tér, Wekerletelep)",
             "desc": "[도심 광장 풍경] 세월의 흔적이 고스란히 묻어나는 장엄하고 아름다운 건축물입니다."
           },
           {
@@ -7949,7 +7949,7 @@ const COURSES = [
               19.0402,
               47.4979
             ],
-            "cap": "02021 1020 폴란드 굴라쉬 수프(02021 1020  Goulash soup of...)",
+            "cap": "02021 1020 (2) 폴란드산 굴라쉬 수프(02021 1020 (2) Goulash soup of Poland)",
             "desc": "[전통 맛집 풍경] [굴라시와 크네들리키] 소고기와 파프리카를 넣고 오래 끓인 헝가리의 국민 스튜. 빵과 함께 먹으면 든든한 한 끼가 되는 여행의 마지막 만찬이다."
           },
           {
@@ -8003,7 +8003,7 @@ const COURSES = [
               19.049,
               47.4924
             ],
-            "cap": "부다페스트 Sentinel-2, 2020...(Budapest by Sentinel-2, 202...)",
+            "cap": "부다페스트 Sentinel-2, 2020-07-28(Budapest by Sentinel-2, 2020-07-28)",
             "desc": "[구시가지 풍경] 마치 한 장의 엽서 속으로 직접 들어온 듯한 그림 같은 풍경을 선사합니다."
           },
           {
@@ -8021,7 +8021,7 @@ const COURSES = [
               19.0404,
               47.491
             ],
-            "cap": "2017 FINA 부다페스트의 다뉴브 아레나(Danube Arena in 2017 FINA B...)",
+            "cap": "2017 FINA 부다페스트의 다뉴브 아레나(Danube Arena in 2017 FINA Budapest)",
             "desc": "[낭만의 거리 풍경] 조용한 골목길에서 우연히 마주친 비밀스럽고 매력적인 뷰 포인트입니다."
           }
         ]
@@ -8054,7 +8054,7 @@ const COURSES = [
               19.0363,
               47.4881
             ],
-            "cap": "헝가리 부다페스트 민족지학 박물관(Ethnographic Museum  in Bud...)",
+            "cap": "헝가리 부다페스트의 민족지 박물관(Néprajzi Múzeum)(Ethnographic Museum (Néprajzi Múzeum) in Budapest, Hungary)",
             "desc": "[낭만의 거리 풍경] 아름다운 자연과 인공적인 건축물이 환상적인 조화를 이루는 곳입니다."
           },
           {
@@ -8241,7 +8241,7 @@ const COURSES = [
               7.8595,
               46.6835
             ],
-            "cap": "풀 치즈 퐁듀 세트 - 스위스산(Full cheese fondue set - in...)",
+            "cap": "풀 치즈 퐁듀 세트 - 스위스산(Full cheese fondue set - in Switzerland)",
             "desc": "[마켓 노점 풍경] [치즈 폰듀(fondue)] 에멘탈·그뤼에르 치즈를 화이트 와인에 녹인 스위스의 대표 공동 요리. 길고 긴 포크로 빵 조각을 찍어 치즈 냄비 속에 돌려가며 녹이는 것이 규칙이며, 빠뜨리면 키스를 해야 한다는 전통이 있다."
           },
           {
@@ -8304,7 +8304,7 @@ const COURSES = [
               7.8606,
               46.6924
             ],
-            "cap": "Goldswil-Viadukt Panor...(Goldswil-Viadukt Panorama m...)",
+            "cap": "Goldswil-Viadukt Panorama mit Interlaken im Hintergrund 2(Goldswil-Viadukt Panorama mit Interlaken im Hintergrund 2)",
             "desc": "푸른 하늘과 맞닿은 아름다운 스카이라인이 마음까지 탁 트이게 합니다."
           }
         ]
@@ -8385,7 +8385,7 @@ const COURSES = [
               7.9692,
               46.544
             ],
-            "cap": "좋은 카푸치노는 완벽한 에스프레소에서 시...(A good cappuccino starts wi...)",
+            "cap": "좋은 카푸치노는 완벽한 에스프레소에서 시작됩니다!! (4441914182)(A good cappuccino starts with a perfect espresso!! (4441914182))",
             "desc": "[융프라우요흐 풍경] [에스프레소(Espresso)] 달콤한 디저트 한 입으로 여행의 당을 완벽하게 충전해 보세요."
           },
           {
@@ -8412,7 +8412,7 @@ const COURSES = [
               7.9772,
               46.5487
             ],
-            "cap": "융프라우요흐 - 파노라마 - 패트릭 누하...(Jungfraujoch - panoramio - ...)",
+            "cap": "융프라우요흐 - 파노라마 - 패트릭 누하예르의… (68)(Jungfraujoch - panoramio - Patrick Nouhailler's… (68))",
             "desc": "전 세계 여행객들의 발길이 끊이지 않는 융프라우요흐의 상징적인 장소입니다."
           },
           {
@@ -8538,7 +8538,7 @@ const COURSES = [
               7.4462,
               46.9434
             ],
-            "cap": "데이비드 아담 케스(David Adam ...(by David Adam Kess)",
+            "cap": "(파스타) David Adam Kess 작성(그림 2)((Pasta) by David Adam Kess (pic.2))",
             "desc": "[현지 베이커리 풍경] [파스타(Pasta)] 바삭한 식감과 부드러운 속살이 환상적인 조화를 이루는 전통 음식입니다."
           },
           {
@@ -8556,7 +8556,7 @@ const COURSES = [
               7.4564,
               46.9448
             ],
-            "cap": "F Schmutzer의 아인슈타인 192...(Einstein 1921 by F Schmutze...)",
+            "cap": "F Schmutzer의 아인슈타인 1921 - 복원(Einstein 1921 by F Schmutzer - restoration)",
             "desc": "[역사 지구 풍경] 베른의 거리를 걷다 마주치게 되는 일상적이면서도 이국적인 모습입니다."
           },
           {
@@ -8565,7 +8565,7 @@ const COURSES = [
               7.4445,
               46.9509
             ],
-            "cap": "2014 베른 뮌스터 대성당, 베른 스위...(2014 Bern Münster Cathedral...)",
+            "cap": "2014 베른 뮌스터 대성당, 베른 스위스 Ank Kumar Infosys Limited 01(2014 Bern Münster Cathedral, Bern Switzerland Ank Kumar Infosys Limited 01)",
             "desc": "[대성당 인근 풍경] 예술가들의 영감이 살아 숨 쉬는 낭만적이고 보헤미안적인 거리입니다."
           }
         ],
@@ -8715,7 +8715,7 @@ const COURSES = [
               11.2583,
               43.7751
             ],
-            "cap": "아헨 독일 Imperial-Cathedr...(Aachen Germany Imperial-Cat...)",
+            "cap": "아헨 독일 Imperial-Cathedral-01(Aachen Germany Imperial-Cathedral-01)",
             "desc": "현지인들의 여유로운 일상을 가장 가까이서 엿볼 수 있는 활기찬 광장입니다."
           },
           {
@@ -8733,7 +8733,7 @@ const COURSES = [
               11.2463,
               43.7651
             ],
-            "cap": "Cattedrale di Santa Ma...(Dome of Cattedrale di Santa...)",
+            "cap": "Cattedrale di Santa Maria del Fiore의 돔(피렌체)(Dome of Cattedrale di Santa Maria del Fiore (Florence))",
             "desc": "[뷰 포인트 풍경] 현지인들의 여유로운 일상을 가장 가까이서 엿볼 수 있는 활기찬 광장입니다."
           },
           {
@@ -8751,7 +8751,7 @@ const COURSES = [
               11.2574,
               43.7657
             ],
-            "cap": "1-5마라타빛보병플로렌스1944(1-5MahrattaLightInfantryFlo...)",
+            "cap": "1-5마라타빛보병플로렌스1944(1-5MahrattaLightInfantryFlorence1944)",
             "desc": "[대성당 인근 풍경] 따스한 햇살 아래 찬란하게 빛나는 피렌체의 잊지 못할 전경입니다."
           },
           {
@@ -8760,7 +8760,7 @@ const COURSES = [
               11.2536,
               43.7606
             ],
-            "cap": "Aeroporto di Firenze -...(Aeroporto di Firenze - main...)",
+            "cap": "Aeroporto di Firenze - 1층 레스토랑에서 본 본관(Aeroporto di Firenze - main building seen from restaurant at the 1st floor)",
             "desc": "[역사 지구 풍경] 마치 동화 속 한 장면에 들어온 듯한 낭만적인 분위기를 선사합니다."
           },
           {
@@ -8870,7 +8870,7 @@ const COURSES = [
               10.4021,
               43.7241
             ],
-            "cap": "알브레히트 뒤러 - Adorazione ...(Albrecht Dürer - Adorazione...)",
+            "cap": "알브레히트 뒤러 - Adorazione dei Magi - Google Art Project(Albrecht Dürer - Adorazione dei Magi - Google Art Project)",
             "desc": "예술가들의 영감이 살아 숨 쉬는 낭만적이고 보헤미안적인 거리입니다."
           },
           {
@@ -9010,7 +9010,7 @@ const COURSES = [
               12.4936,
               41.9023
             ],
-            "cap": "2021.03의 Aeroporto di ...(Aeroporto di Roma-Fiumicino...)",
+            "cap": "2021.03의 Aeroporto di Roma-Fiumicino(Aeroporto di Roma-Fiumicino in 2021.03)",
             "desc": "수백 년의 역사와 문화가 거리 구석구석 살아 숨 쉬는 매력적인 명소입니다."
           },
           {
@@ -9131,7 +9131,7 @@ const COURSES = [
               12.4955,
               41.8937
             ],
-            "cap": "라파엘로 산치오 다 우르비노의 '아테네 학당'(\"The School of Athens\" by R...)",
+            "cap": "라파엘로 산치오 다 우르비노의 '아테네 학당'(\"The School of Athens\" by Raffaello Sanzio da Urbino)",
             "desc": "예술가들의 영감이 살아 숨 쉬는 낭만적이고 보헤미안적인 거리입니다."
           },
           {
@@ -9149,7 +9149,7 @@ const COURSES = [
               12.4985,
               41.9023
             ],
-            "cap": "Celebrazione del 2777 ...(Celebrazione del 2777 Natal...)",
+            "cap": "Celebrazione del 2777 Natale di Roma - Pietas Comunità Gentile 2(Celebrazione del 2777 Natale di Roma - Pietas Comunità Gentile 2)",
             "desc": "[도심 광장 풍경] 시간이 멈춘 듯 평화롭고 고즈넉한 분위기를 간직한 아름다운 마을입니다."
           }
         ]
@@ -9198,7 +9198,7 @@ const COURSES = [
               12.5063,
               41.8977
             ],
-            "cap": "로마의 축소판 세부 묘사 콘스탄틴(Détail de la maquette de Ro...)",
+            "cap": "Détail de la maquette de Rome à lépoque de Constantin (5840455090)(Détail de la maquette de Rome à lépoque de Constantin (5840455090))",
             "desc": "[뷰 포인트 풍경] 따스한 햇살 아래 찬란하게 빛나는 로마의 잊지 못할 전경입니다."
           },
           {
@@ -9216,7 +9216,7 @@ const COURSES = [
               12.4932,
               41.906
             ],
-            "cap": "엥겔스부르크와 엥겔스브뤼케 이상(Engelsburg und Engelsbrücke...)",
+            "cap": "Engelsburg und Engelsbrücke 이상(Zuschnitt)(Engelsburg und Engelsbrücke abends (Zuschnitt))",
             "desc": "[구시가지 풍경] 세월의 흔적이 고스란히 묻어나는 장엄하고 아름다운 건축물입니다."
           },
           {
@@ -9234,7 +9234,7 @@ const COURSES = [
               12.4916,
               41.893
             ],
-            "cap": "식량농업기구 본부 2008(Food and Agriculture Organi...)",
+            "cap": "식량농업기구 본부 2008(Food and Agriculture Organization HQ 2008)",
             "desc": "[낭만의 거리 풍경] 전 세계 여행객들의 발길이 끊이지 않는 로마의 상징적인 장소입니다."
           }
         ]
@@ -9324,7 +9324,7 @@ const COURSES = [
               2.3109,
               48.8945
             ],
-            "cap": "바게트 드 통증, 위키치즈 로잔(Baguette de pain, WikiChees...)",
+            "cap": "바게트 드 통증, 위키치즈 로잔(Baguette de pain, WikiCheese Lausanne)",
             "desc": "[마켓 노점 풍경] [바게트(Baguette)] 현지의 오리지널 레시피로 만들어진 깊고 풍부한 맛을 느껴보세요."
           },
           {
@@ -9360,7 +9360,7 @@ const COURSES = [
               2.3257,
               48.8872
             ],
-            "cap": "Basilique du Sacré-Cœu...(Basilique du Sacré-Cœur de ...)",
+            "cap": "Basilique du Sacré-Cœur de Montmartre, Paris 18e 140223 2(Basilique du Sacré-Cœur de Montmartre, Paris 18e 140223 2)",
             "desc": "세월의 흔적이 고스란히 묻어나는 장엄하고 아름다운 건축물입니다."
           },
           {
@@ -9369,7 +9369,7 @@ const COURSES = [
               2.3174,
               48.8898
             ],
-            "cap": "Boulevard Périphérique...(Boulevard Périphérique vu d...)",
+            "cap": "Boulevard Périphérique vu depuis Boulevard Auteuil - 파리 XVI (FR75) - 2021-08-11 - 3(Boulevard Périphérique vu depuis Boulevard Auteuil - Paris XVI (FR75) - 2021-08-11 - 3)",
             "desc": "[구시가지 풍경] 섬세한 조각상들과 화려한 장식들이 당시의 찬란했던 예술성을 보여줍니다."
           },
           {
@@ -9491,7 +9491,7 @@ const COURSES = [
               2.3327,
               48.8542
             ],
-            "cap": "카페 드 플로르(Café de Flore...(Café de Flore, 172 boulevar...)",
+            "cap": "카페 드 플로르(Café de Flore), 172 boulevard Saint-Germain, Paris 6e(Café de Flore, 172 boulevard Saint-Germain, Paris 6e)",
             "desc": "[드 플로르 — 1887년 풍경] 생제르맹데프레의 상징 카페. 장폴 사르트르와 시몬 드 보부아르가 매일 이곳에서 글을 썼고, 카뮈·피카소·헤밍웨이도 드나들었다. 아르 데코 인테리어가 그대로 남아 있으며, 카페 크렘과 크루아상으로 파리 지성의 공기를 마실 수 있다."
           },
           {
@@ -9500,7 +9500,7 @@ const COURSES = [
               2.3045,
               48.8768
             ],
-            "cap": "파리의 Pierre Bideau가 제작한...(1000 Eiffel tower night ill...)",
+            "cap": "파리의 Pierre Bideau가 제작한 1000 에펠탑 야간 조명 사진: Giles Laurent(1000 Eiffel tower night illumination by Pierre Bideau in Paris Photo by Giles Laurent)",
             "desc": "눈부시게 푸른 바다와 눈부신 햇살이 여행의 피로를 씻어내 줍니다."
           },
           {
@@ -9536,7 +9536,7 @@ const COURSES = [
               2.3031,
               48.8713
             ],
-            "cap": "유로스타 파리 Gare du Nord 역...(Eurostar Paris Gare du Nord...)",
+            "cap": "유로스타 파리 Gare du Nord 역, 2011년 10월 8일(Eurostar Paris Gare du Nord Station, 8 October 2011)",
             "desc": "[대성당 인근 풍경] 따스한 햇살 아래 찬란하게 빛나는 파리의 잊지 못할 전경입니다."
           },
           {
@@ -9545,7 +9545,7 @@ const COURSES = [
               2.3165,
               48.867
             ],
-            "cap": "판테온의 외관, 파리 2016년 1월 24일(Facade of the Panthéon, Par...)",
+            "cap": "판테온의 외관, 파리 2016년 1월 24일(Facade of the Panthéon, Paris 24 January 2016)",
             "desc": "[역사 지구 풍경] 아름다운 자연과 인공적인 건축물이 환상적인 조화를 이루는 곳입니다."
           }
         ]
@@ -9616,7 +9616,7 @@ const COURSES = [
               2.114,
               48.8003
             ],
-            "cap": "샤토 베르사유 갤러리 데 글라스(Chateau Versailles Galerie ...)",
+            "cap": "샤토 베르사유 갤러리 데 글라스(Chateau Versailles Galerie des Glaces)",
             "desc": "섬세한 조각상들과 화려한 장식들이 당시의 찬란했던 예술성을 보여줍니다."
           },
           {
@@ -9634,7 +9634,7 @@ const COURSES = [
               2.1161,
               48.8102
             ],
-            "cap": "데이비드 아담 케스(David Adam ...(by David Adam Kess)",
+            "cap": "(파스타) David Adam Kess 작성(그림 2)((Pasta) by David Adam Kess (pic.2))",
             "desc": "[로컬 레스토랑 풍경] [파스타(Pasta)] 신선한 재료가 아낌없이 들어가 눈과 입이 모두 즐거워지는 요리입니다."
           }
         ]
@@ -9729,7 +9729,7 @@ const COURSES = [
               2.337,
               48.8647
             ],
-            "cap": "바게트, 파리, 프랑스 - 파노라마(Baguettes, Paris, France - ...)",
+            "cap": "바게트, 파리, 프랑스 - 파노라마(Baguettes, Paris, France - panoramio)",
             "desc": "[카페 풍경] [바게트(Baguette)] 현지인들이 아침저녁으로 즐겨 찾는 소박하지만 든든한 일상식입니다."
           }
         ]
@@ -9815,7 +9815,7 @@ const COURSES = [
               2.3267,
               48.833
             ],
-            "cap": "2013년 에펠탑 11번 불꽃놀이(2013 Fireworks on Eiffel To...)",
+            "cap": "2013년 에펠탑 11번 불꽃놀이(2013 Fireworks on Eiffel Tower 11)",
             "desc": "밤이 되면 화려한 조명으로 또 다른 매력을 뽐내는 로맨틱한 장소입니다."
           }
         ]
@@ -9905,7 +9905,7 @@ const COURSES = [
               2.337,
               48.8687
             ],
-            "cap": "Akhenathon 및 Nefertiti...(Akhenathon and Nefertiti E1...)",
+            "cap": "Akhenathon 및 Nefertiti E15593 mp3h8771-gradient(Akhenathon and Nefertiti E15593 mp3h8771-gradient)",
             "desc": "아름다운 자연과 인공적인 건축물이 환상적인 조화를 이루는 곳입니다."
           },
           {
@@ -9914,7 +9914,7 @@ const COURSES = [
               2.3371,
               48.865
             ],
-            "cap": "1945년 발행된 3센트 미 육군 미국 우표(3 cent U.S. Army U.S. Posta...)",
+            "cap": "1945년 발행된 3센트 미 육군 미국 우표(3 cent U.S. Army U.S. Postage stamp issued 1945)",
             "desc": "[광장 풍경] 섬세한 조각상들과 화려한 장식들이 당시의 찬란했던 예술성을 보여줍니다."
           }
         ]
@@ -9986,7 +9986,7 @@ const COURSES = [
               2.5532,
               49.0064
             ],
-            "cap": "순교자 예배당 몽마르트르 수도원(Chapelle des Martyrs Montma...)",
+            "cap": "순교자 예배당 몽마르트르 수도원(Chapelle des Martyrs Montmartre Abbey)",
             "desc": "예술가들의 영감이 살아 숨 쉬는 낭만적이고 보헤미안적인 거리입니다."
           },
           {
@@ -10090,7 +10090,7 @@ const COURSES = [
               8.2666,
               49.9882
             ],
-            "cap": "Landtagsgebäude 라인란트팔츠(Landtagsgebäude Rheinland-P...)",
+            "cap": "Landtagsgebäude 라인란트팔츠(Landtagsgebäude Rheinland-Pfalz)",
             "desc": "마치 한 장의 엽서 속으로 직접 들어온 듯한 그림 같은 풍경을 선사합니다."
           },
           {
@@ -10108,7 +10108,7 @@ const COURSES = [
               8.2718,
               50.0021
             ],
-            "cap": "Alte-Uni+Mainzer-Dom+S...(Alte-Uni+Mainzer-Dom+Staats...)",
+            "cap": "Alte-Uni Mainzer-Dom Staatstheater-vom-Bonifaziusturm-A-741-a(Alte-Uni Mainzer-Dom Staatstheater-vom-Bonifaziusturm-A-741-a)",
             "desc": "[뷰 포인트 풍경] 마인츠의 거리를 걷다 마주치게 되는 일상적이면서도 이국적인 모습입니다."
           },
           {
@@ -10117,7 +10117,7 @@ const COURSES = [
               8.2721,
               49.9919
             ],
-            "cap": "Blick-auf-mainz-aus-ri...(Blick-auf-mainz-aus-richtun...)",
+            "cap": "Blick-auf-mainz-aus-richtung-der-schiersteiner-bruecke(Blick-auf-mainz-aus-richtung-der-schiersteiner-bruecke)",
             "desc": "[대성당 인근 풍경] 푸른 하늘과 맞닿은 아름다운 스카이라인이 마음까지 탁 트이게 합니다."
           },
           {
@@ -10222,7 +10222,7 @@ const COURSES = [
               8.6792,
               50.1088
             ],
-            "cap": "01-01-2014 - Messeturm...(01-01-2014 - Messeturm - tr...)",
+            "cap": "01-01-2014 - Messeturm - 무역 박람회 타워 - 프랑크푸르트 - 독일 - 05(01-01-2014 - Messeturm - trade fair tower - Frankfurt- Germany - 05)",
             "desc": "[도심 광장 풍경] 푸른 하늘과 맞닿은 아름다운 스카이라인이 마음까지 탁 트이게 합니다."
           },
           {
@@ -10231,7 +10231,7 @@ const COURSES = [
               8.6869,
               50.1156
             ],
-            "cap": "2010-07-21 A380 LH D-A...(2010-07-21 A380 LH D-AIMB E...)",
+            "cap": "2010-07-21 A380 LH D-AIMB EDDF 06(2010-07-21 A380 LH D-AIMB EDDF 06)",
             "desc": "[역사 지구 풍경] 세월의 흔적이 고스란히 묻어나는 장엄하고 아름다운 건축물입니다."
           },
           {
@@ -10240,7 +10240,7 @@ const COURSES = [
               8.6882,
               50.1039
             ],
-            "cap": "공항프랑크푸르트항공 2010-09-19(AirportFrankfurt fromair 20...)",
+            "cap": "공항프랑크푸르트항공 2010-09-19(AirportFrankfurt fromair 2010-09-19)",
             "desc": "[구시가지 풍경] 아름다운 자연과 인공적인 건축물이 환상적인 조화를 이루는 곳입니다."
           },
           {
@@ -10258,7 +10258,7 @@ const COURSES = [
               8.6894,
               50.1039
             ],
-            "cap": "Alte Oper 프랑크푸르트 겨울 2008(Alte Oper Frankfurt Winter ...)",
+            "cap": "Alte Oper 프랑크푸르트 겨울 2008(Alte Oper Frankfurt Winter 2008)",
             "desc": "시간이 멈춘 듯 평화롭고 고즈넉한 분위기를 간직한 아름다운 마을입니다."
           },
           {
@@ -10336,7 +10336,7 @@ const COURSES = [
               6.959,
               50.9498
             ],
-            "cap": "데이비드 아담 케스(David Adam ...(by David Adam Kess)",
+            "cap": "(파스타) David Adam Kess 작성(그림 2)((Pasta) by David Adam Kess (pic.2))",
             "desc": "[마켓 노점 풍경] [파스타(Pasta)] 현지 분위기가 물씬 풍기는 골목 식당에서 갓 만들어낸 따뜻한 요리입니다."
           },
           {
@@ -10354,7 +10354,7 @@ const COURSES = [
               6.9611,
               50.9485
             ],
-            "cap": "좋은 카푸치노는 완벽한 에스프레소에서 시...(A good cappuccino starts wi...)",
+            "cap": "좋은 카푸치노는 완벽한 에스프레소에서 시작됩니다!! (4441914182)(A good cappuccino starts with a perfect espresso!! (4441914182))",
             "desc": "[전통 맛집 풍경] [에스프레소(Espresso)] 쾰른 특유의 매력적인 향신료와 식재료가 돋보이는 한 접시입니다."
           },
           {
@@ -10363,7 +10363,7 @@ const COURSES = [
               6.9535,
               50.9449
             ],
-            "cap": "쾰른 - 황혼의 구시가지 파노라마 이미지(Cologne - Panoramic Image o...)",
+            "cap": "쾰른 - 황혼의 구시가지 파노라마 이미지(Cologne - Panoramic Image of the old town at dusk)",
             "desc": "마치 한 장의 엽서 속으로 직접 들어온 듯한 그림 같은 풍경을 선사합니다."
           },
           {
@@ -10372,7 +10372,7 @@ const COURSES = [
               6.9698,
               50.9468
             ],
-            "cap": "00 7373 Groß-St-Martin...(00 7373 Groß-St-Martin-Kirc...)",
+            "cap": "00 7373 Groß-St-Martin-Kirche in Köln(00 7373 Groß-St-Martin-Kirche in Köln)",
             "desc": "[도심 광장 풍경] 눈부시게 푸른 바다와 눈부신 햇살이 여행의 피로를 씻어내 줍니다."
           },
           {
@@ -10381,7 +10381,7 @@ const COURSES = [
               6.9693,
               50.9351
             ],
-            "cap": "146 019-5 라인익스프레스인코엘nhbf(146 019-5 Rheinexpressinkoe...)",
+            "cap": "146 019-5 라인익스프레스인코엘nhbf(146 019-5 Rheinexpressinkoelnhbf)",
             "desc": "높은 곳에서 내려다보이는 쾰른의 파노라마 뷰가 가슴을 뻥 뚫어줍니다."
           },
           {
@@ -10390,7 +10390,7 @@ const COURSES = [
               6.9643,
               50.9421
             ],
-            "cap": "1983 09 15~23 오데사에서 쿠바...(1983 09 15 to 23 Envelope o...)",
+            "cap": "1983 09 15~23 오데사에서 쿠바로 보내는 편지봉투(1983 09 15 to 23 Envelope of the Letter from Odessa to Cuba)",
             "desc": "[구시가지 풍경] 밤이 되면 화려한 조명으로 또 다른 매력을 뽐내는 로맨틱한 장소입니다."
           }
         ]
@@ -10459,7 +10459,7 @@ const COURSES = [
               8.705,
               49.4053
             ],
-            "cap": "6가지 음식, 파스타, 타쿠이노 사니타티...(6-alimenti, pasta,Taccuino ...)",
+            "cap": "6가지 음식, 파스타, 타쿠이노 사니타티스, 카사나텐세 4182.(6-alimenti, pasta,Taccuino Sanitatis, Casanatense 4182.)",
             "desc": "[현지 베이커리 풍경] [파스타(Pasta)] 신선한 재료가 아낌없이 들어가 눈과 입이 모두 즐거워지는 요리입니다."
           },
           {
@@ -10486,7 +10486,7 @@ const COURSES = [
               8.7154,
               49.4154
             ],
-            "cap": "2002-04-02 Hauptstraße...(2002-04-02 Hauptstraße, Hei...)",
+            "cap": "2002-04-02 Hauptstraße, 하이델베르그 IMG 0404(2002-04-02 Hauptstraße, Heidelberg IMG 0404)",
             "desc": "[구시가지 풍경] 하이델베르크의 거리를 걷다 마주치게 되는 일상적이면서도 이국적인 모습입니다."
           },
           {
@@ -10495,7 +10495,7 @@ const COURSES = [
               8.7116,
               49.4093
             ],
-            "cap": "2002-04-02 하이델베르거 시청사 ...(2002-04-02 Heidelberger Rat...)",
+            "cap": "2002-04-02 하이델베르거 시청사 IMG 0388(2002-04-02 Heidelberger Rathaus IMG 0388)",
             "desc": "[뷰 포인트 풍경] 눈부시게 푸른 바다와 눈부신 햇살이 여행의 피로를 씻어내 줍니다."
           },
           {
@@ -10583,7 +10583,7 @@ const COURSES = [
               11.5898,
               48.1357
             ],
-            "cap": "2010.08.22.143425 Nürn...(2010.08.22.143425 Nürnberge...)",
+            "cap": "2010.08.22.143425 Nürnberger Rostbratwurst Kirwa Sulzbach-Rosenberg(2010.08.22.143425 Nürnberger Rostbratwurst Kirwa Sulzbach-Rosenberg)",
             "desc": "[마켓 노점 풍경] [브라트부어스트(Bratwurst)] 보기만 해도 군침이 도는, 뮌헨 미식 여행의 필수 코스입니다."
           },
           {
@@ -10592,7 +10592,7 @@ const COURSES = [
               11.5748,
               48.1442
             ],
-            "cap": "알자스, 바랭, 스트라스부르, \" Mar...(Alsace, Bas-Rhin, Strasbour...)",
+            "cap": "알자스, 바랭, 스트라스부르, \"marche de Noël\" 장소 드 브로이(4840720073)(Alsace, Bas-Rhin, Strasbourg, \" marché de Noël \" place de Broglie (4840720073))",
             "desc": "[로컬 레스토랑 풍경] [현지식 브레드] 달콤한 디저트 한 입으로 여행의 당을 완벽하게 충전해 보세요."
           },
           {
@@ -10601,7 +10601,7 @@ const COURSES = [
               11.5887,
               48.1448
             ],
-            "cap": "Das Staatstheater am G...(Das Staatstheater am Gärtne...)",
+            "cap": "Das Staatstheater am Gärtnerplatz 04(Das Staatstheater am Gärtnerplatz 04)",
             "desc": "[낭만의 거리 풍경] 눈부시게 푸른 바다와 눈부신 햇살이 여행의 피로를 씻어내 줍니다."
           },
           {
@@ -10610,7 +10610,7 @@ const COURSES = [
               11.5741,
               48.1446
             ],
-            "cap": "4 Cilindros, 뮌헨, 알레마니아...(4 Cilindros, Múnich, Aleman...)",
+            "cap": "4 Cilindros, 뮌헨, 알레마니아, 2013-02-11, DD 02(4 Cilindros, Múnich, Alemania, 2013-02-11, DD 02)",
             "desc": "[구시가지 풍경] 밤이 되면 화려한 조명으로 또 다른 매력을 뽐내는 로맨틱한 장소입니다."
           },
           {
@@ -10637,7 +10637,7 @@ const COURSES = [
               11.5829,
               48.1285
             ],
-            "cap": "골동품 수족관, Münchner Resi...(Antiquarium, Münchner Residenz)",
+            "cap": "골동품 수족관, Münchner Residenz(Antiquarium, Münchner Residenz)",
             "desc": "[대성당 인근 풍경] 조용한 골목길에서 우연히 마주친 비밀스럽고 매력적인 뷰 포인트입니다."
           }
         ]
@@ -10707,7 +10707,7 @@ const COURSES = [
               16.3832,
               48.2177
             ],
-            "cap": "2011-06-14 10-23-56 오스...(2011-06-14 10-23-56 Austria...)",
+            "cap": "2011-06-14 10-23-56 오스트리아 Niederösterreich 피샤멘트 마르크트(2011-06-14 10-23-56 Austria Niederösterreich Fischamend Markt)",
             "desc": "[도심 광장 풍경] 섬세한 조각상들과 화려한 장식들이 당시의 찬란했던 예술성을 보여줍니다."
           },
           {
@@ -10716,7 +10716,7 @@ const COURSES = [
               16.3687,
               48.2136
             ],
-            "cap": "20180109 비엔나 국립 오페라 블루...(20180109 Vienna State Opera...)",
+            "cap": "20180109 비엔나 국립 오페라 블루 아워 850 9387(20180109 Vienna State Opera at blue hour 850 9387)",
             "desc": "[역사 지구 풍경] 섬세한 조각상들과 화려한 장식들이 당시의 찬란했던 예술성을 보여줍니다."
           },
           {
@@ -10743,7 +10743,7 @@ const COURSES = [
               16.3749,
               48.2026
             ],
-            "cap": "Alsergrund - AKH, Haup...(Alsergrund  - AKH, Hauptein...)",
+            "cap": "Alsergrund (Wien) - AKH, Haupteingang(Alsergrund (Wien) - AKH, Haupteingang)",
             "desc": "[역사 지구 풍경] 예술가들의 영감이 살아 숨 쉬는 낭만적이고 보헤미안적인 거리입니다."
           },
           {
@@ -10761,7 +10761,7 @@ const COURSES = [
               16.3705,
               48.2098
             ],
-            "cap": "아스날 Heeresgeschichtlic...(Arsenal Heeresgeschichtlich...)",
+            "cap": "아스날 Heeresgeschichtliches 박물관-DSC 7920w(Arsenal Heeresgeschichtliches Museum-DSC 7920w)",
             "desc": "[대성당 인근 풍경] 푸른 하늘과 맞닿은 아름다운 스카이라인이 마음까지 탁 트이게 합니다."
           }
         ]
@@ -10830,7 +10830,7 @@ const COURSES = [
               16.3752,
               48.2003
             ],
-            "cap": "Bundesarchiv Bild 146-...(Bundesarchiv Bild 146-1972-...)",
+            "cap": "Bundesarchiv Bild 146-1972-028-14, Anschluss Österreich(Bundesarchiv Bild 146-1972-028-14, Anschluss Österreich)",
             "desc": "[도심 광장 풍경] 섬세한 조각상들과 화려한 장식들이 당시의 찬란했던 예술성을 보여줍니다."
           },
           {
@@ -10848,7 +10848,7 @@ const COURSES = [
               16.3732,
               48.2041
             ],
-            "cap": "시티바이크 비엔나, Schönbrunne...(Citybike Vienna, Schönbrunn...)",
+            "cap": "시티바이크 비엔나, Schönbrunner Brücke(Citybike Vienna, Schönbrunner Brücke)",
             "desc": "웅장한 규모와 정교한 디테일이 한눈에 시선을 사로잡는 랜드마크입니다."
           },
           {
@@ -10866,7 +10866,7 @@ const COURSES = [
               16.3792,
               48.2019
             ],
-            "cap": "Donaupark & ​​Donautur...(Donaupark & Donauturm Vienn...)",
+            "cap": "Donaupark & ​​Donauturm 비엔나 2024(Donaupark & Donauturm Vienna 2024)",
             "desc": "[역사 지구 풍경] 눈부시게 푸른 바다와 눈부신 햇살이 여행의 피로를 씻어내 줍니다."
           },
           {
@@ -10875,7 +10875,7 @@ const COURSES = [
               16.3666,
               48.2065
             ],
-            "cap": "Donaustadtbrücke rigar...(Donaustadtbrücke rigardate ...)",
+            "cap": "Donaustadtbrücke rigardate de la stacio Donaumarina(Donaustadtbrücke rigardate de la stacio Donaumarina)",
             "desc": "[도심 광장 풍경] 전 세계 여행객들의 발길이 끊이지 않는 빈의 상징적인 장소입니다."
           },
           {
@@ -11053,7 +11053,7 @@ const COURSES = [
               12.338,
               45.434
             ],
-            "cap": "밤의 산마르코 광장 -msu-2021-6...(Piazza San Marco  at night-...)",
+            "cap": "밤의 산마르코 광장(베니스)-msu-2021-6449-(Piazza San Marco (Venice) at night-msu-2021-6449-)",
             "desc": "[광장 풍경] 베네치아의 중심."
           },
           {
@@ -11062,7 +11062,7 @@ const COURSES = [
               12.3343,
               45.433
             ],
-            "cap": "카날레토 - 두칼레 궁전의 부두로 돌아온...(Canaletto - Bucentaur's ret...)",
+            "cap": "카날레토 - 두칼레 궁전의 부두로 돌아온 부켄타우로스 - Google Art Project(Canaletto - Bucentaur's return to the pier by the Palazzo Ducale - Google Art Project)",
             "desc": "[뷰 포인트 풍경] 세월의 흔적이 고스란히 묻어나는 장엄하고 아름다운 건축물입니다."
           },
           {
@@ -11080,7 +11080,7 @@ const COURSES = [
               12.3311,
               45.4405
             ],
-            "cap": "2017 06 베네치아 터미널 파세게리 ...(2017 06 Venezia Terminal Pa...)",
+            "cap": "2017 06 베네치아 터미널 파세게리 터미널 파세게리 2860(2017 06 Venezia Terminal Passeggeri Terminal Passeggeri 2860)",
             "desc": "[낭만의 거리 풍경] 수백 년의 역사와 문화가 거리 구석구석 살아 숨 쉬는 매력적인 명소입니다."
           },
           {
@@ -11107,7 +11107,7 @@ const COURSES = [
               12.3359,
               45.4348
             ],
-            "cap": "로마 광장을 떠나는 Actv 트램 베네치...(Actv tram Venezia leaving P...)",
+            "cap": "로마 광장을 떠나는 Actv 트램 베네치아 2017(Actv tram Venezia leaving Piazzale Roma 2017)",
             "desc": "[낭만의 거리 풍경] 웅장한 규모와 정교한 디테일이 한눈에 시선을 사로잡는 랜드마크입니다."
           },
           {
@@ -11116,7 +11116,7 @@ const COURSES = [
               12.3411,
               45.4401
             ],
-            "cap": "Aeroporto di Venezia -...(Aeroporto di Venezia - vue ...)",
+            "cap": "Aeroporto di Venezia - vue aerienne(Aeroporto di Venezia - vue aerienne)",
             "desc": "[도심 광장 풍경] 높은 곳에서 내려다보이는 베네치아의 파노라마 뷰가 가슴을 뻥 뚫어줍니다."
           },
           {
@@ -11125,7 +11125,7 @@ const COURSES = [
               12.3299,
               45.4251
             ],
-            "cap": "아스날 - 파노라마 - 니콜라 푸(Arsenal - panoramio - nikol...)",
+            "cap": "아스날 - 파노라마 - 니콜라 푸(Arsenal - panoramio - nikola pu)",
             "desc": "현지인들의 여유로운 일상을 가장 가까이서 엿볼 수 있는 활기찬 광장입니다."
           }
         ]
@@ -11189,7 +11189,7 @@ const COURSES = [
               12.3477,
               45.4293
             ],
-            "cap": "안드레아 델 베로키오의 바르톨로메오 콜레오니(Bartolomeo Colleoni by Andr...)",
+            "cap": "안드레아 델 베로키오의 바르톨로메오 콜레오니(Bartolomeo Colleoni by Andrea del Verrocchio)",
             "desc": "[뷰 포인트 풍경] 예술가들의 영감이 살아 숨 쉬는 낭만적이고 보헤미안적인 거리입니다."
           },
           {
@@ -11198,7 +11198,7 @@ const COURSES = [
               12.3415,
               45.4394
             ],
-            "cap": "베네치아 산타마리아 델라 살루테 대성당 1(Basilica Santa Maria della ...)",
+            "cap": "베네치아 산타마리아 델라 살루테 대성당 1(Basilica Santa Maria della Salute Venice 1)",
             "desc": "[역사 지구 풍경] 마치 동화 속 한 장면에 들어온 듯한 낭만적인 분위기를 선사합니다."
           },
           {
@@ -11207,7 +11207,7 @@ const COURSES = [
               12.3469,
               45.4309
             ],
-            "cap": "베르나르도 스트로치 - 클라우디오 몬테베르디(Bernardo Strozzi - Claudio ...)",
+            "cap": "베르나르도 스트로치 - 클라우디오 몬테베르디(c.1630)(Bernardo Strozzi - Claudio Monteverdi (c.1630))",
             "desc": "[역사 지구 풍경] 마치 한 장의 엽서 속으로 직접 들어온 듯한 그림 같은 풍경을 선사합니다."
           },
           {
@@ -11216,7 +11216,7 @@ const COURSES = [
               12.3452,
               45.44
             ],
-            "cap": "탄식의 다리 바다 정면 베니스(Bridge of Sighs sea facade ...)",
+            "cap": "탄식의 다리 바다 정면 베니스(Bridge of Sighs sea facade Venice)",
             "desc": "[낭만의 거리 풍경] 시간이 멈춘 듯 평화롭고 고즈넉한 분위기를 간직한 아름다운 마을입니다."
           },
           {
@@ -11243,7 +11243,7 @@ const COURSES = [
               12.3307,
               45.4346
             ],
-            "cap": "산 마르코 대성당의 종탑 - 원격 뷰(Campanile of St. Mark's Bas...)",
+            "cap": "산 마르코 대성당의 종탑 - 원격 뷰(Campanile of St. Mark's Basilica - remote view)",
             "desc": "[대성당 인근 풍경] 섬세한 조각상들과 화려한 장식들이 당시의 찬란했던 예술성을 보여줍니다."
           },
           {
@@ -11252,7 +11252,7 @@ const COURSES = [
               12.3347,
               45.4284
             ],
-            "cap": "카니발 디 베네치아 마스크 2010(Carnevale di Venezia Masks ...)",
+            "cap": "카니발 디 베네치아 마스크 2010(Carnevale di Venezia Masks 2010)",
             "desc": "[뷰 포인트 풍경] 아름다운 자연과 인공적인 건축물이 환상적인 조화를 이루는 곳입니다."
           },
           {
@@ -11261,7 +11261,7 @@ const COURSES = [
               12.3332,
               45.4281
             ],
-            "cap": "90년대 후반 베네치아 운하 청소(Cleaning of Venetian canals...)",
+            "cap": "90년대 후반 베네치아 운하 청소(Cleaning of Venetian canals, late 90's)",
             "desc": "[도심 광장 풍경] 마치 한 장의 엽서 속으로 직접 들어온 듯한 그림 같은 풍경을 선사합니다."
           }
         ]
@@ -11325,7 +11325,7 @@ const COURSES = [
               12.3483,
               45.4272
             ],
-            "cap": "바시노 산 마르코 베니스를 지나는 유람선(Cruiseship passing bacino S...)",
+            "cap": "바시노 산 마르코 베니스를 지나는 유람선(Cruiseship passing bacino San Marco Venise)",
             "desc": "[대성당 인근 풍경] 수백 년의 역사와 문화가 거리 구석구석 살아 숨 쉬는 매력적인 명소입니다."
           },
           {
@@ -11343,7 +11343,7 @@ const COURSES = [
               12.3433,
               45.4286
             ],
-            "cap": "밤의 총독의 궁전 2023-msu-202...(Doge's Palace  at night 202...)",
+            "cap": "밤의 총독의 궁전(베니스) 2023-msu-2023-0I9A6405-(Doge's Palace (Venice) at night 2023-msu-2023-0I9A6405-)",
             "desc": "[뷰 포인트 풍경] 마치 동화 속 한 장면에 들어온 듯한 낭만적인 분위기를 선사합니다."
           },
           {
@@ -11483,7 +11483,7 @@ const COURSES = [
               8.2836,
               49.9967
             ],
-            "cap": "Landtagsgebäude 라인란트팔츠(Landtagsgebäude Rheinland-P...)",
+            "cap": "Landtagsgebäude 라인란트팔츠(Landtagsgebäude Rheinland-Pfalz)",
             "desc": "[뷰 포인트 풍경] 전 세계 여행객들의 발길이 끊이지 않는 마인츠의 상징적인 장소입니다."
           },
           {
@@ -11501,7 +11501,7 @@ const COURSES = [
               8.2706,
               49.9883
             ],
-            "cap": "Alte-Uni+Mainzer-Dom+S...(Alte-Uni+Mainzer-Dom+Staats...)",
+            "cap": "Alte-Uni Mainzer-Dom Staatstheater-vom-Bonifaziusturm-A-741-a(Alte-Uni Mainzer-Dom Staatstheater-vom-Bonifaziusturm-A-741-a)",
             "desc": "[도심 광장 풍경] 조용한 골목길에서 우연히 마주친 비밀스럽고 매력적인 뷰 포인트입니다."
           },
           {
@@ -11510,7 +11510,7 @@ const COURSES = [
               8.2709,
               49.9959
             ],
-            "cap": "Blick-auf-mainz-aus-ri...(Blick-auf-mainz-aus-richtun...)",
+            "cap": "Blick-auf-mainz-aus-richtung-der-schiersteiner-bruecke(Blick-auf-mainz-aus-richtung-der-schiersteiner-bruecke)",
             "desc": "[역사 지구 풍경] 섬세한 조각상들과 화려한 장식들이 당시의 찬란했던 예술성을 보여줍니다."
           },
           {
@@ -11615,7 +11615,7 @@ const COURSES = [
               8.6765,
               50.117
             ],
-            "cap": "01-01-2014 - Messeturm...(01-01-2014 - Messeturm - tr...)",
+            "cap": "01-01-2014 - Messeturm - 무역 박람회 타워 - 프랑크푸르트 - 독일 - 05(01-01-2014 - Messeturm - trade fair tower - Frankfurt- Germany - 05)",
             "desc": "[역사 지구 풍경] 눈부시게 푸른 바다와 눈부신 햇살이 여행의 피로를 씻어내 줍니다."
           },
           {
@@ -11624,7 +11624,7 @@ const COURSES = [
               8.6913,
               50.115
             ],
-            "cap": "2010-07-21 A380 LH D-A...(2010-07-21 A380 LH D-AIMB E...)",
+            "cap": "2010-07-21 A380 LH D-AIMB EDDF 06(2010-07-21 A380 LH D-AIMB EDDF 06)",
             "desc": "[도심 광장 풍경] 아름다운 자연과 인공적인 건축물이 환상적인 조화를 이루는 곳입니다."
           },
           {
@@ -11633,7 +11633,7 @@ const COURSES = [
               8.6831,
               50.1072
             ],
-            "cap": "공항프랑크푸르트항공 2010-09-19(AirportFrankfurt fromair 20...)",
+            "cap": "공항프랑크푸르트항공 2010-09-19(AirportFrankfurt fromair 2010-09-19)",
             "desc": "[뷰 포인트 풍경] 수백 년의 역사와 문화가 거리 구석구석 살아 숨 쉬는 매력적인 명소입니다."
           },
           {
@@ -11651,7 +11651,7 @@ const COURSES = [
               8.6917,
               50.1054
             ],
-            "cap": "Alte Oper 프랑크푸르트 겨울 2008(Alte Oper Frankfurt Winter ...)",
+            "cap": "Alte Oper 프랑크푸르트 겨울 2008(Alte Oper Frankfurt Winter 2008)",
             "desc": "웅장한 규모와 정교한 디테일이 한눈에 시선을 사로잡는 랜드마크입니다."
           },
           {
@@ -11729,7 +11729,7 @@ const COURSES = [
               6.9691,
               50.9317
             ],
-            "cap": "데이비드 아담 케스(David Adam ...(by David Adam Kess)",
+            "cap": "(파스타) David Adam Kess 작성(그림 2)((Pasta) by David Adam Kess (pic.2))",
             "desc": "[전통 맛집 풍경] [파스타(Pasta)] 바삭한 식감과 부드러운 속살이 환상적인 조화를 이루는 전통 음식입니다."
           },
           {
@@ -11747,7 +11747,7 @@ const COURSES = [
               6.9689,
               50.9359
             ],
-            "cap": "좋은 카푸치노는 완벽한 에스프레소에서 시...(A good cappuccino starts wi...)",
+            "cap": "좋은 카푸치노는 완벽한 에스프레소에서 시작됩니다!! (4441914182)(A good cappuccino starts with a perfect espresso!! (4441914182))",
             "desc": "[로컬 레스토랑 풍경] [에스프레소(Espresso)] 현지인들이 아침저녁으로 즐겨 찾는 소박하지만 든든한 일상식입니다."
           },
           {
@@ -11756,7 +11756,7 @@ const COURSES = [
               6.9521,
               50.9481
             ],
-            "cap": "쾰른 - 황혼의 구시가지 파노라마 이미지(Cologne - Panoramic Image o...)",
+            "cap": "쾰른 - 황혼의 구시가지 파노라마 이미지(Cologne - Panoramic Image of the old town at dusk)",
             "desc": "마치 동화 속 한 장면에 들어온 듯한 낭만적인 분위기를 선사합니다."
           },
           {
@@ -11765,7 +11765,7 @@ const COURSES = [
               6.9521,
               50.9425
             ],
-            "cap": "00 7373 Groß-St-Martin...(00 7373 Groß-St-Martin-Kirc...)",
+            "cap": "00 7373 Groß-St-Martin-Kirche in Köln(00 7373 Groß-St-Martin-Kirche in Köln)",
             "desc": "예술가들의 영감이 살아 숨 쉬는 낭만적이고 보헤미안적인 거리입니다."
           },
           {
@@ -11774,7 +11774,7 @@ const COURSES = [
               6.9646,
               50.9376
             ],
-            "cap": "146 019-5 라인익스프레스인코엘nhbf(146 019-5 Rheinexpressinkoe...)",
+            "cap": "146 019-5 라인익스프레스인코엘nhbf(146 019-5 Rheinexpressinkoelnhbf)",
             "desc": "[역사 지구 풍경] 세월의 흔적이 고스란히 묻어나는 장엄하고 아름다운 건축물입니다."
           },
           {
@@ -11783,7 +11783,7 @@ const COURSES = [
               6.9679,
               50.9332
             ],
-            "cap": "1983 09 15~23 오데사에서 쿠바...(1983 09 15 to 23 Envelope o...)",
+            "cap": "1983 09 15~23 오데사에서 쿠바로 보내는 편지봉투(1983 09 15 to 23 Envelope of the Letter from Odessa to Cuba)",
             "desc": "[뷰 포인트 풍경] 푸른 하늘과 맞닿은 아름다운 스카이라인이 마음까지 탁 트이게 합니다."
           }
         ]
@@ -11817,7 +11817,7 @@ const COURSES = [
               11.5821,
               48.1307
             ],
-            "cap": "2010.08.22.143425 Nürn...(2010.08.22.143425 Nürnberge...)",
+            "cap": "2010.08.22.143425 Nürnberger Rostbratwurst Kirwa Sulzbach-Rosenberg(2010.08.22.143425 Nürnberger Rostbratwurst Kirwa Sulzbach-Rosenberg)",
             "desc": "[카페 풍경] [브라트부어스트(Bratwurst)] 현지 분위기가 물씬 풍기는 골목 식당에서 갓 만들어낸 따뜻한 요리입니다."
           },
           {
@@ -11826,7 +11826,7 @@ const COURSES = [
               11.5903,
               48.1295
             ],
-            "cap": "알자스, 바랭, 스트라스부르, \" Mar...(Alsace, Bas-Rhin, Strasbour...)",
+            "cap": "알자스, 바랭, 스트라스부르, \"marche de Noël\" 장소 드 브로이(4840720073)(Alsace, Bas-Rhin, Strasbourg, \" marché de Noël \" place de Broglie (4840720073))",
             "desc": "[로컬 레스토랑 풍경] [수제 샌드위치] 달콤쌉싸름한 매력으로 여행자들의 발길을 사로잡는 마성의 디저트입니다."
           },
           {
@@ -11835,7 +11835,7 @@ const COURSES = [
               11.5763,
               48.1408
             ],
-            "cap": "Das Staatstheater am G...(Das Staatstheater am Gärtne...)",
+            "cap": "Das Staatstheater am Gärtnerplatz 04(Das Staatstheater am Gärtnerplatz 04)",
             "desc": "[구시가지 풍경] 세월의 흔적이 고스란히 묻어나는 장엄하고 아름다운 건축물입니다."
           },
           {
@@ -11844,7 +11844,7 @@ const COURSES = [
               11.5812,
               48.138
             ],
-            "cap": "4 Cilindros, 뮌헨, 알레마니아...(4 Cilindros, Múnich, Aleman...)",
+            "cap": "4 Cilindros, 뮌헨, 알레마니아, 2013-02-11, DD 02(4 Cilindros, Múnich, Alemania, 2013-02-11, DD 02)",
             "desc": "[낭만의 거리 풍경] 마치 한 장의 엽서 속으로 직접 들어온 듯한 그림 같은 풍경을 선사합니다."
           },
           {
@@ -11871,7 +11871,7 @@ const COURSES = [
               11.5905,
               48.1386
             ],
-            "cap": "골동품 수족관, Münchner Resi...(Antiquarium, Münchner Residenz)",
+            "cap": "골동품 수족관, Münchner Residenz(Antiquarium, Münchner Residenz)",
             "desc": "[역사 지구 풍경] 밤이 되면 화려한 조명으로 또 다른 매력을 뽐내는 로맨틱한 장소입니다."
           },
           {
@@ -11889,7 +11889,7 @@ const COURSES = [
               11.5765,
               48.1381
             ],
-            "cap": "Bahnwärter Thiel 나이트클럽...(Bahnwärter Thiel Nightclub ...)",
+            "cap": "Bahnwärter Thiel 나이트클럽 뮌헨 지하철 1층(Bahnwärter Thiel Nightclub Munich Subway Floor 1)",
             "desc": "[구시가지 풍경] 전 세계 여행객들의 발길이 끊이지 않는 뮌헨의 상징적인 장소입니다."
           },
           {
@@ -11898,7 +11898,7 @@ const COURSES = [
               11.5865,
               48.1424
             ],
-            "cap": "Bayerische Staatskanzl...(Bayerische Staatskanzlei Mu...)",
+            "cap": "Bayerische Staatskanzlei 뮌헨 2014 02(Bayerische Staatskanzlei Munich 2014 02)",
             "desc": "조용한 골목길에서 우연히 마주친 비밀스럽고 매력적인 뷰 포인트입니다."
           }
         ],
@@ -11982,7 +11982,7 @@ const COURSES = [
               11.3932,
               47.2791
             ],
-            "cap": "인스브루크 암 아벤트 폰 데어 인브뤼케(Innsbruck am Abend von der ...)",
+            "cap": "인스브루크 암 아벤트 폰 데어 인브뤼케 (1)(Innsbruck am Abend von der Innbrücke (1))",
             "desc": "[역사 지구 풍경] 현지인들의 여유로운 일상을 가장 가까이서 엿볼 수 있는 활기찬 광장입니다."
           },
           {
@@ -12027,7 +12027,7 @@ const COURSES = [
               11.3912,
               47.2635
             ],
-            "cap": "6가지 음식, 파스타, 타쿠이노 사니타티...(6-alimenti, pasta,Taccuino ...)",
+            "cap": "6가지 음식, 파스타, 타쿠이노 사니타티스, 카사나텐세 4182.(6-alimenti, pasta,Taccuino Sanitatis, Casanatense 4182.)",
             "desc": "[파스타(Pasta)] 현지인들이 아침저녁으로 즐겨 찾는 소박하지만 든든한 일상식입니다."
           },
           {
@@ -12036,7 +12036,7 @@ const COURSES = [
               11.3833,
               47.2782
             ],
-            "cap": "12-06-05-인스브루크-바이-랄프-165(12-06-05-innsbruck-by-ralfr...)",
+            "cap": "12-06-05-인스브루크-바이-랄프-165(12-06-05-innsbruck-by-ralfr-165)",
             "desc": "[낭만의 거리 풍경] 조용한 골목길에서 우연히 마주친 비밀스럽고 매력적인 뷰 포인트입니다."
           },
           {
@@ -12054,7 +12054,7 @@ const COURSES = [
               11.4011,
               47.2725
             ],
-            "cap": "알브레히트 뒤러 - 인스브루크의 전망 -...(Albrecht Dürer - View of In...)",
+            "cap": "알브레히트 뒤러 - 인스브루크의 전망 - WGA7356(Albrecht Dürer - View of Innsbruck - WGA7356)",
             "desc": "[낭만의 거리 풍경] 마치 한 장의 엽서 속으로 직접 들어온 듯한 그림 같은 풍경을 선사합니다."
           },
           {
@@ -12137,7 +12137,7 @@ const COURSES = [
               11.3836,
               47.2592
             ],
-            "cap": "세인트 제임스 대성당 외관 1(Cathedral of St. James Faca...)",
+            "cap": "세인트 제임스 대성당 외관 1(Cathedral of St. James Facade 1)",
             "desc": "[대성당 인근 풍경] 섬세한 조각상들과 화려한 장식들이 당시의 찬란했던 예술성을 보여줍니다."
           },
           {
@@ -12220,7 +12220,7 @@ const COURSES = [
               11.3828,
               47.2665
             ],
-            "cap": "인스브루크 암 아벤트 폰 데어 인브뤼케(Innsbruck am Abend von der ...)",
+            "cap": "인스브루크 암 아벤트 폰 데어 인브뤼케 (1)(Innsbruck am Abend von der Innbrücke (1))",
             "desc": "[대성당 인근 풍경] 눈부시게 푸른 바다와 눈부신 햇살이 여행의 피로를 씻어내 줍니다."
           }
         ]
@@ -12341,7 +12341,7 @@ const COURSES = [
               16.366,
               48.2004
             ],
-            "cap": "2011-06-14 10-23-56 오스...(2011-06-14 10-23-56 Austria...)",
+            "cap": "2011-06-14 10-23-56 오스트리아 Niederösterreich 피샤멘트 마르크트(2011-06-14 10-23-56 Austria Niederösterreich Fischamend Markt)",
             "desc": "[구시가지 풍경] 예술가들의 영감이 살아 숨 쉬는 낭만적이고 보헤미안적인 거리입니다."
           },
           {
@@ -12350,7 +12350,7 @@ const COURSES = [
               16.3678,
               48.2088
             ],
-            "cap": "20180109 비엔나 국립 오페라 블루...(20180109 Vienna State Opera...)",
+            "cap": "20180109 비엔나 국립 오페라 블루 아워 850 9387(20180109 Vienna State Opera at blue hour 850 9387)",
             "desc": "[도심 광장 풍경] 과거와 현재가 공존하는 빈 특유의 독특한 분위기를 자아냅니다."
           },
           {
@@ -12377,7 +12377,7 @@ const COURSES = [
               16.3688,
               48.2148
             ],
-            "cap": "Alsergrund - AKH, Haup...(Alsergrund  - AKH, Hauptein...)",
+            "cap": "Alsergrund (Wien) - AKH, Haupteingang(Alsergrund (Wien) - AKH, Haupteingang)",
             "desc": "[역사 지구 풍경] 수백 년의 역사와 문화가 거리 구석구석 살아 숨 쉬는 매력적인 명소입니다."
           },
           {
@@ -12460,7 +12460,7 @@ const COURSES = [
               16.3662,
               48.2
             ],
-            "cap": "바리케이드 bei der Universi...(Barricade bei der Universit...)",
+            "cap": "바리케이드 bei der Universität am 26ten Mai 1848 in Wien(Barricade bei der Universität am 26ten Mai 1848 in Wien)",
             "desc": "빈의 거리를 걷다 마주치게 되는 일상적이면서도 이국적인 모습입니다."
           },
           {
@@ -12469,7 +12469,7 @@ const COURSES = [
               16.377,
               48.2174
             ],
-            "cap": "Bundesarchiv Bild 146-...(Bundesarchiv Bild 146-1972-...)",
+            "cap": "Bundesarchiv Bild 146-1972-028-14, Anschluss Österreich(Bundesarchiv Bild 146-1972-028-14, Anschluss Österreich)",
             "desc": "[뷰 포인트 풍경] 수백 년의 역사와 문화가 거리 구석구석 살아 숨 쉬는 매력적인 명소입니다."
           },
           {
@@ -12487,7 +12487,7 @@ const COURSES = [
               16.3801,
               48.2046
             ],
-            "cap": "시티바이크 비엔나, Schönbrunne...(Citybike Vienna, Schönbrunn...)",
+            "cap": "시티바이크 비엔나, Schönbrunner Brücke(Citybike Vienna, Schönbrunner Brücke)",
             "desc": "따스한 햇살 아래 찬란하게 빛나는 빈의 잊지 못할 전경입니다."
           },
           {
@@ -12505,7 +12505,7 @@ const COURSES = [
               16.3722,
               48.2057
             ],
-            "cap": "Donaupark & ​​Donautur...(Donaupark & Donauturm Vienn...)",
+            "cap": "Donaupark & ​​Donauturm 비엔나 2024(Donaupark & Donauturm Vienna 2024)",
             "desc": "[구시가지 풍경] 눈부시게 푸른 바다와 눈부신 햇살이 여행의 피로를 씻어내 줍니다."
           },
           {
@@ -12514,7 +12514,7 @@ const COURSES = [
               16.3813,
               48.2106
             ],
-            "cap": "Donaustadtbrücke rigar...(Donaustadtbrücke rigardate ...)",
+            "cap": "Donaustadtbrücke rigardate de la stacio Donaumarina(Donaustadtbrücke rigardate de la stacio Donaumarina)",
             "desc": "[대성당 인근 풍경] 섬세한 조각상들과 화려한 장식들이 당시의 찬란했던 예술성을 보여줍니다."
           }
         ]
@@ -12798,7 +12798,7 @@ const COURSES = [
               -73.9775,
               40.7483
             ],
-            "cap": "1232-42 딘 스트리트 크라운 하이츠(1232-42 Dean Street Crown H...)",
+            "cap": "1232-42 딘 스트리트 크라운 하이츠(1232-42 Dean Street Crown Heights)",
             "desc": "[뷰 포인트 풍경] 예술가들의 영감이 살아 숨 쉬는 낭만적이고 보헤미안적인 거리입니다."
           },
           {
@@ -12816,7 +12816,7 @@ const COURSES = [
               -73.9832,
               40.752
             ],
-            "cap": "67° Período de Sesione...(67º Período de Sesiones de ...)",
+            "cap": "67° Período de Sesiones de la Asamblea General de Naciones Unidas(8020913157)(자른)(67º Período de Sesiones de la Asamblea General de Naciones Unidas (8020913157) (cropped))",
             "desc": "과거와 현재가 공존하는 뉴욕 특유의 독특한 분위기를 자아냅니다."
           },
           {
@@ -12834,7 +12834,7 @@ const COURSES = [
               -73.9908,
               40.7527
             ],
-            "cap": "SW에서 뉴욕 시와 조지 요새의 전망(A view of Fort George with ...)",
+            "cap": "SW에서 뉴욕 시와 조지 요새의 전망(A view of Fort George with the city of New York, from the SW)",
             "desc": "[구시가지 풍경] 섬세한 조각상들과 화려한 장식들이 당시의 찬란했던 예술성을 보여줍니다."
           }
         ]
@@ -12916,7 +12916,7 @@ const COURSES = [
               -73.9829,
               40.7658
             ],
-            "cap": "라즈베리와 블루베리를 곁들인 구운 치즈케이크(Baked cheesecake with raspb...)",
+            "cap": "라즈베리와 블루베리를 곁들인 구운 치즈케이크(Baked cheesecake with raspberries and blueberries)",
             "desc": "[현지 베이커리 풍경] [치즈케이크(Cheesecake)] 바삭한 식감과 부드러운 속살이 환상적인 조화를 이루는 전통 음식입니다."
           },
           {
@@ -13038,7 +13038,7 @@ const COURSES = [
               -73.9942,
               40.7582
             ],
-            "cap": "1945년 엠파이어 스테이트 빌딩에 폭격...(Bomber Crashed into Empire ...)",
+            "cap": "1945년 엠파이어 스테이트 빌딩에 폭격기가 충돌했습니다.(Bomber Crashed into Empire State Building 1945)",
             "desc": "과거와 현재가 공존하는 뉴욕 특유의 독특한 분위기를 자아냅니다."
           },
           {
@@ -13065,7 +13065,7 @@ const COURSES = [
               -73.9906,
               40.7548
             ],
-            "cap": "Sentinel-2의 뉴욕시 코어(Core of New York City by Se...)",
+            "cap": "Sentinel-2의 뉴욕시 코어(Core of New York City by Sentinel-2)",
             "desc": "[대성당 인근 풍경] 아름다운 자연과 인공적인 건축물이 환상적인 조화를 이루는 곳입니다."
           },
           {
@@ -13101,7 +13101,7 @@ const COURSES = [
               -73.988,
               40.7643
             ],
-            "cap": "뉴욕 공립 도서관 본관 2의 외관(Facade of the New York Publ...)",
+            "cap": "뉴욕 공립 도서관 본관 2의 외관(Facade of the New York Public Library Main Branch 2)",
             "desc": "[대성당 인근 풍경] 전 세계 여행객들의 발길이 끊이지 않는 뉴욕의 상징적인 장소입니다."
           },
           {
@@ -13182,7 +13182,7 @@ const COURSES = [
               -73.9954,
               40.7497
             ],
-            "cap": "30번가 10시 Av td 05 - 하이...(30th St 10h Av td  05 - Hig...)",
+            "cap": "30th St 10h Av td (2018-08-16) 05 - 하이 라인 스퍼(30th St 10h Av td (2018-08-16) 05 - High Line Spur)",
             "desc": "수백 년의 역사와 문화가 거리 구석구석 살아 숨 쉬는 매력적인 명소입니다."
           },
           {
@@ -13191,7 +13191,7 @@ const COURSES = [
               -73.9765,
               40.7645
             ],
-            "cap": "게이밍 월스트리트 BTS Prodigiu...(Gaming-Wall-Street BTS Prod...)",
+            "cap": "게이밍 월스트리트 BTS Prodigium-266(Gaming-Wall-Street BTS Prodigium-266)",
             "desc": "[대성당 인근 풍경] 과거와 현재가 공존하는 뉴욕 특유의 독특한 분위기를 자아냅니다."
           },
           {
@@ -13268,7 +13268,7 @@ const COURSES = [
               -73.9852,
               40.695
             ],
-            "cap": "1883년 프랭크 레슬리의 그림 신문 브...(1883 Frank Leslie's Illustr...)",
+            "cap": "1883년 프랭크 레슬리의 그림 신문 브루클린 브리지 뉴욕시(1883 Frank Leslie's Illustrated Newspaper Brooklyn Bridge New York City)",
             "desc": "[지구 풍경] 마치 동화 속 한 장면에 들어온 듯한 낭만적인 분위기를 선사합니다."
           },
           {
@@ -13286,7 +13286,7 @@ const COURSES = [
               -73.9846,
               40.7063
             ],
-            "cap": "커리어와 아이브스 브루클린 브릿지2(Currier and Ives Brooklyn B...)",
+            "cap": "커리어와 아이브스 브루클린 브릿지2(Currier and Ives Brooklyn Bridge2)",
             "desc": "[뷰 포인트 풍경] 맑고 투명한 물빛이 아름다운 자연 경관과 어우러져 장관을 연출합니다."
           },
           {
@@ -13295,7 +13295,7 @@ const COURSES = [
               -73.9858,
               40.7125
             ],
-            "cap": "코니아일랜드 해변과 놀이공원(Coney Island beach and amus...)",
+            "cap": "코니아일랜드 해변과 놀이공원(2016년 6월)(Coney Island beach and amusement parks (June 2016))",
             "desc": "아름다운 자연과 인공적인 건축물이 환상적인 조화를 이루는 곳입니다."
           },
           {
@@ -13313,7 +13313,7 @@ const COURSES = [
               -73.9788,
               40.7056
             ],
-            "cap": "2024-05-22 12 33 13 Vi...(2024-05-22 12 33 13 View ea...)",
+            "cap": "2024-05-22 12 33 13 뉴욕주 뉴욕 브루클린의 Sackett Street 고가도로에서 278번 고속도로(브루클린-퀸즈 고속도로)를 따라 동쪽을 봅니다.(2024-05-22 12 33 13 View east along Interstate 278 (Brooklyn-Queens Expressway) from the overpass for Sackett Street in Brooklyn, New York City, New York)",
             "desc": "[도심 광장 풍경] 높은 곳에서 내려다보이는 브루클린의 파노라마 뷰가 가슴을 뻥 뚫어줍니다."
           },
           {
@@ -13331,7 +13331,7 @@ const COURSES = [
               -73.9922,
               40.7081
             ],
-            "cap": "대서양 터미널 LIRR 및 지하철 입구(Atlantic Terminal LIRR and ...)",
+            "cap": "대서양 터미널 LIRR 및 지하철 입구(Atlantic Terminal LIRR and Subway entrances)",
             "desc": "[역사 지구 풍경] 높은 곳에서 내려다보이는 브루클린의 파노라마 뷰가 가슴을 뻥 뚫어줍니다."
           }
         ]
@@ -13408,7 +13408,7 @@ const COURSES = [
               -74.0158,
               40.6948
             ],
-            "cap": "1905 거미줄, 브루클린 브리지, 뉴욕시 A(1905 The Spider's Web, Broo...)",
+            "cap": "1905 거미줄, 브루클린 브리지, 뉴욕시 A(1905 The Spider's Web, Brooklyn Bridge, NY City A)",
             "desc": "수백 년의 역사와 문화가 거리 구석구석 살아 숨 쉬는 매력적인 명소입니다."
           }
         ]
@@ -13489,7 +13489,7 @@ const COURSES = [
               -73.9947,
               40.7556
             ],
-            "cap": "AmCyc 케이슨 - 이스트 리버 브리지...(AmCyc Caisson - Caisson of ...)",
+            "cap": "AmCyc 케이슨 - 이스트 리버 브리지 케이슨(AmCyc Caisson - Caisson of East River Bridge)",
             "desc": "섬세한 조각상들과 화려한 장식들이 당시의 찬란했던 예술성을 보여줍니다."
           }
         ]
