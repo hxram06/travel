@@ -429,21 +429,42 @@
   });
 
   // ---------- 앱 초기화 (공유 모드 확인) ----------
+  const SHARE_TOKENS = {
+    '1': 'a8f4k9',
+    '2': 'x3m7v2',
+    '3': 'p9q1w5',
+    '4': 'r6b2n8',
+    '5': 'h4t7y3',
+    '6': 'd2z9f5',
+    '7': 'e8c4a1',
+    '8': 'v5j2m6',
+    '9': 'k3n8b7',
+    '10': 'y1h5t4'
+  };
+
   function initApp() {
     const params = new URLSearchParams(window.location.search);
-    const shareId = params.get('share');
 
-    if (shareId) {
-      const sharedCourse = COURSES.find(c => String(c.id) === shareId);
-      if (sharedCourse) {
-        isSharedMode = true;
-        btnBack.style.display = 'none'; // 목록으로 버튼 숨김
-        openCourse(sharedCourse);
-        return;
+    if (params.has('share')) {
+      const shareToken = params.get('share');
+      // 토큰으로 코스 ID 찾기
+      const courseId = Object.keys(SHARE_TOKENS).find(key => SHARE_TOKENS[key] === shareToken);
+      
+      if (courseId) {
+        const sharedCourse = COURSES.find(c => String(c.id) === String(courseId));
+        if (sharedCourse) {
+          isSharedMode = true;
+          btnBack.style.display = 'none'; // 목록으로 버튼 숨김
+          openCourse(sharedCourse);
+          return;
+        }
       }
+      // 공유 파라미터가 있지만 유효하지 않은 경우 (임의 접근 차단)
+      document.body.innerHTML = '<h2 style="text-align:center; margin-top:20vh; color:#666;">유효하지 않은 공유 링크입니다.</h2>';
+      return;
     }
     
-    // 공유 모드가 아니거나 유효하지 않은 ID면 랜딩 렌더링
+    // 공유 파라미터가 없는 기본 접속(본인)일 때만 랜딩 렌더링
     renderLanding();
   }
 
