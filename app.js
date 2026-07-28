@@ -568,7 +568,7 @@
   });
 
   // Also close on map click if photo view is open
-  window.map.on('click', () => {
+  $('map').addEventListener('click', () => {
     if (!panelPhotoView.classList.contains('hidden')) {
       $('btn-close-photo').click();
     }
