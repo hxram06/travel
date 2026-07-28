@@ -244,7 +244,7 @@ const TravelMap = (() => {
         closeOnClick: true,
       }).setHTML(
         '<div class="photo-popup">' +
-        '<div class="photo-popup-media"><img src="' + meta.url + '" alt="" /></div>' +
+        '<div class="photo-popup-media"><img src="' + meta.url + '" alt="" onload="if(this.naturalWidth/this.naturalHeight > 1.25) this.closest(\'.photo-popup\').classList.add(\'wide-layout\')" /></div>' +
         '<div class="photo-popup-body">' +
         '<div class="photo-popup-cap">' + p.cap + '</div>' +
         (p.desc ? '<div class="photo-popup-desc">' + p.desc + '</div>' : '') +

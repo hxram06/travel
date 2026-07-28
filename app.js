@@ -40,8 +40,7 @@
 
       const bg = document.createElement('div');
       bg.className = 'course-card-bg';
-      bg.style.background =
-        `linear-gradient(135deg, ${course.color}44, ${course.color}18), var(--bg-soft)`;
+      bg.style.background = 'var(--bg-soft)';
 
       const cover = PHOTOS[course.coverSpot];
       if (cover) {
@@ -60,7 +59,7 @@
       const content = document.createElement('div');
       content.className = 'course-card-content';
       content.innerHTML = `
-        <span class="course-num" style="background:${course.color}">코스 ${course.id}</span>
+        <span class="course-num">코스 ${course.id}</span>
         <h3>${course.nameKo}</h3>
         <div class="course-sub">${course.subtitle}</div>
         <div class="course-meta">${course.period} · ${course.nights}</div>
@@ -157,7 +156,7 @@
     $('panel-course-name').textContent = `코스 ${course.id} · ${course.nameKo}`;
     $('panel-day-counter').textContent = `Day ${day.day} / ${total}`;
     $('progress-fill').style.width = `${((state.dayIndex + 1) / total) * 100}%`;
-    $('progress-fill').style.background = course.color;
+
 
     // 배지 — subStep 종류에 따라 다르게 표시
     let badgeHtml = '';

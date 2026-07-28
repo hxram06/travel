@@ -347,6 +347,25 @@ html, body {
   padding-right: 4px;
 }
 
+/* Wide layout for horizontal photos */
+.photo-popup.wide-layout {
+  flex-direction: column;
+  gap: 12px;
+}
+
+.photo-popup.wide-layout .photo-popup-media {
+  flex: 0 0 auto;
+  max-width: 100%;
+  width: 100%;
+}
+
+.photo-popup.wide-layout .photo-popup-body {
+  flex: 0 0 auto;
+  max-height: none;
+  overflow: visible;
+}
+
+
 .photo-popup-body::-webkit-scrollbar { width: 6px; }
 .photo-popup-body::-webkit-scrollbar-thumb {
   background: var(--border-strong); border-radius: 3px;
