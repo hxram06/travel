@@ -400,6 +400,9 @@ const TravelMap = (() => {
       return;
     }
     if (isMobile) {
+      if (window.collapseMobilePanelForPhoto) {
+        window.collapseMobilePanelForPhoto();
+      }
       setMobilePhotoPopupState(true);
       const mobilePopup = createPhotoPopup(marker._photoPopupHtml, marker._photoCoords, 'top');
       marker._photoPopup = mobilePopup;

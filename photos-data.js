@@ -1325,6 +1325,54 @@ const PHOTOS = {
     "source": "https://commons.wikimedia.org/wiki/File:Innsbruck_Panorama_Nordkette_3.jpg",
     "credit": "Wikimedia Commons"
   },
+  "qa_c9_d4_arrival_0": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Hauptbahnhof%20M%C3%BCnchen%202023-09-23%2001.jpg?width=1280",
+    "title": "Hauptbahnhof München 2023-09-23 01.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Hauptbahnhof_M%C3%BCnchen_2023-09-23_01.jpg",
+    "credit": "GPSLeo · CC BY-SA 4.0"
+  },
+  "qa_c9_d4_arrival_1": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Munich_-_marienplatz.JPG/1280px-Munich_-_marienplatz.JPG",
+    "title": "Munich - marienplatz.JPG",
+    "source": "https://commons.wikimedia.org/wiki/File:Munich_-_marienplatz.JPG",
+    "credit": "Public domain"
+  },
+  "qa_c9_d5_beer_0": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/MUC_Haxenbraterei_2012-09.JPG?width=1280",
+    "title": "MUC Haxenbraterei 2012-09.JPG",
+    "source": "https://commons.wikimedia.org/wiki/File:MUC_Haxenbraterei_2012-09.JPG",
+    "credit": "Bbb · CC BY-SA 3.0"
+  },
+  "qa_c9_d5_beer_1": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/GER_%E2%80%94_BY_%E2%80%93_Oberbayern_%E2%80%94_M%C3%BCnchen_%E2%80%94_Stadtbezirk_1_%E2%80%94_Altstadt_%E2%80%94_Sparkassenstr._6_%E2%80%94_EG_%28Haxnbauer_%C2%B7_K%C3%BCche%29_%E2%80%94_2005-05-07_%E2%80%94_Mattes.jpg?width=1280",
+    "title": "Haxnbauer Küche 2005-05-07.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:GER_%E2%80%94_BY_%E2%80%93_Oberbayern_%E2%80%94_M%C3%BCnchen_%E2%80%94_Stadtbezirk_1_%E2%80%94_Altstadt_%E2%80%94_Sparkassenstr._6_%E2%80%94_EG_%28Haxnbauer_%C2%B7_K%C3%BCche%29_%E2%80%94_2005-05-07_%E2%80%94_Mattes.jpg",
+    "credit": "Mattes · Public domain"
+  },
+  "qa_c9_d6_zugspitze_0": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Zugspitze_panorama2.jpg/1280px-Zugspitze_panorama2.jpg",
+    "title": "Zugspitze panorama2.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Zugspitze_panorama2.jpg",
+    "credit": "Jorge1767 · Public domain"
+  },
+  "qa_c9_d6_zugspitze_1": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Lermoos.von.Zugspitze.P1045261.jpg?width=1280",
+    "title": "Lermoos von Zugspitze P1045261.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Lermoos.von.Zugspitze.P1045261.jpg",
+    "credit": "Wikimedia Commons"
+  },
+  "qa_c9_d8_nordkette_0": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/3/32/Nordkette.jpg",
+    "title": "Nordkette.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Nordkette.jpg",
+    "credit": "Blommetjie1 · CC BY-SA 4.0"
+  },
+  "qa_c9_d8_nordkette_1": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Cable_car_at_Hafelekar_station%2C_Innsbruck.jpg?width=1280",
+    "title": "Cable car at Hafelekar station, Innsbruck.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Cable_car_at_Hafelekar_station%2C_Innsbruck.jpg",
+    "credit": "Wilfredor · CC0"
+  },
   "qa_c9_d1_entry_0": {
     "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/AirportFrankfurt_terminal1.jpg/1280px-AirportFrankfurt_terminal1.jpg",
     "title": "AirportFrankfurt terminal1.jpg",
