@@ -308,17 +308,45 @@ const TravelMap = (() => {
     }    const h = map.getContainer().getBoundingClientRect().height;
     // 지도가 낮으면(모바일) 팝업이 쓸 수 있는 공간이 적으니 마커를 더 아래로 보낸다
     const targetRatio = h < 520 ? 0.94 : 0.8;
-    // easeTo의 offset은 '지정한 좌표를 화면 중앙에서 얼마나 밀어놓을지'를 뜻한다
+        // easeTo의 offset은 '지정한 좌표를 화면 중앙에서 얼마나 밀어놓을지'를 뜻한다
     const offsetY = (targetRatio - 0.5) * h;
+    const isMobile = window.innerWidth <= 767;
+    const panel = document.getElementById('panel');
+    let offsetX = 0;
+    if (!isMobile && panel && !panel.classList.contains('closed')) {
+      offsetX = -(panel.getBoundingClientRect().width / 2);
+    }
 
     map.easeTo({
       center: marker.getLngLat(),
-      offset: [0, offsetY],
+      offset: [offsetX, offsetY],
       duration: 450,
     });
   }
 
   // ---------- 유틸 ----------
+  function getDynamicPadding(basePadding) {
+    const isMobile = window.innerWidth <= 767;
+    const panel = document.getElementById('panel');
+    let pWidth = 0;
+    let pHeight = 0;
+    // 패널이 화면에 존재하고 숨김 상태가 아닐 때 크기 계산
+    if (panel && !panel.classList.contains('closed') && panel.style.transform !== 'translateX(100%)' && panel.style.transform !== 'translateY(100%)') {
+      const rect = panel.getBoundingClientRect();
+      pWidth = rect.width;
+      pHeight = rect.height;
+    }
+    
+    // 설명창이 화면에 보일 경우 마커/경로가 가려지지 않도록 패딩 추가
+    if (isMobile) {
+      // 바텀시트
+      return { top: basePadding, bottom: Math.max(basePadding, pHeight + 20), left: basePadding, right: basePadding };
+    } else {
+      // 우측 패널
+      return { top: basePadding, bottom: basePadding, left: basePadding, right: Math.max(basePadding, pWidth + 20) };
+    }
+  }
+
   function wait(ms) { return new Promise((r) => setTimeout(r, ms)); }
 
   // 백그라운드 탭에서는 rAF가 멈춰 moveend가 오지 않는다.
@@ -344,7 +372,7 @@ const TravelMap = (() => {
       (acc, c) => acc.extend(c),
       new mapboxgl.LngLatBounds(path[0], path[0])
     );
-    map.fitBounds(b, { padding: padding || 90, duration: 1100 });
+    map.fitBounds(b, { padding: getDynamicPadding(padding || 90), duration: 1100 });
     await onceMoveEnd(1100);
   }
 
@@ -398,16 +426,16 @@ const TravelMap = (() => {
     const path = buildPath(from, to, day, mode);
 
     if (mode === 'plane') {
-      map.easeTo({ zoom: o.outZoom || 2.2, duration: 1100 });
+      map.easeTo({ zoom: o.outZoom || 2.2, duration: 1100, padding: getDynamicPadding(0) });
       await onceMoveEnd(1100);
       await fitPath(path, 120);
       await travel(path, mode, o.duration || 3200);
-      map.easeTo({ center: to, zoom: o.inZoom || 9.5, duration: 1500 });
+      map.easeTo({ center: to, zoom: o.inZoom || 9.5, duration: 1500, padding: getDynamicPadding(0) });
       await onceMoveEnd(1500);
     } else {
       await fitPath(path, 100);
       await travel(path, mode, o.duration || 2600);
-      map.easeTo({ center: to, zoom: o.inZoom || 10.5, duration: 1200 });
+      map.easeTo({ center: to, zoom: o.inZoom || 10.5, duration: 1200, padding: getDynamicPadding(0) });
       await onceMoveEnd(1200);
     }
 
@@ -453,11 +481,11 @@ const TravelMap = (() => {
           setActive(null);
           hideVehicle();
           placeCityMarker(vFrom);
-          map.easeTo({ center: day.coords, zoom: 13.0, duration: 700 });
+          map.easeTo({ center: day.coords, zoom: 13.0, duration: 700, padding: getDynamicPadding(0) });
           await onceMoveEnd(700);
         } else {
           // 이동 없이 시점만 정리
-          map.easeTo({ center: day.coords, zoom: 11.5, duration: 900 });
+          map.easeTo({ center: day.coords, zoom: 11.5, duration: 900, padding: getDynamicPadding(0) });
           await onceMoveEnd(900);
           placeCityMarker(day.coords);
         }
@@ -465,7 +493,7 @@ const TravelMap = (() => {
         await moveLeg(from, day.coords, day, mode, {});
       } else {
         // 역방향은 애니메이션 없이 빠르게 되돌린다
-        map.easeTo({ center: day.coords, zoom: 10.5, duration: 900 });
+        map.easeTo({ center: day.coords, zoom: 10.5, duration: 900, padding: getDynamicPadding(0) });
         await onceMoveEnd(900);
         placeCityMarker(day.coords);
       }
@@ -485,7 +513,7 @@ const TravelMap = (() => {
     try {
       travelledLegs = [];
       redrawTrail();
-      map.jumpTo({ center: START_LOCATION.coords, zoom: 3.2 });
+      map.jumpTo({ center: START_LOCATION.coords, zoom: 3.2 , padding: getDynamicPadding(0) });
       placeCityMarker(START_LOCATION.coords);
       await wait(500);
       const dest = altDestCoords || firstDay.coords;
