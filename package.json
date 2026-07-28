@@ -1,9 +1,0 @@
-{
-  "dependencies": {
-    "duckduckgo-images-api": "^1.0.5",
-    "g-i-s": "^2.1.7",
-    "googlethis": "^1.8.0",
-    "jsdom": "^30.0.0",
-    "puppeteer": "^25.4.0"
-  }
-}
