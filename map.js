@@ -584,9 +584,12 @@ const TravelMap = (() => {
       let from = prevDay ? prevDay.coords : day.coords;
 
       const same = from[0] === day.coords[0] && from[1] === day.coords[1];
-      const mode = (day.transport && day.transport.mode) || 'train';
+      const transitDay = prevDay && Array.isArray(prevDay.nextVia)
+        ? { ...day, via: prevDay.nextVia, transport: prevDay.transport || day.transport }
+        : day;
+      const mode = (transitDay.transport && transitDay.transport.mode) || 'train';
 
-      if (same || day.moveType === 'stay') {
+      if (same) {
         // 같은 도시에 머무는 날
         if (day.via && day.via.length >= 2) {
           // via 경유지가 있으면 숙소→관광지 일일 동선을 지도 위에 그린다
@@ -610,7 +613,9 @@ const TravelMap = (() => {
           placeCityMarker(day.coords);
         }
       } else if (goingForward) {
-        await moveLeg(from, day.coords, day, mode, {});
+        // 목적지가 다른 도시라면 moveType이 stay여도 먼저 도시 간 이동을 재생한다.
+        // 그렇지 않으면 다음 도시의 내부 동선만 그린 뒤 목적지 중심으로 순간 이동한다.
+        await moveLeg(from, day.coords, transitDay, mode, {});
       } else {
         // 역방향은 애니메이션 없이 빠르게 되돌린다
         map.easeTo({ center: day.coords, zoom: 10.5, duration: 900, padding: getDynamicPadding(0) });
