@@ -757,7 +757,7 @@ html, body {
 
   .panel-scroll {
     padding: 18px 20px 16px;
-    padding-bottom: env(safe-area-inset-bottom, 16px);
+    padding-bottom: calc(92px + env(safe-area-inset-bottom, 16px));
   }
   .panel-course-name {
     font-size: 0.72rem;
@@ -821,6 +821,10 @@ html, body {
   .panel-nav {
     padding: 10px 16px calc(12px + env(safe-area-inset-bottom, 0px));
     gap: 10px;
+    position: relative;
+    z-index: 130;
+    box-shadow: 0 -6px 18px rgba(15, 23, 42, 0.08);
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   }
   .nav-btn,
   .btn-home {
@@ -843,8 +847,7 @@ html, body {
   .panel.panel-collapsed .panel-schedule,
   .panel.panel-collapsed .panel-tip,
   .panel.panel-collapsed .panel-return-note,
-  .panel.panel-collapsed .panel-visited,
-  .panel.panel-collapsed .panel-nav {
+  .panel.panel-collapsed .panel-visited {
     display: none;
   }
 
@@ -871,6 +874,18 @@ html, body {
 
 .panel.is-dragging {
   transition: none !important;
+}
+
+.panel.is-dragging .panel-nav {
+  transition: none !important;
+}
+
+.panel.fast-collapse {
+  transition-duration: 0.16s;
+}
+
+.panel.fast-collapse .panel-nav {
+  transition-duration: 0.16s;
 }
 
 .panel-drag-handle {

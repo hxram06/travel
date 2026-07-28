@@ -552,6 +552,7 @@
   const panelDragHandle = $('panel-drag-handle');
   const panelContentView = $('panel-content-view');
   const panelPhotoView = $('panel-photo-view');
+  const panelNav = document.querySelector('.panel-nav');
 
   // Mobile photo view swapper
   window.showMobilePhotoView = function(p, meta) {
@@ -578,12 +579,19 @@
   $('btn-close-photo').addEventListener('click', () => {
     panelPhotoView.classList.add('hidden');
     panelContentView.classList.remove('hidden');
+    if (window.innerWidth <= 767) {
+      expandMobilePanelAfterPhoto();
+    }
   });
 
   // Also close on map click if photo view is open
   $('map').addEventListener('click', () => {
     if (!panelPhotoView.classList.contains('hidden')) {
       $('btn-close-photo').click();
+    }
+    if (window.innerWidth <= 767 && window.__mobilePhotoPopupOpen) {
+      window.__mobilePhotoPopupOpen = false;
+      expandMobilePanelAfterPhoto();
     }
   });
 
@@ -592,8 +600,13 @@
     return parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--mobile-panel-peek')) || 30;
   }
 
+  function getMobileMinVisiblePanelHeight() {
+    const navHeight = panelNav ? panelNav.getBoundingClientRect().height : 0;
+    return navHeight + getMobilePanelPeek();
+  }
+
   function getMobileMaxPanelOffset() {
-    return Math.max(0, panel.getBoundingClientRect().height - getMobilePanelPeek());
+    return Math.max(0, panel.getBoundingClientRect().height - getMobileMinVisiblePanelHeight());
   }
 
   function getVisibleMobilePanelHeight() {
@@ -611,6 +624,7 @@
       mapView.classList.toggle('panel-collapsed', isPanelCollapsed);
       mapView.style.setProperty('--mobile-current-panel-height', `${visibleHeight}px`);
       panel.style.transform = `translateY(${panelOffset}px)`;
+      if (panelNav) panelNav.style.transform = `translateY(${-panelOffset}px)`;
       if (isPanelCollapsed) {
         panelContentView.scrollTop = 0;
         panelPhotoView.scrollTop = 0;
@@ -624,6 +638,7 @@
       panel.classList.toggle('panel-collapsed', isPanelCollapsed);
       mapView.classList.toggle('panel-collapsed', isPanelCollapsed);
       mapView.style.removeProperty('--mobile-current-panel-height');
+      if (panelNav) panelNav.style.transform = '';
       panel.style.transform = isPanelCollapsed ? 'translateX(calc(100% - 20px))' : 'translateX(0)';
       // Sync map padding
       const rightPad = isPanelCollapsed ? 20 : panel.getBoundingClientRect().width;
@@ -707,6 +722,55 @@
       e.target.releasePointerCapture(e.pointerId);
     }
   });
+
+  function setMobilePanelOffset(offset, fast) {
+    if (window.innerWidth > 767) return;
+    panelOffset = offset;
+    if (fast) panel.classList.add('fast-collapse');
+    updatePanelTransform();
+    if (fast) {
+      window.setTimeout(() => panel.classList.remove('fast-collapse'), 180);
+    }
+  }
+
+  function collapseMobilePanelForPhoto() {
+    if (window.innerWidth > 767) return;
+    panelPhotoView.classList.add('hidden');
+    panelContentView.classList.remove('hidden');
+    setMobilePanelOffset(getMobileMaxPanelOffset(), true);
+  }
+
+  function makeRoomForMobilePhotoPopup(popupEl) {
+    if (window.innerWidth > 767 || !popupEl) return;
+    panelPhotoView.classList.add('hidden');
+    panelContentView.classList.remove('hidden');
+
+    const popupRect = popupEl.getBoundingClientRect();
+    const gap = 12;
+    const currentVisibleHeight = getVisibleMobilePanelHeight();
+    const currentPanelTop = window.innerHeight - currentVisibleHeight;
+    if (popupRect.bottom <= currentPanelTop - gap) return;
+
+    const minVisibleHeight = getMobileMinVisiblePanelHeight();
+    const desiredPanelTop = Math.min(window.innerHeight - minVisibleHeight, popupRect.bottom + gap);
+    const desiredVisibleHeight = Math.max(minVisibleHeight, window.innerHeight - desiredPanelTop);
+    if (desiredVisibleHeight < currentVisibleHeight - 1) {
+      setMobilePanelOffset(panel.getBoundingClientRect().height - desiredVisibleHeight, true);
+    }
+  }
+
+  function expandMobilePanelAfterPhoto() {
+    if (window.innerWidth > 767) return;
+    setMobilePanelOffset(0, true);
+  }
+
+  window.collapseMobilePanelForPhoto = collapseMobilePanelForPhoto;
+  window.makeRoomForMobilePhotoPopup = makeRoomForMobilePhotoPopup;
+  window.expandMobilePanelAfterPhoto = expandMobilePanelAfterPhoto;
+  window.getMobilePanelMinVisibleHeight = () =>
+    window.innerWidth <= 767 ? getMobileMinVisiblePanelHeight() : 0;
+  window.getMobilePanelVisibleHeight = () =>
+    window.innerWidth <= 767 ? getVisibleMobilePanelHeight() : 0;
 
   // Handle window resize for proper map padding
   window.addEventListener('resize', () => {

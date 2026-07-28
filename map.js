@@ -251,6 +251,81 @@ const TravelMap = (() => {
     if (vehicleMarker) vehicleMarker.getElement().style.display = 'none';
   }
 
+  function buildPhotoPopupHtml(p, meta) {
+    return (
+      '<div class="photo-popup">' +
+      '<div class="photo-popup-media"><img src="' + meta.url + '" alt="" onload="if(this.naturalWidth/this.naturalHeight > 1.25) this.closest(\'.photo-popup\').classList.add(\'wide-layout\')" /></div>' +
+      '<div class="photo-popup-body">' +
+      '<div class="photo-popup-cap">' + p.cap + '</div>' +
+      (p.desc ? '<div class="photo-popup-desc">' + p.desc + '</div>' : '') +
+      '<a class="photo-popup-credit" href="' + meta.source + '" target="_blank" rel="noopener">' +
+      '📷 ' + meta.credit + '</a>' +
+      '</div>' +
+      '</div>'
+    );
+  }
+
+  function createPhotoPopup(html, coords, anchor) {
+    const options = {
+      offset: 22,
+      maxWidth: '470px',
+      className: 'photo-popup-wrap',
+      focusAfterOpen: false,
+      closeOnClick: true,
+      anchor,
+    };
+    return new mapboxgl.Popup(options).setHTML(html).setLngLat(coords);
+  }
+
+  function getPopupElement(popup) {
+    return popup && typeof popup.getElement === 'function'
+      ? popup.getElement()
+      : document.querySelector('.photo-popup-wrap');
+  }
+
+  function attachMobilePhotoCloseHandler(popup) {
+    window.setTimeout(() => {
+      const popupEl = getPopupElement(popup);
+      const close = popupEl && popupEl.querySelector('.mapboxgl-popup-close-button');
+      if (close) {
+        close.addEventListener('click', () => {
+          window.__mobilePhotoPopupOpen = false;
+          if (window.expandMobilePanelAfterPhoto) window.expandMobilePanelAfterPhoto();
+        }, { once: true });
+      }
+    }, 0);
+  }
+
+  function mobilePopupHasRoomBelow(popupEl) {
+    if (!popupEl) return true;
+    const minPanelHeight = window.getMobilePanelMinVisibleHeight
+      ? window.getMobilePanelMinVisibleHeight()
+      : 90;
+    const bottomLimit = window.innerHeight - minPanelHeight - 12;
+    return popupEl.getBoundingClientRect().bottom <= bottomLimit;
+  }
+
+  function settleMobilePhotoPopup(marker, popup) {
+    window.requestAnimationFrame(() => {
+      let activePopup = popup;
+      let popupEl = getPopupElement(activePopup);
+
+      // 모바일은 먼저 마커 아래쪽(anchor: top)을 시도한다.
+      // 패널을 최대로 내려도 공간이 부족할 때만 마커 위쪽으로 돌린다.
+      if (!mobilePopupHasRoomBelow(popupEl)) {
+        activePopup.remove();
+        activePopup = createPhotoPopup(marker._photoPopupHtml, marker._photoCoords, 'bottom');
+        marker._photoPopup = activePopup;
+        activePopup.addTo(map);
+        popupEl = getPopupElement(activePopup);
+      } else if (window.makeRoomForMobilePhotoPopup) {
+        window.makeRoomForMobilePhotoPopup(popupEl);
+      }
+
+      attachMobilePhotoCloseHandler(activePopup);
+    });
+  }
+
   // 그날의 사진들을 지도 위 마커로 표시 (클릭하면 팝업)
   function showPhotos(day) {
     clearPhotos();
@@ -264,40 +339,19 @@ const TravelMap = (() => {
       el.style.backgroundImage = 'url("' + meta.url + '")';
       el.title = p.cap;
 
-      // 팝업 높이를 미리 확정해야 Mapbox가 위/아래 방향을 제대로 고른다.
-      // 이미지에 aspect-ratio를 주면 로딩 전에도 레이아웃 높이가 잡힌다.
-      // 사진은 왼쪽, 설명은 오른쪽에 나란히 놓는다 (좁은 화면에서는 CSS가 세로로 쌓음)
-      const popup = new mapboxgl.Popup({
-        offset: 22,
-        maxWidth: '470px',
-        className: 'photo-popup-wrap',
-        focusAfterOpen: false,
-        anchor: 'bottom',   // 항상 마커 위쪽으로 펼친다 (위치는 openPhotoPopup이 확보)
-        closeOnClick: true,
-      }).setHTML(
-        '<div class="photo-popup">' +
-        '<div class="photo-popup-media"><img src="' + meta.url + '" alt="" onload="if(this.naturalWidth/this.naturalHeight > 1.25) this.closest(\'.photo-popup\').classList.add(\'wide-layout\')" /></div>' +
-        '<div class="photo-popup-body">' +
-        '<div class="photo-popup-cap">' + p.cap + '</div>' +
-        (p.desc ? '<div class="photo-popup-desc">' + p.desc + '</div>' : '') +
-        '<a class="photo-popup-credit" href="' + meta.source + '" target="_blank" rel="noopener">' +
-        '📷 ' + meta.credit + '</a>' +
-        '</div>' +
-        '</div>'
-      );
+      const popupHtml = buildPhotoPopupHtml(p, meta);
+      const popup = createPhotoPopup(popupHtml, p.at, 'bottom');
 
       // 마커와 별개로 팝업에도 좌표를 지정해야 한다.
       // (marker.setPopup을 쓰지 않으므로 Mapbox가 대신 넣어주지 않는다)
-      popup.setLngLat(p.at);
 
       const marker = new mapboxgl.Marker({ element: el, anchor: 'bottom' })
         .setLngLat(p.at).addTo(map);
       marker._photoPopup = popup;
+      marker._photoPopupHtml = popupHtml;
+      marker._photoCoords = p.at;
       marker._photoIndex = validIndex++;
 
-      // 팝업은 마커 위쪽으로 펼쳐지므로, 열기 전에 마커를 화면 아래쪽으로 옮겨
-      // 위쪽 공간을 확보한다. 열고 나서 지도를 미는 방식은 통하지 않는다 —
-      // 팝업이 지도 좌표에 붙어 있어서 지도를 밀면 팝업도 같이 움직이기 때문이다.
       el.addEventListener('click', (ev) => {
         ev.stopPropagation();
         openPhotoPopup(marker, popup);
@@ -315,22 +369,40 @@ const TravelMap = (() => {
   /**
    * 사진 팝업을 연다.
    *
-   * 팝업은 마커 위쪽으로 펼쳐진다(anchor: 'bottom'). 따라서 마커가 화면 위쪽에
-   * 있으면 팝업이 지도 밖으로 잘린다. 이를 막기 위해 팝업을 열기 전에
-   * 마커를 화면 아래쪽(높이의 약 78% 지점)으로 이동시켜 위쪽 공간을 확보한다.
-   *
-   * 열고 나서 지도를 밀어 넣는 방식은 쓸 수 없다 — 팝업이 지도 좌표에 붙어
-   * 있어서 지도를 밀면 팝업도 같은 만큼 따라 움직이기 때문이다.
+   * 데스크톱은 기존처럼 마커를 보기 좋은 위치로 옮긴다.
+   * 모바일은 지도 중심을 유지하고, 먼저 마커 아래쪽 팝업을 시도한 뒤
+   * 공간이 부족할 때만 위쪽 팝업으로 돌린다.
    */
   function openPhotoPopup(marker, popup) {
+    const isMobile = window.innerWidth <= 767;
+    popup = marker._photoPopup || popup;
     // 이미 열려있는 다른 팝업 닫기
     photoMarkers.forEach((m) => {
       if (m !== marker && m._photoPopup && m._photoPopup.isOpen()) m._photoPopup.remove();
     });
     if (popup.isOpen()) {
       popup.remove();
+      if (isMobile && window.expandMobilePanelAfterPhoto) {
+        window.__mobilePhotoPopupOpen = false;
+        window.expandMobilePanelAfterPhoto();
+      }
       return;
     }
+    if (isMobile) {
+      window.__mobilePhotoPopupOpen = true;
+      const mobilePopup = createPhotoPopup(marker._photoPopupHtml, marker._photoCoords, 'top');
+      marker._photoPopup = mobilePopup;
+      mobilePopup.addTo(map);
+
+      if (typeof marker._photoIndex === 'number') {
+        const el = document.getElementById(`photo-list-item-${marker._photoIndex}`);
+        if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+
+      settleMobilePhotoPopup(marker, mobilePopup);
+      return;
+    }
+
     popup.addTo(map);
 
     // 하단 패널 리스트로 자동 스크롤 연동
@@ -342,7 +414,6 @@ const TravelMap = (() => {
     const targetRatio = h < 520 ? 0.94 : 0.8;
         // easeTo의 offset은 '지정한 좌표를 화면 중앙에서 얼마나 밀어놓을지'를 뜻한다
     const offsetY = (targetRatio - 0.5) * h;
-    const isMobile = window.innerWidth <= 767;
     const panel = document.getElementById('panel');
     let offsetX = 0;
     if (!isMobile && panel && !panel.classList.contains('closed')) {
