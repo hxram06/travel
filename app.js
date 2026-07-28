@@ -39,10 +39,9 @@
 
     courseGrid.innerHTML = '';
     COURSES.forEach((course) => {
-      const card = document.createElement('div');
+      const card = document.createElement('button');
       card.className = 'course-card';
-      card.setAttribute('role', 'button');
-      card.setAttribute('tabindex', '0');
+      card.type = 'button';
 
       const bg = document.createElement('div');
       bg.className = 'course-card-bg';
@@ -75,9 +74,6 @@
       card.append(bg, overlay, content);
       const open = () => openCourse(course);
       card.addEventListener('click', open);
-      card.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); }
-      });
       courseGrid.appendChild(card);
     });
   }
@@ -218,12 +214,17 @@
 
 
 
-    $('panel-visited').innerHTML = course.days.map((d, i) => {
+    const visitedPanel = $('panel-visited');
+    visitedPanel.innerHTML = course.days.map((d, i) => {
       const cls = i < state.dayIndex ? 'visited-city done'
         : i === state.dayIndex ? 'visited-city current' : 'visited-city';
       const check = i < state.dayIndex ? '✓ ' : '';
-      return `<span class="${cls}" onclick="window.goToDay(${i})" style="cursor:pointer">${check}D${d.day} ${d.cityKo}</span>`;
+      const current = i === state.dayIndex ? ' aria-current="step"' : '';
+      return `<button type="button" class="${cls}" data-day-index="${i}"${current} aria-label="Day ${d.day} ${d.cityKo}로 이동">${check}D${d.day} ${d.cityKo}</button>`;
     }).join('');
+    visitedPanel.querySelectorAll('.visited-city').forEach((button) => {
+      button.addEventListener('click', () => window.goToDay(Number(button.dataset.dayIndex)));
+    });
 
     // 버튼 상태
     btnPrev.disabled = state.dayIndex === 0 && !sub;
@@ -580,6 +581,7 @@
     panelPhotoView.classList.add('hidden');
     panelContentView.classList.remove('hidden');
     if (window.innerWidth <= 767) {
+      setMobilePhotoPopupState(false);
       expandMobilePanelAfterPhoto();
     }
   });
@@ -590,7 +592,7 @@
       $('btn-close-photo').click();
     }
     if (window.innerWidth <= 767 && window.__mobilePhotoPopupOpen) {
-      window.__mobilePhotoPopupOpen = false;
+      setMobilePhotoPopupState(false);
       expandMobilePanelAfterPhoto();
     }
   });
@@ -733,6 +735,13 @@
     }
   }
 
+  function setMobilePhotoPopupState(isOpen) {
+    const open = Boolean(isOpen);
+    window.__mobilePhotoPopupOpen = open;
+    mapView.classList.toggle('mobile-photo-popup-open', open);
+    transportChip.setAttribute('aria-hidden', String(open));
+  }
+
   function collapseMobilePanelForPhoto() {
     if (window.innerWidth > 767) return;
     panelPhotoView.classList.add('hidden');
@@ -767,6 +776,7 @@
   window.collapseMobilePanelForPhoto = collapseMobilePanelForPhoto;
   window.makeRoomForMobilePhotoPopup = makeRoomForMobilePhotoPopup;
   window.expandMobilePanelAfterPhoto = expandMobilePanelAfterPhoto;
+  window.setMobilePhotoPopupState = setMobilePhotoPopupState;
   window.getMobilePanelMinVisibleHeight = () =>
     window.innerWidth <= 767 ? getMobileMinVisiblePanelHeight() : 0;
   window.getMobilePanelVisibleHeight = () =>

@@ -89,6 +89,11 @@ html, body {
   overflow: hidden;
   min-height: 280px;
   cursor: pointer;
+  appearance: none;
+  padding: 0;
+  color: inherit;
+  font: inherit;
+  text-align: left;
   background: var(--surface);
   border: 1px solid rgba(255, 255, 255, 0.6);
   box-shadow: var(--shadow-sm);
@@ -121,8 +126,8 @@ html, body {
   position: absolute;
   inset: 0;
   background: linear-gradient(180deg,
-    rgba(15, 23, 42, 0.05) 0%,
-    rgba(15, 23, 42, 0.4) 50%,
+    rgba(15, 23, 42, 0.12) 0%,
+    rgba(15, 23, 42, 0.5) 50%,
     rgba(15, 23, 42, 0.9) 100%);
 }
 
@@ -132,6 +137,7 @@ html, body {
   padding: 28px 26px;
   width: 100%;
   color: #fff;
+  text-shadow: 0 1px 6px rgba(15, 23, 42, 0.45);
 }
 
 .course-num {
@@ -377,7 +383,7 @@ html, body {
   font-size: 1rem;
   font-weight: 700; color: var(--text);
   line-height: 1.4;
-  padding-right: 18px;
+  padding-right: 40px;
   letter-spacing: -0.01em;
 }
 
@@ -408,12 +414,21 @@ html, body {
 }
 
 .photo-popup-wrap .mapboxgl-popup-close-button {
-  font-size: 1.4rem;
-  padding: 4px 8px;
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  font-size: 1.5rem;
+  padding: 0;
+  border-radius: 50%;
   color: var(--text-dim);
   transition: color 0.2s;
 }
 .photo-popup-wrap .mapboxgl-popup-close-button:hover { color: var(--text); background: transparent; }
+.photo-popup-wrap .mapboxgl-popup-close-button:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
+}
 
 /* ===================== 패널 (Glassmorphism Overlay) ===================== */
 
@@ -633,7 +648,19 @@ html, body {
   line-height: 2.2; padding-bottom: 16px;
 }
 
-.visited-city { margin-right: 12px; white-space: nowrap; transition: color 0.2s; }
+.visited-city {
+  margin-right: 12px;
+  padding: 2px 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+.visited-city:hover { color: var(--accent); }
+.visited-city:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
 .visited-city.done { color: var(--text-secondary); }
 .visited-city.current {
   color: var(--accent); font-weight: 700;
@@ -731,7 +758,11 @@ html, body {
     max-width: none;
     font-size: 0.82rem;
     line-height: 1.35;
-    transition: bottom 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: bottom 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.16s ease, transform 0.16s ease;
+  }
+  .map-view.mobile-photo-popup-open .transport-chip {
+    opacity: 0;
+    transform: translateY(8px);
   }
   .map-view.panel-dragging .transport-chip {
     transition: none;

@@ -288,12 +288,22 @@ const TravelMap = (() => {
       const popupEl = getPopupElement(popup);
       const close = popupEl && popupEl.querySelector('.mapboxgl-popup-close-button');
       if (close) {
+        close.setAttribute('aria-label', '사진 설명 닫기');
+        close.setAttribute('title', '사진 설명 닫기');
         close.addEventListener('click', () => {
-          window.__mobilePhotoPopupOpen = false;
+          setMobilePhotoPopupState(false);
           if (window.expandMobilePanelAfterPhoto) window.expandMobilePanelAfterPhoto();
         }, { once: true });
       }
     }, 0);
+  }
+
+  function setMobilePhotoPopupState(isOpen) {
+    if (window.setMobilePhotoPopupState) {
+      window.setMobilePhotoPopupState(isOpen);
+    } else {
+      window.__mobilePhotoPopupOpen = Boolean(isOpen);
+    }
   }
 
   function mobilePopupHasRoomBelow(popupEl) {
@@ -362,6 +372,7 @@ const TravelMap = (() => {
   }
 
   function clearPhotos() {
+    setMobilePhotoPopupState(false);
     photoMarkers.forEach((m) => m.remove());
     photoMarkers = [];
   }
@@ -383,13 +394,13 @@ const TravelMap = (() => {
     if (popup.isOpen()) {
       popup.remove();
       if (isMobile && window.expandMobilePanelAfterPhoto) {
-        window.__mobilePhotoPopupOpen = false;
+        setMobilePhotoPopupState(false);
         window.expandMobilePanelAfterPhoto();
       }
       return;
     }
     if (isMobile) {
-      window.__mobilePhotoPopupOpen = true;
+      setMobilePhotoPopupState(true);
       const mobilePopup = createPhotoPopup(marker._photoPopupHtml, marker._photoCoords, 'top');
       marker._photoPopup = mobilePopup;
       mobilePopup.addTo(map);
