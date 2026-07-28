@@ -40,21 +40,50 @@ const TravelMap = (() => {
       !MAPBOX_TOKEN.includes('YOUR_MAPBOX_TOKEN_HERE');
   }
 
+  function showMapError(title, message) {
+    const box = document.getElementById('map-error');
+    if (!box) return;
+    const heading = box.querySelector('h2');
+    const body = box.querySelector('p');
+    if (heading) heading.textContent = title;
+    if (body) body.textContent = message;
+    box.classList.remove('hidden');
+  }
+
   // ---------- 초기화 ----------
   function init() {
     if (!hasValidToken()) {
-      document.getElementById('map-error').classList.remove('hidden');
+      showMapError(
+        'Mapbox 토큰이 필요합니다',
+        '지도를 표시하려면 무료 Mapbox 토큰이 필요합니다. map.js 상단의 MAPBOX_TOKEN을 발급받은 토큰으로 교체한 뒤 페이지를 새로고침하세요.'
+      );
+      return false;
+    }
+    if (typeof mapboxgl === 'undefined') {
+      showMapError(
+        '지도를 불러오지 못했습니다',
+        'Mapbox 스크립트가 로드되지 않았습니다. 네트워크 연결 또는 브라우저 차단 설정을 확인하세요.'
+      );
       return false;
     }
     mapboxgl.accessToken = MAPBOX_TOKEN;
 
-    window.map = map = new mapboxgl.Map({
-      container: 'map',
-      style: 'mapbox://styles/mapbox/light-v11',
-      projection: { name: 'globe' },
-      center: [10, 48],
-      zoom: 3.4,
-    });
+    try {
+      window.map = map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/light-v11',
+        projection: { name: 'globe' },
+        center: [10, 48],
+        zoom: 3.4,
+      });
+    } catch (error) {
+      console.warn('Mapbox initialization failed:', error);
+      showMapError(
+        '지도를 초기화하지 못했습니다',
+        '브라우저에서 WebGL을 사용할 수 없거나 지도 렌더링이 차단되었습니다. 다른 브라우저 또는 하드웨어 가속 설정을 확인하세요.'
+      );
+      return false;
+    }
 
     map.on('style.load', () => {
       map.setFog({
@@ -71,7 +100,10 @@ const TravelMap = (() => {
     map.on('error', (e) => {
       const status = e && e.error && e.error.status;
       if (status === 401 || status === 403) {
-        document.getElementById('map-error').classList.remove('hidden');
+        showMapError(
+          'Mapbox 토큰을 확인하세요',
+          '현재 Mapbox 토큰으로 지도를 불러오지 못했습니다. 토큰 권한과 사용량 제한을 확인한 뒤 페이지를 새로고침하세요.'
+        );
       }
     });
     return true;

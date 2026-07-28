@@ -31,6 +31,12 @@
 
   // ---------- 랜딩 ----------
   function renderLanding() {
+    const landingSub = document.querySelector('.landing-sub');
+    if (landingSub) {
+      const totalDays = COURSES.reduce((sum, course) => sum + course.days.length, 0);
+      landingSub.textContent = `${COURSES.length}개의 코스 · 총 ${totalDays}일의 여정`;
+    }
+
     courseGrid.innerHTML = '';
     COURSES.forEach((course) => {
       const card = document.createElement('div');
@@ -581,13 +587,17 @@
       panel.style.transform = isPanelCollapsed ? 'translateY(calc(100% - 30px))' : 'translateY(0)';
       // Sync map padding
       const bottomPad = isPanelCollapsed ? 30 : panel.getBoundingClientRect().height;
-      window.map.easeTo({ padding: { bottom: bottomPad, right: 0 } });
+      if (window.map && typeof window.map.easeTo === 'function') {
+        window.map.easeTo({ padding: { bottom: bottomPad, right: 0 } });
+      }
     } else {
       // Desktop (X-axis)
       panel.style.transform = isPanelCollapsed ? 'translateX(calc(100% - 20px))' : 'translateX(0)';
       // Sync map padding
       const rightPad = isPanelCollapsed ? 20 : panel.getBoundingClientRect().width;
-      window.map.easeTo({ padding: { right: rightPad, bottom: 0 } });
+      if (window.map && typeof window.map.easeTo === 'function') {
+        window.map.easeTo({ padding: { right: rightPad, bottom: 0 } });
+      }
     }
   }
 

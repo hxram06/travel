@@ -77,6 +77,11 @@ function validateItinerary(courses, photos) {
   const isCoord = (c) =>
     Array.isArray(c) && c.length === 2 &&
     Math.abs(c[0]) <= 180 && Math.abs(c[1]) <= 90;
+  const canonicalPhotoUrl = (url) => {
+    const clean = String(url || '').split('?')[0];
+    const m = clean.match(/^(https:\/\/upload\.wikimedia\.org\/wikipedia\/commons)\/thumb\/(.+?)\/\d+px-[^/?#]+/);
+    return m ? `${m[1]}/${m[2]}` : clean;
+  };
 
   // 실제 지구 거리(km) — 경유지 우회율 판정에 쓴다
   const km = (a, b) => {
@@ -103,6 +108,17 @@ function validateItinerary(courses, photos) {
 
   courses.forEach((course) => {
     const cTag = `코스 ${course.id}`;
+    const coursePhotoUrls = new Map();
+    const checkCoursePhotoReuse = (where, spot) => {
+      const meta = photos[spot];
+      if (!meta || !meta.url) return;
+      const key = canonicalPhotoUrl(meta.url);
+      if (coursePhotoUrls.has(key)) {
+        err(where, `같은 코스 안에서 동일 사진 재사용 — 처음 사용: ${coursePhotoUrls.get(key)}`);
+      } else {
+        coursePhotoUrls.set(key, where);
+      }
+    };
 
     // --- 규칙 6: 코스 메타 ---
     RULES.course.required.forEach((k) => {
@@ -112,6 +128,8 @@ function validateItinerary(courses, photos) {
     });
     if (course.coverSpot && !photos[course.coverSpot]) {
       err(cTag, `coverSpot '${course.coverSpot}' 이(가) photos-data.js에 없음`);
+    } else if (course.coverSpot) {
+      checkCoursePhotoReuse(`${cTag} coverSpot`, course.coverSpot);
     }
 
     // nights 표기와 실제 날짜 수가 맞는지
@@ -231,6 +249,7 @@ function validateItinerary(courses, photos) {
 
         // 출처 표기 (규칙 1)
         const meta = photos[p.spot];
+        checkCoursePhotoReuse(ptag, p.spot);
         if (!meta.credit) err(ptag, `'${p.spot}' 의 저작자·라이선스 표기 없음`);
         if (!meta.source) err(ptag, `'${p.spot}' 의 원본 파일 페이지 링크 없음`);
 
