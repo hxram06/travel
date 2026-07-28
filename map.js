@@ -407,7 +407,7 @@ const TravelMap = (() => {
         setActive(path.slice(0, idx + 1));
         const pos = pointAt(path, e);
         showVehicle(mode, pos);
-        if (follow) map.panTo(pos, { duration: 90, easing: (x) => x });
+        if (follow) map.panTo(pos, { duration: 90, easing: (x) => x, padding: getDynamicPadding(0) });
 
         if (t < 1) requestAnimationFrame(frame);
         else finish();
@@ -594,7 +594,7 @@ const TravelMap = (() => {
       setActive(null);
       hideVehicle();
       if (cityMarker) { cityMarker.remove(); cityMarker = null; }
-      map.jumpTo({ center: [10, 48], zoom: 3.4 });
+      map.jumpTo({ center: [10, 48], zoom: 3.4, padding: getDynamicPadding(0) });
     }
   }
 
