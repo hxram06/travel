@@ -32,7 +32,7 @@
   --radius-md: 16px;
   --radius-sm: 10px;
   --mobile-panel-height: min(62dvh, 560px);
-  --mobile-panel-peek: 112px;
+  --mobile-panel-peek: 30px;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -726,15 +726,15 @@ html, body {
   }
   
   .transport-chip { 
-    bottom: calc(var(--mobile-panel-height) + 16px); left: 12px; right: 12px;
+    bottom: calc(var(--mobile-current-panel-height, var(--mobile-panel-height)) + 16px); left: 12px; right: 12px;
     padding: 10px 14px;
     max-width: none;
     font-size: 0.82rem;
     line-height: 1.35;
     transition: bottom 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   }
-  .map-view.panel-collapsed .transport-chip {
-    bottom: calc(var(--mobile-panel-peek) + 16px);
+  .map-view.panel-dragging .transport-chip {
+    transition: none;
   }
 
   .map-view { flex-direction: initial; }
@@ -837,6 +837,8 @@ html, body {
   .panel.panel-collapsed .panel-progress,
   .panel.panel-collapsed .panel-divider,
   .panel.panel-collapsed #panel-badges,
+  .panel.panel-collapsed .panel-city,
+  .panel.panel-collapsed .panel-title,
   .panel.panel-collapsed .panel-transport,
   .panel.panel-collapsed .panel-schedule,
   .panel.panel-collapsed .panel-tip,
@@ -844,28 +846,6 @@ html, body {
   .panel.panel-collapsed .panel-visited,
   .panel.panel-collapsed .panel-nav {
     display: none;
-  }
-  .panel.panel-collapsed .panel-city {
-    margin-top: 2px;
-    font-size: 1.05rem;
-    line-height: 1.2;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-  .panel.panel-collapsed .panel-city .city-en {
-    display: inline;
-    margin-left: 6px;
-    font-size: 0.76rem;
-  }
-  .panel.panel-collapsed .panel-title {
-    display: block;
-    margin: 4px 0 0;
-    font-size: 0.82rem;
-    line-height: 1.3;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
   }
 
   /* 팝업 모바일 찌그러짐 픽스 */

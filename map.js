@@ -372,7 +372,10 @@ const TravelMap = (() => {
     // 설명창이 화면에 보일 경우 마커/경로가 가려지지 않도록 패딩 추가
     if (isMobile) {
       // 바텀시트
-      return { top: basePadding, bottom: Math.max(basePadding, pHeight + 20), left: basePadding, right: basePadding };
+      const visibleHeight = panel
+        ? Math.max(0, Math.min(window.innerHeight, panel.getBoundingClientRect().bottom) - Math.max(0, panel.getBoundingClientRect().top))
+        : 0;
+      return { top: basePadding, bottom: Math.max(basePadding, visibleHeight + basePadding), left: basePadding, right: basePadding };
     } else {
       // 우측 패널
       return { top: basePadding, bottom: basePadding, left: basePadding, right: Math.max(basePadding, pWidth + 20) };

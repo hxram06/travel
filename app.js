@@ -119,6 +119,7 @@
     landing.classList.add('hidden');
     mapView.classList.remove('hidden');
     isPanelCollapsed = false;
+    panelOffset = 0;
     updatePanelTransform();
 
     if (!state.mapInitTried) {
@@ -541,6 +542,8 @@
   // UI Panel Drag & Mobile Photo View Logic
   // ==========================================
   let isPanelCollapsed = false;
+  let panelOffset = 0;
+  let panelStartOffset = 0;
   let panelStartY = 0;
   let panelStartX = 0;
   let isDragging = false;
@@ -567,6 +570,7 @@
     // Expand panel if collapsed
     if (isPanelCollapsed) {
       isPanelCollapsed = false;
+      panelOffset = 0;
       updatePanelTransform();
     }
   };
@@ -584,24 +588,42 @@
   });
 
   // Panel Dragging Logic
+  function getMobilePanelPeek() {
+    return parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--mobile-panel-peek')) || 30;
+  }
+
+  function getMobileMaxPanelOffset() {
+    return Math.max(0, panel.getBoundingClientRect().height - getMobilePanelPeek());
+  }
+
+  function getVisibleMobilePanelHeight() {
+    const maxOffset = getMobileMaxPanelOffset();
+    panelOffset = Math.min(Math.max(panelOffset, 0), maxOffset);
+    return Math.max(getMobilePanelPeek(), panel.getBoundingClientRect().height - panelOffset);
+  }
+
   function updatePanelTransform() {
-    panel.classList.toggle('panel-collapsed', isPanelCollapsed);
-    mapView.classList.toggle('panel-collapsed', isPanelCollapsed);
     if (window.innerWidth <= 767) {
-      // Mobile (Y-axis)
-      panel.style.transform = isPanelCollapsed ? 'translateY(calc(100% - var(--mobile-panel-peek)))' : 'translateY(0)';
+      // Mobile bottom sheet: keep the exact drag position instead of snapping.
+      const visibleHeight = getVisibleMobilePanelHeight();
+      isPanelCollapsed = panelOffset >= getMobileMaxPanelOffset() - 1;
+      panel.classList.toggle('panel-collapsed', isPanelCollapsed);
+      mapView.classList.toggle('panel-collapsed', isPanelCollapsed);
+      mapView.style.setProperty('--mobile-current-panel-height', `${visibleHeight}px`);
+      panel.style.transform = `translateY(${panelOffset}px)`;
       if (isPanelCollapsed) {
         panelContentView.scrollTop = 0;
         panelPhotoView.scrollTop = 0;
       }
       // Sync map padding
-      const peek = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--mobile-panel-peek')) || 112;
-      const bottomPad = isPanelCollapsed ? peek : panel.getBoundingClientRect().height;
       if (window.map && typeof window.map.easeTo === 'function') {
-        window.map.easeTo({ padding: { bottom: bottomPad, right: 0 } });
+        window.map.easeTo({ padding: { bottom: visibleHeight, right: 0 } });
       }
     } else {
       // Desktop (X-axis)
+      panel.classList.toggle('panel-collapsed', isPanelCollapsed);
+      mapView.classList.toggle('panel-collapsed', isPanelCollapsed);
+      mapView.style.removeProperty('--mobile-current-panel-height');
       panel.style.transform = isPanelCollapsed ? 'translateX(calc(100% - 20px))' : 'translateX(0)';
       // Sync map padding
       const rightPad = isPanelCollapsed ? 20 : panel.getBoundingClientRect().width;
@@ -616,7 +638,9 @@
     isDragging = true;
     panelStartX = e.clientX;
     panelStartY = e.clientY;
+    panelStartOffset = panelOffset;
     panel.classList.add('is-dragging');
+    mapView.classList.add('panel-dragging');
     e.target.setPointerCapture(e.pointerId);
   });
 
@@ -624,19 +648,11 @@
     if (!isDragging) return;
     
     if (window.innerWidth <= 767) {
-      // Mobile: Vertical drag
+      // Mobile: analog vertical drag
       const deltaY = e.clientY - panelStartY;
-      if (deltaY > 50 && !isPanelCollapsed) {
-        isPanelCollapsed = true;
-        isDragging = false;
-        panel.classList.remove('is-dragging');
-        updatePanelTransform();
-      } else if (deltaY < -50 && isPanelCollapsed) {
-        isPanelCollapsed = false;
-        isDragging = false;
-        panel.classList.remove('is-dragging');
-        updatePanelTransform();
-      }
+      panelOffset = panelStartOffset + deltaY;
+      updatePanelTransform();
+      e.preventDefault();
     } else {
       // Desktop: Horizontal drag
       const deltaX = e.clientX - panelStartX;
@@ -644,27 +660,52 @@
         isPanelCollapsed = true;
         isDragging = false;
         panel.classList.remove('is-dragging');
+        mapView.classList.remove('panel-dragging');
         updatePanelTransform();
       } else if (deltaX < -50 && isPanelCollapsed) {
         isPanelCollapsed = false;
         isDragging = false;
         panel.classList.remove('is-dragging');
+        mapView.classList.remove('panel-dragging');
         updatePanelTransform();
       }
     }
   });
 
   panelDragHandle.addEventListener('pointerup', (e) => {
-    const delta = window.innerWidth <= 767 ? e.clientY - panelStartY : e.clientX - panelStartX;
+    const isMobile = window.innerWidth <= 767;
+    const delta = isMobile ? e.clientY - panelStartY : e.clientX - panelStartX;
     if (isDragging) {
-      if (Math.abs(delta) < 8) {
+      if (isMobile) {
+        const maxOffset = getMobileMaxPanelOffset();
+        if (Math.abs(delta) < 8) {
+          panelOffset = panelOffset >= maxOffset - 1 ? 0 : maxOffset;
+        } else if (panelOffset < 8) {
+          panelOffset = 0;
+        } else if (maxOffset - panelOffset < 8) {
+          panelOffset = maxOffset;
+        }
+        updatePanelTransform();
+      } else if (Math.abs(delta) < 8) {
         isPanelCollapsed = !isPanelCollapsed;
         updatePanelTransform();
       }
       isDragging = false;
       panel.classList.remove('is-dragging');
+      mapView.classList.remove('panel-dragging');
     }
-    e.target.releasePointerCapture(e.pointerId);
+    if (e.target.hasPointerCapture && e.target.hasPointerCapture(e.pointerId)) {
+      e.target.releasePointerCapture(e.pointerId);
+    }
+  });
+
+  panelDragHandle.addEventListener('pointercancel', (e) => {
+    isDragging = false;
+    panel.classList.remove('is-dragging');
+    mapView.classList.remove('panel-dragging');
+    if (e.target.hasPointerCapture && e.target.hasPointerCapture(e.pointerId)) {
+      e.target.releasePointerCapture(e.pointerId);
+    }
   });
 
   // Handle window resize for proper map padding
