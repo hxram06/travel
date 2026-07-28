@@ -243,7 +243,7 @@
       cityChip.textContent = `📍 ${vDay.cityKo} · ${vDay.cityEn}`;
     }
     transportChip.classList.toggle('hidden', !tr.label);
-    $('panel-scroll').scrollTop = 0;
+    $('panel-content-view').scrollTop = 0;
   }
 
   // ---------- 이동 ----------
