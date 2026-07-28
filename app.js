@@ -112,7 +112,8 @@
   async function openCourse(course) {
     state.course = course;
     state.dayIndex = 0;
-    state.subStep = null;
+    const firstDay = course.days[0];
+    state.subStep = firstDay.entryAirport ? { type: 'entry-airport' } : null;
     state.returnedHome = false;
 
     landing.classList.add('hidden');
@@ -128,11 +129,10 @@
     for (let i = 0; i < 25 && !TravelMap.isReady(); i++) await wait(200);
     if (!TravelMap.isReady()) return;
 
-    const firstDay = course.days[0];
     if (firstDay.entryAirport) {
       // 공항 경유 코스: 공항에 착지하고 멈춘다
       await TravelMap.enterCourse(firstDay, firstDay.entryAirport.coords);
-      state.subStep = { type: 'entry-airport' };
+      TravelMap.showDayPhotos(firstDay.entryAirport);
       renderPanel();
     } else {
       await TravelMap.enterCourse(firstDay);
@@ -334,8 +334,9 @@
           await TravelMap.moveStep(airport.coords, firstStop.coords, firstStop, {});
           TravelMap.showDayPhotos({ photos: firstStop.photos || [] });
           state.subStep = { type: 'transit', beforeIdx: 0 };
-        } else {
-          await TravelMap.moveStep(airport.coords, day.coords, airport, {});
+      } else {
+          const transfer = { ...airport, transport: airport.nextTransport || airport.transport };
+          await TravelMap.moveStep(airport.coords, day.coords, transfer, {});
           TravelMap.showDayPhotos(day);
           state.subStep = null;
         }

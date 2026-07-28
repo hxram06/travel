@@ -278,6 +278,27 @@ function validateItinerary(courses, photos) {
           warn(ptag, `'${p.cap}' 이(가) 도시 중심 좌표 그대로 — 명소 실제 위치 권장`);
         }
       });
+
+      const nestedPhotoGroups = [];
+      if (d.entryAirport && Array.isArray(d.entryAirport.photos)) {
+        nestedPhotoGroups.push(['entryAirport', d.entryAirport.photos]);
+      }
+      (d.before || []).forEach((step, idx) => {
+        if (Array.isArray(step.photos)) nestedPhotoGroups.push([`before[${idx}]`, step.photos]);
+      });
+      if (Array.isArray(d.returnPhotos)) {
+        nestedPhotoGroups.push(['returnPhotos', d.returnPhotos]);
+      }
+      nestedPhotoGroups.forEach(([label, items]) => {
+        items.forEach((p, k) => {
+          const ptag = `${tag} ${label} 사진[${k}]`;
+          if (!photos[p.spot]) {
+            err(ptag, `spot '${p.spot}' 이(가) photos-data.js에 없음`);
+            return;
+          }
+          checkCoursePhotoReuse(ptag, p.spot);
+        });
+      });
     });
   });
 
