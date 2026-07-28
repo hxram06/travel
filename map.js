@@ -48,7 +48,7 @@ const TravelMap = (() => {
     }
     mapboxgl.accessToken = MAPBOX_TOKEN;
 
-    map = new mapboxgl.Map({
+    window.map = map = new mapboxgl.Map({
       container: 'map',
       style: 'mapbox://styles/mapbox/light-v11',
       projection: { name: 'globe' },
@@ -90,7 +90,7 @@ const TravelMap = (() => {
         id: TRAIL_LAYER, type: 'line', source: TRAIL_SRC,
         layout: { 'line-cap': 'round', 'line-join': 'round' },
         paint: {
-          'line-color': '#c2703c',
+          'line-color': '#2563eb',
           'line-opacity': 0.42,
           'line-width': 2,
           'line-dasharray': [2, 2],
@@ -102,7 +102,7 @@ const TravelMap = (() => {
       map.addLayer({
         id: ACTIVE_LAYER, type: 'line', source: ACTIVE_SRC,
         layout: { 'line-cap': 'round', 'line-join': 'round' },
-        paint: { 'line-color': '#d4761f', 'line-width': 3.2, 'line-opacity': 0.95 },
+        paint: { 'line-color': '#2563eb', 'line-width': 3.2, 'line-opacity': 0.95 },
       });
     }
   }
