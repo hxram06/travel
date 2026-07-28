@@ -118,6 +118,8 @@
 
     landing.classList.add('hidden');
     mapView.classList.remove('hidden');
+    isPanelCollapsed = false;
+    updatePanelTransform();
 
     if (!state.mapInitTried) {
       state.mapInitTried = true;
@@ -583,11 +585,18 @@
 
   // Panel Dragging Logic
   function updatePanelTransform() {
+    panel.classList.toggle('panel-collapsed', isPanelCollapsed);
+    mapView.classList.toggle('panel-collapsed', isPanelCollapsed);
     if (window.innerWidth <= 767) {
       // Mobile (Y-axis)
-      panel.style.transform = isPanelCollapsed ? 'translateY(calc(100% - 30px))' : 'translateY(0)';
+      panel.style.transform = isPanelCollapsed ? 'translateY(calc(100% - var(--mobile-panel-peek)))' : 'translateY(0)';
+      if (isPanelCollapsed) {
+        panelContentView.scrollTop = 0;
+        panelPhotoView.scrollTop = 0;
+      }
       // Sync map padding
-      const bottomPad = isPanelCollapsed ? 30 : panel.getBoundingClientRect().height;
+      const peek = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--mobile-panel-peek')) || 112;
+      const bottomPad = isPanelCollapsed ? peek : panel.getBoundingClientRect().height;
       if (window.map && typeof window.map.easeTo === 'function') {
         window.map.easeTo({ padding: { bottom: bottomPad, right: 0 } });
       }
@@ -646,7 +655,12 @@
   });
 
   panelDragHandle.addEventListener('pointerup', (e) => {
+    const delta = window.innerWidth <= 767 ? e.clientY - panelStartY : e.clientX - panelStartX;
     if (isDragging) {
+      if (Math.abs(delta) < 8) {
+        isPanelCollapsed = !isPanelCollapsed;
+        updatePanelTransform();
+      }
       isDragging = false;
       panel.classList.remove('is-dragging');
     }
