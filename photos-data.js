@@ -1762,5 +1762,17 @@ const PHOTOS = {
     "title": "Cafe Central interior, Vienna.jpg",
     "source": "https://commons.wikimedia.org/wiki/File:Caf%C3%A9_Central_interior,_Vienna.jpg",
     "credit": "Gryffindor · Public domain"
+  },
+  "qa_c9_d11_food_schnitzel_0": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Figlmueller.%20World%20Famous%20Schnitzel%21%20Vienna.jpg?width=1280",
+    "title": "Figlmueller. World Famous Schnitzel! Vienna.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Figlmueller._World_Famous_Schnitzel!_Vienna.jpg",
+    "credit": "Sarah_Ackerman · CC BY 2.0"
+  },
+  "qa_c9_d11_food_wurstel_1": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/LEO%20Wiener%20W%C3%BCrstelstand%2C%20Vienna.jpg?width=1280",
+    "title": "LEO Wiener Würstelstand, Vienna.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:LEO_Wiener_W%C3%BCrstelstand,_Vienna.jpg",
+    "credit": "Herzi Pinki · CC BY-SA 4.0"
   }
 };

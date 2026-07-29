@@ -80,6 +80,15 @@
 
   // ---------- 헬퍼: 현재 패널에 보여줄 "뷰 데이" ----------
   // subStep에 따라 본 day 또는 공항·경유지·귀환 합성 객체를 반환한다
+  function getTripBasePois(day) {
+    if (Array.isArray(day.returnPois)) return day.returnPois;
+    if (!day.baseCity || !state.course) return [];
+    const baseDay = state.course.days.find((d) =>
+      d.cityKo === day.baseCity && Array.isArray(d.pois)
+    );
+    return baseDay ? baseDay.pois : [];
+  }
+
   function getViewDay() {
     const day = state.course.days[state.dayIndex];
     const sub = state.subStep;
@@ -97,8 +106,9 @@
         pm: null,
         ev: day.returnEv || '숙소에 도착해 오늘 하루를 되돌아봅니다.',
         tip: day.returnTip || day.tip || '당일치기 후에는 피곤하기 쉽습니다. 일찍 쉬는 것을 권장합니다.',
-        transport: { mode: (day.transport && day.transport.mode) || 'train', label: `${day.cityKo} → ${day.baseCity} · 귀환` },
+        transport: day.returnTransport || { mode: (day.transport && day.transport.mode) || 'train', label: `${day.cityKo} → ${day.baseCity} · 귀환` },
         photos: day.returnPhotos || [],
+        pois: getTripBasePois(day),
       };
     }
     return day;
@@ -279,6 +289,7 @@
         state.returnedHome = false;
         if (state.dayIndex > state.maxVisitedDay) state.maxVisitedDay = state.dayIndex;
         try { renderPanel(); } catch (e) { console.error('패널 렌더 오류', e); }
+        TravelMap.showDayPhotos(days[state.dayIndex]);
 
         TravelMap.skip();
         (async () => {
@@ -319,10 +330,15 @@
         // 현재 날이 당일치기 → 숙박 도시로 귀환 애니메이션 후 정지
         if (day.isTrip && day.baseCoords) {
           state.subStep = { type: 'trip-base' };
-          TravelMap.showDayPhotos({ photos: day.returnPhotos || [] });
+          TravelMap.showDayPhotos(getViewDay());
           panelInner.classList.remove('fade-out');
           try { renderPanel(); } catch (e) { console.error('패널 렌더 오류', e); }
-          TravelMap.returnToBase(day).catch((e) => {
+          TravelMap.returnToBase(day, { clearOverlays: false }).then(() => {
+            if (state.course && state.course.days[state.dayIndex] === day &&
+                state.subStep && state.subStep.type === 'trip-base') {
+              TravelMap.showDayPhotos(getViewDay());
+            }
+          }).catch((e) => {
             console.error('당일치기 귀환 지도 애니메이션 오류', e);
           });
 

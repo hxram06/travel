@@ -351,6 +351,22 @@ html, body {
   background: #db2777;
 }
 
+.poi-marker-food {
+  background: #0f766e;
+}
+
+.poi-marker-coffee {
+  background: #92400e;
+}
+
+.poi-marker-wine {
+  background: #7c3aed;
+}
+
+.poi-marker-korean {
+  background: #db2777;
+}
+
 .poi-popup {
   padding: 2px 0;
 }

@@ -410,7 +410,14 @@ const TravelMap = (() => {
       el.className = `poi-marker poi-marker-${poi.kind || 'place'} ${poi.priority === 'must' ? 'poi-marker-must' : ''}`;
       el.setAttribute('aria-label', poi.name);
       el.title = poi.name;
-      el.textContent = poi.priority === 'must' ? '★' : '🍺';
+      const poiIcon = {
+        beer: '🍺',
+        coffee: '☕',
+        food: '🍽',
+        korean: '🍲',
+        wine: '🍷',
+      }[poi.kind] || '📍';
+      el.textContent = poi.priority === 'must' ? '★' : poiIcon;
 
       const popup = new mapboxgl.Popup({
         offset: 18,
@@ -729,15 +736,18 @@ const TravelMap = (() => {
   // 당일치기에서 숙박 도시로 귀환 애니메이션
   async function returnToBase(day, opts) {
     if (!isReady() || animating) return;
+    const o = opts || {};
     animating = true;
     cancelFlag = false;
-    clearPhotos();
+    if (o.clearOverlays !== false) clearPhotos();
     try {
       const mode = (day.transport && day.transport.mode) || 'train';
-      const back = (day.via || []).slice().reverse();
+      const back = Array.isArray(day.returnVia)
+        ? day.returnVia
+        : (day.via || []).slice().reverse();
       await moveLeg(day.coords, day.baseCoords,
         { via: back }, mode,
-        { ...(opts || {}), duration: 1700, inZoom: 10.5 });
+        { ...o, duration: 1700, inZoom: 10.5 });
     } finally {
       animating = false;
     }
