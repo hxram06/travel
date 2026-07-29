@@ -1750,5 +1750,17 @@ const PHOTOS = {
     "title": "Munich skyline.jpg",
     "source": "https://commons.wikimedia.org/wiki/File:Munich_skyline.jpg",
     "credit": "Stefan Kuhn · CC BY-SA / GFDL / CC0"
+  },
+  "qa_c9_d9_naschmarkt_0": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Naschmarkt,_Vienna.jpg?width=1280",
+    "title": "Naschmarkt, Vienna.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Naschmarkt,_Vienna.jpg",
+    "credit": "Slyronit · CC BY-SA 4.0"
+  },
+  "qa_c9_d9_cafe_central_1": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Caf%C3%A9_Central_interior,_Vienna.jpg?width=1280",
+    "title": "Cafe Central interior, Vienna.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Caf%C3%A9_Central_interior,_Vienna.jpg",
+    "credit": "Gryffindor · Public domain"
   }
 };
