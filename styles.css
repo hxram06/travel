@@ -327,7 +327,6 @@ html, body {
 
 /* 음식점 후보 마커 */
 .poi-marker {
-  position: relative;
   display: grid;
   place-items: center;
   width: 34px;
@@ -349,22 +348,24 @@ html, body {
 }
 
 .poi-photo-marker {
-  width: 48px;
-  height: 48px;
+  display: block;
+  width: 52px;
+  height: 52px;
+  border-radius: 12px;
   border-width: 3px;
   background-size: cover;
   background-position: center;
   color: transparent;
   overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25), inset 0 -16px 18px rgba(15, 23, 42, 0.14);
+  transition: box-shadow 0.2s, border-color 0.2s;
 }
 
-.poi-photo-marker::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  box-shadow: inset 0 -18px 22px rgba(15, 23, 42, 0.18);
-  pointer-events: none;
+.poi-photo-marker:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+  border-color: var(--accent);
+  z-index: 5;
 }
 
 .poi-photo-marker-must {

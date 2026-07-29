@@ -411,13 +411,18 @@ const TravelMap = (() => {
     if (!isReady() || !Array.isArray(day.pois)) return;
     day.pois.forEach((poi) => {
       if (!poi || !Array.isArray(poi.coords)) return;
-      const el = document.createElement('button');
-      el.type = 'button';
       const meta = poi.photoSpot ? PHOTOS[poi.photoSpot] : null;
-      const classes = ['poi-marker', `poi-marker-${poi.kind || 'place'}`];
-      if (meta) classes.push('poi-photo-marker');
+      const el = document.createElement(meta ? 'div' : 'button');
+      if (!meta) el.type = 'button';
+      const classes = meta
+        ? ['photo-marker', 'poi-photo-marker', `poi-photo-marker-${poi.kind || 'place'}`]
+        : ['poi-marker', `poi-marker-${poi.kind || 'place'}`];
       if (poi.priority === 'must') classes.push(meta ? 'poi-photo-marker-must' : 'poi-marker-must');
       el.className = classes.join(' ');
+      if (meta) {
+        el.setAttribute('role', 'button');
+        el.tabIndex = 0;
+      }
       el.setAttribute('aria-label', poi.name);
       el.title = poi.name;
       const poiIcon = {
@@ -446,6 +451,11 @@ const TravelMap = (() => {
 
       el.addEventListener('click', (ev) => {
         ev.stopPropagation();
+        popup.addTo(map);
+      });
+      el.addEventListener('keydown', (ev) => {
+        if (ev.key !== 'Enter' && ev.key !== ' ') return;
+        ev.preventDefault();
         popup.addTo(map);
       });
 
