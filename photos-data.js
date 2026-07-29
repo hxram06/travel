@@ -1769,6 +1769,12 @@ const PHOTOS = {
     "source": "https://commons.wikimedia.org/wiki/File:Figlmueller._World_Famous_Schnitzel!_Vienna.jpg",
     "credit": "Sarah_Ackerman · CC BY 2.0"
   },
+  "qa_c9_poi_figlmueller": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Figlm%C3%BCller_B%C3%A4ckerstra%C3%9Fe_1.jpg?width=1600",
+    "title": "Figlmüller Bäckerstraße exterior",
+    "source": "https://commons.wikimedia.org/wiki/File:Figlm%C3%BCller_B%C3%A4ckerstra%C3%9Fe_1.jpg",
+    "credit": "Image source: commons.wikimedia.org"
+  },
   "qa_c9_d11_food_wurstel_1": {
     "url": "https://commons.wikimedia.org/wiki/Special:FilePath/LEO%20Wiener%20W%C3%BCrstelstand%2C%20Vienna.jpg?width=1280",
     "title": "LEO Wiener Würstelstand, Vienna.jpg",
@@ -1834,5 +1840,619 @@ const PHOTOS = {
     "title": "Cafe & Heurigen Kronprinz Rudolfshof, Grinzing, Wien, 19. Bezirk.jpg",
     "source": "https://commons.wikimedia.org/wiki/File:Cafe_%26_Heurigen_Kronprinz_Rudolfshof,_Grinzing,_Wien,_19._Bezirk.jpg",
     "credit": "Wikimedia Commons"
+  },
+  // COURSE9_RICH_PHOTOS_START
+  "qa_c9_d1_rich_000": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Mainzer_Dom%2C_Leichhof_(2008-04-23_Sp).jpg?width=1600",
+    "title": "마인츠 대성당 서쪽 입면",
+    "source": "https://commons.wikimedia.org/wiki/File:Mainzer_Dom%2C_Leichhof_(2008-04-23_Sp).jpg",
+    "credit": "Image source: commons.wikimedia.org"
+  },
+  "qa_c9_d1_rich_001": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Schell-Bau%2C_Gutenberg-Museum_Mainz%2C_Fassade_zur_Mailandsgasse.jpg?width=1600",
+    "title": "구텐베르크 박물관",
+    "source": "https://commons.wikimedia.org/wiki/File:Schell-Bau%2C_Gutenberg-Museum_Mainz%2C_Fassade_zur_Mailandsgasse.jpg",
+    "credit": "Image source: commons.wikimedia.org"
+  },
+  "qa_c9_d1_rich_002": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Brunnen_vor_dem_Marktplatz_in_Mainz.jpg?width=1600",
+    "title": "돔 앞 마르크트 광장",
+    "source": "https://commons.wikimedia.org/wiki/File:Brunnen_vor_dem_Marktplatz_in_Mainz.jpg",
+    "credit": "Image source: commons.wikimedia.org"
+  },
+  "qa_c9_d1_rich_003": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Fachwerk_Kirschgarten_Mainz.jpg?width=1600",
+    "title": "키르슈가르텐 목조 골목",
+    "source": "https://commons.wikimedia.org/wiki/File:Fachwerk_Kirschgarten_Mainz.jpg",
+    "credit": "Image source: commons.wikimedia.org"
+  },
+  "qa_c9_d1_rich_004": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Mainz_Augustinerkirche_BW_2012-08-18_12-49-25.jpg?width=1600",
+    "title": "아우구스티너키르헤 내부",
+    "source": "https://commons.wikimedia.org/wiki/File:Mainz_Augustinerkirche_BW_2012-08-18_12-49-25.jpg",
+    "credit": "Image source: commons.wikimedia.org"
+  },
+  "qa_c9_d1_rich_005": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/St._Stephan_Mainz.jpg?width=1600",
+    "title": "성 슈테판 교회",
+    "source": "https://commons.wikimedia.org/wiki/File:St._Stephan_Mainz.jpg",
+    "credit": "Image source: commons.wikimedia.org"
+  },
+  "qa_c9_d1_rich_006": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Fastnachtsbrunnen_in_Mainz_von_1967_von_Professor_Blasius_Spreng_am_Schillerplatz_-_panoramio.jpg?width=1600",
+    "title": "파스트나흐츠브루넨",
+    "source": "https://commons.wikimedia.org/wiki/File:Fastnachtsbrunnen_in_Mainz_von_1967_von_Professor_Blasius_Spreng_am_Schillerplatz_-_panoramio.jpg",
+    "credit": "Image source: commons.wikimedia.org"
+  },
+  "qa_c9_d1_rich_007": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Mainz%2C_Rheinpromenade%2C_Blick_zur_S%C3%BCdbr%C3%BCcke.jpg?width=1600",
+    "title": "라인강 산책로",
+    "source": "https://commons.wikimedia.org/wiki/File:Mainz%2C_Rheinpromenade%2C_Blick_zur_S%C3%BCdbr%C3%BCcke.jpg",
+    "credit": "Image source: commons.wikimedia.org"
+  },
+  "qa_c9_d2_rich_008": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Frankfurt_Am_Main-St_Bartholomaeus-Dom_von_Sueden_nach_dem_Dombrand-1868.jpg?width=1600",
+    "title": "프랑크푸르트 카이저돔",
+    "source": "https://commons.wikimedia.org/wiki/File:Frankfurt_Am_Main-St_Bartholomaeus-Dom_von_Sueden_nach_dem_Dombrand-1868.jpg",
+    "credit": "Image source: commons.wikimedia.org"
+  },
+  "qa_c9_d2_rich_009": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Frankfurt_am_Main%2C_de_Eiserner_Steg_Dm_met_skyline_IMG_1525_2024-05-26_12.30.jpg?width=1600",
+    "title": "아이제르너 슈테크",
+    "source": "https://commons.wikimedia.org/wiki/File:Frankfurt_am_Main%2C_de_Eiserner_Steg_Dm_met_skyline_IMG_1525_2024-05-26_12.30.jpg",
+    "credit": "Image source: commons.wikimedia.org"
+  },
+  "qa_c9_d2_rich_010": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Frankfurt_am_Main_-_Main_Tower.jpg?width=1600",
+    "title": "마인 타워 전망대",
+    "source": "https://commons.wikimedia.org/wiki/File:Frankfurt_am_Main_-_Main_Tower.jpg",
+    "credit": "Image source: commons.wikimedia.org"
+  },
+  "qa_c9_d2_rich_011": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Kleinmarkthalle-Hasengasse-01-2016-Ffm-576.jpg?width=1600",
+    "title": "클라이네 마르크트할레",
+    "source": "https://commons.wikimedia.org/wiki/File:Kleinmarkthalle-Hasengasse-01-2016-Ffm-576.jpg",
+    "credit": "Image source: commons.wikimedia.org"
+  },
+  "qa_c9_d2_rich_012": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Goethe-Haus_in_Frankfurt_am_Main.jpg?width=1600",
+    "title": "괴테 하우스",
+    "source": "https://commons.wikimedia.org/wiki/File:Goethe-Haus_in_Frankfurt_am_Main.jpg",
+    "credit": "Image source: commons.wikimedia.org"
+  },
+  "qa_c9_d2_rich_013": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Alte_Oper_Frankfurt_2019.jpg?width=1600",
+    "title": "알테 오퍼",
+    "source": "https://commons.wikimedia.org/wiki/File:Alte_Oper_Frankfurt_2019.jpg",
+    "credit": "Image source: commons.wikimedia.org"
+  },
+  "qa_c9_d2_rich_014": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/2015-03-04_Hauptwache_Frankfurt_am_Main_Hesse_Germany_01.jpg?width=1600",
+    "title": "하우프트바헤",
+    "source": "https://commons.wikimedia.org/wiki/File:2015-03-04_Hauptwache_Frankfurt_am_Main_Hesse_Germany_01.jpg",
+    "credit": "Image source: commons.wikimedia.org"
+  },
+  "qa_c9_d2_rich_015": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Sachsenhausen%2C_courtyard_restaurant.jpg?width=1600",
+    "title": "작센하우젠 아펠바인 골목",
+    "source": "https://commons.wikimedia.org/wiki/File:Sachsenhausen%2C_courtyard_restaurant.jpg",
+    "credit": "Image source: commons.wikimedia.org"
+  },
+  "qa_c9_d3_rich_016": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Hohenzollern_Bridge_-_DPLA_-_bc99185aa8d3ddbdd0075776e19ca437.jpg?width=1600",
+    "title": "호엔촐레른 다리",
+    "source": "https://commons.wikimedia.org/wiki/File:Hohenzollern_Bridge_-_DPLA_-_bc99185aa8d3ddbdd0075776e19ca437.jpg",
+    "credit": "Image source: commons.wikimedia.org"
+  },
+  "qa_c9_d3_rich_017": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Cologne_Museum_Ludwig_Roof_at_Dusk.jpg?width=1600",
+    "title": "루트비히 미술관",
+    "source": "https://commons.wikimedia.org/wiki/File:Cologne_Museum_Ludwig_Roof_at_Dusk.jpg",
+    "credit": "Image source: commons.wikimedia.org"
+  },
+  "qa_c9_d3_rich_018": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Schokoladenmuseum_Rheinseite_(Quelle_Schokoladenmuseum).jpg?width=1600",
+    "title": "쾰른 초콜릿 박물관",
+    "source": "https://commons.wikimedia.org/wiki/File:Schokoladenmuseum_Rheinseite_(Quelle_Schokoladenmuseum).jpg",
+    "credit": "Image source: commons.wikimedia.org"
+  },
+  "qa_c9_d3_rich_019": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Dom_(Deutzer_Br%C3%BCcke).jpg?width=1600",
+    "title": "그로스 장크트 마르틴",
+    "source": "https://commons.wikimedia.org/wiki/File:Dom_(Deutzer_Br%C3%BCcke).jpg",
+    "credit": "Image source: commons.wikimedia.org"
+  },
+  "qa_c9_d3_rich_020": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Exploring_the_old_town_in_Cologne_(52981813386).jpg?width=1600",
+    "title": "알터 마르크트",
+    "source": "https://commons.wikimedia.org/wiki/File:Exploring_the_old_town_in_Cologne_(52981813386).jpg",
+    "credit": "Image source: commons.wikimedia.org"
+  },
+  "qa_c9_d3_rich_021": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Kranh%C3%A4user_Cologne%2C_April_2018_-01.jpg?width=1600",
+    "title": "라인아우하펜 크레인하우스",
+    "source": "https://commons.wikimedia.org/wiki/File:Kranh%C3%A4user_Cologne%2C_April_2018_-01.jpg",
+    "credit": "Image source: commons.wikimedia.org"
+  },
+  "qa_c9_d3_rich_022": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/K%C3%B6ln_Hauptbahnhof_-_Bahnsteighalle-8307.jpg?width=1600",
+    "title": "쾰른 중앙역 플랫폼",
+    "source": "https://commons.wikimedia.org/wiki/File:K%C3%B6ln_Hauptbahnhof_-_Bahnsteighalle-8307.jpg",
+    "credit": "Image source: commons.wikimedia.org"
+  },
+  "qa_c9_d3_rich_023": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Brauhaus_Fr%C3%BCh_am_Dom_K%C3%B6ln_383-cv3.jpg?width=1600",
+    "title": "프뤼 암 돔 브라우하우스",
+    "source": "https://commons.wikimedia.org/wiki/File:Brauhaus_Fr%C3%BCh_am_Dom_K%C3%B6ln_383-cv3.jpg",
+    "credit": "Image source: commons.wikimedia.org"
+  },
+  "qa_c9_d4_rich_024": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Hauptstra%C3%9Fe_near_Akademiestra%C3%9Fe_(Heidelberg)%2C_Sep_2019.jpg?width=1600",
+    "title": "하이델베르크 구시가지",
+    "source": "https://commons.wikimedia.org/wiki/File:Hauptstra%C3%9Fe_near_Akademiestra%C3%9Fe_(Heidelberg)%2C_Sep_2019.jpg",
+    "credit": "Image source: commons.wikimedia.org"
+  },
+  "qa_c9_d4_rich_025": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/20230315_Heiliggeistkirche_Heidelberg_01.jpg?width=1600",
+    "title": "성령교회",
+    "source": "https://commons.wikimedia.org/wiki/File:20230315_Heiliggeistkirche_Heidelberg_01.jpg",
+    "credit": "Image source: commons.wikimedia.org"
+  },
+  "qa_c9_d4_rich_026": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Universit%C3%A4tsbibliothek_Heidelberg-Treppenhaus.jpg?width=1600",
+    "title": "하이델베르크 대학도서관",
+    "source": "https://commons.wikimedia.org/wiki/File:Universit%C3%A4tsbibliothek_Heidelberg-Treppenhaus.jpg",
+    "credit": "Image source: commons.wikimedia.org"
+  },
+  "qa_c9_d4_rich_027": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Heidelberg_vom_Philosophenweg_(K_Lange)_1896.jpg?width=1600",
+    "title": "철학자의 길 전망",
+    "source": "https://commons.wikimedia.org/wiki/File:Heidelberg_vom_Philosophenweg_(K_Lange)_1896.jpg",
+    "credit": "Image source: commons.wikimedia.org"
+  },
+  "qa_c9_d4_rich_028": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Kornmarkt_Heidelberg.jpg?width=1600",
+    "title": "코른마르크트",
+    "source": "https://commons.wikimedia.org/wiki/File:Kornmarkt_Heidelberg.jpg",
+    "credit": "Image source: commons.wikimedia.org"
+  },
+  "qa_c9_d4_rich_029": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Heidelberg_Tun.png?width=1600",
+    "title": "하이델베르크 대형 와인통",
+    "source": "https://commons.wikimedia.org/wiki/File:Heidelberg_Tun.png",
+    "credit": "Image source: commons.wikimedia.org"
+  },
+  "qa_c9_d4_rich_030": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Uni-Heidelberg_Studentenkarzer.jpg?width=1600",
+    "title": "학생감옥",
+    "source": "https://commons.wikimedia.org/wiki/File:Uni-Heidelberg_Studentenkarzer.jpg",
+    "credit": "Image source: commons.wikimedia.org"
+  },
+  "qa_c9_d4_rich_031": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Bergbahn_Heidelberg_Altstadt.jpg?width=1600",
+    "title": "하이델베르크 베르크반",
+    "source": "https://commons.wikimedia.org/wiki/File:Bergbahn_Heidelberg_Altstadt.jpg",
+    "credit": "Image source: commons.wikimedia.org"
+  },
+  "qa_c9_d5_rich_032": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Rathaus_and_Marienplatz_from_Peterskirche_-_August_2006.jpg?width=1600",
+    "title": "마리엔플라츠 신시청사",
+    "source": "https://commons.wikimedia.org/wiki/File:Rathaus_and_Marienplatz_from_Peterskirche_-_August_2006.jpg",
+    "credit": "Image source: commons.wikimedia.org"
+  },
+  "qa_c9_d5_rich_033": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Munich's_Twin_Towered_Church.jpg?width=1600",
+    "title": "프라우엔키르헤 쌍탑",
+    "source": "https://commons.wikimedia.org/wiki/File:Munich's_Twin_Towered_Church.jpg",
+    "credit": "Image source: commons.wikimedia.org"
+  },
+  "qa_c9_d5_rich_034": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/K%C3%A4se_auf_dem_Viktualienmarkt_M%C3%BCnchen_03.jpg?width=1600",
+    "title": "빅투알리엔마르크트",
+    "source": "https://commons.wikimedia.org/wiki/File:K%C3%A4se_auf_dem_Viktualienmarkt_M%C3%BCnchen_03.jpg",
+    "credit": "Image source: commons.wikimedia.org"
+  },
+  "qa_c9_d5_rich_035": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Munich_-_Hofbr%C3%A4uhaus_am_Platzl_-_0778.jpg?width=1600",
+    "title": "호프브로이하우스 홀",
+    "source": "https://commons.wikimedia.org/wiki/File:Munich_-_Hofbr%C3%A4uhaus_am_Platzl_-_0778.jpg",
+    "credit": "Image source: commons.wikimedia.org"
+  },
+  "qa_c9_d5_rich_036": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Exterior_of_Munich_Residence.JPG?width=1600",
+    "title": "뮌헨 레지덴츠 외관",
+    "source": "https://commons.wikimedia.org/wiki/File:Exterior_of_Munich_Residence.JPG",
+    "credit": "Image source: commons.wikimedia.org"
+  },
+  "qa_c9_d5_rich_037": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Munich_Ludwigstrasse_cordoned_off_at_Odeonsplatz_for_CSD.jpg?width=1600",
+    "title": "오데온스플라츠",
+    "source": "https://commons.wikimedia.org/wiki/File:Munich_Ludwigstrasse_cordoned_off_at_Odeonsplatz_for_CSD.jpg",
+    "credit": "Image source: commons.wikimedia.org"
+  },
+  "qa_c9_d5_rich_038": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Main_Door_Panel_-_Asam_Church_-_Munich.jpg?width=1600",
+    "title": "아잠키르헤",
+    "source": "https://commons.wikimedia.org/wiki/File:Main_Door_Panel_-_Asam_Church_-_Munich.jpg",
+    "credit": "Image source: commons.wikimedia.org"
+  },
+  "qa_c9_d5_rich_039": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Karlsplatz%2C_M%C3%BAnich%2C_Alemania1.JPG?width=1600",
+    "title": "카를스플라츠 슈타쿠스",
+    "source": "https://commons.wikimedia.org/wiki/File:Karlsplatz%2C_M%C3%BAnich%2C_Alemania1.JPG",
+    "credit": "Image source: commons.wikimedia.org"
+  },
+  "qa_c9_d6_rich_040": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Eibsee_(49241129673).jpg?width=1600",
+    "title": "아이브제 호수",
+    "source": "https://commons.wikimedia.org/wiki/File:Eibsee_(49241129673).jpg",
+    "credit": "Image source: commons.wikimedia.org"
+  },
+  "qa_c9_d6_rich_041": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Bayerische_Zugspitzbahn_-_Verkehrszentrum_-07.JPG?width=1600",
+    "title": "바이에른 추크슈피츠반",
+    "source": "https://commons.wikimedia.org/wiki/File:Bayerische_Zugspitzbahn_-_Verkehrszentrum_-07.JPG",
+    "credit": "Image source: commons.wikimedia.org"
+  },
+  "qa_c9_d6_rich_042": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Typical_Alpine_(Bayern)_architecture_(Garmisch-Paterkirchen_town_in_Germany).jpg?width=1600",
+    "title": "가르미슈파르텐키르헨 마을",
+    "source": "https://commons.wikimedia.org/wiki/File:Typical_Alpine_(Bayern)_architecture_(Garmisch-Paterkirchen_town_in_Germany).jpg",
+    "credit": "Image source: commons.wikimedia.org"
+  },
+  "qa_c9_d6_rich_043": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Alpspitze_(Wetterstein).jpg?width=1600",
+    "title": "알프슈피체 능선",
+    "source": "https://commons.wikimedia.org/wiki/File:Alpspitze_(Wetterstein).jpg",
+    "credit": "Image source: commons.wikimedia.org"
+  },
+  "qa_c9_d6_rich_044": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Schneefernerhaus_und_Zugspitze_vor_1964_R_Lau_230540.jpg?width=1600",
+    "title": "슈네페르너하우스",
+    "source": "https://commons.wikimedia.org/wiki/File:Schneefernerhaus_und_Zugspitze_vor_1964_R_Lau_230540.jpg",
+    "credit": "Image source: commons.wikimedia.org"
+  },
+  "qa_c9_d6_rich_045": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Zugspitze_(2962m)_(4098540233).jpg?width=1600",
+    "title": "추크슈피체 정상 십자가",
+    "source": "https://commons.wikimedia.org/wiki/File:Zugspitze_(2962m)_(4098540233).jpg",
+    "credit": "Image source: commons.wikimedia.org"
+  },
+  "qa_c9_d6_rich_046": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Tiroler_Zugspitzbahn_IMG_4738a.jpg?width=1600",
+    "title": "티롤러 추크슈피츠반 케이블카",
+    "source": "https://commons.wikimedia.org/wiki/File:Tiroler_Zugspitzbahn_IMG_4738a.jpg",
+    "credit": "Image source: commons.wikimedia.org"
+  },
+  "qa_c9_d6_rich_047": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Partnachklamm_Garmisch-Partenkirchen.jpg?width=1600",
+    "title": "파트나흐 협곡",
+    "source": "https://commons.wikimedia.org/wiki/File:Partnachklamm_Garmisch-Partenkirchen.jpg",
+    "credit": "Image source: commons.wikimedia.org"
+  },
+  "qa_c9_d7_rich_048": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Salzburg_Mirabellgarten-8098.jpg?width=1600",
+    "title": "미라벨 궁전",
+    "source": "https://commons.wikimedia.org/wiki/File:Salzburg_Mirabellgarten-8098.jpg",
+    "credit": "Image source: commons.wikimedia.org"
+  },
+  "qa_c9_d7_rich_049": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Salzburg_Getreidegasse_3_Schatz_Durchhaus-9151.jpg?width=1600",
+    "title": "게트라이데 거리",
+    "source": "https://commons.wikimedia.org/wiki/File:Salzburg_Getreidegasse_3_Schatz_Durchhaus-9151.jpg",
+    "credit": "Image source: commons.wikimedia.org"
+  },
+  "qa_c9_d7_rich_050": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Salzburg_-_Hagenauerplatz_-_Mozart's_Geburtshaus_(cropped).jpg?width=1600",
+    "title": "모차르트 생가",
+    "source": "https://commons.wikimedia.org/wiki/File:Salzburg_-_Hagenauerplatz_-_Mozart's_Geburtshaus_(cropped).jpg",
+    "credit": "Image source: commons.wikimedia.org"
+  },
+  "qa_c9_d7_rich_051": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Salzburg_Dom_Kuppel_01.jpg?width=1600",
+    "title": "잘츠부르크 대성당",
+    "source": "https://commons.wikimedia.org/wiki/File:Salzburg_Dom_Kuppel_01.jpg",
+    "credit": "Image source: commons.wikimedia.org"
+  },
+  "qa_c9_d7_rich_052": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Salzburg_%E2%80%94_Residenzplatz_%C2%B7_Residenzbrunnen_%C2%B7_Michaelskirche_%E2%80%94_2007.jpg?width=1600",
+    "title": "레지덴츠플라츠",
+    "source": "https://commons.wikimedia.org/wiki/File:Salzburg_%E2%80%94_Residenzplatz_%C2%B7_Residenzbrunnen_%C2%B7_Michaelskirche_%E2%80%94_2007.jpg",
+    "credit": "Image source: commons.wikimedia.org"
+  },
+  "qa_c9_d7_rich_053": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/%C3%96sterreich%2C_Salzburg%2C_St._Peter_north_entrance%2C_view_towards_cemetery.jpg?width=1600",
+    "title": "성 페터 수도원",
+    "source": "https://commons.wikimedia.org/wiki/File:%C3%96sterreich%2C_Salzburg%2C_St._Peter_north_entrance%2C_view_towards_cemetery.jpg",
+    "credit": "Image source: commons.wikimedia.org"
+  },
+  "qa_c9_d7_rich_054": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Old_Town_Salzburg_across_the_Salzach_river.jpg?width=1600",
+    "title": "잘차흐 강변",
+    "source": "https://commons.wikimedia.org/wiki/File:Old_Town_Salzburg_across_the_Salzach_river.jpg",
+    "credit": "Image source: commons.wikimedia.org"
+  },
+  "qa_c9_d7_rich_055": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Festungsbahn_Funicular.jpg?width=1600",
+    "title": "호엔잘츠부르크 푸니쿨라",
+    "source": "https://commons.wikimedia.org/wiki/File:Festungsbahn_Funicular.jpg",
+    "credit": "Image source: commons.wikimedia.org"
+  },
+  "qa_c9_d8_rich_056": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/20241029-M%C3%BCnchen_Hbf-02.jpg?width=1600",
+    "title": "뮌헨 중앙역 출발",
+    "source": "https://commons.wikimedia.org/wiki/File:20241029-M%C3%BCnchen_Hbf-02.jpg",
+    "credit": "Image source: commons.wikimedia.org"
+  },
+  "qa_c9_d8_rich_057": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/16-02-14-Railjet-innen-_RR25730.jpg?width=1600",
+    "title": "레일젯 열차 객실",
+    "source": "https://commons.wikimedia.org/wiki/File:16-02-14-Railjet-innen-_RR25730.jpg",
+    "credit": "Image source: commons.wikimedia.org"
+  },
+  "qa_c9_d8_rich_058": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Salzburg_Hauptbahnhof_Mittelbahnsteig-1927-2.jpg?width=1600",
+    "title": "잘츠부르크 중앙역 경유",
+    "source": "https://commons.wikimedia.org/wiki/File:Salzburg_Hauptbahnhof_Mittelbahnsteig-1927-2.jpg",
+    "credit": "Image source: commons.wikimedia.org"
+  },
+  "qa_c9_d8_rich_059": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Linz_Hauptbahnhof_S4-7724.jpg?width=1600",
+    "title": "린츠 중앙역 경유",
+    "source": "https://commons.wikimedia.org/wiki/File:Linz_Hauptbahnhof_S4-7724.jpg",
+    "credit": "Image source: commons.wikimedia.org"
+  },
+  "qa_c9_d8_rich_060": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Ceiling_of_Wien_Hauptbahnhof_(Vienna_Main_Station)%2C_Austria_01.jpg?width=1600",
+    "title": "빈 중앙역 도착",
+    "source": "https://commons.wikimedia.org/wiki/File:Ceiling_of_Wien_Hauptbahnhof_(Vienna_Main_Station)%2C_Austria_01.jpg",
+    "credit": "Image source: commons.wikimedia.org"
+  },
+  "qa_c9_d8_rich_061": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Wien_03_Bahnhof_Wien_Mitte_b.jpg?width=1600",
+    "title": "빈 미테 역",
+    "source": "https://commons.wikimedia.org/wiki/File:Wien_03_Bahnhof_Wien_Mitte_b.jpg",
+    "credit": "Image source: commons.wikimedia.org"
+  },
+  "qa_c9_d8_rich_062": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Monumento_a_Johann_Strauss%2C_Stadtpark%2C_Viena%2C_Austria%2C_2020-01-31%2C_DD_102-104_HDR.jpg?width=1600",
+    "title": "빈 슈타트파크",
+    "source": "https://commons.wikimedia.org/wiki/File:Monumento_a_Johann_Strauss%2C_Stadtpark%2C_Viena%2C_Austria%2C_2020-01-31%2C_DD_102-104_HDR.jpg",
+    "credit": "Image source: commons.wikimedia.org"
+  },
+  "qa_c9_d8_rich_063": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Plague_column_pestsa%C3%BCle_Graben_Wien_Vienna_Austria.jpg?width=1600",
+    "title": "그라벤 거리",
+    "source": "https://commons.wikimedia.org/wiki/File:Plague_column_pestsa%C3%BCle_Graben_Wien_Vienna_Austria.jpg",
+    "credit": "Image source: commons.wikimedia.org"
+  },
+  "qa_c9_d9_rich_064": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/20180109_Vienna_State_Opera_at_blue_hour_850_9387.jpg?width=1600",
+    "title": "빈 국립오페라하우스",
+    "source": "https://commons.wikimedia.org/wiki/File:20180109_Vienna_State_Opera_at_blue_hour_850_9387.jpg",
+    "credit": "Image source: commons.wikimedia.org"
+  },
+  "qa_c9_d9_rich_065": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Caf%C3%A9_Demel%2C_Vienna.jpg?width=1600",
+    "title": "데멜 카페와 쇼윈도",
+    "source": "https://commons.wikimedia.org/wiki/File:Caf%C3%A9_Demel%2C_Vienna.jpg",
+    "credit": "Image source: commons.wikimedia.org"
+  },
+  "qa_c9_d9_rich_066": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Caf%C3%A9_Hawelka_Exterior.jpg?width=1600",
+    "title": "카페 하벨카",
+    "source": "https://commons.wikimedia.org/wiki/File:Caf%C3%A9_Hawelka_Exterior.jpg",
+    "credit": "Image source: commons.wikimedia.org"
+  },
+  "qa_c9_d9_rich_067": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Rathaus_Vienna_June_2006_165.jpg?width=1600",
+    "title": "빈 시청",
+    "source": "https://commons.wikimedia.org/wiki/File:Rathaus_Vienna_June_2006_165.jpg",
+    "credit": "Image source: commons.wikimedia.org"
+  },
+  "qa_c9_d9_rich_068": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Museumsquartier_courtyard.jpg?width=1600",
+    "title": "무제움스크바르티어",
+    "source": "https://commons.wikimedia.org/wiki/File:Museumsquartier_courtyard.jpg",
+    "credit": "Image source: commons.wikimedia.org"
+  },
+  "qa_c9_d9_rich_069": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Giant_Ferris_Wheel_Vienna_from_W_on_2010-09-20.jpg?width=1600",
+    "title": "프라터 대관람차",
+    "source": "https://commons.wikimedia.org/wiki/File:Giant_Ferris_Wheel_Vienna_from_W_on_2010-09-20.jpg",
+    "credit": "Image source: commons.wikimedia.org"
+  },
+  "qa_c9_d9_rich_070": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Grinzing_Himmelstrasse_7.jpg?width=1600",
+    "title": "그린칭 호이리게 거리",
+    "source": "https://commons.wikimedia.org/wiki/File:Grinzing_Himmelstrasse_7.jpg",
+    "credit": "Image source: commons.wikimedia.org"
+  },
+  "qa_c9_d9_rich_071": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Kohlmarkt_Wien_at_night_2022-08-08_04.jpg?width=1600",
+    "title": "콜마르크트",
+    "source": "https://commons.wikimedia.org/wiki/File:Kohlmarkt_Wien_at_night_2022-08-08_04.jpg",
+    "credit": "Image source: commons.wikimedia.org"
+  },
+  "qa_c9_d10_rich_072": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Gardens_of_the_Belvedere_(Vienna)_03.jpg?width=1600",
+    "title": "벨베데레 정원 축선",
+    "source": "https://commons.wikimedia.org/wiki/File:Gardens_of_the_Belvedere_(Vienna)_03.jpg",
+    "credit": "Image source: commons.wikimedia.org"
+  },
+  "qa_c9_d10_rich_073": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Reflection_of_the_southeast_fa%C3%A7ade_of_the_Hofburg_palace_(Vienna%2C_Austria).jpg?width=1600",
+    "title": "호프부르크 왕궁",
+    "source": "https://commons.wikimedia.org/wiki/File:Reflection_of_the_southeast_fa%C3%A7ade_of_the_Hofburg_palace_(Vienna%2C_Austria).jpg",
+    "credit": "Image source: commons.wikimedia.org"
+  },
+  "qa_c9_d10_rich_074": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Wien_-_Albertina_(b).JPG?width=1600",
+    "title": "알베르티나",
+    "source": "https://commons.wikimedia.org/wiki/File:Wien_-_Albertina_(b).JPG",
+    "credit": "Image source: commons.wikimedia.org"
+  },
+  "qa_c9_d10_rich_075": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Secession_Building_Vienna.jpg?width=1600",
+    "title": "제체시온 전시관",
+    "source": "https://commons.wikimedia.org/wiki/File:Secession_Building_Vienna.jpg",
+    "credit": "Image source: commons.wikimedia.org"
+  },
+  "qa_c9_d10_rich_076": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Iglesia_de_San_Carlos_Borromeo%2C_Viena%2C_Austria%2C_2020-01-31%2C_DD_164-166_HDR.jpg?width=1600",
+    "title": "카를성당",
+    "source": "https://commons.wikimedia.org/wiki/File:Iglesia_de_San_Carlos_Borromeo%2C_Viena%2C_Austria%2C_2020-01-31%2C_DD_164-166_HDR.jpg",
+    "credit": "Image source: commons.wikimedia.org"
+  },
+  "qa_c9_d10_rich_077": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Empress_Maria_Theresia_monument_in_Vienna_02.jpg?width=1600",
+    "title": "마리아 테레지아 광장",
+    "source": "https://commons.wikimedia.org/wiki/File:Empress_Maria_Theresia_monument_in_Vienna_02.jpg",
+    "credit": "Image source: commons.wikimedia.org"
+  },
+  "qa_c9_d10_rich_078": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Allegory_of_war_and_Law_-_Prunksaal_-_Austrian_National_Library.jpg?width=1600",
+    "title": "오스트리아 국립도서관 프룽크잘",
+    "source": "https://commons.wikimedia.org/wiki/File:Allegory_of_war_and_Law_-_Prunksaal_-_Austrian_National_Library.jpg",
+    "credit": "Image source: commons.wikimedia.org"
+  },
+  "qa_c9_d10_rich_079": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Ringstra%C3%9Fe_Vienna_Oct._2006_002.jpg?width=1600",
+    "title": "링슈트라세 야경",
+    "source": "https://commons.wikimedia.org/wiki/File:Ringstra%C3%9Fe_Vienna_Oct._2006_002.jpg",
+    "credit": "Image source: commons.wikimedia.org"
+  },
+  "qa_c9_d11_rich_080": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Sachertorte_at_Hotel_Sacher.jpg?width=1600",
+    "title": "자허토르테",
+    "source": "https://commons.wikimedia.org/wiki/File:Sachertorte_at_Hotel_Sacher.jpg",
+    "credit": "Image source: commons.wikimedia.org"
+  },
+  "qa_c9_d11_rich_081": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Tafelspitz_in_Meerrettichsauce.jpg?width=1600",
+    "title": "타펠슈피츠",
+    "source": "https://commons.wikimedia.org/wiki/File:Tafelspitz_in_Meerrettichsauce.jpg",
+    "credit": "Image source: commons.wikimedia.org"
+  },
+  "qa_c9_d11_rich_082": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Kaiserschmarrn_at_Weihenstephan_2005-08-03.jpg?width=1600",
+    "title": "카이저슈마른",
+    "source": "https://commons.wikimedia.org/wiki/File:Kaiserschmarrn_at_Weihenstephan_2005-08-03.jpg",
+    "credit": "Image source: commons.wikimedia.org"
+  },
+  "qa_c9_d11_rich_083": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Apfelstrudel_with_whipped_cream.jpg?width=1600",
+    "title": "아펠슈트루델",
+    "source": "https://commons.wikimedia.org/wiki/File:Apfelstrudel_with_whipped_cream.jpg",
+    "credit": "Image source: commons.wikimedia.org"
+  },
+  "qa_c9_d11_rich_084": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Caf%C3%A9_Central_interior%2C_Vienna.jpg?width=1600",
+    "title": "빈 커피하우스 실내",
+    "source": "https://commons.wikimedia.org/wiki/File:Caf%C3%A9_Central_interior%2C_Vienna.jpg",
+    "credit": "Image source: commons.wikimedia.org"
+  },
+  "qa_c9_d11_rich_085": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Trzesniewski_001.JPG?width=1600",
+    "title": "트르제스니에프스키 오픈 샌드위치",
+    "source": "https://commons.wikimedia.org/wiki/File:Trzesniewski_001.JPG",
+    "credit": "Image source: commons.wikimedia.org"
+  },
+  "qa_c9_d11_rich_086": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/K%C3%A4sekrainer_(5481829243).jpg?width=1600",
+    "title": "케제크라이너 소시지",
+    "source": "https://commons.wikimedia.org/wiki/File:K%C3%A4sekrainer_(5481829243).jpg",
+    "credit": "Image source: commons.wikimedia.org"
+  },
+  "qa_c9_d11_rich_087": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Heuriger_Bach_Hengl_2.jpg?width=1600",
+    "title": "호이리게 와인 테이블",
+    "source": "https://commons.wikimedia.org/wiki/File:Heuriger_Bach_Hengl_2.jpg",
+    "credit": "Image source: commons.wikimedia.org"
+  },
+  "qa_c9_d12_rich_088": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Wien_Mitte_CAT01.jpg?width=1600",
+    "title": "빈 미테 공항철도 출발",
+    "source": "https://commons.wikimedia.org/wiki/File:Wien_Mitte_CAT01.jpg",
+    "credit": "Image source: commons.wikimedia.org"
+  },
+  "qa_c9_d12_rich_089": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/City_Airport_Train_1016_014_at_Vienna_Airport_railway_station.jpg?width=1600",
+    "title": "CAT 공항열차 외관",
+    "source": "https://commons.wikimedia.org/wiki/File:City_Airport_Train_1016_014_at_Vienna_Airport_railway_station.jpg",
+    "credit": "Image source: commons.wikimedia.org"
+  },
+  "qa_c9_d12_rich_090": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Vienna_airport_terminal_3.jpg?width=1600",
+    "title": "빈 국제공항 터미널",
+    "source": "https://commons.wikimedia.org/wiki/File:Vienna_airport_terminal_3.jpg",
+    "credit": "Image source: commons.wikimedia.org"
+  },
+  "qa_c9_d12_rich_091": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Vienna_airport_(4527280765).jpg?width=1600",
+    "title": "빈 공항역 플랫폼",
+    "source": "https://commons.wikimedia.org/wiki/File:Vienna_airport_(4527280765).jpg",
+    "credit": "Image source: commons.wikimedia.org"
+  },
+  "qa_c9_d12_rich_092": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Austrian_Airlines_Bombardier_Dash_8_Q400_(flight_683)_boarding_at_Vienna_Airport%2C_Austria_(DSC_0003).jpg?width=1600",
+    "title": "오스트리아항공 항공기",
+    "source": "https://commons.wikimedia.org/wiki/File:Austrian_Airlines_Bombardier_Dash_8_Q400_(flight_683)_boarding_at_Vienna_Airport%2C_Austria_(DSC_0003).jpg",
+    "credit": "Image source: commons.wikimedia.org"
+  },
+  "qa_c9_d12_rich_093": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Vienna-Airport-runway-02ASD.jpg?width=1600",
+    "title": "슈베하트 공항 주변",
+    "source": "https://commons.wikimedia.org/wiki/File:Vienna-Airport-runway-02ASD.jpg",
+    "credit": "Image source: commons.wikimedia.org"
+  },
+  "qa_c9_d12_rich_094": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Vienna_International_Airport_from_the_Air_Traffic_Control_Tower_20.jpg?width=1600",
+    "title": "빈 공항 관제탑",
+    "source": "https://commons.wikimedia.org/wiki/File:Vienna_International_Airport_from_the_Air_Traffic_Control_Tower_20.jpg",
+    "credit": "Image source: commons.wikimedia.org"
+  },
+  "qa_c9_d12_rich_095": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/The_Morning_Line_on_Schwarzenbergplatz%2C_Vienna_(7997170158).jpg?width=1600",
+    "title": "란트슈트라세 아침 거리",
+    "source": "https://commons.wikimedia.org/wiki/File:The_Morning_Line_on_Schwarzenbergplatz%2C_Vienna_(7997170158).jpg",
+    "credit": "Image source: commons.wikimedia.org"
+  },
+  "qa_c9_poi_mainz_eisgrub": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Eisgrub%2C_Mainz_(IMG_20211008_170506_1).jpg?width=1600",
+    "title": "Eisgrub-Bräu",
+    "source": "https://commons.wikimedia.org/wiki/File:Eisgrub%2C_Mainz_(IMG_20211008_170506_1).jpg",
+    "credit": "Image source: commons.wikimedia.org"
+  },
+  "qa_c9_poi_mainz_heiliggeist": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Mainz_%E2%80%93_Restaurant_%22Heiliggeist%22_in_der_Mailandsgasse_-_panoramio.jpg?width=1600",
+    "title": "Heiliggeist Mainz",
+    "source": "https://commons.wikimedia.org/wiki/File:Mainz_%E2%80%93_Restaurant_%22Heiliggeist%22_in_der_Mailandsgasse_-_panoramio.jpg",
+    "credit": "Image source: commons.wikimedia.org"
+  },
+  "qa_c9_poi_mainz_michel": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Mainz-WeinhausMichel-1-Asio.jpg?width=1600",
+    "title": "Weinhaus Michel",
+    "source": "https://commons.wikimedia.org/wiki/File:Mainz-WeinhausMichel-1-Asio.jpg",
+    "credit": "Image source: commons.wikimedia.org"
+  },
+  "qa_c9_poi_mainz_kamin": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Flammkuchen.JPG?width=1600",
+    "title": "Kamin Mainz - 플람쿠헨 대표 메뉴",
+    "source": "https://commons.wikimedia.org/wiki/File:Flammkuchen.JPG",
+    "credit": "Image source: commons.wikimedia.org"
+  },
+  "qa_c9_poi_mainz_mainzdomo": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Korean_Bibimbap.jpg?width=1600",
+    "title": "MAINZDOMO - 한식 대표 메뉴",
+    "source": "https://commons.wikimedia.org/wiki/File:Korean_Bibimbap.jpg",
+    "credit": "Image source: commons.wikimedia.org"
+  },
+  "qa_c9_poi_mainz_chimaek": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Old-style_Korean_fried_chicken.jpg?width=1600",
+    "title": "Chimaek Mainz Restaurant - 치킨 대표 메뉴",
+    "source": "https://commons.wikimedia.org/wiki/File:Old-style_Korean_fried_chicken.jpg",
+    "credit": "Image source: commons.wikimedia.org"
   }
+  // COURSE9_RICH_PHOTOS_END
 };

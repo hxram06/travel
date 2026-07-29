@@ -12,7 +12,7 @@ const RULES = {
   // 규칙 1 — 사진
   photo: {
     minPerDay: 2,
-    maxPerDay: 5,
+    maxPerDay: 12,
     // 사진 좌표가 그날 동선에서 이만큼(도) 넘게 떨어지면 다른 도시로 본다
     maxDistanceFromCityDeg: 1.2,
     // 명소 좌표가 도시 중심과 완전히 같으면 '실제 위치'를 안 넣은 것으로 본다
