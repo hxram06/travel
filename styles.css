@@ -644,27 +644,72 @@ html, body {
 
 /* 방문 도시 목록 */
 .panel-visited {
-  font-size: 0.82rem; color: var(--text-dim);
-  line-height: 2.2; padding-bottom: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 2px 0 16px;
+  font-size: 0.8rem;
 }
 
 .visited-city {
-  margin-right: 12px;
-  padding: 2px 0;
-  border: 0;
-  background: transparent;
-  color: inherit;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 34px;
+  padding: 7px 10px 7px 8px;
+  border: 1px solid rgba(15, 23, 42, 0.11);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.78);
+  color: var(--text-secondary);
   font: inherit;
+  font-weight: 650;
   white-space: nowrap;
   cursor: pointer;
-  transition: color 0.2s;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+  transition: color 0.2s, border-color 0.2s, background 0.2s, box-shadow 0.2s, transform 0.2s;
 }
-.visited-city:hover { color: var(--accent); }
-.visited-city:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
-.visited-city.done { color: var(--text-secondary); }
+.visited-city:hover {
+  color: var(--accent);
+  border-color: rgba(37, 99, 235, 0.28);
+  background: #fff;
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
+  transform: translateY(-1px);
+}
+.visited-city:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+.visited-index {
+  display: grid;
+  place-items: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.08);
+  color: var(--text-mid);
+  font-size: 0.72rem;
+  font-weight: 800;
+  line-height: 1;
+}
+.visited-label {
+  line-height: 1;
+}
+.visited-city.done .visited-index {
+  background: rgba(71, 85, 105, 0.82);
+  color: #fff;
+}
+.visited-city.upcoming {
+  color: var(--text-dim);
+}
 .visited-city.current {
-  color: var(--accent); font-weight: 700;
-  border-bottom: 2px solid var(--accent);
+  color: var(--accent-deep);
+  border-color: rgba(37, 99, 235, 0.32);
+  background: var(--accent-soft);
+  box-shadow: 0 8px 22px rgba(37, 99, 235, 0.12);
+}
+.visited-city.current .visited-index {
+  background: var(--accent);
+  color: #fff;
 }
 
 /* 네비게이션 */
@@ -867,6 +912,27 @@ html, body {
   .panel.panel-collapsed .panel-scroll {
     overflow: hidden;
     padding-top: 8px;
+  }
+  .panel-visited {
+    flex-wrap: nowrap;
+    gap: 6px;
+    margin: 0 -16px;
+    padding: 2px 16px 12px;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+  .panel-visited::-webkit-scrollbar {
+    display: none;
+  }
+  .visited-city {
+    min-height: 32px;
+    padding: 6px 9px 6px 7px;
+    font-size: 0.76rem;
+  }
+  .visited-index {
+    width: 19px;
+    height: 19px;
   }
   .panel.panel-collapsed .panel-course-name,
   .panel.panel-collapsed .panel-progress,

@@ -217,10 +217,10 @@
     const visitedPanel = $('panel-visited');
     visitedPanel.innerHTML = course.days.map((d, i) => {
       const cls = i < state.dayIndex ? 'visited-city done'
-        : i === state.dayIndex ? 'visited-city current' : 'visited-city';
-      const check = i < state.dayIndex ? '✓ ' : '';
+        : i === state.dayIndex ? 'visited-city current' : 'visited-city upcoming';
+      const marker = i < state.dayIndex ? '✓' : String(d.day);
       const current = i === state.dayIndex ? ' aria-current="step"' : '';
-      return `<button type="button" class="${cls}" data-day-index="${i}"${current} aria-label="Day ${d.day} ${d.cityKo}로 이동">${check}D${d.day} ${d.cityKo}</button>`;
+      return `<button type="button" class="${cls}" data-day-index="${i}"${current} aria-label="Day ${d.day} ${d.cityKo}로 이동"><span class="visited-index" aria-hidden="true">${marker}</span><span class="visited-label">D${d.day} ${d.cityKo}</span></button>`;
     }).join('');
     visitedPanel.querySelectorAll('.visited-city').forEach((button) => {
       button.addEventListener('click', () => window.goToDay(Number(button.dataset.dayIndex)));
@@ -268,6 +268,30 @@
     if (!state.course) return;
     const myToken = ++navToken;
 
+    if (delta > 0 && state.subStep && state.subStep.type === 'trip-base') {
+      const days = state.course.days;
+      const day = days[state.dayIndex];
+      const fromCoords = day.baseCoords || day.coords;
+      state.subStep = null;
+
+      if (state.dayIndex + 1 < days.length) {
+        state.dayIndex++;
+        state.returnedHome = false;
+        if (state.dayIndex > state.maxVisitedDay) state.maxVisitedDay = state.dayIndex;
+        try { renderPanel(); } catch (e) { console.error('패널 렌더 오류', e); }
+
+        TravelMap.skip();
+        (async () => {
+          for (let i = 0; i < 80 && TravelMap.isAnimating(); i++) await wait(40);
+          if (myToken !== navToken || !state.course) return;
+          await TravelMap.goToDay({ coords: fromCoords }, days[state.dayIndex], true);
+        })().catch((e) => {
+          console.error('당일치기 귀환 후 다음 일정 지도 애니메이션 오류', e);
+        });
+      }
+      return;
+    }
+
     // 현재 이동을 취소하고 최신 버튼 입력을 이어서 처리한다.
     if (state.transitioning || TravelMap.isAnimating()) {
       TravelMap.skip();
@@ -294,9 +318,13 @@
       if (state.subStep === null) {
         // 현재 날이 당일치기 → 숙박 도시로 귀환 애니메이션 후 정지
         if (day.isTrip && day.baseCoords) {
-          await TravelMap.returnToBase(day);
-          TravelMap.showDayPhotos({ photos: day.returnPhotos || [] });
           state.subStep = { type: 'trip-base' };
+          TravelMap.showDayPhotos({ photos: day.returnPhotos || [] });
+          panelInner.classList.remove('fade-out');
+          try { renderPanel(); } catch (e) { console.error('패널 렌더 오류', e); }
+          TravelMap.returnToBase(day).catch((e) => {
+            console.error('당일치기 귀환 지도 애니메이션 오류', e);
+          });
 
         } else if (state.dayIndex + 1 < days.length) {
           const nextDay = days[state.dayIndex + 1];
