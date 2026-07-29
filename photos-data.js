@@ -1661,6 +1661,12 @@ const PHOTOS = {
     "source": "https://commons.wikimedia.org/wiki/File:2008-05-19_Sargans_Schloss_5527.jpg",
     "credit": "Norbert Aepli · CC BY 3.0"
   },
+  "qa_c9_d7_sargans_arrival_1": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/2008-05-19_Sargans_Schloss_5528.jpg?width=1280",
+    "title": "2008-05-19 Sargans Schloss 5528.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:2008-05-19_Sargans_Schloss_5528.jpg",
+    "credit": "Norbert Aepli · CC BY 3.0"
+  },
   "qa_c9_d8_pizol_0": {
     "url": "https://commons.wikimedia.org/wiki/Special:FilePath/PizolPanorama03.jpg?width=1280",
     "title": "PizolPanorama03.jpg",
@@ -1678,5 +1684,23 @@ const PHOTOS = {
     "title": "Chur Kathedrale.jpg",
     "source": "https://commons.wikimedia.org/wiki/File:Chur_Kathedrale.jpg",
     "credit": "Adrian Michael / Parpan05 · CC BY-SA 3.0"
+  },
+  "qa_c9_d8_vaduz_0": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Vaduz_Castle.JPG?width=1280",
+    "title": "Vaduz Castle.JPG",
+    "source": "https://commons.wikimedia.org/wiki/File:Vaduz_Castle.JPG",
+    "credit": "Ypsilonatshared · Public domain"
+  },
+  "qa_c9_d9_zurich_0": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Zurich_bahnhofstrasse.JPG?width=1280",
+    "title": "Zurich bahnhofstrasse.JPG",
+    "source": "https://commons.wikimedia.org/wiki/File:Zurich_bahnhofstrasse.JPG",
+    "credit": "Nojer2 · Public domain"
+  },
+  "qa_c9_d9_zurich_1": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Zurich_grossmunster.jpg?width=1280",
+    "title": "Zurich grossmunster.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Zurich_grossmunster.jpg",
+    "credit": "Cayla · CC BY-SA 3.0"
   }
 };
