@@ -1673,6 +1673,12 @@ const PHOTOS = {
     "source": "https://commons.wikimedia.org/wiki/File:PizolPanorama03.jpg",
     "credit": "Ramessos · CC BY-SA 4.0"
   },
+  "qa_c9_d8_pizol_1": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Gandola_in_Pizol.jpg?width=1280",
+    "title": "Gandola in Pizol.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Gandola_in_Pizol.jpg",
+    "credit": "Paudelsunil007 · CC BY-SA 4.0"
+  },
   "qa_c9_d9_chur_0": {
     "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Chur_%28Altstadt%29.jpg?width=1280",
     "title": "Chur (Altstadt).jpg",
