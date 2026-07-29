@@ -1708,5 +1708,47 @@ const PHOTOS = {
     "title": "Zurich grossmunster.jpg",
     "source": "https://commons.wikimedia.org/wiki/File:Zurich_grossmunster.jpg",
     "credit": "Cayla · CC BY-SA 3.0"
+  },
+  "qa_c9_d7_salzburg_0": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/1819_-_Salzburg_-_Mirabellgarten_and_Festung_Hohensalzburg.JPG?width=1280",
+    "title": "1819 - Salzburg - Mirabellgarten and Festung Hohensalzburg.JPG",
+    "source": "https://commons.wikimedia.org/wiki/File:1819_-_Salzburg_-_Mirabellgarten_and_Festung_Hohensalzburg.JPG",
+    "credit": "Thisisbossi · CC BY-SA 2.5"
+  },
+  "qa_c9_d7_salzburg_1": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/SalzburgVonDerGersbergalm.jpg?width=1280",
+    "title": "SalzburgVonDerGersbergalm.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:SalzburgVonDerGersbergalm.jpg",
+    "credit": "Wikipedia / Wikimedia Commons"
+  },
+  "qa_c9_d8_neuschwanstein_0": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Castle_Neuschwanstein_Winter.jpg?width=1280",
+    "title": "Castle Neuschwanstein Winter.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Castle_Neuschwanstein_Winter.jpg",
+    "credit": "Bstlee · Public domain"
+  },
+  "qa_c9_d8_neuschwanstein_1": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Schloss_Neuschwanstein_im_Winter.jpg?width=1280",
+    "title": "Schloss Neuschwanstein im Winter.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Schloss_Neuschwanstein_im_Winter.jpg",
+    "credit": "Gliwi · CC BY 3.0 / GFDL"
+  },
+  "qa_c9_d9_nuremberg_0": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Nuremberg_View_Old_Town.jpg?width=1280",
+    "title": "Nuremberg View Old Town.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Nuremberg_View_Old_Town.jpg",
+    "credit": "Johannes Kerstiens / Pirkheimer · CC BY-SA 3.0"
+  },
+  "qa_c9_d9_nuremberg_1": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Nuremberg,_Hauptmarkt_and_Frauenkirche_4641.jpg?width=1280",
+    "title": "Nuremberg, Hauptmarkt and Frauenkirche 4641.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Nuremberg,_Hauptmarkt_and_Frauenkirche_4641.jpg",
+    "credit": "Hubertl · CC BY-SA 4.0"
+  },
+  "qa_c9_cover_munich_base": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Munich_skyline.jpg?width=1280",
+    "title": "Munich skyline.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Munich_skyline.jpg",
+    "credit": "Stefan Kuhn · CC BY-SA / GFDL / CC0"
   }
 };
