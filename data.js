@@ -5632,6 +5632,14 @@ const COURSES = [
         "isTrip": false,
         "baseCity": null,
         "baseCoords": null,
+        "lodging": {
+          "name": "IntercityHotel Mainz",
+          "coords": [
+            8.2580625,
+            49.9989375
+          ],
+          "note": "Binger Strasse 21 · Mainz Hbf 도보권"
+        },
         "transport": {
           "mode": "plane",
           "label": "루프트한자 ICN 12:55 (T1) → FRA 18:40 (T1) 직항 (13h 45m) | ICE FRA 공항 → 마인츠 Hbf (35분)"
@@ -5719,6 +5727,14 @@ const COURSES = [
           8.2580625,
           49.9989375
         ],
+        "lodging": {
+          "name": "IntercityHotel Mainz",
+          "coords": [
+            8.2580625,
+            49.9989375
+          ],
+          "note": "Binger Strasse 21 · Mainz Hbf 도보권"
+        },
         "transport": {
           "mode": "train",
           "label": "IntercityHotel Mainz → Mainz Hbf 도보 1분 → 프랑크푸르트 Hbf · S8/S9 35분"
@@ -5778,6 +5794,14 @@ const COURSES = [
           8.2580625,
           49.9989375
         ],
+        "lodging": {
+          "name": "IntercityHotel Mainz",
+          "coords": [
+            8.2580625,
+            49.9989375
+          ],
+          "note": "Binger Strasse 21 · Mainz Hbf 도보권"
+        },
         "transport": {
           "mode": "train",
           "label": "IntercityHotel Mainz → Mainz Hbf 도보 1분 → 점심 IC 1h 30m · 라인강 계곡 → 쾰른"
@@ -5838,6 +5862,14 @@ const COURSES = [
           11.56461,
           48.13816
         ],
+        "lodging": {
+          "name": "Buddy Hotel Munich",
+          "coords": [
+            11.56461,
+            48.13816
+          ],
+          "note": "Sonnenstrasse 2 · Munich Hbf와 Stachus 사이"
+        },
         "transport": {
           "mode": "train",
           "label": "IntercityHotel Mainz → Mainz Hbf → 하이델베르크 · 당일 관광"
@@ -5938,6 +5970,14 @@ const COURSES = [
         "isTrip": false,
         "baseCity": null,
         "baseCoords": null,
+        "lodging": {
+          "name": "Buddy Hotel Munich",
+          "coords": [
+            11.56461,
+            48.13816
+          ],
+          "note": "Sonnenstrasse 2 · Munich Hbf와 Stachus 사이"
+        },
         "transport": {
           "mode": "walk",
           "label": "Buddy Hotel ↔ 뮌헨 구시가지 · 맥주홀 후보 지도 핀 · 학센바우어/뮌헨포차"
@@ -5974,6 +6014,7 @@ const COURSES = [
             ],
             "kind": "beer",
             "priority": "candidate",
+            "photoSpot": "qa_c9_poi_augustiner_klosterwirt",
             "note": "Frauenkirche 옆 Augustiner 계열 전통 식당. 중심부 맥주 투어 후보."
           },
           {
@@ -5984,6 +6025,7 @@ const COURSES = [
             ],
             "kind": "beer",
             "priority": "candidate",
+            "photoSpot": "qa_c9_poi_schneider_brauhaus",
             "note": "Tal 거리의 밀맥주 중심 브로이하우스. 마리엔플라츠 동쪽 후보."
           },
           {
@@ -5994,6 +6036,7 @@ const COURSES = [
             ],
             "kind": "beer",
             "priority": "candidate",
+            "photoSpot": "qa_c9_poi_herrschaftszeiten",
             "note": "Tal 12의 Paulaner 계열 바이에른 식당. Schneider와 가까워 비교하기 좋다."
           },
           {
@@ -6004,6 +6047,7 @@ const COURSES = [
             ],
             "kind": "beer",
             "priority": "candidate",
+            "photoSpot": "qa_c9_poi_brauhaus_kapuzinerplatz",
             "note": "Kapuzinerplatz의 전통 브로이하우스. 중심부보다 남쪽이라 여유 있을 때 후보."
           },
           {
@@ -6014,6 +6058,7 @@ const COURSES = [
             ],
             "kind": "beer",
             "priority": "candidate",
+            "photoSpot": "qa_c9_poi_hofbraeuhaus",
             "note": "Platzl의 대표 맥주홀. 관광객이 많지만 뮌헨 첫 방문 상징성이 크다."
           },
           {
@@ -6024,6 +6069,7 @@ const COURSES = [
             ],
             "kind": "korean",
             "priority": "must",
+            "photoSpot": "qa_c9_poi_pocha",
             "note": "독일 음식에 물렸을 때 사실상 필수로 잡는 한식/포차 플랜."
           }
         ],
@@ -6064,6 +6110,14 @@ const COURSES = [
           11.56461,
           48.13816
         ],
+        "lodging": {
+          "name": "Buddy Hotel Munich",
+          "coords": [
+            11.56461,
+            48.13816
+          ],
+          "note": "Sonnenstrasse 2 · Munich Hbf와 Stachus 사이"
+        },
         "transport": {
           "mode": "train",
           "label": "Buddy Hotel → 뮌헨 Hbf 도보 6분 → 가르미슈-파르텐키르헨 → 추크슈피체"
@@ -6128,6 +6182,14 @@ const COURSES = [
           11.56461,
           48.13816
         ],
+        "lodging": {
+          "name": "Buddy Hotel Munich",
+          "coords": [
+            11.56461,
+            48.13816
+          ],
+          "note": "Sonnenstrasse 2 · Munich Hbf와 Stachus 사이"
+        },
         "transport": {
           "mode": "train",
           "label": "Buddy Hotel → 뮌헨 Hbf 도보 6분 → 잘츠부르크 Hbf · RE5/BRB 약 2시간"
@@ -6192,6 +6254,14 @@ const COURSES = [
         "isTrip": false,
         "baseCity": null,
         "baseCoords": null,
+        "lodging": {
+          "name": "Eurostars Embassy Vienna",
+          "coords": [
+            16.38426,
+            48.20593
+          ],
+          "note": "Landstrasser Hauptstrasse 120 · 빈 동부 숙소"
+        },
         "transport": {
           "mode": "train",
           "label": "뮌헨 Hbf → 빈 Hbf · Railjet/ICE 약 4시간 · 잘츠부르크·린츠 경유"
@@ -6260,6 +6330,14 @@ const COURSES = [
         "isTrip": false,
         "baseCity": null,
         "baseCoords": null,
+        "lodging": {
+          "name": "Eurostars Embassy Vienna",
+          "coords": [
+            16.38426,
+            48.20593
+          ],
+          "note": "Landstrasser Hauptstrasse 120 · 빈 동부 숙소"
+        },
         "transport": {
           "mode": "walk",
           "label": "빈 휴식일 · 나슈마르크트 → 카페 센트럴 → 비어홀/호이리게"
@@ -6316,6 +6394,14 @@ const COURSES = [
         "isTrip": false,
         "baseCity": null,
         "baseCoords": null,
+        "lodging": {
+          "name": "Eurostars Embassy Vienna",
+          "coords": [
+            16.38426,
+            48.20593
+          ],
+          "note": "Landstrasser Hauptstrasse 120 · 빈 동부 숙소"
+        },
         "transport": {
           "mode": "walk",
           "label": "빈 시내 · 트램+도보 (벨베데레 → 미술사 박물관 → 오페라)"
@@ -6372,6 +6458,14 @@ const COURSES = [
         "isTrip": false,
         "baseCity": null,
         "baseCoords": null,
+        "lodging": {
+          "name": "Eurostars Embassy Vienna",
+          "coords": [
+            16.38426,
+            48.20593
+          ],
+          "note": "Landstrasser Hauptstrasse 120 · 빈 동부 숙소"
+        },
         "transport": {
           "mode": "walk",
           "label": "빈 먹는 날 · 카페 사허 → 피글뮐러/가스트하우스 → 뷔르스텔슈탄트 → 호이리게"
@@ -6412,6 +6506,7 @@ const COURSES = [
             ],
             "kind": "coffee",
             "priority": "candidate",
+            "photoSpot": "qa_c9_poi_cafe_sacher",
             "note": "자허토르테와 멜랑쥐로 시작하는 빈 커피하우스 후보."
           },
           {
@@ -6422,6 +6517,7 @@ const COURSES = [
             ],
             "kind": "food",
             "priority": "candidate",
+            "photoSpot": "qa_c9_d11_food_schnitzel_0",
             "note": "큰 빈 슈니첼로 유명한 중심부 식당 후보. 예약 권장."
           },
           {
@@ -6432,6 +6528,7 @@ const COURSES = [
             ],
             "kind": "food",
             "priority": "candidate",
+            "photoSpot": "qa_c9_poi_bitzinger",
             "note": "알베르티나와 오페라 근처의 대표적인 뷔르스텔슈탄트 후보."
           },
           {
@@ -6442,6 +6539,7 @@ const COURSES = [
             ],
             "kind": "food",
             "priority": "candidate",
+            "photoSpot": "qa_c9_poi_trzesniewski",
             "note": "작은 오픈 샌드위치로 배를 크게 채우지 않고 여러 맛을 보기 좋은 후보."
           },
           {
@@ -6452,6 +6550,7 @@ const COURSES = [
             ],
             "kind": "wine",
             "priority": "candidate",
+            "photoSpot": "qa_c9_poi_grinzing_heuriger",
             "note": "빈식 호이리게 저녁 후보. 날씨와 이동 피로에 따라 중심부 식당으로 대체 가능."
           }
         ],
@@ -6488,6 +6587,14 @@ const COURSES = [
         "isTrip": false,
         "baseCity": null,
         "baseCoords": null,
+        "lodging": {
+          "name": "Eurostars Embassy Vienna",
+          "coords": [
+            16.38426,
+            48.20593
+          ],
+          "note": "Landstrasser Hauptstrasse 120 · 빈 동부 숙소"
+        },
         "transport": {
           "mode": "plane",
           "label": "Eurostars Embassy Vienna → Wien Mitte/CAT → VIE 공항 (16분) | VIE 13:20 → MUC 환승 → ICN +1일 11:15"

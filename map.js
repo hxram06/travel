@@ -26,6 +26,7 @@ const TravelMap = (() => {
   let vehicleMarker = null;
   let photoMarkers = [];
   let poiMarkers = [];
+  let lodgingMarker = null;
   let travelledLegs = [];     // 지금까지 이동한 경로들 (좌표 배열의 배열)
   let animating = false;
   let cancelFlag = false;
@@ -380,6 +381,7 @@ const TravelMap = (() => {
       photoMarkers.push(marker);
     });
     showPois(day);
+    showLodging(day);
   }
 
   function clearPhotos() {
@@ -388,15 +390,19 @@ const TravelMap = (() => {
     photoMarkers = [];
     poiMarkers.forEach((m) => m.remove());
     poiMarkers = [];
+    if (lodgingMarker) lodgingMarker.remove();
+    lodgingMarker = null;
   }
 
-  function buildPoiPopupHtml(poi) {
+  function buildPoiPopupHtml(poi, meta) {
     const badge = poi.priority === 'must' ? '필수' : '후보';
     return (
       '<div class="poi-popup">' +
+      (meta ? '<img class="poi-popup-img" src="' + meta.url + '" alt="">' : '') +
       '<div class="poi-popup-badge">' + badge + '</div>' +
       '<div class="poi-popup-name">' + poi.name + '</div>' +
       (poi.note ? '<div class="poi-popup-note">' + poi.note + '</div>' : '') +
+      (meta && meta.source ? '<a class="poi-popup-credit" href="' + meta.source + '" target="_blank" rel="noopener">사진 출처</a>' : '') +
       '</div>'
     );
   }
@@ -407,7 +413,11 @@ const TravelMap = (() => {
       if (!poi || !Array.isArray(poi.coords)) return;
       const el = document.createElement('button');
       el.type = 'button';
-      el.className = `poi-marker poi-marker-${poi.kind || 'place'} ${poi.priority === 'must' ? 'poi-marker-must' : ''}`;
+      const meta = poi.photoSpot ? PHOTOS[poi.photoSpot] : null;
+      const classes = ['poi-marker', `poi-marker-${poi.kind || 'place'}`];
+      if (meta) classes.push('poi-photo-marker');
+      if (poi.priority === 'must') classes.push(meta ? 'poi-photo-marker-must' : 'poi-marker-must');
+      el.className = classes.join(' ');
       el.setAttribute('aria-label', poi.name);
       el.title = poi.name;
       const poiIcon = {
@@ -417,15 +427,19 @@ const TravelMap = (() => {
         korean: '🍲',
         wine: '🍷',
       }[poi.kind] || '📍';
-      el.textContent = poi.priority === 'must' ? '★' : poiIcon;
+      if (meta) {
+        el.style.backgroundImage = 'url("' + meta.url + '")';
+      } else {
+        el.textContent = poiIcon;
+      }
 
       const popup = new mapboxgl.Popup({
         offset: 18,
-        maxWidth: '260px',
+        maxWidth: '280px',
         className: 'poi-popup-wrap',
         focusAfterOpen: false,
         closeOnClick: true,
-      }).setHTML(buildPoiPopupHtml(poi)).setLngLat(poi.coords);
+      }).setHTML(buildPoiPopupHtml(poi, meta)).setLngLat(poi.coords);
 
       const marker = new mapboxgl.Marker({ element: el, anchor: 'bottom' })
         .setLngLat(poi.coords).addTo(map);
@@ -436,6 +450,44 @@ const TravelMap = (() => {
       });
 
       poiMarkers.push(marker);
+    });
+  }
+
+  function buildLodgingPopupHtml(lodging) {
+    return (
+      '<div class="lodging-popup">' +
+      '<div class="lodging-popup-badge">숙소</div>' +
+      '<div class="lodging-popup-name">' + lodging.name + '</div>' +
+      (lodging.note ? '<div class="lodging-popup-note">' + lodging.note + '</div>' : '') +
+      '</div>'
+    );
+  }
+
+  function showLodging(day) {
+    const lodging = day && day.lodging;
+    if (!isReady() || !lodging || !Array.isArray(lodging.coords)) return;
+
+    const el = document.createElement('button');
+    el.type = 'button';
+    el.className = 'lodging-marker';
+    el.setAttribute('aria-label', lodging.name);
+    el.title = lodging.name;
+    el.textContent = '★';
+
+    const popup = new mapboxgl.Popup({
+      offset: 18,
+      maxWidth: '260px',
+      className: 'lodging-popup-wrap',
+      focusAfterOpen: false,
+      closeOnClick: true,
+    }).setHTML(buildLodgingPopupHtml(lodging)).setLngLat(lodging.coords);
+
+    lodgingMarker = new mapboxgl.Marker({ element: el, anchor: 'bottom' })
+      .setLngLat(lodging.coords).addTo(map);
+
+    el.addEventListener('click', (ev) => {
+      ev.stopPropagation();
+      popup.addTo(map);
     });
   }
 

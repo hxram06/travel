@@ -1774,5 +1774,65 @@ const PHOTOS = {
     "title": "LEO Wiener Würstelstand, Vienna.jpg",
     "source": "https://commons.wikimedia.org/wiki/File:LEO_Wiener_W%C3%BCrstelstand,_Vienna.jpg",
     "credit": "Herzi Pinki · CC BY-SA 4.0"
+  },
+  "qa_c9_poi_augustiner_klosterwirt": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Augustiner%20am%20Dom%2005.JPG?width=1280",
+    "title": "Augustiner am Dom 05.JPG",
+    "source": "https://commons.wikimedia.org/wiki/File:Augustiner_am_Dom_05.JPG",
+    "credit": "Wikimedia Commons"
+  },
+  "qa_c9_poi_schneider_brauhaus": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/MUC%20WeissesBr%C3%A4uhaus%202013-08.jpg?width=1280",
+    "title": "MUC WeissesBräuhaus 2013-08.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:MUC_WeissesBr%C3%A4uhaus_2013-08.jpg",
+    "credit": "Wikimedia Commons"
+  },
+  "qa_c9_poi_herrschaftszeiten": {
+    "url": "https://static.wixstatic.com/media/373eb2_a03a3d859da248449efecff0e7dbe33e~mv2.jpg/v1/fill/w_900,h_600,al_c,q_85,enc_avif,quality_auto/Herrschaftszeiten-7741.JPG",
+    "title": "Herrschaftszeiten-7741.JPG",
+    "source": "https://www.herrschaftszeiten-muenchen.de/",
+    "credit": "Herrschaftszeiten München"
+  },
+  "qa_c9_poi_brauhaus_kapuzinerplatz": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/M%C3%BCnchen%20-%20Paulaner%20Br%C3%A4uhaus.jpg?width=1280",
+    "title": "München - Paulaner Bräuhaus.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:M%C3%BCnchen_-_Paulaner_Br%C3%A4uhaus.jpg",
+    "credit": "Fred Romero · CC BY 2.0"
+  },
+  "qa_c9_poi_hofbraeuhaus": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Hofbr%C3%A4uhaus%20munchen.jpg?width=1280",
+    "title": "Hofbräuhaus munchen.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Hofbr%C3%A4uhaus_munchen.jpg",
+    "credit": "Davide Lussetti · Wikimedia Commons"
+  },
+  "qa_c9_poi_pocha": {
+    "url": "https://images.untp.beer/crop?width=640&height=640&stripmeta=true&url=https://untappd.s3.amazonaws.com/photos/2025_08_09/20b8f5218f1a42296634e7f60a434533_c_1503900949_raw.jpg",
+    "title": "Pocha Munich venue photo",
+    "source": "https://untappd.com/v/pocha-munich/13358634/photos",
+    "credit": "Untappd venue photo"
+  },
+  "qa_c9_poi_cafe_sacher": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Sachertorte%20DSC03027.JPG?width=1280",
+    "title": "Sachertorte DSC03027.JPG",
+    "source": "https://commons.wikimedia.org/wiki/File:Sachertorte_DSC03027.JPG",
+    "credit": "Wikimedia Commons"
+  },
+  "qa_c9_poi_bitzinger": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Wuerstelstand%20Bitzinger.jpg?width=1280",
+    "title": "Wuerstelstand Bitzinger.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Wuerstelstand_Bitzinger.jpg",
+    "credit": "Wikimedia Commons"
+  },
+  "qa_c9_poi_trzesniewski": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Trzesniewski%20Br%C3%B6tchen%202.jpg?width=1280",
+    "title": "Trzesniewski Brötchen 2.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Trzesniewski_Br%C3%B6tchen_2.jpg",
+    "credit": "Wikimedia Commons"
+  },
+  "qa_c9_poi_grinzing_heuriger": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Cafe%20%26%20Heurigen%20Kronprinz%20Rudolfshof%2C%20Grinzing%2C%20Wien%2C%2019.%20Bezirk.jpg?width=1280",
+    "title": "Cafe & Heurigen Kronprinz Rudolfshof, Grinzing, Wien, 19. Bezirk.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Cafe_%26_Heurigen_Kronprinz_Rudolfshof,_Grinzing,_Wien,_19._Bezirk.jpg",
+    "credit": "Wikimedia Commons"
   }
 };

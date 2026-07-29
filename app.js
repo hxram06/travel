@@ -109,6 +109,7 @@
         transport: day.returnTransport || { mode: (day.transport && day.transport.mode) || 'train', label: `${day.cityKo} → ${day.baseCity} · 귀환` },
         photos: day.returnPhotos || [],
         pois: getTripBasePois(day),
+        lodging: day.lodging || null,
       };
     }
     return day;
