@@ -25,6 +25,7 @@ const TravelMap = (() => {
   let cityMarker = null;
   let vehicleMarker = null;
   let photoMarkers = [];
+  let poiMarkers = [];
   let travelledLegs = [];     // 지금까지 이동한 경로들 (좌표 배열의 배열)
   let animating = false;
   let cancelFlag = false;
@@ -348,9 +349,9 @@ const TravelMap = (() => {
   // 그날의 사진들을 지도 위 마커로 표시 (클릭하면 팝업)
   function showPhotos(day) {
     clearPhotos();
-    if (!isReady() || !day.photos) return;
+    if (!isReady()) return;
     let validIndex = 0;
-    day.photos.forEach((p) => {
+    (day.photos || []).forEach((p) => {
       const meta = PHOTOS[p.spot];
       if (!meta) return;
       const el = document.createElement('div');
@@ -378,12 +379,57 @@ const TravelMap = (() => {
 
       photoMarkers.push(marker);
     });
+    showPois(day);
   }
 
   function clearPhotos() {
     setMobilePhotoPopupState(false);
     photoMarkers.forEach((m) => m.remove());
     photoMarkers = [];
+    poiMarkers.forEach((m) => m.remove());
+    poiMarkers = [];
+  }
+
+  function buildPoiPopupHtml(poi) {
+    const badge = poi.priority === 'must' ? '필수' : '후보';
+    return (
+      '<div class="poi-popup">' +
+      '<div class="poi-popup-badge">' + badge + '</div>' +
+      '<div class="poi-popup-name">' + poi.name + '</div>' +
+      (poi.note ? '<div class="poi-popup-note">' + poi.note + '</div>' : '') +
+      '</div>'
+    );
+  }
+
+  function showPois(day) {
+    if (!isReady() || !Array.isArray(day.pois)) return;
+    day.pois.forEach((poi) => {
+      if (!poi || !Array.isArray(poi.coords)) return;
+      const el = document.createElement('button');
+      el.type = 'button';
+      el.className = `poi-marker poi-marker-${poi.kind || 'place'} ${poi.priority === 'must' ? 'poi-marker-must' : ''}`;
+      el.setAttribute('aria-label', poi.name);
+      el.title = poi.name;
+      el.textContent = poi.priority === 'must' ? '★' : '🍺';
+
+      const popup = new mapboxgl.Popup({
+        offset: 18,
+        maxWidth: '260px',
+        className: 'poi-popup-wrap',
+        focusAfterOpen: false,
+        closeOnClick: true,
+      }).setHTML(buildPoiPopupHtml(poi)).setLngLat(poi.coords);
+
+      const marker = new mapboxgl.Marker({ element: el, anchor: 'bottom' })
+        .setLngLat(poi.coords).addTo(map);
+
+      el.addEventListener('click', (ev) => {
+        ev.stopPropagation();
+        popup.addTo(map);
+      });
+
+      poiMarkers.push(marker);
+    });
   }
 
   /**

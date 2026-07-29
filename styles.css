@@ -325,6 +325,63 @@ html, body {
   z-index: 5;
 }
 
+/* 음식점 후보 마커 */
+.poi-marker {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border: 2px solid #fff;
+  border-radius: 999px;
+  background: #f59e0b;
+  color: #fff;
+  font-size: 1rem;
+  line-height: 1;
+  box-shadow: 0 8px 18px rgba(15, 23, 42, 0.22);
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.poi-marker:hover {
+  transform: translateY(-2px) scale(1.08);
+  box-shadow: 0 12px 24px rgba(15, 23, 42, 0.28);
+}
+
+.poi-marker-must {
+  background: #db2777;
+}
+
+.poi-popup {
+  padding: 2px 0;
+}
+
+.poi-popup-badge {
+  display: inline-flex;
+  align-items: center;
+  height: 22px;
+  padding: 0 8px;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--accent-deep);
+  font-size: 0.72rem;
+  font-weight: 800;
+}
+
+.poi-popup-name {
+  margin-top: 8px;
+  color: var(--text);
+  font-size: 0.94rem;
+  font-weight: 800;
+  line-height: 1.3;
+}
+
+.poi-popup-note {
+  margin-top: 6px;
+  color: var(--text-dim);
+  font-size: 0.82rem;
+  line-height: 1.45;
+}
+
 /* 사진 팝업 */
 .photo-popup {
   display: flex;

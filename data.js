@@ -5892,7 +5892,7 @@ const COURSES = [
         "baseCoords": null,
         "transport": {
           "mode": "walk",
-          "label": "Buddy Hotel ↔ 뮌헨 구시가지 · 도보 · 맥주 투어 → 학센바우어"
+          "label": "Buddy Hotel ↔ 뮌헨 구시가지 · 맥주홀 후보 지도 핀 · 학센바우어/뮌헨포차"
         },
         "via": [
           [
@@ -5914,9 +5914,71 @@ const COURSES = [
         ],
         "title": "뮌헨 맥주 투어 — 저녁 학센바우어",
         "am": "마리엔플라츠에서 시작해 뮌헨 구시가지의 양조장과 맥주홀을 천천히 이어 걷는다. 프라우엔키르헤와 빅투알리엔마르크트 사이를 둘러보며 바이에른 맥주의 스타일과 잔 크기를 비교한다.",
-        "pm": "호프브로이하우스, 아우구스티너 또는 뮌헨의 전통 브라우하우스 중 한 곳을 골라 점심 맥주 투어를 이어간다. 오후에는 레지덴츠 외관과 오데온스플라츠까지 무리 없이 도보로 연결한다.",
-        "ev": "저녁에는 학센바우어(Haxnbauer)를 예약해 바삭하게 구운 슈바인스학센과 바이에른 맥주를 먹는다. 식사 후에는 Stachus 방향으로 걸어 Buddy Hotel에서 두 번째 밤을 보낸다.",
-        "tip": "학센바우어는 저녁 좌석을 미리 예약하고, 맥주 투어는 한 잔씩 천천히 즐긴다. Buddy Hotel은 중심부 도보권이라 밤에는 택시보다 도보 복귀가 더 단순할 수 있다.",
+        "pm": "지도에 찍어둔 Augustiner Klosterwirt, Schneider Bräuhaus, Herrschaftszeiten, Hofbräuhaus, Brauhaus am Kapuzinerplatz 후보 중 동선과 웨이팅이 맞는 곳을 골라 점심 맥주 투어를 이어간다. 오후에는 레지덴츠 외관과 오데온스플라츠까지 무리 없이 도보로 연결한다.",
+        "ev": "저녁에는 학센바우어(Haxnbauer)를 예약해 바삭하게 구운 슈바인스학센과 바이에른 맥주를 먹는다. 독일 음식에 물리면 Thierschstrasse 5의 Pocha 뮌헨포차를 사실상 필수 플랜으로 두고, 식사 후 Stachus 방향으로 걸어 Buddy Hotel에서 두 번째 밤을 보낸다.",
+        "tip": "학센바우어는 저녁 좌석을 미리 예약하고, 맥주홀 후보는 지도 핀으로만 전부 남겨둔다. 뮌헨포차는 독일 음식이 피곤해지는 날을 대비한 강한 후보라 영업일과 예약 가능 여부를 당일 확인한다.",
+        "pois": [
+          {
+            "name": "Augustiner Klosterwirt",
+            "coords": [
+              11.5728,
+              48.1384
+            ],
+            "kind": "beer",
+            "priority": "candidate",
+            "note": "Frauenkirche 옆 Augustiner 계열 전통 식당. 중심부 맥주 투어 후보."
+          },
+          {
+            "name": "Schneider Bräuhaus",
+            "coords": [
+              11.5784671,
+              48.1364226
+            ],
+            "kind": "beer",
+            "priority": "candidate",
+            "note": "Tal 거리의 밀맥주 중심 브로이하우스. 마리엔플라츠 동쪽 후보."
+          },
+          {
+            "name": "Herrschaftszeiten - Das Paulaner im Tal",
+            "coords": [
+              11.5785033,
+              48.1359681
+            ],
+            "kind": "beer",
+            "priority": "candidate",
+            "note": "Tal 12의 Paulaner 계열 바이에른 식당. Schneider와 가까워 비교하기 좋다."
+          },
+          {
+            "name": "Brauhaus am Kapuzinerplatz",
+            "coords": [
+              11.558832,
+              48.126305
+            ],
+            "kind": "beer",
+            "priority": "candidate",
+            "note": "Kapuzinerplatz의 전통 브로이하우스. 중심부보다 남쪽이라 여유 있을 때 후보."
+          },
+          {
+            "name": "Hofbräuhaus München",
+            "coords": [
+              11.579767,
+              48.13768
+            ],
+            "kind": "beer",
+            "priority": "candidate",
+            "note": "Platzl의 대표 맥주홀. 관광객이 많지만 뮌헨 첫 방문 상징성이 크다."
+          },
+          {
+            "name": "Pocha 뮌헨포차",
+            "coords": [
+              11.5842417,
+              48.1343276
+            ],
+            "kind": "korean",
+            "priority": "must",
+            "note": "독일 음식에 물렸을 때 사실상 필수로 잡는 한식/포차 플랜."
+          }
+        ],
         "photos": [
           {
             "spot": "qa_c9_d5_beer_0",
