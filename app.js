@@ -258,13 +258,25 @@
 
   // ---------- 이동 ----------
   function lockNav(locked) {
-    btnPrev.disabled = locked || state.dayIndex === 0;
-    btnNext.disabled = locked || state.dayIndex === state.course.days.length - 1;
+    // 날짜 이동 버튼은 지도 애니메이션 중에도 입력을 받는다.
+    btnPrev.disabled = state.dayIndex === 0 && !state.subStep;
+    btnNext.disabled = state.dayIndex === state.course.days.length - 1;
     btnHome.disabled = locked;
   }
 
   async function navigate(delta) {
-    if (!state.course || state.transitioning || TravelMap.isAnimating()) return;
+    if (!state.course) return;
+    const myToken = ++navToken;
+
+    // 현재 이동을 취소하고 최신 버튼 입력을 이어서 처리한다.
+    if (state.transitioning || TravelMap.isAnimating()) {
+      TravelMap.skip();
+      for (let i = 0; i < 80 && (state.transitioning || TravelMap.isAnimating()); i++) {
+        await wait(40);
+      }
+    }
+    if (myToken !== navToken || !state.course) return;
+
     state.transitioning = true;
     lockNav(true);
 
@@ -272,10 +284,11 @@
     await wait(200);
 
     try {
-    const day = state.course.days[state.dayIndex];
-    const days = state.course.days;
+      if (myToken !== navToken) return;
+      const day = state.course.days[state.dayIndex];
+      const days = state.course.days;
 
-    if (delta > 0) {
+      if (delta > 0) {
       // ──────── 전진 ────────
 
       if (state.subStep === null) {
@@ -365,7 +378,7 @@
         }
       }
 
-    } else {
+      } else {
       // ──────── 후진 ────────
 
       if (state.subStep !== null) {
@@ -394,7 +407,7 @@
         state.returnedHome = false;
         await TravelMap.goToDay(prevDay, days[state.dayIndex], false);
       }
-    }
+      }
     } catch (e) {
       // 지도 애니메이션이 실패해도 일정 패널은 반드시 갱신한다
       console.error('일정 이동 중 지도 오류 — 패널은 계속 표시합니다.', e);
@@ -432,39 +445,135 @@
   }
 
   let navToken = 0;
+
+  // 일정 칩을 누를 때도 현재 날짜부터 목표 날짜까지의 실제 경로를 재생한다.
+  // 중간 날짜의 사진·패널은 건너뛰고, 지도 경로만 10배 빠르게 진행한다.
+  async function travelToDayIndex(targetIndex, requestToken) {
+    const days = state.course.days;
+    const speed = 10;
+    const startIndex = state.dayIndex;
+    const sameCoords = (a, b) => Array.isArray(a) && Array.isArray(b)
+      && a[0] === b[0] && a[1] === b[1];
+    const assertCurrentRequest = () => requestToken === navToken;
+
+    if (!assertCurrentRequest()) return;
+
+    let fromCoords = days[startIndex].coords;
+    const currentDay = days[startIndex];
+
+    // 코스 첫날 공항 또는 before 경유지에 멈춘 상태에서도 이어서 이동한다.
+    if (state.subStep && state.subStep.type === 'entry-airport') {
+      const airport = currentDay.entryAirport;
+      fromCoords = airport.coords;
+      if (currentDay.before && currentDay.before.length > 0) {
+        for (const stop of currentDay.before) {
+          if (!assertCurrentRequest()) return;
+          await TravelMap.moveStep(fromCoords, stop.coords, stop, { speed });
+          fromCoords = stop.coords;
+        }
+        await TravelMap.goToDay({ coords: fromCoords }, currentDay, true, { speed });
+        fromCoords = currentDay.coords;
+      } else {
+        const transfer = { ...airport, transport: airport.nextTransport || airport.transport };
+        await TravelMap.moveStep(fromCoords, currentDay.coords, transfer, { speed });
+        fromCoords = currentDay.coords;
+      }
+      state.subStep = null;
+    } else if (state.subStep && state.subStep.type === 'transit') {
+      const before = currentDay.before || [];
+      let beforeIndex = state.subStep.beforeIdx;
+      fromCoords = before[beforeIndex] ? before[beforeIndex].coords : currentDay.coords;
+      for (beforeIndex += 1; beforeIndex < before.length; beforeIndex++) {
+        if (!assertCurrentRequest()) return;
+        const stop = before[beforeIndex];
+        await TravelMap.moveStep(fromCoords, stop.coords, stop, { speed });
+        fromCoords = stop.coords;
+      }
+      if (!sameCoords(fromCoords, currentDay.coords)) {
+        await TravelMap.goToDay({ coords: fromCoords }, currentDay, true, { speed });
+      }
+      fromCoords = currentDay.coords;
+      state.subStep = null;
+    } else if (state.subStep && state.subStep.type === 'trip-base') {
+      fromCoords = currentDay.baseCoords;
+      state.subStep = null;
+    }
+
+    if (targetIndex > startIndex) {
+      for (let i = startIndex; i < targetIndex; i++) {
+        if (!assertCurrentRequest()) return;
+        const day = days[i];
+        const nextDay = days[i + 1];
+
+        if (day.isTrip && day.baseCoords && !sameCoords(fromCoords, day.baseCoords)) {
+          await TravelMap.returnToBase(day, { speed });
+          fromCoords = day.baseCoords;
+        }
+
+        if (nextDay.before && nextDay.before.length > 0) {
+          for (const stop of nextDay.before) {
+            if (!assertCurrentRequest()) return;
+            await TravelMap.moveStep(fromCoords, stop.coords, stop, { speed });
+            fromCoords = stop.coords;
+          }
+          await TravelMap.goToDay({ coords: fromCoords }, nextDay, true, { speed });
+        } else {
+          await TravelMap.goToDay({ coords: fromCoords }, nextDay, true, { speed });
+        }
+
+        fromCoords = nextDay.coords;
+        state.dayIndex = i + 1;
+        state.subStep = null;
+        state.returnedHome = false;
+        if (state.dayIndex > state.maxVisitedDay) state.maxVisitedDay = state.dayIndex;
+      }
+    } else if (targetIndex < startIndex) {
+      for (let i = startIndex; i > targetIndex; i--) {
+        if (!assertCurrentRequest()) return;
+        const day = days[i];
+        const prevDay = days[i - 1];
+        await TravelMap.goToDay(
+          { coords: fromCoords },
+          prevDay,
+          false,
+          { speed, animateBackward: true, routeVia: day.via || [] },
+        );
+        fromCoords = prevDay.coords;
+        state.dayIndex = i - 1;
+        state.subStep = null;
+        state.returnedHome = false;
+      }
+    }
+  }
+
   window.goToDay = async function(index) {
     if (!state.course) return;
 
-    // 칩 클릭은 진행 중인 지도 애니메이션에 막히지 않고 항상 반영돼야 한다.
-    // 애니메이션이 돌고 있으면 즉시 끝내고 정리될 때까지 잠깐 기다린다.
+    const requestedIndex = Number(index);
+    if (!Number.isInteger(requestedIndex)) return;
+    const targetIndex = Math.max(0, Math.min(
+      requestedIndex,
+      state.course.days.length - 1,
+    ));
     const myToken = ++navToken;
+
+    // 최신 클릭이 우선이다. 진행 중인 이동은 취소한 뒤 새 경로를 시작한다.
     if (state.transitioning || TravelMap.isAnimating()) {
       TravelMap.skip();
-      for (let i = 0; i < 60 && (state.transitioning || TravelMap.isAnimating()); i++) {
-        await wait(50);
+      for (let i = 0; i < 80 && (state.transitioning || TravelMap.isAnimating()); i++) {
+        await wait(40);
       }
     }
-    if (myToken !== navToken) return;               // 더 최신 클릭이 있으면 양보
-    if (state.dayIndex === index) { renderPanel(); return; }
+    if (myToken !== navToken || !state.course) return;
+    if (state.dayIndex === targetIndex && !state.subStep) { renderPanel(); return; }
 
     state.transitioning = true;
     lockNav(true);
     panelInner.classList.add('fade-out');
-    await wait(200);
-
-    const prevDay = state.course.days[state.dayIndex];
-    state.dayIndex = index;
-    state.subStep = null;
-    state.returnedHome = false;
-
-    // update max visited day
-    if (state.dayIndex > state.maxVisitedDay) {
-      state.maxVisitedDay = state.dayIndex;
-    }
+    await wait(120);
 
     try {
-      const newDay = state.course.days[state.dayIndex];
-      await TravelMap.goToDay(prevDay, newDay, false); // jump without slow animation
+      await travelToDayIndex(targetIndex, myToken);
     } catch (e) {
       console.error('날짜 이동 중 지도 오류 — 패널은 계속 표시합니다.', e);
     } finally {

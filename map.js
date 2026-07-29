@@ -284,16 +284,25 @@ const TravelMap = (() => {
   }
 
   function attachMobilePhotoCloseHandler(popup) {
+    const restorePanel = () => {
+      setMobilePhotoPopupState(false);
+      if (window.expandMobilePanelAfterPhoto) window.expandMobilePanelAfterPhoto();
+    };
+
+    // Mapbox의 closeOnClick은 DOM click 이벤트 없이 팝업을 닫을 수 있다.
+    // close 이벤트에도 연결해 지도 빈 공간을 눌렀을 때 설명창을 복원한다.
+    if (popup && typeof popup.on === 'function' && !popup._mobileCloseHandlerAttached) {
+      popup._mobileCloseHandlerAttached = true;
+      popup.on('close', restorePanel);
+    }
+
     window.setTimeout(() => {
       const popupEl = getPopupElement(popup);
       const close = popupEl && popupEl.querySelector('.mapboxgl-popup-close-button');
       if (close) {
         close.setAttribute('aria-label', '사진 설명 닫기');
         close.setAttribute('title', '사진 설명 닫기');
-        close.addEventListener('click', () => {
-          setMobilePhotoPopupState(false);
-          if (window.expandMobilePanelAfterPhoto) window.expandMobilePanelAfterPhoto();
-        }, { once: true });
+        close.addEventListener('click', restorePanel, { once: true });
       }
     }, 0);
   }
@@ -487,13 +496,14 @@ const TravelMap = (() => {
   }
 
   // 경로 전체가 보이도록 화면을 맞춘다
-  async function fitPath(path, padding) {
+  async function fitPath(path, padding, duration) {
     const b = path.reduce(
       (acc, c) => acc.extend(c),
       new mapboxgl.LngLatBounds(path[0], path[0])
     );
-    map.fitBounds(b, { padding: getDynamicPadding(padding || 90), duration: 1100 });
-    await onceMoveEnd(1100);
+    const moveDuration = duration || 1100;
+    map.fitBounds(b, { padding: getDynamicPadding(padding || 90), duration: moveDuration });
+    await onceMoveEnd(moveDuration);
   }
 
   // ---------- 이동 애니메이션 ----------
@@ -544,19 +554,26 @@ const TravelMap = (() => {
   async function moveLeg(from, to, day, mode, opts) {
     const o = opts || {};
     const path = buildPath(from, to, day, mode);
+    const speed = Math.max(1, Number(o.speed) || 1);
+    const scaled = (duration) => Math.max(90, Math.round(duration / speed));
 
     if (mode === 'plane') {
-      map.easeTo({ zoom: o.outZoom || 2.2, duration: 1100, padding: getDynamicPadding(0) });
-      await onceMoveEnd(1100);
-      await fitPath(path, 120);
-      await travel(path, mode, o.duration || 3200);
-      map.easeTo({ center: to, zoom: o.inZoom || 9.5, duration: 1500, padding: getDynamicPadding(0) });
-      await onceMoveEnd(1500);
+      map.easeTo({ zoom: o.outZoom || 2.2, duration: scaled(1100), padding: getDynamicPadding(0) });
+      await onceMoveEnd(scaled(1100));
+      if (cancelFlag) return;
+      await fitPath(path, 120, scaled(1100));
+      if (cancelFlag) return;
+      await travel(path, mode, scaled(o.duration || 3200));
+      if (cancelFlag) return;
+      map.easeTo({ center: to, zoom: o.inZoom || 9.5, duration: scaled(1500), padding: getDynamicPadding(0) });
+      await onceMoveEnd(scaled(1500));
     } else {
-      await fitPath(path, 100);
-      await travel(path, mode, o.duration || 2600);
-      map.easeTo({ center: to, zoom: o.inZoom || 10.5, duration: 1200, padding: getDynamicPadding(0) });
-      await onceMoveEnd(1200);
+      await fitPath(path, 100, scaled(1100));
+      if (cancelFlag) return;
+      await travel(path, mode, scaled(o.duration || 2600));
+      if (cancelFlag) return;
+      map.easeTo({ center: to, zoom: o.inZoom || 10.5, duration: scaled(1200), padding: getDynamicPadding(0) });
+      await onceMoveEnd(scaled(1200));
     }
 
     travelledLegs.push(path);
@@ -574,8 +591,11 @@ const TravelMap = (() => {
    * @param day 이동할 day
    * @param goingForward > 버튼이면 true
    */
-  async function goToDay(prevDay, day, goingForward) {
+  async function goToDay(prevDay, day, goingForward, opts) {
     if (!isReady() || animating) return;
+    const o = opts || {};
+    const speed = Math.max(1, Number(o.speed) || 1);
+    const scaled = (duration) => Math.max(90, Math.round(duration / speed));
     animating = true;
     cancelFlag = false;
     clearPhotos();
@@ -584,9 +604,12 @@ const TravelMap = (() => {
       let from = prevDay ? prevDay.coords : day.coords;
 
       const same = from[0] === day.coords[0] && from[1] === day.coords[1];
-      const transitDay = prevDay && Array.isArray(prevDay.nextVia)
-        ? { ...day, via: prevDay.nextVia, transport: prevDay.transport || day.transport }
-        : day;
+      const routeVia = Array.isArray(o.routeVia) ? o.routeVia : null;
+      const transitDay = routeVia
+        ? { ...day, via: routeVia, transport: prevDay && (prevDay.transport || day.transport) }
+        : prevDay && Array.isArray(prevDay.nextVia)
+          ? { ...day, via: prevDay.nextVia, transport: prevDay.nextTransport || prevDay.transport || day.transport }
+          : day;
       const mode = (transitDay.transport && transitDay.transport.mode) || 'train';
 
       if (same) {
@@ -597,29 +620,35 @@ const TravelMap = (() => {
           const vTo    = day.via[day.via.length - 1];
           const vInner = day.via.slice(1, -1);
           const intraCityPath = groundPath(vFrom, vInner, vTo);
-          await fitPath(intraCityPath, 80);
-          if (goingForward) await travel(intraCityPath, 'walk', 2400);
+          await fitPath(intraCityPath, 80, scaled(1100));
+          if (goingForward) await travel(intraCityPath, 'walk', scaled(2400));
+          if (cancelFlag) return;
           travelledLegs.push(intraCityPath);
           redrawTrail();
           setActive(null);
           hideVehicle();
           placeCityMarker(vFrom);
-          map.easeTo({ center: day.coords, zoom: 13.0, duration: 700, padding: getDynamicPadding(0) });
-          await onceMoveEnd(700);
+          map.easeTo({ center: day.coords, zoom: 13.0, duration: scaled(700), padding: getDynamicPadding(0) });
+          await onceMoveEnd(scaled(700));
         } else {
           // 이동 없이 시점만 정리
-          map.easeTo({ center: day.coords, zoom: 11.5, duration: 900, padding: getDynamicPadding(0) });
-          await onceMoveEnd(900);
+          map.easeTo({ center: day.coords, zoom: 11.5, duration: scaled(900), padding: getDynamicPadding(0) });
+          await onceMoveEnd(scaled(900));
           placeCityMarker(day.coords);
         }
       } else if (goingForward) {
         // 목적지가 다른 도시라면 moveType이 stay여도 먼저 도시 간 이동을 재생한다.
         // 그렇지 않으면 다음 도시의 내부 동선만 그린 뒤 목적지 중심으로 순간 이동한다.
-        await moveLeg(from, day.coords, transitDay, mode, {});
+        await moveLeg(from, day.coords, transitDay, mode, { speed });
       } else {
-        // 역방향은 애니메이션 없이 빠르게 되돌린다
-        map.easeTo({ center: day.coords, zoom: 10.5, duration: 900, padding: getDynamicPadding(0) });
-        await onceMoveEnd(900);
+        if (o.animateBackward) {
+          const reverseDay = { via: (o.routeVia || []).slice().reverse() };
+          await moveLeg(from, day.coords, reverseDay, mode, { speed, duration: 2200 });
+        } else {
+          // 일반 이전 버튼은 기존처럼 빠르게 목적지로 정리한다.
+          map.easeTo({ center: day.coords, zoom: 10.5, duration: scaled(900), padding: getDynamicPadding(0) });
+          await onceMoveEnd(scaled(900));
+        }
         placeCityMarker(day.coords);
       }
 
@@ -652,7 +681,7 @@ const TravelMap = (() => {
   }
 
   // 당일치기에서 숙박 도시로 귀환 애니메이션
-  async function returnToBase(day) {
+  async function returnToBase(day, opts) {
     if (!isReady() || animating) return;
     animating = true;
     cancelFlag = false;
@@ -662,7 +691,7 @@ const TravelMap = (() => {
       const back = (day.via || []).slice().reverse();
       await moveLeg(day.coords, day.baseCoords,
         { via: back }, mode,
-        { duration: 1700, inZoom: 10.5 });
+        { ...(opts || {}), duration: 1700, inZoom: 10.5 });
     } finally {
       animating = false;
     }

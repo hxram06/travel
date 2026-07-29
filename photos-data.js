@@ -1654,5 +1654,29 @@ const PHOTOS = {
     "title": "New York City (New York, USA), Empire State Building -- 2012 -- 6436.jpg",
     "source": "https://commons.wikimedia.org/wiki/File:New_York_City_(New_York%2C_USA)%2C_Empire_State_Building_--_2012_--_6436.jpg",
     "credit": "Wikimedia Commons"
+  },
+  "qa_c9_d8_sargans_0": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/2008-05-19_Sargans_Schloss_5527.jpg?width=1280",
+    "title": "2008-05-19 Sargans Schloss 5527.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:2008-05-19_Sargans_Schloss_5527.jpg",
+    "credit": "Norbert Aepli · CC BY 3.0"
+  },
+  "qa_c9_d8_pizol_0": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/PizolPanorama03.jpg?width=1280",
+    "title": "PizolPanorama03.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:PizolPanorama03.jpg",
+    "credit": "Ramessos · CC BY-SA 4.0"
+  },
+  "qa_c9_d9_chur_0": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Chur_%28Altstadt%29.jpg?width=1280",
+    "title": "Chur (Altstadt).jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Chur_%28Altstadt%29.jpg",
+    "credit": "Freaktalius · CC BY-SA 4.0"
+  },
+  "qa_c9_d9_chur_1": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Chur_Kathedrale.jpg?width=1280",
+    "title": "Chur Kathedrale.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Chur_Kathedrale.jpg",
+    "credit": "Adrian Michael / Parpan05 · CC BY-SA 3.0"
   }
 };
