@@ -657,7 +657,8 @@
     '7': 'e8c4a1',
     '8': 'v5j2m6',
     '9': 'k3n8b7',
-    '10': 'y1h5t4'
+    '10': 'y1h5t4',
+    '11': 'tk9y2q'
   };
 
   function initApp() {
@@ -678,6 +679,7 @@
         const sharedCourse = COURSES.find(c => String(c.id) === String(courseId));
         if (sharedCourse) {
           isSharedMode = true;
+          document.title = sharedCourse.nameKo; // 공유 시 해당 일정 제목만 표시
           btnBack.style.display = 'none'; // 목록으로 버튼 숨김
           openCourse(sharedCourse);
           return;

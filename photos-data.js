@@ -2453,6 +2453,91 @@ const PHOTOS = {
     "title": "Chimaek Mainz Restaurant - 치킨 대표 메뉴",
     "source": "https://commons.wikimedia.org/wiki/File:Old-style_Korean_fried_chicken.jpg",
     "credit": "Image source: commons.wikimedia.org"
+  },
+  // COURSE11 TOKYO PHOTOS
+  "qa_c11_cover": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Tokyo_Tower%2C_Minato_City.jpg/1280px-Tokyo_Tower%2C_Minato_City.jpg",
+    "title": "Tokyo Tower, Minato City.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Tokyo_Tower,_Minato_City.jpg",
+    "credit": "David Kernan · CC BY 4.0"
+  },
+  "qa_c11_narita": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Underground_tunnel_at_Narita_Airport.jpg/1280px-Underground_tunnel_at_Narita_Airport.jpg",
+    "title": "Underground tunnel at Narita Airport.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Underground_tunnel_at_Narita_Airport.jpg",
+    "credit": "Grendelkhan · CC BY-SA 4.0"
+  },
+  "qa_c11_ginza": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Illuminated_street_corner_at_blue_hour_-_facade_of_the_building_Fujiya_in_Ginza_Chuo-ku_Tokyo_Japan.jpg/1280px-Illuminated_street_corner_at_blue_hour_-_facade_of_the_building_Fujiya_in_Ginza_Chuo-ku_Tokyo_Japan.jpg",
+    "title": "Illuminated street corner at blue hour - facade of the building Fujiya in Ginza Chuo-ku Tokyo Japan.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Illuminated_street_corner_at_blue_hour_-_facade_of_the_building_Fujiya_in_Ginza_Chuo-ku_Tokyo_Japan.jpg",
+    "credit": "Basile Morin · CC BY-SA 4.0"
+  },
+  "qa_c11_tokyostation": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/2024_Tokyo_Station_Marunouchi_Building_at_night_%28%29.jpg/1280px-2024_Tokyo_Station_Marunouchi_Building_at_night_%28%29.jpg",
+    "title": "2024 Tokyo Station Marunouchi Building at night ().jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:2024_Tokyo_Station_Marunouchi_Building_at_night_().jpg",
+    "credit": "Kakidai · CC BY-SA 4.0"
+  },
+  "qa_c11_kitte": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Good_Design_Shop_by_Nohara%2C_KITTE_Marunouchi_%282017-06-29_13.59.59_by_othree%29.jpg/1280px-Good_Design_Shop_by_Nohara%2C_KITTE_Marunouchi_%282017-06-29_13.59.59_by_othree%29.jpg",
+    "title": "Good Design Shop by Nohara, KITTE Marunouchi (2017-06-29 13.59.59 by othree).jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Good_Design_Shop_by_Nohara,_KITTE_Marunouchi_(2017-06-29_13.59.59_by_othree).jpg",
+    "credit": "othree · CC BY 2.0"
+  },
+  "qa_c11_meiji": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Torii_gate_for_the_Meiji_Shrine_%2814628328081%29.jpg/1280px-Torii_gate_for_the_Meiji_Shrine_%2814628328081%29.jpg",
+    "title": "Torii gate for the Meiji Shrine (14628328081).jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Torii_gate_for_the_Meiji_Shrine_(14628328081).jpg",
+    "credit": "Mustang Joe · CC0"
+  },
+  "qa_c11_takeshita": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Marion_Cr%C3%AApes_in_Harajuku_Takeshita_2.jpg/1280px-Marion_Cr%C3%AApes_in_Harajuku_Takeshita_2.jpg",
+    "title": "Marion Crêpes in Harajuku Takeshita 2.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Marion_Cr%C3%AApes_in_Harajuku_Takeshita_2.jpg",
+    "credit": "Syced · CC0"
+  },
+  "qa_c11_omotesando": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/2/26/Aoyama-Omotesando-02.jpg",
+    "title": "Aoyama-Omotesando-02.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Aoyama-Omotesando-02.jpg",
+    "credit": "Rs1421 · CC BY-SA 3.0"
+  },
+  "qa_c11_shibuya": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Tokyo_Shibuya_Scramble_Crossing_2018-10-09.jpg/1280px-Tokyo_Shibuya_Scramble_Crossing_2018-10-09.jpg",
+    "title": "Tokyo Shibuya Scramble Crossing 2018-10-09.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Tokyo_Shibuya_Scramble_Crossing_2018-10-09.jpg",
+    "credit": "Benh LIEU SONG (Flickr) · CC BY-SA 2.0"
+  },
+  "qa_c11_shibuyasky": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Tokyo_Tower_and_Skyscrapers_from_Shibuya_Sky_Observation_Deck_%2853416648661%29.jpg/1280px-Tokyo_Tower_and_Skyscrapers_from_Shibuya_Sky_Observation_Deck_%2853416648661%29.jpg",
+    "title": "Tokyo Tower and Skyscrapers from Shibuya Sky Observation Deck (53416648661).jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Tokyo_Tower_and_Skyscrapers_from_Shibuya_Sky_Observation_Deck_(53416648661).jpg",
+    "credit": "Stephen Kelly from San Francisco, CA, USA · CC BY 2.0"
+  },
+  "qa_c11_skytree": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/View_of_Tokyo_Skytree_from_Asakusa_20190420_1.jpg/1280px-View_of_Tokyo_Skytree_from_Asakusa_20190420_1.jpg",
+    "title": "View of Tokyo Skytree from Asakusa 20190420 1.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:View_of_Tokyo_Skytree_from_Asakusa_20190420_1.jpg",
+    "credit": "DXR · CC BY-SA 4.0"
+  },
+  "qa_c11_roppongi": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Tokyo_Tower_and_Roppongi_Hills_Mori_Tower_seen_from_Hamamatsucho.jpg/1280px-Tokyo_Tower_and_Roppongi_Hills_Mori_Tower_seen_from_Hamamatsucho.jpg",
+    "title": "Tokyo Tower and Roppongi Hills Mori Tower seen from Hamamatsucho.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Tokyo_Tower_and_Roppongi_Hills_Mori_Tower_seen_from_Hamamatsucho.jpg",
+    "credit": "Syced · CC0"
+  },
+  "qa_c11_tower": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Tokyo_Tower_at_night_in_a_storm.jpg/1280px-Tokyo_Tower_at_night_in_a_storm.jpg",
+    "title": "Tokyo Tower at night in a storm.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Tokyo_Tower_at_night_in_a_storm.jpg",
+    "credit": "R stasey · CC BY-SA 4.0"
+  },
+  "qa_c11_senso": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/6th_Large_lantern_at_Kaminarimon_Dec_12_2020_03-16PM.jpeg/1280px-6th_Large_lantern_at_Kaminarimon_Dec_12_2020_03-16PM.jpeg",
+    "title": "6th Large lantern at Kaminarimon Dec 12 2020 03-16PM.jpeg",
+    "source": "https://commons.wikimedia.org/wiki/File:6th_Large_lantern_at_Kaminarimon_Dec_12_2020_03-16PM.jpeg",
+    "credit": "Nesnad · CC BY 4.0"
   }
   // COURSE9_RICH_PHOTOS_END
 };

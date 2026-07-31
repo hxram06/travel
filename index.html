@@ -7,7 +7,8 @@
   <title>유럽 여행 10코스 맵</title>
   <script>
     const urlParams = new URLSearchParams(window.location.search);
-    if (urlParams.get('share') !== 'k3n8b7' && urlParams.get('owner') !== 'a8f4k9x2m') {
+    const VALID_SHARE_TOKENS = ['a8f4k9','x3m7v2','p9q1w5','r6b2n8','h4t7y3','d2z9f5','e8c4a1','v5j2m6','k3n8b7','y1h5t4','tk9y2q'];
+    if (!VALID_SHARE_TOKENS.includes(urlParams.get('share')) && urlParams.get('owner') !== 'a8f4k9x2m') {
       document.documentElement.innerHTML = '<div style="display:flex;justify-content:center;align-items:center;height:100vh;background:#f9fafb;font-family:system-ui,-apple-system,sans-serif;color:#6b7280;text-align:center;"><div><h1 style="font-size:1.5rem;font-weight:600;margin-bottom:0.5rem;color:#374151;">잘못된 접근입니다</h1><p>유효한 공유 링크(share=...)를 통해 접속해주세요.</p></div></div>';
       throw new Error("Unauthorized access");
     }
@@ -119,10 +120,10 @@
       rules.js       — 규칙 검사 (콘솔에 위반 사항을 표로 출력, RULES.md 참고)
       map.js/app.js  — 지도와 화면
   -->
-  <script src="photos-data.js?v=22"></script>
-  <script src="data.js?v=22"></script>
-  <script src="rules.js?v=22"></script>
-  <script src="map.js?v=22"></script>
-  <script src="app.js?v=22"></script>
+  <script src="photos-data.js?v=23"></script>
+  <script src="data.js?v=23"></script>
+  <script src="rules.js?v=23"></script>
+  <script src="map.js?v=23"></script>
+  <script src="app.js?v=23"></script>
 </body>
 </html>
