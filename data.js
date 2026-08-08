@@ -5607,7 +5607,7 @@ const COURSES = [
     "id": 9,
     "nameKo": "독일 서부 · 뮌헨 거점 당일치기 · 빈",
     "subtitle": "라인강에서 바이에른과 잘츠부르크를 깊게 누빈 뒤 합스부르크 수도까지",
-    "period": "2027년 1월 16일 ~ 1월 28일",
+    "period": "2027년 1월 27일 ~ 2월 7일",
     "nights": "11박 12일",
     "cities": [
       "마인츠",
@@ -5642,7 +5642,7 @@ const COURSES = [
         },
         "transport": {
           "mode": "plane",
-          "label": "루프트한자 ICN 12:55 (T1) → FRA 18:40 (T1) 직항 (13h 45m) | ICE FRA 공항 → 마인츠 Hbf (35분)"
+          "label": "루프트한자 LH713 ICN 12:55 (T1) → FRA 18:40 (T1) | Regionalbahnhof → 마인츠 Hbf"
         },
         "via": [],
         "entryAirport": {
@@ -5652,19 +5652,26 @@ const COURSES = [
           ],
           "cityKo": "FRA 공항",
           "cityEn": "Frankfurt Airport T1",
-          "title": "프랑크푸르트 공항 도착",
+          "title": "1/27(수) · 프랑크푸르트 공항 도착",
           "transport": {
             "mode": "plane",
-            "label": "루프트한자 LH714 ICN 12:55 → FRA 18:40 직항 (13h 45m)"
+            "label": "루프트한자 LH713 ICN 12:55 → FRA 18:40 직항 (13h 45m)"
           },
           "nextTransport": {
             "mode": "train",
-            "label": "ICE Fernbahnhof T1 → 마인츠 Hbf (35분). DB 앱으로 당일 구매. €18~22."
+            "label": "T1 Regionalbahnhof → 마인츠 Hbf · 첫 S8/RE 이용 (약 25~35분)"
           },
-          "am": "인천국제공항 T1에서 루프트한자 LH714에 탑승한다. 12:55 출발 후 약 13시간 45분 동안 서쪽으로 날아가며, 독일 도착 후 바로 열차를 탈 수 있도록 기내에서 수면과 수분 보충에 집중한다.",
-          "pm": "현지 시간 18:40 프랑크푸르트 공항 T1에 착륙한다. 입국 심사와 수하물 수취를 마치고, 장거리 열차역인 Frankfurt Flughafen Fernbahnhof 표지를 따라 이동한다.",
-          "ev": "공항역에서 마인츠 Hbf행 ICE나 S-Bahn을 탄다. 35분 안팎이면 라인강변 도시 마인츠에 도착하므로, 이 단계는 독일 입국과 첫 철도 환승을 분명히 보여주는 구간이다.",
-          "tip": "FRA 공항은 터미널과 장거리역 사이 이동 시간이 생각보다 걸린다. 항공편 지연에 대비해 마인츠행 열차는 도착 후 DB 앱에서 바로 사는 편이 안전하다.",
+          "am": "12:55 인천국제공항 T1에서 루프트한자 LH713에 탑승한다.",
+          "pm": "18:40 프랑크푸르트 공항 T1에 착륙한 뒤 입국 심사와 23kg 위탁수하물 수취를 진행한다.",
+          "ev": "T1 표지판의 Regionalbahnhof를 따라가 마인츠행 첫 S8 또는 RE를 이용한다.",
+          "tip": "항공 지연 가능성 때문에 공항철도는 고정편을 예매하지 않는다. Fernbahnhof가 아니라 T1 지하 Regionalbahnhof로 가는 것이 핵심이다.",
+          "timeline": [
+            { "time": "12:55", "title": "LH713 인천 출발", "detail": "인천국제공항 T1 · 직항 13시간 45분", "kind": "travel" },
+            { "time": "18:40", "title": "프랑크푸르트공항 T1 도착", "detail": "입국심사와 3인 위탁수하물 수취", "kind": "travel" },
+            { "time": "18:40–20:10", "title": "입국·수하물·환승 여유", "detail": "출구 뒤 Regionalbahnhof 표지판을 따라 이동", "kind": "buffer" },
+            { "time": "20:15 전후", "title": "마인츠행 첫 S8/RE 탑승", "detail": "목표편 20:28 전후 · 지연 시 다음 직통편 이용 · 25~35분", "kind": "travel" },
+            { "time": "21:00 전후", "title": "Mainz Hbf 도착", "detail": "역에서 IntercityHotel Mainz까지 도보 약 3분", "kind": "travel" }
+          ],
           "photos": [
             {
               "spot": "qa_c9_d1_entry_0",
@@ -5686,11 +5693,17 @@ const COURSES = [
             }
           ]
         },
-        "title": "밤 마인츠 도착 — 라인강변 첫 야간 산책",
-        "am": "인천국제공항 12:55 출발. 루프트한자 LH714 직항편으로 약 13시간 45분 비행. 기내식 후 충분한 수면으로 시차를 적응한다.",
-        "pm": "FRA 공항 18:40 도착. 입국 심사 후 지하 2층 ICE 열차로 마인츠 Hbf 이동 (약 35분 소요). Binger Strasse 21의 IntercityHotel Mainz에 체크인하고 짐을 정리한다.",
-        "ev": "밤 마인츠 알트슈타트(Altstadt)와 마인츠 돔(Dom St. Martin) 야경 감상. 1천 년 역사의 로마네스크 대성당을 보며 라인헤센 지역 와인 및 맥주 한 잔으로 여행을 시작한다.",
-        "tip": "IntercityHotel Mainz는 Mainz Hbf 접근성이 좋아 프랑크푸르트·쾰른 당일치기 베이스로 효율적이다. FRA 공항에서 마인츠로 가는 ICE/S-Bahn 열차는 DB 앱(bahn.de)에서 즉시 구매 가능하다.",
+        "title": "1/27(수) · 마인츠 도착과 회복",
+        "am": "인천에서 프랑크푸르트로 이동한다.",
+        "pm": "공항 입국 절차 뒤 지역열차로 마인츠에 도착한다.",
+        "ev": "체크인 뒤 식사와 휴식을 우선하고, 체력이 남을 때만 구시가지를 짧게 걷는다.",
+        "tip": "공항 출구가 20:30을 넘으면 야간 산책은 생략한다. 첫날은 다음 날 컨디션을 만드는 날이다.",
+        "timeline": [
+          { "time": "21:00", "title": "Mainz Hbf 도착·숙소 이동", "detail": "Binger Strasse 방향 도보 약 3분", "kind": "travel" },
+          { "time": "21:10", "title": "IntercityHotel Mainz 체크인", "detail": "3박 · 짐 정리와 샤워", "kind": "buffer" },
+          { "time": "21:30–22:45", "title": "저녁 식사·휴식 자유시간", "detail": "식당은 도착 시각과 영업 상황을 보고 선택", "kind": "free" },
+          { "time": "선택", "title": "짧은 야간 산책", "detail": "Schillerplatz → 마인츠 돔 외관 · 공항이 지연되면 생략", "kind": "visit" }
+        ],
         "photos": [
           {
             "spot": "qa_c9_d1_0",
@@ -5877,7 +5890,7 @@ const COURSES = [
         },
         "transport": {
           "mode": "train",
-          "label": "IntercityHotel Mainz → Mainz Hbf 도보 1분 → 프랑크푸르트 Hbf · S8/S9 35분"
+          "label": "Mainz Hbf → Frankfurt Hbf · S8/RE 약 40분 → U4 Dom/Römer"
         },
         "via": [
           [
@@ -5893,11 +5906,28 @@ const COURSES = [
             50.1109
           ]
         ],
-        "title": "★ 프랑크푸르트 당일치기 — 뢰머베르크 + 슈테델 + 자흐젠하우젠",
-        "am": "IntercityHotel Mainz에서 Mainz Hbf까지 걸어가 S-Bahn으로 프랑크푸르트 Hbf에 도착한다(35분). 뢰머베르크(Römerberg) 중세 광장과 신성로마제국 황제 대관식이 열리던 카이저돔 탐방.",
-        "pm": "마인 강변의 슈테델 미술관(Städel Museum)에서 렘브란트, 베르메르, 모네의 마스터피스 관람. 클라이네 마르크트할레 시장에서 독일식 맛있는 점심 식사.",
-        "ev": "자흐젠하우젠 아펠바인(Apfelwein, 사과주) 골목에서 전통 사과발효주와 학센 안주 즐기기. 마인 강 건너 금융 타워 야경을 감상 후 마인츠 귀환. (야간 추천: 마인츠 귀환 후 라인 강변을 따라 조용히 산책하며 밤공기를 쐽니다. 구시가지 광장 근처의 아늑한 바에서 마인츠 특산 리슬링 와인(Riesling) 한 잔과 소시지로 하루를 훌륭하게 마무리합니다.)",
-        "tip": "마인츠-프랑크푸르트 구간은 RMV 일일권이나 S-Bahn 단권으로 이용하기 편리하다. 슈테델 미술관은 사전 예약 시 대기 시간을 줄일 수 있다.",
+        "title": "1/28(목) · 프랑크푸르트 구시가지와 슈테델",
+        "am": "지역열차와 U4로 뢰머베르크에 들어가 구시가지 핵심을 도보로 잇는다.",
+        "pm": "충분한 점심 여유 뒤 마인강을 건너 슈테델 미술관을 관람한다.",
+        "ev": "작센하우젠에서 식사 장소를 현장에서 고른 뒤 마인츠로 돌아간다.",
+        "tip": "슈테델은 목요일 21시까지 열지만 3시간이면 핵심 관람이 가능하다. 식사 장소는 예약하지 않고 대기시간이 짧은 곳을 고른다.",
+        "timeline": [
+          { "time": "08:20", "title": "숙소 출발", "detail": "Mainz Hbf까지 도보 약 3분", "kind": "travel" },
+          { "time": "08:32", "title": "S8/RE로 프랑크푸르트 이동", "detail": "예매 목표 시각 · 약 40분 · 2027 지역 시간표 재확인", "kind": "travel" },
+          { "time": "09:15", "title": "U4 Frankfurt Hbf → Dom/Römer", "detail": "약 8분", "kind": "travel" },
+          { "time": "09:30–10:45", "title": "뢰머베르크·신구시가지·파울교회·카이저돔", "detail": "모두 도보 5분 안팎으로 연결", "kind": "visit" },
+          { "time": "10:45–11:30", "title": "클라이네 마르크트할레 둘러보기", "detail": "구매 여부는 현장에서 결정", "kind": "visit" },
+          { "time": "11:30–13:00", "title": "점심·카페 자유시간", "detail": "구시가지 안에서 90분 확보", "kind": "free" },
+          { "time": "13:00–13:45", "title": "아이제르너 슈테크 건너 박물관 지구로", "detail": "마인강과 금융가 스카이라인 감상", "kind": "visit" },
+          { "time": "13:45–16:45", "title": "슈테델 미술관", "detail": "상설전 핵심 3시간 · 온라인 시간권 권장", "kind": "visit" },
+          { "time": "16:45–17:30", "title": "마인강변 해질녘 산책", "detail": "미술관 앞 강변에서 스카이라인 방향", "kind": "visit" },
+          { "time": "17:30–19:30", "title": "작센하우젠 저녁·카페 자유시간", "detail": "가게는 대기줄과 컨디션을 보고 선택", "kind": "free" }
+        ],
+        "returnTimeline": [
+          { "time": "19:30", "title": "Frankfurt Hbf로 이동", "detail": "트램·U-Bahn 중 가장 빠른 경로를 당일 앱에서 선택", "kind": "travel" },
+          { "time": "20:15 전후", "title": "마인츠행 S8/RE 탑승", "detail": "예매 목표 시각 · 놓치면 다음 지역열차 이용", "kind": "travel" },
+          { "time": "21:00 전후", "title": "Mainz Hbf·숙소 도착", "detail": "다음 날 이른 출발을 위해 바로 휴식", "kind": "buffer" }
+        ],
         "photos": [
           {
             "spot": "qa_c9_d2_0",
@@ -6016,7 +6046,7 @@ const COURSES = [
         },
         "transport": {
           "mode": "train",
-          "label": "IntercityHotel Mainz → Mainz Hbf 도보 1분 → 점심 IC 1h 30m · 라인강 계곡 → 쾰른"
+          "label": "Mainz Hbf 07:17 목표 → Köln Hbf 약 09:05 · 라인강 좌안 IC"
         },
         "via": [
           [
@@ -6032,11 +6062,30 @@ const COURSES = [
             50.3569
           ]
         ],
-        "title": "★ 아침 마인츠 산책 + 쾰른 당일치기 (대성당의 낮과 밤 만끽)",
-        "am": "상쾌한 아침 IntercityHotel Mainz에서 중앙역 쪽으로 걸어 나와 마인츠 구텐베르크 박물관과 돔 광장을 본다. 점심 12시경 쾰른행 IC 열차 탑승, 라인강 계곡 포도밭과 고성 풍경 감상.",
-        "pm": "13:30 쾰른 Hbf 도착. 역 출구 바로 앞 쾰른 대성당(Kölner Dom)의 푸른 하늘 아래 장엄한 낮 풍경 관람 및 남탑 전망대 등반. 초콜릿 박물관 탐방.",
-        "ev": "밤이 되며 웅장한 황금빛 조명이 켜진 쾰른 대성당의 밤 야경을 만끽. 브루어리에서 시원한 퀼쉬(Kölsch) 맥주 즐긴 후 늦은 밤 마인츠 귀환. (야간 추천: 마인츠 귀환 후 라인 강변을 따라 조용히 산책하며 밤공기를 쐽니다. 구시가지 광장 근처의 아늑한 바에서 마인츠 특산 리슬링 와인(Riesling) 한 잔과 소시지로 하루를 훌륭하게 마무리합니다.)",
-        "tip": "쾰른 대성당 조명은 일몰 후 점등되며, 호엔촐레른 다리(Hohenzollernbrücke) 위에서 바라보는 대성당 밤 야경이 가장 아름답다.",
+        "title": "1/29(금) · 쾰른 대성당 남탑과 라인강 야경",
+        "am": "아침 IC로 라인강 좌안을 따라 쾰른에 도착해 겨울 16시 마감인 대성당 남탑을 가장 먼저 오른다.",
+        "pm": "자유로운 점심 뒤 초콜릿 박물관을 관람하고 라인강변을 걷는다.",
+        "ev": "호엔촐레른 다리를 건너 Rheinboulevard에서 대성당 야경을 본 뒤 식사하고 마인츠로 돌아간다.",
+        "tip": "쾰른 남탑은 11~2월 09:00~16:00이므로 오전 고정이다. IC 좌석은 진행방향 오른쪽을 우선 선택하면 라인강 풍경을 보기 쉽다. 장거리열차 시각은 2026년 10월 중순 공개되는 2027 시간표에서 최종 확정한다.",
+        "timeline": [
+          { "time": "06:50", "title": "숙소 출발", "detail": "Mainz Hbf에서 간단한 아침을 살 시간 포함", "kind": "travel" },
+          { "time": "07:17", "title": "쾰른행 IC 탑승", "detail": "예매 목표편 · 라인강 좌안 경유 · 약 1시간 48분 · 2027 시간표 잠정", "kind": "travel" },
+          { "time": "09:05", "title": "Köln Hbf 도착", "detail": "역 출구 바로 앞 대성당 남쪽으로 이동", "kind": "travel" },
+          { "time": "09:20–10:20", "title": "쾰른 대성당 남탑", "detail": "533계단 · 학생증 지참 · 악천후 시 성당 내부와 순서 교체", "kind": "visit" },
+          { "time": "10:30–11:30", "title": "쾰른 대성당 내부", "detail": "관광 관람 가능 시간과 예배 통제를 현장 확인", "kind": "visit" },
+          { "time": "11:30–12:15", "title": "구시가지·그로스 장크트 마르틴·라인강", "detail": "대성당에서 도보 이동", "kind": "visit" },
+          { "time": "12:15–13:45", "title": "점심·카페 자유시간", "detail": "구시가지 또는 강변에서 90분 확보", "kind": "free" },
+          { "time": "13:45–14:00", "title": "초콜릿 박물관으로 이동", "detail": "라인강변 도보 약 15분", "kind": "travel" },
+          { "time": "14:00–16:00", "title": "초콜릿 박물관", "detail": "14:00 시간권 기준 · 현재 운영 10:00~18:00", "kind": "visit" },
+          { "time": "16:00–16:45", "title": "라인강 산책·구시가지 복귀", "detail": "일몰 전후 사진 시간", "kind": "visit" },
+          { "time": "16:45–17:50", "title": "호엔촐레른 다리·Rheinboulevard", "detail": "다리를 건너 동쪽 강변에서 대성당 야경 감상", "kind": "visit" },
+          { "time": "18:00–19:25", "title": "저녁·카페 자유시간", "detail": "쾰른 시내에서 현장 선택", "kind": "free" }
+        ],
+        "returnTimeline": [
+          { "time": "19:35", "title": "Köln Hbf 복귀", "detail": "출발 15분 전 승강장 확인", "kind": "travel" },
+          { "time": "19:53", "title": "마인츠행 IC 탑승", "detail": "예매 목표편 · 좌석지정 · 2027 시간표 잠정", "kind": "travel" },
+          { "time": "21:45 전후", "title": "Mainz Hbf·숙소 도착", "detail": "늦은 추가 일정 없이 휴식", "kind": "buffer" }
+        ],
         "photos": [
           {
             "spot": "qa_c9_d3_0",
@@ -6192,15 +6241,37 @@ const COURSES = [
         ],
         "returnTransport": {
           "mode": "train",
-          "label": "하이델베르크 Hbf → 뮌헨 Hbf · 늦은 밤 ICE/IC 약 3시간"
+          "label": "Heidelberg Hbf 19:30 목표 → München Hbf 약 22:30 · ICE/IC"
         },
-        "title": "★ 하이델베르크 당일 관광 — 성과 알테 브뤼케",
-        "am": "오전에는 IntercityHotel Mainz를 체크아웃한 뒤 Mainz Hbf에서 만하임 환승 열차로 하이델베르크에 이동한다. 중앙역 물품보관함에 짐을 맡기고 하우프트슈트라세와 구시가지 골목을 천천히 걷는다.",
-        "pm": "오후에는 푸니쿨라를 타고 하이델베르크 성에 올라 넥카 강과 붉은 지붕의 구시가지를 내려다본다. 알테 브뤼케까지 걸어 내려와 저녁 이동 전 마지막 산책을 한다.",
-        "ev": "저녁은 하이델베르크 구시가지에서 먹고, 하이델베르크 Hbf 보관함에서 짐을 찾는다. 여기서 하루 본 일정은 끝내고, 다음 버튼을 누르면 늦은 밤 뮌헨 이동으로 넘어간다.",
-        "returnEv": "하이델베르크 Hbf에서 늦은 밤 뮌헨행 ICE/IC에 탑승한다. 23시 전후 뮌헨 Hbf 도착 후 Sonnenstrasse 2의 Buddy Hotel까지 걸어가 체크인한다. 도착 시간이 너무 늦지 않으면 지도에 찍힌 맥주홀 후보나 Pocha 뮌헨포차 중 영업 중인 곳을 마지막 선택지로 둔다.",
-        "returnTip": "Buddy Hotel은 Karlsplatz/Stachus와 뮌헨 Hbf 사이에 있어 늦은 도착이 편하다. D4는 하이델베르크에서 한 번 멈추고, 다음 버튼으로 뮌헨 저녁 복귀를 확인한 뒤 다시 다음 버튼을 눌러 D5로 넘어간다.",
-        "tip": "하이델베르크 Hbf 보관함에서 짐 찾는 시간을 열차 출발보다 여유 있게 둔다. 늦은 밤 뮌헨 도착 후에는 Hbf 주변과 Stachus 방향 큰길 위주로 이동한다.",
+        "title": "1/30(토) · 마인츠 인쇄문화와 하이델베르크 성",
+        "am": "체크아웃 뒤 짐을 호텔에 잠시 맡기고 구텐베르크 박물관 MOVED의 핵심 전시를 본 후 하이델베르크로 이동한다.",
+        "pm": "역 보관함에 짐을 맡기고 버스와 푸니쿨라로 성에 올라간 뒤 구시가지와 알테 브뤼케를 걷는다.",
+        "ev": "충분한 식사 시간을 두고 역으로 돌아와 짐을 찾는다.",
+        "returnEv": "알테 브뤼케에서 성과 구시가지 조명을 본 뒤 19:30 전후 열차로 뮌헨에 이동해 Buddy Hotel에 체크인한다.",
+        "returnTip": "뮌헨행 열차는 2027 시간표 공개 뒤 19:15~19:45 출발편 중 환승이 가장 안정적인 편으로 확정한다. 다음 날 06:10 출발이므로 열차 안에서 쉬는 편이 좋다.",
+        "tip": "하이델베르크 성은 09:00~18:00, 마지막 입장 17:30이다. 중앙역 보관함에 3개가 다 들어가지 않을 수 있으므로 대형함 2개분을 가정한다.",
+        "timeline": [
+          { "time": "08:15", "title": "체크아웃·호텔에 짐 보관", "detail": "바로 박물관으로 가져가지 않고 호텔 프런트 이용", "kind": "buffer" },
+          { "time": "08:35", "title": "구텐베르크 박물관 MOVED로 이동", "detail": "숙소에서 도보 약 20분", "kind": "travel" },
+          { "time": "09:00–10:05", "title": "구텐베르크 박물관 핵심 관람", "detail": "42행 성경과 인쇄 시연 중심", "kind": "visit" },
+          { "time": "10:05–10:30", "title": "호텔 복귀·짐 회수", "detail": "Mainz Hbf 승강장까지 이동", "kind": "travel" },
+          { "time": "10:42", "title": "하이델베르크행 열차", "detail": "예매 목표편 · Mannheim 환승 · 약 1시간 · 2027 시간표 잠정", "kind": "travel" },
+          { "time": "11:50", "title": "Heidelberg Hbf 보관함", "detail": "캐리어 3개 · 약 15분 확보", "kind": "buffer" },
+          { "time": "12:05", "title": "버스 33번으로 Rathaus/Bergbahn", "detail": "약 20분 · 교통앱에서 공사·정류장 확인", "kind": "travel" },
+          { "time": "12:30", "title": "푸니쿨라 탑승", "detail": "Kornmarkt → Schloss", "kind": "travel" },
+          { "time": "12:45–14:30", "title": "하이델베르크 성", "detail": "안뜰·테라스·대형 와인통·약제박물관", "kind": "visit" },
+          { "time": "14:30–15:45", "title": "구시가지와 알테 브뤼케", "detail": "Marktplatz → 성령교회 → Hauptstraße → 다리", "kind": "visit" },
+          { "time": "15:45–17:00", "title": "늦은 점심·카페 자유시간", "detail": "구시가지에서 75분 확보", "kind": "free" },
+          { "time": "17:00–18:15", "title": "알테 브뤼케의 일몰과 야경", "detail": "일몰 약 17:14 · 다리와 강변에서 조명이 켜진 성·구시가지 감상", "kind": "visit" }
+        ],
+        "returnTimeline": [
+          { "time": "18:15", "title": "버스 33번으로 중앙역 복귀", "detail": "알테 브뤼케 인근 정류장에서 약 20분", "kind": "travel" },
+          { "time": "18:45", "title": "보관함 짐 회수·승강장 확인", "detail": "간식과 물 구입 시간 포함", "kind": "buffer" },
+          { "time": "19:30", "title": "뮌헨행 ICE/IC 탑승", "detail": "예매 목표편 · 좌석지정 · 2027 시간표 잠정", "kind": "travel" },
+          { "time": "22:30 전후", "title": "München Hbf 도착", "detail": "Buddy Hotel까지 도보 약 8분", "kind": "travel" },
+          { "time": "22:40", "title": "Buddy Hotel 체크인", "detail": "4박 · 바로 샤워하고 다음 날 짐 준비", "kind": "buffer" },
+          { "time": "23:00 이후", "title": "가벼운 식사·휴식 자유시간", "detail": "다음 날 06:10 숙소 출발", "kind": "free" }
+        ],
         "photos": [
           {
             "spot": "qa_c9_d4_before_0_nested_0_0",
@@ -6336,7 +6407,7 @@ const COURSES = [
         },
         "transport": {
           "mode": "walk",
-          "label": "Buddy Hotel ↔ 뮌헨 구시가지 · 맥주홀 후보 지도 핀 · 학센바우어/뮌헨포차"
+          "label": "Buddy Hotel → Karlsplatz → 구시가지 → Odeonsplatz → 숙소 · 도보"
         },
         "via": [
           [
@@ -6356,11 +6427,25 @@ const COURSES = [
             48.13816
           ]
         ],
-        "title": "뮌헨 맥주 투어 — 저녁 학센바우어",
-        "am": "마리엔플라츠에서 시작해 뮌헨 구시가지의 양조장과 맥주홀을 천천히 이어 걷는다. 프라우엔키르헤와 빅투알리엔마르크트 사이를 둘러보며 바이에른 맥주의 스타일과 잔 크기를 비교한다.",
-        "pm": "지도에 찍어둔 Augustiner Klosterwirt, Schneider Bräuhaus, Herrschaftszeiten, Hofbräuhaus, Brauhaus am Kapuzinerplatz 후보 중 동선과 웨이팅이 맞는 곳을 골라 점심 맥주 투어를 이어간다. 오후에는 레지덴츠 외관과 오데온스플라츠까지 무리 없이 도보로 연결한다.",
-        "ev": "저녁에는 학센바우어(Haxnbauer)를 예약해 바삭하게 구운 슈바인스학센과 바이에른 맥주를 먹는다. 독일 음식에 물리면 Thierschstrasse 5의 Pocha 뮌헨포차를 사실상 필수 플랜으로 두고, 식사 후 Stachus 방향으로 걸어 Buddy Hotel에서 두 번째 밤을 보낸다.",
-        "tip": "학센바우어는 저녁 좌석을 미리 예약하고, 맥주홀 후보는 지도 핀으로만 전부 남겨둔다. 뮌헨포차는 독일 음식이 피곤해지는 날을 대비한 강한 후보라 영업일과 예약 가능 여부를 당일 확인한다.",
+        "title": "2/1(월) · 뮌헨 구시가지·빅투알리엔마르크트·세탁",
+        "am": "천천히 아침을 먹은 뒤 카를스플라츠에서 구시가지로 걸어가 11시 신시청사 글로켄슈필을 본다.",
+        "pm": "레지덴츠 안뜰과 오데온스플라츠까지 도보로 잇고, 식사와 카페는 현장에서 고른다.",
+        "ev": "저녁 뒤 중앙역 인근 셀프 세탁소에서 여행 중간 세탁을 마친다.",
+        "tip": "월요일에는 빅투알리엔마르크트 점포가 정상 영업하므로 1시간을 확보한다. 개별 가판 영업시간은 다를 수 있으며, 글로켄슈필은 11시에 본다.",
+        "timeline": [
+          { "time": "09:00–10:00", "title": "아침 식사 자유시간", "detail": "숙소 주변에서 현장 선택", "kind": "free" },
+          { "time": "10:00", "title": "Buddy Hotel 출발", "detail": "Karlsplatz → St. Michael → Frauenkirche · 전 구간 도보", "kind": "travel" },
+          { "time": "10:45", "title": "Marienplatz 도착", "detail": "신시청사 정면에서 관람 위치 확보", "kind": "buffer" },
+          { "time": "11:00–11:15", "title": "신시청사 글로켄슈필", "detail": "무료 · 겨울에도 매일 11:00·12:00", "kind": "visit" },
+          { "time": "11:15–12:15", "title": "성 페터교회·빅투알리엔마르크트", "detail": "과일·치즈·소시지·꽃 가판과 비어가르텐 구역을 천천히 둘러보기", "kind": "visit" },
+          { "time": "12:15–13:45", "title": "점심·카페 자유시간", "detail": "시장 또는 마리엔플라츠 주변에서 90분 확보", "kind": "free" },
+          { "time": "13:45–15:45", "title": "Alter Hof·레지덴츠 안뜰·오데온스플라츠·호프가르텐", "detail": "실내 유료 관람 없이 도보 약 2km", "kind": "visit" },
+          { "time": "15:30–17:00", "title": "카페·맥주 자유시간", "detail": "걷기 속도와 대기줄에 따라 유연하게 사용", "kind": "free" },
+          { "time": "17:00–18:00", "title": "구시가지 저녁 산책·숙소 방향 복귀", "detail": "Theatinerstraße → Frauenkirche → Karlsplatz", "kind": "visit" },
+          { "time": "18:00–19:30", "title": "저녁 식사 자유시간", "detail": "후보 핀은 참고만 하고 예약하지 않음", "kind": "free" },
+          { "time": "19:45–21:15", "title": "셀프 세탁", "detail": "München Hbf 인근 · 세탁소 영업시간은 출발 전 재확인", "kind": "buffer" },
+          { "time": "21:20", "title": "숙소 복귀", "detail": "다음 날 잘츠부르크 06:40 출발 준비", "kind": "travel" }
+        ],
         "pois": [
           {
             "name": "Augustiner Klosterwirt",
@@ -6568,11 +6653,30 @@ const COURSES = [
             47.421
           ]
         ],
-        "title": "★ 추크슈피체 당일치기 — 독일 최고봉 전망",
-        "am": "이른 아침 Buddy Hotel에서 뮌헨 Hbf까지 걸어가 가르미슈-파르텐키르헨행 열차를 탄다. 이후 산악철도 또는 케이블카로 추크슈피체 정상에 오른다. 당일 왕복 일정이므로 첫 연결편을 우선한다.",
-        "pm": "정상 전망대와 추크슈피츠플라트에서 알프스 파노라마와 아이브제 방향 풍경을 감상한다. 겨울에는 방한화와 미끄럼 방지 장비를 준비하고, 날씨가 나쁘면 정상 체류 시간을 줄인다.",
-        "ev": "저녁에 뮌헨 Hbf로 돌아온 뒤 Buddy Hotel까지 걸어가 세 번째 밤을 보낸다. 다음 날 잘츠부르크 당일치기에 맞춰 여권과 오스트리아 구간 열차권을 미리 정리한다.",
-        "tip": "추크슈피체 산악 교통은 날씨와 운행 상황에 영향을 받으므로 출발 전 공식 운행 공지를 확인하고, 뮌헨 복귀 열차와 Hbf에서 숙소까지의 도보 이동에 여유를 둔다.",
+        "title": "1/31(일) · 추크슈피체 순환과 아이브제",
+        "am": "첫 지역열차와 08:15 톱니열차를 연결해 추크슈피체 정상에 오른다.",
+        "pm": "정상 전망과 식사 뒤 케이블카로 아이브제에 내려 짧은 겨울 호숫가만 걷는다.",
+        "ev": "가르미슈를 거쳐 17시대 뮌헨으로 돌아와 저녁을 자유롭게 보낸다.",
+        "tip": "48시간 전 공식 웹캠과 바람을 확인한다. 1/31이 흐리고 2/1이 맑으면 뮌헨 시내 일정과 서로 바꾸며, 산악권은 예보 확인 뒤 산다. 이 경우 시장 방문은 2/3 오전 예비안으로 넘긴다.",
+        "timeline": [
+          { "time": "06:10", "title": "Buddy Hotel 출발", "detail": "München Hbf까지 도보 약 8분", "kind": "travel" },
+          { "time": "06:32", "title": "RB6 가르미슈행 탑승", "detail": "예매 목표편 · 약 1시간 22분 · 2027 시간표 잠정", "kind": "travel" },
+          { "time": "07:54", "title": "Garmisch-Partenkirchen 도착", "detail": "역 옆 Zugspitzbahnhof까지 도보 약 5분", "kind": "travel" },
+          { "time": "08:15", "title": "바이에른 추크슈피츠반 톱니열차", "detail": "Garmisch → Zugspitzplatt · 약 75분", "kind": "travel" },
+          { "time": "09:35", "title": "Gletscherbahn으로 정상 이동", "detail": "빙하역에서 케이블카 환승", "kind": "travel" },
+          { "time": "09:45–11:30", "title": "추크슈피체 정상 전망대", "detail": "독일·오스트리아 양쪽 전망 · 강풍 시 실내 비중 확대", "kind": "visit" },
+          { "time": "11:30–12:30", "title": "점심·몸 녹이기 자유시간", "detail": "정상 시설 안에서 1시간 확보", "kind": "free" },
+          { "time": "12:30", "title": "정상 → 아이브제 케이블카", "detail": "약 10분", "kind": "travel" },
+          { "time": "12:45–14:10", "title": "아이브제 겨울 호숫가 산책", "detail": "전 구간 일주가 아닌 북쪽 짧은 왕복 · 결빙 시 축소", "kind": "visit" },
+          { "time": "14:15–15:00", "title": "가르미슈역 방향 복귀", "detail": "톱니열차 또는 공식 연결편 · 당일 운행표 확인", "kind": "travel" },
+          { "time": "15:05–15:50", "title": "간식·카페 자유시간", "detail": "역 주변에서 열차 지연 완충", "kind": "free" }
+        ],
+        "returnTimeline": [
+          { "time": "16:07", "title": "RB6 뮌헨행 탑승", "detail": "예매 목표편 · 2027 시간표 잠정", "kind": "travel" },
+          { "time": "17:26", "title": "München Hbf 도착", "detail": "숙소까지 도보 약 8분", "kind": "travel" },
+          { "time": "17:35", "title": "숙소 휴식", "detail": "젖은 장갑·양말 건조", "kind": "buffer" },
+          { "time": "18:30 이후", "title": "저녁 식사 자유시간", "detail": "다음 날 뮌헨 시내 일정이라 늦지 않게 자유롭게 사용", "kind": "free" }
+        ],
         "photos": [
           {
             "spot": "qa_c9_d6_zugspitze_0",
@@ -6692,7 +6796,7 @@ const COURSES = [
         },
         "transport": {
           "mode": "train",
-          "label": "Buddy Hotel → 뮌헨 Hbf 도보 6분 → 잘츠부르크 Hbf · RE5/BRB 약 2시간"
+          "label": "München Hbf 07:09 목표 → Salzburg Hbf 08:58 · RJX/EC"
         },
         "via": [
           [
@@ -6716,11 +6820,30 @@ const COURSES = [
             47.8095
           ]
         ],
-        "title": "★ 잘츠부르크 당일치기 — 미라벨 정원과 호엔잘츠부르크",
-        "am": "Buddy Hotel에서 뮌헨 Hbf까지 걸어가 RE5/BRB 또는 Railjet 계열 열차를 타고 잘츠부르크 Hbf로 간다. 도착 후 미라벨 정원에서 호엔잘츠부르크 성이 겹쳐 보이는 전경을 보고, 잘차흐 강을 건너 구시가지로 들어간다.",
-        "pm": "게트라이데 거리와 모차르트 생가 주변을 걷고, 푸니쿨라로 호엔잘츠부르크 성에 올라 구시가지와 알프스 능선을 내려다본다. 점심은 구시가지 오스트리아식 식당이나 시장 간식으로 가볍게 해결한다.",
-        "ev": "해가 지기 전후 잘츠부르크 Hbf로 돌아와 뮌헨행 열차를 탄다. 저녁은 뮌헨에 돌아와 Stachus나 구시가지의 브라우하우스에서 먹고, Buddy Hotel에서 네 번째 밤을 보낸다.",
-        "tip": "뮌헨-잘츠부르크 RE5는 약 2시간이고 지역열차권 조합이 유리할 수 있다. 오스트리아 국경을 넘으므로 여권을 챙기고, 겨울에는 성 위 바람이 강해 방한 장비를 준비한다.",
+        "title": "2/2(화) · 잘츠부르크 구시가지와 호엔잘츠부르크",
+        "am": "07시대 열차로 잘츠부르크에 도착해 미라벨 정원에서 구시가지까지 걸어간다.",
+        "pm": "충분한 점심 뒤 대성당과 성 페터 묘지를 보고 푸니쿨라로 호엔잘츠부르크 성에 오른다.",
+        "ev": "강변의 해질녘을 보고 저녁 시간을 가진 뒤 19시대 열차로 뮌헨에 돌아간다.",
+        "tip": "호엔잘츠부르크 성은 1~4월 09:30~17:00이므로 14:30 입장을 고정한다. 국제 구간이라 여권을 지참하고, 장거리열차 좌석을 지정한다.",
+        "timeline": [
+          { "time": "06:40", "title": "Buddy Hotel 출발", "detail": "München Hbf까지 도보 약 8분", "kind": "travel" },
+          { "time": "07:09", "title": "RJX/EC 잘츠부르크행 탑승", "detail": "예매 목표편 · 약 1시간 49분 · 2027 시간표 잠정", "kind": "travel" },
+          { "time": "08:58", "title": "Salzburg Hbf 도착", "detail": "미라벨 정원까지 도보 약 15분", "kind": "travel" },
+          { "time": "09:25–10:10", "title": "미라벨 정원", "detail": "겨울 정원 산책과 요새 조망", "kind": "visit" },
+          { "time": "10:10–11:45", "title": "Makartsteg·게트라이데 거리·모차르트 생가 외관", "detail": "잘차흐강을 건너 구시가지 도보 이동", "kind": "visit" },
+          { "time": "11:45–13:15", "title": "점심·카페 자유시간", "detail": "구시가지에서 90분 확보", "kind": "free" },
+          { "time": "13:15–14:15", "title": "잘츠부르크 대성당·Kapitelplatz·성 페터 묘지", "detail": "모두 도보 5분 이내", "kind": "visit" },
+          { "time": "14:15", "title": "Festungsbahn 푸니쿨라", "detail": "요새 입장 마감에 맞춰 바로 탑승", "kind": "travel" },
+          { "time": "14:30–16:30", "title": "호엔잘츠부르크 성", "detail": "실내 전시와 전망대 · 겨울 17:00 폐장", "kind": "visit" },
+          { "time": "16:30–17:20", "title": "푸니쿨라 하산·강변 해질녘", "detail": "Makartsteg 방향으로 천천히 이동", "kind": "visit" },
+          { "time": "17:20–18:35", "title": "저녁·카페 자유시간", "detail": "역과 구시가지 사이에서 현장 선택", "kind": "free" }
+        ],
+        "returnTimeline": [
+          { "time": "18:35", "title": "Salzburg Hbf로 이동", "detail": "도보 또는 버스 · 출발 15분 전 도착", "kind": "travel" },
+          { "time": "19:05", "title": "뮌헨행 RJX/EC 탑승", "detail": "예매 목표편 · 좌석지정 · 2027 시간표 잠정", "kind": "travel" },
+          { "time": "20:55 전후", "title": "München Hbf 도착", "detail": "숙소까지 도보", "kind": "travel" },
+          { "time": "21:05", "title": "Buddy Hotel 복귀", "detail": "다음 날 06:30 체크아웃 준비", "kind": "buffer" }
+        ],
         "photos": [
           {
             "spot": "qa_c9_d7_salzburg_0",
@@ -6864,11 +6987,26 @@ const COURSES = [
             48.20593
           ]
         ],
-        "title": "뮌헨 → 빈 이동 — 느긋한 첫 저녁",
-        "am": "Buddy Hotel을 체크아웃하고 뮌헨 Hbf까지 걸어가 07시대 빈행 Railjet/ICE를 탄다. 잘츠부르크와 린츠를 지나 약 4시간 뒤, 점심 전후 빈 Hbf에 도착하는 흐름으로 잡는다.",
-        "pm": "빈 Hbf에서 Landstrasser Hauptstrasse 120의 Eurostars Embassy Vienna로 이동해 짐을 맡긴다. 이후 슈테판스돔과 그라벤 주변을 가볍게 걷는다. 도착하자마자 투어하되, 궁전이나 대형 미술관은 무리해서 넣지 않고 빈의 첫 분위기만 잡는다.",
-        "ev": "저녁은 숙소 근처나 중심부의 가벼운 가스트하우스에서 먹고 일찍 쉰다. 다음 날 빈에서 쉬면서 시장, 카페, 맥주 또는 호이리게를 천천히 즐길 수 있도록 체력을 남긴다.",
-        "tip": "뮌헨-빈 열차는 조기예매로 가격 차이가 크다. 이날은 이동일이므로 열차 지연에 대비해 저녁 예약은 빡빡하게 잡지 않는다.",
+        "title": "2/3(수) · 뮌헨에서 빈, 첫 구시가지",
+        "am": "07:09 목표 Railjet으로 잘츠부르크와 린츠를 지나 빈으로 이동한다.",
+        "pm": "호텔에 짐을 맡기고 자유로운 점심 뒤 U3로 슈테판스돔에 들어가 왕궁까지 걷는다.",
+        "ev": "저녁 식사 시간을 넉넉히 두고 19시대 숙소에 돌아와 쉰다.",
+        "tip": "뮌헨–빈 열차는 2027 시간표 공개 뒤 07시대 직통편으로 확정한다. Landstraße 공사로 74A가 우회하면 U3 Kardinal-Nagl-Platz를 대안으로 쓴다.",
+        "timeline": [
+          { "time": "06:30", "title": "Buddy Hotel 체크아웃", "detail": "München Hbf까지 도보 약 8분", "kind": "travel" },
+          { "time": "06:55", "title": "승강장 도착", "detail": "간단한 아침과 물 구입", "kind": "buffer" },
+          { "time": "07:09", "title": "빈행 Railjet 직통 탑승", "detail": "예매 목표편 · 좌석지정 · 약 4시간 23분 · 2027 시간표 잠정", "kind": "travel" },
+          { "time": "11:32", "title": "Wien Hbf 도착", "detail": "S-Bahn으로 Wien Mitte 이동", "kind": "travel" },
+          { "time": "11:40–12:20", "title": "Eurostars Embassy로 이동", "detail": "Wien Mitte에서 74A → Eslarngasse · 우회 시 U3 Kardinal-Nagl-Platz", "kind": "travel" },
+          { "time": "12:20", "title": "호텔에 짐 보관", "detail": "정식 체크인은 저녁에 진행", "kind": "buffer" },
+          { "time": "12:30–13:45", "title": "점심 자유시간", "detail": "숙소 또는 U3 노선 주변에서 현장 선택", "kind": "free" },
+          { "time": "13:45–14:15", "title": "U3로 Stephansplatz 이동", "detail": "Kardinal-Nagl-Platz에서 환승 없이 이동", "kind": "travel" },
+          { "time": "14:15–15:00", "title": "슈테판스돔 내부", "detail": "예배 구역과 유료 구역은 현장 상황에 맞춤", "kind": "visit" },
+          { "time": "15:00–16:15", "title": "Graben·Peterskirche·Kohlmarkt·Michaelerplatz", "detail": "보행자 거리로 이어지는 도보 동선", "kind": "visit" },
+          { "time": "16:15–17:15", "title": "호프부르크 안뜰·Heldenplatz·Burggarten", "detail": "실내 유료 관람 없이 외부 중심", "kind": "visit" },
+          { "time": "17:15–18:45", "title": "카페·저녁 자유시간", "detail": "도심에서 90분 확보", "kind": "free" },
+          { "time": "18:45–19:15", "title": "U3로 숙소 복귀", "detail": "호텔 체크인 후 휴식", "kind": "travel" }
+        ],
         "photos": [
           {
             "spot": "qa_c8_d6_0",
@@ -6984,7 +7122,7 @@ const COURSES = [
         },
         "transport": {
           "mode": "walk",
-          "label": "빈 휴식일 · 나슈마르크트 → 카페 센트럴 → 비어홀/호이리게"
+          "label": "호텔 → 훈데르트바서하우스 → U4 Kettenbrückengasse → 나슈마르크트 → 링"
         },
         "via": [
           [
@@ -7000,11 +7138,23 @@ const COURSES = [
             48.2103
           ]
         ],
-        "title": "빈 휴식일 — 나슈마르크트, 카페, 비어홀/호이리게",
-        "am": "Eurostars Embassy Vienna에서 늦은 아침에 시작해 나슈마르크트로 간다. 과일, 치즈, 빵, 간단한 델리 음식을 보며 장을 보고, 숙소에서 먹을 간식이나 저녁 재료를 조금 사도 좋다.",
-        "pm": "카페 센트럴이나 하벨카 같은 전통 카페에서 멜랑쥐와 케이크를 먹으며 오래 앉아 쉰다. 이후 슈테판스돔 주변과 콜마르크트를 짧게 걷고, 쇼핑보다 도시 분위기를 느끼는 데 집중한다.",
-        "ev": "저녁은 빈식 비어홀에서 맥주와 굴라시를 먹거나, 이동이 괜찮으면 그린칭 쪽 호이리게에서 와인과 차가운 안주로 마무리한다. 뮌헨 맥주 투어와 비교되는 빈식 술 문화를 느긋하게 즐기는 날이다.",
-        "tip": "빈은 뮌헨식 맥주 도시라기보다 카페와 와인, 비어홀이 섞인 도시다. 호이리게를 가려면 귀가 교통을 먼저 확인하고, 피곤하면 중심부 비어홀로 대체한다.",
+        "title": "2/4(목) · 빈 생활권 산책과 나슈마르크트",
+        "am": "늦게 시작해 숙소에서 훈데르트바서하우스까지 걷고, Wien Mitte를 거쳐 나슈마르크트로 이동한다.",
+        "pm": "시장과 긴 식사·카페 시간을 보낸 뒤 제체시온과 박물관지구, 링의 공공건축을 걷는다.",
+        "ev": "저녁은 중심부 또는 호이리게 중 그날 컨디션에 맞춰 고르고, 별도 예약 없이 자유롭게 보낸다.",
+        "tip": "이날 저녁은 빈 오페라 무도회가 열리므로 Opernring 주변 혼잡과 통제를 피한다. 오페라 외관과 공연 선택지는 2/6으로 옮겼다.",
+        "timeline": [
+          { "time": "09:30–10:00", "title": "느린 아침·출발 준비", "detail": "전날 장거리 이동 뒤 수면 여유", "kind": "free" },
+          { "time": "10:00–10:20", "title": "훈데르트바서하우스로 도보 이동", "detail": "숙소에서 약 1.4km", "kind": "travel" },
+          { "time": "10:20–11:10", "title": "훈데르트바서하우스·Kunst Haus Wien 주변", "detail": "건물 외관과 동네 산책 · 유료 관람 없음", "kind": "visit" },
+          { "time": "11:10–12:00", "title": "Wien Mitte → Kettenbrückengasse", "detail": "도보로 Wien Mitte 이동 후 U4", "kind": "travel" },
+          { "time": "12:00–13:00", "title": "나슈마르크트 둘러보기", "detail": "간식·기념품은 현장에서 판단", "kind": "visit" },
+          { "time": "13:00–15:00", "title": "점심·카페 자유시간", "detail": "이번 여행에서 가장 긴 낮 휴식 2시간", "kind": "free" },
+          { "time": "15:00–16:00", "title": "제체시온 외관·MuseumsQuartier 안뜰", "detail": "도보 약 1.5km", "kind": "visit" },
+          { "time": "16:00–17:15", "title": "국회의사당·시청사·부르크극장 외관", "detail": "링 서쪽을 따라 도보·트램 병행", "kind": "visit" },
+          { "time": "17:15–19:15", "title": "카페·저녁 자유시간", "detail": "중심부에 머물거나 체력이 남으면 Grinzing 이동", "kind": "free" },
+          { "time": "19:15 이후", "title": "자유 저녁 또는 숙소 복귀", "detail": "오페라 무도회로 혼잡한 Opernring은 피함", "kind": "buffer" }
+        ],
         "photos": [
           {
             "spot": "qa_c9_d9_naschmarkt_0",
@@ -7120,7 +7270,7 @@ const COURSES = [
         },
         "transport": {
           "mode": "walk",
-          "label": "빈 시내 · 트램+도보 (벨베데레 → 미술사 박물관 → 오페라)"
+          "label": "호텔 → 벨베데레 도보 → 트램 D Burgring → 미술사박물관"
         },
         "via": [
           [
@@ -7136,11 +7286,22 @@ const COURSES = [
             48.2033
           ]
         ],
-        "title": "빈 — 벨베데레 궁전(클림트 키스) + 미술사 박물관",
-        "am": "Eurostars Embassy Vienna에서 벨베데레 상궁(Oberes Belvedere)으로 이동해 관람한다. 구스타프 클림트의 명작 <키스(Der Kuss)>와 에곤 실레의 유화 실물 감상.",
-        "pm": "미술사 박물관(Kunsthistorisches Museum) 탐방. 합스부르크 왕가가 수집한 피터르 브뤼헐, 렘브란트, 라파엘로의 대작 감상.",
-        "ev": "빈 국립오페라하우스 당일 입석 티켓(Stehplatz) 체험 또는 인근 오스테리아에서 굴라시 저녁 식사. 공연을 보지 않는다면 링슈트라세를 따라 조명이 켜진 박물관 지구와 왕궁 주변을 한 바퀴 걸어도 좋다.",
-        "tip": "벨베데레 미술관의 클림트 <키스> 전시는 오전에 비교적 한적하게 관람할 수 있다.",
+        "title": "2/5(금) · 벨베데레와 미술사박물관",
+        "am": "09:00 벨베데레 상궁 시간권으로 클림트와 실레를 집중 관람한다.",
+        "pm": "점심을 충분히 쉰 뒤 미술사박물관 회화관과 건축을 3시간 넘게 본다.",
+        "ev": "박물관 뒤 식사 시간을 두고 Heldenplatz와 링 야경을 걷거나 바로 숙소에서 쉰다.",
+        "tip": "벨베데레는 09:00 시간권을 예약한다. 두 대형 미술관을 같은 날 보므로 미술사박물관은 브뤼헐·라파엘로·벨라스케스·쿤스트카머 우선순위를 정한다.",
+        "timeline": [
+          { "time": "08:20", "title": "호텔 출발", "detail": "벨베데레 상궁까지 도보 약 30분", "kind": "travel" },
+          { "time": "08:50", "title": "입장 대기", "detail": "온라인 티켓과 학생증 준비", "kind": "buffer" },
+          { "time": "09:00–11:15", "title": "벨베데레 상궁", "detail": "클림트 ‘키스’ → 실레 → 궁전 창밖 정원 순", "kind": "visit" },
+          { "time": "11:15–11:45", "title": "벨베데레 정원 산책", "detail": "상궁에서 정원 축을 따라 내려가기", "kind": "visit" },
+          { "time": "11:45–12:15", "title": "트램 D로 Burgring 이동", "detail": "Schloss Belvedere 정류장 → Burgring", "kind": "travel" },
+          { "time": "12:15–13:30", "title": "점심·카페 자유시간", "detail": "미술사박물관 주변에서 75분", "kind": "free" },
+          { "time": "13:30–16:45", "title": "미술사박물관", "detail": "회화관 핵심과 중앙계단·돔 카페 공간", "kind": "visit" },
+          { "time": "16:45–18:30", "title": "카페·저녁 자유시간", "detail": "박물관 피로를 풀 수 있도록 105분 확보", "kind": "free" },
+          { "time": "18:30–20:00", "title": "Heldenplatz·호프부르크·링 야경 또는 조기 귀가", "detail": "컨디션이 떨어지면 바로 U3로 숙소 복귀", "kind": "visit" }
+        ],
         "photos": [
           {
             "spot": "qa_c9_d11_0",
@@ -7256,7 +7417,7 @@ const COURSES = [
         },
         "transport": {
           "mode": "walk",
-          "label": "빈 먹는 날 · 카페 사허 → 피글뮐러/가스트하우스 → 뷔르스텔슈탄트 → 호이리게"
+          "label": "U3 Kardinal-Nagl-Platz → U4 Schönbrunn → 도심 → 국립오페라 선택"
         },
         "via": [
           [
@@ -7280,11 +7441,24 @@ const COURSES = [
             48.2543
           ]
         ],
-        "title": "빈 먹는 날 — 슈니첼, 자허토르테, 뷔르스텔슈탄트",
-        "am": "Eurostars Embassy Vienna에서 늦게 출발해 Cafe Sacher나 전통 커피하우스에서 멜랑쥐와 자허토르테로 시작한다. 전날 미술관을 이미 봤으니 이날은 관광 체크리스트보다 먹는 동선과 예약 시간에 맞춘다.",
-        "pm": "점심은 Figlmüller, Plachutta 계열, 또는 중심부 가스트하우스 중 한 곳에서 빈 슈니첼이나 타펠슈피츠를 먹는다. 이후 그라벤과 알베르티나 주변을 천천히 걷고, 배가 남으면 Würstelstand에서 케제크라이너나 보스나를 가볍게 나눠 먹는다.",
-        "ev": "저녁은 그린칭이나 누스도르프 쪽 호이리게로 이동해 Gemischter Satz 와인과 차가운 안주, 간단한 따뜻한 요리를 먹는다. 이동이 번거롭거나 날씨가 나쁘면 중심부 비어홀/가스트하우스로 대체하고, 마지막 밤이므로 다음 날 공항 이동 시간을 다시 확인한다.",
-        "tip": "빈 음식은 커피하우스, 슈니첼, 뷔르스텔슈탄트, 호이리게가 서로 다른 결의 경험이다. 하루에 전부 먹으려면 1인 1메뉴를 고집하지 말고 나눠 먹는 편이 낫다.",
+        "title": "2/6(토) · 쇤브룬 정원과 선택 공연",
+        "am": "U3와 U4로 쇤브룬에 가 궁전 외관과 무료 정원, 글로리에테를 걷는다.",
+        "pm": "도심으로 돌아와 점심과 카페를 오래 쉬고, 마지막 쇼핑과 산책을 자유롭게 한다.",
+        "ev": "저녁은 자유롭게 고른다. 원하면 빈 국립오페라 ‘Living Legacies’ 발레 입석을 시도하고, 아니면 마지막 저녁을 완전히 비워 둔다.",
+        "tip": "2/6 ‘Living Legacies’ 공연일은 공식 발표됐지만 시작 시각은 아직 미정이다. 아래 19:00은 임시 배치이며, 확정 뒤 저녁 블록만 이동한다. 입석은 당일 10시 온라인 잔여분 또는 공연 약 80분 전 현장 판매를 확인한다.",
+        "timeline": [
+          { "time": "08:45", "title": "호텔 출발", "detail": "Kardinal-Nagl-Platz까지 도보 약 7분", "kind": "travel" },
+          { "time": "09:00–09:30", "title": "U3 → U4로 Schönbrunn 이동", "detail": "Landstraße에서 U4 Hütteldorf 방향 환승", "kind": "travel" },
+          { "time": "09:30–11:30", "title": "쇤브룬 궁전 외관·정원·글로리에테", "detail": "무료 야외 구간 · 눈·결빙 시 글로리에테 오르막 생략", "kind": "visit" },
+          { "time": "11:30–12:15", "title": "U4로 도심 복귀", "detail": "Karlsplatz 또는 Stadtpark 하차", "kind": "travel" },
+          { "time": "12:15–14:00", "title": "점심·카페 자유시간", "detail": "105분 확보 · 장소는 현장에서 선택", "kind": "free" },
+          { "time": "14:00–15:30", "title": "Graben·Kohlmarkt·Albertina 주변 산책·쇼핑", "detail": "마지막 기념품 시간 포함", "kind": "visit" },
+          { "time": "15:30–17:00", "title": "카페·숙소 휴식 자유시간", "detail": "공연 선택 전 체력 회복", "kind": "free" },
+          { "time": "17:00–18:00", "title": "이른 저녁 자유시간", "detail": "공연을 보지 않으면 시간 제한 없이 연장", "kind": "free" },
+          { "time": "18:00", "title": "선택: 국립오페라 입석 준비", "detail": "‘Living Legacies’ · 19:00 임시 가정 · 공식 시작 시각 추후 확정", "kind": "buffer" },
+          { "time": "19:00–22:00", "title": "선택: 발레 관람 또는 완전 자유시간", "detail": "공연 미선택 시 카페·호이리게·야경 중 당일 선택", "kind": "free" },
+          { "time": "22:00", "title": "숙소 복귀·짐 정리", "detail": "다음 날 08:40 체크아웃", "kind": "buffer" }
+        ],
         "pois": [
           {
             "name": "Cafe Sacher Wien",
@@ -7479,11 +7653,25 @@ const COURSES = [
             48.3537
           ]
         ],
-        "title": "빈 출발 — VIE 공항 → 인천 귀국",
-        "am": "Eurostars Embassy Vienna 체크아웃 후 Wien Mitte 역으로 이동해 CAT 열차로 빈 국제공항(VIE)까지 간다(16분). 공항 도착 후 세금 환급 및 출국 수속. 전날 밤 미리 온라인 체크인을 마치고, 깨지기 쉬운 기념품과 액체류는 수하물 규정에 맞춰 다시 정리한다.",
-        "pm": "13:20 빈 국제공항 T3 출발 항공편 탑승 (오스트리아항공/루프트한자 뮌헨 1시간 45분 환승). 창밖으로 멀어지는 유럽 대륙 감상.",
-        "ev": "기내 휴식. 2027년 1월 28일(목) 오전 11:15 인천국제공항 T1 도착. 11박 12일의 독일 서부, 뮌헨 거점 당일치기, 빈 여행 완주.",
-        "tip": "빈 공항 CAT 열차는 Wien Mitte 역에서 30분 간격으로 운행되며, 공항 도달 시간을 정확히 맞추기 가장 좋다.",
+        "title": "2/7(일) · 빈 출발, 뮌헨 환승 귀국",
+        "am": "08:40 체크아웃 뒤 74A로 Wien Mitte에 가 09:37 CAT를 타고 공항으로 이동한다.",
+        "pm": "13:20 빈 출발 LH6389에 탑승해 뮌헨에서 1시간 45분 환승하고 16:05 LH718로 인천으로 간다.",
+        "ev": "기내에서 휴식하고 2월 8일 월요일 11:15 인천국제공항 T1에 도착한다.",
+        "tip": "CAT는 Wien Mitte에서 매시 07분·37분에 출발한다. 74A가 공사로 우회하면 Kardinal-Nagl-Platz에서 U3로 Wien Mitte까지 이동한다.",
+        "timeline": [
+          { "time": "08:00", "title": "기상·최종 짐 정리", "detail": "온라인 체크인과 여권·수하물표 확인", "kind": "buffer" },
+          { "time": "08:40", "title": "Eurostars Embassy 체크아웃", "detail": "Eslarngasse 정류장으로 이동", "kind": "travel" },
+          { "time": "08:50", "title": "74A로 Wien Mitte 이동", "detail": "우회 시 U3 Kardinal-Nagl-Platz 대체", "kind": "travel" },
+          { "time": "09:15", "title": "CAT 터미널 도착", "detail": "승강장과 항공편 안내 확인", "kind": "buffer" },
+          { "time": "09:37", "title": "CAT 출발", "detail": "Wien Mitte → Flughafen Wien · 16분", "kind": "travel" },
+          { "time": "09:53", "title": "빈 국제공항 도착", "detail": "T3 체크인 구역으로 이동", "kind": "travel" },
+          { "time": "10:20–12:20", "title": "수하물 위탁·보안검색·출국·식사 여유", "detail": "3시간 27분 전 공항 도착 기준", "kind": "buffer" },
+          { "time": "12:20", "title": "탑승구 대기", "detail": "공동운항 실제 운항사 Austrian 표기도 확인", "kind": "buffer" },
+          { "time": "13:20", "title": "LH6389 빈 출발", "detail": "오스트리아항공 공동운항 · 뮌헨까지 1시간", "kind": "travel" },
+          { "time": "14:20–16:05", "title": "뮌헨공항 환승", "detail": "1시간 45분 · 도착 즉시 다음 탑승구 확인", "kind": "travel" },
+          { "time": "16:05", "title": "LH718 뮌헨 출발", "detail": "인천까지 11시간 10분", "kind": "travel" },
+          { "time": "2/8 11:15", "title": "인천국제공항 T1 도착", "detail": "수하물 수취 후 여행 종료", "kind": "travel" }
+        ],
         "photos": [
           {
             "spot": "qa_c9_d13_0",
@@ -8530,5 +8718,22 @@ const COURSES = [
     "color": "#e11d48"
   }
 ];
+
+// 코스9: 일요일에는 추크슈피체, 월요일에는 영업 중인 빅투알리엔마르크트를 방문한다.
+{
+  const course9 = COURSES.find((course) => course.id === 9);
+  if (course9) {
+    const munichIndex = course9.days.findIndex((day) => day.cityKo === '뮌헨');
+    const zugspitzeIndex = course9.days.findIndex((day) => day.cityKo === '추크슈피체');
+    if (munichIndex >= 0 && zugspitzeIndex >= 0) {
+      const munichDay = course9.days[munichIndex];
+      const zugspitzeDay = course9.days[zugspitzeIndex];
+      course9.days[munichIndex] = zugspitzeDay;
+      course9.days[zugspitzeIndex] = munichDay;
+      zugspitzeDay.day = 5;
+      munichDay.day = 6;
+    }
+  }
+}
 
 if (typeof module !== 'undefined') { module.exports = { START_LOCATION, COURSES }; }

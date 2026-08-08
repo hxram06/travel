@@ -28,6 +28,12 @@
   const transportChip = $('transport-chip');
 
   const wait = (ms) => new Promise((r) => setTimeout(r, ms));
+  const escapeHtml = (value) => String(value ?? '')
+    .replaceAll('&', '&amp;')
+    .replaceAll('<', '&lt;')
+    .replaceAll('>', '&gt;')
+    .replaceAll('"', '&quot;')
+    .replaceAll("'", '&#039;');
 
   // ---------- 랜딩 ----------
   function renderLanding() {
@@ -106,6 +112,7 @@
         pm: null,
         ev: day.returnEv || '숙소에 도착해 오늘 하루를 되돌아봅니다.',
         tip: day.returnTip || day.tip || '당일치기 후에는 피곤하기 쉽습니다. 일찍 쉬는 것을 권장합니다.',
+        timeline: day.returnTimeline || null,
         transport: day.returnTransport || { mode: (day.transport && day.transport.mode) || 'train', label: `${day.cityKo} → ${day.baseCity} · 귀환` },
         photos: day.returnPhotos || [],
         pois: getTripBasePois(day),
@@ -200,16 +207,29 @@
     $('transport-label').textContent = tr.label;
 
     // 일정 — 비어 있는 슬롯은 행 자체를 생략한다
-    const schedRows = [
-      { label: '오전', text: vDay.am },
-      { label: '오후', text: vDay.pm },
-      { label: '저녁', text: vDay.ev },
-    ].filter(r => r.text).map(r => `
-      <div class="sched-row">
-        <span class="sched-label">${r.label}</span>
-        <span class="sched-text">${r.text}</span>
-      </div>
-    `).join('');
+    const schedRows = Array.isArray(vDay.timeline) && vDay.timeline.length
+      ? `<div class="schedule-timeline">${vDay.timeline.map((item) => {
+          const kind = ['travel', 'visit', 'free', 'buffer'].includes(item.kind) ? item.kind : 'visit';
+          return `
+            <div class="timeline-item timeline-${kind}">
+              <time class="timeline-time">${escapeHtml(item.time)}</time>
+              <div class="timeline-copy">
+                <strong class="timeline-title">${escapeHtml(item.title)}</strong>
+                ${item.detail ? `<span class="timeline-detail">${escapeHtml(item.detail)}</span>` : ''}
+              </div>
+            </div>
+          `;
+        }).join('')}</div>`
+      : [
+          { label: '오전', text: vDay.am },
+          { label: '오후', text: vDay.pm },
+          { label: '저녁', text: vDay.ev },
+        ].filter(r => r.text).map(r => `
+          <div class="sched-row">
+            <span class="sched-label">${r.label}</span>
+            <span class="sched-text">${r.text}</span>
+          </div>
+        `).join('');
     $('panel-schedule').innerHTML = schedRows || '<div class="sched-row"><span class="sched-text">일정 정보 없음</span></div>';
 
     $('panel-tip').innerHTML = vDay.tip ? `💡 ${vDay.tip}` : '';
