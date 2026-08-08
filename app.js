@@ -11,6 +11,7 @@
     transitioning: false,
     mapInitTried: false,
     returnedHome: false,
+    timelineProgress: {},
   };
 
   const $ = (id) => document.getElementById(id);
@@ -97,6 +98,7 @@
 
   function getViewDay() {
     const day = state.course.days[state.dayIndex];
+    if (state.course.id === 9) return day;
     const sub = state.subStep;
     if (!sub) return day;
     if (sub.type === 'entry-airport') return day.entryAirport || day;
@@ -127,8 +129,11 @@
     state.course = course;
     state.dayIndex = 0;
     const firstDay = course.days[0];
-    state.subStep = firstDay.entryAirport ? { type: 'entry-airport' } : null;
+    state.subStep = course.id === 9 ? null : (firstDay.entryAirport ? { type: 'entry-airport' } : null);
     state.returnedHome = false;
+    state.timelineProgress = {};
+    const routeLegend = document.querySelector('.route-legend');
+    if (routeLegend) routeLegend.classList.toggle('hidden', course.id !== 9);
 
     landing.classList.add('hidden');
     mapView.classList.remove('hidden');
@@ -145,6 +150,11 @@
 
     for (let i = 0; i < 25 && !TravelMap.isReady(); i++) await wait(200);
     if (!TravelMap.isReady()) return;
+
+    if (course.id === 9) {
+      await TravelMap.showDayOverview(course, 0, -1);
+      return;
+    }
 
     if (firstDay.entryAirport) {
       // 공항 경유 코스: 공항에 착지하고 멈춘다
@@ -173,6 +183,8 @@
     const day = course.days[state.dayIndex];
     const vDay = getViewDay();          // subStep에 따라 공항·경유지 등 표시
     const sub = state.subStep;
+    const isDetailedCourse = course.id === 9;
+    const timelineProgress = state.timelineProgress[state.dayIndex] ?? -1;
     const total = course.days.length;
     const isLast = state.dayIndex === total - 1 && !sub;
 
@@ -208,11 +220,17 @@
 
     // 일정 — 비어 있는 슬롯은 행 자체를 생략한다
     const schedRows = Array.isArray(vDay.timeline) && vDay.timeline.length
-      ? `<div class="schedule-timeline">${vDay.timeline.map((item) => {
+      ? `<div class="schedule-timeline">${vDay.timeline.map((item, itemIndex) => {
           const kind = ['travel', 'visit', 'free', 'buffer'].includes(item.kind) ? item.kind : 'visit';
+          const status = itemIndex < timelineProgress ? ' is-done'
+            : itemIndex === timelineProgress ? ' is-active' : '';
+          const dot = isDetailedCourse && Array.isArray(item.at)
+            ? `<button type="button" class="timeline-dot" data-timeline-index="${itemIndex}" aria-label="${escapeHtml(item.time)} ${escapeHtml(item.title)} 지도에서 보기"></button>`
+            : '<span class="timeline-dot" aria-hidden="true"></span>';
           return `
-            <div class="timeline-item timeline-${kind}">
+            <div class="timeline-item timeline-${kind}${status}" data-timeline-row="${itemIndex}">
               <time class="timeline-time">${escapeHtml(item.time)}</time>
+              ${dot}
               <div class="timeline-copy">
                 <strong class="timeline-title">${escapeHtml(item.title)}</strong>
                 ${item.detail ? `<span class="timeline-detail">${escapeHtml(item.detail)}</span>` : ''}
@@ -232,12 +250,16 @@
         `).join('');
     $('panel-schedule').innerHTML = schedRows || '<div class="sched-row"><span class="sched-text">일정 정보 없음</span></div>';
 
-    $('panel-tip').innerHTML = vDay.tip ? `💡 ${vDay.tip}` : '';
+    const tip = $('panel-tip');
+    tip.innerHTML = vDay.tip ? `💡 ${vDay.tip}` : '';
+    tip.classList.toggle('hidden', !vDay.tip);
 
     // 귀환 안내 — 당일치기 본 패널에서만, subStep이 없을 때
     const returnNote = $('panel-return-note');
-    if (!sub && day.isTrip && day.baseCity) {
-      returnNote.textContent = `🌙 저녁에 ${day.baseCity}(으)로 귀환합니다.`;
+    if (!isDetailedCourse && !sub && day.isTrip && day.baseCity) {
+      const batchim = /[가-힣]/.test(day.baseCity.slice(-1))
+        && (day.baseCity.charCodeAt(day.baseCity.length - 1) - 0xac00) % 28 !== 0;
+      returnNote.textContent = `🌙 저녁에 ${day.baseCity}${batchim ? '으로' : '로'} 귀환합니다.`;
       returnNote.classList.remove('hidden');
     } else {
       returnNote.classList.add('hidden');
@@ -251,19 +273,30 @@
         : i === state.dayIndex ? 'visited-city current' : 'visited-city upcoming';
       const marker = i < state.dayIndex ? '✓' : String(d.day);
       const current = i === state.dayIndex ? ' aria-current="step"' : '';
-      return `<button type="button" class="${cls}" data-day-index="${i}"${current} aria-label="Day ${d.day} ${d.cityKo}로 이동"><span class="visited-index" aria-hidden="true">${marker}</span><span class="visited-label">D${d.day} ${d.cityKo}</span></button>`;
+      const batchim = /[가-힣]/.test(d.cityKo.slice(-1))
+        && (d.cityKo.charCodeAt(d.cityKo.length - 1) - 0xac00) % 28 !== 0;
+      return `<button type="button" class="${cls}" data-day-index="${i}"${current} aria-label="Day ${d.day} ${d.cityKo}${batchim ? '으로' : '로'} 이동"><span class="visited-index" aria-hidden="true">${marker}</span><span class="visited-label">D${d.day} ${d.cityKo}</span></button>`;
     }).join('');
     visitedPanel.querySelectorAll('.visited-city').forEach((button) => {
       button.addEventListener('click', () => window.goToDay(Number(button.dataset.dayIndex)));
+    });
+    panelEl.querySelectorAll('.timeline-dot[data-timeline-index]').forEach((button) => {
+      button.addEventListener('click', () => window.goToTimelineStep(Number(button.dataset.timelineIndex)));
     });
 
     // 버튼 상태
     btnPrev.disabled = state.dayIndex === 0 && !sub;
     btnNext.classList.toggle('hidden', isLast);
     btnNext.disabled = isLast;
+    btnPrev.textContent = '← 이전 날';
+    btnNext.textContent = '다음 날 →';
 
     // 마지막 날 귀국 버튼 / 완료
-    if (isLast && !state.returnedHome) {
+    if (isDetailedCourse && isLast) {
+      btnHome.classList.add('hidden');
+      navComplete.classList.remove('hidden');
+      navComplete.textContent = '마지막 날 · 인천 도착';
+    } else if (isLast && !state.returnedHome) {
       btnHome.classList.remove('hidden');
       btnHome.disabled = false;
       navComplete.classList.add('hidden');
@@ -297,6 +330,10 @@
 
   async function navigate(delta) {
     if (!state.course) return;
+    if (state.course.id === 9) {
+      window.goToDay(state.dayIndex + delta);
+      return;
+    }
     const myToken = ++navToken;
 
     if (delta > 0 && state.subStep && state.subStep.type === 'trip-base') {
@@ -511,6 +548,44 @@
 
   let navToken = 0;
 
+  function updateTimelineVisuals(activeIndex) {
+    panelEl.querySelectorAll('[data-timeline-row]').forEach((row) => {
+      const index = Number(row.dataset.timelineRow);
+      row.classList.toggle('is-done', index < activeIndex);
+      row.classList.toggle('is-active', index === activeIndex);
+      const dot = row.querySelector('.timeline-dot[data-timeline-index]');
+      if (dot) {
+        if (index === activeIndex) dot.setAttribute('aria-current', 'step');
+        else dot.removeAttribute('aria-current');
+      }
+    });
+  }
+
+  window.goToTimelineStep = async function(index) {
+    if (!state.course || state.course.id !== 9 || state.transitioning) return;
+    const day = state.course.days[state.dayIndex];
+    const targetIndex = Number(index);
+    if (!Number.isInteger(targetIndex) || !day.timeline || !day.timeline[targetIndex]) return;
+    const fromIndex = state.timelineProgress[state.dayIndex] ?? -1;
+
+    state.transitioning = true;
+    updateTimelineVisuals(targetIndex);
+    try {
+      const moved = await TravelMap.playTimelineStep(
+        state.course,
+        state.dayIndex,
+        fromIndex,
+        targetIndex,
+      );
+      if (moved !== false) state.timelineProgress[state.dayIndex] = targetIndex;
+    } catch (e) {
+      console.error('세부 일정 지도 이동 오류', e);
+    } finally {
+      state.transitioning = false;
+      updateTimelineVisuals(state.timelineProgress[state.dayIndex] ?? fromIndex);
+    }
+  };
+
   // 일정 칩을 누를 때도 현재 날짜부터 목표 날짜까지의 실제 경로를 재생한다.
   // 중간 날짜의 사진·패널은 건너뛰고, 지도 경로만 10배 빠르게 진행한다.
   async function travelToDayIndex(targetIndex, requestToken) {
@@ -621,6 +696,34 @@
       state.course.days.length - 1,
     ));
     const myToken = ++navToken;
+
+    if (state.course.id === 9) {
+      if (state.transitioning || TravelMap.isAnimating()) {
+        TravelMap.skip();
+        for (let i = 0; i < 60 && TravelMap.isAnimating(); i++) await wait(40);
+      }
+      if (myToken !== navToken || !state.course) return;
+      state.transitioning = true;
+      panelInner.classList.add('fade-out');
+      await wait(100);
+      state.dayIndex = targetIndex;
+      state.maxVisitedDay = Math.max(state.maxVisitedDay, targetIndex);
+      state.returnedHome = false;
+      renderPanel();
+      panelInner.classList.remove('fade-out');
+      try {
+        await TravelMap.showDayOverview(
+          state.course,
+          targetIndex,
+          state.timelineProgress[targetIndex] ?? -1,
+        );
+      } catch (e) {
+        console.error('날짜 전체 경로 표시 오류', e);
+      } finally {
+        state.transitioning = false;
+      }
+      return;
+    }
 
     // 최신 클릭이 우선이다. 진행 중인 이동은 취소한 뒤 새 경로를 시작한다.
     if (state.transitioning || TravelMap.isAnimating()) {

@@ -8736,4 +8736,140 @@ const COURSES = [
   }
 }
 
+// 코스9은 실제 여행용 화면이다. 공항·당일치기 귀환을 별도 화면으로 나누지 않고
+// 하루 타임라인으로 합치며, 각 원을 눌렀을 때 이동할 실제 좌표를 함께 둔다.
+{
+  const course9 = COURSES.find((course) => course.id === 9);
+  if (course9) {
+    const P = {
+      ICN: [126.4505, 37.4692], FRA: [8.5622, 50.0379], MAINZ_HBF: [8.2581, 49.9991],
+      MAINZ_HOTEL: [8.2580625, 49.9989375], MAINZ_OLD: [8.2732, 50.0012], MAINZ_MUSEUM: [8.2706, 50.0031],
+      FRANKFURT_HBF: [8.6638, 50.1072], ROMER: [8.6844, 50.1106], KLEIN: [8.6839, 50.1137],
+      EISERNER: [8.6822, 50.1079], STADEL: [8.6737, 50.1033], SACHS: [8.6902, 50.1055],
+      COLOGNE_HBF: [6.9587, 50.943], DOM: [6.9583, 50.9413], COLOGNE_OLD: [6.9615, 50.9388],
+      CHOC: [6.9643, 50.9319], RHEIN: [6.9757, 50.9401], HD_HBF: [8.6754, 49.4036],
+      HD_RATHAUS: [8.7097, 49.4112], HD_CASTLE: [8.7159, 49.4106], HD_BRIDGE: [8.7097, 49.4142],
+      MUC_HBF: [11.5583, 48.1402], BUDDY: [11.56461, 48.13816], GARMISCH: [11.095, 47.492],
+      ZUG_PLATT: [10.9807, 47.4165], ZUG_SUMMIT: [10.985, 47.421], EIBSEE: [10.9736, 47.4576],
+      KARLS: [11.5657, 48.1391], MARIEN: [11.5755, 48.1374], GLOCK: [11.5754, 48.1370],
+      VIKT: [11.5765, 48.1352], ODEON: [11.5779, 48.1428], SALZ_HBF: [13.0457, 47.813],
+      MIRABELL: [13.0426, 47.8055], GETREIDE: [13.0435, 47.8006], SALZ_CATH: [13.0467, 47.7979],
+      FEST_BAHN: [13.0472, 47.7967], FORT: [13.0477, 47.795], SALZ_RIVER: [13.044, 47.8028],
+      WIEN_HBF: [16.3767, 48.1858], HOTEL: [16.38426, 48.20593], STEPH: [16.3731, 48.2085],
+      GRABEN: [16.3697, 48.2087], HOFBURG: [16.3658, 48.2065], HUNDERT: [16.3941, 48.207],
+      WIEN_MITTE: [16.3855, 48.2079], KETTEN: [16.3587, 48.1965], NASCH: [16.3615, 48.1974],
+      SECESSION: [16.3658, 48.2005], MQ: [16.358, 48.203], RATHAUS: [16.356, 48.2108],
+      BELVEDERE: [16.3813, 48.1912], KHM: [16.3602, 48.2033], SCHON: [16.3122, 48.1845],
+      GLORIETTE: [16.3088, 48.1788], OPERA: [16.369, 48.2038], VIE: [16.5697, 48.1103],
+      MUC_AIR: [11.775, 48.3537],
+    };
+    const M = (at, mode = 'walk', long = false, via = [], overviewAfter = false) =>
+      ({ at, mode, long, via, overviewAfter });
+    const geo = [
+      [
+        M(P.ICN, 'stay'), M(P.FRA, 'plane', true, [], true), M(P.FRA, 'walk'),
+        M(P.MAINZ_HBF, 'train', true), M(P.MAINZ_HBF, 'walk'), M(P.MAINZ_HBF, 'walk'),
+        M(P.MAINZ_HOTEL, 'walk'), M(P.MAINZ_HOTEL, 'stay'), M(P.MAINZ_OLD, 'walk'),
+      ],
+      [
+        M(P.MAINZ_HOTEL, 'stay'), M(P.FRANKFURT_HBF, 'train', true), M(P.ROMER, 'subway'),
+        M(P.ROMER), M(P.KLEIN), M(P.KLEIN, 'stay'), M(P.EISERNER), M(P.STADEL),
+        M(P.STADEL), M(P.SACHS), M(P.FRANKFURT_HBF, 'subway'), M(P.MAINZ_HBF, 'train', true),
+        M(P.MAINZ_HOTEL),
+      ],
+      [
+        M(P.MAINZ_HOTEL, 'stay'), M(P.COLOGNE_HBF, 'train', true, [[7.5886, 50.3571]]),
+        M(P.COLOGNE_HBF), M(P.DOM), M(P.DOM, 'stay'), M(P.COLOGNE_OLD), M(P.COLOGNE_OLD, 'stay'),
+        M(P.CHOC), M(P.CHOC, 'stay'), M(P.COLOGNE_OLD), M(P.RHEIN), M(P.COLOGNE_OLD),
+        M(P.COLOGNE_HBF), M(P.MAINZ_HBF, 'train', true, [[7.5886, 50.3571]]), M(P.MAINZ_HOTEL),
+      ],
+      [
+        M(P.MAINZ_HOTEL, 'stay'), M(P.MAINZ_MUSEUM), M(P.MAINZ_MUSEUM, 'stay'), M(P.MAINZ_HOTEL),
+        M(P.HD_HBF, 'train', true, [[8.4699, 49.4796]]), M(P.HD_HBF, 'walk'), M(P.HD_RATHAUS, 'bus'),
+        M(P.HD_RATHAUS), M(P.HD_CASTLE, 'funicular'), M(P.HD_BRIDGE), M(P.HD_BRIDGE, 'stay'),
+        M(P.HD_BRIDGE), M(P.HD_HBF, 'bus'), M(P.HD_HBF, 'stay'),
+        M(P.MUC_HBF, 'train', true, [[8.4699, 49.4796]]), M(P.MUC_HBF), M(P.BUDDY), M(P.BUDDY, 'stay'),
+      ],
+      [
+        M(P.BUDDY, 'stay'), M(P.MUC_HBF), M(P.GARMISCH, 'train', true), M(P.GARMISCH, 'walk'),
+        M(P.ZUG_PLATT, 'train'), M(P.ZUG_SUMMIT, 'cablecar'), M(P.ZUG_SUMMIT, 'stay'),
+        M(P.ZUG_SUMMIT, 'stay'), M(P.EIBSEE, 'cablecar'), M(P.EIBSEE), M(P.GARMISCH, 'train'),
+        M(P.GARMISCH, 'stay'), M(P.MUC_HBF, 'train', true), M(P.BUDDY), M(P.BUDDY, 'stay'),
+      ],
+      [
+        M(P.BUDDY, 'stay'), M(P.KARLS), M(P.MARIEN), M(P.GLOCK), M(P.VIKT), M(P.VIKT, 'stay'),
+        M(P.ODEON, 'walk', false, [[11.5761, 48.1404]]), M(P.ODEON, 'stay'), M(P.KARLS),
+        M(P.KARLS, 'stay'), M(P.MUC_HBF), M(P.BUDDY),
+      ],
+      [
+        M(P.BUDDY, 'stay'), M(P.MUC_HBF), M(P.SALZ_HBF, 'train', true), M(P.SALZ_HBF),
+        M(P.MIRABELL), M(P.GETREIDE), M(P.GETREIDE, 'stay'), M(P.SALZ_CATH),
+        M(P.FEST_BAHN), M(P.FORT, 'funicular'), M(P.SALZ_RIVER), M(P.SALZ_HBF, 'bus'),
+        M(P.SALZ_HBF, 'stay'), M(P.MUC_HBF, 'train', true), M(P.BUDDY),
+      ],
+      [
+        M(P.BUDDY, 'stay'), M(P.MUC_HBF), M(P.MUC_HBF, 'stay'), M(P.WIEN_HBF, 'train', true),
+        M(P.HOTEL, 'tram'), M(P.HOTEL, 'stay'), M(P.HOTEL, 'stay'), M(P.STEPH, 'subway'),
+        M(P.STEPH, 'stay'), M(P.GRABEN), M(P.HOFBURG), M(P.HOFBURG, 'stay'), M(P.HOTEL, 'subway'),
+      ],
+      [
+        M(P.HOTEL, 'stay'), M(P.HUNDERT, 'tram'), M(P.HUNDERT, 'stay'), M(P.KETTEN, 'subway', false, [P.WIEN_MITTE]),
+        M(P.NASCH), M(P.NASCH, 'stay'), M(P.MQ, 'walk', false, [P.SECESSION]), M(P.RATHAUS),
+        M(P.RATHAUS, 'stay'), M(P.HOTEL, 'tram'),
+      ],
+      [
+        M(P.HOTEL, 'stay'), M(P.BELVEDERE, 'tram'), M(P.BELVEDERE, 'stay'), M(P.BELVEDERE),
+        M(P.KHM, 'tram'), M(P.KHM, 'stay'), M(P.KHM, 'stay'), M(P.KHM, 'stay'), M(P.HOFBURG),
+      ],
+      [
+        M(P.HOTEL, 'stay'), M(P.SCHON, 'subway'), M(P.GLORIETTE), M(P.KARLS, 'subway'),
+        M(P.KARLS, 'stay'), M(P.GRABEN), M(P.HOTEL, 'tram'), M(P.OPERA, 'tram'),
+        M(P.OPERA, 'stay'), M(P.OPERA, 'stay'), M(P.HOTEL, 'tram'),
+      ],
+      [
+        M(P.HOTEL, 'stay'), M(P.HOTEL, 'stay'), M(P.WIEN_MITTE, 'tram'), M(P.WIEN_MITTE, 'stay'),
+        M(P.VIE, 'train', true), M(P.VIE, 'walk'), M(P.VIE, 'stay'), M(P.VIE, 'stay'),
+        M(P.VIE, 'stay'), M(P.MUC_AIR, 'plane', true), M(P.MUC_AIR, 'stay'), M(P.ICN, 'plane', true),
+      ],
+    ];
+
+    course9.days.forEach((day, index) => {
+      const entryTimeline = day.entryAirport && Array.isArray(day.entryAirport.timeline)
+        ? day.entryAirport.timeline : [];
+      const returnTimeline = Array.isArray(day.returnTimeline) ? day.returnTimeline : [];
+      const mergedTimeline = [...entryTimeline, ...(day.timeline || []), ...returnTimeline];
+      day.timeline = mergedTimeline.map((item, itemIndex) => {
+        const location = geo[index][itemIndex] || M(day.coords, 'walk');
+        const clean = (value) => typeof value === 'string'
+          ? value
+            .replace(/구텐베르크 박물관\s*MOVED/g, '구텐베르크 박물관 임시 전시장')
+            .replace(/예매 목표편/g, '권장편')
+            .replace(/목표편/g, '권장편')
+            .replace(/2027 시간표 잠정/g, '2027년 시간표는 예매 전 재확인')
+            .replace(/관람 위치 확보/g, '관람 위치 잡기')
+            .replace(/약 (\d+)분 확보/g, '약 $1분 예상')
+            .replace(/(\d+)분 확보/g, '$1분 여유')
+            .replace(/1시간 확보/g, '1시간 여유')
+            .replace(/\s*MOVED\s*/g, ' ')
+            .replace(/\s*잠정\s*/g, ' ')
+          : value;
+        return { ...item, ...location, title: clean(item.title), detail: clean(item.detail) };
+      });
+      if (day.day === 6) {
+        day.timeline.forEach((item) => {
+          if (item.time === '13:45–15:45') item.time = '13:45–15:30';
+        });
+      }
+
+      // 기존 사진은 한 장도 버리지 않는다. 공항·귀환 사진도 해당 날짜에 함께 표시한다.
+      day.photos = [
+        ...((day.entryAirport && day.entryAirport.photos) || []),
+        ...(day.photos || []),
+        ...(day.returnPhotos || []),
+      ];
+      day.routeReady = true;
+    });
+  }
+}
+
 if (typeof module !== 'undefined') { module.exports = { START_LOCATION, COURSES }; }

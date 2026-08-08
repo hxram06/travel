@@ -17,6 +17,7 @@ const MAPBOX_TOKEN = 'pk.eyJ1IjoiaHhyYW0wNiIsImEiOiJjbXJ0NGhuZmgwbGp1MnlwcDc4MzF
 
 const VEHICLE_ICON = {
   plane: '✈️', train: '🚆', bus: '🚌', ferry: '⛴️', walk: '🚶', car: '🚗',
+  tram: '🚋', subway: '🚇', funicular: '🚞', cablecar: '🚡', stay: '📍',
 };
 
 const TravelMap = (() => {
@@ -35,6 +36,12 @@ const TravelMap = (() => {
   const TRAIL_LAYER = 'trail-layer';
   const ACTIVE_SRC = 'active-src';
   const ACTIVE_LAYER = 'active-layer';
+  const CONTEXT_SRC = 'course-context-src';
+  const CONTEXT_LAYER = 'course-context-layer';
+  const TODAY_SRC = 'course-today-src';
+  const TODAY_LAYER = 'course-today-layer';
+  const DONE_SRC = 'course-done-src';
+  const DONE_LAYER = 'course-done-layer';
 
   // ---------- 토큰 ----------
   function hasValidToken() {
@@ -118,6 +125,30 @@ const TravelMap = (() => {
   function emptyFC() { return { type: 'FeatureCollection', features: [] }; }
 
   function ensureLayers() {
+    if (!map.getSource(CONTEXT_SRC)) {
+      map.addSource(CONTEXT_SRC, { type: 'geojson', data: emptyFC() });
+      map.addLayer({
+        id: CONTEXT_LAYER, type: 'line', source: CONTEXT_SRC,
+        layout: { 'line-cap': 'round', 'line-join': 'round' },
+        paint: { 'line-color': '#94a3b8', 'line-width': 2.2, 'line-opacity': 0.48 },
+      });
+    }
+    if (!map.getSource(TODAY_SRC)) {
+      map.addSource(TODAY_SRC, { type: 'geojson', data: emptyFC() });
+      map.addLayer({
+        id: TODAY_LAYER, type: 'line', source: TODAY_SRC,
+        layout: { 'line-cap': 'round', 'line-join': 'round' },
+        paint: { 'line-color': '#67c8f2', 'line-width': 4.2, 'line-opacity': 0.9 },
+      });
+    }
+    if (!map.getSource(DONE_SRC)) {
+      map.addSource(DONE_SRC, { type: 'geojson', data: emptyFC() });
+      map.addLayer({
+        id: DONE_LAYER, type: 'line', source: DONE_SRC,
+        layout: { 'line-cap': 'round', 'line-join': 'round' },
+        paint: { 'line-color': '#1769d2', 'line-width': 4.4, 'line-opacity': 0.96 },
+      });
+    }
     if (!map.getSource(TRAIL_SRC)) {
       map.addSource(TRAIL_SRC, { type: 'geojson', data: emptyFC() });
       map.addLayer({
@@ -157,6 +188,12 @@ const TravelMap = (() => {
 
   function redrawTrail() { setData(TRAIL_SRC, travelledLegs); }
   function setActive(coords) { setData(ACTIVE_SRC, coords ? [coords] : []); }
+
+  function clearCourseRoutes() {
+    setData(CONTEXT_SRC, []);
+    setData(TODAY_SRC, []);
+    setData(DONE_SRC, []);
+  }
 
   // ---------- 경로 생성 ----------
 
@@ -212,6 +249,63 @@ const TravelMap = (() => {
     return groundPath(from, (day && day.via) || [], to);
   }
 
+  // 코스9 전용: 날짜별 타임라인 좌표를 미리 경로로 바꾼다.
+  function buildCourseRoute(course) {
+    if (!course || course.id !== 9) return [];
+    const segments = [];
+    course.days.forEach((day, dayIndex) => {
+      const timeline = Array.isArray(day.timeline) ? day.timeline : [];
+      for (let itemIndex = 1; itemIndex < timeline.length; itemIndex++) {
+        const fromItem = timeline[itemIndex - 1];
+        const toItem = timeline[itemIndex];
+        if (!Array.isArray(fromItem.at) || !Array.isArray(toItem.at)) continue;
+        const mode = toItem.mode || 'walk';
+        const same = fromItem.at[0] === toItem.at[0] && fromItem.at[1] === toItem.at[1];
+        if (same) continue;
+        segments.push({
+          dayIndex,
+          toIndex: itemIndex,
+          mode,
+          long: Boolean(toItem.long),
+          from: fromItem.at,
+          to: toItem.at,
+          path: buildPath(fromItem.at, toItem.at, { via: toItem.via || [] }, mode),
+        });
+      }
+    });
+    return segments;
+  }
+
+  function renderCourseRoutes(course, currentDayIndex, stepIndex) {
+    if (!course || course.id !== 9) return;
+    const context = [];
+    const today = [];
+    const done = [];
+    buildCourseRoute(course).forEach((segment) => {
+      if (segment.dayIndex === currentDayIndex) {
+        (segment.toIndex <= stepIndex ? done : today).push(segment.path);
+      } else if (segment.long) {
+        (segment.dayIndex < currentDayIndex ? done : context).push(segment.path);
+      }
+    });
+    setData(CONTEXT_SRC, context);
+    setData(TODAY_SRC, today);
+    setData(DONE_SRC, done);
+  }
+
+  function allRouteCoords(course, dayIndex, wholeCourse) {
+    const segments = buildCourseRoute(course).filter((segment) =>
+      wholeCourse || segment.dayIndex === dayIndex
+    );
+    const coords = segments.flatMap((segment) => segment.path);
+    if (!wholeCourse) {
+      (course.days[dayIndex].photos || []).forEach((photo) => {
+        if (Array.isArray(photo.at)) coords.push(photo.at);
+      });
+    }
+    return coords;
+  }
+
   // 경로 위 진행률(0~1)에 해당하는 좌표
   function pointAt(path, t) {
     if (path.length < 2) return path[0];
@@ -229,6 +323,7 @@ const TravelMap = (() => {
     if (!cityMarker) {
       const el = document.createElement('div');
       el.className = 'city-marker';
+      el.setAttribute('aria-label', '현재 일정 위치');
       cityMarker = new mapboxgl.Marker({ element: el, anchor: 'center' })
         .setLngLat(coords).addTo(map);
     } else {
@@ -241,6 +336,7 @@ const TravelMap = (() => {
     if (!vehicleMarker) {
       const el = document.createElement('div');
       el.className = 'vehicle-marker';
+      el.setAttribute('aria-label', '이동 중');
       vehicleMarker = new mapboxgl.Marker({ element: el, anchor: 'center' })
         .setLngLat(coords).addTo(map);
     }
@@ -359,8 +455,11 @@ const TravelMap = (() => {
       el.className = 'photo-marker';
       el.style.backgroundImage = 'url("' + meta.url + '")';
       el.title = p.cap;
+      el.setAttribute('role', 'button');
+      el.setAttribute('aria-label', p.cap || '여행 사진');
+      el.tabIndex = 0;
 
-      const popupHtml = buildPhotoPopupHtml(p, meta);
+      const popupHtml = buildPhotoPopupHtml(day.routeReady ? { ...p, desc: '' } : p, meta);
       const popup = createPhotoPopup(popupHtml, p.at, 'bottom');
 
       // 마커와 별개로 팝업에도 좌표를 지정해야 한다.
@@ -372,9 +471,15 @@ const TravelMap = (() => {
       marker._photoPopupHtml = popupHtml;
       marker._photoCoords = p.at;
       marker._photoIndex = validIndex++;
+      marker._photoData = p;
 
       el.addEventListener('click', (ev) => {
         ev.stopPropagation();
+        openPhotoPopup(marker, popup);
+      });
+      el.addEventListener('keydown', (ev) => {
+        if (ev.key !== 'Enter' && ev.key !== ' ') return;
+        ev.preventDefault();
         openPhotoPopup(marker, popup);
       });
 
@@ -382,6 +487,32 @@ const TravelMap = (() => {
     });
     showPois(day);
     showLodging(day);
+  }
+
+  function distanceKm(a, b) {
+    if (!Array.isArray(a) || !Array.isArray(b)) return Infinity;
+    const rad = Math.PI / 180;
+    const dLat = (b[1] - a[1]) * rad;
+    const dLng = (b[0] - a[0]) * rad;
+    const lat1 = a[1] * rad;
+    const lat2 = b[1] * rad;
+    const h = Math.sin(dLat / 2) ** 2 + Math.cos(lat1) * Math.cos(lat2) * Math.sin(dLng / 2) ** 2;
+    return 6371 * 2 * Math.atan2(Math.sqrt(h), Math.sqrt(1 - h));
+  }
+
+  function highlightPhotoForStep(item) {
+    photoMarkers.forEach((marker) => marker.getElement().classList.remove('photo-marker-highlighted'));
+    if (!item || !Array.isArray(item.at) || !photoMarkers.length) return null;
+    const direct = item.photoSpot
+      ? photoMarkers.find((marker) => marker._photoData && marker._photoData.spot === item.photoSpot)
+      : null;
+    const closest = direct || photoMarkers.reduce((best, marker) => {
+      const distance = distanceKm(item.at, marker._photoCoords);
+      return !best || distance < best.distance ? { marker, distance } : best;
+    }, null)?.marker;
+    if (!closest) return null;
+    closest.getElement().classList.add('photo-marker-highlighted');
+    return closest;
   }
 
   function clearPhotos() {
@@ -621,6 +752,18 @@ const TravelMap = (() => {
     await onceMoveEnd(moveDuration);
   }
 
+  async function fitCoordinates(coords, padding, duration) {
+    const valid = (coords || []).filter((coord) => Array.isArray(coord) && coord.length >= 2);
+    if (!valid.length || !isReady()) return;
+    if (valid.length === 1) {
+      const moveDuration = duration || 700;
+      map.easeTo({ center: valid[0], zoom: 13, duration: moveDuration, padding: getDynamicPadding(0) });
+      await onceMoveEnd(moveDuration);
+      return;
+    }
+    await fitPath(valid, padding || 76, duration || 900);
+  }
+
   // ---------- 이동 애니메이션 ----------
   /**
    * 경로를 따라 이동 아이콘을 실제로 움직인다.
@@ -696,6 +839,107 @@ const TravelMap = (() => {
     setActive(null);
     hideVehicle();
     placeCityMarker(to);
+  }
+
+  async function showDayOverview(course, dayIndex, stepIndex) {
+    if (!isReady() || !course || course.id !== 9) return;
+    const day = course.days[dayIndex];
+    if (!day) return;
+    cancelFlag = true;
+    setActive(null);
+    hideVehicle();
+    showPhotos(day);
+    renderCourseRoutes(course, dayIndex, Number.isInteger(stepIndex) ? stepIndex : -1);
+    const coords = allRouteCoords(course, dayIndex, false);
+    await fitCoordinates(coords.length ? coords : [day.coords], 72, 900);
+    const first = day.timeline && day.timeline[0];
+    if (first && Array.isArray(first.at)) placeCityMarker(first.at);
+  }
+
+  async function showCourseOverview(course, dayIndex, stepIndex) {
+    if (!isReady() || !course || course.id !== 9) return;
+    const day = course.days[dayIndex];
+    if (!day) return;
+    cancelFlag = true;
+    setActive(null);
+    hideVehicle();
+    showPhotos(day);
+    renderCourseRoutes(course, dayIndex, Number.isInteger(stepIndex) ? stepIndex : -1);
+    // 첫 전체 조망은 유럽 구간에 집중한다. 인천 왕복은 해당 날짜에서 따로 확인한다.
+    const europe = allRouteCoords(course, dayIndex, true)
+      .filter((coord) => coord[0] > -20 && coord[0] < 40 && coord[1] > 30 && coord[1] < 65);
+    await fitCoordinates(europe, 82, 1050);
+  }
+
+  async function playTimelineStep(course, dayIndex, fromIndex, targetIndex) {
+    if (!isReady() || animating || !course || course.id !== 9) return false;
+    const day = course.days[dayIndex];
+    const timeline = day && day.timeline;
+    if (!Array.isArray(timeline) || !timeline[targetIndex]) return false;
+    const target = timeline[targetIndex];
+    animating = true;
+    cancelFlag = false;
+
+    try {
+      const currentIndex = Number.isInteger(fromIndex) ? fromIndex : -1;
+      if (targetIndex > currentIndex) {
+        const start = Math.max(1, currentIndex + 1);
+        for (let index = start; index <= targetIndex; index++) {
+          if (cancelFlag) return false;
+          const fromItem = timeline[index - 1];
+          const toItem = timeline[index];
+          if (!fromItem || !Array.isArray(fromItem.at) || !Array.isArray(toItem.at)) continue;
+          const same = fromItem.at[0] === toItem.at[0] && fromItem.at[1] === toItem.at[1];
+          if (!same) {
+            const mode = toItem.mode || 'walk';
+            const path = buildPath(fromItem.at, toItem.at, { via: toItem.via || [] }, mode);
+            await fitPath(path, 78, mode === 'plane' ? 900 : 520);
+            if (cancelFlag) return false;
+            await travel(path, mode, mode === 'plane' ? 1700 : (toItem.long ? 1250 : 820));
+            setActive(null);
+            hideVehicle();
+          }
+          renderCourseRoutes(course, dayIndex, index);
+          placeCityMarker(toItem.at);
+        }
+      } else if (targetIndex < currentIndex && timeline[currentIndex] &&
+          Array.isArray(timeline[currentIndex].at) && Array.isArray(target.at)) {
+        const fromItem = timeline[currentIndex];
+        const same = fromItem.at[0] === target.at[0] && fromItem.at[1] === target.at[1];
+        if (!same) {
+          const mode = target.mode || 'walk';
+          const path = buildPath(fromItem.at, target.at, { via: (target.via || []).slice().reverse() }, mode);
+          await fitPath(path, 78, 520);
+          if (cancelFlag) return false;
+          await travel(path, mode, target.long ? 1250 : 820);
+          setActive(null);
+          hideVehicle();
+        }
+        renderCourseRoutes(course, dayIndex, targetIndex);
+        placeCityMarker(target.at);
+      } else {
+        renderCourseRoutes(course, dayIndex, targetIndex);
+        placeCityMarker(target.at);
+      }
+
+      highlightPhotoForStep(target);
+      if (target.overviewAfter) {
+        const europe = allRouteCoords(course, dayIndex, true)
+          .filter((coord) => coord[0] > -20 && coord[0] < 40 && coord[1] > 30 && coord[1] < 65);
+        await fitCoordinates(europe, 82, 1050);
+      } else if (Array.isArray(target.at)) {
+        const localModes = ['walk', 'tram', 'subway', 'funicular', 'cablecar', 'stay'];
+        const zoom = localModes.includes(target.mode) ? 14.2 : (target.long ? 8.2 : 11.5);
+        const moveDuration = 620;
+        map.easeTo({ center: target.at, zoom, duration: moveDuration, padding: getDynamicPadding(0) });
+        await onceMoveEnd(moveDuration);
+      }
+      return true;
+    } finally {
+      setActive(null);
+      hideVehicle();
+      animating = false;
+    }
   }
 
   // ---------- 공개 API ----------
@@ -863,6 +1107,7 @@ const TravelMap = (() => {
     clearPhotos();
     if (isReady()) {
       redrawTrail();
+      clearCourseRoutes();
       setActive(null);
       hideVehicle();
       if (cityMarker) { cityMarker.remove(); cityMarker = null; }
@@ -874,6 +1119,7 @@ const TravelMap = (() => {
     init, isReady, isAnimating,
     goToDay, enterCourse, returnHome, reset, skip,
     returnToBase, moveStep, showDayPhotos,
+    showDayOverview, showCourseOverview, playTimelineStep,
     // 디버깅용 — 콘솔에서 지도 상태를 확인할 때 쓴다
     getMap: () => map,
   };
