@@ -107,6 +107,7 @@ const TravelMap = (() => {
     });
 
     map.on('zoom', updatePhotoVisibility);
+    map.on('moveend', updatePhotoVisibility);
 
     map.on('error', (e) => {
       const status = e && e.error && e.error.status;
@@ -336,11 +337,14 @@ const TravelMap = (() => {
       const el = document.createElement('div');
       el.className = 'city-marker';
       el.setAttribute('aria-label', '현재 일정 위치');
+      el.textContent = '📍';
       cityMarker = new mapboxgl.Marker({ element: el, anchor: 'center' })
         .setLngLat(coords).addTo(map);
     } else {
       cityMarker.setLngLat(coords);
     }
+    cityMarker.getElement().style.display = '';
+    updatePhotoVisibility();
   }
 
   function showVehicle(mode, coords) {
@@ -358,10 +362,12 @@ const TravelMap = (() => {
     element.textContent = VEHICLE_ICON[mode] || '➡️';
     vehicleMarker.setLngLat(coords);
     element.style.display = '';
+    if (cityMarker) cityMarker.getElement().style.display = 'none';
   }
 
   function hideVehicle() {
     if (vehicleMarker) vehicleMarker.getElement().style.display = 'none';
+    if (cityMarker) cityMarker.getElement().style.display = '';
   }
 
   function buildPhotoPopupHtml(p, meta) {
@@ -493,6 +499,7 @@ const TravelMap = (() => {
         const normalizedCap = String(photo.cap || '').toLowerCase();
         const directTextMatch = normalizedCap.length >= 3 && itemText.includes(normalizedCap);
         const distance = distanceKm(photo.at, item.at);
+        if (distance > 8) return;
         pairs.push({
           photoIndex,
           timelineIndex,
@@ -522,10 +529,12 @@ const TravelMap = (() => {
     const heroCount = Math.min(ranked.length, ranked.length >= 8 ? 3 : 2);
     const secondaryEnd = Math.min(ranked.length, Math.max(heroCount, 6));
     const tiers = new Map();
+    const priorities = new Map();
     ranked.forEach((entry, index) => {
       tiers.set(entry.photoIndex, index < heroCount ? 'hero' : index < secondaryEnd ? 'secondary' : 'detail');
+      priorities.set(entry.photoIndex, index);
     });
-    return { assignments, tiers, nonFoodCount: photoIndexes.length };
+    return { assignments, tiers, priorities, nonFoodCount: photoIndexes.length };
   }
 
   function photoTierVisible(tier, zoom, forced) {
@@ -540,12 +549,75 @@ const TravelMap = (() => {
   function updatePhotoVisibility() {
     if (!isReady()) return;
     const zoom = map.getZoom();
+    const managedMarkers = [...photoMarkers, ...poiMarkers]
+      .filter((marker) => marker._photoTier);
+    managedMarkers.forEach((marker) => {
+      if (!marker._forceVisible) marker.setOffset([0, 0]);
+    });
+    const tierOrder = { hero: 0, secondary: 1, detail: 2, food: 3 };
+    const candidates = managedMarkers
+      .filter((marker) => photoTierVisible(marker._photoTier, zoom, marker._forceVisible))
+      .sort((a, b) => Number(b._forceVisible) - Number(a._forceVisible)
+        || (tierOrder[a._photoTier] ?? 9) - (tierOrder[b._photoTier] ?? 9)
+        || (a._photoPriority ?? 999) - (b._photoPriority ?? 999));
+    const accepted = [];
+    const collisionDistance = window.innerWidth <= 767 ? 72 : 54;
+    const panelTop = document.getElementById('panel')?.getBoundingClientRect().top || window.innerHeight;
+    const blockers = [];
+    const lodgingHidden = Boolean(lodgingMarker && zoom < 7);
+    const lodgingPoint = lodgingMarker ? map.project(lodgingMarker.getLngLat()) : null;
+    const cityPoint = cityMarker ? map.project(cityMarker.getLngLat()) : null;
+    const vehicleVisible = Boolean(vehicleMarker && vehicleMarker.getElement().style.display !== 'none');
+    const cityAtLodging = Boolean(!lodgingHidden && lodgingPoint && cityPoint &&
+      Math.hypot(cityPoint.x - lodgingPoint.x, cityPoint.y - lodgingPoint.y) < 36);
+    if (lodgingMarker) {
+      lodgingMarker.getElement().style.display = lodgingHidden ? 'none' : '';
+    }
+    if (cityMarker) {
+      cityMarker.getElement().style.display = vehicleVisible || cityAtLodging ? 'none' : '';
+    }
+    if (lodgingMarker && !lodgingHidden) {
+      blockers.push({ x: lodgingPoint.x + 24, y: lodgingPoint.y - 19 });
+    }
+    if (cityMarker && !vehicleVisible && !cityAtLodging) {
+      blockers.push({ x: cityPoint.x, y: cityPoint.y });
+    }
+    const visibleMarkers = new Set();
+    candidates.forEach((marker) => {
+      const point = map.project(marker.getLngLat());
+      let verticalOffset = window.innerWidth <= 767 && marker._forceVisible && point.y > panelTop - 12
+        ? panelTop - 12 - point.y
+        : 0;
+      const markerHeight = marker.getElement().getBoundingClientRect().height || 52;
+      if (window.innerWidth <= 767 && marker._forceVisible) {
+        const safeDistance = markerHeight / 2 + 29;
+        blockers.forEach((blocker) => {
+          const dx = Math.abs(point.x - blocker.x);
+          if (dx >= safeDistance) return;
+          const requiredY = Math.sqrt(safeDistance ** 2 - dx ** 2);
+          const centerY = point.y + verticalOffset - markerHeight / 2;
+          const clearCenterY = blocker.y - requiredY;
+          if (centerY > clearCenterY) verticalOffset += clearCenterY - centerY;
+        });
+        const markerTop = point.y + verticalOffset - markerHeight;
+        if (markerTop < 12) verticalOffset += 12 - markerTop;
+      }
+      marker.setOffset([0, verticalOffset]);
+      const center = { x: point.x, y: point.y + verticalOffset - markerHeight / 2 };
+      const blocked = !marker._forceVisible && blockers.some((blocker) =>
+        Math.hypot(center.x - blocker.x, center.y - blocker.y) < 46);
+      if (blocked) return;
+      const clear = accepted.every((placed) =>
+        Math.hypot(center.x - placed.x, center.y - placed.y) >= collisionDistance);
+      if (!clear) return;
+      accepted.push(center);
+      visibleMarkers.add(marker);
+    });
     let visible = 0;
     let total = 0;
-    [...photoMarkers, ...poiMarkers].forEach((marker) => {
-      if (!marker._photoTier) return;
+    managedMarkers.forEach((marker) => {
       total++;
-      const show = photoTierVisible(marker._photoTier, zoom, marker._forceVisible);
+      const show = visibleMarkers.has(marker);
       const element = marker.getElement();
       element.classList.toggle('photo-marker-zoom-hidden', !show);
       element.setAttribute('aria-hidden', String(!show));
@@ -603,6 +675,7 @@ const TravelMap = (() => {
       marker._photoIndex = validIndex++;
       marker._photoData = p;
       marker._photoTier = tier;
+      marker._photoPriority = managed ? managed.priorities.get(photoIndex) : validIndex;
       marker._timelineIndex = Number.isInteger(timelineIndex) ? timelineIndex : null;
       marker._forceVisible = false;
 
@@ -689,7 +762,7 @@ const TravelMap = (() => {
   function showPois(day) {
     if (!isReady() || !Array.isArray(day.pois)) return;
     const restaurantKinds = new Set(['beer', 'coffee', 'food', 'korean', 'wine']);
-    day.pois.forEach((poi) => {
+    day.pois.forEach((poi, poiIndex) => {
       if (!poi || !Array.isArray(poi.coords)) return;
       const meta = poi.photoSpot ? PHOTOS[poi.photoSpot] : null;
       const el = document.createElement(meta ? 'div' : 'button');
@@ -735,6 +808,8 @@ const TravelMap = (() => {
         .setLngLat(poi.coords).addTo(map);
       if (photoTier) {
         marker._photoTier = photoTier;
+        marker._photoPriority = 100 + poiIndex;
+        marker._photoCoords = poi.coords;
         marker._forceVisible = false;
       }
 
@@ -781,8 +856,9 @@ const TravelMap = (() => {
       closeOnClick: true,
     }).setHTML(buildLodgingPopupHtml(lodging)).setLngLat(lodging.coords);
 
-    lodgingMarker = new mapboxgl.Marker({ element: el, anchor: 'bottom' })
+    lodgingMarker = new mapboxgl.Marker({ element: el, anchor: 'bottom', offset: [24, -6] })
       .setLngLat(lodging.coords).addTo(map);
+    updatePhotoVisibility();
 
     el.addEventListener('click', (ev) => {
       ev.stopPropagation();

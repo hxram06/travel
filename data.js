@@ -5647,8 +5647,8 @@ const COURSES = [
         "via": [],
         "entryAirport": {
           "coords": [
-            8.5622,
-            50.0379
+            8.57218,
+            50.04994
           ],
           "cityKo": "FRA 공항",
           "cityEn": "Frankfurt Airport T1",
@@ -5676,8 +5676,8 @@ const COURSES = [
             {
               "spot": "qa_c9_d1_entry_0",
               "at": [
-                8.5622,
-                50.0379
+                8.57218,
+                50.04994
               ],
               "cap": "프랑크푸르트 공항 T1",
               "desc": "인천에서 출발한 루프트한자 직항편이 도착하는 프랑크푸르트 공항 터미널 1의 계류장과 터미널 풍경입니다."
@@ -5685,11 +5685,11 @@ const COURSES = [
             {
               "spot": "qa_c9_d1_entry_1",
               "at": [
-                8.5701,
-                50.0528
+                8.57081,
+                50.05115
               ],
-              "cap": "프랑크푸르트 공항 장거리역",
-              "desc": "FRA 공항에서 마인츠로 넘어가기 전 이용하는 장거리 열차역으로, 공항 도착 직후 ICE 환승 동선을 보여주는 장소입니다."
+              "cap": "프랑크푸르트 공항 지역열차역",
+              "desc": "터미널 1 지하에서 마인츠행 S8과 지역열차를 타는 Regionalbahnhof입니다."
             }
           ]
         },
@@ -8742,7 +8742,8 @@ const COURSES = [
   const course9 = COURSES.find((course) => course.id === 9);
   if (course9) {
     const P = {
-      ICN: [126.4505, 37.4692], FRA: [8.5622, 50.0379], MAINZ_HBF: [8.2581, 49.9991],
+      ICN: [126.4505, 37.4692], FRA: [8.57218, 50.04994], FRA_RAIL: [8.57081, 50.05115],
+      MAINZ_HBF: [8.2581, 49.9991],
       MAINZ_HOTEL: [8.2580625, 49.9989375], MAINZ_OLD: [8.2732, 50.0012], MAINZ_MUSEUM: [8.2706, 50.0031],
       FRANKFURT_HBF: [8.6638, 50.1072], ROMER: [8.6844, 50.1106], KLEIN: [8.6839, 50.1137],
       EISERNER: [8.6822, 50.1079], STADEL: [8.6737, 50.1033], SACHS: [8.6902, 50.1055],
@@ -8768,7 +8769,7 @@ const COURSES = [
     const geo = [
       [
         M(P.ICN, 'stay'), M(P.FRA, 'plane', true, [], true), M(P.FRA, 'walk'),
-        M(P.MAINZ_HBF, 'train', true), M(P.MAINZ_HBF, 'walk'), M(P.MAINZ_HBF, 'walk'),
+        M(P.FRA_RAIL, 'walk'), M(P.MAINZ_HBF, 'train', true), M(P.MAINZ_HBF, 'walk'),
         M(P.MAINZ_HOTEL, 'walk'), M(P.MAINZ_HOTEL, 'stay'), M(P.MAINZ_OLD, 'walk'),
       ],
       [

@@ -1130,7 +1130,7 @@
     const horizontal = Math.abs(deltaX);
     const vertical = Math.abs(deltaY);
     if (horizontal >= MOBILE_STORY_SWIPE_THRESHOLD && horizontal > vertical * 1.15) {
-      moveMobileStoryDay(deltaX < 0 ? -1 : 1);
+      moveMobileStoryDay(deltaX < 0 ? 1 : -1);
     } else if (vertical >= MOBILE_STORY_SWIPE_THRESHOLD && vertical > horizontal * 1.15) {
       moveMobileStoryTimeline(deltaY < 0 ? -1 : 1);
     } else {
