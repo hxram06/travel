@@ -1,0 +1,50 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function signedIn() {
+      return request.auth != null;
+    }
+
+    function validFeedback() {
+      return request.resource.data.keys().hasAll([
+          'uid', 'stepKey', 'courseId', 'dayNumber',
+          'timelineIndex', 'reaction', 'updatedAt'
+        ])
+        && request.resource.data.keys().hasOnly([
+          'uid', 'stepKey', 'courseId', 'dayNumber',
+          'timelineIndex', 'reaction', 'updatedAt'
+        ])
+        && request.resource.data.uid == request.auth.uid
+        && request.resource.data.uid is string
+        && request.resource.data.stepKey is string
+        && request.resource.data.stepKey.size() <= 80
+        && request.resource.data.stepKey.matches('course-[0-9]+-day-[0-9]+-step-[0-9]+')
+        && request.resource.data.courseId is int
+        && request.resource.data.courseId >= 1
+        && request.resource.data.courseId <= 10
+        && request.resource.data.dayNumber is int
+        && request.resource.data.dayNumber >= 1
+        && request.resource.data.dayNumber <= 130
+        && request.resource.data.timelineIndex is int
+        && request.resource.data.timelineIndex >= 0
+        && request.resource.data.timelineIndex <= 100
+        && request.resource.data.reaction in ['like', 'dislike']
+        && request.resource.data.updatedAt == request.time;
+    }
+
+    match /timelineFeedback/{feedbackId} {
+      // 운영자 화면은 익명 평가만 집계한다. 이름·이메일 등 개인정보는 저장하지 않는다.
+      allow read: if signedIn();
+      allow create: if signedIn()
+        && validFeedback()
+        && feedbackId == request.auth.uid + '__' + request.resource.data.stepKey;
+      allow update: if signedIn()
+        && resource.data.uid == request.auth.uid
+        && resource.data.stepKey == request.resource.data.stepKey
+        && validFeedback()
+        && feedbackId == request.auth.uid + '__' + request.resource.data.stepKey;
+      allow delete: if signedIn() && resource.data.uid == request.auth.uid;
+    }
+  }
+}

@@ -338,7 +338,7 @@ const TravelMap = (() => {
       el.className = 'city-marker';
       el.setAttribute('aria-label', '현재 일정 위치');
       el.textContent = '📍';
-      cityMarker = new mapboxgl.Marker({ element: el, anchor: 'center' })
+      cityMarker = new mapboxgl.Marker({ element: el, anchor: 'bottom', offset: [0, 0] })
         .setLngLat(coords).addTo(map);
     } else {
       cityMarker.setLngLat(coords);
@@ -353,7 +353,7 @@ const TravelMap = (() => {
       const el = document.createElement('div');
       el.className = 'vehicle-marker';
       el.setAttribute('aria-label', '이동 중');
-      vehicleMarker = new mapboxgl.Marker({ element: el, anchor: 'center' })
+      vehicleMarker = new mapboxgl.Marker({ element: el, anchor: 'center', offset: [0, 0] })
         .setLngLat(coords).addTo(map);
     }
     const element = vehicleMarker.getElement();
@@ -577,7 +577,7 @@ const TravelMap = (() => {
       cityMarker.getElement().style.display = vehicleVisible || cityAtLodging ? 'none' : '';
     }
     if (lodgingMarker && !lodgingHidden) {
-      blockers.push({ x: lodgingPoint.x + 24, y: lodgingPoint.y - 19 });
+      blockers.push({ x: lodgingPoint.x, y: lodgingPoint.y - 16 });
     }
     if (cityMarker && !vehicleVisible && !cityAtLodging) {
       blockers.push({ x: cityPoint.x, y: cityPoint.y });
@@ -667,7 +667,7 @@ const TravelMap = (() => {
       // 마커와 별개로 팝업에도 좌표를 지정해야 한다.
       // (marker.setPopup을 쓰지 않으므로 Mapbox가 대신 넣어주지 않는다)
 
-      const marker = new mapboxgl.Marker({ element: el, anchor: 'bottom' })
+      const marker = new mapboxgl.Marker({ element: el, anchor: 'bottom', offset: [0, 0] })
         .setLngLat(p.at).addTo(map);
       marker._photoPopup = popup;
       marker._photoPopupHtml = popupHtml;
@@ -804,7 +804,7 @@ const TravelMap = (() => {
         closeOnClick: true,
       }).setHTML(buildPoiPopupHtml(poi, meta)).setLngLat(poi.coords);
 
-      const marker = new mapboxgl.Marker({ element: el, anchor: 'bottom' })
+      const marker = new mapboxgl.Marker({ element: el, anchor: 'bottom', offset: [0, 0] })
         .setLngLat(poi.coords).addTo(map);
       if (photoTier) {
         marker._photoTier = photoTier;
@@ -856,7 +856,7 @@ const TravelMap = (() => {
       closeOnClick: true,
     }).setHTML(buildLodgingPopupHtml(lodging)).setLngLat(lodging.coords);
 
-    lodgingMarker = new mapboxgl.Marker({ element: el, anchor: 'bottom', offset: [24, -6] })
+    lodgingMarker = new mapboxgl.Marker({ element: el, anchor: 'bottom', offset: [0, 0] })
       .setLngLat(lodging.coords).addTo(map);
     updatePhotoVisibility();
 

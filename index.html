@@ -28,7 +28,7 @@
   <link href="https://api.mapbox.com/mapbox-gl-js/v3.4.0/mapbox-gl.css" rel="stylesheet" />
   <script src="https://api.mapbox.com/mapbox-gl-js/v3.4.0/mapbox-gl.js"></script>
 
-  <link rel="stylesheet" href="styles.css?v=33" />
+  <link rel="stylesheet" href="styles.css?v=34" />
 </head>
 <body>
 
@@ -40,6 +40,23 @@
     </header>
     <div id="course-grid" class="course-grid"></div>
   </section>
+
+  <div id="course-menu" class="course-menu hidden" role="menu">
+    <button id="course-menu-stats" type="button" role="menuitem">통계 보기</button>
+  </div>
+
+  <dialog id="stats-dialog" class="stats-dialog" aria-labelledby="stats-dialog-title">
+    <div class="stats-dialog-shell">
+      <header class="stats-dialog-head">
+        <div>
+          <span class="stats-dialog-eyebrow">일정 평가</span>
+          <h2 id="stats-dialog-title">코스 통계</h2>
+        </div>
+        <button id="stats-dialog-close" class="stats-dialog-close" type="button" aria-label="통계 닫기">×</button>
+      </header>
+      <div id="stats-dialog-body" class="stats-dialog-body" aria-live="polite"></div>
+    </div>
+  </dialog>
 
   <!-- ===================== 지도 뷰 ===================== -->
   <section id="map-view" class="map-view hidden">
@@ -108,17 +125,14 @@
           <a class="mobile-photo-credit" id="mobile-photo-credit" href="#" target="_blank" rel="noopener"></a>
         </div>
 
-        <!-- 코스9 모바일 자동 재생 카드 -->
-        <section id="mobile-story" class="mobile-story hidden" tabindex="0" aria-label="모바일 여행 자동 재생">
+        <!-- 코스9 모바일 스와이프 탐색 카드 -->
+        <section id="mobile-story" class="mobile-story hidden" tabindex="0" aria-label="모바일 여행 일정 탐색">
           <div class="mobile-story-head">
             <strong id="mobile-story-day">Day 1 마인츠</strong>
-            <span id="mobile-story-state">재생 중</span>
-          </div>
-          <div class="mobile-story-progress" aria-hidden="true">
-            <span id="mobile-story-progress-fill"></span>
+            <span id="mobile-story-state">스와이프</span>
           </div>
           <div id="mobile-story-timeline" class="mobile-story-timeline"></div>
-          <div class="mobile-story-hint">탭 일시정지 · 상하 일정 · 좌우 날짜</div>
+          <div class="mobile-story-hint">위 이전 일정 · 아래 다음 일정 · 왼쪽 다음 날 · 오른쪽 이전 날</div>
         </section>
 
         <div class="panel-nav">
@@ -141,7 +155,8 @@
   <script src="photos-data.js?v=25"></script>
   <script src="data.js?v=26"></script>
   <script src="rules.js?v=23"></script>
-  <script src="map.js?v=36"></script>
-  <script src="app.js?v=31"></script>
+  <script src="map.js?v=37"></script>
+  <script src="app.js?v=32"></script>
+  <script type="module" src="firebase-feedback.js?v=1"></script>
 </body>
 </html>

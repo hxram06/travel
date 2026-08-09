@@ -28,6 +28,10 @@
   const navComplete = $('nav-complete');
   const cityChip = $('city-chip');
   const transportChip = $('transport-chip');
+  const courseMenu = $('course-menu');
+  const statsDialog = $('stats-dialog');
+  const statsDialogBody = $('stats-dialog-body');
+  let operatorCourseForStats = null;
 
   const wait = (ms) => new Promise((r) => setTimeout(r, ms));
   const escapeHtml = (value) => String(value ?? '')
@@ -36,6 +40,31 @@
     .replaceAll('>', '&gt;')
     .replaceAll('"', '&quot;')
     .replaceAll("'", '&#039;');
+
+  function feedbackIcon(type) {
+    const path = type === 'like'
+      ? 'M7.5 10.5v9H4.75a1.5 1.5 0 0 1-1.5-1.5v-6a1.5 1.5 0 0 1 1.5-1.5H7.5Zm0 9h8.35a2 2 0 0 0 1.92-1.45l1.72-6A2 2 0 0 0 17.57 9.5H13.5l.55-3.05A2.5 2.5 0 0 0 11.59 3.5h-.34L7.5 10.5v9Z'
+      : 'M7.5 13.5v-9H4.75a1.5 1.5 0 0 0-1.5 1.5v6a1.5 1.5 0 0 0 1.5 1.5H7.5Zm0-9h8.35a2 2 0 0 1 1.92 1.45l1.72 6a2 2 0 0 1-1.92 2.55H13.5l.55 3.05a2.5 2.5 0 0 1-2.46 2.95h-.34L7.5 13.5v-9Z';
+    return `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="${path}"></path></svg>`;
+  }
+
+  function renderFeedbackControls(dayIndex, itemIndex, title, compact) {
+    if (!state.course) return '';
+    const day = state.course.days[dayIndex];
+    if (!day) return '';
+    const stepKey = `course-${state.course.id}-day-${day.day}-step-${itemIndex}`;
+    return `
+      <div class="timeline-feedback${compact ? ' timeline-feedback-compact' : ''}"
+        data-feedback-key="${escapeHtml(stepKey)}"
+        data-course-id="${state.course.id}"
+        data-day-number="${day.day}"
+        data-timeline-index="${itemIndex}"
+        data-feedback-title="${escapeHtml(title)}"
+        aria-label="이 일정 평가">
+        <button type="button" class="feedback-button" data-reaction="like" aria-label="좋아요" aria-pressed="false" disabled>${feedbackIcon('like')}</button>
+        <button type="button" class="feedback-button" data-reaction="dislike" aria-label="싫어요" aria-pressed="false" disabled>${feedbackIcon('dislike')}</button>
+      </div>`;
+  }
 
   // ---------- 랜딩 ----------
   function renderLanding() {
@@ -47,9 +76,13 @@
 
     courseGrid.innerHTML = '';
     COURSES.forEach((course) => {
-      const card = document.createElement('button');
+      const card = document.createElement('article');
       card.className = 'course-card';
-      card.type = 'button';
+
+      const openButton = document.createElement('button');
+      openButton.className = 'course-card-open';
+      openButton.type = 'button';
+      openButton.setAttribute('aria-label', `${course.nameKo} 일정 열기`);
 
       const bg = document.createElement('div');
       bg.className = 'course-card-bg';
@@ -79,11 +112,136 @@
         <div class="course-cities">${course.cities.join(' · ')}</div>
       `;
 
-      card.append(bg, overlay, content);
+      openButton.append(bg, overlay, content);
+      card.append(openButton);
       const open = () => openCourse(course);
-      card.addEventListener('click', open);
+      openButton.addEventListener('click', open);
+
+      if (new URLSearchParams(window.location.search).get('owner') === 'a8f4k9x2m') {
+        const menuButton = document.createElement('button');
+        menuButton.type = 'button';
+        menuButton.className = 'course-menu-button';
+        menuButton.textContent = '…';
+        menuButton.setAttribute('aria-label', `${course.nameKo} 관리 메뉴`);
+        menuButton.setAttribute('aria-haspopup', 'menu');
+        menuButton.setAttribute('aria-expanded', 'false');
+        menuButton.addEventListener('click', (event) => {
+          event.stopPropagation();
+          openOperatorCourseMenu(course, menuButton);
+        });
+        card.append(menuButton);
+      }
       courseGrid.appendChild(card);
     });
+  }
+
+  function closeOperatorCourseMenu() {
+    courseMenu.classList.add('hidden');
+    document.querySelectorAll('.course-menu-button[aria-expanded="true"]').forEach((button) => {
+      button.setAttribute('aria-expanded', 'false');
+    });
+  }
+
+  function openOperatorCourseMenu(course, anchor) {
+    const wasOpenForSameCourse = !courseMenu.classList.contains('hidden')
+      && operatorCourseForStats && operatorCourseForStats.id === course.id;
+    closeOperatorCourseMenu();
+    if (wasOpenForSameCourse) {
+      operatorCourseForStats = null;
+      return;
+    }
+    operatorCourseForStats = course;
+    anchor.setAttribute('aria-expanded', 'true');
+    courseMenu.classList.remove('hidden');
+    const rect = anchor.getBoundingClientRect();
+    const menuWidth = courseMenu.getBoundingClientRect().width || 132;
+    courseMenu.style.left = `${Math.max(12, Math.min(window.innerWidth - menuWidth - 12, rect.right - menuWidth))}px`;
+    courseMenu.style.top = `${Math.min(window.innerHeight - 60, rect.bottom + 8)}px`;
+    $('course-menu-stats').focus();
+  }
+
+  function waitForFeedbackApi() {
+    if (window.TravelFeedback && document.documentElement.dataset.feedbackStatus === 'ready') {
+      return Promise.resolve(window.TravelFeedback);
+    }
+    if (document.documentElement.dataset.feedbackStatus === 'error') {
+      return Promise.reject(new Error('평가 서비스 초기화에 실패했습니다.'));
+    }
+    return new Promise((resolve, reject) => {
+      const timeout = window.setTimeout(() => reject(new Error('평가 서비스 연결 시간이 초과되었습니다.')), 12000);
+      window.addEventListener('travel-feedback-ready', () => {
+        window.clearTimeout(timeout);
+        resolve(window.TravelFeedback);
+      }, { once: true });
+      window.addEventListener('travel-feedback-error', (event) => {
+        window.clearTimeout(timeout);
+        reject(new Error(event.detail || '평가 서비스를 연결하지 못했습니다.'));
+      }, { once: true });
+    });
+  }
+
+  function renderCourseStats(course, stats) {
+    const stepStats = new Map(stats.steps.map((step) => [
+      `course-${course.id}-day-${step.dayNumber}-step-${step.timelineIndex}`,
+      step,
+    ]));
+    const days = course.days.map((day) => {
+      const items = (day.timeline || []).map((item, timelineIndex) => {
+        const key = `course-${course.id}-day-${day.day}-step-${timelineIndex}`;
+        return { item, timelineIndex, stat: stepStats.get(key) };
+      }).filter(({ stat }) => stat && stat.total > 0);
+      return { day, items };
+    }).filter(({ items }) => items.length);
+    const approval = stats.total ? Math.round((stats.likes / stats.total) * 100) : 0;
+
+    statsDialogBody.innerHTML = `
+      <div class="stats-summary">
+        <div><span>평가</span><strong>${stats.total.toLocaleString('ko-KR')}</strong></div>
+        <div><span>참여자</span><strong>${stats.voters.toLocaleString('ko-KR')}</strong></div>
+        <div><span>좋아요</span><strong>${stats.likes.toLocaleString('ko-KR')}</strong></div>
+        <div><span>싫어요</span><strong>${stats.dislikes.toLocaleString('ko-KR')}</strong></div>
+        <div><span>긍정률</span><strong>${approval}%</strong></div>
+      </div>
+      ${days.length ? `<div class="stats-days">${days.map(({ day, items }) => `
+        <section class="stats-day">
+          <h3>Day ${day.day} · ${escapeHtml(day.cityKo)}</h3>
+          ${items.map(({ item, stat }) => {
+            const rate = stat.total ? Math.round((stat.likes / stat.total) * 100) : 0;
+            return `<div class="stats-row">
+              <div class="stats-row-copy">
+                <time>${escapeHtml(item.time || '')}</time>
+                <strong>${escapeHtml(item.title)}</strong>
+              </div>
+              <div class="stats-row-result" aria-label="좋아요 ${stat.likes}, 싫어요 ${stat.dislikes}">
+                <span class="stats-row-bar"><i style="width:${rate}%"></i></span>
+                <span>${stat.likes} / ${stat.dislikes}</span>
+              </div>
+            </div>`;
+          }).join('')}
+        </section>`).join('')}</div>` : `
+        <div class="stats-empty">
+          <strong>아직 수집된 평가가 없습니다.</strong>
+          <span>${course.days.some((day) => Array.isArray(day.timeline) && day.timeline.length)
+            ? '공유 화면에서 평가가 등록되면 이곳에 표시됩니다.'
+            : '이 코스에는 평가 가능한 세부 타임라인이 아직 없습니다.'}</span>
+        </div>`}
+    `;
+  }
+
+  async function openCourseStats(course) {
+    closeOperatorCourseMenu();
+    $('stats-dialog-title').textContent = `코스 ${course.id} · ${course.nameKo}`;
+    statsDialogBody.innerHTML = '<div class="stats-loading"><span></span>통계를 불러오는 중입니다.</div>';
+    if (typeof statsDialog.showModal === 'function') statsDialog.showModal();
+    else statsDialog.setAttribute('open', '');
+    try {
+      const feedback = await waitForFeedbackApi();
+      const stats = await feedback.loadCourseStats(course.id);
+      renderCourseStats(course, stats);
+    } catch (error) {
+      console.error('코스 통계 조회 오류', error);
+      statsDialogBody.innerHTML = `<div class="stats-empty"><strong>통계를 불러오지 못했습니다.</strong><span>${escapeHtml(error.message)}</span></div>`;
+    }
   }
 
   // ---------- 헬퍼: 현재 패널에 보여줄 "뷰 데이" ----------
@@ -155,20 +313,10 @@
     if (!TravelMap.isReady()) return;
 
     if (course.id === 9) {
-      await TravelMap.showDayOverview(course, 0, -1);
-      state.transitioning = true;
-      try {
-        const introPlayed = await TravelMap.playTimelineStep(course, 0, 0, 1);
-        if (introPlayed !== false) {
-          state.timelineProgress[0] = 1;
-          updateTimelineVisuals(1);
-        }
-      } finally {
-        state.transitioning = false;
-      }
+      state.timelineProgress[0] = 0;
+      await TravelMap.showDayOverview(course, 0, 0);
       state.mobileStoryReady = true;
       renderMobileStory();
-      scheduleMobileStoryAdvance();
       return;
     }
 
@@ -246,14 +394,15 @@
             ? `<button type="button" class="timeline-dot" data-timeline-index="${itemIndex}" aria-label="${escapeHtml(item.time)} ${escapeHtml(item.title)} 지도에서 보기"></button>`
             : '<span class="timeline-dot" aria-hidden="true"></span>';
           return `
-            <div class="timeline-item timeline-${kind}${status}" data-timeline-row="${itemIndex}">
-              <time class="timeline-time">${escapeHtml(item.time)}</time>
-              ${dot}
-              <div class="timeline-copy">
-                <strong class="timeline-title">${escapeHtml(item.title)}</strong>
-                ${item.detail ? `<span class="timeline-detail">${escapeHtml(item.detail)}</span>` : ''}
+              <div class="timeline-item timeline-${kind}${status}" data-timeline-row="${itemIndex}">
+                <time class="timeline-time">${escapeHtml(item.time)}</time>
+                ${dot}
+                <div class="timeline-copy">
+                  <strong class="timeline-title">${escapeHtml(item.title)}</strong>
+                  ${item.detail ? `<span class="timeline-detail">${escapeHtml(item.detail)}</span>` : ''}
+                </div>
+                ${renderFeedbackControls(state.dayIndex, itemIndex, item.title, false)}
               </div>
-            </div>
           `;
         }).join('')}</div>`
       : [
@@ -567,15 +716,15 @@
 
   let navToken = 0;
 
-  const MOBILE_STORY_DWELL = 2000;
   const MOBILE_STORY_SWIPE_THRESHOLD = 44;
-  let mobileStoryTimer = null;
-  let mobileStoryPaused = false;
   let mobileStoryEnded = false;
   let mobileStoryAdvancing = false;
   let mobileStoryPointerId = null;
   let mobileStoryPointerStartX = 0;
   let mobileStoryPointerStartY = 0;
+  let mobileStoryPointerAxis = null;
+  let mobileStoryDragX = 0;
+  let mobileStoryDragY = 0;
 
   function isMobileStoryMode() {
     return Boolean(state.course && state.course.id === 9 && window.innerWidth <= 767);
@@ -616,21 +765,8 @@
     const status = $('mobile-story-state');
     if (!story || !status) return;
     const moving = mobileStoryAdvancing || state.transitioning || TravelMap.isAnimating();
-    const counting = isMobileStoryMode() && state.mobileStoryReady &&
-      !mobileStoryPaused && !mobileStoryEnded && !moving && Boolean(mobileStoryTimer);
-    story.classList.toggle('is-paused', mobileStoryPaused);
-    story.classList.toggle('is-counting', counting);
-    status.textContent = mobileStoryEnded ? '여행 완료'
-      : mobileStoryPaused ? '일시정지'
-        : moving ? '이동 중' : '재생 중';
-  }
-
-  function restartMobileStoryProgress() {
-    const story = $('mobile-story');
-    if (!story) return;
-    story.classList.remove('is-counting');
-    void story.offsetWidth;
-    updateMobileStoryStatus();
+    story.classList.toggle('is-moving', moving);
+    status.textContent = mobileStoryEnded ? '마지막 일정' : moving ? '지도 이동 중' : '스와이프';
   }
 
   function renderMobileStory() {
@@ -640,132 +776,71 @@
     if (!timeline.length) return;
     const rawIndex = state.timelineProgress[state.dayIndex] ?? 0;
     const currentIndex = Math.max(0, Math.min(rawIndex, timeline.length - 1));
-    const previous = getMobileStoryItem(state.dayIndex, currentIndex, -1);
-    const current = getMobileStoryItem(state.dayIndex, currentIndex, 0);
-    const next = getMobileStoryItem(state.dayIndex, currentIndex, 1);
-
     $('mobile-story-day').textContent = `Day ${day.day} ${day.cityKo}`;
-    const rows = [
-      { type: 'previous', value: previous, fallback: '여행 시작' },
-      { type: 'current', value: current, fallback: day.title },
-      { type: 'next', value: next, fallback: '오늘 일정 완료' },
-    ];
+    const rows = [-2, -1, 0, 1, 2].map((offset) => ({
+      offset,
+      type: offset === 0 ? 'current' : offset < 0 ? 'previous' : 'next',
+      value: getMobileStoryItem(state.dayIndex, currentIndex, offset),
+      fallback: offset < 0 ? '여행 시작' : offset > 0 ? '오늘 일정 완료' : day.title,
+    }));
     const timelineElement = $('mobile-story-timeline');
-    timelineElement.innerHTML = rows.map((row) => `
-      <div class="mobile-story-row mobile-story-row-${row.type}">
+    timelineElement.innerHTML = `<div class="mobile-story-track">${rows.map((row) => `
+      <div class="mobile-story-row mobile-story-row-${row.type}" data-story-offset="${row.offset}">
         <span>${escapeHtml(row.value ? row.value.label : row.fallback)}</span>
-        ${row.value && row.value.item.time
-          ? `<time>${escapeHtml(row.value.item.time)}</time>`
-          : ''}
+        ${row.value && row.value.item.time ? `<time>${escapeHtml(row.value.item.time)}</time>` : ''}
+        ${row.value ? renderFeedbackControls(
+          row.value.dayIndex,
+          row.value.itemIndex,
+          row.value.item.title,
+          true,
+        ) : ''}
       </div>
-    `).join('');
-    timelineElement.style.animation = 'none';
-    void timelineElement.offsetWidth;
-    timelineElement.style.animation = '';
+    `).join('')}</div>`;
+    resetMobileStoryDrag(false);
     updateMobileStoryStatus();
   }
 
-  function clearMobileStoryTimer() {
-    if (mobileStoryTimer) window.clearTimeout(mobileStoryTimer);
-    mobileStoryTimer = null;
+  function setMobileStoryDrag(x, y, animate) {
     const story = $('mobile-story');
-    if (story) story.classList.remove('is-counting');
+    if (!story) return;
+    story.classList.toggle('is-snapping', Boolean(animate));
+    story.style.setProperty('--story-drag-x', `${x}px`);
+    story.style.setProperty('--story-drag-y', `${y}px`);
   }
 
-  function scheduleMobileStoryAdvance(delay) {
-    clearMobileStoryTimer();
-    if (!isMobileStoryMode() || !state.mobileStoryReady ||
-        mobileStoryPaused || mobileStoryEnded) {
-      updateMobileStoryStatus();
-      return;
-    }
-    const nextDelay = Number(delay) || MOBILE_STORY_DWELL;
-    mobileStoryTimer = window.setTimeout(
-      () => advanceMobileStory(),
-      nextDelay,
-    );
-    restartMobileStoryProgress();
-  }
-
-  async function advanceMobileStory() {
-    clearMobileStoryTimer();
-    if (!isMobileStoryMode() || mobileStoryEnded || mobileStoryPaused) return;
-    if (mobileStoryAdvancing || state.transitioning || TravelMap.isAnimating()) {
-      while (mobileStoryAdvancing || state.transitioning || TravelMap.isAnimating()) {
-        if (!isMobileStoryMode() || mobileStoryEnded || mobileStoryPaused) return;
-        await wait(50);
-      }
-      scheduleMobileStoryAdvance();
-      return;
-    }
-
-    mobileStoryAdvancing = true;
-    const days = state.course.days;
-    const day = days[state.dayIndex];
-    const timeline = day.timeline || [];
-    const currentIndex = Math.max(0, state.timelineProgress[state.dayIndex] ?? 0);
-    const nextIndex = currentIndex + 1;
-
-    try {
-      state.transitioning = true;
-      if (nextIndex < timeline.length) {
-        state.timelineProgress[state.dayIndex] = nextIndex;
-        renderMobileStory();
-        const moved = await TravelMap.playTimelineStep(
-          state.course,
-          state.dayIndex,
-          currentIndex,
-          nextIndex,
-        );
-        if (moved === false) state.timelineProgress[state.dayIndex] = currentIndex;
-      } else if (state.dayIndex + 1 < days.length) {
-        state.dayIndex++;
-        state.maxVisitedDay = Math.max(state.maxVisitedDay, state.dayIndex);
-        state.timelineProgress[state.dayIndex] = 0;
-        state.returnedHome = false;
-        renderPanel();
-        renderMobileStory();
-        await TravelMap.showDayOverview(
-          state.course,
-          state.dayIndex,
-          0,
-        );
-        await TravelMap.playTimelineStep(
-          state.course,
-          state.dayIndex,
-          -1,
-          0,
-        );
-      } else {
-        mobileStoryEnded = true;
-        mobileStoryPaused = true;
-      }
-    } catch (e) {
-      console.error('모바일 자동 일정 재생 오류', e);
-    } finally {
-      state.transitioning = false;
-      mobileStoryAdvancing = false;
-      renderMobileStory();
-    }
-
-    if (mobileStoryEnded) {
-      updateMobileStoryStatus();
-    } else if (!mobileStoryPaused && !mobileStoryTimer) {
-      scheduleMobileStoryAdvance();
+  function resetMobileStoryDrag(animate) {
+    mobileStoryDragX = 0;
+    mobileStoryDragY = 0;
+    setMobileStoryDrag(0, 0, animate);
+    if (animate) {
+      window.setTimeout(() => $('mobile-story')?.classList.remove('is-snapping'), 190);
     }
   }
 
-  function toggleMobileStoryPause() {
-    if (!isMobileStoryMode() || !state.mobileStoryReady || mobileStoryEnded) return;
-    mobileStoryPaused = !mobileStoryPaused;
-    if (mobileStoryPaused) {
-      clearMobileStoryTimer();
-      if (TravelMap.isAnimating()) TravelMap.skip();
-      updateMobileStoryStatus();
+  async function commitMobileStorySwipe(axis, delta) {
+    const story = $('mobile-story');
+    if (!story) return;
+    story.classList.add('is-snapping');
+    if (axis === 'x') {
+      const direction = delta < 0 ? 1 : -1;
+      const exitX = (delta < 0 ? -1 : 1) * Math.min(window.innerWidth * 0.3, 120);
+      setMobileStoryDrag(exitX, 0, true);
+      await wait(150);
+      resetMobileStoryDrag(false);
+      await moveMobileStoryDay(direction);
     } else {
-      renderMobileStory();
-      scheduleMobileStoryAdvance();
+      const direction = delta < 0 ? -1 : 1;
+      const exitY = (delta < 0 ? 1 : -1) * 48;
+      setMobileStoryDrag(0, exitY, true);
+      await wait(150);
+      resetMobileStoryDrag(false);
+      await moveMobileStoryTimeline(direction);
     }
+    story.classList.remove('is-snapping');
+  }
+
+  function refreshMobileStoryStatus() {
+    updateMobileStoryStatus();
   }
 
   async function waitForMobileStoryIdle() {
@@ -779,9 +854,8 @@
 
   async function moveMobileStoryTimeline(direction) {
     if (!isMobileStoryMode() || !state.mobileStoryReady || !direction) return;
-    clearMobileStoryTimer();
+    refreshMobileStoryStatus();
     if (!await waitForMobileStoryIdle()) {
-      if (!mobileStoryPaused && !mobileStoryEnded) scheduleMobileStoryAdvance();
       return;
     }
 
@@ -794,7 +868,6 @@
     const targetIndex = Math.max(0, Math.min(currentIndex + direction, timeline.length - 1));
     if (targetIndex === currentIndex) {
       renderMobileStory();
-      if (!mobileStoryPaused && !mobileStoryEnded) scheduleMobileStoryAdvance();
       return;
     }
 
@@ -816,15 +889,13 @@
       state.transitioning = false;
       mobileStoryAdvancing = false;
       renderMobileStory();
-      if (!mobileStoryPaused && !mobileStoryEnded) scheduleMobileStoryAdvance();
     }
   }
 
   async function moveMobileStoryDay(direction) {
     if (!isMobileStoryMode() || !state.mobileStoryReady || !direction) return;
-    clearMobileStoryTimer();
+    refreshMobileStoryStatus();
     if (!await waitForMobileStoryIdle()) {
-      if (!mobileStoryPaused && !mobileStoryEnded) scheduleMobileStoryAdvance();
       return;
     }
 
@@ -832,7 +903,6 @@
     const targetDayIndex = Math.max(0, Math.min(state.dayIndex + direction, days.length - 1));
     if (targetDayIndex === state.dayIndex) {
       renderMobileStory();
-      if (!mobileStoryPaused && !mobileStoryEnded) scheduleMobileStoryAdvance();
       return;
     }
 
@@ -860,13 +930,11 @@
       state.transitioning = false;
       mobileStoryAdvancing = false;
       renderMobileStory();
-      if (!mobileStoryPaused && !mobileStoryEnded) scheduleMobileStoryAdvance();
     }
   }
 
   function stopMobileStory() {
-    clearMobileStoryTimer();
-    mobileStoryPaused = false;
+    refreshMobileStoryStatus();
     mobileStoryEnded = false;
     mobileStoryAdvancing = false;
     mobileStoryPointerId = null;
@@ -881,7 +949,7 @@
     const story = $('mobile-story');
     if (story) story.classList.toggle('hidden', !enabled);
     if (!enabled) {
-      clearMobileStoryTimer();
+      refreshMobileStoryStatus();
       return;
     }
     isPanelCollapsed = false;
@@ -890,12 +958,9 @@
     mapView.classList.remove('panel-collapsed', 'panel-dragging');
     mapView.style.setProperty(
       '--mobile-current-panel-height',
-      'calc(248px + env(safe-area-inset-bottom, 0px))',
+      'calc(252px + env(safe-area-inset-bottom, 0px))',
     );
     renderMobileStory();
-    if (state.mobileStoryReady && !mobileStoryPaused && !mobileStoryTimer) {
-      scheduleMobileStoryAdvance();
-    }
   }
 
   function updateTimelineVisuals(activeIndex) {
@@ -1105,15 +1170,32 @@
   btnPrev.addEventListener('click', () => navigate(-1));
   btnNext.addEventListener('click', () => navigate(1));
   btnHome.addEventListener('click', goHome);
+  $('course-menu-stats').addEventListener('click', () => {
+    if (operatorCourseForStats) openCourseStats(operatorCourseForStats);
+  });
+  $('stats-dialog-close').addEventListener('click', () => statsDialog.close());
+  statsDialog.addEventListener('click', (event) => {
+    if (event.target === statsDialog) statsDialog.close();
+  });
+  document.addEventListener('click', (event) => {
+    if (courseMenu.classList.contains('hidden')) return;
+    if (courseMenu.contains(event.target) || event.target.closest('.course-menu-button')) return;
+    closeOperatorCourseMenu();
+  });
 
   function handleMobileStoryPointerDown(event) {
     if (!isMobileStoryMode()) return;
+    if (event.target.closest('.feedback-button') || mobileStoryAdvancing || state.transitioning) return;
     if (event.pointerType === 'mouse' && event.button !== 0) return;
     event.preventDefault();
     event.stopPropagation();
     mobileStoryPointerId = event.pointerId;
     mobileStoryPointerStartX = event.clientX;
     mobileStoryPointerStartY = event.clientY;
+    mobileStoryPointerAxis = null;
+    mobileStoryDragX = 0;
+    mobileStoryDragY = 0;
+    $('mobile-story').classList.add('is-dragging');
     try { event.currentTarget.setPointerCapture(event.pointerId); } catch (_) { /* 지원하지 않는 브라우저 */ }
   }
 
@@ -1121,6 +1203,19 @@
     if (!isMobileStoryMode() || event.pointerId !== mobileStoryPointerId) return;
     event.preventDefault();
     event.stopPropagation();
+    const deltaX = event.clientX - mobileStoryPointerStartX;
+    const deltaY = event.clientY - mobileStoryPointerStartY;
+    if (!mobileStoryPointerAxis && Math.max(Math.abs(deltaX), Math.abs(deltaY)) >= 7) {
+      mobileStoryPointerAxis = Math.abs(deltaX) > Math.abs(deltaY) ? 'x' : 'y';
+    }
+    if (mobileStoryPointerAxis === 'x') {
+      mobileStoryDragX = Math.max(-120, Math.min(120, deltaX));
+      mobileStoryDragY = 0;
+    } else if (mobileStoryPointerAxis === 'y') {
+      mobileStoryDragX = 0;
+      mobileStoryDragY = Math.max(-64, Math.min(64, -deltaY));
+    }
+    setMobileStoryDrag(mobileStoryDragX, mobileStoryDragY, false);
   }
 
   function handleMobileStoryPointerUp(event) {
@@ -1131,20 +1226,26 @@
     const deltaY = event.clientY - mobileStoryPointerStartY;
     const horizontal = Math.abs(deltaX);
     const vertical = Math.abs(deltaY);
-    if (horizontal >= MOBILE_STORY_SWIPE_THRESHOLD && horizontal > vertical * 1.15) {
-      moveMobileStoryDay(deltaX < 0 ? 1 : -1);
-    } else if (vertical >= MOBILE_STORY_SWIPE_THRESHOLD && vertical > horizontal * 1.15) {
-      moveMobileStoryTimeline(deltaY < 0 ? -1 : 1);
-    } else {
-      toggleMobileStoryPause();
-    }
+    const axis = mobileStoryPointerAxis;
     mobileStoryPointerId = null;
+    mobileStoryPointerAxis = null;
+    $('mobile-story').classList.remove('is-dragging');
     try { event.currentTarget.releasePointerCapture(event.pointerId); } catch (_) { /* 지원하지 않는 브라우저 */ }
+    if (axis === 'x' && horizontal >= MOBILE_STORY_SWIPE_THRESHOLD) {
+      commitMobileStorySwipe('x', deltaX);
+    } else if (axis === 'y' && vertical >= MOBILE_STORY_SWIPE_THRESHOLD) {
+      commitMobileStorySwipe('y', deltaY);
+    } else {
+      resetMobileStoryDrag(true);
+    }
   }
 
   function handleMobileStoryPointerCancel(event) {
     if (!isMobileStoryMode() || event.pointerId !== mobileStoryPointerId) return;
     mobileStoryPointerId = null;
+    mobileStoryPointerAxis = null;
+    $('mobile-story').classList.remove('is-dragging');
+    resetMobileStoryDrag(true);
   }
 
   const mobileStoryElement = $('mobile-story');
@@ -1154,6 +1255,7 @@
   mobileStoryElement.addEventListener('pointercancel', handleMobileStoryPointerCancel, true);
   mapView.addEventListener('click', (event) => {
     if (!isMobileStoryMode()) return;
+    if (event.target.closest('#mobile-story')) return;
     event.preventDefault();
     event.stopPropagation();
   }, true);
@@ -1162,9 +1264,16 @@
     event.preventDefault();
   }, true);
   $('mobile-story').addEventListener('keydown', (event) => {
-    if (event.key !== 'Enter' && event.key !== ' ') return;
+    const action = {
+      ArrowUp: () => moveMobileStoryTimeline(-1),
+      ArrowDown: () => moveMobileStoryTimeline(1),
+      ArrowLeft: () => moveMobileStoryDay(1),
+      ArrowRight: () => moveMobileStoryDay(-1),
+    }[event.key];
+    if (!action) return;
     event.preventDefault();
-    toggleMobileStoryPause();
+    event.stopPropagation();
+    action();
   });
   
   let isSharedMode = false;
@@ -1309,7 +1418,7 @@
 
   function updatePanelTransform() {
     if (isMobileStoryMode()) {
-      const fixedHeight = panel.getBoundingClientRect().height || 248;
+      const fixedHeight = panel.getBoundingClientRect().height || 252;
       isPanelCollapsed = false;
       panelOffset = 0;
       panel.classList.remove('panel-collapsed');
