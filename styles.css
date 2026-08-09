@@ -307,6 +307,29 @@ html, body {
   user-select: none;
 }
 
+.vehicle-marker-plane {
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  border: 2px solid rgba(255, 255, 255, 0.95);
+  border-radius: 999px;
+  background: rgba(37, 99, 235, 0.92);
+  box-shadow: 0 0 0 8px rgba(103, 200, 242, 0.2), 0 12px 28px rgba(30, 64, 175, 0.38);
+  animation: plane-flight-pulse 1.15s ease-in-out infinite;
+}
+
+@keyframes plane-flight-pulse {
+  0%, 100% {
+    scale: 1;
+    box-shadow: 0 0 0 6px rgba(103, 200, 242, 0.16), 0 12px 28px rgba(30, 64, 175, 0.34);
+  }
+  50% {
+    scale: 1.12;
+    box-shadow: 0 0 0 13px rgba(103, 200, 242, 0.06), 0 16px 34px rgba(30, 64, 175, 0.46);
+  }
+}
+
 /* 사진 마커 */
 .photo-marker {
   width: 52px; height: 52px;

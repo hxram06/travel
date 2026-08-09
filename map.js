@@ -281,16 +281,26 @@ const TravelMap = (() => {
     const context = [];
     const today = [];
     const done = [];
+    let hiddenOtherDayShortRoutes = 0;
     buildCourseRoute(course).forEach((segment) => {
       if (segment.dayIndex === currentDayIndex) {
         (segment.toIndex <= stepIndex ? done : today).push(segment.path);
       } else if (segment.long) {
         (segment.dayIndex < currentDayIndex ? done : context).push(segment.path);
+      } else {
+        hiddenOtherDayShortRoutes++;
       }
     });
     setData(CONTEXT_SRC, context);
     setData(TODAY_SRC, today);
     setData(DONE_SRC, done);
+    const mapElement = document.getElementById('map');
+    if (mapElement) {
+      mapElement.dataset.todayRouteSegments = String(today.length);
+      mapElement.dataset.otherDayLongSegments = String(context.length + done.length);
+      mapElement.dataset.otherDayShortSegments = '0';
+      mapElement.dataset.hiddenOtherDayShortSegments = String(hiddenOtherDayShortRoutes);
+    }
   }
 
   function allRouteCoords(course, dayIndex, wholeCourse) {
@@ -340,9 +350,12 @@ const TravelMap = (() => {
       vehicleMarker = new mapboxgl.Marker({ element: el, anchor: 'center' })
         .setLngLat(coords).addTo(map);
     }
-    vehicleMarker.getElement().textContent = VEHICLE_ICON[mode] || '➡️';
+    const element = vehicleMarker.getElement();
+    element.className = `vehicle-marker vehicle-marker-${mode}`;
+    element.setAttribute('aria-label', mode === 'plane' ? '비행 중' : '이동 중');
+    element.textContent = VEHICLE_ICON[mode] || '➡️';
     vehicleMarker.setLngLat(coords);
-    vehicleMarker.getElement().style.display = '';
+    element.style.display = '';
   }
 
   function hideVehicle() {
@@ -895,7 +908,7 @@ const TravelMap = (() => {
             const path = buildPath(fromItem.at, toItem.at, { via: toItem.via || [] }, mode);
             await fitPath(path, 78, mode === 'plane' ? 900 : 520);
             if (cancelFlag) return false;
-            await travel(path, mode, mode === 'plane' ? 1700 : (toItem.long ? 1250 : 820));
+            await travel(path, mode, mode === 'plane' ? 3000 : (toItem.long ? 1250 : 820));
             setActive(null);
             hideVehicle();
           }
@@ -911,7 +924,7 @@ const TravelMap = (() => {
           const path = buildPath(fromItem.at, target.at, { via: (target.via || []).slice().reverse() }, mode);
           await fitPath(path, 78, 520);
           if (cancelFlag) return false;
-          await travel(path, mode, target.long ? 1250 : 820);
+          await travel(path, mode, mode === 'plane' ? 3000 : (target.long ? 1250 : 820));
           setActive(null);
           hideVehicle();
         }

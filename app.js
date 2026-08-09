@@ -153,6 +153,16 @@
 
     if (course.id === 9) {
       await TravelMap.showDayOverview(course, 0, -1);
+      state.transitioning = true;
+      try {
+        const introPlayed = await TravelMap.playTimelineStep(course, 0, 0, 1);
+        if (introPlayed !== false) {
+          state.timelineProgress[0] = 1;
+          updateTimelineVisuals(1);
+        }
+      } finally {
+        state.transitioning = false;
+      }
       return;
     }
 
