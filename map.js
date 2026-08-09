@@ -106,6 +106,8 @@ const TravelMap = (() => {
       mapReady = true;
     });
 
+    map.on('zoom', updatePhotoVisibility);
+
     map.on('error', (e) => {
       const status = e && e.error && e.error.status;
       if (status === 401 || status === 403) {
@@ -456,16 +458,131 @@ const TravelMap = (() => {
     });
   }
 
+  const FOOD_PHOTO_PATTERN = /학센|브라우하우스|호프브로이|카페|커피|슈니첼|소시지|뷔르스텔|토르테|타펠슈피츠|카이저슈마른|아펠슈트루델|샌드위치|케제크라이너|호이리게|와인 테이블|레스토랑|restaurant|bräu|brauhaus/i;
+  const LANDMARK_PHOTO_PATTERN = /대성당|성당|교회|박물관|궁전|정원|광장|다리|전망|도서관|호프부르크|오페라|시청|마리엔플라츠|미라벨|벨베데레|쇤브룬|추크슈피체 정상|뢰머베르크/i;
+  const TRANSPORT_PHOTO_PATTERN = /공항|중앙역|플랫폼|열차|railjet|기차|항공기|비행기|공항철도|cat |출발|도착/i;
+
+  function isFoodPhoto(photo) {
+    return Boolean(photo && FOOD_PHOTO_PATTERN.test(`${photo.cap || ''} ${photo.spot || ''}`));
+  }
+
+  function textTokens(value) {
+    return String(value || '')
+      .toLowerCase()
+      .replace(/[^0-9a-z가-힣]+/g, ' ')
+      .split(/\s+/)
+      .filter((token) => token.length >= 2);
+  }
+
+  function photoTimelineAssignments(day) {
+    const photos = day.photos || [];
+    const timeline = day.timeline || [];
+    const photoIndexes = photos
+      .map((photo, index) => ({ photo, index }))
+      .filter(({ photo }) => !isFoodPhoto(photo) && Array.isArray(photo.at));
+    const timelineIndexes = timeline
+      .map((item, index) => ({ item, index }))
+      .filter(({ item }) => Array.isArray(item.at));
+    const pairs = [];
+
+    photoIndexes.forEach(({ photo, index: photoIndex }) => {
+      const photoTokens = new Set(textTokens(photo.cap));
+      timelineIndexes.forEach(({ item, index: timelineIndex }) => {
+        const itemText = `${item.title || ''} ${item.detail || ''}`.toLowerCase();
+        const overlap = textTokens(itemText).filter((token) => photoTokens.has(token)).length;
+        const normalizedCap = String(photo.cap || '').toLowerCase();
+        const directTextMatch = normalizedCap.length >= 3 && itemText.includes(normalizedCap);
+        const distance = distanceKm(photo.at, item.at);
+        pairs.push({
+          photoIndex,
+          timelineIndex,
+          score: distance - overlap * 28 - (directTextMatch ? 90 : 0),
+        });
+      });
+    });
+
+    pairs.sort((a, b) => a.score - b.score || a.photoIndex - b.photoIndex);
+    const assignments = new Map();
+    const usedTimeline = new Set();
+    pairs.forEach((pair) => {
+      if (assignments.has(pair.photoIndex) || usedTimeline.has(pair.timelineIndex)) return;
+      assignments.set(pair.photoIndex, pair.timelineIndex);
+      usedTimeline.add(pair.timelineIndex);
+    });
+
+    const ranked = [...assignments.entries()].map(([photoIndex, timelineIndex]) => {
+      const photo = photos[photoIndex];
+      const item = timeline[timelineIndex];
+      const landmark = LANDMARK_PHOTO_PATTERN.test(photo.cap || '');
+      const transport = TRANSPORT_PHOTO_PATTERN.test(photo.cap || '');
+      const rank = item.kind === 'visit' ? 0 : landmark ? 1 : transport ? 3 : 2;
+      return { photoIndex, timelineIndex, rank };
+    }).sort((a, b) => a.rank - b.rank || a.photoIndex - b.photoIndex);
+
+    const heroCount = Math.min(ranked.length, ranked.length >= 8 ? 3 : 2);
+    const secondaryEnd = Math.min(ranked.length, Math.max(heroCount, 6));
+    const tiers = new Map();
+    ranked.forEach((entry, index) => {
+      tiers.set(entry.photoIndex, index < heroCount ? 'hero' : index < secondaryEnd ? 'secondary' : 'detail');
+    });
+    return { assignments, tiers, nonFoodCount: photoIndexes.length };
+  }
+
+  function photoTierVisible(tier, zoom, forced) {
+    if (forced) return true;
+    if (tier === 'hero') return true;
+    if (tier === 'secondary') return zoom >= 14.8;
+    if (tier === 'detail') return zoom >= 15.8;
+    if (tier === 'food') return zoom >= 16.8;
+    return true;
+  }
+
+  function updatePhotoVisibility() {
+    if (!isReady()) return;
+    const zoom = map.getZoom();
+    let visible = 0;
+    let total = 0;
+    [...photoMarkers, ...poiMarkers].forEach((marker) => {
+      if (!marker._photoTier) return;
+      total++;
+      const show = photoTierVisible(marker._photoTier, zoom, marker._forceVisible);
+      const element = marker.getElement();
+      element.classList.toggle('photo-marker-zoom-hidden', !show);
+      element.setAttribute('aria-hidden', String(!show));
+      if (element.hasAttribute('tabindex')) element.tabIndex = show ? 0 : -1;
+      if (show) visible++;
+    });
+    const mapElement = document.getElementById('map');
+    if (mapElement) {
+      mapElement.dataset.photoZoom = zoom.toFixed(2);
+      mapElement.dataset.visiblePhotos = String(visible);
+      mapElement.dataset.totalManagedPhotos = String(total);
+    }
+  }
+
   // 그날의 사진들을 지도 위 마커로 표시 (클릭하면 팝업)
   function showPhotos(day) {
     clearPhotos();
     if (!isReady()) return;
+    const managed = day.routeReady ? photoTimelineAssignments(day) : null;
+    const assignedTimelineIndexes = new Set(managed ? managed.assignments.values() : []);
+    const mapElement = document.getElementById('map');
+    if (mapElement && managed) {
+      mapElement.dataset.assignedTimelinePhotos = String(managed.assignments.size);
+      mapElement.dataset.unassignedPlacePhotos = String(managed.nonFoodCount - managed.assignments.size);
+      mapElement.dataset.duplicateTimelinePhotos = String(managed.assignments.size - assignedTimelineIndexes.size);
+    }
     let validIndex = 0;
-    (day.photos || []).forEach((p) => {
+    (day.photos || []).forEach((p, photoIndex) => {
       const meta = PHOTOS[p.spot];
       if (!meta) return;
+      const foodPhoto = day.routeReady && isFoodPhoto(p);
+      const timelineIndex = managed && managed.assignments.get(photoIndex);
+      if (managed && !foodPhoto && !Number.isInteger(timelineIndex)) return;
+      const tier = foodPhoto ? 'food' : (managed ? managed.tiers.get(photoIndex) : 'hero');
       const el = document.createElement('div');
-      el.className = 'photo-marker';
+      el.className = `photo-marker photo-marker-${tier}`;
+      el.dataset.photoTier = tier;
       el.style.backgroundImage = 'url("' + meta.url + '")';
       el.title = p.cap;
       el.setAttribute('role', 'button');
@@ -485,6 +602,9 @@ const TravelMap = (() => {
       marker._photoCoords = p.at;
       marker._photoIndex = validIndex++;
       marker._photoData = p;
+      marker._photoTier = tier;
+      marker._timelineIndex = Number.isInteger(timelineIndex) ? timelineIndex : null;
+      marker._forceVisible = false;
 
       el.addEventListener('click', (ev) => {
         ev.stopPropagation();
@@ -500,6 +620,7 @@ const TravelMap = (() => {
     });
     showPois(day);
     showLodging(day);
+    updatePhotoVisibility();
   }
 
   function distanceKm(a, b) {
@@ -513,18 +634,32 @@ const TravelMap = (() => {
     return 6371 * 2 * Math.atan2(Math.sqrt(h), Math.sqrt(1 - h));
   }
 
-  function highlightPhotoForStep(item) {
-    photoMarkers.forEach((marker) => marker.getElement().classList.remove('photo-marker-highlighted'));
-    if (!item || !Array.isArray(item.at) || !photoMarkers.length) return null;
+  function highlightPhotoForStep(item, timelineIndex) {
+    photoMarkers.forEach((marker) => {
+      marker._forceVisible = false;
+      marker.getElement().classList.remove('photo-marker-highlighted');
+    });
+    if (!item || !Array.isArray(item.at) || !photoMarkers.length) {
+      updatePhotoVisibility();
+      return null;
+    }
+    const assigned = Number.isInteger(timelineIndex)
+      ? photoMarkers.find((marker) => marker._timelineIndex === timelineIndex)
+      : null;
     const direct = item.photoSpot
       ? photoMarkers.find((marker) => marker._photoData && marker._photoData.spot === item.photoSpot)
       : null;
-    const closest = direct || photoMarkers.reduce((best, marker) => {
+    const closest = assigned || direct || photoMarkers.reduce((best, marker) => {
       const distance = distanceKm(item.at, marker._photoCoords);
       return !best || distance < best.distance ? { marker, distance } : best;
     }, null)?.marker;
-    if (!closest) return null;
+    if (!closest) {
+      updatePhotoVisibility();
+      return null;
+    }
+    closest._forceVisible = true;
     closest.getElement().classList.add('photo-marker-highlighted');
+    updatePhotoVisibility();
     return closest;
   }
 
@@ -553,6 +688,7 @@ const TravelMap = (() => {
 
   function showPois(day) {
     if (!isReady() || !Array.isArray(day.pois)) return;
+    const restaurantKinds = new Set(['beer', 'coffee', 'food', 'korean', 'wine']);
     day.pois.forEach((poi) => {
       if (!poi || !Array.isArray(poi.coords)) return;
       const meta = poi.photoSpot ? PHOTOS[poi.photoSpot] : null;
@@ -561,11 +697,16 @@ const TravelMap = (() => {
       const classes = meta
         ? ['photo-marker', 'poi-photo-marker', `poi-photo-marker-${poi.kind || 'place'}`]
         : ['poi-marker', `poi-marker-${poi.kind || 'place'}`];
+      const photoTier = meta && day.routeReady
+        ? (restaurantKinds.has(poi.kind) ? 'food' : 'detail')
+        : null;
+      if (photoTier) classes.push(`photo-marker-${photoTier}`);
       if (poi.priority === 'must') classes.push(meta ? 'poi-photo-marker-must' : 'poi-marker-must');
       el.className = classes.join(' ');
       if (meta) {
         el.setAttribute('role', 'button');
         el.tabIndex = 0;
+        if (photoTier) el.dataset.photoTier = photoTier;
       }
       el.setAttribute('aria-label', poi.name);
       el.title = poi.name;
@@ -592,6 +733,10 @@ const TravelMap = (() => {
 
       const marker = new mapboxgl.Marker({ element: el, anchor: 'bottom' })
         .setLngLat(poi.coords).addTo(map);
+      if (photoTier) {
+        marker._photoTier = photoTier;
+        marker._forceVisible = false;
+      }
 
       el.addEventListener('click', (ev) => {
         ev.stopPropagation();
@@ -863,6 +1008,9 @@ const TravelMap = (() => {
     hideVehicle();
     showPhotos(day);
     renderCourseRoutes(course, dayIndex, Number.isInteger(stepIndex) ? stepIndex : -1);
+    if (Number.isInteger(stepIndex) && day.timeline && day.timeline[stepIndex]) {
+      highlightPhotoForStep(day.timeline[stepIndex], stepIndex);
+    }
     const coords = allRouteCoords(course, dayIndex, false);
     const speed = Math.max(1, Number(opts && opts.speed) || 1);
     await fitCoordinates(coords.length ? coords : [day.coords], 72, Math.max(120, 900 / speed));
@@ -938,7 +1086,7 @@ const TravelMap = (() => {
         placeCityMarker(target.at);
       }
 
-      highlightPhotoForStep(target);
+      highlightPhotoForStep(target, targetIndex);
       if (target.overviewAfter) {
         const europe = allRouteCoords(course, dayIndex, true)
           .filter((coord) => coord[0] > -20 && coord[0] < 40 && coord[1] > 30 && coord[1] < 65);

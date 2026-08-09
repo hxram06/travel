@@ -567,15 +567,16 @@
 
   let navToken = 0;
 
+  const MOBILE_STORY_INTERVAL = 2500;
+  const MOBILE_STORY_MAP_SPEED = 2;
+  const MOBILE_STORY_SWIPE_THRESHOLD = 44;
   let mobileStoryTimer = null;
   let mobileStoryPaused = false;
-  let mobileStoryFast = false;
   let mobileStoryEnded = false;
   let mobileStoryAdvancing = false;
-  let mobileStoryHoldTimer = null;
   let mobileStoryPointerId = null;
-  let mobileStoryHoldTriggered = false;
-  let mobileStoryPausedBeforeHold = false;
+  let mobileStoryPointerStartX = 0;
+  let mobileStoryPointerStartY = 0;
 
   function isMobileStoryMode() {
     return Boolean(state.course && state.course.id === 9 && window.innerWidth <= 767);
@@ -618,11 +619,9 @@
     const counting = isMobileStoryMode() && state.mobileStoryReady &&
       !mobileStoryPaused && !mobileStoryEnded;
     story.classList.toggle('is-paused', mobileStoryPaused);
-    story.classList.toggle('is-fast', mobileStoryFast);
     story.classList.toggle('is-counting', counting);
     status.textContent = mobileStoryEnded ? '여행 완료'
-      : mobileStoryFast ? '빠르게 재생 중'
-        : mobileStoryPaused ? '일시정지' : '재생 중';
+      : mobileStoryPaused ? '일시정지' : '재생 중';
   }
 
   function restartMobileStoryProgress() {
@@ -674,20 +673,19 @@
       updateMobileStoryStatus();
       return;
     }
-    const nextDelay = Number(delay) || (mobileStoryFast ? 120 : 5000);
+    const nextDelay = Number(delay) || MOBILE_STORY_INTERVAL;
     restartMobileStoryProgress();
     mobileStoryTimer = window.setTimeout(
-      () => advanceMobileStory(mobileStoryFast),
+      () => advanceMobileStory(),
       nextDelay,
     );
   }
 
-  async function advanceMobileStory(fast) {
+  async function advanceMobileStory() {
     clearMobileStoryTimer();
-    if (!isMobileStoryMode() || mobileStoryEnded || (mobileStoryPaused && !fast)) return;
+    if (!isMobileStoryMode() || mobileStoryEnded || mobileStoryPaused) return;
     if (mobileStoryAdvancing || state.transitioning || TravelMap.isAnimating()) {
-      if (fast) TravelMap.skip();
-      scheduleMobileStoryAdvance(fast ? 160 : 500);
+      scheduleMobileStoryAdvance(250);
       return;
     }
 
@@ -701,32 +699,37 @@
     try {
       state.transitioning = true;
       if (nextIndex < timeline.length) {
+        state.timelineProgress[state.dayIndex] = nextIndex;
+        renderMobileStory();
+        scheduleMobileStoryAdvance(MOBILE_STORY_INTERVAL);
         const moved = await TravelMap.playTimelineStep(
           state.course,
           state.dayIndex,
           currentIndex,
           nextIndex,
-          { speed: fast ? 4 : 1 },
+          { speed: MOBILE_STORY_MAP_SPEED },
         );
-        if (moved !== false) state.timelineProgress[state.dayIndex] = nextIndex;
+        if (moved === false) state.timelineProgress[state.dayIndex] = currentIndex;
       } else if (state.dayIndex + 1 < days.length) {
         state.dayIndex++;
         state.maxVisitedDay = Math.max(state.maxVisitedDay, state.dayIndex);
         state.timelineProgress[state.dayIndex] = 0;
         state.returnedHome = false;
         renderPanel();
+        renderMobileStory();
+        scheduleMobileStoryAdvance(MOBILE_STORY_INTERVAL);
         await TravelMap.showDayOverview(
           state.course,
           state.dayIndex,
           0,
-          { speed: fast ? 4 : 1 },
+          { speed: MOBILE_STORY_MAP_SPEED },
         );
         await TravelMap.playTimelineStep(
           state.course,
           state.dayIndex,
           -1,
           0,
-          { speed: fast ? 4 : 1 },
+          { speed: MOBILE_STORY_MAP_SPEED },
         );
       } else {
         mobileStoryEnded = true;
@@ -740,10 +743,10 @@
       renderMobileStory();
     }
 
-    if (!mobileStoryEnded) {
-      scheduleMobileStoryAdvance(mobileStoryFast ? 120 : 5000);
-    } else {
+    if (mobileStoryEnded) {
       updateMobileStoryStatus();
+    } else if (!mobileStoryPaused && !mobileStoryTimer) {
+      scheduleMobileStoryAdvance(MOBILE_STORY_INTERVAL);
     }
   }
 
@@ -756,41 +759,112 @@
       updateMobileStoryStatus();
     } else {
       renderMobileStory();
-      scheduleMobileStoryAdvance(5000);
+      scheduleMobileStoryAdvance(MOBILE_STORY_INTERVAL);
     }
   }
 
-  function beginMobileStoryFastForward() {
-    if (!isMobileStoryMode() || !state.mobileStoryReady || mobileStoryEnded) return;
-    mobileStoryPausedBeforeHold = mobileStoryPaused;
-    mobileStoryPaused = false;
-    mobileStoryFast = true;
-    mobileStoryHoldTriggered = true;
-    clearMobileStoryTimer();
+  async function waitForMobileStoryIdle() {
     if (TravelMap.isAnimating()) TravelMap.skip();
-    renderMobileStory();
-    scheduleMobileStoryAdvance(80);
+    for (let attempt = 0; attempt < 40; attempt++) {
+      if (!mobileStoryAdvancing && !state.transitioning && !TravelMap.isAnimating()) return true;
+      await wait(35);
+    }
+    return false;
   }
 
-  function endMobileStoryFastForward() {
-    if (!mobileStoryFast) return;
-    mobileStoryFast = false;
-    mobileStoryPaused = mobileStoryPausedBeforeHold;
+  async function moveMobileStoryTimeline(direction) {
+    if (!isMobileStoryMode() || !state.mobileStoryReady || !direction) return;
     clearMobileStoryTimer();
-    renderMobileStory();
-    if (!mobileStoryPaused && !mobileStoryEnded) scheduleMobileStoryAdvance(5000);
+    if (!await waitForMobileStoryIdle()) {
+      if (!mobileStoryPaused && !mobileStoryEnded) scheduleMobileStoryAdvance();
+      return;
+    }
+
+    const day = state.course.days[state.dayIndex];
+    const timeline = day.timeline || [];
+    const currentIndex = Math.max(0, Math.min(
+      state.timelineProgress[state.dayIndex] ?? 0,
+      timeline.length - 1,
+    ));
+    const targetIndex = Math.max(0, Math.min(currentIndex + direction, timeline.length - 1));
+    if (targetIndex === currentIndex) {
+      renderMobileStory();
+      if (!mobileStoryPaused && !mobileStoryEnded) scheduleMobileStoryAdvance();
+      return;
+    }
+
+    mobileStoryEnded = false;
+    mobileStoryAdvancing = true;
+    state.transitioning = true;
+    try {
+      const moved = await TravelMap.playTimelineStep(
+        state.course,
+        state.dayIndex,
+        currentIndex,
+        targetIndex,
+        { speed: 1.6 },
+      );
+      if (moved !== false) state.timelineProgress[state.dayIndex] = targetIndex;
+    } catch (error) {
+      console.error('모바일 일정 스와이프 오류', error);
+    } finally {
+      state.transitioning = false;
+      mobileStoryAdvancing = false;
+      renderMobileStory();
+      if (!mobileStoryPaused && !mobileStoryEnded) scheduleMobileStoryAdvance();
+    }
+  }
+
+  async function moveMobileStoryDay(direction) {
+    if (!isMobileStoryMode() || !state.mobileStoryReady || !direction) return;
+    clearMobileStoryTimer();
+    if (!await waitForMobileStoryIdle()) {
+      if (!mobileStoryPaused && !mobileStoryEnded) scheduleMobileStoryAdvance();
+      return;
+    }
+
+    const days = state.course.days;
+    const targetDayIndex = Math.max(0, Math.min(state.dayIndex + direction, days.length - 1));
+    if (targetDayIndex === state.dayIndex) {
+      renderMobileStory();
+      if (!mobileStoryPaused && !mobileStoryEnded) scheduleMobileStoryAdvance();
+      return;
+    }
+
+    mobileStoryEnded = false;
+    mobileStoryAdvancing = true;
+    state.transitioning = true;
+    try {
+      state.dayIndex = targetDayIndex;
+      state.maxVisitedDay = Math.max(state.maxVisitedDay, targetDayIndex);
+      state.timelineProgress[targetDayIndex] = Math.max(
+        0,
+        state.timelineProgress[targetDayIndex] ?? 0,
+      );
+      state.returnedHome = false;
+      renderPanel();
+      await TravelMap.showDayOverview(
+        state.course,
+        targetDayIndex,
+        state.timelineProgress[targetDayIndex],
+        { speed: 1.6 },
+      );
+    } catch (error) {
+      console.error('모바일 날짜 스와이프 오류', error);
+    } finally {
+      state.transitioning = false;
+      mobileStoryAdvancing = false;
+      renderMobileStory();
+      if (!mobileStoryPaused && !mobileStoryEnded) scheduleMobileStoryAdvance();
+    }
   }
 
   function stopMobileStory() {
     clearMobileStoryTimer();
-    if (mobileStoryHoldTimer) window.clearTimeout(mobileStoryHoldTimer);
-    mobileStoryHoldTimer = null;
-    mobileStoryFast = false;
     mobileStoryPaused = false;
     mobileStoryEnded = false;
     mobileStoryAdvancing = false;
     mobileStoryPointerId = null;
-    mobileStoryHoldTriggered = false;
     mapView.classList.remove('mobile-story-mode');
     const story = $('mobile-story');
     if (story) story.classList.add('hidden');
@@ -803,7 +877,6 @@
     if (story) story.classList.toggle('hidden', !enabled);
     if (!enabled) {
       clearMobileStoryTimer();
-      mobileStoryFast = false;
       return;
     }
     isPanelCollapsed = false;
@@ -816,7 +889,7 @@
     );
     renderMobileStory();
     if (state.mobileStoryReady && !mobileStoryPaused && !mobileStoryTimer) {
-      scheduleMobileStoryAdvance(5000);
+      scheduleMobileStoryAdvance(MOBILE_STORY_INTERVAL);
     }
   }
 
@@ -1034,35 +1107,46 @@
     event.preventDefault();
     event.stopPropagation();
     mobileStoryPointerId = event.pointerId;
-    mobileStoryHoldTriggered = false;
-    if (mobileStoryHoldTimer) window.clearTimeout(mobileStoryHoldTimer);
-    mobileStoryHoldTimer = window.setTimeout(beginMobileStoryFastForward, 320);
-    try { mapView.setPointerCapture(event.pointerId); } catch (_) { /* 지원하지 않는 브라우저 */ }
+    mobileStoryPointerStartX = event.clientX;
+    mobileStoryPointerStartY = event.clientY;
+    try { event.currentTarget.setPointerCapture(event.pointerId); } catch (_) { /* 지원하지 않는 브라우저 */ }
+  }
+
+  function handleMobileStoryPointerMove(event) {
+    if (!isMobileStoryMode() || event.pointerId !== mobileStoryPointerId) return;
+    event.preventDefault();
+    event.stopPropagation();
   }
 
   function handleMobileStoryPointerUp(event) {
     if (!isMobileStoryMode() || event.pointerId !== mobileStoryPointerId) return;
     event.preventDefault();
     event.stopPropagation();
-    if (mobileStoryHoldTimer) window.clearTimeout(mobileStoryHoldTimer);
-    mobileStoryHoldTimer = null;
-    if (mobileStoryHoldTriggered) endMobileStoryFastForward();
-    else toggleMobileStoryPause();
+    const deltaX = event.clientX - mobileStoryPointerStartX;
+    const deltaY = event.clientY - mobileStoryPointerStartY;
+    const horizontal = Math.abs(deltaX);
+    const vertical = Math.abs(deltaY);
+    if (horizontal >= MOBILE_STORY_SWIPE_THRESHOLD && horizontal > vertical * 1.15) {
+      moveMobileStoryDay(deltaX < 0 ? -1 : 1);
+    } else if (vertical >= MOBILE_STORY_SWIPE_THRESHOLD && vertical > horizontal * 1.15) {
+      moveMobileStoryTimeline(deltaY < 0 ? -1 : 1);
+    } else {
+      toggleMobileStoryPause();
+    }
     mobileStoryPointerId = null;
-    try { mapView.releasePointerCapture(event.pointerId); } catch (_) { /* 지원하지 않는 브라우저 */ }
+    try { event.currentTarget.releasePointerCapture(event.pointerId); } catch (_) { /* 지원하지 않는 브라우저 */ }
   }
 
   function handleMobileStoryPointerCancel(event) {
     if (!isMobileStoryMode() || event.pointerId !== mobileStoryPointerId) return;
-    if (mobileStoryHoldTimer) window.clearTimeout(mobileStoryHoldTimer);
-    mobileStoryHoldTimer = null;
-    if (mobileStoryHoldTriggered) endMobileStoryFastForward();
     mobileStoryPointerId = null;
   }
 
-  mapView.addEventListener('pointerdown', handleMobileStoryPointerDown, true);
-  mapView.addEventListener('pointerup', handleMobileStoryPointerUp, true);
-  mapView.addEventListener('pointercancel', handleMobileStoryPointerCancel, true);
+  const mobileStoryElement = $('mobile-story');
+  mobileStoryElement.addEventListener('pointerdown', handleMobileStoryPointerDown, true);
+  mobileStoryElement.addEventListener('pointermove', handleMobileStoryPointerMove, true);
+  mobileStoryElement.addEventListener('pointerup', handleMobileStoryPointerUp, true);
+  mobileStoryElement.addEventListener('pointercancel', handleMobileStoryPointerCancel, true);
   mapView.addEventListener('click', (event) => {
     if (!isMobileStoryMode()) return;
     event.preventDefault();
