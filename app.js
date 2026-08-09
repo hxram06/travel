@@ -829,8 +829,8 @@
       resetMobileStoryDrag(false);
       await moveMobileStoryDay(direction);
     } else {
-      const direction = delta < 0 ? -1 : 1;
-      const exitY = (delta < 0 ? 1 : -1) * 48;
+      const direction = delta < 0 ? 1 : -1;
+      const exitY = (delta < 0 ? -1 : 1) * 48;
       setMobileStoryDrag(0, exitY, true);
       await wait(150);
       resetMobileStoryDrag(false);
