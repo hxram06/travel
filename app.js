@@ -653,6 +653,9 @@
     timelineElement.innerHTML = rows.map((row) => `
       <div class="mobile-story-row mobile-story-row-${row.type}">
         <span>${escapeHtml(row.value ? row.value.label : row.fallback)}</span>
+        ${row.value && row.value.item.time
+          ? `<time>${escapeHtml(row.value.item.time)}</time>`
+          : ''}
       </div>
     `).join('');
     timelineElement.style.animation = 'none';

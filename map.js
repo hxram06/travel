@@ -771,7 +771,7 @@ const TravelMap = (() => {
     el.className = 'lodging-marker';
     el.setAttribute('aria-label', lodging.name);
     el.title = lodging.name;
-    el.textContent = '★';
+    el.textContent = '🏠';
 
     const popup = new mapboxgl.Popup({
       offset: 18,
