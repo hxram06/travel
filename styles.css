@@ -1498,7 +1498,7 @@ button.timeline-dot:focus-visible {
   }
 
   .mobile-story.is-counting #mobile-story-progress-fill {
-    animation: mobile-story-countdown 2.5s linear forwards;
+    animation: mobile-story-countdown 2s linear forwards;
   }
 
   .mobile-story.is-paused #mobile-story-progress-fill {
