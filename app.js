@@ -717,47 +717,21 @@
   let navToken = 0;
 
   const MOBILE_STORY_SWIPE_THRESHOLD = 44;
+  const MOBILE_STORY_ROW_HEIGHT = 48;
+  const MOBILE_STORY_ROW_THRESHOLD = MOBILE_STORY_ROW_HEIGHT / 2;
   let mobileStoryEnded = false;
   let mobileStoryAdvancing = false;
   let mobileStoryPointerId = null;
   let mobileStoryPointerStartX = 0;
   let mobileStoryPointerStartY = 0;
+  let mobileStoryPointerStartIndex = 0;
   let mobileStoryPointerAxis = null;
   let mobileStoryDragX = 0;
   let mobileStoryDragY = 0;
+  let mobileStorySuppressClickUntil = 0;
 
   function isMobileStoryMode() {
     return Boolean(state.course && state.course.id === 9 && window.innerWidth <= 767);
-  }
-
-  function getMobileStoryItem(dayIndex, itemIndex, offset) {
-    const days = state.course.days;
-    let targetDayIndex = dayIndex;
-    let targetItemIndex = itemIndex + offset;
-    while (targetDayIndex >= 0 && targetDayIndex < days.length) {
-      const timeline = days[targetDayIndex].timeline || [];
-      if (targetItemIndex < 0) {
-        targetDayIndex--;
-        if (targetDayIndex < 0) return null;
-        targetItemIndex = (days[targetDayIndex].timeline || []).length - 1;
-        continue;
-      }
-      if (targetItemIndex >= timeline.length) {
-        targetItemIndex -= timeline.length;
-        targetDayIndex++;
-        continue;
-      }
-      const item = timeline[targetItemIndex];
-      return {
-        item,
-        dayIndex: targetDayIndex,
-        itemIndex: targetItemIndex,
-        label: targetDayIndex === dayIndex
-          ? item.title
-          : `Day ${days[targetDayIndex].day} · ${item.title}`,
-      };
-    }
-    return null;
   }
 
   function updateMobileStoryStatus() {
@@ -769,6 +743,46 @@
     status.textContent = mobileStoryEnded ? '마지막 일정' : moving ? '지도 이동 중' : '스와이프';
   }
 
+  function clampMobileStoryIndex(dayIndex, itemIndex) {
+    const timeline = state.course?.days?.[dayIndex]?.timeline || [];
+    return Math.max(0, Math.min(Number(itemIndex) || 0, Math.max(0, timeline.length - 1)));
+  }
+
+  function updateMobileStoryProgress(dayIndex, itemIndex) {
+    const progress = $('mobile-story-progress');
+    const fill = $('mobile-story-progress-fill');
+    if (!progress || !fill || !state.course) return;
+    let totalSteps = 0;
+    let completedBefore = 0;
+    state.course.days.forEach((courseDay, index) => {
+      const count = Array.isArray(courseDay.timeline) ? courseDay.timeline.length : 0;
+      if (index < dayIndex) completedBefore += count;
+      totalSteps += count;
+    });
+    const daySteps = state.course.days[dayIndex]?.timeline?.length || 0;
+    const currentStep = daySteps
+      ? completedBefore + Math.max(0, Math.min(Number(itemIndex) || 0, daySteps - 1)) + 1
+      : completedBefore;
+    const ratio = totalSteps ? Math.max(0, Math.min(currentStep / totalSteps, 1)) : 0;
+    const percent = Math.round(ratio * 100);
+    fill.style.transform = `scaleX(${ratio})`;
+    progress.setAttribute('aria-valuenow', String(percent));
+    progress.setAttribute('aria-valuetext', `전체 일정 ${currentStep} / ${totalSteps}`);
+  }
+
+  function updateMobileStoryPreview(targetIndex) {
+    const safeIndex = clampMobileStoryIndex(state.dayIndex, targetIndex);
+    $('mobile-story-timeline')?.querySelectorAll('[data-story-index]').forEach((row) => {
+      const rowIndex = Number(row.dataset.storyIndex);
+      row.classList.toggle('mobile-story-row-current', rowIndex === safeIndex);
+      row.classList.toggle('mobile-story-row-previous', rowIndex < safeIndex);
+      row.classList.toggle('mobile-story-row-next', rowIndex > safeIndex);
+      if (rowIndex === safeIndex) row.setAttribute('aria-current', 'step');
+      else row.removeAttribute('aria-current');
+    });
+    updateMobileStoryProgress(state.dayIndex, safeIndex);
+  }
+
   function renderMobileStory() {
     if (!isMobileStoryMode()) return;
     const day = state.course.days[state.dayIndex];
@@ -777,26 +791,32 @@
     const rawIndex = state.timelineProgress[state.dayIndex] ?? 0;
     const currentIndex = Math.max(0, Math.min(rawIndex, timeline.length - 1));
     $('mobile-story-day').textContent = `Day ${day.day} ${day.cityKo}`;
-    const rows = [-2, -1, 0, 1, 2].map((offset) => ({
-      offset,
-      type: offset === 0 ? 'current' : offset < 0 ? 'previous' : 'next',
-      value: getMobileStoryItem(state.dayIndex, currentIndex, offset),
-      fallback: offset < 0 ? '여행 시작' : offset > 0 ? '오늘 일정 완료' : day.title,
-    }));
+    const rows = [
+      { type: 'previous boundary', fallback: '여행 시작', itemIndex: null, item: null },
+      ...timeline.map((item, itemIndex) => ({
+        type: itemIndex === currentIndex ? 'current' : itemIndex < currentIndex ? 'previous' : 'next',
+        itemIndex,
+        item,
+      })),
+      { type: 'next boundary', fallback: '오늘 일정 완료', itemIndex: null, item: null },
+    ];
     const timelineElement = $('mobile-story-timeline');
     timelineElement.innerHTML = `<div class="mobile-story-track">${rows.map((row) => `
-      <div class="mobile-story-row mobile-story-row-${row.type}" data-story-offset="${row.offset}">
-        <span>${escapeHtml(row.value ? row.value.label : row.fallback)}</span>
-        ${row.value && row.value.item.time ? `<time>${escapeHtml(row.value.item.time)}</time>` : ''}
-        ${row.value ? renderFeedbackControls(
-          row.value.dayIndex,
-          row.value.itemIndex,
-          row.value.item.title,
+      <div class="mobile-story-row ${row.type.split(' ').map((type) => `mobile-story-row-${type}`).join(' ')}"
+        ${Number.isInteger(row.itemIndex) ? `data-story-index="${row.itemIndex}" role="button" tabindex="0"` : 'aria-hidden="true"'}>
+        <span>${escapeHtml(row.item ? row.item.title : row.fallback)}</span>
+        ${row.item?.time ? `<time>${escapeHtml(row.item.time)}</time>` : ''}
+        ${row.item ? renderFeedbackControls(
+          state.dayIndex,
+          row.itemIndex,
+          row.item.title,
           true,
         ) : ''}
       </div>
     `).join('')}</div>`;
+    $('mobile-story').style.setProperty('--story-track-y', `${-currentIndex * MOBILE_STORY_ROW_HEIGHT}px`);
     resetMobileStoryDrag(false);
+    updateMobileStoryPreview(currentIndex);
     updateMobileStoryStatus();
   }
 
@@ -829,12 +849,16 @@
       resetMobileStoryDrag(false);
       await moveMobileStoryDay(direction);
     } else {
-      const direction = delta < 0 ? 1 : -1;
-      const exitY = (delta < 0 ? -1 : 1) * 48;
-      setMobileStoryDrag(0, exitY, true);
+      const targetIndex = clampMobileStoryIndex(
+        state.dayIndex,
+        mobileStoryPointerStartIndex - Math.round(mobileStoryDragY / MOBILE_STORY_ROW_HEIGHT),
+      );
+      const snappedY = (mobileStoryPointerStartIndex - targetIndex) * MOBILE_STORY_ROW_HEIGHT;
+      setMobileStoryDrag(0, snappedY, true);
+      updateMobileStoryPreview(targetIndex);
       await wait(150);
       resetMobileStoryDrag(false);
-      await moveMobileStoryTimeline(direction);
+      await moveMobileStoryTimelineTo(targetIndex, mobileStoryPointerStartIndex);
     }
     story.classList.remove('is-snapping');
   }
@@ -852,8 +876,8 @@
     return false;
   }
 
-  async function moveMobileStoryTimeline(direction) {
-    if (!isMobileStoryMode() || !state.mobileStoryReady || !direction) return;
+  async function moveMobileStoryTimelineTo(requestedIndex, fromIndexOverride) {
+    if (!isMobileStoryMode() || !state.mobileStoryReady) return;
     refreshMobileStoryStatus();
     if (!await waitForMobileStoryIdle()) {
       return;
@@ -862,10 +886,12 @@
     const day = state.course.days[state.dayIndex];
     const timeline = day.timeline || [];
     const currentIndex = Math.max(0, Math.min(
-      state.timelineProgress[state.dayIndex] ?? 0,
+      Number.isInteger(fromIndexOverride)
+        ? fromIndexOverride
+        : state.timelineProgress[state.dayIndex] ?? 0,
       timeline.length - 1,
     ));
-    const targetIndex = Math.max(0, Math.min(currentIndex + direction, timeline.length - 1));
+    const targetIndex = clampMobileStoryIndex(state.dayIndex, requestedIndex);
     if (targetIndex === currentIndex) {
       renderMobileStory();
       return;
@@ -874,22 +900,36 @@
     mobileStoryEnded = false;
     mobileStoryAdvancing = true;
     state.transitioning = true;
+    state.timelineProgress[state.dayIndex] = targetIndex;
+    renderMobileStory();
     updateMobileStoryStatus();
     try {
+      const distance = Math.abs(targetIndex - currentIndex);
       const moved = await TravelMap.playTimelineStep(
         state.course,
         state.dayIndex,
         currentIndex,
         targetIndex,
+        { speed: distance > 1 ? Math.min(12, 4 + distance * 2) : 1 },
       );
-      if (moved !== false) state.timelineProgress[state.dayIndex] = targetIndex;
+      if (moved === false) state.timelineProgress[state.dayIndex] = currentIndex;
     } catch (error) {
+      state.timelineProgress[state.dayIndex] = currentIndex;
       console.error('모바일 일정 스와이프 오류', error);
     } finally {
       state.transitioning = false;
       mobileStoryAdvancing = false;
       renderMobileStory();
     }
+  }
+
+  function moveMobileStoryTimeline(direction) {
+    if (!direction) return;
+    const currentIndex = clampMobileStoryIndex(
+      state.dayIndex,
+      state.timelineProgress[state.dayIndex] ?? 0,
+    );
+    return moveMobileStoryTimelineTo(currentIndex + direction, currentIndex);
   }
 
   async function moveMobileStoryDay(direction) {
@@ -1192,6 +1232,10 @@
     mobileStoryPointerId = event.pointerId;
     mobileStoryPointerStartX = event.clientX;
     mobileStoryPointerStartY = event.clientY;
+    mobileStoryPointerStartIndex = clampMobileStoryIndex(
+      state.dayIndex,
+      state.timelineProgress[state.dayIndex] ?? 0,
+    );
     mobileStoryPointerAxis = null;
     mobileStoryDragX = 0;
     mobileStoryDragY = 0;
@@ -1212,8 +1256,17 @@
       mobileStoryDragX = Math.max(-120, Math.min(120, deltaX));
       mobileStoryDragY = 0;
     } else if (mobileStoryPointerAxis === 'y') {
+      const timelineLength = state.course.days[state.dayIndex].timeline?.length || 1;
+      const minDrag = -(timelineLength - 1 - mobileStoryPointerStartIndex) * MOBILE_STORY_ROW_HEIGHT;
+      const maxDrag = mobileStoryPointerStartIndex * MOBILE_STORY_ROW_HEIGHT;
+      let constrainedY = deltaY;
+      if (constrainedY < minDrag) constrainedY = minDrag + (constrainedY - minDrag) * 0.22;
+      if (constrainedY > maxDrag) constrainedY = maxDrag + (constrainedY - maxDrag) * 0.22;
       mobileStoryDragX = 0;
-      mobileStoryDragY = Math.max(-64, Math.min(64, -deltaY));
+      mobileStoryDragY = constrainedY;
+      updateMobileStoryPreview(
+        mobileStoryPointerStartIndex - Math.round(constrainedY / MOBILE_STORY_ROW_HEIGHT),
+      );
     }
     setMobileStoryDrag(mobileStoryDragX, mobileStoryDragY, false);
   }
@@ -1232,11 +1285,14 @@
     $('mobile-story').classList.remove('is-dragging');
     try { event.currentTarget.releasePointerCapture(event.pointerId); } catch (_) { /* 지원하지 않는 브라우저 */ }
     if (axis === 'x' && horizontal >= MOBILE_STORY_SWIPE_THRESHOLD) {
+      mobileStorySuppressClickUntil = performance.now() + 350;
       commitMobileStorySwipe('x', deltaX);
-    } else if (axis === 'y' && vertical >= MOBILE_STORY_SWIPE_THRESHOLD) {
+    } else if (axis === 'y' && vertical >= MOBILE_STORY_ROW_THRESHOLD) {
+      mobileStorySuppressClickUntil = performance.now() + 350;
       commitMobileStorySwipe('y', deltaY);
     } else {
       resetMobileStoryDrag(true);
+      updateMobileStoryPreview(mobileStoryPointerStartIndex);
     }
   }
 
@@ -1246,6 +1302,10 @@
     mobileStoryPointerAxis = null;
     $('mobile-story').classList.remove('is-dragging');
     resetMobileStoryDrag(true);
+    updateMobileStoryPreview(clampMobileStoryIndex(
+      state.dayIndex,
+      state.timelineProgress[state.dayIndex] ?? 0,
+    ));
   }
 
   const mobileStoryElement = $('mobile-story');
@@ -1253,6 +1313,20 @@
   mobileStoryElement.addEventListener('pointermove', handleMobileStoryPointerMove, true);
   mobileStoryElement.addEventListener('pointerup', handleMobileStoryPointerUp, true);
   mobileStoryElement.addEventListener('pointercancel', handleMobileStoryPointerCancel, true);
+  mobileStoryElement.addEventListener('click', (event) => {
+    if (!isMobileStoryMode() || performance.now() < mobileStorySuppressClickUntil) return;
+    if (event.target.closest('.feedback-button')) return;
+    const row = event.target.closest('[data-story-index]');
+    if (!row) return;
+    event.preventDefault();
+    event.stopPropagation();
+    const targetIndex = Number(row.dataset.storyIndex);
+    const currentIndex = clampMobileStoryIndex(
+      state.dayIndex,
+      state.timelineProgress[state.dayIndex] ?? 0,
+    );
+    moveMobileStoryTimelineTo(targetIndex, currentIndex);
+  });
   mapView.addEventListener('click', (event) => {
     if (!isMobileStoryMode()) return;
     if (event.target.closest('#mobile-story')) return;
@@ -1264,6 +1338,16 @@
     event.preventDefault();
   }, true);
   $('mobile-story').addEventListener('keydown', (event) => {
+    if ((event.key === 'Enter' || event.key === ' ') && event.target.matches('[data-story-index]')) {
+      event.preventDefault();
+      event.stopPropagation();
+      const currentIndex = clampMobileStoryIndex(
+        state.dayIndex,
+        state.timelineProgress[state.dayIndex] ?? 0,
+      );
+      moveMobileStoryTimelineTo(Number(event.target.dataset.storyIndex), currentIndex);
+      return;
+    }
     const action = {
       ArrowUp: () => moveMobileStoryTimeline(-1),
       ArrowDown: () => moveMobileStoryTimeline(1),

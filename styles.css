@@ -1606,6 +1606,7 @@ button.timeline-dot:focus-visible {
   .mobile-story {
     --story-drag-x: 0px;
     --story-drag-y: 0px;
+    --story-track-y: 0px;
     display: flex;
     flex: 1;
     min-height: 0;
@@ -1663,19 +1664,7 @@ button.timeline-dot:focus-visible {
     background: linear-gradient(90deg, #38bdf8, #2563eb);
     transform: scaleX(0);
     transform-origin: left center;
-  }
-
-  .mobile-story.is-counting #mobile-story-progress-fill {
-    animation: mobile-story-countdown 2s linear forwards;
-  }
-
-  .mobile-story.is-paused #mobile-story-progress-fill {
-    animation-play-state: paused;
-  }
-
-  @keyframes mobile-story-countdown {
-    from { transform: scaleX(0); }
-    to { transform: scaleX(1); }
+    transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
   .mobile-story-timeline {
@@ -1690,7 +1679,7 @@ button.timeline-dot:focus-visible {
   .mobile-story-track {
     display: grid;
     grid-auto-rows: 48px;
-    transform: translate3d(0, calc(-48px + var(--story-drag-y)), 0);
+    transform: translate3d(0, calc(var(--story-track-y) + var(--story-drag-y)), 0);
     transition: transform 0.18s cubic-bezier(0.16, 1, 0.3, 1);
     will-change: transform;
   }
@@ -1699,6 +1688,8 @@ button.timeline-dot:focus-visible {
   .mobile-story.is-dragging .mobile-story-track {
     transition: none;
   }
+
+  .mobile-story.is-dragging #mobile-story-progress-fill { transition: none; }
 
   .mobile-story.is-snapping .mobile-story-timeline,
   .mobile-story.is-snapping .mobile-story-track {
@@ -1716,6 +1707,18 @@ button.timeline-dot:focus-visible {
     font-size: 0.84rem;
     line-height: 1.25;
   }
+
+  .mobile-story-row[data-story-index] {
+    cursor: pointer;
+    border-radius: 10px;
+  }
+
+  .mobile-story-row[data-story-index]:focus-visible {
+    outline: 2px solid rgba(37, 99, 235, 0.5);
+    outline-offset: -2px;
+  }
+
+  .mobile-story-row-boundary { pointer-events: none; }
 
   .mobile-story-row::before {
     content: '';
