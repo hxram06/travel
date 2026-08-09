@@ -28,7 +28,7 @@
   <link href="https://api.mapbox.com/mapbox-gl-js/v3.4.0/mapbox-gl.css" rel="stylesheet" />
   <script src="https://api.mapbox.com/mapbox-gl-js/v3.4.0/mapbox-gl.js"></script>
 
-  <link rel="stylesheet" href="styles.css?v=26" />
+  <link rel="stylesheet" href="styles.css?v=27" />
 </head>
 <body>
 
@@ -108,6 +108,19 @@
           <a class="mobile-photo-credit" id="mobile-photo-credit" href="#" target="_blank" rel="noopener"></a>
         </div>
 
+        <!-- 코스9 모바일 자동 재생 카드 -->
+        <section id="mobile-story" class="mobile-story hidden" tabindex="0" aria-label="모바일 여행 자동 재생">
+          <div class="mobile-story-head">
+            <strong id="mobile-story-day">Day 1 마인츠</strong>
+            <span id="mobile-story-state">재생 중</span>
+          </div>
+          <div class="mobile-story-progress" aria-hidden="true">
+            <span id="mobile-story-progress-fill"></span>
+          </div>
+          <div id="mobile-story-timeline" class="mobile-story-timeline"></div>
+          <div class="mobile-story-hint">탭하여 일시정지 · 길게 눌러 빠르게 재생</div>
+        </section>
+
         <div class="panel-nav">
           <button class="nav-btn" id="btn-prev">&#8592; 이전</button>
           <button id="btn-home" class="btn-home hidden">✈️ 인천으로 귀국</button>
@@ -128,7 +141,7 @@
   <script src="photos-data.js?v=25"></script>
   <script src="data.js?v=25"></script>
   <script src="rules.js?v=23"></script>
-  <script src="map.js?v=26"></script>
-  <script src="app.js?v=26"></script>
+  <script src="map.js?v=27"></script>
+  <script src="app.js?v=27"></script>
 </body>
 </html>

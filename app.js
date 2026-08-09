@@ -12,6 +12,7 @@
     mapInitTried: false,
     returnedHome: false,
     timelineProgress: {},
+    mobileStoryReady: false,
   };
 
   const $ = (id) => document.getElementById(id);
@@ -132,6 +133,7 @@
     state.subStep = course.id === 9 ? null : (firstDay.entryAirport ? { type: 'entry-airport' } : null);
     state.returnedHome = false;
     state.timelineProgress = {};
+    state.mobileStoryReady = false;
     const routeLegend = document.querySelector('.route-legend');
     if (routeLegend) routeLegend.classList.toggle('hidden', course.id !== 9);
 
@@ -139,6 +141,7 @@
     mapView.classList.remove('hidden');
     isPanelCollapsed = false;
     panelOffset = 0;
+    syncMobileStoryMode();
     updatePanelTransform();
 
     if (!state.mapInitTried) {
@@ -163,6 +166,9 @@
       } finally {
         state.transitioning = false;
       }
+      state.mobileStoryReady = true;
+      renderMobileStory();
+      scheduleMobileStoryAdvance();
       return;
     }
 
@@ -181,10 +187,12 @@
     mapView.classList.add('hidden');
     landing.classList.remove('hidden');
     TravelMap.reset();
+    stopMobileStory();
     state.course = null;
     state.dayIndex = 0;
     state.subStep = null;
     state.returnedHome = false;
+    state.mobileStoryReady = false;
   }
 
   // ---------- 패널 ----------
@@ -328,6 +336,7 @@
     }
     transportChip.classList.toggle('hidden', !tr.label);
     $('panel-content-view').scrollTop = 0;
+    if (isMobileStoryMode()) renderMobileStory();
   }
 
   // ---------- 이동 ----------
@@ -558,6 +567,259 @@
 
   let navToken = 0;
 
+  let mobileStoryTimer = null;
+  let mobileStoryPaused = false;
+  let mobileStoryFast = false;
+  let mobileStoryEnded = false;
+  let mobileStoryAdvancing = false;
+  let mobileStoryHoldTimer = null;
+  let mobileStoryPointerId = null;
+  let mobileStoryHoldTriggered = false;
+  let mobileStoryPausedBeforeHold = false;
+
+  function isMobileStoryMode() {
+    return Boolean(state.course && state.course.id === 9 && window.innerWidth <= 767);
+  }
+
+  function getMobileStoryItem(dayIndex, itemIndex, offset) {
+    const days = state.course.days;
+    let targetDayIndex = dayIndex;
+    let targetItemIndex = itemIndex + offset;
+    while (targetDayIndex >= 0 && targetDayIndex < days.length) {
+      const timeline = days[targetDayIndex].timeline || [];
+      if (targetItemIndex < 0) {
+        targetDayIndex--;
+        if (targetDayIndex < 0) return null;
+        targetItemIndex = (days[targetDayIndex].timeline || []).length - 1;
+        continue;
+      }
+      if (targetItemIndex >= timeline.length) {
+        targetItemIndex -= timeline.length;
+        targetDayIndex++;
+        continue;
+      }
+      const item = timeline[targetItemIndex];
+      return {
+        item,
+        dayIndex: targetDayIndex,
+        itemIndex: targetItemIndex,
+        label: targetDayIndex === dayIndex
+          ? item.title
+          : `Day ${days[targetDayIndex].day} · ${item.title}`,
+      };
+    }
+    return null;
+  }
+
+  function updateMobileStoryStatus() {
+    const story = $('mobile-story');
+    const status = $('mobile-story-state');
+    if (!story || !status) return;
+    const counting = isMobileStoryMode() && state.mobileStoryReady &&
+      !mobileStoryPaused && !mobileStoryEnded;
+    story.classList.toggle('is-paused', mobileStoryPaused);
+    story.classList.toggle('is-fast', mobileStoryFast);
+    story.classList.toggle('is-counting', counting);
+    status.textContent = mobileStoryEnded ? '여행 완료'
+      : mobileStoryFast ? '빠르게 재생 중'
+        : mobileStoryPaused ? '일시정지' : '재생 중';
+  }
+
+  function restartMobileStoryProgress() {
+    const story = $('mobile-story');
+    if (!story) return;
+    story.classList.remove('is-counting');
+    void story.offsetWidth;
+    updateMobileStoryStatus();
+  }
+
+  function renderMobileStory() {
+    if (!isMobileStoryMode()) return;
+    const day = state.course.days[state.dayIndex];
+    const timeline = day.timeline || [];
+    if (!timeline.length) return;
+    const rawIndex = state.timelineProgress[state.dayIndex] ?? 0;
+    const currentIndex = Math.max(0, Math.min(rawIndex, timeline.length - 1));
+    const previous = getMobileStoryItem(state.dayIndex, currentIndex, -1);
+    const current = getMobileStoryItem(state.dayIndex, currentIndex, 0);
+    const next = getMobileStoryItem(state.dayIndex, currentIndex, 1);
+
+    $('mobile-story-day').textContent = `Day ${day.day} ${day.cityKo}`;
+    const rows = [
+      { type: 'previous', value: previous, fallback: '여행 시작' },
+      { type: 'current', value: current, fallback: day.title },
+      { type: 'next', value: next, fallback: '오늘 일정 완료' },
+    ];
+    const timelineElement = $('mobile-story-timeline');
+    timelineElement.innerHTML = rows.map((row) => `
+      <div class="mobile-story-row mobile-story-row-${row.type}">
+        <span>${escapeHtml(row.value ? row.value.label : row.fallback)}</span>
+      </div>
+    `).join('');
+    timelineElement.style.animation = 'none';
+    void timelineElement.offsetWidth;
+    timelineElement.style.animation = '';
+    updateMobileStoryStatus();
+  }
+
+  function clearMobileStoryTimer() {
+    if (mobileStoryTimer) window.clearTimeout(mobileStoryTimer);
+    mobileStoryTimer = null;
+  }
+
+  function scheduleMobileStoryAdvance(delay) {
+    clearMobileStoryTimer();
+    if (!isMobileStoryMode() || !state.mobileStoryReady ||
+        mobileStoryPaused || mobileStoryEnded) {
+      updateMobileStoryStatus();
+      return;
+    }
+    const nextDelay = Number(delay) || (mobileStoryFast ? 120 : 5000);
+    restartMobileStoryProgress();
+    mobileStoryTimer = window.setTimeout(
+      () => advanceMobileStory(mobileStoryFast),
+      nextDelay,
+    );
+  }
+
+  async function advanceMobileStory(fast) {
+    clearMobileStoryTimer();
+    if (!isMobileStoryMode() || mobileStoryEnded || (mobileStoryPaused && !fast)) return;
+    if (mobileStoryAdvancing || state.transitioning || TravelMap.isAnimating()) {
+      if (fast) TravelMap.skip();
+      scheduleMobileStoryAdvance(fast ? 160 : 500);
+      return;
+    }
+
+    mobileStoryAdvancing = true;
+    const days = state.course.days;
+    const day = days[state.dayIndex];
+    const timeline = day.timeline || [];
+    const currentIndex = Math.max(0, state.timelineProgress[state.dayIndex] ?? 0);
+    const nextIndex = currentIndex + 1;
+
+    try {
+      state.transitioning = true;
+      if (nextIndex < timeline.length) {
+        const moved = await TravelMap.playTimelineStep(
+          state.course,
+          state.dayIndex,
+          currentIndex,
+          nextIndex,
+          { speed: fast ? 4 : 1 },
+        );
+        if (moved !== false) state.timelineProgress[state.dayIndex] = nextIndex;
+      } else if (state.dayIndex + 1 < days.length) {
+        state.dayIndex++;
+        state.maxVisitedDay = Math.max(state.maxVisitedDay, state.dayIndex);
+        state.timelineProgress[state.dayIndex] = 0;
+        state.returnedHome = false;
+        renderPanel();
+        await TravelMap.showDayOverview(
+          state.course,
+          state.dayIndex,
+          0,
+          { speed: fast ? 4 : 1 },
+        );
+        await TravelMap.playTimelineStep(
+          state.course,
+          state.dayIndex,
+          -1,
+          0,
+          { speed: fast ? 4 : 1 },
+        );
+      } else {
+        mobileStoryEnded = true;
+        mobileStoryPaused = true;
+      }
+    } catch (e) {
+      console.error('모바일 자동 일정 재생 오류', e);
+    } finally {
+      state.transitioning = false;
+      mobileStoryAdvancing = false;
+      renderMobileStory();
+    }
+
+    if (!mobileStoryEnded) {
+      scheduleMobileStoryAdvance(mobileStoryFast ? 120 : 5000);
+    } else {
+      updateMobileStoryStatus();
+    }
+  }
+
+  function toggleMobileStoryPause() {
+    if (!isMobileStoryMode() || !state.mobileStoryReady || mobileStoryEnded) return;
+    mobileStoryPaused = !mobileStoryPaused;
+    if (mobileStoryPaused) {
+      clearMobileStoryTimer();
+      if (TravelMap.isAnimating()) TravelMap.skip();
+      updateMobileStoryStatus();
+    } else {
+      renderMobileStory();
+      scheduleMobileStoryAdvance(5000);
+    }
+  }
+
+  function beginMobileStoryFastForward() {
+    if (!isMobileStoryMode() || !state.mobileStoryReady || mobileStoryEnded) return;
+    mobileStoryPausedBeforeHold = mobileStoryPaused;
+    mobileStoryPaused = false;
+    mobileStoryFast = true;
+    mobileStoryHoldTriggered = true;
+    clearMobileStoryTimer();
+    if (TravelMap.isAnimating()) TravelMap.skip();
+    renderMobileStory();
+    scheduleMobileStoryAdvance(80);
+  }
+
+  function endMobileStoryFastForward() {
+    if (!mobileStoryFast) return;
+    mobileStoryFast = false;
+    mobileStoryPaused = mobileStoryPausedBeforeHold;
+    clearMobileStoryTimer();
+    renderMobileStory();
+    if (!mobileStoryPaused && !mobileStoryEnded) scheduleMobileStoryAdvance(5000);
+  }
+
+  function stopMobileStory() {
+    clearMobileStoryTimer();
+    if (mobileStoryHoldTimer) window.clearTimeout(mobileStoryHoldTimer);
+    mobileStoryHoldTimer = null;
+    mobileStoryFast = false;
+    mobileStoryPaused = false;
+    mobileStoryEnded = false;
+    mobileStoryAdvancing = false;
+    mobileStoryPointerId = null;
+    mobileStoryHoldTriggered = false;
+    mapView.classList.remove('mobile-story-mode');
+    const story = $('mobile-story');
+    if (story) story.classList.add('hidden');
+  }
+
+  function syncMobileStoryMode() {
+    const enabled = isMobileStoryMode();
+    mapView.classList.toggle('mobile-story-mode', enabled);
+    const story = $('mobile-story');
+    if (story) story.classList.toggle('hidden', !enabled);
+    if (!enabled) {
+      clearMobileStoryTimer();
+      mobileStoryFast = false;
+      return;
+    }
+    isPanelCollapsed = false;
+    panelOffset = 0;
+    panelEl.classList.remove('panel-collapsed', 'is-dragging');
+    mapView.classList.remove('panel-collapsed', 'panel-dragging');
+    mapView.style.setProperty(
+      '--mobile-current-panel-height',
+      'calc(248px + env(safe-area-inset-bottom, 0px))',
+    );
+    renderMobileStory();
+    if (state.mobileStoryReady && !mobileStoryPaused && !mobileStoryTimer) {
+      scheduleMobileStoryAdvance(5000);
+    }
+  }
+
   function updateTimelineVisuals(activeIndex) {
     panelEl.querySelectorAll('[data-timeline-row]').forEach((row) => {
       const index = Number(row.dataset.timelineRow);
@@ -765,6 +1027,56 @@
   btnPrev.addEventListener('click', () => navigate(-1));
   btnNext.addEventListener('click', () => navigate(1));
   btnHome.addEventListener('click', goHome);
+
+  function handleMobileStoryPointerDown(event) {
+    if (!isMobileStoryMode()) return;
+    if (event.pointerType === 'mouse' && event.button !== 0) return;
+    event.preventDefault();
+    event.stopPropagation();
+    mobileStoryPointerId = event.pointerId;
+    mobileStoryHoldTriggered = false;
+    if (mobileStoryHoldTimer) window.clearTimeout(mobileStoryHoldTimer);
+    mobileStoryHoldTimer = window.setTimeout(beginMobileStoryFastForward, 320);
+    try { mapView.setPointerCapture(event.pointerId); } catch (_) { /* 지원하지 않는 브라우저 */ }
+  }
+
+  function handleMobileStoryPointerUp(event) {
+    if (!isMobileStoryMode() || event.pointerId !== mobileStoryPointerId) return;
+    event.preventDefault();
+    event.stopPropagation();
+    if (mobileStoryHoldTimer) window.clearTimeout(mobileStoryHoldTimer);
+    mobileStoryHoldTimer = null;
+    if (mobileStoryHoldTriggered) endMobileStoryFastForward();
+    else toggleMobileStoryPause();
+    mobileStoryPointerId = null;
+    try { mapView.releasePointerCapture(event.pointerId); } catch (_) { /* 지원하지 않는 브라우저 */ }
+  }
+
+  function handleMobileStoryPointerCancel(event) {
+    if (!isMobileStoryMode() || event.pointerId !== mobileStoryPointerId) return;
+    if (mobileStoryHoldTimer) window.clearTimeout(mobileStoryHoldTimer);
+    mobileStoryHoldTimer = null;
+    if (mobileStoryHoldTriggered) endMobileStoryFastForward();
+    mobileStoryPointerId = null;
+  }
+
+  mapView.addEventListener('pointerdown', handleMobileStoryPointerDown, true);
+  mapView.addEventListener('pointerup', handleMobileStoryPointerUp, true);
+  mapView.addEventListener('pointercancel', handleMobileStoryPointerCancel, true);
+  mapView.addEventListener('click', (event) => {
+    if (!isMobileStoryMode()) return;
+    event.preventDefault();
+    event.stopPropagation();
+  }, true);
+  mapView.addEventListener('contextmenu', (event) => {
+    if (!isMobileStoryMode()) return;
+    event.preventDefault();
+  }, true);
+  $('mobile-story').addEventListener('keydown', (event) => {
+    if (event.key !== 'Enter' && event.key !== ' ') return;
+    event.preventDefault();
+    toggleMobileStoryPause();
+  });
   
   let isSharedMode = false;
 
@@ -907,6 +1219,20 @@
   }
 
   function updatePanelTransform() {
+    if (isMobileStoryMode()) {
+      const fixedHeight = panel.getBoundingClientRect().height || 248;
+      isPanelCollapsed = false;
+      panelOffset = 0;
+      panel.classList.remove('panel-collapsed');
+      mapView.classList.remove('panel-collapsed');
+      mapView.style.setProperty('--mobile-current-panel-height', `${fixedHeight}px`);
+      panel.style.transform = 'translateY(0)';
+      if (panelNav) panelNav.style.transform = '';
+      if (window.map && typeof window.map.easeTo === 'function') {
+        window.map.easeTo({ padding: { bottom: fixedHeight, right: 0 }, duration: 0 });
+      }
+      return;
+    }
     if (window.innerWidth <= 767) {
       // Mobile bottom sheet: keep the exact drag position instead of snapping.
       const visibleHeight = getVisibleMobilePanelHeight();
@@ -1032,14 +1358,14 @@
   }
 
   function collapseMobilePanelForPhoto() {
-    if (window.innerWidth > 767) return;
+    if (window.innerWidth > 767 || isMobileStoryMode()) return;
     panelPhotoView.classList.add('hidden');
     panelContentView.classList.remove('hidden');
     setMobilePanelOffset(getMobileMaxPanelOffset(), true);
   }
 
   function makeRoomForMobilePhotoPopup(popupEl) {
-    if (window.innerWidth > 767 || !popupEl) return;
+    if (window.innerWidth > 767 || !popupEl || isMobileStoryMode()) return;
     panelPhotoView.classList.add('hidden');
     panelContentView.classList.remove('hidden');
 
@@ -1058,7 +1384,7 @@
   }
 
   function expandMobilePanelAfterPhoto() {
-    if (window.innerWidth > 767) return;
+    if (window.innerWidth > 767 || isMobileStoryMode()) return;
     setMobilePanelOffset(0, true);
   }
 
@@ -1073,6 +1399,7 @@
 
   // Handle window resize for proper map padding
   window.addEventListener('resize', () => {
+    syncMobileStoryMode();
     updatePanelTransform();
   });
 

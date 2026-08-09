@@ -1423,6 +1423,193 @@ button.timeline-dot:focus-visible {
   color: var(--text-light);
 }
 
+/* 코스9 모바일: 고정형 자동 재생 카드 */
+@media (max-width: 767px) {
+  .map-view.mobile-story-mode {
+    --mobile-current-panel-height: calc(248px + env(safe-area-inset-bottom, 0px));
+    touch-action: none;
+  }
+
+  .map-view.mobile-story-mode .panel {
+    height: calc(248px + env(safe-area-inset-bottom, 0px));
+    max-height: none;
+    transform: translateY(0) !important;
+    border-radius: 28px 28px 0 0;
+    background: rgba(255, 255, 255, 0.96);
+    box-shadow: 0 -16px 42px rgba(15, 23, 42, 0.18);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    transition: none;
+  }
+
+  .map-view.mobile-story-mode #panel-inner {
+    height: 100%;
+    padding-top: 0;
+  }
+
+  .map-view.mobile-story-mode .panel-drag-handle,
+  .map-view.mobile-story-mode #panel-content-view,
+  .map-view.mobile-story-mode #panel-photo-view,
+  .map-view.mobile-story-mode .panel-nav,
+  .map-view.mobile-story-mode .transport-chip,
+  .map-view.mobile-story-mode .city-chip {
+    display: none !important;
+  }
+
+  .mobile-story {
+    display: flex;
+    flex: 1;
+    min-height: 0;
+    flex-direction: column;
+    padding: 18px 22px calc(14px + env(safe-area-inset-bottom, 0px));
+    color: #0f172a;
+    outline: none;
+    touch-action: none;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+
+  .mobile-story-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    min-height: 27px;
+  }
+
+  .mobile-story-head strong {
+    min-width: 0;
+    overflow: hidden;
+    color: #0f172a;
+    font-size: 1.05rem;
+    font-weight: 850;
+    letter-spacing: -0.02em;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  #mobile-story-state {
+    flex: 0 0 auto;
+    padding: 5px 9px;
+    border-radius: 999px;
+    background: #eff6ff;
+    color: #1d4ed8;
+    font-size: 0.7rem;
+    font-weight: 800;
+  }
+
+  .mobile-story-progress {
+    height: 3px;
+    margin: 10px 0 9px;
+    overflow: hidden;
+    border-radius: 999px;
+    background: #e2e8f0;
+  }
+
+  #mobile-story-progress-fill {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    background: linear-gradient(90deg, #38bdf8, #2563eb);
+    transform: scaleX(0);
+    transform-origin: left center;
+  }
+
+  .mobile-story.is-counting #mobile-story-progress-fill {
+    animation: mobile-story-countdown 5s linear forwards;
+  }
+
+  .mobile-story.is-paused #mobile-story-progress-fill {
+    animation-play-state: paused;
+  }
+
+  .mobile-story.is-fast #mobile-story-progress-fill {
+    animation-duration: 0.65s;
+  }
+
+  @keyframes mobile-story-countdown {
+    from { transform: scaleX(0); }
+    to { transform: scaleX(1); }
+  }
+
+  .mobile-story-timeline {
+    display: grid;
+    flex: 1;
+    min-height: 0;
+    grid-template-rows: repeat(3, minmax(0, 1fr));
+    animation: mobile-story-shift 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  @keyframes mobile-story-shift {
+    from { opacity: 0.42; transform: translateY(9px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .mobile-story-row {
+    position: relative;
+    display: flex;
+    min-width: 0;
+    align-items: center;
+    gap: 11px;
+    padding-left: 2px;
+    color: #94a3b8;
+    font-size: 0.84rem;
+    line-height: 1.25;
+  }
+
+  .mobile-story-row::before {
+    content: '';
+    flex: 0 0 auto;
+    width: 8px;
+    height: 8px;
+    border-radius: 999px;
+    background: #cbd5e1;
+  }
+
+  .mobile-story-row-current {
+    color: #0f172a;
+    font-size: 0.98rem;
+    font-weight: 850;
+  }
+
+  .mobile-story-row-current::before {
+    width: 13px;
+    height: 13px;
+    margin-left: -2px;
+    background: #2563eb;
+    box-shadow: 0 0 0 5px rgba(56, 189, 248, 0.2);
+  }
+
+  .mobile-story-row-next { color: #64748b; }
+
+  .mobile-story-row span {
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .mobile-story-hint {
+    flex: 0 0 auto;
+    padding-top: 6px;
+    color: #94a3b8;
+    font-size: 0.67rem;
+    font-weight: 650;
+    text-align: center;
+  }
+
+  .mobile-story.is-fast #mobile-story-state {
+    background: #dbeafe;
+    color: #1e40af;
+  }
+
+  .mobile-story.is-paused #mobile-story-state {
+    background: #f1f5f9;
+    color: #475569;
+  }
+}
+
 .hidden {
   display: none !important;
 }

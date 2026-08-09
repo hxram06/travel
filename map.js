@@ -854,7 +854,7 @@ const TravelMap = (() => {
     placeCityMarker(to);
   }
 
-  async function showDayOverview(course, dayIndex, stepIndex) {
+  async function showDayOverview(course, dayIndex, stepIndex, opts) {
     if (!isReady() || !course || course.id !== 9) return;
     const day = course.days[dayIndex];
     if (!day) return;
@@ -864,7 +864,8 @@ const TravelMap = (() => {
     showPhotos(day);
     renderCourseRoutes(course, dayIndex, Number.isInteger(stepIndex) ? stepIndex : -1);
     const coords = allRouteCoords(course, dayIndex, false);
-    await fitCoordinates(coords.length ? coords : [day.coords], 72, 900);
+    const speed = Math.max(1, Number(opts && opts.speed) || 1);
+    await fitCoordinates(coords.length ? coords : [day.coords], 72, Math.max(120, 900 / speed));
     const first = day.timeline && day.timeline[0];
     if (first && Array.isArray(first.at)) placeCityMarker(first.at);
   }
@@ -884,12 +885,14 @@ const TravelMap = (() => {
     await fitCoordinates(europe, 82, 1050);
   }
 
-  async function playTimelineStep(course, dayIndex, fromIndex, targetIndex) {
+  async function playTimelineStep(course, dayIndex, fromIndex, targetIndex, opts) {
     if (!isReady() || animating || !course || course.id !== 9) return false;
     const day = course.days[dayIndex];
     const timeline = day && day.timeline;
     if (!Array.isArray(timeline) || !timeline[targetIndex]) return false;
     const target = timeline[targetIndex];
+    const speed = Math.max(1, Number(opts && opts.speed) || 1);
+    const scaled = (duration) => Math.max(90, Math.round(duration / speed));
     animating = true;
     cancelFlag = false;
 
@@ -906,9 +909,9 @@ const TravelMap = (() => {
           if (!same) {
             const mode = toItem.mode || 'walk';
             const path = buildPath(fromItem.at, toItem.at, { via: toItem.via || [] }, mode);
-            await fitPath(path, 78, mode === 'plane' ? 900 : 520);
+            await fitPath(path, 78, scaled(mode === 'plane' ? 900 : 520));
             if (cancelFlag) return false;
-            await travel(path, mode, mode === 'plane' ? 3000 : (toItem.long ? 1250 : 820));
+            await travel(path, mode, scaled(mode === 'plane' ? 3000 : (toItem.long ? 1250 : 820)));
             setActive(null);
             hideVehicle();
           }
@@ -922,9 +925,9 @@ const TravelMap = (() => {
         if (!same) {
           const mode = target.mode || 'walk';
           const path = buildPath(fromItem.at, target.at, { via: (target.via || []).slice().reverse() }, mode);
-          await fitPath(path, 78, 520);
+          await fitPath(path, 78, scaled(520));
           if (cancelFlag) return false;
-          await travel(path, mode, mode === 'plane' ? 3000 : (target.long ? 1250 : 820));
+          await travel(path, mode, scaled(mode === 'plane' ? 3000 : (target.long ? 1250 : 820)));
           setActive(null);
           hideVehicle();
         }
@@ -939,11 +942,11 @@ const TravelMap = (() => {
       if (target.overviewAfter) {
         const europe = allRouteCoords(course, dayIndex, true)
           .filter((coord) => coord[0] > -20 && coord[0] < 40 && coord[1] > 30 && coord[1] < 65);
-        await fitCoordinates(europe, 82, 1050);
+        await fitCoordinates(europe, 82, scaled(1050));
       } else if (Array.isArray(target.at)) {
         const localModes = ['walk', 'tram', 'subway', 'funicular', 'cablecar', 'stay'];
         const zoom = localModes.includes(target.mode) ? 14.2 : (target.long ? 8.2 : 11.5);
-        const moveDuration = 620;
+        const moveDuration = scaled(620);
         map.easeTo({ center: target.at, zoom, duration: moveDuration, padding: getDynamicPadding(0) });
         await onceMoveEnd(moveDuration);
       }
