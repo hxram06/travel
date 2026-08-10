@@ -537,6 +537,24 @@ const TravelMap = (() => {
     return { assignments, tiers, priorities, nonFoodCount: photoIndexes.length };
   }
 
+  function getTimelinePhoto(day, timelineIndex) {
+    if (!day || !Number.isInteger(timelineIndex)) return null;
+    const managed = photoTimelineAssignments(day);
+    const entry = [...managed.assignments.entries()]
+      .find(([, assignedTimelineIndex]) => assignedTimelineIndex === timelineIndex);
+    if (!entry) return null;
+    const photo = day.photos?.[entry[0]];
+    const meta = photo && PHOTOS[photo.spot];
+    if (!photo || !meta) return null;
+    return {
+      ...photo,
+      url: meta.url,
+      title: meta.title,
+      source: meta.source,
+      credit: meta.credit,
+    };
+  }
+
   function photoTierVisible(tier, zoom, forced) {
     if (forced) return true;
     if (tier === 'hero') return true;
@@ -1359,7 +1377,7 @@ const TravelMap = (() => {
     init, isReady, isAnimating,
     goToDay, enterCourse, returnHome, reset, skip,
     returnToBase, moveStep, showDayPhotos,
-    showDayOverview, showCourseOverview, playTimelineStep,
+    showDayOverview, showCourseOverview, playTimelineStep, getTimelinePhoto,
     // 디버깅용 — 콘솔에서 지도 상태를 확인할 때 쓴다
     getMap: () => map,
   };

@@ -1226,6 +1226,90 @@ button.timeline-dot:focus-visible {
 .btn-home:hover { background: #000; transform: translateY(-1px); box-shadow: var(--shadow-md); }
 .btn-home:disabled { opacity: 0.5; cursor: default; transform: none; }
 
+/* 코스9 데스크톱: 상세 타임라인을 연속 탐색하는 설명창 */
+@media (min-width: 768px) {
+  .map-view.desktop-story-mode .panel {
+    width: min(480px, calc(100vw - 48px));
+    background: rgba(255, 255, 255, 0.95);
+  }
+
+  .map-view.desktop-story-mode .city-chip { right: 528px; }
+
+  .desktop-story-timeline::before { left: 79px; }
+
+  .desktop-timeline-item {
+    grid-template-columns: 70px minmax(0, 1fr) auto;
+    gap: 18px;
+    margin: 0 -10px 4px;
+    padding: 14px 10px 24px;
+    border-radius: 16px;
+    cursor: pointer;
+    scroll-margin-block: 100px;
+    transition: background 0.18s ease, box-shadow 0.18s ease;
+  }
+
+  .desktop-timeline-item:hover { background: rgba(248, 250, 252, 0.84); }
+
+  .desktop-timeline-item.is-active {
+    background: rgba(239, 246, 255, 0.9);
+    box-shadow: inset 0 0 0 1px rgba(37, 99, 235, 0.12);
+  }
+
+  .desktop-timeline-item .timeline-dot { top: 18px; left: 70px; }
+  .desktop-timeline-item .timeline-time { padding-top: 3px; }
+  .desktop-timeline-item .timeline-copy { gap: 6px; }
+  .desktop-timeline-item .timeline-title { font-size: 0.96rem; line-height: 1.45; }
+  .desktop-timeline-item .timeline-detail { font-size: 0.85rem; line-height: 1.65; }
+  .desktop-timeline-item .timeline-feedback { margin-top: -1px; }
+
+  .desktop-timeline-photo {
+    margin: 9px 0 0;
+    overflow: hidden;
+    border: 1px solid rgba(15, 23, 42, 0.1);
+    border-radius: 13px;
+    background: #fff;
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+  }
+
+  .desktop-timeline-photo img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+  }
+
+  .desktop-timeline-photo figcaption {
+    display: flex;
+    min-width: 0;
+    flex-direction: column;
+    gap: 4px;
+    padding: 10px 12px 11px;
+  }
+
+  .desktop-timeline-photo figcaption span {
+    overflow: hidden;
+    color: var(--text-mid);
+    font-size: 0.79rem;
+    font-weight: 750;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .desktop-timeline-photo figcaption small,
+  .desktop-timeline-photo figcaption a {
+    color: var(--text-dim);
+    font-size: 0.68rem;
+    line-height: 1.35;
+  }
+
+  .desktop-timeline-photo figcaption a:hover { color: var(--accent-deep); }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .map-view.desktop-story-mode .panel { width: 420px; }
+  .map-view.desktop-story-mode .city-chip { right: 468px; }
+}
+
 /* ===================== 반응형 (Mobile Fixes) ===================== */
 
 @media (max-width: 1024px) {
