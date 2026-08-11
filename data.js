@@ -8850,10 +8850,10 @@ const COURSES = [
       travelers: 4,
       airfareTotal: 5194400,
       airfarePerPerson: 1298600,
-      lodgingTotal: 2731366,
-      lodgingPerPerson: 682842,
-      airfareAndLodgingPerPerson: 1981442,
-      estimatedTotalPerPerson: 3840000,
+      lodgingTotal: 2530744,
+      lodgingPerPerson: 632686,
+      airfareAndLodgingPerPerson: 1931286,
+      estimatedTotalPerPerson: 3790000,
     };
 
     const budapestIndex = course9.days.findIndex((day) => day.cityKo === '부다페스트');
@@ -8910,7 +8910,7 @@ const COURSES = [
         day.lodging = {
           name: 'Holiday Inn Munich – Leuchtenbergring',
           coords: [...MUNICH_HOTEL],
-          note: 'Leuchtenbergring 20 · 스탠다드 트윈룸 2개 · 객실당 싱글침대 2개 · 4박 총 877,560원',
+          note: 'Leuchtenbergring 20 · 스탠다드 트윈룸 2개 · 객실당 싱글침대 2개 · 아고다 플래티넘 적용 4박 총 676,938원',
         };
       } else {
         day.coords = [...VIENNA_HOTEL];
