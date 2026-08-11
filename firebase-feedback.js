@@ -175,6 +175,48 @@ async function loadCourseStats(courseId) {
   };
 }
 
+function lodgingVoteDocId(uid, courseId) {
+  return `${uid}__course-${Number(courseId)}`;
+}
+
+async function loadLodgingVote(courseId) {
+  if (!activeUser) throw new Error('설문 서비스에 아직 연결되지 않았습니다.');
+  const snapshot = await getDoc(doc(db, 'lodgingSurvey', lodgingVoteDocId(activeUser.uid, courseId)));
+  if (!snapshot.exists()) return null;
+  const optionId = snapshot.data().optionId;
+  return ['buddy', 'brunnenhof', 'airbnb'].includes(optionId) ? optionId : null;
+}
+
+async function saveLodgingVote(courseId, optionId) {
+  if (!activeUser) throw new Error('설문 서비스에 아직 연결되지 않았습니다.');
+  if (!['buddy', 'brunnenhof', 'airbnb'].includes(optionId)) {
+    throw new Error('유효하지 않은 숙소 선택입니다.');
+  }
+  await setDoc(doc(db, 'lodgingSurvey', lodgingVoteDocId(activeUser.uid, courseId)), {
+    uid: activeUser.uid,
+    courseId: Number(courseId),
+    optionId,
+    updatedAt: serverTimestamp(),
+  });
+}
+
+async function loadLodgingSurveyStats(courseId) {
+  if (!activeUser) throw new Error('설문 서비스에 아직 연결되지 않았습니다.');
+  const snapshot = await getDocs(query(
+    collection(db, 'lodgingSurvey'),
+    where('courseId', '==', Number(courseId)),
+  ));
+  const options = { buddy: 0, brunnenhof: 0, airbnb: 0 };
+  const voters = new Set();
+  snapshot.forEach((record) => {
+    const value = record.data();
+    if (!(value.optionId in options)) return;
+    options[value.optionId]++;
+    voters.add(value.uid);
+  });
+  return { voters: voters.size, options };
+}
+
 document.addEventListener('click', (event) => {
   const button = event.target.closest('.feedback-button');
   if (!button || button.disabled) return;
@@ -188,7 +230,12 @@ const observer = new MutationObserver((mutations) => {
 });
 observer.observe(document.body, { childList: true, subtree: true });
 
-window.TravelFeedback = { loadCourseStats };
+window.TravelFeedback = {
+  loadCourseStats,
+  loadLodgingVote,
+  saveLodgingVote,
+  loadLodgingSurveyStats,
+};
 
 try {
   await setPersistence(auth, browserLocalPersistence);

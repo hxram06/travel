@@ -28,7 +28,7 @@
   <link href="https://api.mapbox.com/mapbox-gl-js/v3.4.0/mapbox-gl.css" rel="stylesheet" />
   <script src="https://api.mapbox.com/mapbox-gl-js/v3.4.0/mapbox-gl.js"></script>
 
-  <link rel="stylesheet" href="styles.css?v=36" />
+  <link rel="stylesheet" href="styles.css?v=37" />
 </head>
 <body>
 
@@ -39,6 +39,48 @@
       <p class="landing-sub">10개의 코스 · 총 121일의 여정</p>
     </header>
     <div id="course-grid" class="course-grid"></div>
+  </section>
+
+  <!-- 코스 9 공유 링크 첫 화면 -->
+  <section id="course9-entry" class="course9-entry hidden" aria-labelledby="course9-entry-title">
+    <div class="course9-entry-shell">
+      <header class="course9-entry-head">
+        <span>COURSE 9 · 11박 12일</span>
+        <h1 id="course9-entry-title">독일에서 오스트리아까지</h1>
+        <p>2027. 1. 20. — 1. 31. · 3인 여행</p>
+      </header>
+
+      <div id="course9-entry-choice" class="course9-entry-choice">
+        <p class="course9-entry-question">무엇부터 볼까요?</p>
+        <div class="course9-entry-actions">
+          <button id="course9-view-trip" class="course9-entry-action course9-entry-action-primary" type="button">
+            <span class="course9-entry-action-num">01</span>
+            <span><strong>여행 코스 보기</strong><small>12일의 이동 경로와 세부 일정</small></span>
+            <i aria-hidden="true">→</i>
+          </button>
+          <button id="course9-open-survey" class="course9-entry-action" type="button">
+            <span class="course9-entry-action-num">02</span>
+            <span><strong>뮌헨 숙소 고르기</strong><small>세 후보를 비교하고 한 곳에 투표</small></span>
+            <i aria-hidden="true">→</i>
+          </button>
+        </div>
+      </div>
+
+      <div id="course9-lodging-survey" class="course9-lodging-survey hidden">
+        <div class="course9-survey-toolbar">
+          <button id="course9-survey-back" type="button">← 처음으로</button>
+          <button id="course9-survey-trip" type="button">일정 보기 →</button>
+        </div>
+        <div class="course9-survey-copy">
+          <span>뮌헨 · 1월 23–27일</span>
+          <h2>네 밤을 어디서 보낼까요?</h2>
+          <p>세 후보 모두 3인이 한 객실에서 잘 수 있습니다. 거리와 객실 구성을 비교한 뒤 한 곳을 골라주세요.</p>
+        </div>
+        <div id="course9-lodging-cards" class="course9-lodging-cards"></div>
+        <p id="course9-survey-status" class="course9-survey-status" aria-live="polite"></p>
+        <p class="course9-survey-note">가격은 2026년 8월 11일 확인한 4박 총액 기준이며 예약 시점에 달라질 수 있습니다. Airbnb 거리는 정확한 주소가 아닌 공개 지도 핀 기준 예상치입니다.</p>
+      </div>
+    </div>
   </section>
 
   <div id="course-menu" class="course-menu hidden" role="menu">
@@ -156,11 +198,11 @@
       rules.js       — 규칙 검사 (콘솔에 위반 사항을 표로 출력, RULES.md 참고)
       map.js/app.js  — 지도와 화면
   -->
-  <script src="photos-data.js?v=25"></script>
-  <script src="data.js?v=26"></script>
+  <script src="photos-data.js?v=26"></script>
+  <script src="data.js?v=27"></script>
   <script src="rules.js?v=23"></script>
   <script src="map.js?v=38"></script>
-  <script src="app.js?v=34"></script>
-  <script type="module" src="firebase-feedback.js?v=1"></script>
+  <script src="app.js?v=35"></script>
+  <script type="module" src="firebase-feedback.js?v=2"></script>
 </body>
 </html>

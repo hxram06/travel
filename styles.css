@@ -1896,3 +1896,392 @@ button.timeline-dot:focus-visible {
 .hidden {
   display: none !important;
 }
+
+/* ===================== 코스 9 진입 · 숙소 설문 ===================== */
+.course9-entry {
+  position: fixed;
+  inset: 0;
+  z-index: 1200;
+  overflow-y: auto;
+  background:
+    radial-gradient(circle at 82% 8%, rgba(40, 82, 78, 0.6), transparent 34%),
+    linear-gradient(145deg, #101b1a 0%, #142522 45%, #0c1514 100%);
+  color: #f5f2e9;
+}
+
+.course9-entry::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.12;
+  background-image: linear-gradient(rgba(255,255,255,.18) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(255,255,255,.18) 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: linear-gradient(to bottom, black, transparent 75%);
+}
+
+.course9-entry-shell {
+  position: relative;
+  width: min(1180px, calc(100% - 48px));
+  min-height: 100dvh;
+  margin: 0 auto;
+  padding: 64px 0 72px;
+}
+
+.course9-entry-head > span,
+.course9-survey-copy > span {
+  color: #9bc5b9;
+  font-size: .75rem;
+  font-weight: 800;
+  letter-spacing: .15em;
+}
+
+.course9-entry-head h1 {
+  margin-top: 12px;
+  font-size: clamp(2.2rem, 5vw, 4.8rem);
+  font-weight: 820;
+  letter-spacing: -.055em;
+  line-height: .98;
+}
+
+.course9-entry-head p {
+  margin-top: 18px;
+  color: rgba(245, 242, 233, .62);
+  font-size: .98rem;
+  font-weight: 600;
+}
+
+.course9-entry-choice {
+  width: min(850px, 100%);
+  margin: clamp(72px, 12vh, 132px) auto 0;
+}
+
+.course9-entry-question {
+  margin-bottom: 18px;
+  color: rgba(245, 242, 233, .68);
+  font-size: .88rem;
+  font-weight: 700;
+}
+
+.course9-entry-actions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.course9-entry-action {
+  display: grid;
+  min-height: 176px;
+  grid-template-columns: auto 1fr auto;
+  align-items: end;
+  gap: 18px;
+  padding: 26px;
+  border: 1px solid rgba(255,255,255,.14);
+  border-radius: 20px;
+  background: rgba(255,255,255,.055);
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition: transform .2s ease, border-color .2s ease, background .2s ease;
+}
+
+.course9-entry-action:hover,
+.course9-entry-action:focus-visible {
+  transform: translateY(-3px);
+  border-color: rgba(179, 222, 207, .54);
+  background: rgba(255,255,255,.095);
+  outline: none;
+}
+
+.course9-entry-action-primary {
+  background: #d7e9df;
+  color: #13231f;
+  border-color: #d7e9df;
+}
+
+.course9-entry-action-primary:hover,
+.course9-entry-action-primary:focus-visible { background: #e7f1eb; }
+
+.course9-entry-action-num {
+  align-self: start;
+  color: currentColor;
+  font-size: .72rem;
+  font-weight: 850;
+  opacity: .58;
+}
+
+.course9-entry-action strong {
+  display: block;
+  font-size: 1.35rem;
+  font-weight: 820;
+  letter-spacing: -.035em;
+}
+
+.course9-entry-action small {
+  display: block;
+  margin-top: 7px;
+  color: currentColor;
+  font-size: .82rem;
+  font-weight: 620;
+  opacity: .62;
+}
+
+.course9-entry-action i {
+  align-self: center;
+  font-size: 1.35rem;
+  font-style: normal;
+}
+
+.course9-survey-toolbar {
+  display: flex;
+  justify-content: space-between;
+  margin: 2px 0 48px;
+}
+
+.course9-survey-toolbar button {
+  padding: 8px 0;
+  border: 0;
+  background: transparent;
+  color: rgba(245, 242, 233, .72);
+  font: inherit;
+  font-size: .84rem;
+  font-weight: 720;
+  cursor: pointer;
+}
+
+.course9-survey-toolbar button:hover { color: #fff; }
+
+.course9-survey-copy { max-width: 710px; }
+
+.course9-survey-copy h2 {
+  margin-top: 10px;
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  line-height: 1.06;
+  letter-spacing: -.05em;
+}
+
+.course9-survey-copy p {
+  margin-top: 14px;
+  color: rgba(245, 242, 233, .65);
+  font-size: .96rem;
+  line-height: 1.65;
+}
+
+.course9-lodging-cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 34px;
+}
+
+.course9-lodging-card {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  padding: 22px;
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 18px;
+  background: rgba(250,249,244,.96);
+  color: #17211f;
+  box-shadow: 0 22px 54px rgba(0,0,0,.18);
+  transition: transform .2s ease, border-color .2s ease;
+}
+
+.course9-lodging-card.is-selected {
+  border-color: #79bca8;
+  box-shadow: 0 0 0 2px rgba(121,188,168,.35), 0 22px 54px rgba(0,0,0,.18);
+}
+
+.course9-lodging-card-head {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 12px;
+  align-items: start;
+  min-height: 72px;
+}
+
+.course9-lodging-index {
+  padding-top: 4px;
+  color: #779089;
+  font-size: .7rem;
+  font-weight: 850;
+}
+
+.course9-lodging-card-head h3 {
+  font-size: 1.08rem;
+  font-weight: 840;
+  letter-spacing: -.03em;
+  line-height: 1.2;
+}
+
+.course9-lodging-card-head p {
+  margin-top: 6px;
+  color: #73807c;
+  font-size: .72rem;
+  line-height: 1.35;
+}
+
+.course9-lodging-selected {
+  grid-column: 1 / -1;
+  width: max-content;
+  margin-top: -6px;
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: #d9eee7;
+  color: #23614f;
+  font-size: .66rem;
+  font-weight: 800;
+}
+
+.course9-lodging-price {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 9px;
+  margin-top: 18px;
+}
+
+.course9-lodging-price > div {
+  padding: 13px 12px;
+  border-radius: 11px;
+  background: #edf2ef;
+}
+
+.course9-lodging-price span,
+.course9-lodging-room span {
+  display: block;
+  color: #73807c;
+  font-size: .66rem;
+  font-weight: 700;
+}
+
+.course9-lodging-price strong {
+  display: block;
+  margin-top: 5px;
+  font-size: .94rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.course9-lodging-room {
+  min-height: 74px;
+  margin-top: 14px;
+  padding: 0 2px;
+}
+
+.course9-lodging-room strong {
+  display: block;
+  font-size: .8rem;
+  line-height: 1.4;
+}
+
+.course9-lodging-room span { margin-top: 6px; line-height: 1.4; }
+
+.course9-distance-list {
+  margin-top: 13px;
+  border-top: 1px solid #dbe2df;
+}
+
+.course9-distance-list div {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 9px 1px;
+  border-bottom: 1px solid #e5eae8;
+  font-size: .7rem;
+  line-height: 1.3;
+}
+
+.course9-distance-list span { color: #5f6d69; }
+.course9-distance-list strong { text-align: right; font-weight: 760; }
+
+.course9-distance-caveat {
+  margin-top: 8px;
+  color: #986b2e;
+  font-size: .65rem;
+  font-weight: 720;
+}
+
+.course9-vote-button {
+  width: 100%;
+  margin-top: auto;
+  padding: 12px 14px;
+  border: 0;
+  border-radius: 11px;
+  background: #1b3a32;
+  color: #fff;
+  font: inherit;
+  font-size: .77rem;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.course9-vote-button:hover { background: #285449; }
+.course9-vote-button:disabled { cursor: wait; opacity: .55; }
+.course9-lodging-card.is-selected .course9-vote-button { background: #3d7465; }
+
+.course9-survey-status {
+  min-height: 20px;
+  margin-top: 17px;
+  color: #b7d8ce;
+  font-size: .78rem;
+  font-weight: 680;
+  text-align: center;
+}
+
+.course9-survey-note {
+  max-width: 900px;
+  margin: 10px auto 0;
+  color: rgba(245,242,233,.46);
+  font-size: .68rem;
+  line-height: 1.55;
+  text-align: center;
+}
+
+.stats-lodging {
+  margin-bottom: 18px;
+  padding: 17px;
+  border: 1px solid #dbe5e1;
+  border-radius: 15px;
+  background: #f6faf8;
+}
+
+.stats-lodging-head { display: flex; justify-content: space-between; gap: 16px; align-items: end; }
+.stats-lodging-head span { display: block; color: #64748b; font-size: .7rem; font-weight: 760; }
+.stats-lodging-head strong { display: block; margin-top: 3px; font-size: 1.15rem; }
+.stats-lodging-head small { max-width: 300px; color: #71807b; font-size: .68rem; line-height: 1.4; text-align: right; }
+.stats-lodging-options { display: grid; gap: 11px; margin-top: 15px; }
+.stats-lodging-row > div { display: flex; justify-content: space-between; gap: 12px; margin-bottom: 5px; font-size: .75rem; }
+.stats-lodging-row span { color: #64748b; }
+
+@media (max-width: 900px) {
+  .course9-lodging-cards { grid-template-columns: 1fr; }
+  .course9-lodging-card { max-width: 680px; width: 100%; margin: 0 auto; }
+  .course9-lodging-card-head { min-height: 0; }
+  .course9-lodging-room { min-height: 0; }
+}
+
+@media (max-width: 600px) {
+  .course9-entry-shell {
+    width: min(100% - 28px, 520px);
+    padding: 30px 0 calc(38px + env(safe-area-inset-bottom, 0px));
+  }
+
+  .course9-entry-head h1 { max-width: 320px; margin-top: 9px; font-size: 2.55rem; }
+  .course9-entry-head p { margin-top: 13px; font-size: .83rem; }
+  .course9-entry-choice { margin-top: 56px; }
+  .course9-entry-actions { grid-template-columns: 1fr; }
+  .course9-entry-action { min-height: 132px; padding: 20px; }
+  .course9-entry-action strong { font-size: 1.15rem; }
+  .course9-survey-toolbar { margin-bottom: 34px; }
+  .course9-survey-copy h2 { font-size: 2.15rem; }
+  .course9-survey-copy p { font-size: .86rem; }
+  .course9-lodging-cards { margin-top: 24px; }
+  .course9-lodging-card { padding: 18px; }
+  .course9-lodging-price strong { font-size: .86rem; }
+  .course9-distance-list div { font-size: .68rem; }
+  .course9-survey-status,
+  .course9-survey-note { text-align: left; }
+  .stats-lodging-head { align-items: start; flex-direction: column; }
+  .stats-lodging-head small { text-align: left; }
+}

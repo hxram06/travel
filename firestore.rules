@@ -33,6 +33,20 @@ service cloud.firestore {
         && request.resource.data.updatedAt == request.time;
     }
 
+    function validLodgingVote() {
+      return request.resource.data.keys().hasAll([
+          'uid', 'courseId', 'optionId', 'updatedAt'
+        ])
+        && request.resource.data.keys().hasOnly([
+          'uid', 'courseId', 'optionId', 'updatedAt'
+        ])
+        && request.resource.data.uid == request.auth.uid
+        && request.resource.data.uid is string
+        && request.resource.data.courseId == 9
+        && request.resource.data.optionId in ['buddy', 'brunnenhof', 'airbnb']
+        && request.resource.data.updatedAt == request.time;
+    }
+
     match /timelineFeedback/{feedbackId} {
       // 운영자 화면은 익명 평가만 집계한다. 이름·이메일 등 개인정보는 저장하지 않는다.
       allow read: if signedIn();
@@ -45,6 +59,18 @@ service cloud.firestore {
         && validFeedback()
         && feedbackId == request.auth.uid + '__' + request.resource.data.stepKey;
       allow delete: if signedIn() && resource.data.uid == request.auth.uid;
+    }
+
+    match /lodgingSurvey/{voteId} {
+      // 익명 사용자당 코스 9 숙소 선택을 한 건만 유지한다.
+      allow read: if signedIn();
+      allow create: if signedIn()
+        && validLodgingVote()
+        && voteId == request.auth.uid + '__course-9';
+      allow update: if signedIn()
+        && resource.data.uid == request.auth.uid
+        && validLodgingVote()
+        && voteId == request.auth.uid + '__course-9';
     }
   }
 }

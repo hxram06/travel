@@ -1374,6 +1374,12 @@ const PHOTOS = {
     "credit": "Wilfredor · CC0"
   },
   "qa_c9_d1_entry_0": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Frankfurt_am_Main%2C_Frankfurt_Airport_Terminal_3.jpg?width=1600",
+    "title": "Frankfurt Airport Terminal 3",
+    "source": "https://commons.wikimedia.org/wiki/File:Frankfurt_am_Main,_Frankfurt_Airport_Terminal_3.jpg",
+    "credit": "Dr. Thomas Liptak · CC BY-SA 4.0"
+  },
+  "qa_c9_d1_entry_0_legacy_terminal1": {
     "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/AirportFrankfurt_terminal1.jpg/1280px-AirportFrankfurt_terminal1.jpg",
     "title": "AirportFrankfurt terminal1.jpg",
     "source": "https://commons.wikimedia.org/wiki/File:AirportFrankfurt_terminal1.jpg",
@@ -2538,6 +2544,12 @@ const PHOTOS = {
     "title": "6th Large lantern at Kaminarimon Dec 12 2020 03-16PM.jpeg",
     "source": "https://commons.wikimedia.org/wiki/File:6th_Large_lantern_at_Kaminarimon_Dec_12_2020_03-16PM.jpeg",
     "credit": "Nesnad · CC BY 4.0"
+  },
+  "qa_c9_ke_aircraft_2027": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Korean_Air_Boeing_787-9_HL8085.jpg?width=1600",
+    "title": "Korean Air Boeing 787-9 HL8085",
+    "source": "https://commons.wikimedia.org/wiki/File:Korean_Air_Boeing_787-9_HL8085.jpg",
+    "credit": "BriYYZ · CC BY-SA 2.0"
   }
   // COURSE9_RICH_PHOTOS_END
 };
