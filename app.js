@@ -42,57 +42,21 @@
 
   const LODGING_OPTIONS = [
     {
-      id: 'buddy',
-      name: 'Buddy Hotel Munich',
-      area: 'Karlsplatz 동쪽 · 구시가지 최우선',
-      total: 714262,
-      perPerson: 238087,
-      room: '21㎡ · 대형 더블베드 1 + 소파베드 1',
-      terms: '환불 불가',
+      id: 'holiday-inn-leuchtenbergring',
+      name: 'Holiday Inn Munich – Leuchtenbergring',
+      area: 'Leuchtenbergring · 청결·정숙성과 가격 우선',
+      total: 700000,
+      perPerson: 233333,
+      room: '스탠다드룸 2개 · 2명 + 1명 배정',
+      terms: '확인 총액 약 700,000원 · 예약 전 최종 조건 재확인',
       exactAddress: true,
       distances: [
-        ['뮌헨 중앙역', '약 550–600m · 도보 7–8분'],
-        ['Karlsplatz', '약 300m · 도보 3–4분'],
-        ['Marienplatz', '약 900m · 도보 12분'],
-        ['Münchner Stubn', '약 700m · 도보 9분'],
-        ['Augustiner Stammhaus', '약 500m · 도보 7분'],
-        ['Viktualienmarkt', '약 1.1km · 도보 15분'],
-      ],
-    },
-    {
-      id: 'brunnenhof',
-      name: 'Brunnenhof City Center',
-      area: '중앙역 남동쪽 · 객실 구성 최우선',
-      total: 733921,
-      perPerson: 244640,
-      room: '23㎡ · 대형 더블베드 1 + 싱글베드 1',
-      terms: '확인 당시 동일 가격에 무료 취소',
-      exactAddress: true,
-      distances: [
-        ['뮌헨 중앙역', '약 650m · 도보 8–10분'],
-        ['Karlsplatz', '약 750m · 도보 10분'],
-        ['Marienplatz', '약 1.3km · 도보 17분'],
-        ['Münchner Stubn', '약 550m · 도보 7분'],
-        ['Augustiner Stammhaus', '약 1.0km · 도보 13분'],
-        ['Viktualienmarkt', '약 1.4km · 도보 18분'],
-      ],
-    },
-    {
-      id: 'airbnb',
-      name: '전망이 좋은 스튜디오 아파트',
-      area: 'Paul-Heyse-Straße 일대 · 주방과 세탁 우선',
-      total: 697640,
-      perPerson: 232547,
-      room: '침실·거실 · 킹 1 + 싱글 2 + 소파베드',
-      terms: '1월 18일까지 무료 취소 · 주방·건물 내 세탁기/건조기',
-      exactAddress: false,
-      distances: [
-        ['뮌헨 중앙역', '약 450m · 도보 6분'],
-        ['Karlsplatz', '약 850m · 도보 11분'],
-        ['Marienplatz', '약 1.6km · 도보 20분'],
-        ['Münchner Stubn', '약 400m · 도보 5분'],
-        ['Augustiner Stammhaus', '약 1.2km · 도보 15분'],
-        ['Viktualienmarkt', '약 1.7km · 도보 22분'],
+        ['Leuchtenbergring S-Bahn', '약 250m · 도보 3–4분'],
+        ['뮌헨 중앙역', '직통 S-Bahn 약 10–12분 · 전체 16–20분'],
+        ['Marienplatz', '직통 S-Bahn 약 7분 · 전체 12–15분'],
+        ['Viktualienmarkt', 'Marienplatz 하차 후 도보 포함 약 16–20분'],
+        ['Ostbahnhof', 'S-Bahn 1정거장 · 약 3분'],
+        ['구시가지 야간 귀가', 'Marienplatz에서 S-Bahn + 도보 약 15분'],
       ],
     },
   ];
@@ -111,13 +75,14 @@
 
   function renderLodgingSurveyCards() {
     if (!course9LodgingCards) return;
+    const lodgingLocked = LODGING_OPTIONS.length === 1;
     course9LodgingCards.innerHTML = LODGING_OPTIONS.map((option, index) => {
-      const selected = currentLodgingVote === option.id;
+      const selected = lodgingLocked || currentLodgingVote === option.id;
       return `<article class="course9-lodging-card${selected ? ' is-selected' : ''}" data-lodging-option="${option.id}">
         <div class="course9-lodging-card-head">
           <span class="course9-lodging-index">0${index + 1}</span>
           <div><h3>${escapeHtml(option.name)}</h3><p>${escapeHtml(option.area)}</p></div>
-          ${selected ? '<span class="course9-lodging-selected">내 선택</span>' : ''}
+          ${selected ? `<span class="course9-lodging-selected">${lodgingLocked ? '확정' : '내 선택'}</span>` : ''}
         </div>
         <div class="course9-lodging-price">
           <div><span>4박 총액</span><strong>${formatWon(option.total)}</strong></div>
@@ -127,13 +92,13 @@
           <strong>${escapeHtml(option.room)}</strong>
           <span>${escapeHtml(option.terms)}</span>
         </div>
-        <div class="course9-distance-list" aria-label="주요 장소까지 도보 거리">
+        <div class="course9-distance-list" aria-label="주요 장소까지 이동 거리">
           ${option.distances.map(([place, distance]) => `<div><span>${escapeHtml(place)}</span><strong>${escapeHtml(distance)}</strong></div>`).join('')}
         </div>
         ${option.exactAddress ? '' : '<p class="course9-distance-caveat">공개 지도 핀 기준 예상</p>'}
-        <button class="course9-vote-button" type="button" data-lodging-vote="${option.id}"${selected ? ' aria-pressed="true"' : ' aria-pressed="false"'}>
-          ${selected ? '선택됨 · 다른 숙소로 변경 가능' : '이 숙소에 투표'}
-        </button>
+        ${lodgingLocked
+          ? '<button class="course9-vote-button" type="button" disabled aria-pressed="true">최종 선택한 숙소</button>'
+          : `<button class="course9-vote-button" type="button" data-lodging-vote="${option.id}"${selected ? ' aria-pressed="true"' : ' aria-pressed="false"'}>${selected ? '선택됨 · 다른 숙소로 변경 가능' : '이 숙소에 투표'}</button>`}
       </article>`;
     }).join('');
 
@@ -166,6 +131,12 @@
     course9LodgingSurvey.classList.remove('hidden');
     course9Entry.scrollTop = 0;
     currentLodgingVote = null;
+    if (LODGING_OPTIONS.length === 1) {
+      currentLodgingVote = LODGING_OPTIONS[0].id;
+      course9SurveyStatus.textContent = '여행 일정에 반영된 최종 숙소입니다.';
+      renderLodgingSurveyCards();
+      return;
+    }
     course9SurveyStatus.textContent = '이전에 선택한 숙소를 확인하는 중…';
     renderLodgingSurveyCards();
     try {

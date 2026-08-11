@@ -5639,7 +5639,7 @@ const COURSES = [
             8.2580625,
             49.9989375
           ],
-          "note": "Binger Strasse 21 · Mainz Hbf 도보권"
+          "note": "Binger Strasse 21 · 객실 2개: 더블/트윈 1실 + 싱글 1실"
         },
         "transport": {
           "mode": "plane",
@@ -5703,7 +5703,7 @@ const COURSES = [
         "tip": "Mainz Hbf 도착이 21:00을 넘으면 산책은 생략한다. 첫날 일정은 모두 무료 야외 구간이라 항공 지연에 따라 줄여도 손해가 없다.",
         "timeline": [
           { "time": "19:40–20:05", "title": "Mainz Hbf 도착·숙소 이동", "detail": "Binger Strasse 방향 도보 약 3분", "kind": "travel" },
-          { "time": "20:00–20:20", "title": "IntercityHotel Mainz 체크인", "detail": "3박 · 짐 정리와 방 상태 확인", "kind": "buffer" },
+          { "time": "20:00–20:20", "title": "IntercityHotel Mainz 체크인", "detail": "3박 · 더블/트윈 1실 + 싱글 1실 · 방 상태 확인", "kind": "buffer" },
           { "time": "20:20–21:30", "title": "저녁 식사 자유시간", "detail": "숙소·Schillerplatz 사이에서 영업 중인 곳을 현장에서 선택", "kind": "free" },
           { "time": "21:30–22:10", "title": "슐러플라츠·마인츠 돔 야간 산책", "detail": "Fastnachtsbrunnen → Schillerstraße → 돔 외관 · 도보 약 2km", "kind": "visit" },
           { "time": "22:10–22:25", "title": "숙소 복귀", "detail": "다음 날 일정 전 샤워와 휴식", "kind": "travel" }
@@ -5890,7 +5890,7 @@ const COURSES = [
             8.2580625,
             49.9989375
           ],
-          "note": "Binger Strasse 21 · Mainz Hbf 도보권"
+          "note": "Binger Strasse 21 · 객실 2개: 더블/트윈 1실 + 싱글 1실"
         },
         "transport": {
           "mode": "train",
@@ -6046,7 +6046,7 @@ const COURSES = [
             8.2580625,
             49.9989375
           ],
-          "note": "Binger Strasse 21 · Mainz Hbf 도보권"
+          "note": "Binger Strasse 21 · 객실 2개: 더블/트윈 1실 + 싱글 1실"
         },
         "transport": {
           "mode": "train",
@@ -6196,16 +6196,16 @@ const COURSES = [
         "baseCity": "뮌헨",
         "baseCityEn": "Munich",
         "baseCoords": [
-          11.56461,
-          48.13816
+          11.614785,
+          48.1355713
         ],
         "lodging": {
-          "name": "Buddy Hotel Munich",
+          "name": "Holiday Inn Munich – Leuchtenbergring",
           "coords": [
-            11.56461,
-            48.13816
+            11.614785,
+            48.1355713
           ],
-          "note": "Sonnenstrasse 2 · Munich Hbf와 Stachus 사이"
+          "note": "Leuchtenbergring 20 · 스탠다드룸 2개 · 2명+1명 배정"
         },
         "transport": {
           "mode": "train",
@@ -6251,8 +6251,8 @@ const COURSES = [
         "am": "체크아웃 뒤 짐을 호텔에 잠시 맡기고 구텐베르크 박물관 MOVED의 핵심 전시를 본 후 하이델베르크로 이동한다.",
         "pm": "역 보관함에 짐을 맡기고 버스와 푸니쿨라로 성에 올라간 뒤 구시가지와 알테 브뤼케를 걷는다.",
         "ev": "충분한 식사 시간을 두고 역으로 돌아와 짐을 찾는다.",
-        "returnEv": "알테 브뤼케에서 성과 구시가지 조명을 본 뒤 19:30 전후 열차로 뮌헨에 이동해 Buddy Hotel에 체크인한다.",
-        "returnTip": "뮌헨행 열차는 2027 시간표 공개 뒤 19:15~19:45 출발편 중 환승이 가장 안정적인 편으로 확정한다. 다음 날 06:10 출발이므로 열차 안에서 쉬는 편이 좋다.",
+        "returnEv": "알테 브뤼케에서 성과 구시가지 조명을 본 뒤 19:30 전후 열차로 뮌헨에 이동해 Holiday Inn Munich – Leuchtenbergring에 체크인한다.",
+        "returnTip": "뮌헨행 열차는 2027 시간표 공개 뒤 19:15~19:45 출발편 중 환승이 가장 안정적인 편으로 확정한다. 다음 날 05:45 출발이므로 열차 안에서 쉬는 편이 좋다.",
         "tip": "하이델베르크 성은 09:00~18:00, 마지막 입장 17:30이다. 중앙역 보관함에 3개가 다 들어가지 않을 수 있으므로 대형함 2개분을 가정한다.",
         "timeline": [
           { "time": "08:15", "title": "체크아웃·호텔에 짐 보관", "detail": "바로 박물관으로 가져가지 않고 호텔 프런트 이용", "kind": "buffer" },
@@ -6272,9 +6272,9 @@ const COURSES = [
           { "time": "18:15", "title": "버스 33번으로 중앙역 복귀", "detail": "알테 브뤼케 인근 정류장에서 약 20분", "kind": "travel" },
           { "time": "18:45", "title": "보관함 짐 회수·승강장 확인", "detail": "간식과 물 구입 시간 포함", "kind": "buffer" },
           { "time": "19:30", "title": "뮌헨행 ICE/IC 탑승", "detail": "예매 목표편 · 좌석지정 · 2027 시간표 잠정", "kind": "travel" },
-          { "time": "22:30 전후", "title": "München Hbf 도착", "detail": "Buddy Hotel까지 도보 약 8분", "kind": "travel" },
-          { "time": "22:40", "title": "Buddy Hotel 체크인", "detail": "4박 · 바로 샤워하고 다음 날 짐 준비", "kind": "buffer" },
-          { "time": "23:00 이후", "title": "가벼운 식사·휴식 자유시간", "detail": "다음 날 06:10 숙소 출발", "kind": "free" }
+          { "time": "22:30 전후", "title": "München Hbf 도착·S-Bahn 환승", "detail": "Leuchtenbergring까지 직통 약 10~12분", "kind": "travel" },
+          { "time": "23:00 전후", "title": "Holiday Inn 체크인", "detail": "역에서 도보 약 3~4분 · 스탠다드룸 2개 · 4박", "kind": "buffer" },
+          { "time": "23:15 이후", "title": "가벼운 식사·휴식 자유시간", "detail": "다음 날 05:45 숙소 출발", "kind": "free" }
         ],
         "photos": [
           {
@@ -6376,7 +6376,7 @@ const COURSES = [
               48.1402
             ],
             "cap": "뮌헨 중앙역 도착",
-            "desc": "늦은 밤 하이델베르크에서 뮌헨으로 넘어온 뒤 Buddy Hotel까지 걸어가기 전 마주하는 중앙역 남쪽 입구입니다."
+            "desc": "늦은 밤 하이델베르크에서 뮌헨으로 넘어온 뒤 Leuchtenbergring행 S-Bahn으로 갈아타는 중앙역 남쪽 입구입니다."
           },
           {
             "spot": "qa_c9_d4_arrival_1",
@@ -6394,32 +6394,32 @@ const COURSES = [
         "cityKo": "뮌헨",
         "cityEn": "Munich",
         "coords": [
-          11.56461,
-          48.13816
+          11.614785,
+          48.1355713
         ],
         "moveType": "stay",
         "isTrip": false,
         "baseCity": null,
         "baseCoords": null,
         "lodging": {
-          "name": "Buddy Hotel Munich",
+          "name": "Holiday Inn Munich – Leuchtenbergring",
           "coords": [
-            11.56461,
-            48.13816
+            11.614785,
+            48.1355713
           ],
-          "note": "Sonnenstrasse 2 · Munich Hbf와 Stachus 사이"
+          "note": "Leuchtenbergring 20 · 스탠다드룸 2개 · 2명+1명 배정"
         },
         "transport": {
-          "mode": "walk",
-          "label": "Buddy Hotel → Karlsplatz → 구시가지 → Odeonsplatz → 숙소 · 도보"
+          "mode": "subway",
+          "label": "Holiday Inn → Leuchtenbergring S-Bahn → Marienplatz → 구시가지 → 숙소"
         },
         "via": [
           [
-            11.56461,
-            48.13816
+            11.614785,
+            48.1355713
           ],
           [
-            11.5717,
+            11.5755,
             48.1374
           ],
           [
@@ -6427,19 +6427,19 @@ const COURSES = [
             48.1393
           ],
           [
-            11.56461,
-            48.13816
+            11.614785,
+            48.1355713
           ]
         ],
         "title": "1/25(월) · 뮌헨 구시가지·빅투알리엔마르크트·세탁",
-        "am": "천천히 아침을 먹은 뒤 카를스플라츠에서 구시가지로 걸어가 11시 신시청사 글로켄슈필을 본다.",
+        "am": "천천히 아침을 먹은 뒤 Leuchtenbergring에서 S-Bahn으로 Marienplatz에 가 11시 신시청사 글로켄슈필을 본다.",
         "pm": "레지덴츠 안뜰과 오데온스플라츠까지 도보로 잇고, 식사와 카페는 현장에서 고른다.",
         "ev": "저녁 뒤 중앙역 인근 셀프 세탁소에서 여행 중간 세탁을 마친다.",
         "tip": "월요일에는 빅투알리엔마르크트 점포가 정상 영업하므로 1시간을 확보한다. 개별 가판 영업시간은 다를 수 있으며, 글로켄슈필은 11시에 본다.",
         "timeline": [
           { "time": "09:00–10:00", "title": "아침 식사 자유시간", "detail": "숙소 주변에서 현장 선택", "kind": "free" },
-          { "time": "10:00", "title": "Buddy Hotel 출발", "detail": "Karlsplatz → St. Michael → Frauenkirche · 전 구간 도보", "kind": "travel" },
-          { "time": "10:45", "title": "Marienplatz 도착", "detail": "신시청사 정면에서 관람 위치 확보", "kind": "buffer" },
+          { "time": "10:00", "title": "Holiday Inn 출발", "detail": "Leuchtenbergring역까지 도보 3~4분 → S-Bahn 직통", "kind": "travel" },
+          { "time": "10:30", "title": "Marienplatz 도착", "detail": "신시청사 정면에서 관람 위치 확보", "kind": "buffer" },
           { "time": "11:00–11:15", "title": "신시청사 글로켄슈필", "detail": "무료 · 겨울에도 매일 11:00·12:00", "kind": "visit" },
           { "time": "11:15–12:15", "title": "성 페터교회·빅투알리엔마르크트", "detail": "과일·치즈·소시지·꽃 가판과 비어가르텐 구역을 천천히 둘러보기", "kind": "visit" },
           { "time": "12:15–13:45", "title": "점심·카페 자유시간", "detail": "시장 또는 마리엔플라츠 주변에서 90분 확보", "kind": "free" },
@@ -6448,7 +6448,7 @@ const COURSES = [
           { "time": "17:00–18:00", "title": "구시가지 저녁 산책·숙소 방향 복귀", "detail": "Theatinerstraße → Frauenkirche → Karlsplatz", "kind": "visit" },
           { "time": "18:00–19:30", "title": "저녁 식사 자유시간", "detail": "후보 핀은 참고만 하고 예약하지 않음", "kind": "free" },
           { "time": "19:45–21:15", "title": "셀프 세탁", "detail": "München Hbf 인근 · 세탁소 영업시간은 출발 전 재확인", "kind": "buffer" },
-          { "time": "21:20", "title": "숙소 복귀", "detail": "다음 날 잘츠부르크 06:40 출발 준비", "kind": "travel" }
+          { "time": "21:45", "title": "숙소 복귀", "detail": "Hauptbahnhof에서 Leuchtenbergring까지 S-Bahn · 다음 날 06:20 출발 준비", "kind": "travel" }
         ],
         "pois": [
           {
@@ -6607,7 +6607,7 @@ const COURSES = [
               48.1391
             ],
             "cap": "카를스플라츠 슈타쿠스",
-            "desc": "Buddy Hotel과 구시가지를 잇는 큰 광장으로, 저녁 식사 후 숙소로 돌아가는 기준점이 된다."
+            "desc": "구시가지 서쪽의 큰 광장으로, 저녁 식사와 중앙역 인근 세탁소로 이동할 때 기준점이 된다."
           }
         ]
       },
@@ -6624,25 +6624,25 @@ const COURSES = [
         "baseCity": "뮌헨",
         "baseCityEn": "Munich",
         "baseCoords": [
-          11.56461,
-          48.13816
+          11.614785,
+          48.1355713
         ],
         "lodging": {
-          "name": "Buddy Hotel Munich",
+          "name": "Holiday Inn Munich – Leuchtenbergring",
           "coords": [
-            11.56461,
-            48.13816
+            11.614785,
+            48.1355713
           ],
-          "note": "Sonnenstrasse 2 · Munich Hbf와 Stachus 사이"
+          "note": "Leuchtenbergring 20 · 스탠다드룸 2개 · 2명+1명 배정"
         },
         "transport": {
           "mode": "train",
-          "label": "Buddy Hotel → 뮌헨 Hbf 도보 6분 → 가르미슈-파르텐키르헨 → 추크슈피체"
+          "label": "Holiday Inn → Leuchtenbergring S-Bahn → 뮌헨 Hbf → 가르미슈 → 추크슈피체"
         },
         "via": [
           [
-            11.56461,
-            48.13816
+            11.614785,
+            48.1355713
           ],
           [
             11.5583,
@@ -6663,7 +6663,7 @@ const COURSES = [
         "ev": "가르미슈를 거쳐 17시대 뮌헨으로 돌아와 저녁을 자유롭게 보낸다.",
         "tip": "48시간 전 공식 웹캠과 바람을 확인한다. 1/24가 흐리고 1/25가 맑으면 뮌헨 시내 일정과 서로 바꾸며, 산악권 표는 예보 확인 뒤 산다. 이 경우 시장 방문은 1/27 오전 예비안으로 넘긴다.",
         "timeline": [
-          { "time": "06:10", "title": "Buddy Hotel 출발", "detail": "München Hbf까지 도보 약 8분", "kind": "travel" },
+          { "time": "05:45", "title": "Holiday Inn 출발", "detail": "Leuchtenbergring역 도보 → S-Bahn으로 München Hbf 이동", "kind": "travel" },
           { "time": "06:32", "title": "RB6 가르미슈행 탑승", "detail": "예매 목표편 · 약 1시간 22분 · 2027 시간표 잠정", "kind": "travel" },
           { "time": "07:54", "title": "Garmisch-Partenkirchen 도착", "detail": "역 옆 Zugspitzbahnhof까지 도보 약 5분", "kind": "travel" },
           { "time": "08:15", "title": "바이에른 추크슈피츠반 톱니열차", "detail": "Garmisch → Zugspitzplatt · 약 75분", "kind": "travel" },
@@ -6677,8 +6677,8 @@ const COURSES = [
         ],
         "returnTimeline": [
           { "time": "16:07", "title": "RB6 뮌헨행 탑승", "detail": "예매 목표편 · 2027 시간표 잠정", "kind": "travel" },
-          { "time": "17:26", "title": "München Hbf 도착", "detail": "숙소까지 도보 약 8분", "kind": "travel" },
-          { "time": "17:35", "title": "숙소 휴식", "detail": "젖은 장갑·양말 건조", "kind": "buffer" },
+          { "time": "17:26", "title": "München Hbf 도착", "detail": "Leuchtenbergring행 S-Bahn 환승", "kind": "travel" },
+          { "time": "17:55", "title": "숙소 휴식", "detail": "젖은 장갑·양말 건조", "kind": "buffer" },
           { "time": "18:30 이후", "title": "저녁 식사 자유시간", "detail": "다음 날 뮌헨 시내 일정이라 늦지 않게 자유롭게 사용", "kind": "free" }
         ],
         "photos": [
@@ -6787,16 +6787,16 @@ const COURSES = [
         "baseCity": "뮌헨",
         "baseCityEn": "Munich",
         "baseCoords": [
-          11.56461,
-          48.13816
+          11.614785,
+          48.1355713
         ],
         "lodging": {
-          "name": "Buddy Hotel Munich",
+          "name": "Holiday Inn Munich – Leuchtenbergring",
           "coords": [
-            11.56461,
-            48.13816
+            11.614785,
+            48.1355713
           ],
-          "note": "Sonnenstrasse 2 · Munich Hbf와 Stachus 사이"
+          "note": "Leuchtenbergring 20 · 스탠다드룸 2개 · 2명+1명 배정"
         },
         "transport": {
           "mode": "train",
@@ -6804,8 +6804,8 @@ const COURSES = [
         },
         "via": [
           [
-            11.56461,
-            48.13816
+            11.614785,
+            48.1355713
           ],
           [
             11.5583,
@@ -6830,7 +6830,7 @@ const COURSES = [
         "ev": "강변의 해질녘을 보고 저녁 시간을 가진 뒤 19시대 열차로 뮌헨에 돌아간다.",
         "tip": "호엔잘츠부르크 성은 1~4월 09:30~17:00이므로 14:30 입장을 고정한다. 국제 구간이라 여권을 지참하고, 장거리열차 좌석을 지정한다.",
         "timeline": [
-          { "time": "06:40", "title": "Buddy Hotel 출발", "detail": "München Hbf까지 도보 약 8분", "kind": "travel" },
+          { "time": "06:20", "title": "Holiday Inn 출발", "detail": "Leuchtenbergring역 도보 → S-Bahn으로 München Hbf 이동", "kind": "travel" },
           { "time": "07:09", "title": "RJX/EC 잘츠부르크행 탑승", "detail": "예매 목표편 · 약 1시간 49분 · 2027 시간표 잠정", "kind": "travel" },
           { "time": "08:58", "title": "Salzburg Hbf 도착", "detail": "미라벨 정원까지 도보 약 15분", "kind": "travel" },
           { "time": "09:25–10:10", "title": "미라벨 정원", "detail": "겨울 정원 산책과 요새 조망", "kind": "visit" },
@@ -6845,8 +6845,8 @@ const COURSES = [
         "returnTimeline": [
           { "time": "18:35", "title": "Salzburg Hbf로 이동", "detail": "도보 또는 버스 · 출발 15분 전 도착", "kind": "travel" },
           { "time": "19:05", "title": "뮌헨행 RJX/EC 탑승", "detail": "예매 목표편 · 좌석지정 · 2027 시간표 잠정", "kind": "travel" },
-          { "time": "20:55 전후", "title": "München Hbf 도착", "detail": "숙소까지 도보", "kind": "travel" },
-          { "time": "21:05", "title": "Buddy Hotel 복귀", "detail": "다음 날 06:30 체크아웃 준비", "kind": "buffer" }
+          { "time": "20:55 전후", "title": "München Hbf 도착", "detail": "Leuchtenbergring행 S-Bahn 환승", "kind": "travel" },
+          { "time": "21:20", "title": "Holiday Inn 복귀", "detail": "다음 날 06:05 체크아웃 준비", "kind": "buffer" }
         ],
         "photos": [
           {
@@ -6959,7 +6959,7 @@ const COURSES = [
             16.38426,
             48.20593
           ],
-          "note": "Landstrasser Hauptstrasse 120 · 빈 동부 숙소"
+          "note": "Landstrasser Hauptstrasse 120 · 트리플룸: 대형 더블 1 + 정식 싱글 1"
         },
         "transport": {
           "mode": "train",
@@ -6967,8 +6967,8 @@ const COURSES = [
         },
         "via": [
           [
-            11.56461,
-            48.13816
+            11.614785,
+            48.1355713
           ],
           [
             11.5583,
@@ -6997,7 +6997,7 @@ const COURSES = [
         "ev": "저녁 식사 시간을 넉넉히 두고 19시대 숙소에 돌아와 쉰다.",
         "tip": "뮌헨–빈 열차는 2027 시간표 공개 뒤 07시대 직통편으로 확정한다. Landstraße 공사로 74A가 우회하면 U3 Kardinal-Nagl-Platz를 대안으로 쓴다.",
         "timeline": [
-          { "time": "06:30", "title": "Buddy Hotel 체크아웃", "detail": "München Hbf까지 도보 약 8분", "kind": "travel" },
+          { "time": "06:05", "title": "Holiday Inn 체크아웃", "detail": "Leuchtenbergring역 도보 → S-Bahn으로 München Hbf 이동", "kind": "travel" },
           { "time": "06:55", "title": "승강장 도착", "detail": "간단한 아침과 물 구입", "kind": "buffer" },
           { "time": "07:09", "title": "빈행 Railjet 직통 탑승", "detail": "예매 목표편 · 좌석지정 · 약 4시간 23분 · 2027 시간표 잠정", "kind": "travel" },
           { "time": "11:32", "title": "Wien Hbf 도착", "detail": "S-Bahn으로 Wien Mitte 이동", "kind": "travel" },
@@ -7009,7 +7009,7 @@ const COURSES = [
           { "time": "15:00–16:15", "title": "Graben·Peterskirche·Kohlmarkt·Michaelerplatz", "detail": "보행자 거리로 이어지는 도보 동선", "kind": "visit" },
           { "time": "16:15–17:15", "title": "호프부르크 안뜰·Heldenplatz·Burggarten", "detail": "실내 유료 관람 없이 외부 중심", "kind": "visit" },
           { "time": "17:15–18:45", "title": "카페·저녁 자유시간", "detail": "도심에서 90분 확보", "kind": "free" },
-          { "time": "18:45–19:15", "title": "U3로 숙소 복귀", "detail": "호텔 체크인 후 휴식", "kind": "travel" }
+          { "time": "18:45–19:15", "title": "U3로 숙소 복귀", "detail": "트리플룸 체크인 · 대형 더블 1 + 정식 싱글 1", "kind": "travel" }
         ],
         "photos": [
           {
@@ -7037,7 +7037,7 @@ const COURSES = [
               48.1402
             ],
             "cap": "뮌헨 중앙역 출발",
-            "desc": "Buddy Hotel에서 걸어 도착하는 장거리 열차 관문으로, 빈 이동일의 첫 장면을 만든다."
+            "desc": "Holiday Inn에서 Leuchtenbergring S-Bahn을 타고 도착하는 장거리 열차 관문으로, 빈 이동일의 첫 장면을 만든다."
           },
           {
             "spot": "qa_c9_d8_rich_057",
@@ -7122,7 +7122,7 @@ const COURSES = [
             16.38426,
             48.20593
           ],
-          "note": "Landstrasser Hauptstrasse 120 · 빈 동부 숙소"
+          "note": "Landstrasser Hauptstrasse 120 · 트리플룸: 대형 더블 1 + 정식 싱글 1"
         },
         "transport": {
           "mode": "walk",
@@ -7270,7 +7270,7 @@ const COURSES = [
             16.38426,
             48.20593
           ],
-          "note": "Landstrasser Hauptstrasse 120 · 빈 동부 숙소"
+          "note": "Landstrasser Hauptstrasse 120 · 트리플룸: 대형 더블 1 + 정식 싱글 1"
         },
         "transport": {
           "mode": "walk",
@@ -7417,7 +7417,7 @@ const COURSES = [
             16.38426,
             48.20593
           ],
-          "note": "Landstrasser Hauptstrasse 120 · 빈 동부 숙소"
+          "note": "Landstrasser Hauptstrasse 120 · 트리플룸: 대형 더블 1 + 정식 싱글 1"
         },
         "transport": {
           "mode": "walk",
@@ -7635,7 +7635,7 @@ const COURSES = [
             16.38426,
             48.20593
           ],
-          "note": "Landstrasser Hauptstrasse 120 · 빈 5박째"
+          "note": "Landstrasser Hauptstrasse 120 · 트리플룸: 대형 더블 1 + 정식 싱글 1 · 5박째"
         },
         "transport": {
           "mode": "train",
@@ -7743,7 +7743,7 @@ const COURSES = [
             16.38426,
             48.20593
           ],
-          "note": "Landstrasser Hauptstrasse 120 · 빈 동부 숙소"
+          "note": "Landstrasser Hauptstrasse 120 · 트리플룸: 대형 더블 1 + 정식 싱글 1"
         },
         "transport": {
           "mode": "plane",
@@ -8862,7 +8862,7 @@ const COURSES = [
       COLOGNE_HBF: [6.9587, 50.943], DOM: [6.9583, 50.9413], COLOGNE_OLD: [6.9615, 50.9388],
       CHOC: [6.9643, 50.9319], RHEIN: [6.9757, 50.9401], HD_HBF: [8.6754, 49.4036],
       HD_RATHAUS: [8.7097, 49.4112], HD_CASTLE: [8.7159, 49.4106], HD_BRIDGE: [8.7097, 49.4142],
-      MUC_HBF: [11.5583, 48.1402], BUDDY: [11.56461, 48.13816], GARMISCH: [11.095, 47.492],
+      MUC_HBF: [11.5583, 48.1402], MUC_HOTEL: [11.614785, 48.1355713], GARMISCH: [11.095, 47.492],
       ZUG_PLATT: [10.9807, 47.4165], ZUG_SUMMIT: [10.985, 47.421], EIBSEE: [10.9736, 47.4576],
       KARLS: [11.5657, 48.1391], MARIEN: [11.5755, 48.1374], GLOCK: [11.5754, 48.1370],
       VIKT: [11.5765, 48.1352], ODEON: [11.5779, 48.1428], SALZ_HBF: [13.0457, 47.813],
@@ -8905,27 +8905,27 @@ const COURSES = [
         M(P.HD_HBF, 'train', true, [[8.4699, 49.4796]]), M(P.HD_HBF, 'walk'), M(P.HD_RATHAUS, 'bus'),
         M(P.HD_RATHAUS), M(P.HD_CASTLE, 'funicular'), M(P.HD_BRIDGE), M(P.HD_BRIDGE, 'stay'),
         M(P.HD_BRIDGE), M(P.HD_HBF, 'bus'), M(P.HD_HBF, 'stay'),
-        M(P.MUC_HBF, 'train', true, [[8.4699, 49.4796]]), M(P.MUC_HBF), M(P.BUDDY), M(P.BUDDY, 'stay'),
+        M(P.MUC_HBF, 'train', true, [[8.4699, 49.4796]]), M(P.MUC_HBF), M(P.MUC_HOTEL, 'subway'), M(P.MUC_HOTEL, 'stay'),
       ],
       [
-        M(P.BUDDY, 'stay'), M(P.MUC_HBF), M(P.GARMISCH, 'train', true), M(P.GARMISCH, 'walk'),
+        M(P.MUC_HOTEL, 'stay'), M(P.MUC_HBF, 'subway'), M(P.GARMISCH, 'train', true), M(P.GARMISCH, 'walk'),
         M(P.ZUG_PLATT, 'train'), M(P.ZUG_SUMMIT, 'cablecar'), M(P.ZUG_SUMMIT, 'stay'),
         M(P.ZUG_SUMMIT, 'stay'), M(P.EIBSEE, 'cablecar'), M(P.EIBSEE), M(P.GARMISCH, 'train'),
-        M(P.GARMISCH, 'stay'), M(P.MUC_HBF, 'train', true), M(P.BUDDY), M(P.BUDDY, 'stay'),
+        M(P.GARMISCH, 'stay'), M(P.MUC_HBF, 'train', true), M(P.MUC_HOTEL, 'subway'), M(P.MUC_HOTEL, 'stay'),
       ],
       [
-        M(P.BUDDY, 'stay'), M(P.KARLS), M(P.MARIEN), M(P.GLOCK), M(P.VIKT), M(P.VIKT, 'stay'),
+        M(P.MUC_HOTEL, 'stay'), M(P.MARIEN, 'subway'), M(P.MARIEN, 'stay'), M(P.GLOCK), M(P.VIKT), M(P.VIKT, 'stay'),
         M(P.ODEON, 'walk', false, [[11.5761, 48.1404]]), M(P.ODEON, 'stay'), M(P.KARLS),
-        M(P.KARLS, 'stay'), M(P.MUC_HBF), M(P.BUDDY),
+        M(P.KARLS, 'stay'), M(P.MUC_HBF), M(P.MUC_HOTEL, 'subway'),
       ],
       [
-        M(P.BUDDY, 'stay'), M(P.MUC_HBF), M(P.SALZ_HBF, 'train', true), M(P.SALZ_HBF),
+        M(P.MUC_HOTEL, 'stay'), M(P.MUC_HBF, 'subway'), M(P.SALZ_HBF, 'train', true), M(P.SALZ_HBF),
         M(P.MIRABELL), M(P.GETREIDE), M(P.GETREIDE, 'stay'), M(P.SALZ_CATH),
         M(P.FEST_BAHN), M(P.FORT, 'funicular'), M(P.SALZ_RIVER), M(P.SALZ_HBF, 'bus'),
-        M(P.SALZ_HBF, 'stay'), M(P.MUC_HBF, 'train', true), M(P.BUDDY),
+        M(P.SALZ_HBF, 'stay'), M(P.MUC_HBF, 'train', true), M(P.MUC_HOTEL, 'subway'),
       ],
       [
-        M(P.BUDDY, 'stay'), M(P.MUC_HBF), M(P.MUC_HBF, 'stay'), M(P.WIEN_HBF, 'train', true),
+        M(P.MUC_HOTEL, 'stay'), M(P.MUC_HBF, 'subway'), M(P.MUC_HBF, 'stay'), M(P.WIEN_HBF, 'train', true),
         M(P.HOTEL, 'tram'), M(P.HOTEL, 'stay'), M(P.HOTEL, 'stay'), M(P.STEPH, 'subway'),
         M(P.STEPH, 'stay'), M(P.GRABEN), M(P.HOFBURG), M(P.HOFBURG, 'stay'), M(P.HOTEL, 'subway'),
       ],
