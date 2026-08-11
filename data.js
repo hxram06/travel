@@ -8850,9 +8850,9 @@ const COURSES = [
       travelers: 4,
       airfareTotal: 5194400,
       airfarePerPerson: 1298600,
-      lodgingTotal: 2530744,
-      lodgingPerPerson: 632686,
-      airfareAndLodgingPerPerson: 1931286,
+      lodgingTotal: 2529602,
+      lodgingPerPerson: 632401,
+      airfareAndLodgingPerPerson: 1931001,
       estimatedTotalPerPerson: 3790000,
     };
 
@@ -8904,7 +8904,7 @@ const COURSES = [
         day.lodging = {
           name: 'IntercityHotel Mainz',
           coords: [...MAINZ_HOTEL],
-          note: 'Binger Strasse 21 · 트윈룸 2개 · 객실당 싱글침대 2개 · 3박 총 786,344원',
+          note: 'Binger Strasse 21 · 트윈룸 2개 · 객실당 싱글침대 2개 · 3박 총 785,202원',
         };
       } else if (day.day <= 7) {
         day.lodging = {
