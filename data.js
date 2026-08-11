@@ -8972,6 +8972,9 @@ const COURSES = [
 
     const schonbrunnDay = course9.days.find((day) => day.day === 11);
     if (schonbrunnDay) {
+      schonbrunnDay.transport.label = 'Wien Hbf → U1 Karlsplatz → U4 Schönbrunn → 빈 도심';
+      const depart = (schonbrunnDay.timeline || []).find((item) => item.title === '호텔 출발');
+      if (depart) depart.detail = 'B&B Hotel Wien-Hbf에서 Wien Hbf까지 도보 후 U1 탑승';
       const transit = (schonbrunnDay.timeline || []).find((item) => item.title.includes('Schönbrunn 이동'));
       if (transit) { transit.title = 'U1 → U4로 Schönbrunn 이동'; transit.detail = 'Wien Hbf → Karlsplatz 환승 → Schönbrunn'; }
       const last = (schonbrunnDay.timeline || []).find((item) => item.title === '숙소 복귀·짐 정리');
@@ -9063,7 +9066,8 @@ const COURSES = [
       WIEN_MITTE: [16.3855, 48.2079], KETTEN: [16.3587, 48.1965], NASCH: [16.3615, 48.1974],
       SECESSION: [16.3658, 48.2005], MQ: [16.358, 48.203], RATHAUS: [16.356, 48.2108],
       BELVEDERE: [16.3813, 48.1912], KHM: [16.3602, 48.2033], SCHON: [16.3122, 48.1845],
-      GLORIETTE: [16.3088, 48.1788], OPERA: [16.369, 48.2038], VIE: [16.5697, 48.1103],
+      GLORIETTE: [16.3088, 48.1788], WIEN_KARLS: [16.3700, 48.2004],
+      OPERA: [16.369, 48.2038], VIE: [16.5697, 48.1103],
       STADTPARK: [16.3766, 48.2046], BUD_KELETI: [19.0839, 47.5001],
       BUD_PARLIAMENT: [19.0457, 47.5071], BUD_CHAIN: [19.0435, 47.4989],
       BUD_FISHERMAN: [19.0348, 47.5022], BUD_DEAK: [19.0558, 47.4979],
@@ -9130,8 +9134,8 @@ const COURSES = [
         M(P.KHM, 'tram'), M(P.KHM, 'stay'), M(P.KHM, 'stay'), M(P.KHM, 'stay'), M(P.HOFBURG),
       ],
       [
-        M(P.HOTEL, 'stay'), M(P.SCHON, 'subway'), M(P.GLORIETTE), M(P.KARLS, 'subway'),
-        M(P.KARLS, 'stay'), M(P.GRABEN), M(P.HOTEL, 'tram'), M(P.OPERA, 'tram'),
+        M(P.HOTEL, 'stay'), M(P.SCHON, 'subway'), M(P.GLORIETTE), M(P.WIEN_KARLS, 'subway'),
+        M(P.WIEN_KARLS, 'stay'), M(P.GRABEN), M(P.HOTEL, 'tram'), M(P.OPERA, 'tram'),
         M(P.OPERA, 'stay'), M(P.OPERA, 'stay'), M(P.HOTEL, 'tram'),
       ],
       [
