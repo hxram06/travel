@@ -28,7 +28,7 @@
   <link href="https://api.mapbox.com/mapbox-gl-js/v3.4.0/mapbox-gl.css" rel="stylesheet" />
   <script src="https://api.mapbox.com/mapbox-gl-js/v3.4.0/mapbox-gl.js"></script>
 
-  <link rel="stylesheet" href="styles.css?v=37" />
+  <link rel="stylesheet" href="styles.css?v=38" />
 </head>
 <body>
 
@@ -39,48 +39,6 @@
       <p class="landing-sub">10개의 코스 · 총 121일의 여정</p>
     </header>
     <div id="course-grid" class="course-grid"></div>
-  </section>
-
-  <!-- 코스 9 공유 링크 첫 화면 -->
-  <section id="course9-entry" class="course9-entry hidden" aria-labelledby="course9-entry-title">
-    <div class="course9-entry-shell">
-      <header class="course9-entry-head">
-        <span>COURSE 9 · 12박 13일</span>
-        <h1 id="course9-entry-title">독일에서 오스트리아까지</h1>
-        <p>2027. 1. 20. — 2. 1. · 3인 여행</p>
-      </header>
-
-      <div id="course9-entry-choice" class="course9-entry-choice">
-        <p class="course9-entry-question">무엇부터 볼까요?</p>
-        <div class="course9-entry-actions">
-          <button id="course9-view-trip" class="course9-entry-action course9-entry-action-primary" type="button">
-            <span class="course9-entry-action-num">01</span>
-            <span><strong>여행 코스 보기</strong><small>13일의 이동 경로와 세부 일정</small></span>
-            <i aria-hidden="true">→</i>
-          </button>
-          <button id="course9-open-survey" class="course9-entry-action" type="button">
-            <span class="course9-entry-action-num">02</span>
-            <span><strong>확정 숙소 보기</strong><small>홀리데이 인 객실과 이동 거리 확인</small></span>
-            <i aria-hidden="true">→</i>
-          </button>
-        </div>
-      </div>
-
-      <div id="course9-lodging-survey" class="course9-lodging-survey hidden">
-        <div class="course9-survey-toolbar">
-          <button id="course9-survey-back" type="button">← 처음으로</button>
-          <button id="course9-survey-trip" type="button">일정 보기 →</button>
-        </div>
-        <div class="course9-survey-copy">
-          <span>뮌헨 · 1월 23–27일</span>
-          <h2>네 밤의 숙소가 정해졌습니다</h2>
-          <p>스탠다드룸 두 개에 2명과 1명으로 나누어 숙박합니다. 구시가지는 Leuchtenbergring S-Bahn을 이용합니다.</p>
-        </div>
-        <div id="course9-lodging-cards" class="course9-lodging-cards"></div>
-        <p id="course9-survey-status" class="course9-survey-status" aria-live="polite"></p>
-        <p class="course9-survey-note">가격은 2026년 8월 11일 확인한 4박 총액 기준이며 예약 시점과 결제 통화에 따라 달라질 수 있습니다.</p>
-      </div>
-    </div>
   </section>
 
   <div id="course-menu" class="course-menu hidden" role="menu">
@@ -199,10 +157,10 @@
       map.js/app.js  — 지도와 화면
   -->
   <script src="photos-data.js?v=26"></script>
-  <script src="data.js?v=29"></script>
+  <script src="data.js?v=30"></script>
   <script src="rules.js?v=23"></script>
   <script src="map.js?v=38"></script>
-  <script src="app.js?v=36"></script>
+  <script src="app.js?v=37"></script>
   <script type="module" src="firebase-feedback.js?v=2"></script>
 </body>
 </html>

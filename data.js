@@ -8831,6 +8831,196 @@ const COURSES = [
   }
 ];
 
+// 코스9 확정안: 4인 · 2027년 2월 10~21일 · 마인츠 3박 / 뮌헨 4박 / 빈 4박.
+// 이전 부다페스트 임시안과 사진 원본은 위 데이터에 보존하고 실제 일정 배열에서만 제외한다.
+{
+  const course9 = COURSES.find((course) => course.id === 9);
+  if (course9) {
+    const MAINZ_HOTEL = [8.2580625, 49.9989375];
+    const MUNICH_HOTEL = [11.614785, 48.1355713];
+    const OLD_VIENNA_HOTEL = [16.38426, 48.20593];
+    const VIENNA_HOTEL = [16.3839827, 48.1817738];
+
+    course9.subtitle = '4명이 라인강에서 바이에른·잘츠부르크를 거쳐 빈까지 이동하는 겨울 여행';
+    course9.period = '2027년 2월 10일 ~ 2월 21일';
+    course9.nights = '11박 12일';
+    course9.party = '4인 여행 · 마인츠 3박 · 뮌헨 4박 · 빈 4박 · 전 도시 트윈룸 2개';
+    course9.cities = course9.cities.filter((city) => city !== '부다페스트');
+    course9.costs = {
+      travelers: 4,
+      airfareTotal: 5194400,
+      airfarePerPerson: 1298600,
+      lodgingTotal: 2731366,
+      lodgingPerPerson: 682842,
+      airfareAndLodgingPerPerson: 1981442,
+      estimatedTotalPerPerson: 3840000,
+    };
+
+    const budapestIndex = course9.days.findIndex((day) => day.cityKo === '부다페스트');
+    if (budapestIndex >= 0) course9.days.splice(budapestIndex, 1);
+
+    const dateReplacements = [
+      ['2/2 14:15', '2/22 14:15'],
+      ['1/20(수)', '2/10(수)'], ['1/21(목)', '2/11(목)'], ['1/22(금)', '2/12(금)'],
+      ['1/23(토)', '2/13(토)'], ['1/24(일)', '2/14(일)'], ['1/25(월)', '2/15(월)'],
+      ['1/26(화)', '2/16(화)'], ['1/27(수)', '2/17(수)'], ['1/28(목)', '2/18(목)'],
+      ['1/29(금)', '2/19(금)'], ['1/30(토)', '2/20(토)'], ['2/1(월)', '2/21(일)'],
+      ['1/20', '2/10'], ['1/21', '2/11'], ['1/22', '2/12'], ['1/23', '2/13'],
+      ['1/24', '2/14'], ['1/25', '2/15'], ['1/26', '2/16'], ['1/27', '2/17'],
+      ['1/28', '2/18'], ['1/29', '2/19'], ['1/30', '2/20'],
+    ];
+    const rewriteText = (text) => {
+      let next = text;
+      dateReplacements.forEach(([from, to]) => { next = next.replaceAll(from, to); });
+      return next
+        .replaceAll('Eurostars Embassy Vienna', 'B&B Hotel Wien-Hbf')
+        .replaceAll('Eurostars Embassy', 'B&B Hotel Wien-Hbf')
+        .replaceAll('입국심사와 3인 위탁수하물 수취', '입국심사와 4인 위탁수하물 수취')
+        .replaceAll('더블/트윈 1실 + 싱글 1실', '트윈룸 2개 · 객실당 싱글침대 2개')
+        .replaceAll('트리플룸: 대형 더블 1 + 정식 싱글 1', '트윈룸 2개 · 객실당 싱글침대 2개')
+        .replaceAll('트리플룸 체크인 · 대형 더블 1 + 정식 싱글 1', '트윈룸 2개 체크인 · 객실당 싱글침대 2개')
+        .replaceAll('2월 2일 화요일', '2월 22일 월요일');
+    };
+    const rewrite = (value) => {
+      if (typeof value === 'string') return rewriteText(value);
+      if (Array.isArray(value)) {
+        if (value.length === 2
+          && Math.abs(value[0] - OLD_VIENNA_HOTEL[0]) < 0.00001
+          && Math.abs(value[1] - OLD_VIENNA_HOTEL[1]) < 0.00001) {
+          return [...VIENNA_HOTEL];
+        }
+        return value.map(rewrite);
+      }
+      if (value && typeof value === 'object') {
+        Object.keys(value).forEach((key) => { value[key] = rewrite(value[key]); });
+      }
+      return value;
+    };
+    rewrite(course9);
+
+    course9.days.forEach((day, index) => {
+      day.day = index + 1;
+      if (day.day <= 3) {
+        day.lodging = {
+          name: 'IntercityHotel Mainz',
+          coords: [...MAINZ_HOTEL],
+          note: 'Binger Strasse 21 · 트윈룸 2개 · 객실당 싱글침대 2개 · 3박 총 786,344원',
+        };
+      } else if (day.day <= 7) {
+        day.lodging = {
+          name: 'Holiday Inn Munich – Leuchtenbergring',
+          coords: [...MUNICH_HOTEL],
+          note: 'Leuchtenbergring 20 · 스탠다드 트윈룸 2개 · 객실당 싱글침대 2개 · 4박 총 877,560원',
+        };
+      } else {
+        day.coords = [...VIENNA_HOTEL];
+        day.lodging = {
+          name: 'B&B Hotel Wien-Hbf',
+          coords: [...VIENNA_HOTEL],
+          note: 'Bloch-Bauer-Promenade 5 · 트윈룸 2개 · 객실당 싱글침대 2개 · 4박 총 1,067,462원',
+        };
+      }
+    });
+
+    const day1 = course9.days.find((day) => day.day === 1);
+    if (day1?.entryAirport) {
+      day1.entryAirport.title = '2/10(수) · 프랑크푸르트 공항 도착';
+    }
+
+    const viennaArrival = course9.days.find((day) => day.day === 8);
+    if (viennaArrival) {
+      viennaArrival.transport.label = '뮌헨 Hbf → 빈 Hbf · Railjet/ICE 약 4시간 · Wien Hbf에서 B&B Hotel Wien-Hbf까지 도보';
+      viennaArrival.am = '07:09 권장 Railjet으로 잘츠부르크와 린츠를 지나 빈으로 이동한다.';
+      viennaArrival.pm = 'Wien Hbf에서 숙소까지 걸어가 짐을 맡기고, 자유로운 점심 뒤 U1로 슈테판스돔에 들어가 왕궁까지 걷는다.';
+      viennaArrival.ev = '저녁 식사 시간을 넉넉히 두고 U1으로 중앙역에 돌아와 트윈룸 두 개에 체크인한다.';
+      viennaArrival.tip = '뮌헨–빈 열차는 2027년 시간표 공개 뒤 07시대 직통편으로 확정한다. 숙소는 Wien Hbf 남쪽 도보권이라 별도 버스 환승이 필요 없다.';
+      const timeline = viennaArrival.timeline || [];
+      const hbfArrival = timeline.find((item) => item.title === 'Wien Hbf 도착');
+      if (hbfArrival) hbfArrival.detail = '남쪽 출구로 나와 숙소까지 도보 이동';
+      const hotelMove = timeline.find((item) => item.title.includes('B&B Hotel Wien-Hbf로 이동'));
+      if (hotelMove) {
+        hotelMove.time = '11:40–12:00';
+        hotelMove.detail = 'Wien Hbf 남쪽 출구에서 Bloch-Bauer-Promenade 방향 도보 약 10–12분';
+      }
+      const luggage = timeline.find((item) => item.title === '호텔에 짐 보관');
+      if (luggage) { luggage.time = '12:00'; luggage.detail = '정식 체크인은 저녁에 진행 · 트윈룸 2개 예약 확인'; }
+      const lunch = timeline.find((item) => item.title === '점심 자유시간');
+      if (lunch) { lunch.time = '12:10–13:35'; lunch.detail = 'Wien Hbf 또는 Favoritenstraße 주변에서 현장 선택'; }
+      const outbound = timeline.find((item) => item.title.includes('Stephansplatz 이동'));
+      if (outbound) { outbound.title = 'U1으로 Stephansplatz 이동'; outbound.time = '13:35–13:50'; outbound.detail = 'Wien Hbf에서 환승 없이 이동'; }
+      const returnHotel = timeline.find((item) => item.title.includes('숙소 복귀'));
+      if (returnHotel) { returnHotel.title = 'U1으로 숙소 복귀'; returnHotel.detail = 'Stephansplatz → Wien Hbf · 도보 후 트윈룸 2개 체크인'; }
+    }
+
+    const viennaWalk = course9.days.find((day) => day.day === 9);
+    if (viennaWalk) {
+      viennaWalk.am = '느긋하게 출발해 Wien Hbf에서 S-Bahn으로 Wien Mitte까지 간 뒤 훈데르트바서하우스로 걷는다.';
+      const firstMove = (viennaWalk.timeline || []).find((item) => item.title.includes('훈데르트바서하우스로'));
+      if (firstMove) {
+        firstMove.title = 'Wien Mitte 경유·훈데르트바서하우스로 이동';
+        firstMove.detail = 'Wien Hbf → Wien Mitte S-Bahn 약 5분 · 이후 도보 약 15분';
+      }
+      const finalMove = (viennaWalk.timeline || []).find((item) => item.title.includes('숙소 복귀'));
+      if (finalMove) finalMove.detail = 'U-Bahn 또는 트램으로 Wien Hbf 방향 귀가';
+    }
+
+    const museumDay = course9.days.find((day) => day.day === 10);
+    if (museumDay) {
+      const depart = (museumDay.timeline || []).find((item) => item.title === '호텔 출발');
+      if (depart) depart.detail = 'B&B Hotel Wien-Hbf에서 벨베데레 상궁까지 도보 약 15–18분';
+    }
+
+    const schonbrunnDay = course9.days.find((day) => day.day === 11);
+    if (schonbrunnDay) {
+      const transit = (schonbrunnDay.timeline || []).find((item) => item.title.includes('Schönbrunn 이동'));
+      if (transit) { transit.title = 'U1 → U4로 Schönbrunn 이동'; transit.detail = 'Wien Hbf → Karlsplatz 환승 → Schönbrunn'; }
+      const last = (schonbrunnDay.timeline || []).find((item) => item.title === '숙소 복귀·짐 정리');
+      if (last) last.detail = '다음 날 늦은 출국 준비 · 위탁수하물과 여권 확인';
+    }
+
+    const departureDay = course9.days.at(-1);
+    if (departureDay) {
+      departureDay.day = 12;
+      departureDay.title = '2/21(일) · 빈의 마지막 반나절과 직항 귀국';
+      departureDay.transport.label = 'B&B Hotel Wien-Hbf → 빈 도심 마지막 산책 → Wien Hbf → VIE T3 | 대한항공 KE938 19:15 → ICN 2/22 14:15';
+      departureDay.via = [[...VIENNA_HOTEL], [16.3767, 48.1858], [16.5697, 48.1103]];
+      departureDay.am = '아침을 먹고 체크아웃해 호텔에 짐을 맡긴다. 슈타트파르크에서 빈 구시가지로 걸으며 마지막 무료 산책을 한다.';
+      departureDay.pm = '그라벤과 슈테판 대성당 주변에서 점심·카페 시간을 갖고 U1으로 숙소에 돌아와 짐을 찾은 뒤 Wien Hbf로 이동한다.';
+      departureDay.ev = '15:42 전후 Railjet으로 공항에 가 대한항공 체크인과 출국 수속을 마친 뒤 19:15 KE938 직항편으로 출발한다. 2월 22일 월요일 14:15 인천공항 T2 도착이다.';
+      departureDay.tip = 'B&B Hotel Wien-Hbf에서 중앙역까지 도보 약 10–12분이다. CAT 대신 Wien Hbf 출발 공항행 Railjet을 이용하며 2027년 정확한 시각은 예매 전 다시 확인한다.';
+      departureDay.timeline = [
+        { time: '08:30–09:45', title: '아침 식사·최종 짐 정리', detail: '숙소 주변에서 현장 선택', kind: 'free' },
+        { time: '09:45–10:00', title: '체크아웃·호텔에 짐 보관', detail: '트윈룸 2개 확인 후 캐리어 4개 보관 요청', kind: 'buffer' },
+        { time: '10:00–10:35', title: '슈타트파르크 이동', detail: 'Wien Hbf에서 트램 D·도보 조합', kind: 'travel' },
+        { time: '10:35–11:35', title: '슈타트파르크 마지막 산책', detail: '요한 슈트라우스 동상·쿠어살롱 외관 · 무료', kind: 'visit' },
+        { time: '11:35–12:10', title: '도보로 슈테판 대성당 이동', detail: 'Wollzeile 방향 약 1.5km', kind: 'travel' },
+        { time: '12:10–13:50', title: '그라벤·슈테판 광장·점심 자유시간', detail: '마지막 산책과 식사·카페에 100분', kind: 'free' },
+        { time: '13:50–14:25', title: 'U1으로 숙소 복귀', detail: 'Stephansplatz → Wien Hbf · 숙소까지 도보', kind: 'travel' },
+        { time: '14:25–14:45', title: '호텔에서 짐 수령', detail: '캐리어 4개와 여권·탑승권 확인', kind: 'buffer' },
+        { time: '14:45–15:15', title: 'Wien Hbf 이동·승강장 확인', detail: '숙소에서 도보 약 10–12분 · 간단한 간식 구입', kind: 'travel' },
+        { time: '15:42 전후', title: '공항행 Railjet 출발', detail: 'Wien Hbf → Flughafen Wien 약 15분 · 2027년 시간표 재확인', kind: 'travel' },
+        { time: '16:00 전후', title: '빈 국제공항 도착', detail: 'T3 대한항공 체크인 구역으로 이동', kind: 'travel' },
+        { time: '16:00–18:15', title: '수하물 위탁·보안검색·출국·식사 여유', detail: '4인 위탁수하물 처리 · 전광판에서 체크인 카운터 확인', kind: 'buffer' },
+        { time: '18:20', title: '탑승구 대기', detail: '여권·탑승권 확인 후 탑승 안내 대기', kind: 'buffer' },
+        { time: '19:15', title: 'KE938 빈 출발', detail: '대한항공 직항 · 인천까지 약 11시간', kind: 'travel' },
+        { time: '2/22 14:15', title: '인천국제공항 T2 도착', detail: '수하물 수취 후 여행 종료', kind: 'travel' },
+      ];
+      const railPhoto = (departureDay.photos || []).find((photo) => photo.spot === 'qa_c9_d12_rich_088');
+      if (railPhoto) {
+        railPhoto.at = [16.3767, 48.1858];
+        railPhoto.cap = '빈 중앙역 공항열차 출발';
+        railPhoto.desc = '숙소에서 걸어온 뒤 공항행 Railjet을 타는 Wien Hbf 승강장이다.';
+      }
+      const hotelPhoto = (departureDay.photos || []).find((photo) => photo.spot === 'qa_c9_d12_rich_095');
+      if (hotelPhoto) {
+        hotelPhoto.at = [...VIENNA_HOTEL];
+        hotelPhoto.cap = '빈 중앙역 남쪽 아침 거리';
+        hotelPhoto.desc = 'B&B Hotel Wien-Hbf 주변에서 체크아웃 전 마지막 아침을 시작하는 숙소 생활권이다.';
+      }
+    }
+  }
+}
+
 // 코스9: 일요일에는 추크슈피체, 월요일에는 영업 중인 빅투알리엔마르크트를 방문한다.
 {
   const course9 = COURSES.find((course) => course.id === 9);
@@ -8868,7 +9058,7 @@ const COURSES = [
       VIKT: [11.5765, 48.1352], ODEON: [11.5779, 48.1428], SALZ_HBF: [13.0457, 47.813],
       MIRABELL: [13.0426, 47.8055], GETREIDE: [13.0435, 47.8006], SALZ_CATH: [13.0467, 47.7979],
       FEST_BAHN: [13.0472, 47.7967], FORT: [13.0477, 47.795], SALZ_RIVER: [13.044, 47.8028],
-      WIEN_HBF: [16.3767, 48.1858], HOTEL: [16.38426, 48.20593], STEPH: [16.3731, 48.2085],
+      WIEN_HBF: [16.3767, 48.1858], HOTEL: [16.3839827, 48.1817738], STEPH: [16.3731, 48.2085],
       GRABEN: [16.3697, 48.2087], HOFBURG: [16.3658, 48.2065], HUNDERT: [16.3941, 48.207],
       WIEN_MITTE: [16.3855, 48.2079], KETTEN: [16.3587, 48.1965], NASCH: [16.3615, 48.1974],
       SECESSION: [16.3658, 48.2005], MQ: [16.358, 48.203], RATHAUS: [16.356, 48.2108],
@@ -8884,9 +9074,10 @@ const COURSES = [
       ({ at, mode, long, via, overviewAfter });
     const geo = [
       [
-        M(P.ICN, 'stay'), M(P.FRA, 'plane', true, [], true), M(P.FRA, 'walk'),
-        M(P.FRA_RAIL, 'walk'), M(P.MAINZ_HBF, 'train', true), M(P.MAINZ_HBF, 'walk'),
-        M(P.MAINZ_HOTEL, 'walk'), M(P.MAINZ_HOTEL, 'stay'), M(P.MAINZ_OLD, 'walk'),
+        M(P.ICN, 'stay'), M(P.FRA, 'plane', true, [], true), M(P.FRA, 'stay'),
+        M(P.FRA, 'stay'), M(P.FRA_RAIL, 'walk'), M(P.MAINZ_HBF, 'train', true),
+        M(P.MAINZ_HBF, 'stay'), M(P.MAINZ_HOTEL), M(P.MAINZ_HOTEL, 'stay'),
+        M(P.MAINZ_OLD), M(P.MAINZ_OLD, 'stay'), M(P.MAINZ_HOTEL),
       ],
       [
         M(P.MAINZ_HOTEL, 'stay'), M(P.FRANKFURT_HBF, 'train', true), M(P.ROMER, 'subway'),
@@ -8926,16 +9117,16 @@ const COURSES = [
       ],
       [
         M(P.MUC_HOTEL, 'stay'), M(P.MUC_HBF, 'subway'), M(P.MUC_HBF, 'stay'), M(P.WIEN_HBF, 'train', true),
-        M(P.HOTEL, 'tram'), M(P.HOTEL, 'stay'), M(P.HOTEL, 'stay'), M(P.STEPH, 'subway'),
+        M(P.HOTEL), M(P.HOTEL, 'stay'), M(P.HOTEL, 'stay'), M(P.STEPH, 'subway'),
         M(P.STEPH, 'stay'), M(P.GRABEN), M(P.HOFBURG), M(P.HOFBURG, 'stay'), M(P.HOTEL, 'subway'),
       ],
       [
-        M(P.HOTEL, 'stay'), M(P.HUNDERT, 'tram'), M(P.HUNDERT, 'stay'), M(P.KETTEN, 'subway', false, [P.WIEN_MITTE]),
+        M(P.HOTEL, 'stay'), M(P.HUNDERT, 'subway', false, [P.WIEN_MITTE]), M(P.HUNDERT, 'stay'), M(P.KETTEN, 'subway', false, [P.WIEN_MITTE]),
         M(P.NASCH), M(P.NASCH, 'stay'), M(P.MQ, 'walk', false, [P.SECESSION]), M(P.RATHAUS),
         M(P.RATHAUS, 'stay'), M(P.HOTEL, 'tram'),
       ],
       [
-        M(P.HOTEL, 'stay'), M(P.BELVEDERE, 'tram'), M(P.BELVEDERE, 'stay'), M(P.BELVEDERE),
+        M(P.HOTEL, 'stay'), M(P.BELVEDERE), M(P.BELVEDERE, 'stay'), M(P.BELVEDERE),
         M(P.KHM, 'tram'), M(P.KHM, 'stay'), M(P.KHM, 'stay'), M(P.KHM, 'stay'), M(P.HOFBURG),
       ],
       [
@@ -8954,11 +9145,14 @@ const COURSES = [
       ],
       [
         M(P.HOTEL, 'stay'), M(P.HOTEL, 'stay'), M(P.STADTPARK, 'tram'), M(P.STADTPARK, 'stay'),
-        M(P.STEPH), M(P.GRABEN, 'stay'), M(P.HOTEL, 'subway'), M(P.WIEN_MITTE, 'tram'),
-        M(P.WIEN_MITTE, 'stay'), M(P.VIE, 'train', true), M(P.VIE, 'stay'), M(P.VIE, 'stay'),
-        M(P.VIE, 'stay'), M(P.ICN, 'plane', true),
+        M(P.STEPH), M(P.GRABEN, 'stay'), M(P.HOTEL, 'subway'), M(P.HOTEL, 'stay'),
+        M(P.WIEN_HBF), M(P.WIEN_HBF, 'stay'), M(P.VIE, 'train', true), M(P.VIE, 'stay'),
+        M(P.VIE, 'stay'), M(P.VIE, 'stay'), M(P.ICN, 'plane', true),
       ],
     ];
+
+    // 4인 확정안에서는 부다페스트 임시 일정을 제외한다.
+    geo.splice(11, 1);
 
     course9.days.forEach((day, index) => {
       const entryTimeline = day.entryAirport && Array.isArray(day.entryAirport.timeline)

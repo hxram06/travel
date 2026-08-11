@@ -18,11 +18,6 @@
   const $ = (id) => document.getElementById(id);
   const landing = $('landing');
   const mapView = $('map-view');
-  const course9Entry = $('course9-entry');
-  const course9EntryChoice = $('course9-entry-choice');
-  const course9LodgingSurvey = $('course9-lodging-survey');
-  const course9LodgingCards = $('course9-lodging-cards');
-  const course9SurveyStatus = $('course9-survey-status');
   const courseGrid = $('course-grid');
   const panelEl = $('panel');
   const panelInner = $('panel-inner');
@@ -37,29 +32,6 @@
   const statsDialog = $('stats-dialog');
   const statsDialogBody = $('stats-dialog-body');
   let operatorCourseForStats = null;
-  let course9EntryCourse = null;
-  let currentLodgingVote = null;
-
-  const LODGING_OPTIONS = [
-    {
-      id: 'holiday-inn-leuchtenbergring',
-      name: 'Holiday Inn Munich – Leuchtenbergring',
-      area: 'Leuchtenbergring · 청결·정숙성과 가격 우선',
-      total: 700000,
-      perPerson: 233333,
-      room: '스탠다드룸 2개 · 2명 + 1명 배정',
-      terms: '확인 총액 약 700,000원 · 예약 전 최종 조건 재확인',
-      exactAddress: true,
-      distances: [
-        ['Leuchtenbergring S-Bahn', '약 250m · 도보 3–4분'],
-        ['뮌헨 중앙역', '직통 S-Bahn 약 10–12분 · 전체 16–20분'],
-        ['Marienplatz', '직통 S-Bahn 약 7분 · 전체 12–15분'],
-        ['Viktualienmarkt', 'Marienplatz 하차 후 도보 포함 약 16–20분'],
-        ['Ostbahnhof', 'S-Bahn 1정거장 · 약 3분'],
-        ['구시가지 야간 귀가', 'Marienplatz에서 S-Bahn + 도보 약 15분'],
-      ],
-    },
-  ];
 
   const wait = (ms) => new Promise((r) => setTimeout(r, ms));
   const escapeHtml = (value) => String(value ?? '')
@@ -68,105 +40,6 @@
     .replaceAll('>', '&gt;')
     .replaceAll('"', '&quot;')
     .replaceAll("'", '&#039;');
-
-  function formatWon(value) {
-    return `${Number(value).toLocaleString('ko-KR')}원`;
-  }
-
-  function renderLodgingSurveyCards() {
-    if (!course9LodgingCards) return;
-    const lodgingLocked = LODGING_OPTIONS.length === 1;
-    course9LodgingCards.innerHTML = LODGING_OPTIONS.map((option, index) => {
-      const selected = lodgingLocked || currentLodgingVote === option.id;
-      return `<article class="course9-lodging-card${selected ? ' is-selected' : ''}" data-lodging-option="${option.id}">
-        <div class="course9-lodging-card-head">
-          <span class="course9-lodging-index">0${index + 1}</span>
-          <div><h3>${escapeHtml(option.name)}</h3><p>${escapeHtml(option.area)}</p></div>
-          ${selected ? `<span class="course9-lodging-selected">${lodgingLocked ? '확정' : '내 선택'}</span>` : ''}
-        </div>
-        <div class="course9-lodging-price">
-          <div><span>4박 총액</span><strong>${formatWon(option.total)}</strong></div>
-          <div><span>인당 총액</span><strong>${formatWon(option.perPerson)}</strong></div>
-        </div>
-        <div class="course9-lodging-room">
-          <strong>${escapeHtml(option.room)}</strong>
-          <span>${escapeHtml(option.terms)}</span>
-        </div>
-        <div class="course9-distance-list" aria-label="주요 장소까지 이동 거리">
-          ${option.distances.map(([place, distance]) => `<div><span>${escapeHtml(place)}</span><strong>${escapeHtml(distance)}</strong></div>`).join('')}
-        </div>
-        ${option.exactAddress ? '' : '<p class="course9-distance-caveat">공개 지도 핀 기준 예상</p>'}
-        ${lodgingLocked
-          ? '<button class="course9-vote-button" type="button" disabled aria-pressed="true">최종 선택한 숙소</button>'
-          : `<button class="course9-vote-button" type="button" data-lodging-vote="${option.id}"${selected ? ' aria-pressed="true"' : ' aria-pressed="false"'}>${selected ? '선택됨 · 다른 숙소로 변경 가능' : '이 숙소에 투표'}</button>`}
-      </article>`;
-    }).join('');
-
-    course9LodgingCards.querySelectorAll('[data-lodging-vote]').forEach((button) => {
-      button.addEventListener('click', () => saveLodgingSurveyVote(button.dataset.lodgingVote));
-    });
-  }
-
-  async function saveLodgingSurveyVote(optionId) {
-    if (!LODGING_OPTIONS.some((option) => option.id === optionId)) return;
-    const buttons = course9LodgingCards.querySelectorAll('[data-lodging-vote]');
-    buttons.forEach((button) => { button.disabled = true; });
-    course9SurveyStatus.textContent = '선택을 저장하는 중…';
-    try {
-      const feedback = await waitForFeedbackApi();
-      await feedback.saveLodgingVote(9, optionId);
-      currentLodgingVote = optionId;
-      renderLodgingSurveyCards();
-      const selected = LODGING_OPTIONS.find((option) => option.id === optionId);
-      course9SurveyStatus.textContent = `${selected.name}에 투표했습니다. 같은 기기에서는 언제든 선택을 바꿀 수 있어요.`;
-    } catch (error) {
-      console.error('숙소 설문 저장 오류', error);
-      buttons.forEach((button) => { button.disabled = false; });
-      course9SurveyStatus.textContent = '저장하지 못했습니다. 연결 상태를 확인한 뒤 다시 눌러주세요.';
-    }
-  }
-
-  async function showLodgingSurvey() {
-    course9EntryChoice.classList.add('hidden');
-    course9LodgingSurvey.classList.remove('hidden');
-    course9Entry.scrollTop = 0;
-    currentLodgingVote = null;
-    if (LODGING_OPTIONS.length === 1) {
-      currentLodgingVote = LODGING_OPTIONS[0].id;
-      course9SurveyStatus.textContent = '여행 일정에 반영된 최종 숙소입니다.';
-      renderLodgingSurveyCards();
-      return;
-    }
-    course9SurveyStatus.textContent = '이전에 선택한 숙소를 확인하는 중…';
-    renderLodgingSurveyCards();
-    try {
-      const feedback = await waitForFeedbackApi();
-      currentLodgingVote = await feedback.loadLodgingVote(9);
-      renderLodgingSurveyCards();
-      course9SurveyStatus.textContent = currentLodgingVote
-        ? '이전에 고른 숙소를 표시했습니다. 다른 후보를 누르면 선택이 바뀝니다.'
-        : '아직 선택하지 않았습니다.';
-    } catch (error) {
-      course9SurveyStatus.textContent = '설문 연결이 늦어지고 있습니다. 잠시 후 투표 버튼을 눌러주세요.';
-    }
-  }
-
-  function showCourse9Entry(course) {
-    course9EntryCourse = course;
-    currentLodgingVote = null;
-    landing.classList.add('hidden');
-    mapView.classList.add('hidden');
-    course9Entry.classList.remove('hidden');
-    course9EntryChoice.classList.remove('hidden');
-    course9LodgingSurvey.classList.add('hidden');
-    course9SurveyStatus.textContent = '';
-    course9Entry.scrollTop = 0;
-  }
-
-  function openCourse9Trip() {
-    if (!course9EntryCourse) return;
-    openCourse(course9EntryCourse);
-  }
 
   function feedbackIcon(type) {
     const path = type === 'like'
@@ -194,15 +67,21 @@
   }
 
   // ---------- 랜딩 ----------
-  function renderLanding() {
+  function renderLanding(courses = COURSES, options = {}) {
+    const { shared = false } = options;
+    landing.classList.toggle('is-shared', shared);
+    const landingTitle = document.querySelector('.landing-header h1');
     const landingSub = document.querySelector('.landing-sub');
+    if (landingTitle) landingTitle.textContent = shared ? '공유된 여행 코스' : '여행 계획';
     if (landingSub) {
-      const totalDays = COURSES.reduce((sum, course) => sum + course.days.length, 0);
-      landingSub.textContent = `${COURSES.length}개의 코스 · 총 ${totalDays}일의 여정`;
+      const totalDays = courses.reduce((sum, course) => sum + course.days.length, 0);
+      landingSub.textContent = shared
+        ? `${courses.length}개의 공유 코스 · ${totalDays}일의 여정`
+        : `${courses.length}개의 코스 · 총 ${totalDays}일의 여정`;
     }
 
     courseGrid.innerHTML = '';
-    COURSES.forEach((course) => {
+    courses.forEach((course) => {
       const card = document.createElement('article');
       card.className = 'course-card';
 
@@ -236,6 +115,7 @@
         <h3>${course.nameKo}</h3>
         <div class="course-sub">${course.subtitle}</div>
         <div class="course-meta">${course.period} · ${course.nights}</div>
+        ${course.party ? `<div class="course-party">${escapeHtml(course.party)}</div>` : ''}
         <div class="course-cities">${course.cities.join(' · ')}</div>
       `;
 
@@ -307,7 +187,7 @@
     });
   }
 
-  function renderCourseStats(course, stats, lodgingStats = null) {
+  function renderCourseStats(course, stats) {
     const stepStats = new Map(stats.steps.map((step) => [
       `course-${course.id}-day-${step.dayNumber}-step-${step.timelineIndex}`,
       step,
@@ -321,26 +201,7 @@
     }).filter(({ items }) => items.length);
     const approval = stats.total ? Math.round((stats.likes / stats.total) * 100) : 0;
 
-    const lodgingSummary = course.id === 9 && lodgingStats ? `
-      <section class="stats-lodging">
-        <div class="stats-lodging-head">
-          <div><span>숙소 설문</span><strong>${lodgingStats.voters.toLocaleString('ko-KR')}명 참여</strong></div>
-          <small>응답자는 선택을 변경할 수 있으며 가장 최근 선택만 집계됩니다.</small>
-        </div>
-        <div class="stats-lodging-options">
-          ${LODGING_OPTIONS.map((option) => {
-            const votes = lodgingStats.options[option.id] || 0;
-            const rate = lodgingStats.voters ? Math.round((votes / lodgingStats.voters) * 100) : 0;
-            return `<div class="stats-lodging-row">
-              <div><strong>${escapeHtml(option.name)}</strong><span>${votes}표 · ${rate}%</span></div>
-              <span class="stats-row-bar"><i style="width:${rate}%"></i></span>
-            </div>`;
-          }).join('')}
-        </div>
-      </section>` : '';
-
     statsDialogBody.innerHTML = `
-      ${lodgingSummary}
       <div class="stats-summary">
         <div><span>평가</span><strong>${stats.total.toLocaleString('ko-KR')}</strong></div>
         <div><span>참여자</span><strong>${stats.voters.toLocaleString('ko-KR')}</strong></div>
@@ -382,11 +243,8 @@
     else statsDialog.setAttribute('open', '');
     try {
       const feedback = await waitForFeedbackApi();
-      const [stats, lodgingStats] = await Promise.all([
-        feedback.loadCourseStats(course.id),
-        course.id === 9 ? feedback.loadLodgingSurveyStats(course.id) : Promise.resolve(null),
-      ]);
-      renderCourseStats(course, stats, lodgingStats);
+      const stats = await feedback.loadCourseStats(course.id);
+      renderCourseStats(course, stats);
     } catch (error) {
       console.error('코스 통계 조회 오류', error);
       statsDialogBody.innerHTML = `<div class="stats-empty"><strong>통계를 불러오지 못했습니다.</strong><span>${escapeHtml(error.message)}</span></div>`;
@@ -445,7 +303,6 @@
     if (routeLegend) routeLegend.classList.toggle('hidden', course.id !== 9);
 
     landing.classList.add('hidden');
-    course9Entry.classList.add('hidden');
     mapView.classList.remove('hidden');
     isPanelCollapsed = false;
     panelOffset = 0;
@@ -1732,7 +1589,7 @@
           isSharedMode = true;
           document.title = sharedCourse.nameKo; // 공유 시 해당 일정 제목만 표시
           btnBack.style.display = 'none'; // 목록으로 버튼 숨김
-          if (sharedCourse.id === 9) showCourse9Entry(sharedCourse);
+          if (sharedCourse.id === 9) renderLanding([sharedCourse], { shared: true });
           else openCourse(sharedCourse);
           return;
         }
@@ -2009,15 +1866,6 @@
     syncMobileStoryMode();
     updatePanelTransform();
   });
-
-  $('course9-view-trip').addEventListener('click', openCourse9Trip);
-  $('course9-open-survey').addEventListener('click', showLodgingSurvey);
-  $('course9-survey-back').addEventListener('click', () => {
-    course9LodgingSurvey.classList.add('hidden');
-    course9EntryChoice.classList.remove('hidden');
-    course9Entry.scrollTo({ top: 0, behavior: 'smooth' });
-  });
-  $('course9-survey-trip').addEventListener('click', openCourse9Trip);
 
   initApp();
 })();
