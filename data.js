@@ -5607,8 +5607,8 @@ const COURSES = [
     "id": 9,
     "nameKo": "독일 서부 · 뮌헨 거점 당일치기 · 빈",
     "subtitle": "라인강에서 바이에른과 잘츠부르크를 깊게 누빈 뒤 합스부르크 수도까지",
-    "period": "2027년 1월 20일 ~ 1월 31일",
-    "nights": "11박 12일",
+    "period": "2027년 1월 20일 ~ 2월 1일",
+    "nights": "12박 13일",
     "cities": [
       "마인츠",
       "프랑크푸르트",
@@ -5616,6 +5616,7 @@ const COURSES = [
       "하이델베르크",
       "뮌헨",
       "잘츠부르크",
+      "부다페스트",
       "빈"
     ],
     "coverSpot": "qa_c9_cover_munich_base",
@@ -7460,7 +7461,7 @@ const COURSES = [
           { "time": "17:00–18:00", "title": "이른 저녁 자유시간", "detail": "공연을 보지 않으면 시간 제한 없이 연장", "kind": "free" },
           { "time": "공연 80분 전", "title": "선택: 국립오페라 입석 준비", "detail": "1/30 공식 편성과 시작 시각 공개 뒤 확정", "kind": "buffer" },
           { "time": "저녁", "title": "선택: 공연 관람 또는 완전 자유시간", "detail": "공연 미선택 시 카페·호이리게·야경 중 당일 선택", "kind": "free" },
-          { "time": "22:00", "title": "숙소 복귀·짐 정리", "detail": "다음 날 오전 시내 일정과 19:15 출국 준비", "kind": "buffer" }
+          { "time": "22:00", "title": "숙소 복귀·짐 정리", "detail": "다음 날 05:45 부다페스트 출발 준비", "kind": "buffer" }
         ],
         "pois": [
           {
@@ -7614,6 +7615,118 @@ const COURSES = [
       },
       {
         "day": 12,
+        "cityKo": "부다페스트",
+        "cityEn": "Budapest",
+        "coords": [
+          19.0402,
+          47.4979
+        ],
+        "moveType": "ground",
+        "isTrip": true,
+        "baseCity": "빈",
+        "baseCityEn": "Vienna",
+        "baseCoords": [
+          16.38426,
+          48.20593
+        ],
+        "lodging": {
+          "name": "Eurostars Embassy Vienna",
+          "coords": [
+            16.38426,
+            48.20593
+          ],
+          "note": "Landstrasser Hauptstrasse 120 · 빈 5박째"
+        },
+        "transport": {
+          "mode": "train",
+          "label": "Wien Hbf → Budapest-Keleti · Railjet/EuroCity 약 2시간 40분 · 같은 날 빈 복귀"
+        },
+        "via": [
+          [
+            16.38426,
+            48.20593
+          ],
+          [
+            16.98,
+            47.94
+          ],
+          [
+            17.635,
+            47.687
+          ],
+          [
+            19.0402,
+            47.4979
+          ]
+        ],
+        "title": "1/31(일) · 임시안: 부다페스트 당일치기",
+        "am": "이른 아침 Wien Hbf에서 부다페스트행 Railjet 또는 EuroCity를 타고 국회의사당과 다뉴브 강변부터 본다.",
+        "pm": "세체니 다리를 건너 부다 왕궁 지구·어부의 요새·마차시 성당 외관을 걷고, 점심과 카페는 현장에서 고른다.",
+        "ev": "해 질 무렵 페스트 지구로 돌아와 성 이슈트반 대성당과 다뉴브 야경을 본 뒤 저녁 열차로 빈 숙소에 복귀한다.",
+        "tip": "이 일정은 새로 생긴 하루의 임시안이다. 2027년 국제열차 시간표가 공개되면 실제 첫차·막차와 공사 여부를 다시 맞추고, 왕복 열차 좌석을 함께 지정한다. 다음 날 19:15 출국이므로 귀환 목표는 22:00 이전으로 잡는다.",
+        "timeline": [
+          { "time": "05:45", "title": "호텔 출발", "detail": "짐은 빈 숙소에 두고 여권·보조배터리·방한용품만 휴대", "kind": "travel" },
+          { "time": "06:10", "title": "Wien Hbf 도착", "detail": "승강장과 열차 편성 확인 · 아침 식사는 역에서 간단히 해결 가능", "kind": "buffer" },
+          { "time": "06:40 전후", "title": "부다페스트행 열차 출발", "detail": "Railjet/EuroCity 목표 시각 · 2027년 시간표 공개 뒤 확정", "kind": "travel" },
+          { "time": "09:20 전후", "title": "Budapest-Keleti 도착", "detail": "M2로 Kossuth Lajos tér 방면 이동", "kind": "travel" },
+          { "time": "09:50–10:40", "title": "헝가리 국회의사당 외관·다뉴브 신발 추모물", "detail": "강변 도보 약 1.2km · 내부 투어는 임시안에서 제외", "kind": "visit" },
+          { "time": "10:40–11:20", "title": "트램 2·도보로 세체니 다리 이동", "detail": "다뉴브 강변과 부다 언덕 조망", "kind": "travel" },
+          { "time": "11:20–11:50", "title": "세체니 다리 건너 부다 지구로", "detail": "도보 약 500m · 강풍이 강하면 대중교통으로 우회", "kind": "visit" },
+          { "time": "11:50–13:30", "title": "부다 왕궁·어부의 요새·마차시 성당 외관", "detail": "언덕 구간은 버스 16번 또는 도보 중 날씨에 맞춰 선택", "kind": "visit" },
+          { "time": "13:30–14:50", "title": "점심·카페 자유시간", "detail": "왕궁 지구 또는 페스트로 내려온 뒤 80분 확보", "kind": "free" },
+          { "time": "14:50–15:30", "title": "페스트 지구로 복귀", "detail": "버스 16번·도보 조합으로 Deák Ferenc tér 이동", "kind": "travel" },
+          { "time": "15:30–16:20", "title": "성 이슈트반 대성당·주변 산책", "detail": "외관 중심 · 실내 입장은 현장 대기시간이 짧을 때만", "kind": "visit" },
+          { "time": "16:20–17:40", "title": "다뉴브 야경·이른 저녁 자유시간", "detail": "일몰 뒤 국회의사당 조명을 보고 식당은 현장에서 선택", "kind": "free" },
+          { "time": "17:40–18:15", "title": "Budapest-Keleti 이동", "detail": "M2 이용 · 출발 25분 전 역 도착 목표", "kind": "travel" }
+        ],
+        "returnTimeline": [
+          { "time": "18:40 전후", "title": "빈행 열차 출발", "detail": "저녁 직통편 목표 · 2027년 시간표 공개 뒤 확정", "kind": "travel" },
+          { "time": "21:20 전후", "title": "Wien Hbf 도착", "detail": "지연 시 U-Bahn 막차보다 택시·호출차를 우선 검토", "kind": "travel" },
+          { "time": "22:00 전후", "title": "Eurostars Embassy 복귀", "detail": "다음 날 늦은 출국이므로 샤워 후 충분히 휴식", "kind": "buffer" }
+        ],
+        "returnEv": "저녁 열차로 빈에 돌아와 Eurostars Embassy에서 5번째 밤을 보낸다.",
+        "returnTip": "국제열차 지연에 대비해 18시대 직통편을 우선한다. 20시 이후 편은 귀환 예비편으로만 둔다.",
+        "photos": [
+          {
+            "spot": "qa_c5_d10_1",
+            "at": [
+              19.0457,
+              47.5071
+            ],
+            "cap": "헝가리 국회의사당",
+            "desc": "부다페스트 도착 후 가장 먼저 걷는 다뉴브 강변의 기준점으로, 맞은편 부다 언덕에서도 다시 조망한다."
+          },
+          {
+            "spot": "qa_c5_d10_0",
+            "at": [
+              19.0435,
+              47.4989
+            ],
+            "cap": "세체니 다리 야경",
+            "desc": "페스트와 부다를 연결하는 대표 보행 동선으로, 오후에는 다리를 건너고 해진 뒤 조명이 켜진 강변을 다시 본다."
+          },
+          {
+            "spot": "fishermans_bastion",
+            "at": [
+              19.0348,
+              47.5022
+            ],
+            "cap": "어부의 요새",
+            "desc": "부다 왕궁 지구에서 국회의사당과 페스트 시가지를 내려다보는 당일치기의 핵심 전망 지점이다."
+          },
+          {
+            "spot": "qa_c5_d11_0",
+            "at": [
+              19.0351,
+              47.5015
+            ],
+            "cap": "부다 왕궁 지구 골목",
+            "desc": "마차시 성당과 어부의 요새 사이를 잇는 조용한 옛 골목으로, 점심 전 산책의 속도를 늦추기 좋다."
+          }
+        ]
+      },
+      {
+        "day": 13,
         "cityKo": "빈",
         "cityEn": "Vienna",
         "coords": [
@@ -7650,10 +7763,10 @@ const COURSES = [
             48.1103
           ]
         ],
-        "title": "1/31(일) · 빈의 마지막 반나절과 직항 귀국",
+        "title": "2/1(월) · 빈의 마지막 반나절과 직항 귀국",
         "am": "아침을 먹고 체크아웃해 호텔에 짐을 맡긴다. 슈타트파르크에서 빈 구시가지로 걸으며 마지막 무료 산책을 한다.",
         "pm": "그라벤과 슈테판 대성당 주변에서 점심·카페 시간을 넉넉히 갖고 숙소에서 짐을 찾아 Wien Mitte로 이동한다.",
-        "ev": "15:37 CAT로 공항에 가 대한항공 체크인과 출국 수속을 마친 뒤 19:15 KE938 직항편으로 인천으로 출발한다. 2월 1일 월요일 14:15 인천공항 T2 도착이다.",
+        "ev": "15:37 CAT로 공항에 가 대한항공 체크인과 출국 수속을 마친 뒤 19:15 KE938 직항편으로 인천으로 출발한다. 2월 2일 화요일 14:15 인천공항 T2 도착이다.",
         "tip": "대한항공은 빈 공항 T3 체크인 구역을 이용하며 현재 안내 카운터는 302~308이다. 2027년에는 항공편 전광판을 우선 확인한다. CAT 시각은 시간표 개정 가능성이 있어 출발 전 공식 앱에서 재확인한다.",
         "timeline": [
           { "time": "08:30–09:45", "title": "아침 식사·최종 짐 정리", "detail": "온라인 체크인과 여권·수하물 확인", "kind": "buffer" },
@@ -7669,7 +7782,7 @@ const COURSES = [
           { "time": "16:00–18:15", "title": "수하물 위탁·보안검색·출국·식사 여유", "detail": "현재 대한항공 카운터 안내 302~308 · 전광판 우선", "kind": "buffer" },
           { "time": "18:20", "title": "탑승구 대기", "detail": "여권·탑승권 확인 후 탑승 안내 대기", "kind": "buffer" },
           { "time": "19:15", "title": "KE938 빈 출발", "detail": "대한항공 직항 · 인천까지 약 11시간", "kind": "travel" },
-          { "time": "2/1 14:15", "title": "인천국제공항 T2 도착", "detail": "수하물 수취 후 여행 종료", "kind": "travel" }
+          { "time": "2/2 14:15", "title": "인천국제공항 T2 도착", "detail": "수하물 수취 후 여행 종료", "kind": "travel" }
         ],
         "photos": [
           {
@@ -8761,6 +8874,10 @@ const COURSES = [
       SECESSION: [16.3658, 48.2005], MQ: [16.358, 48.203], RATHAUS: [16.356, 48.2108],
       BELVEDERE: [16.3813, 48.1912], KHM: [16.3602, 48.2033], SCHON: [16.3122, 48.1845],
       GLORIETTE: [16.3088, 48.1788], OPERA: [16.369, 48.2038], VIE: [16.5697, 48.1103],
+      STADTPARK: [16.3766, 48.2046], BUD_KELETI: [19.0839, 47.5001],
+      BUD_PARLIAMENT: [19.0457, 47.5071], BUD_CHAIN: [19.0435, 47.4989],
+      BUD_FISHERMAN: [19.0348, 47.5022], BUD_DEAK: [19.0558, 47.4979],
+      BUD_BASILICA: [19.0539, 47.5009], BUD_DANUBE: [19.0465, 47.5015],
       MUC_AIR: [11.775, 48.3537],
     };
     const M = (at, mode = 'walk', long = false, via = [], overviewAfter = false) =>
@@ -8827,9 +8944,19 @@ const COURSES = [
         M(P.OPERA, 'stay'), M(P.OPERA, 'stay'), M(P.HOTEL, 'tram'),
       ],
       [
-        M(P.HOTEL, 'stay'), M(P.HOTEL, 'stay'), M(P.WIEN_MITTE, 'tram'), M(P.WIEN_MITTE, 'stay'),
-        M(P.VIE, 'train', true), M(P.VIE, 'walk'), M(P.VIE, 'stay'), M(P.VIE, 'stay'),
-        M(P.VIE, 'stay'), M(P.MUC_AIR, 'plane', true), M(P.MUC_AIR, 'stay'), M(P.ICN, 'plane', true),
+        M(P.HOTEL, 'stay'), M(P.WIEN_HBF, 'tram'),
+        M(P.BUD_KELETI, 'train', true, [[16.98, 47.94], [17.635, 47.687]]), M(P.BUD_KELETI, 'stay'),
+        M(P.BUD_PARLIAMENT, 'subway'), M(P.BUD_CHAIN, 'tram'), M(P.BUD_CHAIN),
+        M(P.BUD_FISHERMAN, 'bus'), M(P.BUD_FISHERMAN, 'stay'), M(P.BUD_DEAK, 'bus'),
+        M(P.BUD_BASILICA), M(P.BUD_DANUBE, 'stay'), M(P.BUD_KELETI, 'subway'),
+        M(P.BUD_KELETI, 'stay'), M(P.WIEN_HBF, 'train', true, [[17.635, 47.687], [16.98, 47.94]]),
+        M(P.HOTEL, 'tram'),
+      ],
+      [
+        M(P.HOTEL, 'stay'), M(P.HOTEL, 'stay'), M(P.STADTPARK, 'tram'), M(P.STADTPARK, 'stay'),
+        M(P.STEPH), M(P.GRABEN, 'stay'), M(P.HOTEL, 'subway'), M(P.WIEN_MITTE, 'tram'),
+        M(P.WIEN_MITTE, 'stay'), M(P.VIE, 'train', true), M(P.VIE, 'stay'), M(P.VIE, 'stay'),
+        M(P.VIE, 'stay'), M(P.ICN, 'plane', true),
       ],
     ];
 
