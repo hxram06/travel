@@ -2550,6 +2550,54 @@ const PHOTOS = {
     "title": "Korean Air Boeing 787-9 HL8085",
     "source": "https://commons.wikimedia.org/wiki/File:Korean_Air_Boeing_787-9_HL8085.jpg",
     "credit": "BriYYZ · CC BY-SA 2.0"
+  },
+  "c8_strasbourg_cathedral": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Cathedrale_Notre-Dame-de-Strasbourg.jpg?width=1600",
+    "title": "스트라스부르 노트르담 대성당 야경",
+    "source": "https://commons.wikimedia.org/wiki/File:Cathedrale_Notre-Dame-de-Strasbourg.jpg",
+    "credit": "Marsher123 · CC0 1.0"
+  },
+  "c8_strasbourg_petite_france": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Strasbourg%2C_Petite_France.jpg?width=1600",
+    "title": "스트라스부르 쁘띠 프랑스 운하",
+    "source": "https://commons.wikimedia.org/wiki/File:Strasbourg,_Petite_France.jpg",
+    "credit": "Pierre Blaché · CC0 1.0"
+  },
+  "c8_colmar_petite_venise": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Colmar-Petit-Venise.jpg?width=1600",
+    "title": "콜마르 쁘띠 베니스",
+    "source": "https://commons.wikimedia.org/wiki/File:Colmar-Petit-Venise.jpg",
+    "credit": "Snowdog · Public domain"
+  },
+  "c8_colmar_pfister_house": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Maison_Pfister_(Colmar).jpg?width=1600",
+    "title": "콜마르 피스터 하우스",
+    "source": "https://commons.wikimedia.org/wiki/File:Maison_Pfister_(Colmar).jpg",
+    "credit": "Gzen92 · CC BY-SA 4.0"
+  },
+  "c8_lauterbrunnen_winter": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Lauterbrunnen_in_winter.jpg?width=1600",
+    "title": "겨울 라우터브루넨",
+    "source": "https://commons.wikimedia.org/wiki/File:Lauterbrunnen_in_winter.jpg",
+    "credit": "Kenneth Barclay · Public domain"
+  },
+  "c8_lauterbrunnen_icefall": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Waterfall_icicles_-_Eiszapfenkaskade_Staubbachfall_-_Lauterbrunnen_BE_-_Winter_2020_03_(cropped).jpg?width=1600",
+    "title": "겨울 슈타우프바흐 폭포의 빙벽",
+    "source": "https://commons.wikimedia.org/wiki/File:Waterfall_icicles_-_Eiszapfenkaskade_Staubbachfall_-_Lauterbrunnen_BE_-_Winter_2020_03_(cropped).jpg",
+    "credit": "PantaRhei · CC BY-SA 4.0"
+  },
+  "c8_milan_sforza_castle": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Milano%2C_Castello_Sforzesco%2C_front.JPG?width=1600",
+    "title": "밀라노 스포르체스코성 정면",
+    "source": "https://commons.wikimedia.org/wiki/File:Milano,_Castello_Sforzesco,_front.JPG",
+    "credit": "Palickap · CC BY-SA 4.0"
+  },
+  "c8_malpensa_terminal": {
+    "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Milano_malpensa_terminal_1.JPG?width=1600",
+    "title": "밀라노 말펜사공항 터미널 1",
+    "source": "https://commons.wikimedia.org/wiki/File:Milano_malpensa_terminal_1.JPG",
+    "credit": "Trg · CC BY-SA 3.0"
   }
   // COURSE9_RICH_PHOTOS_END
 };
