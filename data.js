@@ -4903,7 +4903,7 @@ const COURSES = [
             8.2580625,
             49.9989375
           ],
-          "note": "Binger Strasse 21 · 객실 2개: 더블/트윈 1실 + 싱글 1실"
+          "note": "Binger Strasse 21 · 트윈룸 2실 · 객실당 싱글침대 2개"
         },
         "transport": {
           "mode": "plane",
@@ -4933,7 +4933,7 @@ const COURSES = [
           "timeline": [
             { "time": "08:00", "title": "인천공항 T2 도착", "detail": "대한항공 수하물 위탁·보안검색·출국 수속", "kind": "buffer" },
             { "time": "11:25", "title": "KE945 인천 출발", "detail": "대한항공 직항 · 비행 13시간 55분", "kind": "travel" },
-            { "time": "17:20", "title": "프랑크푸르트공항 T3 도착", "detail": "입국심사와 3인 위탁수하물 수취", "kind": "travel" },
+            { "time": "17:20", "title": "프랑크푸르트공항 T3 도착", "detail": "입국심사와 4인 위탁수하물 수취", "kind": "travel" },
             { "time": "17:20–18:35", "title": "입국·수하물 수취", "detail": "출구로 나온 뒤 T1·Sky Line 표지판 확인", "kind": "buffer" },
             { "time": "18:35–19:00", "title": "T3에서 T1 지역열차역 이동", "detail": "무료 Sky Line 이용 · 승강장 이동 여유 포함", "kind": "travel" },
             { "time": "19:00–19:30 전후", "title": "마인츠행 첫 S8/RE 탑승", "detail": "고정 예매 없이 가장 먼저 오는 직통편 이용 · 약 25~35분", "kind": "travel" },
@@ -4967,7 +4967,7 @@ const COURSES = [
         "tip": "Mainz Hbf 도착이 21:00을 넘으면 산책은 생략한다. 첫날 일정은 모두 무료 야외 구간이라 항공 지연에 따라 줄여도 손해가 없다.",
         "timeline": [
           { "time": "19:40–20:05", "title": "Mainz Hbf 도착·숙소 이동", "detail": "Binger Strasse 방향 도보 약 3분", "kind": "travel" },
-          { "time": "20:00–20:20", "title": "IntercityHotel Mainz 체크인", "detail": "3박 · 더블/트윈 1실 + 싱글 1실 · 방 상태 확인", "kind": "buffer" },
+          { "time": "20:00–20:20", "title": "IntercityHotel Mainz 체크인", "detail": "3박 · 트윈룸 2실 · 객실당 싱글침대 2개 · 방 상태 확인", "kind": "buffer" },
           { "time": "20:20–21:30", "title": "저녁 식사 자유시간", "detail": "숙소·Schillerplatz 사이에서 영업 중인 곳을 현장에서 선택", "kind": "free" },
           { "time": "21:30–22:10", "title": "슐러플라츠·마인츠 돔 야간 산책", "detail": "Fastnachtsbrunnen → Schillerstraße → 돔 외관 · 도보 약 2km", "kind": "visit" },
           { "time": "22:10–22:25", "title": "숙소 복귀", "detail": "다음 날 일정 전 샤워와 휴식", "kind": "travel" }
@@ -5154,7 +5154,7 @@ const COURSES = [
             8.2580625,
             49.9989375
           ],
-          "note": "Binger Strasse 21 · 객실 2개: 더블/트윈 1실 + 싱글 1실"
+          "note": "Binger Strasse 21 · 트윈룸 2실 · 객실당 싱글침대 2개"
         },
         "transport": {
           "mode": "train",
@@ -5310,7 +5310,7 @@ const COURSES = [
             8.2580625,
             49.9989375
           ],
-          "note": "Binger Strasse 21 · 객실 2개: 더블/트윈 1실 + 싱글 1실"
+          "note": "Binger Strasse 21 · 트윈룸 2실 · 객실당 싱글침대 2개"
         },
         "transport": {
           "mode": "train",
@@ -6223,7 +6223,7 @@ const COURSES = [
             16.38426,
             48.20593
           ],
-          "note": "Landstrasser Hauptstrasse 120 · 트리플룸: 대형 더블 1 + 정식 싱글 1"
+          "note": "Landstrasser Hauptstrasse 120 · 트윈룸 2실 · 객실당 싱글침대 2개"
         },
         "transport": {
           "mode": "train",
@@ -6273,7 +6273,7 @@ const COURSES = [
           { "time": "15:00–16:15", "title": "Graben·Peterskirche·Kohlmarkt·Michaelerplatz", "detail": "보행자 거리로 이어지는 도보 동선", "kind": "visit" },
           { "time": "16:15–17:15", "title": "호프부르크 안뜰·Heldenplatz·Burggarten", "detail": "실내 유료 관람 없이 외부 중심", "kind": "visit" },
           { "time": "17:15–18:45", "title": "카페·저녁 자유시간", "detail": "도심에서 90분 확보", "kind": "free" },
-          { "time": "18:45–19:15", "title": "U3로 숙소 복귀", "detail": "트리플룸 체크인 · 대형 더블 1 + 정식 싱글 1", "kind": "travel" }
+          { "time": "18:45–19:15", "title": "U3로 숙소 복귀", "detail": "트윈룸 2실 체크인 · 객실당 싱글침대 2개", "kind": "travel" }
         ],
         "photos": [
           {
@@ -6386,7 +6386,7 @@ const COURSES = [
             16.38426,
             48.20593
           ],
-          "note": "Landstrasser Hauptstrasse 120 · 트리플룸: 대형 더블 1 + 정식 싱글 1"
+          "note": "Landstrasser Hauptstrasse 120 · 트윈룸 2실 · 객실당 싱글침대 2개"
         },
         "transport": {
           "mode": "walk",
@@ -6534,7 +6534,7 @@ const COURSES = [
             16.38426,
             48.20593
           ],
-          "note": "Landstrasser Hauptstrasse 120 · 트리플룸: 대형 더블 1 + 정식 싱글 1"
+          "note": "Landstrasser Hauptstrasse 120 · 트윈룸 2실 · 객실당 싱글침대 2개"
         },
         "transport": {
           "mode": "walk",
@@ -6681,7 +6681,7 @@ const COURSES = [
             16.38426,
             48.20593
           ],
-          "note": "Landstrasser Hauptstrasse 120 · 트리플룸: 대형 더블 1 + 정식 싱글 1"
+          "note": "Landstrasser Hauptstrasse 120 · 트윈룸 2실 · 객실당 싱글침대 2개"
         },
         "transport": {
           "mode": "walk",
@@ -6899,7 +6899,7 @@ const COURSES = [
             16.38426,
             48.20593
           ],
-          "note": "Landstrasser Hauptstrasse 120 · 트리플룸: 대형 더블 1 + 정식 싱글 1 · 5박째"
+          "note": "Landstrasser Hauptstrasse 120 · 트윈룸 2실 · 객실당 싱글침대 2개 · 5박째"
         },
         "transport": {
           "mode": "train",
@@ -7007,7 +7007,7 @@ const COURSES = [
             16.38426,
             48.20593
           ],
-          "note": "Landstrasser Hauptstrasse 120 · 트리플룸: 대형 더블 1 + 정식 싱글 1"
+          "note": "Landstrasser Hauptstrasse 120 · 트윈룸 2실 · 객실당 싱글침대 2개"
         },
         "transport": {
           "mode": "plane",
@@ -7672,7 +7672,8 @@ const COURSES = [
     course9.subtitle = '4명이 라인강에서 바이에른·잘츠부르크를 거쳐 빈까지 이동하는 겨울 여행';
     course9.period = '2027년 2월 10일 ~ 2월 22일';
     course9.nights = '12박 13일';
-    course9.party = '4인 여행 · 마인츠 3박 · 뮌헨 4박 · 빈 5박';
+    course9.party = '4인 확정 · 마인츠 3박 · 뮌헨 4박 · 빈 5박';
+    course9.partyConfirmed = true;
     course9.cities = course9.cities.filter((city) => city !== '부다페스트');
     course9.costs = {
       travelers: 4,
@@ -7717,10 +7718,6 @@ const COURSES = [
       return next
         .replaceAll('Eurostars Embassy Vienna', 'B&B Hotel Wien-Hbf')
         .replaceAll('Eurostars Embassy', 'B&B Hotel Wien-Hbf')
-        .replaceAll('입국심사와 3인 위탁수하물 수취', '입국심사와 4인 위탁수하물 수취')
-        .replaceAll('더블/트윈 1실 + 싱글 1실', '트윈룸 2개 · 객실당 싱글침대 2개')
-        .replaceAll('트리플룸: 대형 더블 1 + 정식 싱글 1', '트윈룸 2개 · 객실당 싱글침대 2개')
-        .replaceAll('트리플룸 체크인 · 대형 더블 1 + 정식 싱글 1', '트윈룸 2개 체크인 · 객실당 싱글침대 2개')
         .replaceAll('2월 2일 화요일', '2월 22일 월요일');
     };
     const rewrite = (value) => {
