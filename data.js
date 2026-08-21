@@ -7659,7 +7659,7 @@ const COURSES = [
   },
 ];
 
-// 코스9 확정안: 4인 · 2027년 2월 10~21일 · 마인츠 3박 / 뮌헨 4박 / 빈 4박.
+// 코스9 확정안: 4인 · 2027년 2월 10~22일 · 마인츠 3박 / 뮌헨 4박 / 빈 5박.
 // 이전 부다페스트 임시안과 사진 원본은 위 데이터에 보존하고 실제 일정 배열에서만 제외한다.
 {
   const course9 = COURSES.find((course) => course.id === 9);
@@ -7670,18 +7670,32 @@ const COURSES = [
     const VIENNA_HOTEL = [16.3839827, 48.1817738];
 
     course9.subtitle = '4명이 라인강에서 바이에른·잘츠부르크를 거쳐 빈까지 이동하는 겨울 여행';
-    course9.period = '2027년 2월 10일 ~ 2월 21일';
-    course9.nights = '11박 12일';
-    course9.party = '4인 여행 · 마인츠 3박 · 뮌헨 4박 · 빈 4박 · 전 도시 트윈룸 2개';
+    course9.period = '2027년 2월 10일 ~ 2월 22일';
+    course9.nights = '12박 13일';
+    course9.party = '4인 여행 · 마인츠 3박 · 뮌헨 4박 · 빈 5박';
     course9.cities = course9.cities.filter((city) => city !== '부다페스트');
     course9.costs = {
       travelers: 4,
-      airfareTotal: 5194400,
-      airfarePerPerson: 1298600,
-      lodgingTotal: 2420400,
-      lodgingPerPerson: 605100,
-      airfareAndLodgingPerPerson: 1903700,
-      estimatedTotalPerPerson: 3763000,
+      airfareTotal: 5080000,
+      airfarePerPerson: 1270000,
+      lodgingTotal: 2334253,
+      lodgingPerPerson: 583563,
+      airfareAndLodgingPerPerson: 1853563,
+      estimatedTotalPerPerson: 3823000,
+      basis: '항공 인당 127만원 · 빈 숙소 1순위 후보 5박 981,315원 기준',
+    };
+    course9.lodgingCandidates = {
+      viennaPrimary: {
+        status: '1순위 후보 · 미예약',
+        name: 'Austria Trend Hotel Ananas',
+        dates: '2027년 2월 17일 ~ 2월 22일 · 5박',
+        room: '패밀리 스위트 1실 · 싱글침대 4개 · 52㎡ · 전용 욕실',
+        total: 981315,
+        perPerson: 245329,
+        conditions: '세금·서비스비 포함 · 환불 불가 · 조식 미포함',
+        access: 'U4 Pilgramgasse역 100m 이내 · 나슈마르크트 약 1km',
+        url: 'https://kr.trip.com/hotels/detail/?cityEnName=Vienna&cityId=651&hotelId=740164&checkIn=2027-02-17&checkOut=2027-02-22&adult=4&children=0&crn=1&curr=KRW&barcurr=KRW',
+      },
     };
 
     const budapestIndex = course9.days.findIndex((day) => day.cityKo === '부다페스트');
@@ -7743,9 +7757,9 @@ const COURSES = [
       } else {
         day.coords = [...VIENNA_HOTEL];
         day.lodging = {
-          name: 'B&B Hotel Wien-Hbf',
+          name: 'B&B Hotel Wien-Hbf (지도 동선 기준 임시)',
           coords: [...VIENNA_HOTEL],
-          note: 'Bloch-Bauer-Promenade 5 · 트윈룸 2개 · 객실당 싱글침대 2개 · 4박 총 1,067,462원',
+          note: 'Bloch-Bauer-Promenade 5 · 5박 동선 기준 · 1순위 후보 Austria Trend Hotel Ananas 확정 시 경로 교체',
         };
       }
     });
@@ -7806,18 +7820,61 @@ const COURSES = [
       const transit = (schonbrunnDay.timeline || []).find((item) => item.title.includes('Schönbrunn 이동'));
       if (transit) { transit.title = 'U1 → U4로 Schönbrunn 이동'; transit.detail = 'Wien Hbf → Karlsplatz 환승 → Schönbrunn'; }
       const last = (schonbrunnDay.timeline || []).find((item) => item.title === '숙소 복귀·짐 정리');
-      if (last) last.detail = '다음 날 늦은 출국 준비 · 위탁수하물과 여권 확인';
+      if (last) last.detail = '다음 날 빈 자유일을 위한 휴식 · 남은 유료 관람 후보 확인';
     }
+
+    const extraViennaDay = {
+      day: 12,
+      cityKo: '빈',
+      cityEn: 'Vienna',
+      coords: [...VIENNA_HOTEL],
+      moveType: 'stay',
+      isTrip: false,
+      baseCity: null,
+      baseCoords: null,
+      lodging: {
+        name: 'B&B Hotel Wien-Hbf (지도 동선 기준 임시)',
+        coords: [...VIENNA_HOTEL],
+        note: '빈 5박째 · 1순위 후보 Austria Trend Hotel Ananas 확정 시 전체 동선 교체',
+      },
+      transport: {
+        mode: 'walk',
+        label: '숙소 → 호프부르크·국립도서관 → 부르크가르텐·알베르티나 → 숙소',
+      },
+      via: [[16.3653, 48.2065], [16.3665, 48.2067], [16.3680, 48.2044]],
+      title: '2/21(일) · 호프부르크 내부와 빈 자유일',
+      am: '늦지 않게 도심으로 이동해 호프부르크의 황제 아파트·시시 박물관 또는 황실 보물관 가운데 한 곳을 선택해 관람한다. 전날까지의 피로가 크면 유료 관람을 줄이고 미하엘 광장과 영웅광장 산책으로 바꾼다.',
+      pm: '점심과 카페 자유시간을 충분히 가진 뒤 오스트리아 국립도서관 프룽크잘을 본다. 이후 부르크가르텐과 알베르티나 일대를 걷고, 실내 관람을 더 원하면 알베르티나 또는 레오폴트 미술관 중 한 곳만 선택한다.',
+      ev: '빈에서 보내는 마지막 완전한 저녁이다. 특정 음식점을 미리 고정하지 않고 도심에서 자유롭게 식사한 뒤 숙소로 돌아와 다음 날 출국용 짐과 면세 서류를 정리한다.',
+      tip: '일요일 운영시간과 2027년 예약 방식은 출발 전에 다시 확인한다. 이 날은 부다페스트 당일치기가 아니라 빈의 미관람 장소와 휴식을 위한 예비일이며, 앞선 일정이 밀리면 그대로 보충일로 사용한다.',
+      timeline: [
+        { time: '09:00–10:00', title: '아침 식사·출발 준비', detail: '숙소 주변에서 현장 선택 · 전날 피로에 따라 30분 조정', kind: 'free', at: [...VIENNA_HOTEL], mode: 'stay', long: false, via: [], overviewAfter: false },
+        { time: '10:00–10:30', title: '호프부르크 이동', detail: 'Wien Hbf에서 U1로 Karlsplatz 이동 후 도보', kind: 'travel', at: [16.3653, 48.2065], mode: 'subway', long: false, via: [[16.3700, 48.2003]], overviewAfter: false },
+        { time: '10:30–12:30', title: '호프부르크 내부 선택 관람', detail: '황제 아파트·시시 박물관 또는 황실 보물관 중 한 곳', kind: 'visit', at: [16.3653, 48.2065], mode: 'stay', long: false, via: [], overviewAfter: false },
+        { time: '12:30–14:00', title: '점심·카페 자유시간', detail: '미하엘 광장과 콜마르크트 주변에서 현장 선택', kind: 'free', at: [16.3662, 48.2080], mode: 'walk', long: false, via: [], overviewAfter: false },
+        { time: '14:00–15:15', title: '오스트리아 국립도서관 프룽크잘', detail: '운영시간과 입장권은 2027년 일정 공개 후 재확인', kind: 'visit', at: [16.3665, 48.2067], mode: 'walk', long: false, via: [], overviewAfter: false },
+        { time: '15:15–16:00', title: '영웅광장·부르크가르텐 산책', detail: '호프부르크 남쪽을 따라 무료 도보', kind: 'visit', at: [16.3655, 48.2047], mode: 'walk', long: false, via: [], overviewAfter: false },
+        { time: '16:00–18:00', title: '알베르티나 또는 자유시간', detail: '관람량이 충분하면 카페·쇼핑·휴식으로 전환', kind: 'free', at: [16.3680, 48.2044], mode: 'walk', long: false, via: [], overviewAfter: false },
+        { time: '18:00–20:00', title: '빈의 마지막 저녁 자유시간', detail: '도심에서 현장 선택 · 식당 사전 고정 없음', kind: 'free', at: [16.3710, 48.2080], mode: 'stay', long: false, via: [], overviewAfter: false },
+        { time: '20:00 이후', title: '숙소 복귀·출국 짐 정리', detail: '여권·탑승권·면세 서류와 캐리어 4개 확인', kind: 'buffer', at: [...VIENNA_HOTEL], mode: 'subway', long: false, via: [[16.3700, 48.2003]], overviewAfter: false },
+      ],
+      photos: [
+        { spot: 'qa_c1_d6_0', at: [16.3653, 48.2065], cap: '호프부르크 신궁', desc: '빈 체류 마지막 완전한 날에 황실 공간 한 곳을 골라 깊이 보고 영웅광장까지 이어 걷는 출발점이다.' },
+        { spot: 'qa_c1_d5_1', at: [16.3638, 48.2068], cap: '영웅광장', desc: '실내 관람 사이에 호프부르크 남쪽의 넓은 광장과 기마상을 천천히 둘러보며 휴식하는 장소다.' },
+      ],
+      routeReady: true,
+    };
+    course9.days.splice(course9.days.length - 1, 0, extraViennaDay);
 
     const departureDay = course9.days.at(-1);
     if (departureDay) {
-      departureDay.day = 12;
-      departureDay.title = '2/21(일) · 빈의 마지막 반나절과 직항 귀국';
-      departureDay.transport.label = 'B&B Hotel Wien-Hbf → 빈 도심 마지막 산책 → Wien Hbf → VIE T3 | 대한항공 KE938 19:15 → ICN 2/22 14:15';
+      departureDay.day = 13;
+      departureDay.title = '2/22(월) · 빈의 마지막 반나절과 직항 귀국';
+      departureDay.transport.label = 'B&B Hotel Wien-Hbf → 빈 도심 마지막 산책 → Wien Hbf → VIE T3 | 대한항공 KE938 19:15 → ICN 2/23 14:15';
       departureDay.via = [[...VIENNA_HOTEL], [16.3767, 48.1858], [16.5697, 48.1103]];
       departureDay.am = '아침을 먹고 체크아웃해 호텔에 짐을 맡긴다. 슈타트파르크에서 빈 구시가지로 걸으며 마지막 무료 산책을 한다.';
       departureDay.pm = '그라벤과 슈테판 대성당 주변에서 점심·카페 시간을 갖고 U1으로 숙소에 돌아와 짐을 찾은 뒤 Wien Hbf로 이동한다.';
-      departureDay.ev = '15:42 전후 Railjet으로 공항에 가 대한항공 체크인과 출국 수속을 마친 뒤 19:15 KE938 직항편으로 출발한다. 2월 22일 월요일 14:15 인천공항 T2 도착이다.';
+      departureDay.ev = '15:42 전후 Railjet으로 공항에 가 대한항공 체크인과 출국 수속을 마친 뒤 19:15 KE938 직항편으로 출발한다. 2월 23일 화요일 14:15 인천공항 T2 도착이다.';
       departureDay.tip = 'B&B Hotel Wien-Hbf에서 중앙역까지 도보 약 10–12분이다. CAT 대신 Wien Hbf 출발 공항행 Railjet을 이용하며 2027년 정확한 시각은 예매 전 다시 확인한다.';
       departureDay.timeline = [
         { time: '08:30–09:45', title: '아침 식사·최종 짐 정리', detail: '숙소 주변에서 현장 선택', kind: 'free' },
@@ -7834,7 +7891,7 @@ const COURSES = [
         { time: '16:00–18:15', title: '수하물 위탁·보안검색·출국·식사 여유', detail: '4인 위탁수하물 처리 · 전광판에서 체크인 카운터 확인', kind: 'buffer' },
         { time: '18:20', title: '탑승구 대기', detail: '여권·탑승권 확인 후 탑승 안내 대기', kind: 'buffer' },
         { time: '19:15', title: 'KE938 빈 출발', detail: '대한항공 직항 · 인천까지 약 11시간', kind: 'travel' },
-        { time: '2/22 14:15', title: '인천국제공항 T2 도착', detail: '수하물 수취 후 여행 종료', kind: 'travel' },
+        { time: '2/23 14:15', title: '인천국제공항 T2 도착', detail: '수하물 수취 후 여행 종료', kind: 'travel' },
       ];
       const railPhoto = (departureDay.photos || []).find((photo) => photo.spot === 'qa_c9_d12_rich_088');
       if (railPhoto) {
@@ -7983,8 +8040,13 @@ const COURSES = [
       ],
     ];
 
-    // 4인 확정안에서는 부다페스트 임시 일정을 제외한다.
-    geo.splice(11, 1);
+    // 4인 확정안에서는 부다페스트 대신 빈의 미관람 장소와 휴식을 위한 예비일을 둔다.
+    geo[11] = [
+      M(P.HOTEL, 'stay'), M(P.HOFBURG, 'subway'), M(P.HOFBURG, 'stay'),
+      M([16.3662, 48.2080]), M([16.3665, 48.2067], 'stay'),
+      M([16.3655, 48.2047]), M([16.3680, 48.2044]),
+      M([16.3710, 48.2080], 'stay'), M(P.HOTEL, 'subway'),
+    ];
 
     course9.days.forEach((day, index) => {
       const entryTimeline = day.entryAirport && Array.isArray(day.entryAirport.timeline)
