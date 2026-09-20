@@ -292,6 +292,14 @@
 
   // ---------- 코스 진입 / 이탈 ----------
   async function openCourse(course) {
+    if (course.id === 11) {
+      landing.classList.add('hidden');
+      mapView.classList.add('hidden');
+      window.TokyoTrip.open({ shared: isSharedMode, onClose: () => {
+        landing.classList.remove('hidden'); document.title = '여행 계획';
+      }});
+      return;
+    }
     state.course = course;
     state.dayIndex = 0;
     const firstDay = course.days[0];
@@ -1565,7 +1573,8 @@
     '7': 'e8c4a1',
     '8': 'v5j2m6',
     '9': 'k3n8b7',
-    '10': 'y1h5t4'
+    '10': 'y1h5t4',
+    '11': 'tokyo27'
   };
 
   function initApp() {

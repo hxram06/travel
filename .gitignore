@@ -1,4 +1,6 @@
 node_modules/
+assets/tokyo/source/
+outputs/tokyo-qa/
 package-lock.json
 package.json
 cleanup_photos.js

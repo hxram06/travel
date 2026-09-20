@@ -363,7 +363,8 @@ function checkPhotoUrls(courses, photos) {
     return;
   }
 
-  const { errors, warnings } = validateItinerary(COURSES, PHOTOS);
+  // Tokyo has a separate regional/route validator in tools/test_tokyo.cjs.
+  const { errors, warnings } = validateItinerary(COURSES.filter(c => c.experience !== 'tokyo'), PHOTOS);
   const total = COURSES.reduce((s, c) => s + c.days.length, 0);
 
   console.groupCollapsed(
@@ -387,7 +388,7 @@ function checkPhotoUrls(courses, photos) {
   window.__ruleCheck = { errors, warnings, days: total, urlCheck: 'pending' };
 
   // 사진 URL 실사 확인 (네트워크를 쓰므로 나머지 검사가 끝난 뒤 비동기로)
-  if (RULES.photo.checkUrlsLive) {
+  if (RULES.photo.checkUrlsLive && new URLSearchParams(location.search).get('share') !== 'tokyo27') {
     checkPhotoUrls(COURSES, PHOTOS).then((broken) => {
       window.__ruleCheck.brokenPhotos = broken;
       window.__ruleCheck.urlCheck = 'done';

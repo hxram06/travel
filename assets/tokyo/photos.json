@@ -1,0 +1,26 @@
+{
+  "ueno": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5e/Ueno_20241210_133139.jpg/1280px-Ueno_20241210_133139.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "source": "https://commons.wikimedia.org/wiki/File:Ueno_20241210_133139.jpg",
+    "credit": "Ka23 13 · CC BY 4.0",
+    "caption": "Ameya-Yokochō"
+  },
+  "disney": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4b/Tokyo_Disneyland_Cinderella_Castle_2023-07-02.jpg/1280px-Tokyo_Disneyland_Cinderella_Castle_2023-07-02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "source": "https://commons.wikimedia.org/wiki/File:Tokyo_Disneyland_Cinderella_Castle_2023-07-02.jpg",
+    "credit": "LMP 2001 · CC BY-SA 4.0",
+    "caption": "Tokyo Disneyland"
+  },
+  "harakado": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ed/Tokyu_plaza_omote-sando_%22Harakado%22.jpg/1280px-Tokyu_plaza_omote-sando_%22Harakado%22.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "source": "https://commons.wikimedia.org/wiki/File:Tokyu_plaza_omote-sando_%22Harakado%22.jpg",
+    "credit": "AXL1Kxcp · CC0",
+    "caption": "Tokyu Plaza Harajuku Harakado"
+  },
+  "shinjuku": {
+    "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/ba/JRE_Shinjuku-STA_South.jpg/1280px-JRE_Shinjuku-STA_South.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "source": "https://commons.wikimedia.org/wiki/File:JRE_Shinjuku-STA_South.jpg",
+    "credit": "MaedaAkihiko · CC BY-SA 4.0",
+    "caption": "Shinjuku Station"
+  }
+}
