@@ -9,7 +9,11 @@ window.TokyoTrip = (() => {
   let root, map, ready=false, geometry={}, routeError='', markers=[], onClose, observer, cameraTimer, requestController;
   // Restaurant coordinates are looked up at runtime and shown transiently on the Mapbox map,
   // never stored (Mapbox Search terms). A miss just leaves that restaurant off the map, not faked.
-  const MEAL_GEO={}; const mealInflight=new Set(); let mealGeoRun=0, mealPinCount=0, mealMarkers=[];
+  const MEAL_GEO={}; const mealInflight=new Set(); let mealGeoRun=0, mealPinCount=0, spotPinCount=0;
+  // Landmark shopping spots (Sanrio, Tamagotchi, every Donkihote on the walk, the hotel konbini …)
+  // shown as text labels. Same runtime, no-store geocoding as meals.
+  const SPOT_GEO={}; const spotInflight=new Set(); let spotGeoRun=0;
+  let poiMarkers=[]; // meal + spot text pins, decluttered together (side/current pins excluded).
   const visibleSteps = (day=state.day) => trip.days[day].steps.filter(s => (!s.branch || state.choices[s.branch]) && (!s.without || !state.choices[s.without]) && (!s.breakfast || s.breakfast===state.breakfast));
   const current = () => visibleSteps()[state.step];
   const placeId = s => s.id==='shinjuku-breakfast' && state.breakfast==='shinjuku' ? 'shinjukuShop' : s.place;
@@ -148,18 +152,41 @@ window.TokyoTrip = (() => {
   // A pre-set r.coords (author-provided) is used as-is and needs no network. Otherwise: a 200 with no
   // feature is a real miss (cache null); 429/5xx get a short backoff retry; any leftover error stays
   // uncached so a later visit retries instead of permanently dropping the pin.
-  async function geocodeMeal(r,prox) {
-    const q=r.query||r.name;
-    if(Array.isArray(r.coords))return (MEAL_GEO[q]=r.coords);
-    if(q in MEAL_GEO)return MEAL_GEO[q];
+  async function geocodeForward(q,prox) {
     const url='https://api.mapbox.com/search/searchbox/v1/forward?'+new URLSearchParams({q,access_token:MAPBOX_TOKEN,country:'jp',limit:'1',language:'ja',proximity:prox.join(',')});
     for(let attempt=0;attempt<3;attempt++){
       const res=await fetch(url);
-      if(res.ok){const j=await res.json();const f=(j.features||[])[0];return (MEAL_GEO[q]=f?.geometry?.coordinates||null);}
+      if(res.ok){const j=await res.json();const f=(j.features||[])[0];return f?.geometry?.coordinates||null;}
       if(res.status!==429 && res.status<500)throw new Error('geocode '+res.status);
       await new Promise(w=>setTimeout(w,300*(attempt+1)*(attempt+1)));
     }
     throw new Error('geocode retry exhausted');
+  }
+  async function geocodeMeal(r,prox) {
+    const q=r.query||r.name;
+    if(Array.isArray(r.coords))return (MEAL_GEO[q]=r.coords);
+    if(q in MEAL_GEO)return MEAL_GEO[q];
+    return MEAL_GEO[q]=await geocodeForward(q,prox);
+  }
+  // A spot is a placeId string, or {name, place|coords|query}. Known coordinates need no network.
+  const spotName = sp => typeof sp==='string' ? trip.places[sp]?.name : (sp.name || trip.places[sp.place]?.name);
+  const spotCoords = sp => {
+    if(typeof sp==='string')return trip.places[sp]?.coords||null;
+    if(sp.place)return trip.places[sp.place]?.coords||null;
+    if(Array.isArray(sp.coords))return sp.coords;
+    return SPOT_GEO[sp.query];
+  };
+  function loadSpotPins(s) {
+    const prox=trip.places[placeId(s)]?.coords||[139.70,35.68];
+    const queue=(s.spots||[]).filter(sp=>typeof sp==='object'&&sp.query&&!sp.place&&!Array.isArray(sp.coords)&&!(sp.query in SPOT_GEO)&&!spotInflight.has(sp.query));
+    if(!queue.length)return;
+    const stamp=++spotGeoRun; let idx=0;
+    const worker=async()=>{ while(idx<queue.length){
+      const sp=queue[idx++]; spotInflight.add(sp.query);
+      try{ SPOT_GEO[sp.query]=await geocodeForward(sp.query,prox); }catch(e){/* transient: retry later */}
+      spotInflight.delete(sp.query);
+    }};
+    Promise.all([worker(),worker(),worker()]).then(()=>{ if(root&&ready&&stamp===spotGeoRun&&current()?.id===s.id)renderMap(); });
   }
   // Fetch unknown restaurant coordinates for the current meal stop, gently (3 at a time), then redraw once.
   function loadMealPins(s) {
@@ -178,7 +205,7 @@ window.TokyoTrip = (() => {
   async function loadRoutes() {
     requestController?.abort(); const controller=new AbortController();requestController=controller;
     try {
-      const response=await fetch('assets/tokyo/routes.json?v=5',{signal:controller.signal});
+      const response=await fetch('assets/tokyo/routes.json?v=6',{signal:controller.signal});
       if(!response.ok)throw new Error('route data');
       const payload=await response.json(); if(controller.signal.aborted||!root)return;
       for(const leg of Object.values(trip.legs)) {
@@ -208,7 +235,7 @@ window.TokyoTrip = (() => {
         }));
         setStatus(routeError);renderMap();
       });
-      map.on('moveend',()=>declutterMeal());
+      map.on('moveend',()=>declutterPoi());
       map.on('error',e=>{if(!ready)setStatus('지도 연결을 확인해 주세요. 아래 일정은 계속 볼 수 있어요.');});
       observer=new ResizeObserver(()=>{if(map){map.resize();clearTimeout(cameraTimer);cameraTimer=setTimeout(()=>renderMap(),100);}});observer.observe(root.querySelector('.tk-map-pane'));
     }catch(error){setStatus('이 기기에서 지도를 열지 못했어요. 아래 일정과 Google 지도 링크를 이용해 주세요.');}
@@ -278,32 +305,45 @@ window.TokyoTrip = (() => {
     }
     // Restaurant candidates as restrained text pins (a meal stop only). Coordinates arrive from a
     // runtime lookup; a restaurant still being fetched or not found simply has no pin yet.
-    mealPinCount=0; mealMarkers=[]; const mealCoords=[];
+    mealPinCount=0; spotPinCount=0; poiMarkers=[]; const poiCoords=[];
     if(s.meal) {
       mealItems(s).forEach((r,i)=>{
-        const c=(Array.isArray(r.coords)&&r.coords)||MEAL_GEO[r.query||r.name]; if(!c)return; mealPinCount++; mealCoords.push(c);
+        const c=(Array.isArray(r.coords)&&r.coords)||MEAL_GEO[r.query||r.name]; if(!c)return; mealPinCount++; poiCoords.push(c);
         const btn=document.createElement('button');btn.className='tk-pin tk-pin-meal';
         btn.setAttribute('aria-label','식당: '+r.name+' 카드에서 보기');
         btn.innerHTML=`<span class="tk-pin-mini">${esc(r.name)}</span>`;
         btn.addEventListener('click',()=>{press(btn);setSheet('detail');const el=root.querySelector(`.tk-restaurant[data-rest="${i}"]`);if(el)root.querySelector('.tk-scroll').scrollTop=Math.max(0,el.offsetTop-12);});
         markers.push(new mapboxgl.Marker({element:btn}).setLngLat(c).addTo(map));
-        mealMarkers.push({el:btn,rating:r.rating||0});
+        poiMarkers.push({el:btn,priority:r.rating||0});
       });
       loadMealPins(s);
     }
-    // On a meal stop the camera widens to include NEARBY candidates so they are on screen without a
-    // distant outlier flattening the whole view; far ones stay pinned and are reached by panning.
-    const near=mealCoords.filter(c=>Math.hypot((c[0]-pinCoords[0])*90600,(c[1]-pinCoords[1])*111200)<1300);
+    // Landmark shopping spots (Sanrio, Tamagotchi, Donkihote, the hotel konbini …) as text labels.
+    if(s.spots?.length) {
+      const seenSpot=new Set([pinCoords.join(',')]);
+      s.spots.forEach(sp=>{
+        const c=spotCoords(sp); if(!c)return; const key=c.join(','); if(seenSpot.has(key))return; seenSpot.add(key);
+        spotPinCount++; poiCoords.push(c);
+        const el=document.createElement('span'); el.className='tk-pin tk-pin-spot'; el.setAttribute('role','img'); el.setAttribute('aria-label','쇼핑 거점: '+spotName(sp));
+        el.innerHTML=`<span class="tk-pin-mini">${esc(spotName(sp))}</span>`;
+        markers.push(new mapboxgl.Marker({element:el}).setLngLat(c).addTo(map));
+        poiMarkers.push({el,priority:100}); // landmarks outrank meals when decluttering
+      });
+      loadSpotPins(s);
+    }
+    // Camera widens to include NEARBY POIs (meals/spots) so they are on screen without a distant
+    // outlier flattening the whole view; far ones stay pinned and are reached by panning.
+    const near=poiCoords.filter(c=>Math.hypot((c[0]-pinCoords[0])*90600,(c[1]-pinCoords[1])*111200)<1300);
     const coords=active.flatMap(f=>f.geometry.coordinates);coords.push(p.coords,pinCoords,...near);
     camera(coords,s.legs?.some(id=>trip.legs[id].mode==='rail')?14.5:15.4);
-    requestAnimationFrame(declutterMeal);
+    requestAnimationFrame(declutterPoi);
   }
-  // Hide meal pins that would overlap, highest-rated kept; re-run on map move/zoom so zooming in
-  // reveals the ones that were suppressed. Only meal pins declutter; stop/neighbour pins always show.
-  function declutterMeal() {
-    if(!map||!mealMarkers.length)return;
+  // Hide POI pins that would overlap, higher priority kept (landmarks > higher-rated meals); re-run on
+  // map move/zoom so zooming in reveals suppressed ones. Stop/neighbour pins are never decluttered.
+  function declutterPoi() {
+    if(!map||!poiMarkers.length)return;
     const kept=[];
-    [...mealMarkers].sort((a,b)=>b.rating-a.rating).forEach(m=>{
+    [...poiMarkers].sort((a,b)=>b.priority-a.priority).forEach(m=>{
       m.el.style.display='';
       const box=m.el.getBoundingClientRect();
       if(!box.width)return;
@@ -311,5 +351,5 @@ window.TokyoTrip = (() => {
       if(clash)m.el.style.display='none'; else kept.push(box);
     });
   }
-  return {open,close,select,getState:()=>structuredClone({...state,expanded:state.sheet!=='peek',stepId:current()?.id,steps:visibleSteps().map(s=>s.id),routeCount:Object.keys(geometry).length,mealPins:mealPinCount,mapReady:ready})};
+  return {open,close,select,getState:()=>structuredClone({...state,expanded:state.sheet!=='peek',stepId:current()?.id,steps:visibleSteps().map(s=>s.id),routeCount:Object.keys(geometry).length,mealPins:mealPinCount,spotPins:spotPinCount,mapReady:ready})};
 })();

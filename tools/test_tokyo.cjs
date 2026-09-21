@@ -58,12 +58,12 @@ async function browserCheck(){
  await page.setViewport({width:390,height:844,isMobile:true,hasTouch:true,deviceScaleFactor:1});
  await page.goto('http://127.0.0.1:8011/?share=tokyo27',{waitUntil:'domcontentloaded'});
  await page.waitForSelector('.tokyo-trip');
- await page.waitForFunction(()=>window.TokyoTrip.getState().routeCount===52,{timeout:20000});
+ await page.waitForFunction(()=>window.TokyoTrip.getState().routeCount===54,{timeout:20000});
  await page.waitForFunction(()=>window.TokyoTrip.getState().mapReady,{timeout:60000});
  if(process.argv.includes('--photo-only')) {
-   await page.evaluate(()=>{window.TokyoTrip.select(2,0);window.TokyoTrip.select(2,window.TokyoTrip.getState().steps.indexOf('tamagotchi'));});
+   await page.evaluate(()=>{window.TokyoTrip.select(2,0);window.TokyoTrip.select(2,window.TokyoTrip.getState().steps.indexOf('harajuku'));});
    await page.waitForFunction(()=>{const img=document.querySelector('.tk-hero img');return img&&img.complete&&img.naturalWidth>0;},{timeout:25000});
-   await page.screenshot({path:path.join(dir,'photo-tamagotchi.png')});
+   await page.screenshot({path:path.join(dir,'photo-harajuku.png')});
    console.log('PASS: corrected Harakado exterior photo loads.');return;
  }
  const wait=ms=>new Promise(r=>setTimeout(r,ms));

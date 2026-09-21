@@ -91,6 +91,9 @@
 .tk-pin-meal { opacity:.92; }
 .tk-pin-meal:hover,.tk-pin-meal:focus-visible { opacity:1; }
 .tk-pin-meal .tk-pin-mini { max-width:104px; padding:2px 7px; font-size:9.5px; color:#7a5a3c; border-color:#e6dccb; background:rgba(255,252,246,.94); }
+/* Landmark shopping spots: accent-tinted, informational (not a control). */
+.tk-pin-spot { pointer-events:none; }
+.tk-pin-spot .tk-pin-mini { max-width:112px; padding:2px 8px; font-size:10px; font-weight:600; color:#2c5349; border-color:#cfe0d6; background:rgba(244,250,246,.95); }
 .tk-start-dot { width:10px; height:10px; border:2px solid white; background:#74827a; border-radius:50%; box-shadow:0 1px 5px #0003; }
 /* Access point: the undrawn station-interior move between a rail line and the next walk. */
 .tk-access-dot { width:11px; height:11px; border:2px dashed #8a978d; background:var(--tk-paper); border-radius:50%; box-shadow:0 1px 4px #0002; }
