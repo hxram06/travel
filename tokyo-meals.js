@@ -81,6 +81,17 @@ const TOKYO_MEALS = (() => {
     r('고마가타 도제우','駒形どぜう 本店','고마가타','도조나베(미꾸라지 전골)','약 ¥2,500–3,800','https://www.dozeu.com/',{reservation:'recommended',note:'1801년 창업. 좌식 전골. 아사쿠사 남쪽 고마가타.'}),
     r('요시카미','ヨシカミ 浅草','신나카미세','요쇼쿠(비프스튜·하야시라이스)','약 ¥2,000–3,500','https://www.yoshikami.co.jp/',{note:'1951년 창업 양식당. 인기 — 대기가 있을 수 있어요.'}),
   ];
-  return {ueno,tamachi,breakfast,shibuya,shinjuku,ginza,'shibuya-dinner':dinner,asakusa};
+  // 3일차 하라주쿠·오모테산도 점심.
+  const harajuku=[
+    r('마이센 아오야마 본점','まい泉 青山本店','오모테산도','돈카츠·카츠산도','약 ¥1,600–3,500','https://mai-sen.com/',{reservation:'recommended',note:'카츠산도는 비교적 저렴. 식사 메뉴는 예산 상향 가능.'}),
+    r('아후리 하라주쿠','AFURI 原宿','하라주쿠','유즈시오 라멘','약 ¥1,200–2,000','https://afuri.com/'),
+    r('사쿠라테이','さくら亭 原宿','우라하라주쿠','직접 굽는 오코노미야키','약 ¥1,200–2,200','http://www.sakuratei.co.jp/'),
+    r('하라주쿠 교자로','原宿餃子楼','하라주쿠','교자·중화','약 ¥800–1,500',null,{note:'작은 매장·현금 위주, 대기 가능.'}),
+    r('에그스앤띵스 하라주쿠','Eggs ’n Things 原宿店','하라주쿠','팬케이크·브런치','약 ¥1,500–2,500','https://www.eggsnthingsjapan.com/',{note:'인기 매장, 피크에는 대기 길어요.'}),
+    r('브라운라이스 표참도','Brown Rice 表参道','오모테산도','채식 정식','약 ¥1,300–2,200','https://www.nealsyard.co.jp/brownrice/'),
+    r('몬순카페 표참도','モンスーンカフェ 表参道','오모테산도','아시안 다이닝','약 ¥1,500–3,000','https://www.monsoon-cafe.jp/',{reservation:'recommended'}),
+    r('더 그레이트 버거','THE GREAT BURGER 原宿','우라하라주쿠','수제버거','약 ¥1,500–2,500','http://www.the-great-burger.com/'),
+  ];
+  return {ueno,tamachi,breakfast,shibuya,shinjuku,ginza,'shibuya-dinner':dinner,asakusa,harajuku};
 })();
 if(typeof module!=='undefined')module.exports=TOKYO_MEALS;
