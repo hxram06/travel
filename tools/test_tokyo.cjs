@@ -58,7 +58,7 @@ async function browserCheck(){
  await page.setViewport({width:390,height:844,isMobile:true,hasTouch:true,deviceScaleFactor:1});
  await page.goto('http://127.0.0.1:8011/?share=tokyo27',{waitUntil:'domcontentloaded'});
  await page.waitForSelector('.tokyo-trip');
- await page.waitForFunction(()=>window.TokyoTrip.getState().routeCount===49,{timeout:20000});
+ await page.waitForFunction(()=>window.TokyoTrip.getState().routeCount===52,{timeout:20000});
  await page.waitForFunction(()=>window.TokyoTrip.getState().mapReady,{timeout:60000});
  if(process.argv.includes('--photo-only')) {
    await page.evaluate(()=>{window.TokyoTrip.select(2,0);window.TokyoTrip.select(2,window.TokyoTrip.getState().steps.indexOf('tamagotchi'));});
@@ -119,7 +119,7 @@ async function browserCheck(){
  await select(0,'arrival');await page.evaluate(()=>{for(let i=0;i<7;i++)document.querySelector('[data-action=next]').click();});assert.equal((await state()).stepId,'ueno-home');
  await select(4,'airport-return');assert(await page.$eval('[data-action=next]',e=>e.disabled));
  await page.screenshot({path:path.join(dir,'07-pending-return-mobile.png')});
- for(const [day,id] of [[0,'ueno-walk'],[1,'disney-day'],[2,'tamagotchi'],[3,'shinjuku']]) {
+ for(const [day,id] of [[0,'ueno-walk'],[1,'disney-day'],[2,'harajuku'],[3,'shinjuku']]) {
    await select(day,id);
    await page.waitForFunction(()=>{const img=document.querySelector('.tk-hero img');return img&&img.complete&&img.naturalWidth>0;},{timeout:25000});
    await page.screenshot({path:path.join(dir,'photo-'+id+'.png')});

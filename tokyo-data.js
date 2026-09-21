@@ -25,6 +25,7 @@ const TOKYO = (() => {
     harakado: place('다마고치 팩토리 · 하라카도 3층', 139.70559, 35.66864, { photo: 'harakado', source: 'https://tamagotchi-factory.jp/' }),
     harajuku: place('산리오 하라주쿠', 139.70401, 35.67119, { source: 'https://stores.sanrio.co.jp/8857100' }),
     omotesando: place('오모테산도', 139.70873, 35.66696, { photo: 'omotesando' }),
+    omotesandoStn: place('오모테산도역', 139.71224, 35.66516),
     sky: place('시부야 스카이', 139.70205, 35.65845, { photo: 'sky', source: 'https://www.shibuya-scramble-square.com/sky/ticket/' }),
     mita: place('미타역', 139.74823, 35.64807),
     mitaA4: place('미타역 A4 출입구', 139.74721, 35.64639),
@@ -98,6 +99,9 @@ const TOKYO = (() => {
   walk('harajuku-omotesando', 'harajuku', 'omotesando', '약 10~15분', '오모테산도 거리로 돌아와 쇼핑과 카페를 즐겨요.');
   walk('omotesando-sky', 'omotesando', 'sky', '약 20~25분', '15시대에는 쇼핑을 마무리하고 시부야로. 스크램블스퀘어 14층 입구까지의 이동 여유를 더 두세요.');
   walk('sky-shibuya', 'sky', 'shibuya', '약 5~10분', '식사를 마친 뒤 JR 개찰구로. 귀가는 시나가와 방면 내선이에요.');
+  walk('omotesando-stn', 'omotesando', 'omotesandoStn', '약 5~7분', '오모테산도 큰길(아오야마도리)을 따라 오모테산도역으로.');
+  rail('omotesandoStn-shibuya', 'omotesandoStn', 'shibuya', 'G', '약 2분 · 1정거장', '시부야행', ['오모테산도', '시부야']);
+  reverse('shibuya-sky', 'sky-shibuya');
   walk('hotel-mita', 'hotel', 'mitaA4', '약 8분', 'JR 역에 들어가지 않고 지상 보행으로 미타역 A4 출입구까지.');
   indoor('mita-enter', 'mitaA4', 'mita', '약 5~8분', '파란 I 표지의 미타선 승강장으로. 아사쿠사선과 구분해요.');
   rail('mita-park', 'mita', 'shibakoen', 'I', '약 2분 · 1정거장', '니시타카시마다이라 방면', ['미타', '시바코엔']);
@@ -134,6 +138,7 @@ const TOKYO = (() => {
   legs['tower-park'].note = '공원 쪽으로 되돌아가 시바코엔역 방향으로 걸어요.';
   legs['park-station'].note = '시바코엔역 출입구로 돌아가 미타선 메구로 방면을 찾아요.';
   legs['kitte-station'].note = 'KITTE에서 마루노우치 광장 쪽으로 돌아와 JR 도쿄역으로.';
+  legs['shibuya-sky'].note = '시부야역에서 스크램블스퀘어(시부야 스카이 입구)로 걸어요.';
   const step = (id, kind, title, place, time, detail, extra = {}) => ({ id, kind, title, place, time, detail, ...extra });
   const journey = (id, title, place, time, route, detail, extra = {}) => step(id, 'move', title, place, time, detail, { legs: route, ...extra });
   const homeOut = ['hotel-tamachi', 'tamachi-enter'];
@@ -166,10 +171,8 @@ const TOKYO = (() => {
       journey('shibuya-out', '다마치 → 시부야', 'scramble', '오전', ['tamachi-enter', 'tamachi-shibuya', 'shibuya-scramble'], '야마노테선 외선, 시나가와·시부야 방면. 하치코 출구 쪽에서 쇼핑을 시작해요.'),
       journey('donki', '시부야 쇼핑 · 메가 돈키', 'donki', '오전 · 자유롭게', ['scramble-donki'], '시부야에서 마음껏 쇼핑. MEGA 돈키호테 시부야 본점은 꼭 들러요.', { photo: 'shibuya', photoPlace: 'scramble', highlights: ['MEGA 돈키호테', '시부야 PARCO 캐릭터 매장', '패션·뷰티·드럭스토어'] }),
       step('shibuya-lunch', 'meal', '점심 먹고 하라주쿠로', 'donki', '점심', '이 근처에서 식사하고 하라주쿠 쇼핑을 이어가요.', { meal: 'shibuya' }),
-      journey('tamagotchi', '다마고치 팩토리', 'harakado', '오후', ['donki-harakado'], '하라카도 3층의 다마고치 공식 매장. 메이지진구마에 교차로에 있어 오모테산도역까지 갈 필요는 없어요.', { photo: 'harakado', highlights: ['다마고치 팩토리 · 3층', '현재 안내 11:00~21:00', '상품·재고는 방문일에 확인'], source: 'https://tamagotchi-factory.jp/' }),
-      journey('harajuku', '하라주쿠에서 굿즈 쇼핑', 'harajuku', '오후 · 자유롭게', ['harakado-sanrio'], '산리오와 다케시타도리를 둘러봐요. 일행이 함께 움직이며 마음에 드는 매장을 골라요.'),
-      journey('omotesando', '오모테산도 산책과 쇼핑', 'omotesando', '오후 · 15시대 마무리', ['harajuku-omotesando'], '쇼윈도와 골목을 천천히 둘러보고, 시부야 스카이에 늦지 않게 돌아갈 준비를 해요.', { photo: 'omotesando' }),
-      journey('sky-return', '16시 입장에 맞춰 시부야로', 'sky', '15시대 이동', ['omotesando-sky'], '도보 이동 뒤 스크램블스퀘어 14층 입구로. 입장 준비 시간을 따로 확보해요.'),
+      journey('harajuku', '다마고치 · 산리오 · 오모테산도, 하라주쿠 쇼핑', 'omotesando', '오후 · 15시대 마무리', ['donki-harakado', 'harakado-sanrio', 'harajuku-omotesando'], '메가 돈키에서 하라카도(다마고치 팩토리)·산리오 하라주쿠·다케시타도리를 지나 오모테산도까지 한 줄기로 이어 둘러봐요. 지도에 이 쇼핑 거리 전체가 한꺼번에 표시돼요. 시부야 스카이에 늦지 않게 준비해요.', { photo: 'harakado', highlights: ['다마고치 팩토리 · 하라카도 3층 (현재 11:00~21:00)', '산리오 하라주쿠 · 다케시타도리', '오모테산도 쇼윈도 · 골목 · 카페', '상품·재고는 방문일에 확인'], source: 'https://tamagotchi-factory.jp/' }),
+      journey('sky-return', '오모테산도에서 시부야 스카이로', 'sky', '15시대 이동', ['omotesando-stn', 'omotesandoStn-shibuya', 'shibuya-sky'], '오모테산도역에서 긴자선으로 시부야 한 정거장, 시부야역에서 스크램블스퀘어로. (하라주쿠에서 출발한다면 JR 야마노테 시부야행 한 정거장도 좋아요.) 입장 준비 시간을 따로 확보해요.'),
       step('sky', 'reservation', '낮부터 노을, 그리고 야경', 'sky', '16:00 입장 목표', '16:00~16:30 입장권을 예약하고 16시에 입장해요. 밝은 하늘부터 완전히 어두워진 도시까지 보고 내려와요.', { photo: 'sky', reservation: { slot: '16:00–16:30', target: '16:00', booked: false, release: '1월 13일 00:00 · 현행 2주 전 판매 기준', sunset: '1월 27일 일몰 17:03' }, facts: ['사전 예약 필수 · 아직 예약 전', '내려오는 시간은 자유롭게', '강풍·비에 따라 옥상 운영이 달라질 수 있어요'], source: 'https://www.shibuya-scramble-square.com/sky/ticket/' }),
       step('shibuya-dinner', 'meal', '야경 본 뒤 시부야 저녁', 'sky', '저녁 · 관람 후', '오늘 산 물건을 정리하기 전에 든든하게 먹어요.', { meal: 'shibuya' }),
       journey('shibuya-home', '시부야 → 다마치 → 호텔', 'hotel', '밤', ['sky-shibuya', 'shibuya-tamachi', ...homeIn], '야마노테선 내선, 에비스·시나가와 방면으로 돌아와 짐을 내려놓아요.'),

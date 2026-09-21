@@ -178,7 +178,7 @@ window.TokyoTrip = (() => {
   async function loadRoutes() {
     requestController?.abort(); const controller=new AbortController();requestController=controller;
     try {
-      const response=await fetch('assets/tokyo/routes.json?v=4',{signal:controller.signal});
+      const response=await fetch('assets/tokyo/routes.json?v=5',{signal:controller.signal});
       if(!response.ok)throw new Error('route data');
       const payload=await response.json(); if(controller.signal.aborted||!root)return;
       for(const leg of Object.values(trip.legs)) {
