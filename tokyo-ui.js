@@ -14,6 +14,7 @@ window.TokyoTrip = (() => {
   // shown as text labels. Same runtime, no-store geocoding as meals.
   const SPOT_GEO={}; const spotInflight=new Set(); let spotGeoRun=0;
   let poiMarkers=[]; // meal + spot text pins, decluttered together (side/current pins excluded).
+  let mealFilter='all'; // active meal category filter; syncs card list and map meal pins.
   const visibleSteps = (day=state.day) => trip.days[day].steps.filter(s => (!s.branch || state.choices[s.branch]) && (!s.without || !state.choices[s.without]) && (!s.breakfast || s.breakfast===state.breakfast));
   const current = () => visibleSteps()[state.step];
   const placeId = s => s.id==='shinjuku-breakfast' && state.breakfast==='shinjuku' ? 'shinjukuShop' : s.place;
@@ -83,9 +84,10 @@ window.TokyoTrip = (() => {
     const button=e.target.closest('button');if(!button)return;
     if(button.dataset.day!==undefined){select(Number(button.dataset.day),0);return;}
     if(button.dataset.mealcat!==undefined){
-      const cat=button.dataset.mealcat;
-      root.querySelectorAll('.tk-meal-filter [data-mealcat]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.mealcat===cat)));
-      root.querySelectorAll('.tk-meals-list .tk-restaurant').forEach(a=>{a.style.display=(cat==='all'||a.dataset.cat===cat)?'':'none';});
+      mealFilter=button.dataset.mealcat;
+      root.querySelectorAll('.tk-meal-filter [data-mealcat]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.mealcat===mealFilter)));
+      root.querySelectorAll('.tk-meals-list .tk-restaurant').forEach(a=>{a.style.display=(mealFilter==='all'||a.dataset.cat===mealFilter)?'':'none';});
+      declutterPoi(); // sync map meal pins to the chosen category
       return;
     }
     if(button.dataset.leg){focusLeg(button.dataset.leg);return;}
@@ -118,6 +120,7 @@ window.TokyoTrip = (() => {
     root.dataset.day=String(state.day+1);root.dataset.step=s.id;
     root.querySelector('#tk-stage').setAttribute('aria-labelledby',`tk-tab-${state.day}`);
     root.querySelectorAll('[data-day]').forEach((b,i)=>{b.setAttribute('aria-selected',String(i===state.day));b.tabIndex=i===state.day?0:-1;});
+    mealFilter='all'; // step change resets the category filter (card rebuilt with 전체 active)
     root.querySelector('.tk-detail').innerHTML=detail(s);
     root.querySelector('[data-action=prev]').disabled=state.day===0&&state.step===0;
     const end=state.day===4&&state.step===steps.length-1;
@@ -134,6 +137,10 @@ window.TokyoTrip = (() => {
     if(s.reservation)out+=`<aside class="tk-reservation"><strong>미리 예약할 것 · 시부야 스카이</strong><span class="tk-slot">16:00 입장</span><p>16:00–16:30 입장권 선택<br>밝은 하늘 → 17:03 일몰 → 야경</p><small>${esc(s.reservation.release)}<br>2027년 판매 정책은 예약 직전에 다시 확인 · 아직 예약 전</small></aside>`;
     if(photo)out+=`<figure class="tk-hero"><img src="${esc(photo.url)}" alt="${esc(photo.caption||trip.places[s.photoPlace]?.name||p.name)}" decoding="async"><figcaption>${link(photo.source||photo.url,photo.credit||'사진 출처','')}</figcaption></figure>`;
     if(s.legs?.length)out+=`<div class="tk-route" aria-label="이동 안내">${s.legs.map(id=>legHtml(id)).join('')}</div>`;
+    // Coin lockers along this stop's stations (and the stop itself).
+    const lockerIds=[...new Set([placeId(s),...(s.legs||[]).flatMap(id=>[trip.legs[id].from,trip.legs[id].to])])];
+    const lockers=lockerIds.map(id=>trip.places[id]).filter(pl=>pl&&pl.locker);
+    if(lockers.length)out+=`<section class="tk-lockers"><strong>코인락커</strong>${lockers.map(pl=>`<p><b>${esc(pl.name)}</b> · ${esc(pl.locker)}</p>`).join('')}<small>정확한 위치·빈자리·요금은 현장 안내판이나 코인락커 검색 앱에서 확인해요. 락커가 다 찼다면 ${link('https://cloak.ecbo.io/','ecbo cloak 수하물 보관','')}도 대안이에요.</small></section>`;
     if(s.highlights||s.facts)out+=`<ul class="tk-points">${[...(s.highlights||[]),...(s.facts||[])].map(x=>`<li>${esc(x)}</li>`).join('')}</ul>`;
     if(s.choice)out+=`<div class="tk-choices"><button data-choice="${s.choice}" data-value="true" aria-pressed="${state.choices[s.choice]}">${esc(s.choiceLabel)}</button><button data-choice="${s.choice}" data-value="false" aria-pressed="${!state.choices[s.choice]}">${esc(s.skipLabel)}</button></div>`;
     if(s.kind==='breakfastChoice')out+=`<div class="tk-choices"><button data-breakfast="yoyogi" aria-pressed="${state.breakfast==='yoyogi'}">요요기에서 아침 · 탄보 등</button><button data-breakfast="shinjuku" aria-pressed="${state.breakfast==='shinjuku'}">신주쿠에서 아침 · 바로 쇼핑</button></div>`;
@@ -330,7 +337,7 @@ window.TokyoTrip = (() => {
         btn.innerHTML=`<span class="tk-pin-mini">${esc(r.name)}</span>`;
         btn.addEventListener('click',()=>{press(btn);setSheet('detail');const el=root.querySelector(`.tk-restaurant[data-rest="${i}"]`);if(el)root.querySelector('.tk-scroll').scrollTop=Math.max(0,el.offsetTop-12);});
         markers.push(new mapboxgl.Marker({element:btn}).setLngLat(c).addTo(map));
-        poiMarkers.push({el:btn,priority:r.rating||0});
+        poiMarkers.push({el:btn,priority:r.rating||0,type:'meal',cat:r.cat});
       });
       loadMealPins(s);
     }
@@ -343,7 +350,7 @@ window.TokyoTrip = (() => {
         const el=document.createElement('span'); el.className='tk-pin tk-pin-spot'; el.setAttribute('role','img'); el.setAttribute('aria-label','쇼핑 거점: '+spotName(sp));
         el.innerHTML=`<span class="tk-pin-mini">${esc(spotName(sp))}</span>`;
         markers.push(new mapboxgl.Marker({element:el}).setLngLat(c).addTo(map));
-        poiMarkers.push({el,priority:100}); // landmarks outrank meals when decluttering
+        poiMarkers.push({el,priority:100,type:'spot'}); // landmarks outrank meals when decluttering
       });
       loadSpotPins(s);
     }
@@ -360,6 +367,8 @@ window.TokyoTrip = (() => {
     if(!map||!poiMarkers.length)return;
     const kept=[];
     [...poiMarkers].sort((a,b)=>b.priority-a.priority).forEach(m=>{
+      // Category filter: hide meal pins that don't match the active category.
+      if(mealFilter!=='all' && m.type==='meal' && m.cat!==mealFilter){m.el.style.display='none';return;}
       m.el.style.display='';
       const box=m.el.getBoundingClientRect();
       if(!box.width)return;
