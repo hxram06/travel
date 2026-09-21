@@ -63,6 +63,10 @@
 .tk-choices button[aria-pressed=true] { border-color:var(--tk-accent); background:#edf2ec; }
 .tk-meals { margin-top:18px; }
 .tk-meals-head { border-bottom:1px solid var(--tk-line); padding-bottom:12px; }
+/* Category filter buttons: tap one to show only that food type. */
+.tk-meal-filter { display:flex; flex-wrap:wrap; gap:6px; margin:12px 0 4px; }
+.tk-meal-filter button { border:1px solid var(--tk-line); background:none; border-radius:999px; padding:5px 12px; font-size:12px; color:var(--tk-muted); }
+.tk-meal-filter button[aria-pressed=true] { border-color:var(--tk-accent); background:#edf2ec; color:var(--tk-accent); font-weight:600; }
 .tk-meals-head strong { font-size:13px; }
 .tk-meals-head p { font-size:11px; color:var(--tk-muted); margin:4px 0 0; }
 .tk-restaurant { padding:15px 0; border-bottom:1px solid var(--tk-line); }

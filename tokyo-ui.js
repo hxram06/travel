@@ -82,6 +82,12 @@ window.TokyoTrip = (() => {
   function onClick(e) {
     const button=e.target.closest('button');if(!button)return;
     if(button.dataset.day!==undefined){select(Number(button.dataset.day),0);return;}
+    if(button.dataset.mealcat!==undefined){
+      const cat=button.dataset.mealcat;
+      root.querySelectorAll('.tk-meal-filter [data-mealcat]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.mealcat===cat)));
+      root.querySelectorAll('.tk-meals-list .tk-restaurant').forEach(a=>{a.style.display=(cat==='all'||a.dataset.cat===cat)?'':'none';});
+      return;
+    }
     if(button.dataset.leg){focusLeg(button.dataset.leg);return;}
     if(button.dataset.breakfast){state.breakfast=button.dataset.breakfast;render();renderMap();return;}
     if(button.dataset.choice){state.choices[button.dataset.choice]=button.dataset.value==='true';render();renderMap();return;}
@@ -140,14 +146,24 @@ window.TokyoTrip = (() => {
     const l=trip.legs[id],line=trip.lines[l.line],from=trip.places[l.from],to=trip.places[l.to];
     return `<section class="tk-leg" style="--leg-color:${line?.color||'#8a978d'}"><div class="tk-leg-heading"><button data-leg="${id}" aria-label="${esc(from.name+'에서 '+to.name+'까지 지도 보기')}">${line?`<span class="tk-badge">${line.badge}</span>${line.name}`:l.mode==='indoor'?'역 안 이동':'걸어서 이동'}</button><time>${esc(l.duration)}</time></div><p><strong>${esc(from.name)}</strong> → ${esc(to.name)}</p>${l.direction?`<p class="tk-direction">${esc(l.direction)}</p>`:''}${l.note?`<p>${esc(l.note)}</p>`:''}${l.mode==='indoor'?'<p>역 안에서는 안내 표지를 따라요. 복잡한 통로는 역 안내도를 함께 확인해요.</p>':''}${l.stops?`<details><summary>경유역 보기</summary><p>${esc(l.stops.join(' → '))}</p></details>`:''}${l.source?link(l.source,'출구·공식 안내','tk-small-link'):''}</section>`;
   }
-  // Shared, rating-sorted order so map pin indices line up with the card list.
+  // Category order for grouping/sorting; map pin indices follow this same order.
+  const MEAL_CATS=['일식','가정식','고기','회','양식','기타'];
   function mealItems(s) {
     const catalog=typeof TOKYO_MEALS!=='undefined'?TOKYO_MEALS:{};
-    return s.meal ? [...(catalog[s.id]||catalog[s.meal]||[])].sort((a,b)=>(b.rating||0)-(a.rating||0)) : [];
+    if(!s.meal)return [];
+    return [...(catalog[s.id]||catalog[s.meal]||[])].sort((a,b)=>
+      (MEAL_CATS.indexOf(a.cat)-MEAL_CATS.indexOf(b.cat)) || ((b.rating||0)-(a.rating||0)));
   }
   function mealHtml(s) {
     const items=mealItems(s);
-    return `<section class="tk-meals"><div class="tk-meals-head"><strong>근처 식사 후보 ${items.length}곳</strong><p>1인 3,000엔 이내 메뉴 위주 · 예산은 예상<br>평점·영업·예약은 Google 지도와 공식 안내에서 확인해요.</p></div>${items.map((r,i)=>`<article class="tk-restaurant" data-rest="${i}">${r.photo?`<img src="${esc(r.photo)}" alt="${esc(r.name)}" loading="lazy">`:''}<h3>${esc(r.name)}</h3><p>${esc(r.food)} · ${esc(r.area)} · ${esc(r.budget)}</p><p class="${r.reservation==='required'?'tk-reservation-required':''}">${esc(r.reservation==='required'?'예약 필수':r.reservation==='recommended'?'예약 추천 · 가능 여부 확인':r.reservation==='walkin'?'당일 방문 후보 · 대기 가능':'예약 조건 확인')}</p>${r.note?`<p>${esc(r.note)}</p>`:''}${r.rating?`<small>${link(r.ratingSource, 'Google '+r.rating+' · '+r.checkedAt+' 자료 확인', '')}</small>`:''}<nav>${link(mapsLink(r.query||r.name+' 東京'),'평점·사진 보기','')}${r.source?link(r.source,'공식 안내',''):''}</nav></article>`).join('')}</section>`;
+    const present=MEAL_CATS.filter(c=>items.some(r=>r.cat===c));
+    // Category buttons: tap one to show only that food type (for when nothing in particular appeals).
+    const filter=`<div class="tk-meal-filter" role="tablist" aria-label="식당 분류 선택">`
+      +`<button data-mealcat="all" aria-pressed="true">전체 ${items.length}</button>`
+      +present.map(c=>`<button data-mealcat="${c}" aria-pressed="false">${c} ${items.filter(r=>r.cat===c).length}</button>`).join('')
+      +`</div>`;
+    const cards=items.map((r,i)=>`<article class="tk-restaurant" data-cat="${esc(r.cat||'기타')}" data-rest="${i}">${r.photo?`<img src="${esc(r.photo)}" alt="${esc(r.name)}" loading="lazy">`:''}<h3>${esc(r.name)}</h3><p>${esc(r.food)} · ${esc(r.area)} · ${esc(r.budget)}</p><p class="${r.reservation==='required'?'tk-reservation-required':''}">${esc(r.reservation==='required'?'예약 필수':r.reservation==='recommended'?'예약 추천 · 가능 여부 확인':r.reservation==='walkin'?'당일 방문 후보 · 대기 가능':'예약 조건 확인')}</p>${r.note?`<p>${esc(r.note)}</p>`:''}${r.rating?`<small>${link(r.ratingSource, 'Google '+r.rating+' · '+r.checkedAt+' 자료 확인', '')}</small>`:''}<nav>${link(mapsLink(r.query||r.name+' 東京'),'평점·사진 보기','')}${r.source?link(r.source,'공식 안내',''):''}</nav></article>`).join('');
+    return `<section class="tk-meals"><div class="tk-meals-head"><strong>근처 식사 후보 ${items.length}곳</strong><p>1인 3,000엔 이내 메뉴 위주 · 예산은 예상<br>평점·영업·예약은 Google 지도와 공식 안내에서 확인해요.</p></div>${filter}<div class="tk-meals-list">${cards}</div></section>`;
   }
   // A pre-set r.coords (author-provided) is used as-is and needs no network. Otherwise: a 200 with no
   // feature is a real miss (cache null); 429/5xx get a short backoff retry; any leftover error stays

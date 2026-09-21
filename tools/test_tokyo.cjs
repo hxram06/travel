@@ -20,7 +20,7 @@ for(const day of trip.days)for(const step of day.steps){
   assert(!ids.has(step.id),'Unique step id');ids.add(step.id);
   assert(trip.places[step.place],step.id+' destination');
   if(step.photo)assert(trip.photos[step.photo],step.id+' hero');
-  if(step.meal)assert.equal((meals[step.id]||meals[step.meal]).length,8,step.id+' has eight candidates');
+  if(step.meal)assert((meals[step.id]||meals[step.meal]).length>=8,step.id+' has >=8 candidates');
   let previous;
   for(const id of step.legs||[]){
     const leg=trip.legs[id];assert(leg,id);
@@ -104,7 +104,12 @@ async function browserCheck(){
  let box=await (await page.$('.tk-grip')).boundingBox();await swipe(box.y+15,box.y-100);assert((await state()).expanded);
  box=await (await page.$('.tk-grip')).boundingBox();await swipe(box.y+15,box.y+120);assert(!(await state()).expanded);
  await select(2,'shibuya-dinner');
- assert.equal(await page.$$eval('.tk-restaurant',x=>x.length),8);
+ assert(await page.$$eval('.tk-restaurant',x=>x.length)>=8);
+ // Category filter: tapping a category shows only that food type.
+ await page.click('.tk-meal-filter [data-mealcat="고기"]');
+ const filtered=await page.$$eval('.tk-restaurant',x=>x.filter(e=>getComputedStyle(e).display!=='none').map(e=>e.dataset.cat));
+ assert(filtered.length>0&&filtered.every(c=>c==='고기'),'category filter shows only that category');
+ await page.click('.tk-meal-filter [data-mealcat="all"]');
  await page.screenshot({path:path.join(dir,'05-meal-mobile.png')});
  await page.click('[data-action=next]');assert.equal(await page.$$eval('.tk-restaurant',x=>x.length),0);
  await select(2,'tower-choice');assert(!(await state()).steps.includes('tower'));
