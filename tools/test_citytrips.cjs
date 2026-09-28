@@ -7,6 +7,8 @@ const root=path.resolve(__dirname,'..');
 for(const [courseId,trip] of Object.entries(trips)){
   const routes=JSON.parse(fs.readFileSync(path.join(root,'assets/citytrips/routes-'+courseId+'.json'),'utf8')).routes;
   assert(trip.days.length>=9,courseId+' full arrival-to-departure plan');
+  assert.equal(trip.startOverview,true,courseId+' opens on full route');
+  assert(trip.overviewPlaces.length>=4,courseId+' overview labels');
   assert.equal(trip.days[0].date,'입국일');
   assert.equal(trip.days.at(-1).date,'출국일');
   const ids=new Set();
@@ -41,7 +43,14 @@ async function browserCheck(){
       await page.waitForSelector('.tokyo-trip');
       const expected=Object.keys(trips[courseId].legs).length;
       await page.waitForFunction(n=>window.TokyoTrip.getState().routeCount===n,{timeout:30000},expected);
+      await page.waitForFunction(()=>window.TokyoTrip.getState().mapReady,{timeout:60000});
+      await page.waitForFunction(()=>document.querySelector('.tk-map-caption').textContent.includes('전체 코스'),{timeout:10000});
+      assert.equal((await page.evaluate(()=>window.TokyoTrip.getState())).overview,true);
+      assert(await page.$eval('.tk-map-caption',el=>el.textContent.includes('전체 코스')));
+      assert.equal(await page.$$eval('.tk-pin-overview',els=>els.length),trips[courseId].overviewPlaces.length);
       const tabs=await page.$$eval('.tk-tabs [data-day]',els=>els.length);assert.equal(tabs,trips[courseId].days.length);
+      await page.click('[data-action="next"]');
+      const first=await page.evaluate(()=>window.TokyoTrip.getState());assert.equal(first.overview,false);assert.equal(first.day,0);assert.equal(first.step,0);
       await page.click(`.tk-tabs [data-day="${tabs-1}"]`);
       assert.equal((await page.evaluate(()=>window.TokyoTrip.getState())).day,tabs-1);
       assert(!await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),courseId+' mobile overflow');

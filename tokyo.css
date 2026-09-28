@@ -95,6 +95,8 @@
 /* Neighbour stops: small restrained text pins, current stays the hero photo pin. */
 .tk-pin-side { opacity:.9; }
 .tk-pin-side:hover,.tk-pin-side:focus-visible { opacity:1; }
+.tk-pin-overview { pointer-events:none; opacity:1; }
+.tk-pin-overview .tk-pin-mini { font-weight:650; color:#294c43; border-color:#b9d0c5; background:rgba(255,254,250,.96); }
 .tk-pin-mini { display:block; max-width:120px; padding:3px 8px; background:rgba(255,254,250,.92); border:1px solid var(--tk-line); border-radius:5px; font:500 10px/1.25 system-ui; color:#5b6864; text-align:center; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; box-shadow:0 1px 4px #0000001a; }
 /* Restaurant candidates on a meal stop: smaller, warm-tinted text pins, distinct from itinerary stops. */
 .tk-pin-meal { opacity:.92; }

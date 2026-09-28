@@ -5,7 +5,7 @@ window.TokyoTrip = (() => {
   const esc = v => String(v ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   const reduced = () => matchMedia('(prefers-reduced-motion: reduce)').matches;
   // sheet: 'peek' (50:50), 'detail' (current stop, height fits its content), 'place' (full card, big photo).
-  const state = { day:0, step:0, sheet:'peek', choices:{asakusa:false,tower:false,bus:false}, breakfast:'yoyogi' };
+  const state = { day:0, step:0, sheet:'peek', overview:false, choices:{asakusa:false,tower:false,bus:false}, breakfast:'yoyogi' };
   let root, map, ready=false, geometry={}, routeError='', markers=[], onClose, observer, cameraTimer, requestController;
   // Restaurant coordinates are looked up at runtime and shown transiently on the Mapbox map,
   // never stored (Mapbox Search terms). A miss just leaves that restaurant off the map, not faked.
@@ -30,7 +30,7 @@ window.TokyoTrip = (() => {
     trip=options.trip||TOKYO;
     onClose=options.onClose;
     geometry={};routeError='';
-    Object.assign(state,{day:0,step:0,sheet:'peek',choices:{asakusa:false,tower:false,bus:false},breakfast:'yoyogi'});
+    Object.assign(state,{day:0,step:0,sheet:'peek',overview:!!trip.startOverview,choices:{asakusa:false,tower:false,bus:false},breakfast:'yoyogi'});
     const meta=trip.meta||{name:'도쿄 4박 5일',period:'2027. 1. 25 — 29 · 계획안'};
     root=document.createElement('section'); root.className='tokyo-trip'; root.setAttribute('aria-label',meta.name+' 여행');
     root.innerHTML=`<header class="tk-header"><div class="tk-title"><h1>${esc(meta.name)}</h1><small>${esc(meta.period)}</small>${options.shared?'':'<button class="tk-close" data-action="close">코스 목록</button>'}</div><nav class="tk-tabs" role="tablist" aria-label="여행 날짜">${trip.days.map((d,i)=>`<button role="tab" id="tk-tab-${i}" aria-controls="tk-stage" data-day="${i}"><strong>Day ${i+1}</strong><small>${d.date} ${d.weekday||''}</small></button>`).join('')}</nav></header>
@@ -51,10 +51,11 @@ window.TokyoTrip = (() => {
     root?.remove();root=null;document.body.classList.remove('tokyo-open');
   }
   function select(day,index,sheet='peek') {
-    state.day=Math.max(0,Math.min(trip.days.length-1,day));state.step=Math.max(0,Math.min(visibleSteps().length-1,index));state.sheet=sheet;
+    state.overview=false;state.day=Math.max(0,Math.min(trip.days.length-1,day));state.step=Math.max(0,Math.min(visibleSteps().length-1,index));state.sheet=sheet;
     render(); renderMap();
   }
   function next(delta) {
+    if(state.overview){select(0,0);return;}
     const steps=visibleSteps(),target=state.step+delta;
     if(target<0 && state.day>0)select(state.day-1,visibleSteps(state.day-1).length-1);
     else if(target>=steps.length && state.day<trip.days.length-1)select(state.day+1,0);
@@ -119,6 +120,19 @@ window.TokyoTrip = (() => {
   }
   function render() {
     const s=current(),steps=visibleSteps();
+    if(state.overview){
+      const labels=(trip.overviewPlaces||[]).map(id=>trip.places[id]?.name).filter(Boolean);
+      root.dataset.day='overview';root.dataset.step='overview';
+      root.querySelector('#tk-stage').removeAttribute('aria-labelledby');
+      root.querySelectorAll('[data-day]').forEach((b,i)=>{b.setAttribute('aria-selected','false');b.tabIndex=i===0?0:-1;});
+      root.querySelector('.tk-detail').innerHTML=`<div class="tk-eyebrow">전체 여정<span>${trip.days.length}일</span></div><h2>입국부터 출국까지 한눈에</h2><p class="tk-description">지도에는 공항, 도시 간 이동, 당일치기 왕복을 포함한 전체 경로가 표시되어 있어요. 날짜 탭을 누르면 그날의 상세 동선으로 확대됩니다.</p>${labels.length?`<ul class="tk-points">${labels.map(x=>`<li>${esc(x)}</li>`).join('')}</ul>`:''}`;
+      root.querySelector('[data-action=prev]').disabled=true;
+      root.querySelector('[data-action=next]').disabled=false;
+      root.querySelector('[data-action=next]').textContent='입국일부터 보기 →';
+      root.querySelector('.tk-count').textContent='전체 경로';
+      root.querySelector('#tk-live').textContent='전체 여행 경로';
+      setSheet('peek');return;
+    }
     root.dataset.day=String(state.day+1);root.dataset.step=s.id;
     root.querySelector('#tk-stage').setAttribute('aria-labelledby',`tk-tab-${state.day}`);
     root.querySelectorAll('[data-day]').forEach((b,i)=>{b.setAttribute('aria-selected',String(i===state.day));b.tabIndex=i===state.day?0:-1;});
@@ -273,6 +287,12 @@ window.TokyoTrip = (() => {
       return [{type:'Feature',id:`${s.id}-${id}`,geometry:route.geometry,properties:{id,mode:l.mode,color:trip.lines[l.line]?.color||'#657e71',status:index<state.step?'past':index===state.step?'current':'future'}}];
     }));
   }
+  function overviewFeatures() {
+    return Object.entries(trip.legs||{}).flatMap(([id,l])=>{
+      const route=geometry[id];if(!route||l.mode==='indoor')return [];
+      return [{type:'Feature',id:`overview-${id}`,geometry:route.geometry,properties:{id,mode:l.mode,color:trip.lines[l.line]?.color||'#657e71',status:'current'}}];
+    });
+  }
   function camera(coords,maxZoom=15) {
     if(!ready||!coords.length)return;
     map.stop();
@@ -287,7 +307,22 @@ window.TokyoTrip = (() => {
   function press(el){el.classList.remove('is-pressed');void el.offsetWidth;el.classList.add('is-pressed');}
   function renderMap() {
     if(!ready||!root)return;
+    if(state.overview){
+      const features=overviewFeatures();
+      map.getSource('tk-routes')?.setData({type:'FeatureCollection',features});
+      markers.forEach(m=>m.remove());markers=[];poiMarkers=[];
+      const seen=new Set();
+      for(const id of trip.overviewPlaces||[]){
+        const p=trip.places[id];if(!p)continue;const key=p.coords.join(',');if(seen.has(key))continue;seen.add(key);
+        const el=document.createElement('span');el.className='tk-pin tk-pin-side tk-pin-overview';el.setAttribute('role','img');el.setAttribute('aria-label',p.name);el.innerHTML=`<span class="tk-pin-mini">${esc(p.name)}</span>`;
+        markers.push(new mapboxgl.Marker({element:el}).setLngLat(p.coords).addTo(map));
+      }
+      root.querySelector('.tk-map-caption').innerHTML='<b>전체 코스</b> · 입국부터 출국까지의 이동선';
+      const coords=features.flatMap(f=>f.geometry.coordinates);(trip.overviewPlaces||[]).forEach(id=>{if(trip.places[id])coords.push(trip.places[id].coords);});
+      camera(coords,8);return;
+    }
     const s=current(),features=routeFeatures(),steps=visibleSteps();
+    root.querySelector('.tk-map-caption').innerHTML='<b>현재 구간</b> · 지난 길은 회색, 다음 길은 흐리게';
     map.getSource('tk-routes')?.setData({type:'FeatureCollection',features});
     markers.forEach(m=>m.remove());markers=[];
     const p=trip.places[placeId(s)],photo=photoFor(s);
