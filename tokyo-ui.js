@@ -1,7 +1,7 @@
 /* Course 11 is intentionally independent of TravelMap and the Europe panel. */
 window.TokyoTrip = (() => {
   'use strict';
-  const trip = TOKYO;
+  let trip = TOKYO;
   const esc = v => String(v ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   const reduced = () => matchMedia('(prefers-reduced-motion: reduce)').matches;
   // sheet: 'peek' (50:50), 'detail' (current stop, height fits its content), 'place' (full card, big photo).
@@ -27,18 +27,20 @@ window.TokyoTrip = (() => {
 
   function open(options={}) {
     if(root) close();
+    trip=options.trip||TOKYO;
     onClose=options.onClose;
     geometry={};routeError='';
     Object.assign(state,{day:0,step:0,sheet:'peek',choices:{asakusa:false,tower:false,bus:false},breakfast:'yoyogi'});
-    root=document.createElement('section'); root.className='tokyo-trip'; root.setAttribute('aria-label','도쿄 4박 5일 여행');
-    root.innerHTML=`<header class="tk-header"><div class="tk-title"><h1>도쿄 4박 5일</h1><small>2027. 1. 25 — 29 · 계획안</small>${options.shared?'':'<button class="tk-close" data-action="close">코스 목록</button>'}</div><nav class="tk-tabs" role="tablist" aria-label="여행 날짜">${trip.days.map((d,i)=>`<button role="tab" id="tk-tab-${i}" aria-controls="tk-stage" data-day="${i}"><strong>Day ${i+1}</strong><small>${d.date} ${d.weekday}</small></button>`).join('')}</nav></header>
+    const meta=trip.meta||{name:'도쿄 4박 5일',period:'2027. 1. 25 — 29 · 계획안'};
+    root=document.createElement('section'); root.className='tokyo-trip'; root.setAttribute('aria-label',meta.name+' 여행');
+    root.innerHTML=`<header class="tk-header"><div class="tk-title"><h1>${esc(meta.name)}</h1><small>${esc(meta.period)}</small>${options.shared?'':'<button class="tk-close" data-action="close">코스 목록</button>'}</div><nav class="tk-tabs" role="tablist" aria-label="여행 날짜">${trip.days.map((d,i)=>`<button role="tab" id="tk-tab-${i}" aria-controls="tk-stage" data-day="${i}"><strong>Day ${i+1}</strong><small>${d.date} ${d.weekday||''}</small></button>`).join('')}</nav></header>
       <div class="tk-stage" id="tk-stage" role="tabpanel"><div class="tk-map-pane"><div class="tk-map" id="tokyo-map"></div><div class="tk-map-caption"><b>현재 구간</b> · 지난 길은 회색, 다음 길은 흐리게</div><div class="tk-map-status" role="status">지도를 준비하고 있어요.</div></div>
       <section class="tk-sheet" aria-label="일정 카드"><button class="tk-grip" aria-label="위로 쓸어 현재 일정 자세히, 아래로 쓸어 지도 보기. 키보드 위·아래 방향키로도 조절" aria-expanded="false"></button><div class="tk-scroll"><article class="tk-detail"></article></div><footer class="tk-footer"><button data-action="prev" aria-label="이전 일정">← 이전</button><span class="tk-count"></span><button class="tk-next" data-action="next">다음 →</button></footer></section></div><div class="tk-screenreader" aria-live="polite" id="tk-live"></div>`;
     document.body.append(root); document.body.classList.add('tokyo-open');
     root.addEventListener('click',onClick);
     root.querySelector('.tk-tabs').addEventListener('keydown',e=>{
       if(!['ArrowLeft','ArrowRight','Home','End'].includes(e.key))return;
-      e.preventDefault(); const day=e.key==='Home'?0:e.key==='End'?4:Math.max(0,Math.min(4,state.day+(e.key==='ArrowRight'?1:-1)));
+      e.preventDefault(); const last=trip.days.length-1; const day=e.key==='Home'?0:e.key==='End'?last:Math.max(0,Math.min(last,state.day+(e.key==='ArrowRight'?1:-1)));
       select(day,0); root.querySelector(`[data-day="${day}"]`).focus();
     });
     bindGestures(); render(); initializeMap(); loadRoutes();
@@ -123,7 +125,7 @@ window.TokyoTrip = (() => {
     mealFilter='all'; // step change resets the category filter (card rebuilt with 전체 active)
     root.querySelector('.tk-detail').innerHTML=detail(s);
     root.querySelector('[data-action=prev]').disabled=state.day===0&&state.step===0;
-    const end=state.day===4&&state.step===steps.length-1;
+    const end=state.day===trip.days.length-1&&state.step===steps.length-1;
     root.querySelector('[data-action=next]').disabled=end;
     root.querySelector('[data-action=next]').textContent=end?'마지막 일정':'다음 →';
     root.querySelector('.tk-count').textContent=`${state.step+1} / ${steps.length}`;
@@ -145,7 +147,7 @@ window.TokyoTrip = (() => {
     if(s.choice)out+=`<div class="tk-choices"><button data-choice="${s.choice}" data-value="true" aria-pressed="${state.choices[s.choice]}">${esc(s.choiceLabel)}</button><button data-choice="${s.choice}" data-value="false" aria-pressed="${!state.choices[s.choice]}">${esc(s.skipLabel)}</button></div>`;
     if(s.kind==='breakfastChoice')out+=`<div class="tk-choices"><button data-breakfast="yoyogi" aria-pressed="${state.breakfast==='yoyogi'}">요요기에서 아침 · 탄보 등</button><button data-breakfast="shinjuku" aria-pressed="${state.breakfast==='shinjuku'}">신주쿠에서 아침 · 바로 쇼핑</button></div>`;
     if(s.meal)out+=mealHtml(s);
-    out+=link(mapsLink(p.name+' 東京'),'Google 지도에서 장소 보기');
+    out+=link(mapsLink(p.name),'Google 지도에서 장소 보기');
     if(s.source||p.source)out+=link(s.source||p.source,'공식 안내');
     return out;
   }
@@ -226,6 +228,7 @@ window.TokyoTrip = (() => {
     Promise.all([worker(),worker(),worker()]).then(()=>{ if(root&&ready&&stamp===mealGeoRun&&current()?.id===s.id)renderMap(); });
   }
   async function loadRoutes() {
+    if(!Object.keys(trip.legs||{}).length){geometry={};routeError='';renderMap();return;}
     requestController?.abort(); const controller=new AbortController();requestController=controller;
     try {
       const response=await fetch('assets/tokyo/routes.json?v=6',{signal:controller.signal});
@@ -245,7 +248,8 @@ window.TokyoTrip = (() => {
     if(typeof mapboxgl==='undefined'){setStatus('지도를 불러오지 못했어요. 아래 일정과 Google 지도 링크를 이용해 주세요.');return;}
     try {
       mapboxgl.accessToken=MAPBOX_TOKEN;
-      map=new mapboxgl.Map({container:root.querySelector('.tk-map'),style:'mapbox://styles/mapbox/light-v11',center:trip.places.narita.coords,zoom:13,attributionControl:false});
+      const first=trip.places[placeId(trip.days[0].steps[0])]||Object.values(trip.places)[0];
+      map=new mapboxgl.Map({container:root.querySelector('.tk-map'),style:'mapbox://styles/mapbox/light-v11',center:(trip.center||first.coords),zoom:trip.zoom||13,attributionControl:false});
       map.addControl(new mapboxgl.AttributionControl({compact:true,customAttribution:'경로: © OpenStreetMap contributors · Mapbox'}),'bottom-right');
       map.on('load',()=>{
         ready=true;

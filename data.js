@@ -8964,4 +8964,9 @@ COURSES.push({
     { day:5, cityKo:'나리타공항', title:'다시 집으로' },
   ],
 });
+COURSES.push(
+  { id:12, experience:'citytrip', nameKo:'뮌헨 → 드레스덴 → 베를린 → 바르샤바', subtitle:'독일 동부와 폴란드의 겨울 도시', period:'날짜 미정', nights:'7박 8일 설계안', party:'도시·크리스마스 여행', cities:['뮌헨','드레스덴','베를린','바르샤바'], color:'#7b4f34', coverSpot:'qa_c9_cover_munich_base', days:[{day:1,cityKo:'뮌헨',title:'뮌헨에 도착'},{day:2,cityKo:'노이슈반슈타인',title:'바이에른의 하루'},{day:3,cityKo:'드레스덴',title:'드레스덴으로'},{day:4,cityKo:'드레스덴',title:'드레스덴의 겨울'},{day:5,cityKo:'베를린',title:'베를린으로'},{day:6,cityKo:'베를린',title:'베를린의 하루'},{day:7,cityKo:'바르샤바',title:'바르샤바로'},{day:8,cityKo:'바르샤바',title:'마지막 하루'}]},
+  { id:13, experience:'citytrip', nameKo:'프랑크푸르트 → 함부르크', subtitle:'라인강권 당일치기와 북부 항구도시', period:'날짜 미정', nights:'5박 6일 설계안', party:'독일 도시 여행', cities:['프랑크푸르트','함부르크'], color:'#295f78', coverSpot:'qa_c8_d4_0', days:[{day:1,cityKo:'프랑크푸르트',title:'프랑크푸르트에 도착'},{day:2,cityKo:'프랑크푸르트',title:'프랑크푸르트'},{day:3,cityKo:'하이델베르크',title:'하이델베르크 당일치기'},{day:4,cityKo:'쾰른',title:'쾰른 당일치기'},{day:5,cityKo:'함부르크',title:'함부르크로'},{day:6,cityKo:'함부르크',title:'함부르크의 하루'}]},
+  { id:14, experience:'citytrip', nameKo:'스트라스부르 → 파리', subtitle:'크리스마스 마켓과 파리의 연말', period:'크리스마스 시즌 · 날짜 미정', nights:'5박 6일 설계안', party:'커플 여행', cities:['스트라스부르','파리'], color:'#9d3450', coverSpot:'eiffel_tower', days:[{day:1,cityKo:'스트라스부르',title:'스트라스부르에 도착'},{day:2,cityKo:'스트라스부르',title:'크리스마스 마켓'},{day:3,cityKo:'파리',title:'파리로'},{day:4,cityKo:'파리',title:'파리의 크리스마스'},{day:5,cityKo:'파리',title:'파리의 하루'},{day:6,cityKo:'파리',title:'몽마르트와 귀국 준비'}]}
+);
 if (typeof module !== 'undefined') { module.exports = { START_LOCATION, COURSES }; }

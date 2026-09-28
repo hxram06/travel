@@ -292,6 +292,14 @@
 
   // ---------- 코스 진입 / 이탈 ----------
   async function openCourse(course) {
+    if (course.experience === 'citytrip') {
+      landing.classList.add('hidden');
+      mapView.classList.add('hidden');
+      window.TokyoTrip.open({ trip: window.CITY_TRIPS[course.id], shared: isSharedMode, onClose: () => {
+        landing.classList.remove('hidden'); document.title = '여행 계획';
+      }});
+      return;
+    }
     if (course.id === 11) {
       landing.classList.add('hidden');
       mapView.classList.add('hidden');
