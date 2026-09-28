@@ -1582,7 +1582,10 @@
     '8': 'v5j2m6',
     '9': 'k3n8b7',
     '10': 'y1h5t4',
-    '11': 'tokyo27'
+    '11': 'tokyo27',
+    '12': 'munich27',
+    '13': 'north27',
+    '14': 'paris27'
   };
 
   function initApp() {
