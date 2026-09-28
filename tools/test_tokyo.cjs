@@ -12,7 +12,7 @@ const meals=require('../tokyo-meals.js');
 const courses=require('../data.js').COURSES;
 const routes=JSON.parse(fs.readFileSync(path.join(root,'assets/tokyo/routes.json'),'utf8')).routes;
 const baseline='1b5ad5aded919defeb9f26299d6567f8a86431dd7cefeaecb1bb455cbbee9678';
-assert.equal(crypto.createHash('sha256').update(JSON.stringify(courses.filter(c=>c.id!==11))).digest('hex'),baseline,'Other courses must be unchanged');
+assert.equal(crypto.createHash('sha256').update(JSON.stringify(courses.filter(c=>![11,12,13,14].includes(c.id)))).digest('hex'),baseline,'Legacy courses must be unchanged');
 assert.equal(courses.filter(c=>c.id===11).length,1);
 assert.equal(trip.days.length,5);
 const ids=new Set();

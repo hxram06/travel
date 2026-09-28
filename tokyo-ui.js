@@ -51,13 +51,13 @@ window.TokyoTrip = (() => {
     root?.remove();root=null;document.body.classList.remove('tokyo-open');
   }
   function select(day,index,sheet='peek') {
-    state.day=Math.max(0,Math.min(4,day));state.step=Math.max(0,Math.min(visibleSteps().length-1,index));state.sheet=sheet;
+    state.day=Math.max(0,Math.min(trip.days.length-1,day));state.step=Math.max(0,Math.min(visibleSteps().length-1,index));state.sheet=sheet;
     render(); renderMap();
   }
   function next(delta) {
     const steps=visibleSteps(),target=state.step+delta;
     if(target<0 && state.day>0)select(state.day-1,visibleSteps(state.day-1).length-1);
-    else if(target>=steps.length && state.day<4)select(state.day+1,0);
+    else if(target>=steps.length && state.day<trip.days.length-1)select(state.day+1,0);
     else select(state.day,target);
   }
   // Single sheet state machine. 'peek' = 50:50, 'detail' = current stop grown to fit its own
@@ -231,7 +231,7 @@ window.TokyoTrip = (() => {
     if(!Object.keys(trip.legs||{}).length){geometry={};routeError='';renderMap();return;}
     requestController?.abort(); const controller=new AbortController();requestController=controller;
     try {
-      const response=await fetch('assets/tokyo/routes.json?v=6',{signal:controller.signal});
+      const response=await fetch(trip.routeAsset||'assets/tokyo/routes.json?v=6',{signal:controller.signal});
       if(!response.ok)throw new Error('route data');
       const payload=await response.json(); if(controller.signal.aborted||!root)return;
       for(const leg of Object.values(trip.legs)) {
