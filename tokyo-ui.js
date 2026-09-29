@@ -288,7 +288,9 @@ window.TokyoTrip = (() => {
     }));
   }
   function overviewFeatures() {
-    return Object.entries(trip.legs||{}).flatMap(([id,l])=>{
+    const used=new Set(trip.days.flatMap(day=>day.steps.filter(s=>(!s.branch||state.choices[s.branch])&&(!s.without||!state.choices[s.without])).flatMap(step=>step.legs||[])));
+    return [...used].flatMap(id=>{
+      const l=trip.legs[id];
       const route=geometry[id];if(!route||l.mode==='indoor')return [];
       return [{type:'Feature',id:`overview-${id}`,geometry:route.geometry,properties:{id,mode:l.mode,color:trip.lines[l.line]?.color||'#657e71',status:'current'}}];
     });

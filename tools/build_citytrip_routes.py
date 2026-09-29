@@ -94,7 +94,8 @@ def build_course(course_id, trip, token):
     if missing:
         raise RuntimeError(f'{course_id}: missing {missing}')
     destination = ROOT / 'assets' / 'citytrips' / f'routes-{course_id}.json'
-    destination.write_text(json.dumps({'version': 2, 'routes': output}, ensure_ascii=False, separators=(',', ':')), encoding='utf-8')
+    ordered = {key: output[key] for key in trip['legs'] if key in output}
+    destination.write_text(json.dumps({'version': 2, 'routes': ordered}, ensure_ascii=False, separators=(',', ':')), encoding='utf-8')
     print(course_id, len(output), destination)
 
 

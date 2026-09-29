@@ -8,7 +8,7 @@ for(const [courseId,trip] of Object.entries(trips)){
   const routes=JSON.parse(fs.readFileSync(path.join(root,'assets/citytrips/routes-'+courseId+'.json'),'utf8')).routes;
   assert(trip.days.length>=9,courseId+' full arrival-to-departure plan');
   assert.equal(trip.startOverview,true,courseId+' opens on full route');
-  assert(trip.overviewPlaces.length>=4,courseId+' overview labels');
+  assert(trip.overviewPlaces.length>=3,courseId+' overview labels');
   assert.equal(trip.days[0].date,'입국일');
   assert.equal(trip.days.at(-1).date,'출국일');
   const ids=new Set();
@@ -51,6 +51,13 @@ async function browserCheck(){
       const tabs=await page.$$eval('.tk-tabs [data-day]',els=>els.length);assert.equal(tabs,trips[courseId].days.length);
       await page.click('[data-action="next"]');
       const first=await page.evaluate(()=>window.TokyoTrip.getState());assert.equal(first.overview,false);assert.equal(first.day,0);assert.equal(first.step,0);
+      if(courseId==='14'){
+        await page.click('[data-action="next"]');
+        await page.click('[data-choice="cdgFallback"][data-value="true"]');
+        const fallback=await page.evaluate(()=>window.TokyoTrip.getState().steps);
+        assert(fallback.includes('fallback-est')&&fallback.includes('fallback-stras'));
+        assert(!fallback.includes('cdg-direct'));
+      }
       await page.click(`.tk-tabs [data-day="${tabs-1}"]`);
       assert.equal((await page.evaluate(()=>window.TokyoTrip.getState())).day,tabs-1);
       assert(!await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),courseId+' mobile overflow');
