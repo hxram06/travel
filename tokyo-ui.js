@@ -6,7 +6,7 @@ window.TokyoTrip = (() => {
   const reduced = () => matchMedia('(prefers-reduced-motion: reduce)').matches;
   // sheet: 'peek' (50:50), 'detail' (current stop, height fits its content), 'place' (full card, big photo).
   const state = { day:0, step:0, sheet:'peek', overview:false, choices:{asakusa:false,tower:false,bus:false}, breakfast:'yoyogi' };
-  let root, map, ready=false, geometry={}, routeError='', markers=[], onClose, observer, cameraTimer, requestController;
+  let root, map, ready=false, geometry={}, routeError='', markers=[], onClose, onLegacy, observer, cameraTimer, requestController;
   // Restaurant coordinates are looked up at runtime and shown transiently on the Mapbox map,
   // never stored (Mapbox Search terms). A miss just leaves that restaurant off the map, not faked.
   const MEAL_GEO={}; const mealInflight=new Set(); let mealGeoRun=0, mealPinCount=0, spotPinCount=0;
@@ -29,11 +29,12 @@ window.TokyoTrip = (() => {
     if(root) close();
     trip=options.trip||TOKYO;
     onClose=options.onClose;
+    onLegacy=options.onLegacy;
     geometry={};routeError='';
     Object.assign(state,{day:0,step:0,sheet:'peek',overview:!!trip.startOverview,choices:{asakusa:false,tower:false,bus:false},breakfast:'yoyogi'});
     const meta=trip.meta||{name:'도쿄 4박 5일',period:'2027. 1. 25 — 29 · 계획안'};
     root=document.createElement('section'); root.className='tokyo-trip'; root.setAttribute('aria-label',meta.name+' 여행');
-    root.innerHTML=`<header class="tk-header"><div class="tk-title"><h1>${esc(meta.name)}</h1><small>${esc(meta.period)}</small>${options.shared?'':'<button class="tk-close" data-action="close">코스 목록</button>'}</div><nav class="tk-tabs" role="tablist" aria-label="여행 날짜">${trip.days.map((d,i)=>`<button role="tab" id="tk-tab-${i}" aria-controls="tk-stage" data-day="${i}"><strong>Day ${i+1}</strong><small>${d.date} ${d.weekday||''}</small></button>`).join('')}</nav></header>
+    root.innerHTML=`<header class="tk-header"><div class="tk-title"><h1>${esc(meta.name)}</h1><small>${esc(meta.period)}</small>${onLegacy?'<button class="tk-close" data-action="legacy">기존 상세 일정 · 평가</button>':''}${options.shared?'':'<button class="tk-close" data-action="close">코스 목록</button>'}</div><nav class="tk-tabs" role="tablist" aria-label="여행 날짜">${trip.days.map((d,i)=>`<button role="tab" id="tk-tab-${i}" aria-controls="tk-stage" data-day="${i}"><strong>Day ${i+1}</strong><small>${d.date} ${d.weekday||''}</small></button>`).join('')}</nav></header>
       <div class="tk-stage" id="tk-stage" role="tabpanel"><div class="tk-map-pane"><div class="tk-map" id="tokyo-map"></div><div class="tk-map-caption"><b>현재 구간</b> · 지난 길은 회색, 다음 길은 흐리게</div><div class="tk-map-status" role="status">지도를 준비하고 있어요.</div></div>
       <section class="tk-sheet" aria-label="일정 카드"><button class="tk-grip" aria-label="위로 쓸어 현재 일정 자세히, 아래로 쓸어 지도 보기. 키보드 위·아래 방향키로도 조절" aria-expanded="false"></button><div class="tk-scroll"><article class="tk-detail"></article></div><footer class="tk-footer"><button data-action="prev" aria-label="이전 일정">← 이전</button><span class="tk-count"></span><button class="tk-next" data-action="next">다음 →</button></footer></section></div><div class="tk-screenreader" aria-live="polite" id="tk-live"></div>`;
     document.body.append(root); document.body.classList.add('tokyo-open');
@@ -99,6 +100,7 @@ window.TokyoTrip = (() => {
     if(button.dataset.action==='next')next(1);
     if(button.dataset.action==='prev')next(-1);
     if(button.dataset.action==='close'){const callback=onClose;close();callback?.();}
+    if(button.dataset.action==='legacy'){const callback=onLegacy;close();callback?.();}
     if(button.dataset.action==='retry')loadRoutes();
   }
   // Raising/lowering the card is the GRIP's job only; the card body scrolls on its own, so a
@@ -125,7 +127,7 @@ window.TokyoTrip = (() => {
       root.dataset.day='overview';root.dataset.step='overview';
       root.querySelector('#tk-stage').removeAttribute('aria-labelledby');
       root.querySelectorAll('[data-day]').forEach((b,i)=>{b.setAttribute('aria-selected','false');b.tabIndex=i===0?0:-1;});
-      root.querySelector('.tk-detail').innerHTML=`<div class="tk-eyebrow">전체 여정<span>${trip.days.length}일</span></div><h2>입국부터 출국까지 한눈에</h2><p class="tk-description">지도에는 공항, 도시 간 이동, 당일치기 왕복을 포함한 전체 경로가 표시되어 있어요. 날짜 탭을 누르면 그날의 상세 동선으로 확대됩니다.</p>${labels.length?`<ul class="tk-points">${labels.map(x=>`<li>${esc(x)}</li>`).join('')}</ul>`:''}`;
+      root.querySelector('.tk-detail').innerHTML=`<div class="tk-eyebrow">전체 여정<span>${trip.days.length}일</span></div><h2>입국부터 출국까지 한눈에</h2><p class="tk-description">${esc(trip.routeNote || '지도에는 공항, 도시 간 이동, 당일치기 왕복을 포함한 전체 경로가 표시되어 있어요. 날짜 탭을 누르면 그날의 상세 동선으로 확대됩니다.')}</p>${labels.length?`<ul class="tk-points">${labels.map(x=>`<li>${esc(x)}</li>`).join('')}</ul>`:''}`;
       root.querySelector('[data-action=prev]').disabled=true;
       root.querySelector('[data-action=next]').disabled=false;
       root.querySelector('[data-action=next]').textContent='입국일부터 보기 →';
@@ -243,6 +245,7 @@ window.TokyoTrip = (() => {
   }
   async function loadRoutes() {
     if(!Object.keys(trip.legs||{}).length){geometry={};routeError='';renderMap();return;}
+    if(trip.inlineRoutes){geometry=trip.inlineRoutes;routeError='';renderMap();setStatus(ready?'':'지도를 준비하고 있어요.');return;}
     requestController?.abort(); const controller=new AbortController();requestController=controller;
     try {
       const response=await fetch(trip.routeAsset||'assets/tokyo/routes.json?v=6',{signal:controller.signal});
@@ -319,12 +322,12 @@ window.TokyoTrip = (() => {
         const el=document.createElement('span');el.className='tk-pin tk-pin-side tk-pin-overview';el.setAttribute('role','img');el.setAttribute('aria-label',p.name);el.innerHTML=`<span class="tk-pin-mini">${esc(p.name)}</span>`;
         markers.push(new mapboxgl.Marker({element:el}).setLngLat(p.coords).addTo(map));
       }
-      root.querySelector('.tk-map-caption').innerHTML='<b>전체 코스</b> · 입국부터 출국까지의 이동선';
+      root.querySelector('.tk-map-caption').innerHTML=trip.routeNote?'<b>전체 코스</b> · 경유점 기준 개략선':'<b>전체 코스</b> · 입국부터 출국까지의 이동선';
       const coords=features.flatMap(f=>f.geometry.coordinates);(trip.overviewPlaces||[]).forEach(id=>{if(trip.places[id])coords.push(trip.places[id].coords);});
       camera(coords,8);return;
     }
     const s=current(),features=routeFeatures(),steps=visibleSteps();
-    root.querySelector('.tk-map-caption').innerHTML='<b>현재 구간</b> · 지난 길은 회색, 다음 길은 흐리게';
+    root.querySelector('.tk-map-caption').innerHTML=trip.routeNote?'<b>현재 구간</b> · 경유점 기준 개략선':'<b>현재 구간</b> · 지난 길은 회색, 다음 길은 흐리게';
     map.getSource('tk-routes')?.setData({type:'FeatureCollection',features});
     markers.forEach(m=>m.remove());markers=[];
     const p=trip.places[placeId(s)],photo=photoFor(s);

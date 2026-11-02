@@ -7,11 +7,11 @@
 .tokyo-trip a { color:var(--tk-accent); text-underline-offset:3px; }
 .tk-header { height:104px; height:calc(104px + env(safe-area-inset-top)); padding-top:env(safe-area-inset-top); background:var(--tk-paper); position:relative; z-index:4; }
 .tk-title { height:52px; display:flex; align-items:center; justify-content:space-between; padding:0 22px; }
-.tk-title h1 { font-size:17px; font-weight:700; letter-spacing:-.6px; margin:0; }
-.tk-title small { color:var(--tk-muted); font-size:11px; }
-.tk-close { border:0; background:none; padding:8px 0 8px 14px; font-size:12px!important; }
-.tk-tabs { display:flex; height:52px; padding:0 12px; border-bottom:1px solid var(--tk-line); }
-.tk-tabs button { flex:1; border:0; border-bottom:2px solid transparent; background:none; display:grid; align-content:center; gap:0; line-height:1.5; color:var(--tk-muted); }
+.tk-title h1 { font-size:17px; font-weight:700; letter-spacing:-.6px; margin:0; min-width:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.tk-title small { color:var(--tk-muted); font-size:11px; white-space:nowrap; padding-left:8px; }
+.tk-close { border:0; background:none; padding:8px 0 8px 14px; font-size:12px!important; white-space:nowrap; flex-shrink:0; }
+.tk-tabs { display:flex; height:52px; padding:0 12px; border-bottom:1px solid var(--tk-line); overflow-x:auto; scrollbar-width:thin; }
+.tk-tabs button { flex:1 0 64px; border:0; border-bottom:2px solid transparent; background:none; display:grid; align-content:center; gap:0; line-height:1.5; color:var(--tk-muted); }
 .tk-tabs strong { font-size:13px; font-weight:600; }
 .tk-tabs small { font-size:10px; }
 .tk-tabs button[aria-selected=true] { color:var(--tk-accent); border-bottom-color:var(--tk-accent); }
@@ -120,4 +120,5 @@ body.tokyo-open { overflow:hidden; }
  .tk-scroll { padding-left:28px; padding-right:28px; }.tk-hero { margin-left:-28px; margin-right:-28px; }.tk-hero img { height:235px; }.tk-map-caption { top:22px; left:22px; }
 }
 @media(max-width:350px) { .tk-scroll { padding-left:16px; padding-right:16px; }.tk-detail h2 { font-size:21px; }.tk-title { padding:0 16px; }.tk-title small { display:none; }.tk-leg-heading { display:block; }.tk-leg time { display:block; } }
+@media(max-width:650px) { .tk-title small { display:none; }.tk-title h1 { font-size:14px; }.tk-close { padding-left:8px; font-size:11px!important; } }
 @media(prefers-reduced-motion:reduce) { .tk-sheet { transition:none; }.tk-pin * { animation:none!important; } }

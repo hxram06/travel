@@ -52,11 +52,12 @@
     if (!state.course) return '';
     const day = state.course.days[dayIndex];
     if (!day) return '';
-    const stepKey = `course-${state.course.id}-day-${day.day}-step-${itemIndex}`;
+    const feedbackId = state.course.feedbackId || state.course.id;
+    const stepKey = `course-${feedbackId}-day-${day.day}-step-${itemIndex}`;
     return `
       <div class="timeline-feedback${compact ? ' timeline-feedback-compact' : ''}"
         data-feedback-key="${escapeHtml(stepKey)}"
-        data-course-id="${state.course.id}"
+        data-course-id="${feedbackId}"
         data-day-number="${day.day}"
         data-timeline-index="${itemIndex}"
         data-feedback-title="${escapeHtml(title)}"
@@ -84,6 +85,8 @@
     courses.forEach((course) => {
       const card = document.createElement('article');
       card.className = 'course-card';
+      card.dataset.courseId = course.id;
+      card.style.setProperty('--course-color', window.LandingGlobe.color(course.id));
 
       const openButton = document.createElement('button');
       openButton.className = 'course-card-open';
@@ -93,17 +96,6 @@
       const bg = document.createElement('div');
       bg.className = 'course-card-bg';
       bg.style.background = 'var(--bg-soft)';
-
-      const cover = PHOTOS[course.coverSpot];
-      if (cover) {
-        const probe = new Image();
-        probe.onload = () => {
-          bg.style.backgroundImage = `url("${cover.url}")`;
-          bg.style.backgroundSize = 'cover';
-          bg.style.backgroundPosition = 'center';
-        };
-        probe.src = cover.url;
-      }
 
       const overlay = document.createElement('div');
       overlay.className = 'course-card-overlay';
@@ -123,6 +115,10 @@
       card.append(openButton);
       const open = () => openCourse(course);
       openButton.addEventListener('click', open);
+      openButton.addEventListener('mouseenter', () => window.LandingGlobe.setActive(course.id));
+      openButton.addEventListener('mouseleave', () => window.LandingGlobe.setActive(null));
+      openButton.addEventListener('focus', () => window.LandingGlobe.setActive(course.id));
+      openButton.addEventListener('blur', () => window.LandingGlobe.setActive(null));
 
       if (new URLSearchParams(window.location.search).get('owner') === 'a8f4k9x2m') {
         const menuButton = document.createElement('button');
@@ -140,6 +136,7 @@
       }
       courseGrid.appendChild(card);
     });
+    window.LandingGlobe.mount(courses, openCourse);
   }
 
   function closeOperatorCourseMenu() {
@@ -188,13 +185,14 @@
   }
 
   function renderCourseStats(course, stats) {
+    const feedbackId = course.feedbackId || course.id;
     const stepStats = new Map(stats.steps.map((step) => [
-      `course-${course.id}-day-${step.dayNumber}-step-${step.timelineIndex}`,
+      `course-${feedbackId}-day-${step.dayNumber}-step-${step.timelineIndex}`,
       step,
     ]));
     const days = course.days.map((day) => {
       const items = (day.timeline || []).map((item, timelineIndex) => {
-        const key = `course-${course.id}-day-${day.day}-step-${timelineIndex}`;
+        const key = `course-${feedbackId}-day-${day.day}-step-${timelineIndex}`;
         return { item, timelineIndex, stat: stepStats.get(key) };
       }).filter(({ stat }) => stat && stat.total > 0);
       return { day, items };
@@ -243,7 +241,7 @@
     else statsDialog.setAttribute('open', '');
     try {
       const feedback = await waitForFeedbackApi();
-      const stats = await feedback.loadCourseStats(course.id);
+      const stats = await feedback.loadCourseStats(course.feedbackId || course.id);
       renderCourseStats(course, stats);
     } catch (error) {
       console.error('코스 통계 조회 오류', error);
@@ -264,7 +262,7 @@
 
   function getViewDay() {
     const day = state.course.days[state.dayIndex];
-    if (state.course.id === 9) return day;
+    if (state.course.id === 1) return day;
     const sub = state.subStep;
     if (!sub) return day;
     if (sub.type === 'entry-airport') return day.entryAirport || day;
@@ -291,32 +289,43 @@
   }
 
   // ---------- 코스 진입 / 이탈 ----------
-  async function openCourse(course) {
+  async function openCourse(course, options = {}) {
     if (course.experience === 'citytrip') {
       landing.classList.add('hidden');
       mapView.classList.add('hidden');
       window.TokyoTrip.open({ trip: window.CITY_TRIPS[course.id], shared: isSharedMode, onClose: () => {
-        landing.classList.remove('hidden'); document.title = '여행 계획';
+        landing.classList.remove('hidden'); window.LandingGlobe.resize(); document.title = '여행 계획';
       }});
       return;
     }
-    if (course.id === 11) {
+    if (course.experience === 'tokyo') {
       landing.classList.add('hidden');
       mapView.classList.add('hidden');
       window.TokyoTrip.open({ shared: isSharedMode, onClose: () => {
-        landing.classList.remove('hidden'); document.title = '여행 계획';
+        landing.classList.remove('hidden'); window.LandingGlobe.resize(); document.title = '여행 계획';
       }});
+      return;
+    }
+    if (!options.legacy) {
+      landing.classList.add('hidden');
+      mapView.classList.add('hidden');
+      window.TokyoTrip.open({
+        trip: LegacyTrips.fromCourse(course),
+        shared: isSharedMode,
+        onLegacy: () => openCourse(course, { legacy: true }),
+        onClose: () => { landing.classList.remove('hidden'); window.LandingGlobe.resize(); document.title = '여행 계획'; },
+      });
       return;
     }
     state.course = course;
     state.dayIndex = 0;
     const firstDay = course.days[0];
-    state.subStep = course.id === 9 ? null : (firstDay.entryAirport ? { type: 'entry-airport' } : null);
+    state.subStep = course.id === 1 ? null : (firstDay.entryAirport ? { type: 'entry-airport' } : null);
     state.returnedHome = false;
     state.timelineProgress = {};
     state.mobileStoryReady = false;
     const routeLegend = document.querySelector('.route-legend');
-    if (routeLegend) routeLegend.classList.toggle('hidden', course.id !== 9);
+    if (routeLegend) routeLegend.classList.toggle('hidden', course.id !== 1);
 
     landing.classList.add('hidden');
     mapView.classList.remove('hidden');
@@ -335,7 +344,7 @@
     for (let i = 0; i < 25 && !TravelMap.isReady(); i++) await wait(200);
     if (!TravelMap.isReady()) return;
 
-    if (course.id === 9) {
+    if (course.id === 1) {
       state.timelineProgress[0] = 0;
       await TravelMap.showDayOverview(course, 0, 0);
       state.mobileStoryReady = true;
@@ -362,6 +371,7 @@
     if (state.transitioning) return;
     mapView.classList.add('hidden');
     landing.classList.remove('hidden');
+    window.LandingGlobe.resize();
     TravelMap.reset();
     stopMobileStory();
     state.course = null;
@@ -370,6 +380,16 @@
     state.returnedHome = false;
     state.mobileStoryReady = false;
   }
+
+  $('btn-shared-style').addEventListener('click', () => {
+    if (!state.course) return;
+    const course = state.course;
+    mapView.classList.add('hidden');
+    TravelMap.reset();
+    stopMobileStory();
+    state.course = null;
+    openCourse(course);
+  });
 
   // ---------- 패널 ----------
   function renderDesktopTimelinePhoto(day, itemIndex) {
@@ -393,7 +413,7 @@
     const day = course.days[state.dayIndex];
     const vDay = getViewDay();          // subStep에 따라 공항·경유지 등 표시
     const sub = state.subStep;
-    const isDetailedCourse = course.id === 9;
+    const isDetailedCourse = course.id === 1;
     const timelineProgress = state.timelineProgress[state.dayIndex] ?? -1;
     const total = course.days.length;
     const isLast = state.dayIndex === total - 1 && !sub;
@@ -563,7 +583,7 @@
 
   async function navigate(delta) {
     if (!state.course) return;
-    if (state.course.id === 9) {
+    if (state.course.id === 1) {
       window.goToDay(state.dayIndex + delta);
       return;
     }
@@ -797,7 +817,7 @@
   let mobileStorySuppressClickUntil = 0;
 
   function isMobileStoryMode() {
-    return Boolean(state.course && state.course.id === 9 && window.innerWidth <= 767);
+    return Boolean(state.course && state.course.id === 1 && window.innerWidth <= 767);
   }
 
   function updateMobileStoryStatus() {
@@ -1059,7 +1079,7 @@
   function syncMobileStoryMode() {
     const enabled = isMobileStoryMode();
     const desktopEnabled = Boolean(
-      state.course && state.course.id === 9 && window.innerWidth > 767,
+      state.course && state.course.id === 1 && window.innerWidth > 767,
     );
     mapView.classList.toggle('mobile-story-mode', enabled);
     mapView.classList.toggle('desktop-story-mode', desktopEnabled);
@@ -1093,7 +1113,7 @@
   let desktopTimelinePendingIndex = null;
 
   function isDesktopStoryMode() {
-    return Boolean(state.course && state.course.id === 9 && window.innerWidth > 767);
+    return Boolean(state.course && state.course.id === 1 && window.innerWidth > 767);
   }
 
   function updateDesktopTimelineProgress(activeIndex) {
@@ -1174,7 +1194,7 @@
   }
 
   window.goToTimelineStep = async function(index, options = {}) {
-    if (!state.course || state.course.id !== 9) return;
+    if (!state.course || state.course.id !== 1) return;
     const day = state.course.days[state.dayIndex];
     const targetIndex = Number(index);
     if (!Number.isInteger(targetIndex) || !day.timeline || !day.timeline[targetIndex]) return;
@@ -1323,7 +1343,7 @@
     ));
     const myToken = ++navToken;
 
-    if (state.course.id === 9) {
+    if (state.course.id === 1) {
       if (state.transitioning || TravelMap.isAnimating()) {
         TravelMap.skip();
         for (let i = 0; i < 60 && TravelMap.isAnimating(); i++) await wait(40);
@@ -1572,20 +1592,13 @@
 
   // ---------- 앱 초기화 (공유 모드 확인) ----------
   const SHARE_TOKENS = {
-    '1': 'a8f4k9',
-    '2': 'x3m7v2',
-    '3': 'p9q1w5',
-    '4': 'r6b2n8',
-    '5': 'h4t7y3',
-    '6': 'd2z9f5',
-    '7': 'e8c4a1',
-    '8': 'v5j2m6',
-    '9': 'k3n8b7',
-    '10': 'y1h5t4',
-    '11': 'tokyo27',
-    '12': 'munich27',
-    '13': 'north27',
-    '14': 'paris27'
+    '1': 'k3n8b7',
+    '2': 'tokyo27',
+    '3': 'munich27',
+    '4': 'north27',
+    '5': 'paris27',
+    '6': 'h4t7y3',
+    '7': 'd2z9f5'
   };
 
   function initApp() {
@@ -1599,6 +1612,11 @@
 
     if (params.has('share')) {
       const shareToken = params.get('share');
+      if (shareToken === 'atlas27') {
+        document.title = '여행 계획';
+        renderLanding(COURSES, { shared: true });
+        return;
+      }
       // 토큰으로 코스 ID 찾기
       const courseId = Object.keys(SHARE_TOKENS).find(key => SHARE_TOKENS[key] === shareToken);
       
@@ -1608,7 +1626,7 @@
           isSharedMode = true;
           document.title = sharedCourse.nameKo; // 공유 시 해당 일정 제목만 표시
           btnBack.style.display = 'none'; // 목록으로 버튼 숨김
-          if (sharedCourse.id === 9) renderLanding([sharedCourse], { shared: true });
+          if (sharedCourse.id === 1) renderLanding([sharedCourse], { shared: true });
           else openCourse(sharedCourse);
           return;
         }

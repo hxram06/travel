@@ -94,7 +94,7 @@ const CITY_TRIPS = (() => {
     const places={strasHbf:place('스트라스부르역',7.7346,48.5850),strasHotel:place('스트라스부르역 숙소 권역',7.7381,48.5842),petite:place('쁘띠 프랑스',7.7425,48.5810),cathedral:place('스트라스부르 대성당',7.7508,48.5818),kleber:place('클레베르 광장',7.7452,48.5835),orangerie:place('오랑주리 공원',7.7752,48.5903),european:place('유럽의회',7.7681,48.5975),parisEst:place('파리 동역',2.3590,48.8763),parisHotel:place('파리 동역 숙소 권역',2.3573,48.8750),louvre:place('루브르 피라미드',2.3376,48.8606),tuileries:place('튈르리 정원',2.3271,48.8635),concorde:place('콩코르드 광장',2.3212,48.8656),notre:place('노트르담 대성당',2.3499,48.8530),saintGermain:place('생제르맹데프레',2.3332,48.8539),montmartre:place('사크레쾨르 대성당',2.3431,48.8867),arc:place('개선문',2.2950,48.8738),eiffel:place('에펠탑',2.2945,48.8584),gareNord:place('파리 북역 RER B',2.3553,48.8809),cdgRail:place('CDG 2 TGV · RER역',2.5708,49.0040),cdg:place('CDG 터미널 2',2.5717,49.0030)};
     const lines={TGV:{name:'TGV INOUI',badge:'TGV',color:'#7650a1'},TRAM:{name:'스트라스부르 트램',badge:'TRAM',color:'#4f8a62'},METRO:{name:'파리 Métro',badge:'M',color:'#396aa7'},RER:{name:'RER B 공항철도',badge:'RER',color:'#467eaa'}};
     const days=[];
-    return make({routeAsset:'assets/citytrips/routes-14.json?v=3',overviewPlaces:['cdg','strasHbf','parisEst'],meta:{name:'스트라스부르 → 파리',period:'9박 10일 본보기 · 파리 CDG 왕복'},center:[4.9,49.0],zoom:5.7,places,lines,days,photos:{stras:'c8_strasbourg_cathedral',petite:'c8_strasbourg_petite_france',paris:'eiffel_tower',louvre:'qa_c3_d12_1',montmartre:'qa_c3_d15_0'},build:({walk,rail,reverse,step,journey})=>{
+    return make({routeAsset:'assets/citytrips/routes-14.json?v=3',overviewPlaces:['cdg','strasHbf','parisEst'],meta:{name:'크리스마스 스트라스부르 - 파리',period:'2027.12.18 ~ 12.29 · 11박 12일 예정'},center:[4.9,49.0],zoom:5.7,places,lines,days,photos:{stras:'c8_strasbourg_cathedral',petite:'c8_strasbourg_petite_france',paris:'eiffel_tower',louvre:'qa_c3_d12_1',montmartre:'qa_c3_d15_0'},build:({walk,rail,reverse,step,journey})=>{
       walk('terminal-cdgrail','cdg','cdgRail','약 10~20분','도착장에서 Aéroport Charles de Gaulle 2 TGV 표지를 따라가요.');
       rail('cdg-stras','cdgRail','strasHbf','TGV','약 1시간 50분~2시간 15분','스트라스부르행 직통 TGV · 지정석',['CDG 2 TGV','샹파뉴아르덴 TGV','로렌 TGV','스트라스부르'],[[3.05,48.94],[4.05,49.00],[6.15,48.98],[7.10,48.75]]);
       walk('stras-hotel','strasHbf','strasHotel','약 6분','역 광장에서 숙소 권역으로.'); reverse('hotel-stras','stras-hotel');
@@ -116,10 +116,24 @@ const CITY_TRIPS = (() => {
         {date:'9일차',title:'파리 자유일',subtitle:'예약이 가장 어려운 한 곳을 넣는 완충일',steps:[step('paris-free','visit','미술관 또는 동네 하나','louvre','하루','루브르·오르세·오랑주리 중 예약한 한 곳, 또는 마레 산책처럼 취향에 맞는 한 축만 선택해요.',{photo:'louvre',highlights:['휴관일을 보고 Day 6~9 순서 교체','쇼핑·세탁·짐 정리 시간 확보']})]},
         {date:'출국일',title:'낮 비행기로 CDG 출국',subtitle:'14시 출발 가정 · 공항 3시간 전 도착',steps:[step('paris-checkout','departure','체크아웃','parisHotel','08:30','아침 식사 뒤 체크아웃하고 북역 RER B로 걸어가요.'),journey('cdg-transfer','파리 북역 → CDG','cdgRail','09:30',['photel-nord','nord-cdg'],'공항행 종착지를 확인하고 RER B에 탑승해요.'),journey('cdg-depart','파리 출국','cdg','11:00 공항 도착 · 14:00 출발 가정',['cdgrail-terminal'],'예약 항공사의 터미널로 이동해 체크인·출국심사를 마쳐요.') ]}
       );
+      days.splice(days.length - 1, 0,
+        {date:'12.27',title:'센강과 여유로운 오후',subtitle:'카페·골목·휴식을 취향대로',steps:[journey('paris-marais','시테섬과 센강 산책','notre','늦은 오전',['photel-est','est-notre'],'시테섬을 천천히 걷고 마레 지구나 카페를 골라요. 점심 후에는 숙소로 돌아가 쉬어도 좋아요.',{photo:'paris',highlights:['박물관·상점 영업시간 확인','컨디션에 따라 오후 휴식']})]},
+        {date:'12.28',title:'파리에서 보내는 마지막 하루',subtitle:'좋았던 동네를 다시 걷고 짐 정리',steps:[journey('paris-last-louvre','파리의 마지막 산책','tuileries','오전~오후',['photel-est','est-louvre','louvre-tuileries'],'숙소에서 출발해 루브르 주변과 튈르리 정원을 걸어요. 실내 카페나 쇼핑으로 바꿔도 좋아요.',{photo:'louvre'}),step('paris-last-rest','visit','숙소로 돌아와 휴식과 짐 정리','parisHotel','저녁','다음 날 출국을 위해 식사 후 짐을 정리하고 충분히 쉬어요.',{highlights:['출발 터미널과 RER 운행 확인','크리스마스 선물·영수증 챙기기']})]}
+      );
+      days.forEach((day, index) => { day.date = `12.${18 + index}`; });
+      const arrival = days[0].steps;
+      arrival[0].facts = ['항공 도착과 수하물 수령 후 여유 있는 열차를 선택', '2027년 12월 비행편과 열차 시간표 확인'];
+      arrival[1].detail = '공항 직통 열차를 놓치면 RER B로 북역, 도보로 동역에 이동해 그날 탈 수 있는 열차를 확인해요. 늦은 도착 시 운행과 좌석이 없을 수 있어요.';
+      arrival.find(s => s.id === 'cdg-direct').time = '예약한 공항 직통 열차 확인';
+      arrival.find(s => s.id === 'fallback-stras').detail = '파리 동역에서 당일 운행하는 열차와 좌석을 확인해 이동해요. 마지막 열차의 운행을 전제로 하지 않아요.';
+      arrival.forEach(s => { if (s.time && /18:53|20:25/.test(s.time)) s.time = '예약한 열차 시간 확인'; });
+      days[0].subtitle = '저녁 도착 · 당일 연결편 사전 확인';
     }});
   })();
 
-  return {12:east,13:north,14:france};
+  east.meta.name = '크리스마스 뮌헨 - 독일 동부 - 바르샤바';
+  north.meta.name = '프랑크푸르트 - 함부르크';
+  return {3:east,4:north,5:france};
 })();
 if (typeof window !== 'undefined') window.CITY_TRIPS=CITY_TRIPS;
 if (typeof module !== 'undefined') module.exports=CITY_TRIPS;

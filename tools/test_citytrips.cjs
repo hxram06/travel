@@ -1,16 +1,22 @@
-/* Contract and browser checks for courses 12–14. Run server on port 8011 for --browser. */
+/* Contract and browser checks for city trips. Run server on port 8011 for --browser. */
 const assert=require('node:assert/strict');
 const fs=require('node:fs');
 const path=require('node:path');
 const trips=require('../citytrips-data.js');
 const root=path.resolve(__dirname,'..');
 for(const [courseId,trip] of Object.entries(trips)){
-  const routes=JSON.parse(fs.readFileSync(path.join(root,'assets/citytrips/routes-'+courseId+'.json'),'utf8')).routes;
+  const routeFile=trip.routeAsset.split('?')[0];
+  const routes=JSON.parse(fs.readFileSync(path.join(root,routeFile),'utf8')).routes;
   assert(trip.days.length>=9,courseId+' full arrival-to-departure plan');
   assert.equal(trip.startOverview,true,courseId+' opens on full route');
   assert(trip.overviewPlaces.length>=3,courseId+' overview labels');
-  assert.equal(trip.days[0].date,'입국일');
-  assert.equal(trip.days.at(-1).date,'출국일');
+  assert.equal(trip.days[0].steps[0].kind,'arrival');
+  assert.equal(trip.days.at(-1).steps[0].kind,'departure');
+  if(courseId==='5') {
+    assert.equal(trip.days.length,12);
+    assert.equal(trip.days[0].date,'12.18');
+    assert.equal(trip.days.at(-1).date,'12.29');
+  }
   const ids=new Set();
   for(const day of trip.days)for(const step of day.steps){
     assert(!ids.has(step.id),courseId+' duplicate '+step.id);ids.add(step.id);
@@ -35,7 +41,7 @@ async function browserCheck(){
   const {default:puppeteer}=await import('puppeteer');
   const browser=await puppeteer.launch({headless:true,executablePath:'C:/Program Files/Google/Chrome/Application/chrome.exe',args:['--no-sandbox','--enable-unsafe-swiftshader']});
   try{
-    const tokens={12:'munich27',13:'north27',14:'paris27'};
+    const tokens={3:'munich27',4:'north27',5:'paris27'};
     for(const [courseId,token] of Object.entries(tokens)){
       const page=await browser.newPage(),errors=[];page.on('pageerror',e=>errors.push(e.message));
       await page.setViewport({width:390,height:844,isMobile:true,hasTouch:true,deviceScaleFactor:1});
@@ -51,7 +57,7 @@ async function browserCheck(){
       const tabs=await page.$$eval('.tk-tabs [data-day]',els=>els.length);assert.equal(tabs,trips[courseId].days.length);
       await page.click('[data-action="next"]');
       const first=await page.evaluate(()=>window.TokyoTrip.getState());assert.equal(first.overview,false);assert.equal(first.day,0);assert.equal(first.step,0);
-      if(courseId==='14'){
+      if(courseId==='5'){
         await page.click('[data-action="next"]');
         await page.click('[data-choice="cdgFallback"][data-value="true"]');
         const fallback=await page.evaluate(()=>window.TokyoTrip.getState().steps);

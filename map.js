@@ -254,7 +254,7 @@ const TravelMap = (() => {
 
   // 코스9 전용: 날짜별 타임라인 좌표를 미리 경로로 바꾼다.
   function buildCourseRoute(course) {
-    if (!course || course.id !== 9) return [];
+    if (!course || course.id !== 1) return [];
     const segments = [];
     course.days.forEach((day, dayIndex) => {
       const timeline = Array.isArray(day.timeline) ? day.timeline : [];
@@ -280,7 +280,7 @@ const TravelMap = (() => {
   }
 
   function renderCourseRoutes(course, currentDayIndex, stepIndex) {
-    if (!course || course.id !== 9) return;
+    if (!course || course.id !== 1) return;
     const context = [];
     const today = [];
     const done = [];
@@ -1094,7 +1094,7 @@ const TravelMap = (() => {
   }
 
   async function showDayOverview(course, dayIndex, stepIndex, opts) {
-    if (!isReady() || !course || course.id !== 9) return;
+    if (!isReady() || !course || course.id !== 1) return;
     const day = course.days[dayIndex];
     if (!day) return;
     cancelFlag = true;
@@ -1113,7 +1113,7 @@ const TravelMap = (() => {
   }
 
   async function showCourseOverview(course, dayIndex, stepIndex) {
-    if (!isReady() || !course || course.id !== 9) return;
+    if (!isReady() || !course || course.id !== 1) return;
     const day = course.days[dayIndex];
     if (!day) return;
     cancelFlag = true;
@@ -1128,7 +1128,7 @@ const TravelMap = (() => {
   }
 
   async function playTimelineStep(course, dayIndex, fromIndex, targetIndex, opts) {
-    if (!isReady() || animating || !course || course.id !== 9) return false;
+    if (!isReady() || animating || !course || course.id !== 1) return false;
     const day = course.days[dayIndex];
     const timeline = day && day.timeline;
     if (!Array.isArray(timeline) || !timeline[targetIndex]) return false;

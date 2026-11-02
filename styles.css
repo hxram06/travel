@@ -2308,3 +2308,18 @@ button.timeline-dot:focus-visible {
   .stats-lodging-head { align-items: start; flex-direction: column; }
   .stats-lodging-head small { text-align: left; }
 }
+.btn-shared-style {
+  position: absolute;
+  z-index: 5;
+  top: 16px;
+  right: 16px;
+  border: 0;
+  border-radius: 8px;
+  padding: 9px 12px;
+  background: #fffefa;
+  color: #315f55;
+  box-shadow: 0 2px 9px #253d3020;
+  font: inherit;
+  font-size: 12px;
+  cursor: pointer;
+}

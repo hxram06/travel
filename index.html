@@ -7,7 +7,7 @@
   <title>여행 계획</title>
   <script>
     const urlParams = new URLSearchParams(window.location.search);
-    const VALID_SHARE_TOKENS = ['a8f4k9','x3m7v2','p9q1w5','r6b2n8','h4t7y3','d2z9f5','e8c4a1','v5j2m6','k3n8b7','y1h5t4','tokyo27','munich27','north27','paris27'];
+    const VALID_SHARE_TOKENS = ['atlas27','k3n8b7','tokyo27','munich27','north27','paris27','h4t7y3','d2z9f5'];
     const hostname = window.location.hostname;
     const isPrivateNetwork = /^192\.168\./.test(hostname)
       || /^10\./.test(hostname)
@@ -33,18 +33,33 @@
   <link href="https://api.mapbox.com/mapbox-gl-js/v3.4.0/mapbox-gl.css" rel="stylesheet" />
   <script src="https://api.mapbox.com/mapbox-gl-js/v3.4.0/mapbox-gl.js"></script>
 
-  <link rel="stylesheet" href="styles.css?v=40" />
-  <link rel="stylesheet" href="tokyo.css?v=8" />
+  <link rel="stylesheet" href="styles.css?v=41" />
+  <link rel="stylesheet" href="tokyo.css?v=9" />
+  <link rel="stylesheet" href="globe.css?v=1" />
 </head>
 <body>
 
   <!-- ===================== 랜딩 ===================== -->
   <section id="landing" class="landing">
-    <header class="landing-header">
-      <h1>여행 계획</h1>
-      <p class="landing-sub">10개의 코스 · 총 121일의 여정</p>
-    </header>
-    <div id="course-grid" class="course-grid"></div>
+    <div class="globe-stage" aria-label="여행 경로 지구본">
+      <div id="landing-globe" class="landing-globe"></div>
+      <div class="globe-atmosphere" aria-hidden="true"></div>
+      <div class="globe-brand"><span>TRAVEL ATLAS</span><small>당신의 다음 이야기가 시작되는 곳</small></div>
+      <div id="globe-status" class="globe-status" role="status">지구본을 준비하고 있어요.</div>
+      <div id="globe-hint" class="globe-hint">드래그해서 둘러보세요 <span>·</span> 경로를 누르면 여행이 열려요</div>
+      <div id="globe-tooltip" class="globe-tooltip" hidden aria-live="polite"></div>
+    </div>
+    <aside class="atlas-panel" aria-label="여행 목록">
+      <header class="landing-header">
+        <p class="atlas-eyebrow">PLACES TO GO <span>✳</span></p>
+        <h1>여행 계획</h1>
+        <p class="landing-sub">7개의 코스</p>
+        <p class="atlas-intro">지구 위에 그려둔 여행들.<br>마음이 가는 여정을 골라 보세요.</p>
+      </header>
+      <div class="atlas-list-label"><span>나의 여정</span><span>SELECT A JOURNEY</span></div>
+      <div id="course-grid" class="course-grid"></div>
+      <p class="atlas-footnote">경로는 여행 계획을 나타내며 일부 구간은 개략선이에요.</p>
+    </aside>
   </section>
 
   <div id="course-menu" class="course-menu hidden" role="menu">
@@ -69,6 +84,7 @@
     <div class="map-area">
       <div id="map"></div>
       <button id="btn-back" class="btn-back" title="코스 목록으로 (Esc)">← 목록으로</button>
+      <button id="btn-shared-style" class="btn-shared-style" type="button">새 일정 화면으로</button>
       <div id="transport-chip" class="transport-chip">
         <span class="t-icon" id="transport-icon"></span>
         <span id="transport-label"></span>
@@ -163,14 +179,16 @@
       map.js/app.js  — 지도와 화면
   -->
   <script src="photos-data.js?v=28"></script>
-  <script src="data.js?v=45"></script>
+  <script src="data.js?v=46"></script>
   <script src="rules.js?v=24"></script>
-  <script src="map.js?v=40"></script>
+  <script src="map.js?v=41"></script>
   <script src="tokyo-data.js?v=8"></script>
-  <script src="citytrips-data.js?v=4"></script>
+  <script src="citytrips-data.js?v=5"></script>
+  <script src="legacy-trips.js?v=1"></script>
   <script src="tokyo-meals.js?v=5"></script>
-  <script src="tokyo-ui.js?v=11"></script>
-  <script src="app.js?v=41"></script>
+  <script src="tokyo-ui.js?v=12"></script>
+  <script src="globe.js?v=1"></script>
+  <script src="app.js?v=46"></script>
   <script type="module" src="firebase-feedback.js?v=2"></script>
 </body>
 </html>

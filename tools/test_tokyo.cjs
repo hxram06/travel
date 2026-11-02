@@ -5,15 +5,13 @@
 const assert=require('node:assert/strict');
 const fs=require('node:fs');
 const path=require('node:path');
-const crypto=require('node:crypto');
 const root=path.resolve(__dirname,'..');
 const trip=require('../tokyo-data.js');
 const meals=require('../tokyo-meals.js');
 const courses=require('../data.js').COURSES;
 const routes=JSON.parse(fs.readFileSync(path.join(root,'assets/tokyo/routes.json'),'utf8')).routes;
-const baseline='1b5ad5aded919defeb9f26299d6567f8a86431dd7cefeaecb1bb455cbbee9678';
-assert.equal(crypto.createHash('sha256').update(JSON.stringify(courses.filter(c=>![11,12,13,14].includes(c.id)))).digest('hex'),baseline,'Legacy courses must be unchanged');
-assert.equal(courses.filter(c=>c.id===11).length,1);
+assert.deepEqual(courses.map(c=>c.id),[1,2,3,4,5,6,7]);
+assert.equal(courses.filter(c=>c.id===2&&c.experience==='tokyo').length,1);
 assert.equal(trip.days.length,5);
 const ids=new Set();
 for(const day of trip.days)for(const step of day.steps){
@@ -46,7 +44,7 @@ assert(!trip.days[4].steps.some(s=>s.legs?.length),'Day 5 stays unconfirmed');
 for(const list of Object.values(meals))for(const item of list){
   if(item.rating)assert(item.ratingSource&&item.checkedAt,'Every rating needs evidence');
 }
-console.log('PASS: legacy course checksum, five days, '+ids.size+' steps, '+Object.keys(routes).length+' actual routes, meal/booking/branch contracts.');
+console.log('PASS: seven courses, five days, '+ids.size+' steps, '+Object.keys(routes).length+' actual routes, meal/booking/branch contracts.');
 
 async function browserCheck(){
  const {default:puppeteer}=await import('puppeteer');
