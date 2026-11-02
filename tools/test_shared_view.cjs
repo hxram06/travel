@@ -10,24 +10,24 @@ window.ResizeObserver = class { observe() {} disconnect() {} };
 window.fetch = async url => ({ ok: true, json: async () => JSON.parse(fs.readFileSync(String(url).split('?')[0], 'utf8')) });
 window.scrollTo = () => {};
 window.HTMLElement.prototype.scrollIntoView = function () {};
-for (const file of ['photos-data.js','data.js','map.js','tokyo-data.js','citytrips-data.js','legacy-trips.js','tokyo-meals.js','tokyo-ui.js','globe.js','app.js']) {
+for (const file of ['photos-data.js','data.js','map.js','tokyo-data.js','citytrips-data.js','nyc-data.js','legacy-trips.js','tokyo-meals.js','tokyo-ui.js','globe.js','app.js']) {
   const script = window.document.createElement('script');
   script.textContent = fs.readFileSync(file, 'utf8');
   window.document.body.appendChild(script);
 }
 const cards = [...window.document.querySelectorAll('.course-card-open')];
-assert.equal(cards.length, 7);
+assert.equal(cards.length, 8);
 cards.forEach((card, index) => {
   card.click();
   const root = window.document.querySelector('.tokyo-trip');
   assert(root, `course ${index + 1} opens shared view`);
   const state = window.TokyoTrip.getState();
   assert.equal(state.overview, index !== 1, `course ${index + 1} overview`);
-  assert.equal(root.querySelectorAll('[data-day]').length, [13,5,10,9,12,11,8][index]);
+  assert.equal(root.querySelectorAll('[data-day]').length, [13,5,10,9,12,11,8,10][index]);
   if ([0,5,6].includes(index)) assert(root.querySelector('[data-action="legacy"]'));
   root.querySelector('[data-action="next"]').click();
   assert.equal(window.TokyoTrip.getState().overview, false);
   root.querySelector('[data-action="close"]').click();
 });
-console.log('PASS: all seven courses open the common view and navigate');
+console.log('PASS: all eight courses open the common view and navigate');
 window.close();

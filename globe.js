@@ -1,7 +1,7 @@
 /* The landing globe uses stored route geometry; waypoint-only plans are marked approximate. */
 window.LandingGlobe = (() => {
   'use strict';
-  const colors = ['#326c5a', '#b15070', '#735ca1', '#277c8b', '#bd704a', '#5572a0', '#a27d2a'];
+  const colors = ['#326c5a', '#b15070', '#735ca1', '#277c8b', '#bd704a', '#5572a0', '#a27d2a', '#315987'];
   let map = null, courses = [], openCourse, active = null, ready = false, mounted = false;
   const $ = id => document.getElementById(id);
   const escape = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -39,7 +39,7 @@ window.LandingGlobe = (() => {
       routes = (await response.json()).routes;
     }
     const used = new Set(trip.days.flatMap(day => day.steps.filter(s => !s.branch).flatMap(s => s.legs || [])));
-    const segments = [...used].map(id => routes[id]?.geometry?.coordinates).filter(line => Array.isArray(line) && line.length > 1 && line.every(coordsValid));
+    const segments = [...used].filter(id => !['plane', 'flight'].includes(trip.legs[id]?.line) && !['plane', 'flight'].includes(trip.legs[id]?.mode)).map(id => routes[id]?.geometry?.coordinates).filter(line => Array.isArray(line) && line.length > 1 && line.every(coordsValid));
     return { segments, approximate: !!trip.inlineRoutes };
   }
 
@@ -86,7 +86,7 @@ window.LandingGlobe = (() => {
         map.on('click', e => { const course = courseAt(e.point); if (course) openCourse(course); });
         const markerPlaces = {
           1: [8.2581,49.999], 2: [139.767,35.681], 3: [13.732,51.040],
-          4: [9.994,53.553], 5: [7.751,48.582], 6: [14.421,50.088], 7: [7.863,46.686],
+          4: [9.994,53.553], 5: [7.751,48.582], 6: [14.421,50.088], 7: [7.863,46.686], 8: [-73.9855,40.758],
         };
         // Screen-space offsets keep the numbered course selectors separate at globe scale.
         const markerOffsets = { 1:[-35,-14], 2:[0,0], 3:[36,-16], 4:[8,-43], 5:[-44,21], 6:[44,21], 7:[-7,47] };

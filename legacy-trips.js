@@ -19,6 +19,8 @@ const LegacyTrips = (() => {
       return id;
     };
     const addRoute = (from, to, mode, via, label) => {
+      // Keep flight details in the itinerary, but never draw the international flight.
+      if (mode === 'plane' || mode === 'flight') return null;
       if (!from || !to || !valid(places[from].coords) || !valid(places[to].coords)) return null;
       const a = places[from].coords, b = places[to].coords;
       if (a[0] === b[0] && a[1] === b[1]) return null;

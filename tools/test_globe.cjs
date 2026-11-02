@@ -29,22 +29,24 @@ class MarkerMock {
   addTo() { window.document.querySelector('#landing-globe').appendChild(this.element); return this; }
 }
 window.mapboxgl={Map:MapMock,Marker:MarkerMock,AttributionControl:class{},NavigationControl:class{}};
-for(const file of ['photos-data.js','data.js','map.js','tokyo-data.js','citytrips-data.js','legacy-trips.js','tokyo-meals.js','tokyo-ui.js','globe.js','app.js']) {
+for(const file of ['photos-data.js','data.js','map.js','tokyo-data.js','citytrips-data.js','nyc-data.js','legacy-trips.js','tokyo-meals.js','tokyo-ui.js','globe.js','app.js']) {
   const script=window.document.createElement('script');script.textContent=fs.readFileSync(file,'utf8');window.document.body.appendChild(script);
 }
 setTimeout(()=>{
   try {
     assert.equal(globe.options.projection,'globe');
     assert.equal(globe.options.style,'mapbox://styles/mapbox/light-v11');
-    assert.equal(window.document.querySelectorAll('.course-card-open').length,7);
+    assert.equal(window.document.querySelectorAll('.course-card-open').length,8);
     assert.equal(window.document.querySelectorAll('.course-menu-button').length,0);
-    for(let i=1;i<=7;i++) {
+    for(let i=1;i<=8;i++) {
       assert(globe.sources[`atlas-source-${i}`],`course ${i} route source`);
       assert(globe.sources[`atlas-source-${i}`].data.features.length,`course ${i} route geometry`);
       assert(globe.layers[`atlas-hit-${i}`],`course ${i} interactive route`);
       assert(!('line-dasharray' in globe.layers[`atlas-route-${i}`].paint),`course ${i} uses solid line`);
     }
-    assert.equal(markerElements.length,7);
+    assert.equal(markerElements.length,8);
+    const courseOneLines = globe.sources['atlas-source-1'].data.features;
+    assert(!courseOneLines.some(feature => feature.geometry.coordinates.some(point => point[0] > 100)), 'course 1 globe must not draw flights to Korea');
     assert.equal(markerElements[0].textContent,'1');
     markerElements[0].dispatchEvent(new window.Event('mouseenter'));
     assert(window.document.querySelector('#globe-tooltip').textContent.includes('독일 서부 - 뮌헨 - 빈'));
@@ -54,7 +56,7 @@ setTimeout(()=>{
     window.mapboxgl=undefined; // The itinerary has its own map; this test targets the landing globe.
     globe.handlers.click({point:{x:100,y:100}});
     assert(window.document.querySelector('.tokyo-trip'), 'route opens itinerary');
-    console.log('PASS: seven globe routes, hover details, list highlight, click navigation');
+    console.log('PASS: eight globe routes, no course 1 flight line, hover details and navigation');
     window.close();
   } catch(error) { console.error(error); process.exitCode=1; window.close(); }
 },100);

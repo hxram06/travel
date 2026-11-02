@@ -1598,7 +1598,8 @@
     '4': 'north27',
     '5': 'paris27',
     '6': 'h4t7y3',
-    '7': 'd2z9f5'
+    '7': 'd2z9f5',
+    '8': 'newyork27'
   };
 
   function initApp() {
