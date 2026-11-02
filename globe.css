@@ -1,41 +1,44 @@
 /* Journey atlas: a globe first, with an accessible list for every route. */
-.landing { position:relative; height:100dvh; overflow:hidden; padding:0; background:#0c1921; color:#f0f4ef; }
-.landing.is-shared { background:#0c1921; }
-.globe-stage { position:absolute; inset:0 0 0 390px; overflow:hidden; background:radial-gradient(ellipse at 58% 42%, #173b48 0, #112933 40%, #09171f 80%); }
+.landing { position:relative; height:100dvh; overflow:hidden; padding:0; background:#fffefa; color:#222c2b; }
+.landing.is-shared { background:#fffefa; }
+.globe-stage { position:absolute; inset:0 0 0 390px; overflow:hidden; background:radial-gradient(ellipse at 58% 42%, #dce9e3 0, #edf3ef 48%, #f6f8f3 85%); }
 .landing-globe { position:absolute; inset:0; }
-.globe-atmosphere { pointer-events:none; position:absolute; inset:0; background:linear-gradient(90deg,rgba(8,20,26,.25),transparent 20%),linear-gradient(0deg,rgba(8,20,26,.55),transparent 16%); }
+.globe-atmosphere { pointer-events:none; position:absolute; inset:0; background:linear-gradient(90deg,rgba(255,254,250,.25),transparent 20%),linear-gradient(0deg,rgba(255,254,250,.42),transparent 16%); }
 .globe-brand { position:absolute; top:32px; left:40px; display:grid; gap:5px; pointer-events:none; }
-.globe-brand span { color:#e5c998; font-size:10px; letter-spacing:.3em; font-weight:800; }
-.globe-brand small { color:#a6bcb8; font-size:11px; letter-spacing:.04em; }
-.globe-hint { position:absolute; bottom:30px; left:40px; color:#b7c8c3; font-size:12px; pointer-events:none; }
-.globe-hint span { padding:0 7px; color:#d5b77c; }
-.globe-status { position:absolute; left:40px; bottom:62px; color:#dbdfd7; font-size:12px; }
+.globe-brand span { color:#315f55; font-size:10px; letter-spacing:.3em; font-weight:800; }
+.globe-brand small { color:#697572; font-size:11px; letter-spacing:.04em; }
+.globe-hint { position:absolute; bottom:30px; left:40px; color:#53615d; font-size:12px; pointer-events:none; }
+.globe-hint span { padding:0 7px; color:#80998d; }
+.globe-status { position:absolute; left:40px; bottom:62px; color:#53615d; font-size:12px; }
 .globe-status:empty { display:none; }
-.globe-tooltip { position:absolute; z-index:3; min-width:210px; max-width:290px; padding:16px 18px; border:1px solid #d8e4db35; border-radius:14px; background:rgba(12,30,35,.94); box-shadow:0 12px 40px #0006; pointer-events:none; backdrop-filter:blur(16px); }
-.globe-tooltip strong { display:block; margin:5px 0; color:#f5f3eb; font-size:15px; line-height:1.45; }
-.globe-tooltip small { display:block; color:#b6c8c0; line-height:1.55; font-size:11px; }
-.globe-tooltip .tip-label { color:#dfc596; font-size:10px; letter-spacing:.13em; }
-.atlas-panel { position:absolute; inset:0 auto 0 0; width:390px; display:flex; flex-direction:column; padding:36px 25px 20px; background:linear-gradient(170deg,#132a30,#0c1d24 65%); border-right:1px solid #d4e0d11b; box-shadow:10px 0 40px #0002; }
+.globe-tooltip { position:absolute; z-index:3; min-width:210px; max-width:290px; padding:16px 18px; border:1px solid #dce6dd; border-radius:14px; background:rgba(255,254,250,.97); box-shadow:0 12px 40px #223b2f22; pointer-events:none; backdrop-filter:blur(16px); }
+.globe-tooltip strong { display:block; margin:5px 0; color:#222c2b; font-size:15px; line-height:1.45; }
+.globe-tooltip small { display:block; color:#697572; line-height:1.55; font-size:11px; }
+.globe-tooltip .tip-label { color:#315f55; font-size:10px; letter-spacing:.13em; }
+.atlas-panel { position:absolute; inset:0 auto 0 0; width:390px; display:flex; flex-direction:column; padding:36px 25px 20px; background:#fffefa; border-right:1px solid #e8ebe6; box-shadow:10px 0 40px #293b2b0d; }
 .atlas-panel .landing-header { text-align:left; margin:0 0 26px; }
-.atlas-eyebrow { display:flex; justify-content:space-between; align-items:center; color:#bca779; font-size:10px; font-weight:800; letter-spacing:.22em; }
-.atlas-eyebrow span { font-size:18px; color:#d6c190; }
-.atlas-panel .landing-header h1 { margin-top:24px; color:#f6f3e9; font-size:32px; font-weight:750; letter-spacing:-.06em; }
-.atlas-panel .landing-sub { color:#c9b78f; font-size:12px; margin:5px 0 0; }
-.atlas-intro { color:#9fb2ac; font-size:13px; line-height:1.75; margin-top:15px; }
-.atlas-list-label { display:flex; justify-content:space-between; padding:0 2px 12px; color:#d8dfd6; font-size:12px; font-weight:700; }
-.atlas-list-label span+span { color:#778f88; font-size:9px; letter-spacing:.14em; }
-.atlas-panel .course-grid, .landing.is-shared .course-grid { display:flex; flex:1; min-height:0; overflow-y:auto; flex-direction:column; gap:6px; width:100%; padding:0 3px 8px 0; scrollbar-width:thin; scrollbar-color:#526d65 transparent; }
+.atlas-eyebrow { display:flex; justify-content:space-between; align-items:center; color:#315f55; font-size:10px; font-weight:800; letter-spacing:.22em; }
+.atlas-eyebrow span { font-size:18px; color:#729387; }
+.atlas-panel .landing-header h1 { margin-top:24px; color:#222c2b; font-size:32px; font-weight:750; letter-spacing:-.06em; }
+.atlas-panel .landing-sub { color:#315f55; font-size:12px; margin:5px 0 0; }
+.atlas-intro { color:#697572; font-size:13px; line-height:1.75; margin-top:15px; }
+.atlas-list-label { display:flex; justify-content:space-between; padding:0 2px 12px; color:#394b45; font-size:12px; font-weight:700; }
+.atlas-list-label span+span { color:#82938a; font-size:9px; letter-spacing:.14em; }
+.atlas-panel .course-grid, .landing.is-shared .course-grid { display:flex; flex:1; min-height:0; overflow-y:auto; flex-direction:column; justify-content:flex-start; gap:6px; width:100%; padding:0 3px 8px 0; scrollbar-width:thin; scrollbar-color:#9fb6a9 transparent; }
 .atlas-panel .course-card, .landing.is-shared .course-card { display:block; flex-shrink:0; min-height:0; border:1px solid transparent; border-radius:12px; background:transparent; box-shadow:none; overflow:visible; transition:background .2s,border-color .2s; }
-.atlas-panel .course-card:hover,.atlas-panel .course-card.is-active,.atlas-panel .course-card:focus-within { transform:none; background:#d3e7db10; border-color:#e1eedc2b; box-shadow:none; }
+.atlas-panel .course-card:hover,.atlas-panel .course-card.is-active,.atlas-panel .course-card:focus-within { transform:none; background:#eef4ee; border-color:#dce9df; box-shadow:none; }
 .atlas-panel .course-card-open { min-height:0; align-items:center; padding:12px 34px 12px 13px; border-radius:12px; }
 .atlas-panel .course-card-bg,.atlas-panel .course-card-overlay { display:none; }
-.atlas-panel .course-card-content { color:#eaf0e9; padding:0 0 0 17px; text-shadow:none; border-left:3px solid var(--course-color,#c9ae7d); }
-.atlas-panel .course-num { margin:0 0 4px; padding:0; border:0; background:none; backdrop-filter:none; color:#829e93; font-size:9px; letter-spacing:.13em; }
+.atlas-panel .course-card-content { color:#222c2b; padding:0 0 0 17px; text-shadow:none; border-left:3px solid var(--course-color,#315f55); }
+.atlas-panel .course-num { margin:0 0 4px; padding:0; border:0; background:none; backdrop-filter:none; color:#697572; font-size:9px; letter-spacing:.13em; }
 .atlas-panel .course-card h3 { margin:0 0 4px; font-size:13px; font-weight:700; line-height:1.4; letter-spacing:-.035em; }
-.atlas-panel .course-meta { margin:0; color:#9cb0a9; font-size:10px; line-height:1.5; }
+.atlas-panel .course-meta { margin:0; color:#697572; font-size:10px; line-height:1.5; }
 .atlas-panel .course-sub,.atlas-panel .course-party,.atlas-panel .course-cities { display:none; }
-.atlas-panel .course-menu-button { top:13px; right:8px; width:26px; height:26px; color:#c7d6ca; background:#ffffff0d; }
-.atlas-footnote { margin:14px 2px 0; color:#748d84; font-size:10px; line-height:1.5; }
+.atlas-panel .course-menu-button { top:13px; right:8px; width:26px; height:26px; color:#526c60; background:#e8eee8; }
+.atlas-footnote { margin:14px 2px 0; color:#697572; font-size:10px; line-height:1.5; }
+.globe-course-marker { position:relative; display:grid; place-items:center; width:32px; height:32px; border:3px solid #fffefa; border-radius:50%; background:var(--course-color); color:white; box-shadow:0 2px 9px #233c2c45; cursor:pointer; font-size:12px; font-weight:800; }
+.globe-course-marker::after { content:''; position:absolute; z-index:-1; left:50%; top:50%; width:var(--stem-length,0); height:1px; background:var(--course-color); opacity:.65; transform-origin:left center; transform:rotate(var(--stem-angle,0deg)); pointer-events:none; }
+.globe-course-marker:hover,.globe-course-marker:focus-visible { transform:scale(1.16); outline:2px solid #315f55; outline-offset:2px; }
 .landing-globe .mapboxgl-ctrl-attrib { font-size:9px; }
 @media(max-width:760px) {
  .landing { overflow-y:auto; height:100dvh; }

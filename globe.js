@@ -1,7 +1,7 @@
 /* The landing globe uses stored route geometry; waypoint-only plans are marked approximate. */
 window.LandingGlobe = (() => {
   'use strict';
-  const colors = ['#e9bd79', '#f1849f', '#a6a6f3', '#77c7b2', '#f5a17c', '#84b8ee', '#e6cf83'];
+  const colors = ['#326c5a', '#b15070', '#735ca1', '#277c8b', '#bd704a', '#5572a0', '#a27d2a'];
   let map = null, courses = [], openCourse, active = null, ready = false, mounted = false;
   const $ = id => document.getElementById(id);
   const escape = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -50,12 +50,16 @@ window.LandingGlobe = (() => {
     if (typeof mapboxgl === 'undefined') { $('globe-status').textContent = '지도를 불러오지 못했어요. 목록에서 여행을 선택해 주세요.'; return; }
     try {
       mapboxgl.accessToken = MAPBOX_TOKEN;
-      map = new mapboxgl.Map({ container:'landing-globe', style:'mapbox://styles/mapbox/dark-v11', projection:'globe', center:[59,47], zoom:1.3, attributionControl:false });
+      map = new mapboxgl.Map({ container:'landing-globe', style:'mapbox://styles/mapbox/light-v11', projection:'globe', center:[59,47], zoom:1.3, attributionControl:false });
       map.addControl(new mapboxgl.AttributionControl({compact:true}), 'bottom-right');
       map.addControl(new mapboxgl.NavigationControl({showCompass:false}), 'bottom-right');
       map.on('load', async () => {
         ready = true;
-        try { map.setFog({color:'#adc7c2','high-color':'#284b57','horizon-blend':.1,'space-color':'#0b1921','star-intensity':.25}); } catch (_) {}
+        try { map.setFog({color:'#dbe9e3','high-color':'#bacfc8','horizon-blend':.08,'space-color':'#eaf1ee','star-intensity':0}); } catch (_) {}
+        // Keep transport symbols consistent: no aircraft icons on the base map or routes.
+        for (const layer of (map.getStyle?.()?.layers || [])) {
+          if (layer.type === 'symbol' && /airport|aerodrome|airfield/i.test(layer.id)) map.setLayoutProperty(layer.id, 'visibility', 'none');
+        }
         const loaded = await Promise.allSettled(courses.map(routeData));
         let missing = 0;
         const hitLayers = [];
@@ -64,7 +68,7 @@ window.LandingGlobe = (() => {
           if (result.status !== 'fulfilled' || !result.value.segments.length) { missing++; return; }
           const source = `atlas-source-${course.id}`, layer = `atlas-route-${course.id}`, hit = `atlas-hit-${course.id}`;
           map.addSource(source, {type:'geojson',data:{type:'FeatureCollection',features:result.value.segments.map(coordinates => ({type:'Feature',properties:{},geometry:{type:'LineString',coordinates}}))}});
-          map.addLayer({id:layer,type:'line',source,layout:{'line-cap':'round','line-join':'round'},paint:{'line-color':color(course.id),'line-width':2.5,'line-opacity':.86,...(result.value.approximate?{'line-dasharray':[2,2]}:{})}});
+          map.addLayer({id:layer,type:'line',source,layout:{'line-cap':'round','line-join':'round'},paint:{'line-color':color(course.id),'line-width':2.5,'line-opacity':.86}});
           map.addLayer({id:hit,type:'line',source,layout:{'line-cap':'round','line-join':'round'},paint:{'line-color':color(course.id),'line-width':20,'line-opacity':.01}});
           hitLayers.push(hit);
         });
@@ -80,6 +84,32 @@ window.LandingGlobe = (() => {
         });
         map.on('mouseout', () => { map.getCanvas().style.cursor=''; setActive(null); });
         map.on('click', e => { const course = courseAt(e.point); if (course) openCourse(course); });
+        const markerPlaces = {
+          1: [8.2581,49.999], 2: [139.767,35.681], 3: [13.732,51.040],
+          4: [9.994,53.553], 5: [7.751,48.582], 6: [14.421,50.088], 7: [7.863,46.686],
+        };
+        // Screen-space offsets keep the numbered course selectors separate at globe scale.
+        const markerOffsets = { 1:[-35,-14], 2:[0,0], 3:[36,-16], 4:[8,-43], 5:[-44,21], 6:[44,21], 7:[-7,47] };
+        courses.forEach(course => {
+          const el = document.createElement('button');
+          el.type = 'button'; el.className = 'globe-course-marker';
+          el.style.setProperty('--course-color', color(course.id));
+          const offset = markerOffsets[course.id] || [0,0];
+          el.style.setProperty('--stem-length', `${Math.hypot(...offset)}px`);
+          el.style.setProperty('--stem-angle', `${Math.atan2(-offset[1], -offset[0]) * 180 / Math.PI}deg`);
+          el.textContent = String(course.id);
+          el.setAttribute('aria-label', `코스 ${course.id}: ${course.nameKo} 열기`);
+          const reveal = () => {
+            const box = el.getBoundingClientRect(), parent = $('landing-globe').getBoundingClientRect();
+            setActive(course.id, {x:box.left-parent.left+box.width/2, y:box.top-parent.top+box.height/2});
+          };
+          el.addEventListener('mouseenter', reveal);
+          el.addEventListener('focus', reveal);
+          el.addEventListener('mouseleave', () => setActive(null));
+          el.addEventListener('blur', () => setActive(null));
+          el.addEventListener('click', event => { event.stopPropagation(); openCourse(course); });
+          new mapboxgl.Marker({element:el, anchor:'center', offset}).setLngLat(markerPlaces[course.id]).addTo(map);
+        });
         $('globe-status').textContent = missing ? '일부 경로를 불러오지 못했어요. 목록에서 모든 여행을 열 수 있어요.' : '';
         setActive(active);
       });
