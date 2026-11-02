@@ -84,32 +84,6 @@ window.LandingGlobe = (() => {
         });
         map.on('mouseout', () => { map.getCanvas().style.cursor=''; setActive(null); });
         map.on('click', e => { const course = courseAt(e.point); if (course) openCourse(course); });
-        const markerPlaces = {
-          1: [8.2581,49.999], 2: [139.767,35.681], 3: [13.732,51.040],
-          4: [9.994,53.553], 5: [7.751,48.582], 6: [14.421,50.088], 7: [7.863,46.686], 8: [-73.9855,40.758],
-        };
-        // Screen-space offsets keep the numbered course selectors separate at globe scale.
-        const markerOffsets = { 1:[-35,-14], 2:[0,0], 3:[36,-16], 4:[8,-43], 5:[-44,21], 6:[44,21], 7:[-7,47] };
-        courses.forEach(course => {
-          const el = document.createElement('button');
-          el.type = 'button'; el.className = 'globe-course-marker';
-          el.style.setProperty('--course-color', color(course.id));
-          const offset = markerOffsets[course.id] || [0,0];
-          el.style.setProperty('--stem-length', `${Math.hypot(...offset)}px`);
-          el.style.setProperty('--stem-angle', `${Math.atan2(-offset[1], -offset[0]) * 180 / Math.PI}deg`);
-          el.textContent = String(course.id);
-          el.setAttribute('aria-label', `코스 ${course.id}: ${course.nameKo} 열기`);
-          const reveal = () => {
-            const box = el.getBoundingClientRect(), parent = $('landing-globe').getBoundingClientRect();
-            setActive(course.id, {x:box.left-parent.left+box.width/2, y:box.top-parent.top+box.height/2});
-          };
-          el.addEventListener('mouseenter', reveal);
-          el.addEventListener('focus', reveal);
-          el.addEventListener('mouseleave', () => setActive(null));
-          el.addEventListener('blur', () => setActive(null));
-          el.addEventListener('click', event => { event.stopPropagation(); openCourse(course); });
-          new mapboxgl.Marker({element:el, anchor:'center', offset}).setLngLat(markerPlaces[course.id]).addTo(map);
-        });
         $('globe-status').textContent = missing ? '일부 경로를 불러오지 못했어요. 목록에서 모든 여행을 열 수 있어요.' : '';
         setActive(active);
       });

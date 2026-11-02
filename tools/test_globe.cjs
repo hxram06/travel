@@ -44,12 +44,11 @@ setTimeout(()=>{
       assert(globe.layers[`atlas-hit-${i}`],`course ${i} interactive route`);
       assert(!('line-dasharray' in globe.layers[`atlas-route-${i}`].paint),`course ${i} uses solid line`);
     }
-    assert.equal(markerElements.length,8);
+    assert.equal(markerElements.length,0, 'the globe has no floating numbered markers');
     const courseOneLines = globe.sources['atlas-source-1'].data.features;
     assert(!courseOneLines.some(feature => feature.geometry.coordinates.some(point => point[0] > 100)), 'course 1 globe must not draw flights to Korea');
-    assert.equal(markerElements[0].textContent,'1');
-    markerElements[0].dispatchEvent(new window.Event('mouseenter'));
-    assert(window.document.querySelector('#globe-tooltip').textContent.includes('독일 서부 - 뮌헨 - 빈'));
+    window.document.querySelector('[data-course-id="1"] .course-card-open').dispatchEvent(new window.Event('mouseenter'));
+    assert(window.document.querySelector('[data-course-id="1"]').classList.contains('is-active'));
     globe.handlers.mousemove({point:{x:100,y:100}});
     assert(window.document.querySelector('#globe-tooltip').textContent.includes('크리스마스 스트라스부르 - 파리'));
     assert(window.document.querySelector('[data-course-id="5"]').classList.contains('is-active'));
